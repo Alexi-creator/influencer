@@ -1,0 +1,35 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
+.share {
+  $root: &;
+
+  color: rgb(var(--color-grey));
+  border-radius: 0.125rem;
+
+  &__open, &__close, &__icon {
+    cursor: pointer;
+  }
+
+  &__block, &__list {
+    @extend %flex-center;
+    gap: 0.75rem;
+  }
+
+  &__block {
+    display: none;
+    padding: 0.75rem;
+    background-color: rgb(var(--color-primary-soft));
+  }
+
+  &--open {
+    & #{$root}__open {
+      display: none;
+    }
+
+    & #{$root}__block {
+      display: flex;
+    }
+  }
+}

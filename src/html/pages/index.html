@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include("../layout/head.html", {
+    "title": "index Page",
+    "nameFile": "index",
+  })
+  <body>
+    @@include("../layout/header.html")
+    <main class="main">
+      <!-- Убрать в header? -->
+      @@include("../components/nav-pages.html")
+      <div class="section section--shop-preview">
+        <div class="section__inner">
+          @@include("../components/shop-preview.html")
+        </div>
+        <hr class="hr">
+      </div>
+      <!-- @img это алиас от расширения vsCode path autocomplete -->
+      <!-- <img src="@img/semantika.png" alt=""> -->
+    </main>
+  </body>
+</html>

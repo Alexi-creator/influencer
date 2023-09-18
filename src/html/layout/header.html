@@ -1,0 +1,79 @@
+<header class="header">
+  <div class="header__inner">
+    <div class="header__top">
+      <div class="header__top-location">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#location"></use>
+        </svg>
+        Укажите адрес доставки
+      </div>
+      <div class="header__top-info">
+        <a href="#">Инструкции</a>
+        <a href="#">Контакты</a>
+        <div class="header__top-language">
+          Русский
+        </div>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item header__nav-logo">
+          <a href="#">
+            <img width="106px" height="24px" src="../../img/logo.svg" alt="logo">
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-catalog">
+          <a class="btn" href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#catalog"></use>
+            </svg>
+            Каталог
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-search">
+          @@include("../components/search.html")
+        </li>
+        <li class="header__nav-item header__nav-feed">
+          <a href="">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#camera"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-basket">
+          <a href="">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-favorite">
+          <a href="">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-profile">
+          <a href="">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#user"></use>
+            </svg>
+            Войти в аккаунт
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-more">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#more"></use>
+          </svg>
+        </li>
+        <li class="header__nav-item header__nav-location">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#map"></use>
+          </svg>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  @@include("../components/menu-mobile.html")
+</header>

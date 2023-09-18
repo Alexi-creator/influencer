@@ -1,0 +1,30 @@
+:root {
+  // colors
+  --color-primary: 205, 150, 99;
+  --color-primary-dark: 222, 186, 152;
+  --color-primary-light: 229, 202, 177;
+  --color-primary-pale: 247, 238, 230;
+  --color-primary-soft: 252, 249, 246;
+  --color-black: 68, 68, 68;
+  --color-black-light: 234, 234, 234;
+  --color-white: 255, 255, 255;
+  --color-grey: 170, 170, 170;
+  --color-grey-light: 212, 212, 212;
+  --color-grey-dark: 206, 206, 206;
+  --color-green: 80, 165, 51;
+
+  // width
+  --max-width-container: 67rem;
+  
+  // transition
+  --transition-base: all 0.3s linear;
+
+  // z-index
+  --z-fixed: 100;
+  --z-popup: 1000;
+  --z-over: 1010;
+  --z-top: 9999;
+
+  // redius
+
+}

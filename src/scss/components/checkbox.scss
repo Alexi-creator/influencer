@@ -1,0 +1,51 @@
+@import "../basis/_extends";
+
+.checkbox {
+	$root: &;
+
+	@extend %inline-flex-center;
+
+	gap: 0.5rem;
+	user-select: none;
+	cursor: pointer;
+
+  & input {
+    display: none;
+
+		&:checked + #{$root}__checkmark {
+			& svg {
+				display: block;
+			}
+
+			// &::after {
+			// 	content: "";
+			// 	position: absolute;
+			// 	left: 0;
+			// 	right: 0;
+			// 	top: 0;
+			// 	bottom: 0;
+			// 	background-image: url(../);
+			// }
+
+			& + * {
+				color: rgb(var(--color-primary));
+			}
+		}
+  }
+
+  &__checkmark {
+		@extend %inline-flex-center;
+
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid rgb(var(--color-primary));
+		border-radius: 2px;
+
+		& svg {
+			display: none;
+			width: 0.875rem;
+			height: 0.875rem;
+		}
+  }
+}

@@ -1,0 +1,32 @@
+.checkbox__checkmark, .checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  gap: 0.5rem;
+  user-select: none;
+  cursor: pointer;
+}
+.checkbox input {
+  display: none;
+}
+.checkbox input:checked + .checkbox__checkmark svg {
+  display: block;
+}
+.checkbox input:checked + .checkbox__checkmark + * {
+  color: rgb(var(--color-primary));
+}
+.checkbox__checkmark {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgb(var(--color-primary));
+  border-radius: 2px;
+}
+.checkbox__checkmark svg {
+  display: none;
+  width: 0.875rem;
+  height: 0.875rem;
+}

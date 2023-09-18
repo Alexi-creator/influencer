@@ -1,0 +1,5 @@
+gulp
+dist
+node_modules
+.eslintrc.cjs
+gulpfile.js

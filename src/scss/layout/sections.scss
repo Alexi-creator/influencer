@@ -1,0 +1,32 @@
+@import "../basis/_mixins";
+@import "../basis/variables";
+
+.section {
+  $block: &;
+
+  padding: 1.25rem;
+  width: 100%;
+
+  &__inner {
+    margin: 0 auto;
+    max-width: var(--max-width-container);
+  }
+
+  @include media($md) {
+    padding: 1.5rem 2.5rem;
+  }
+
+  @include media($lg) {
+    padding: 2.5rem 4rem;
+  }
+
+  &--shop-preview {
+    #{$block}__inner {
+      max-width: 100%;
+
+      @include media($lg) {
+        max-width: var(--max-width-container);
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.breadcrumbs {
+  color: rgb(var(--color-grey));
+
+  &__item {
+    display: inline-block;
+
+    & a:after {
+      content: '/';
+      margin-left: 0.4375rem;
+    } 
+  }
+}

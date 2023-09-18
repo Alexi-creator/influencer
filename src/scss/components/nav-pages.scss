@@ -1,0 +1,14 @@
+@import "../basis/_extends";
+
+.nav-pages {
+  background-color: rgb(var(--color-primary-pale));
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+
+  &__list {
+    @extend %flex-center;
+    flex-wrap: wrap;
+    gap: 0.5rem 2.5rem;
+    font-weight: 600;
+  }
+}

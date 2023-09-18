@@ -1,0 +1,52 @@
+@import "../basis/_variables";
+@import "../basis/_mixins";
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(var(--color-white));
+  padding: 0.62rem 0.69rem;
+  z-index: var(--z-fixed);
+
+  @include media($lg) {
+    display: none;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 4rem);
+    gap: 0.5rem;
+    justify-content: center;
+
+    @include media($md) {
+      gap: 2.5rem;
+    }
+  }
+
+  &__item {
+    display: block;
+    font-size: 0.75rem;
+    color: rgb(var(--color-grey));
+    text-align: center;
+
+    &-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 auto;
+    }
+
+    &-title {
+      margin-top: 0.25rem;
+      color: rgb(var(--color-grey));
+    }
+
+    &-catalog {
+      & use {
+        stroke: rgb(var(--color-grey));
+        stroke-width: 2px;
+      }
+    }
+  }
+}
