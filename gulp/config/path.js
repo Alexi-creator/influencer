@@ -42,6 +42,7 @@ export const path = {
   clean: builderFolder,
   builderFolder: builderFolder,
   srcFolder: srcFolder,
+  docsFolder: `./docs/`,
   rootFolder: rootFolder,
   ftp: `test`,
 };

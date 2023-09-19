@@ -13,6 +13,7 @@ global.app = {
 
 // импорт задач
 import { copy } from "./gulp/tasks/copy.js";
+import { copyInDocs } from "./gulp/tasks/copyInDocs.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
@@ -42,11 +43,13 @@ const mainTasks = gulp.series(fonts, svgSprive, gulp.parallel(copy, html, scss, 
 // сценарии выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
+const buildGitHubPages = gulp.series(reset, mainTasks, copyInDocs);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 export { dev }
 export { build }
+export { buildGitHubPages }
 export { deployZIP }
 export { deployFTP }
 

@@ -1,0 +1,78 @@
+.shop-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.shop-preview__block-img {
+  margin: 0 -1.25rem;
+}
+
+.shop-preview__title {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  margin-top: -0.1875rem;
+  font-family: BebasNeue;
+  font-weight: 400;
+}
+
+.shop-preview__about {
+  margin-top: 0.75rem;
+}
+
+.shop-preview__bread-crumbs {
+  margin-top: 0.25rem;
+}
+
+.shop-preview__subscribers {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.shop-preview__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .shop-preview__block-img {
+    margin: 0 -2.5rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .shop-preview {
+    gap: 1.25rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .shop-preview__block-img {
+    width: 100%;
+    max-width: 30.25rem;
+    margin: 0;
+    max-height: 16rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .shop-preview__block-descr {
+    max-width: 35.5rem;
+    width: 100%;
+  }
+
+  .shop-preview__bread-crumbs {
+    margin-top: 0.5rem;
+  }
+
+  .shop-preview__subscribers {
+    margin-top: 0.75rem;
+  }
+
+  .shop-preview__actions {
+    margin-top: 1.5rem;
+  }
+}
