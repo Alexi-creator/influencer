@@ -27,8 +27,7 @@ export class Collapse {
         parent?.classList.remove('collapse--open')
         parent?.classList.add('collapse--close')
       } else {
-        parent?.classList.remove('collapse--close')
-        parent?.classList.add('collapse--open')
+        parent?.classList.add('collapse--close')
       }
     }
   }
