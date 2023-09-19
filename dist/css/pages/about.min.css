@@ -140,6 +140,8 @@ button {
   --color-primary-pale: 247, 238, 230;
   --color-primary-soft: 252, 249, 246;
   --color-black: 68, 68, 68;
+  --color-black-hover: 161, 161, 161;
+  --color-black-middle: 225, 225, 225;
   --color-black-light: 234, 234, 234;
   --color-white: 255, 255, 255;
   --color-grey: 170, 170, 170;
@@ -147,11 +149,12 @@ button {
   --color-grey-dark: 206, 206, 206;
   --color-green: 80, 165, 51;
   --max-width-container: 67rem;
-  --transition-base: all 0.3s linear;
+  --transition-base: all 0.2s linear;
   --z-fixed: 100;
   --z-popup: 1000;
   --z-over: 1010;
   --z-top: 9999;
+  --radius-small: 0.125rem;
 }
 
 .section {
@@ -190,7 +193,7 @@ button {
   gap: 0.25rem;
   padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: var(--radius-small);
   font-weight: 600;
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));

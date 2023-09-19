@@ -6,6 +6,8 @@
   --color-primary-pale: 247, 238, 230;
   --color-primary-soft: 252, 249, 246;
   --color-black: 68, 68, 68;
+  --color-black-hover: 161, 161, 161;
+  --color-black-middle: 225, 225, 225;
   --color-black-light: 234, 234, 234;
   --color-white: 255, 255, 255;
   --color-grey: 170, 170, 170;
@@ -17,7 +19,7 @@
   --max-width-container: 67rem;
   
   // transition
-  --transition-base: all 0.3s linear;
+  --transition-base: all 0.2s linear;
 
   // z-index
   --z-fixed: 100;
@@ -26,5 +28,5 @@
   --z-top: 9999;
 
   // redius
-
+  --radius-small: 0.125rem;
 }

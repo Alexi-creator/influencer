@@ -7,13 +7,17 @@
 .checkbox {
   gap: 0.5rem;
   user-select: none;
+  transition: var(--transition-base);
   cursor: pointer;
+}
+.checkbox:hover {
+  color: rgb(var(--color-black-hover));
 }
 .checkbox input {
   display: none;
 }
 .checkbox input:checked + .checkbox__checkmark svg {
-  display: block;
+  opacity: 1;
 }
 .checkbox input:checked + .checkbox__checkmark + * {
   color: rgb(var(--color-primary));
@@ -23,10 +27,10 @@
   width: 1.5rem;
   height: 1.5rem;
   border: 2px solid rgb(var(--color-primary));
-  border-radius: 2px;
+  border-radius: var(--radius-small);
 }
 .checkbox__checkmark svg {
-  display: none;
+  opacity: 0;
   width: 0.875rem;
   height: 0.875rem;
 }

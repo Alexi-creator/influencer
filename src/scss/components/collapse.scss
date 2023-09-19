@@ -1,0 +1,88 @@
+@import "../basis/_extends";
+
+.collapse {
+  $root: &;
+
+  padding: 1rem 1.25rem;
+  background-color: rgb(var(--color-white));
+  border-radius: var(--radius-small);
+
+  &--close {
+    & #{$root}__content {
+      margin-top: 0;
+      max-height: 0;
+      animation: hide 0.2s backwards;
+    }
+  }
+
+  &--open {
+    & #{$root}__content {
+      max-height: none;
+      margin-top: 1.25rem;
+      animation: show 0.2s forwards;
+    }
+  }
+
+  &__head {
+    @extend %flex-space-between;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      & #{$root}__toggle-icon use {
+        fill: rgb(var(--color-black));
+      }
+    }
+  }
+
+  &__toggle-icon {
+    & use {
+      fill: rgb(var(--color-black-middle));
+      transition: var(--transition-base);
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    margin-top: 1.25rem;
+    height: auto;
+    transition: var(--transition-base);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    margin-top: 1.25rem;
+    transform: translate(0, 0) scale(1, 1);
+    visibility: visible;
+    max-height: 100vh;
+  }
+  99% {
+    opacity: 0;
+    margin-top: 0;
+    transform: translate(0, -50%) scale(1, 0);
+    visibility: hidden;
+    max-height: 0;
+  }
+  100% {
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    margin-top: 0;
+    transform: translate(0, -50%) scale(1, 0);
+    visibility: hidden;
+  }
+  1% {
+  }
+  100% {
+    opacity: 1;
+    margin-top: 1.25rem;
+    transform: translate(0, 0) scale(1, 1);
+    visibility: visible;
+  }
+}

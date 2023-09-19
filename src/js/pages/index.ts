@@ -1,11 +1,11 @@
-import '../common.ts';
-import { Share } from '../modules/share';
+import '../common.ts'
+import { Share } from '../modules/share'
 
 window.addEventListener('load', () => {
 
   try {
-    new Share();
+    new Share()
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
-});
+})

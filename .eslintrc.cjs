@@ -29,6 +29,7 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "semi": ["error", "never"],
         "quotes": ["error", "single"],
         'no-unused-vars': 'off',
         "no-console": "warn",

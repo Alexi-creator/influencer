@@ -6,7 +6,7 @@
 
 .share {
   color: rgb(var(--color-grey));
-  border-radius: 0.125rem;
+  border-radius: var(--radius-small);
 }
 .share__open, .share__close, .share__icon {
   cursor: pointer;

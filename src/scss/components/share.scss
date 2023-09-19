@@ -6,7 +6,7 @@
   $root: &;
 
   color: rgb(var(--color-grey));
-  border-radius: 0.125rem;
+  border-radius: var(--radius-small);
 
   &__open, &__close, &__icon {
     cursor: pointer;
