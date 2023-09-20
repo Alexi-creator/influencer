@@ -1,0 +1,67 @@
+@import "../basis/_variables";
+@import "../basis/_extends";
+@import "../basis/_mixins";
+
+.contact-info {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  @include media($md) {
+    flex-direction: row-reverse;
+  }
+
+  @include media($lg) {
+    flex-direction: column;
+  }
+
+  &__connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    min-width: 17.25rem;
+    padding: 2.5rem;
+    background-color: rgb(var(--color-primary-soft));
+    border-radius: var(--radius-small);
+    flex-shrink: 0;
+
+    @include media($md) {
+      height: max-content;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    @include media($lg) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 2.5rem;
+    }
+
+    #{$root} &-item {
+      display: flex;
+      gap: 0.625rem;
+      font-weight: 600;
+    }
+
+    #{$root}__icon use {
+      stroke: rgb(var(--color-black));
+      stroke-width: 2px;
+    }
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+
+    &-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+  }
+}
