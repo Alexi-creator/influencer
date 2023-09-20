@@ -1,5 +1,5 @@
 .btn {
-  $block: &;
+  $root: &;
 
   display: inline-flex;
   gap: 0.25rem;
@@ -9,4 +9,15 @@
   font-weight: 600;
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
+  transition: var(--transition-base);
+
+  &#{$root}--outline {
+    background-color: transparent;
+    padding: 0.75rem 0;
+    color: rgb(var(--color-primary));
+  }
+
+  &#{$root}--color-grey {
+    color: rgb(var(--color-grey));
+  }
 }

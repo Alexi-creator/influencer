@@ -1,13 +1,11 @@
 // может и не нужен этот файл, но в планах в файлы js страниц подключать одинаковые модули чтобы не дублировать
-import * as flsFunction from './modules/func.js';
-import { Test } from './modules/testClass';
+import * as flsFunction from './modules/func.js'
 
 window.addEventListener('load', () => {
-  flsFunction.isWebp();
+  flsFunction.isWebp()
 
-  try {
-    new Test('hi');
-  } catch (error) {
-    console.log(error);
+  // eslint-disable-next-line no-empty
+  try {} catch (error) {
+    console.log(error)
   }
-});
+})
