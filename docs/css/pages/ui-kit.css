@@ -163,6 +163,7 @@ button {
   --z-over: 1010;
   --z-top: 9999;
   --radius-small: 0.125rem;
+  --radius-round: 68rem;
 }
 
 .section {
@@ -230,7 +231,8 @@ button {
   align-items: center;
 }
 
-.collapse__head {
+.collapse__head,
+.radio {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -472,7 +474,8 @@ svg {
   align-items: center;
 }
 
-.collapse__head {
+.collapse__head,
+.radio {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -531,7 +534,70 @@ svg {
   align-items: center;
 }
 
-.collapse__head {
+.collapse__head,
+.radio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio {
+  flex-direction: row-reverse;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.radio:hover {
+  color: rgb(var(--color-primary));
+}
+
+.radio__custom {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgb(var(--color-primary));
+  border-radius: var(--radius-round);
+  background-color: rgb(var(--color-white));
+}
+
+.radio__custom::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: var(--radius-round);
+  background-color: rgb(var(--color-primary));
+}
+
+.radio input {
+  display: none;
+}
+
+.radio input:checked + div::after {
+  display: block;
+}
+
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapse__head,
+.radio {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -610,10 +676,21 @@ svg {
   }
 }
 
-main {
+.ui-kit {
   min-height: 100vh;
   padding: 2rem 1rem;
   background-color: rgb(var(--color-primary-light));
+}
+
+.ui-kit__block-radio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  max-width: 400px;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(var(--color-white));
+  border-radius: var(--radius-small);
 }
 
 h1 {
