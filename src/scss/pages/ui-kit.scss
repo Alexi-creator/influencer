@@ -1,12 +1,24 @@
 @import "../common";
 
 @import "../components/checkbox";
+@import "../components/radio";
 @import "../components/collapse";
 
-main {
+.ui-kit {
   min-height: 100vh;
   padding: 2rem 1rem;
   background-color: rgb(var(--color-primary-light));
+
+  &__block-radio {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    max-width: 400px;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(var(--color-white));
+    border-radius: var(--radius-small);
+  }
 }
 
 h1 {

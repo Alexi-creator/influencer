@@ -5,13 +5,21 @@
     "nameFile": "ui-kit",
   })
   <body>
-    <main>
+    <main class="ui-kit">
       <h1>UI KIT</h1>
 
-      <h2>checkbox:</h2>
+      <h2>Checkbox:</h2>
       @@include("../components/checkbox.html")
 
-      <h2>collapse:</h2>
+      <h2>Radio:</h2>
+      <div class="ui-kit__block-radio">
+        @@include("../components/radio.html")
+        @@include("../components/radio.html")
+        @@include("../components/radio.html")
+        @@include("../components/radio.html")
+      </div>
+
+      <h2>Collapse:</h2>
       @@include("../components/collapse.html")
     </main>
   </body>

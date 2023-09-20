@@ -1,0 +1,44 @@
+@import "../basis/extends";
+
+.radio {
+  @extend %flex-space-between;
+
+  flex-direction: row-reverse;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-base);
+
+  &:hover {
+    color: rgb(var(--color-primary));
+  }
+
+  &__custom {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid rgb(var(--color-primary));
+    border-radius: var(--radius-round);
+    background-color: rgb(var(--color-white));
+
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); 
+      width: 0.625rem;
+      height: 0.625rem;
+      border-radius: var(--radius-round);
+      background-color: rgb(var(--color-primary));
+    }
+  }
+  
+  & input {
+    display: none;
+
+    &:checked + div::after {
+      display: block;
+    }
+  }
+}
