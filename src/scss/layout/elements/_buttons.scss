@@ -11,13 +11,43 @@
   color: rgb(var(--color-white));
   transition: var(--transition-base);
 
-  &#{$root}--outline {
+  &#{$root}--text {
+    padding: 0 0.75rem;
     background-color: transparent;
-    padding: 0.75rem 0;
     color: rgb(var(--color-primary));
+  }
+
+  &#{$root}--outlined {
+    background-color: rgb(var(--color-white));
+    color: rgb(var(--color-primary));
+    border: 1px solid rgb(var(--color-primary));
   }
 
   &#{$root}--color-grey {
     color: rgb(var(--color-grey));
+  }
+
+  &#{$root}--small {
+    padding: 0.5rem 0.75rem;
+  }
+
+  &#{$root}--tag {
+    padding: 0.5rem 0.75rem;
+    background-color: rgb(var(--color-white));
+    color: rgb(var(--color-black));
+    font-weight: 400;
+    border: none;
+    outline: 1px solid rgb(var(--color-primary-light));
+
+    &:hover {
+      outline-width: 2px;
+      outline-color: rgb(var(--color-primary));
+    }
+
+    &-checked {
+      background-color: rgb(var(--color-primary-tag-checked));
+      outline-width: 2px;
+      outline-color: rgb(var(--color-primary));
+    }
   }
 }

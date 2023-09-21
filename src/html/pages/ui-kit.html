@@ -9,18 +9,47 @@
       <h1>UI KIT</h1>
 
       <h2>Buttons:</h2>
-      <div class="ui-kit__block-buttons">
-        <button class="btn">standart</button>
-        <button class="btn">count (7)</button>
-        <button class="btn btn--outline">outline</button>
-        <button class="btn btn--outline btn--color-grey">outline grey</button>
+      <div class="ui-kit__block ui-kit__buttons">
+        <button class="btn">Standart</button>
+        <button class="btn">Count (7)</button>
+        <button class="btn btn--text">Text</button>
+        <button class="btn btn--text btn--color-grey">Text grey</button>
+        <button class="btn btn--small">Small</button>
+        <button class="btn btn--outlined">Outlined</button>
+        <button class="btn btn--tag">Tag</button>
+        <button class="btn btn--tag btn--tag-checked">Tag checked</button>
       </div>
 
       <h2>Checkbox:</h2>
-      @@include("../components/checkbox.html")
+      <div class="ui-kit__block ui-kit__checkbox">
+        @@include("../components/checkbox.html", {
+          "name": "checkbox",
+          "text": "text",
+          "mod": "",
+          "classes": "",
+        })
+        @@include("../components/checkbox.html", {
+          "name": "checkbox",
+          "text": "text 2",
+          "mod": "",
+          "classes": "",
+        })
+        @@include("../components/checkbox.html", {
+          "name": "checkbox",
+          "text": "По популярности",
+          "mod": "checkbox--tag",
+          "classes": "btn btn--tag",
+        })
+        @@include("../components/checkbox.html", {
+          "name": "checkbox",
+          "text": "По цене",
+          "mod": "checkbox--tag",
+          "classes": "btn btn--tag",
+        })
+      </div>
 
       <h2>Radio:</h2>
-      <div class="ui-kit__block-radio">
+      <div class="ui-kit__block ui-kit__radio">
         @@include("../components/radio.html")
         @@include("../components/radio.html")
         @@include("../components/radio.html")
