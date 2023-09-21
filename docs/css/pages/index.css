@@ -146,6 +146,7 @@ button {
   --color-primary-dark: 222, 186, 152;
   --color-primary-light: 229, 202, 177;
   --color-primary-pale: 247, 238, 230;
+  --color-primary-tag-checked: 250, 243, 238;
   --color-primary-soft: 252, 249, 246;
   --color-black: 68, 68, 68;
   --color-black-hover: 161, 161, 161;
@@ -193,6 +194,47 @@ button {
   font-weight: 600;
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
+  transition: var(--transition-base);
+}
+
+.btn.btn--text {
+  padding: 0 0.75rem;
+  background-color: transparent;
+  color: rgb(var(--color-primary));
+}
+
+.btn.btn--outlined {
+  background-color: rgb(var(--color-white));
+  color: rgb(var(--color-primary));
+  border: 1px solid rgb(var(--color-primary));
+}
+
+.btn.btn--color-grey {
+  color: rgb(var(--color-grey));
+}
+
+.btn.btn--small {
+  padding: 0.5rem 0.75rem;
+}
+
+.btn.btn--tag {
+  padding: 0.5rem 0.75rem;
+  background-color: rgb(var(--color-white));
+  color: rgb(var(--color-black));
+  font-weight: 400;
+  border: none;
+  outline: 1px solid rgb(var(--color-primary-light));
+}
+
+.btn.btn--tag:hover {
+  outline-width: 2px;
+  outline-color: rgb(var(--color-primary));
+}
+
+.btn.btn--tag-checked {
+  background-color: rgb(var(--color-primary-tag-checked));
+  outline-width: 2px;
+  outline-color: rgb(var(--color-primary));
 }
 
 .breadcrumbs {
