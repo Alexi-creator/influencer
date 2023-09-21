@@ -6,6 +6,8 @@
 @import "../components/menu-mobile";
 
 .header {
+  $root: &;
+
   position: sticky;
   top: 0;
   padding: 0.75rem 1.25rem;

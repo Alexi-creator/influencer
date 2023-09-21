@@ -9,19 +9,32 @@
   padding: 2rem 1rem;
   background-color: rgb(var(--color-primary-light));
 
-  &__block-radio {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.7rem;
-    max-width: 400px;
-    width: 100%;
+  &__block {
     padding: 1rem;
     background-color: rgb(var(--color-white));
     border-radius: var(--radius-small);
   }
 
-  &__block-buttons {
+  &__checkbox {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  &__radio {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  &__buttons {
     display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 1.5rem;
   }
 }
