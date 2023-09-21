@@ -27,9 +27,7 @@
 }
 
 .checkbox input:checked + .checkbox__checkmark + .checkbox__label {
-  background-color: rgb(var(--color-primary-tag-checked));
-  outline-width: 2px;
-  outline-color: rgb(var(--color-primary));
+  color: rgb(var(--color-primary));
 }
 
 .checkbox__checkmark {
@@ -48,4 +46,11 @@
 
 .checkbox--tag .checkbox__checkmark {
   display: none;
+}
+
+.checkbox--tag input:checked + .checkbox__checkmark + .checkbox__label {
+  color: rgb(var(--color-black));
+  background-color: rgb(var(--color-primary-tag-checked));
+  outline-width: 2px;
+  outline-color: rgb(var(--color-primary));
 }
