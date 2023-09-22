@@ -21,10 +21,12 @@ export class Share {
     const targetElement = e.target as Element
     
     if (targetElement.closest('.share__open')) {
+      targetElement.closest(this.selector)?.classList.remove('share--close')
       return targetElement.closest(this.selector)?.classList.add('share--open')
     }
     if (targetElement.closest('.share__close')) {
-      return targetElement.closest(this.selector)?.classList.remove('share--open')
+      targetElement.closest(this.selector)?.classList.remove('share--open')
+      targetElement.closest(this.selector)?.classList.add('share--close')
     }
   }
 

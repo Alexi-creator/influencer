@@ -5,6 +5,9 @@
 .share {
   $root: &;
 
+  display: flex;
+  align-items: center;
+
   color: rgb(var(--color-grey));
   border-radius: var(--radius-small);
 
@@ -18,9 +21,9 @@
   }
 
   &__block {
-    display: none;
-    padding: 0.75rem;
+    height: 0;
     background-color: rgb(var(--color-primary-soft));
+    overflow: hidden;
   }
 
   &--open {
@@ -29,7 +32,39 @@
     }
 
     & #{$root}__block {
-      display: flex;
+      height: auto;
+      animation: slide-in 0.4s forwards;
     }
+  }
+
+  &--close {
+    & #{$root}__block {
+      height: 100%;
+      animation: slide-out 0.4s forwards;
+    }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    width: 0;
+    padding: 0;
+  }
+
+  100% {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  100% {
+    width: 0;
+    padding: 0;
   }
 }
