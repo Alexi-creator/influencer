@@ -5,8 +5,6 @@
 .popup {
   $root: &;
 
-  // display: none;
-
   &__overlay {
     @extend %flex-center;
 
@@ -43,7 +41,6 @@
   }
 
   &--open {
-    // display: block;
     & #{$root}__overlay {
       transform: scale(1);
     }
