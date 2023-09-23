@@ -108,9 +108,9 @@
       width: 0;
     }
 
-    // & .popup {
-    //   // animation: slide-out 0.4s forwards;
-    // }
+    & .popup__overlay {
+      animation: slide-out 0.4s forwards;
+    }
   }
 }
 
