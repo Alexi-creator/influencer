@@ -58,6 +58,26 @@
 
       <h2>Collapse:</h2>
       @@include("../components/collapse.html")
+
+      <h2>Popup (Modals):</h2>
+      <div id="1" class="popup">
+        <div class="popup__overlay">
+          <div class="popup__content">
+            popup 1
+          </div>
+        </div>
+      </div>
+
+      <div id="2" class="popup">
+        <div class="popup__overlay">
+          <div class="popup__content">
+            popup 2
+          </div>
+        </div>
+      </div>
+
+      <div class="btn" data-popup="1">open popup 1</div>
+      <div class="btn" data-popup="2">open popup 2</div>
     </main>
   </body>
 </html>

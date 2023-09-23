@@ -1,0 +1,1 @@
+export { BreakpointWidth } from './sizeScreen'
