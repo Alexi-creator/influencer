@@ -1,4 +1,4 @@
-import '../common.ts'
+import '../common'
 
 window.addEventListener('load', () => {
   

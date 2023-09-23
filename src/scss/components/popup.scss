@@ -1,0 +1,55 @@
+@import "../basis/_mixins";
+@import "../basis/_extends";
+@import "../basis/_variables";
+
+.popup {
+  $root: &;
+
+  display: none;
+
+  &__overlay {
+    @extend %flex-center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.25rem;
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(6px);
+    z-index: var(--z-popup);
+    cursor: pointer;
+  }
+
+  &--onlymobile {
+    @include media($md) {
+
+      & #{$root}__overlay {
+        position: relative;
+        height: 0;
+        padding: 0;
+        background-color: transparent;
+        backdrop-filter: none;
+        z-index: 1;
+      }
+
+      & #{$root}__content {
+        padding: 0;
+      }
+    }
+  }
+
+  &--open {
+    display: block;
+  }
+
+  &__content {
+    max-width: 30rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: rgb(var(--color-white));
+    border-radius: var(--radius-small);
+    cursor: default;
+  }
+}

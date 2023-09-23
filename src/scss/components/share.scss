@@ -7,41 +7,110 @@
 
   display: flex;
   align-items: center;
-
   color: rgb(var(--color-grey));
   border-radius: var(--radius-small);
 
-  &__open, &__close, &__icon {
+  &__open, &__close, &__item-icon {
     cursor: pointer;
   }
 
-  &__block, &__list {
+  &__block, &__block-head, &__list, &__close {
     @extend %flex-center;
     gap: 0.75rem;
   }
 
   &__block {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: unset;
     height: 0;
-    background-color: rgb(var(--color-primary-soft));
+    background-color: rgb(var(--color-white));
     overflow: hidden;
+    
+    @include media($md) {
+      flex-direction: row;
+      background-color: rgb(var(--color-primary-soft));
+
+      &-head {
+        flex-direction: row;
+      }
+    }
+
+    &-head {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__list {
+    gap: 1rem;
+
+    @include media($md) {
+      gap: 0.75rem;
+    }
+  }
+
+  &__item-icon {
+    width: 2rem;
+    height: 2rem;
+
+    @include media($md) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &__close {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(var(--color-primary-tag-checked));
+    border-radius: var(--radius-round);
+
+    @include media($md) {
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      border-radius: unset;
+    }
   }
 
   &--open {
     & #{$root}__open {
-      display: none;
+
+      @include media($md) {
+        display: none;
+      }
     }
 
     & #{$root}__block {
       height: auto;
-      animation: slide-in 0.4s forwards;
+
+      @include media($md) {
+        animation: slide-in 0.4s forwards;
+      }
     }
   }
 
   &--close {
+
     & #{$root}__block {
-      height: 100%;
-      animation: slide-out 0.4s forwards;
+
+      @include media($md) {
+        animation: slide-out 0.4s forwards;
+      }
+
+      &-head {
+        width: 0;
+      }
     }
+
+    & #{$root}__list {
+      width: 0;
+    }
+
+    // & .popup {
+    //   // animation: slide-out 0.4s forwards;
+    // }
   }
 }
 

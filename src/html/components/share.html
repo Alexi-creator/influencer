@@ -1,33 +1,43 @@
 <div class="share">
-  <svg class="share__open">
+  <svg class="share__open" data-popup="share">
     <use xlink:href="./img/icons/icons.svg#share"></use>
   </svg>
-  <div class="share__block">
-    <svg class="share__close">
-      <use xlink:href="./img/icons/icons.svg#cross"></use>
-    </svg>
-    Поделиться
-    <ul class="share__list">
-      <li>
-        <svg class="share__icon">
-          <use xlink:href="./img/icons/icons.svg#telegram"></use>
-        </svg>
-      </li>
-      <li>
-        <svg class="share__icon">
-          <use xlink:href="./img/icons/icons.svg#facebook"></use>
-        </svg>
-      </li>
-      <li>
-        <svg class="share__icon">
-          <use xlink:href="./img/icons/icons.svg#twitter"></use>
-        </svg>
-      </li>
-      <li>
-        <svg class="share__icon">
-          <use xlink:href="./img/icons/icons.svg#watsup"></use>
-        </svg>
-      </li>
-    </ul>
+  <div id="share" class="popup popup--onlymobile">
+    <div class="popup__overlay">
+      <div class="popup__content">
+        <div class="share__block">
+          <div class="share__block-head">
+            <div class="share__close popup__close">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#cross"></use>
+              </svg>
+            </div>
+            Поделиться
+          </div>
+          <ul class="share__list">
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#telegram"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#facebook"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#twitter"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#watsup"></use>
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
