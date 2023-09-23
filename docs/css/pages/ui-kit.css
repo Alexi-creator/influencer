@@ -56,7 +56,6 @@ button {
   background: none;
   border: none;
   color: inherit;
-  cursor: pointer;
 }
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
@@ -195,6 +194,7 @@ button {
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
   transition: var(--transition-base);
+  cursor: pointer;
 }
 
 .btn.btn--text {
@@ -259,6 +259,7 @@ button {
   background: rgb(var(--color-black-light));
 }
 
+.popup__overlay,
 .header__top-location,
 .header__top-info {
   display: flex;
@@ -482,6 +483,59 @@ button {
   cursor: pointer;
 }
 
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapse__head,
+.radio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup {
+  display: none;
+}
+
+.popup__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  z-index: var(--z-popup);
+  cursor: pointer;
+}
+
+.popup--open {
+  display: block;
+}
+
+.popup__content {
+  max-width: 30rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgb(var(--color-white));
+  border-radius: var(--radius-small);
+  cursor: default;
+}
+
 body {
   font-family: Commissioner, sans-serif;
   color: rgb(var(--color-black));
@@ -503,7 +557,8 @@ svg {
 }
 
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.popup__overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -574,7 +629,8 @@ svg {
 }
 
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.popup__overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -636,7 +692,8 @@ svg {
 }
 
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.popup__overlay {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -808,6 +865,20 @@ h2 {
 
   .header__nav-search {
     margin-left: 1.5rem;
+  }
+
+  .popup--onlymobile .popup__overlay {
+    position: relative;
+    height: 0;
+    padding: 0;
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    z-index: 1;
+  }
+
+  .popup--onlymobile .popup__content {
+    padding: 0;
   }
 }
 

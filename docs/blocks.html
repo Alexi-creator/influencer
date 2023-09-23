@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20230923203935">
-  <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20230923203935"></script>
+  <link rel="stylesheet" href="css/pages/blocks.min.css?_v=20230923203935">
+  <title>Test Page blocks</title>
+  <script defer src="js/blocks.min.js?_v=20230923203935"></script>
 </head>
   <body>
     <header class="header">
@@ -136,107 +136,43 @@
   </ul>
 </nav>
 </header>
-    <main class="main">
-      <!-- Убрать в header? -->
-      <nav class="nav-pages">
-  <ul class="nav-pages__list">
-    <li>
-      <a href="">Магазины</a>
-    </li>
-    <li>
-      <a href="">Совместные покупки</a>
-    </li>
-    <li>
-      <a href="">Test for Free</a>
-    </li>
-    <li>
-      <a href="">Блогеры</a>
-    </li>
-    <li>
-      <a href="">Публикации</a>
-    </li>
-  </ul>
-</nav>
-      <div class="section section--shop-preview">
+    <main>
+      <section class="section">
         <div class="section__inner">
-          <div class="shop-preview">
-  <div class="shop-preview__block-img">
-    <picture><source srcset="img/shop-preview.webp" type="image/webp"><img src="img/shop-preview.jpg" alt="shop-preview"></picture>
-  </div>
-  <div class="shop-preview__block-descr">
-    <h1 class="shop-preview__title">Интернет магазин женской одежды и аксессуаров Lass</h1>
-    <p class="shop-preview__about">Lass — сеть магазинов женской одежды и аксессуаров. Ассортимент включает в себя блузы, юбки, брюки, платья, джемперы, рубашки, жакеты, нарядную одежду, пуховики, куртки, пальто и аксессуары от известных брендов.</p>
-    <div class="shop-preview__bread-crumbs">
-      <div class="breadcrumbs">
-  <ul class="breadcrumbs__list">
-    <li class="breadcrumbs__item">
-      <a href="#">Категории:  Платья и сарафаны</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <a href="#">Блузы и рубашки</a>
-    </li>
-    <li class="breadcrumbs__item">
-      Юбки
-    </li>
-  </ul>
-</div>
+          <div class="contact-info">
+  <div class="contact-info__connect">
+    <div class="contact-info__connect-item contact-info__mail">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#mail"></use>
+      </svg>
+      info@lass-fashion.ru
     </div>
-    <div class="shop-preview__subscribers">112 подписчиков</div>
-    <div class="shop-preview__actions">
-      <button class="btn">Подписаться</button>
-      <div class="share">
-  <svg class="share__open" data-popup="share">
-    <use xlink:href="./img/icons/icons.svg#share"></use>
-  </svg>
-  <div id="share" class="popup popup--onlymobile">
-    <div class="popup__overlay">
-      <div class="popup__content">
-        <div class="share__block">
-          <div class="share__block-head">
-            <div class="share__close popup__close">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#cross"></use>
-              </svg>
-            </div>
-            Поделиться
-          </div>
-          <ul class="share__list">
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#telegram"></use>
-              </svg>
-            </li>
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#facebook"></use>
-              </svg>
-            </li>
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#twitter"></use>
-              </svg>
-            </li>
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#watsup"></use>
-              </svg>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="contact-info__connect-item contact-info__phone">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#phone"></use>
+      </svg>
+      +7 (495) 234-34-34
+    </div>
+    <div class="contact-info__connect-item contact-info__shedule">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#clock"></use>
+      </svg>
+      ПН-ВС 10:00-20:00
     </div>
   </div>
-</div>
-
-    </div>
+  <div class="contact-info__descr">
+    <h3 class="contact-info__descr-title">Юридическая информация:</h3>
+    <p>Полное наименование: Общество с ограниченной ответственностью «Национальный цифровой ресурс «РУКОНТ»
+      Юридический адрес: 129090, г. Москва, Протопоповский пер., д. 19, корп. 12
+      Телефон: +7(495)719-09-21
+    </p>
+    <p>ИНН/КПП: 7702823270 / 770201001
+      ОГРН: 1137746876090
+    </p>
   </div>
 </div>
         </div>
-        <hr class="hr">
-      </div>
-      
-      <!-- @img это алиас от расширения vsCode path autocomplete -->
-      <!-- <picture><source srcset="img/semantika.webp" type="image/webp"><img src="img/semantika.png" alt=""></picture> -->
+      </section>
     </main>
   </body>
 </html>
