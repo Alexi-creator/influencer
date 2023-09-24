@@ -14,7 +14,7 @@ export class Collapse {
   clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
     let parent: HTMLElement | null
-    
+
     if (targetElement.closest('.collapse__head')) {
       parent = targetElement.closest(this.selector)
 
