@@ -1,0 +1,8 @@
+.product-menu {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 1px solid red;
+}

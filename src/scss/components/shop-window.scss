@@ -1,0 +1,26 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
+.shop-window {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: 2.5rem 1.25rem;
+  grid-template-areas:
+  "tabs tabs"
+  "menu goods"
+  ;
+
+  &__tabs {
+    grid-area: tabs;
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__goods {
+    grid-area: goods;
+    border: 1px solid red;
+  }
+}
