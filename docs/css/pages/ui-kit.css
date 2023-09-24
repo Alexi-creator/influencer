@@ -505,16 +505,13 @@ button {
   align-items: center;
 }
 
-.popup {
-  display: none;
-}
-
 .popup__overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  transform: scale(0);
   padding: 1.25rem;
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(6px);
@@ -523,8 +520,8 @@ button {
   cursor: pointer;
 }
 
-.popup--open {
-  display: block;
+.popup--open .popup__overlay {
+  transform: scale(1);
 }
 
 .popup__content {
@@ -719,13 +716,13 @@ svg {
   border-radius: var(--radius-small);
 }
 
-.collapse--close .collapse__content {
+.collapse--close > .collapse__content {
   margin-top: 0;
   max-height: 0;
   animation: hide 0.2s backwards;
 }
 
-.collapse--open .collapse__content {
+.collapse--open > .collapse__content {
   max-height: none;
   margin-top: 1.25rem;
   animation: show 0.2s forwards;
@@ -780,7 +777,6 @@ svg {
 
   100% {
     opacity: 1;
-    margin-top: 1.25rem;
     transform: translate(0, 0) scale(1, 1);
     visibility: visible;
   }
@@ -875,6 +871,7 @@ h2 {
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
     z-index: 1;
+    transform: scale(1);
   }
 
   .popup--onlymobile .popup__content {

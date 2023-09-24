@@ -477,16 +477,13 @@ button {
   align-items: center;
 }
 
-.popup {
-  display: none;
-}
-
 .popup__overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  transform: scale(0);
   padding: 1.25rem;
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(6px);
@@ -495,8 +492,8 @@ button {
   cursor: pointer;
 }
 
-.popup--open {
-  display: block;
+.popup--open .popup__overlay {
+  transform: scale(1);
 }
 
 .popup__content {
@@ -572,6 +569,7 @@ svg {
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
     z-index: 1;
+    transform: scale(1);
   }
 
   .popup--onlymobile .popup__content {

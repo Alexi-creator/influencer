@@ -69,6 +69,10 @@
   width: 0;
 }
 
+.share--close .popup__overlay {
+  animation: slide-out 0.4s forwards;
+}
+
 @keyframes slide-in {
   0% {
     width: 0;
