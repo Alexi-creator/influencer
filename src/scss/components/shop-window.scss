@@ -9,27 +9,36 @@
   grid-template-columns: 15rem 1fr;
   gap: 2.5rem 1.25rem;
   grid-template-areas:
-  "tabs tabs"
-  "actions actions"
-  "menu goods"
+    "tabs tabs"
+    "actions actions"
+    "goods goods"
   ;
+
+  @include media($lg) {
+    grid-template-areas:
+      "tabs tabs"
+      "actions actions"
+      "menu goods"
+    ;
+  }
 
   &__tabs {
     grid-area: tabs;
   }
 
   &__menu {
+    display: none;
     grid-area: menu;
+
+    @include media($lg) {
+      display: block;
+    }
   }
 
   &__actions {
     grid-area: actions;
 
     @extend %flex-space-between;
-
-    &-filters {
-      border: 1px solid red;
-    }
 
     &-density {
       &#{$root}__actions-density--tile {
@@ -38,6 +47,10 @@
         }
         & #{$root}__actions-density-grid {
           display: block;
+        }
+        &.btn {
+          border-color: rgb(var(--color-primary));
+          background-color: rgb(var(--color-primary-soft));
         }
       }
 
@@ -51,8 +64,18 @@
     grid-area: goods;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    margin: 0 -1.25rem;
+
+    @include media($md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    @include media($lg) {
+      gap: 1rem;
+    }
 
     &--horizontally {
       grid-template-columns: 1fr;
