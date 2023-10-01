@@ -9,7 +9,7 @@ export class ShopWindow extends ToggleDensity {
     super()
 
     this.selectorDensity = '.shop-window__actions-density'
-    this.selectorDensityGoods = '.shop-window__goods'
+    this.selectorDensityGoods = '.shop-window__goods-items'
 
     this.init()
   }
@@ -22,8 +22,8 @@ export class ShopWindow extends ToggleDensity {
     const blockGoods = document.querySelector(this.selectorDensityGoods)
     if (blockGoods) {
       if (this.selectedDensity === SelectedDensity.TILE) {
-        blockGoods.classList.add('shop-window__goods--horizontally')
-      } else blockGoods.classList.remove('shop-window__goods--horizontally')
+        blockGoods.classList.add('shop-window__goods-items--horizontally')
+      } else blockGoods.classList.remove('shop-window__goods-items--horizontally')
     }
   }
 

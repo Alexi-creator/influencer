@@ -12,7 +12,7 @@
   border: 1px solid rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
 
-  .shop-window__goods--horizontally &, &--horizontally {
+  .shop-window__goods-items--horizontally &, &--horizontally {
     display: grid;
     grid-template-columns: 8.3rem 1fr;
 

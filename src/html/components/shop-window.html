@@ -1,64 +1,72 @@
 <div class="shop-window">
-  <div class="shop-window__tabs">tabs</div>
-  <div class="shop-window__actions">
-    <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
-      Фильтры
-      <svg>
-        <use xlink:href="./img/icons/icons.svg#filters"></use>
-      </svg>
+  <div class="shop-window__controls">
+    <div class="shop-window__tabs">
+      @@include("./tabs.html")
     </div>
-    <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
-      <svg class="shop-window__actions-density-tile">
-        <use xlink:href="./img/icons/icons.svg#density-tile"></use>
-      </svg>
-      <svg class="shop-window__actions-density-grid">
-        <use xlink:href="./img/icons/icons.svg#density-grid"></use>
-      </svg>
+    <div class="shop-window__actions">
+      <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
+        Фильтры
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#filters"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="shop-window__actions-density-tile">
+          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+        </svg>
+        <svg class="shop-window__actions-density-grid">
+          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+        </svg>
+      </div>
     </div>
   </div>
-  <div class="shop-window__menu">@@include("./product-menu.html")</div>
+  
   <div class="shop-window__goods">
-    @@include("./product-card.html", {
-      "extra-class": "",
-      "title": "Комбинезон из шелковой вискозы с",
-      "discount": "--discount",
-      "sale": "от 91 250 ₽",
-      "like": "favourite",
-    })
-    @@include("./product-card.html", {
-      "extra-class": "",
-      "title": "Плетеная сумка-сэтчел",
-      "discount": "",
-      "sale": "",
-      "like": "",
-    })
-    @@include("./product-card.html", {
-      "extra-class": "",
-      "title": "Туфли ZOE с острым носом и эластичныим",
-      "discount": "",
-      "sale": "",
-      "like": "",
-    })
-    @@include("./product-card.html", {
-      "extra-class": "",
-      "title": "Пуховик из кожи с узором monogram mi",
-      "discount": "",
-      "sale": "",
-      "like": "favourite",
-    })
-    @@include("./product-card.html", {
-      "extra-class": "",
-      "title": "Пуховик из кожи с узором monogram mi",
-      "discount": "",
-      "sale": "",
-      "like": "",
-    })
-    @@include("./product-card.html", {
-      "extra-class": "",
-      "title": "Пуховик из кожи с узором monogram mi",
-      "discount": "",
-      "sale": "",
-      "like": "favourite",
-    })
+    <div class="shop-window__menu">@@include("./product-menu.html")</div>
+    <div class="shop-window__goods-items">
+      @@include("./product-card.html", {
+        "extra-class": "",
+        "title": "Комбинезон из шелковой вискозы с",
+        "discount": "--discount",
+        "sale": "от 91 250 ₽",
+        "like": "favourite",
+      })
+      @@include("./product-card.html", {
+        "extra-class": "",
+        "title": "Плетеная сумка-сэтчел",
+        "discount": "",
+        "sale": "",
+        "like": "",
+      })
+      @@include("./product-card.html", {
+        "extra-class": "",
+        "title": "Туфли ZOE с острым носом и эластичныим",
+        "discount": "",
+        "sale": "",
+        "like": "",
+      })
+      @@include("./product-card.html", {
+        "extra-class": "",
+        "title": "Пуховик из кожи с узором monogram mi",
+        "discount": "",
+        "sale": "",
+        "like": "favourite",
+      })
+      @@include("./product-card.html", {
+        "extra-class": "",
+        "title": "Пуховик из кожи с узором monogram mi",
+        "discount": "",
+        "sale": "",
+        "like": "",
+      })
+      @@include("./product-card.html", {
+        "extra-class": "",
+        "title": "Пуховик из кожи с узором monogram mi",
+        "discount": "",
+        "sale": "",
+        "like": "favourite",
+      })
+    </div>
   </div>
+
 </div>

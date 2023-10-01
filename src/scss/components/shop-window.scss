@@ -6,38 +6,20 @@
   $root: &;
 
   display: grid;
-  grid-template-columns: 15rem 1fr;
-  gap: 2.5rem 1.25rem;
-  grid-template-areas:
-    "tabs tabs"
-    "actions actions"
-    "goods goods"
-  ;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
 
-  @include media($lg) {
-    grid-template-areas:
-      "tabs tabs"
-      "actions actions"
-      "menu goods"
-    ;
+  &__controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem
   }
 
   &__tabs {
-    grid-area: tabs;
-  }
 
-  &__menu {
-    display: none;
-    grid-area: menu;
-
-    @include media($lg) {
-      display: block;
-    }
   }
 
   &__actions {
-    grid-area: actions;
-
     @extend %flex-space-between;
 
     &-density {
@@ -60,25 +42,43 @@
     }
   }
 
-  &__goods {
-    grid-area: goods;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    margin: 0 -1.25rem;
-
-    @include media($md) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.5rem;
-    }
+  &__menu {
+    display: none;
 
     @include media($lg) {
-      gap: 1rem;
+      display: block;
+    }
+  }
+
+  &__goods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    @include media($lg) {
+      grid-template-columns: 15rem 1fr;
     }
 
-    &--horizontally {
-      grid-template-columns: 1fr;
+    &-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin: 0 -1.25rem;
+
+      &--horizontally#{$root}__goods-items{
+        grid-template-columns: 1fr;
+      }
+  
+      @include media($md) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin: 0;
+      }
+  
+      @include media($lg) {
+        gap: 1rem;
+      }
     }
+    
   }
 }
