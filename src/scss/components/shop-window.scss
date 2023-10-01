@@ -3,27 +3,82 @@
 @import "../basis/_variables";
 
 .shop-window {
+  $root: &;
+
   display: grid;
-  grid-template-columns: 15rem 1fr;
-  gap: 2.5rem 1.25rem;
-  grid-template-areas:
-  "tabs tabs"
-  "menu goods"
-  ;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+
+  &__controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem
+  }
 
   &__tabs {
-    grid-area: tabs;
+
+  }
+
+  &__actions {
+    @extend %flex-space-between;
+
+    &-density {
+      &#{$root}__actions-density--tile {
+        & #{$root}__actions-density-tile {
+          display: none;
+        }
+        & #{$root}__actions-density-grid {
+          display: block;
+        }
+        &.btn {
+          border-color: rgb(var(--color-primary));
+          background-color: rgb(var(--color-primary-soft));
+        }
+      }
+
+      &-grid {
+        display: none;
+      }
+    }
   }
 
   &__menu {
-    grid-area: menu;
+    display: none;
+
+    @include media($lg) {
+      display: block;
+    }
   }
 
   &__goods {
-    grid-area: goods;
-
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    @include media($lg) {
+      grid-template-columns: 15rem 1fr;
+    }
+
+    &-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      margin: 0 -1.25rem;
+
+      &--horizontally#{$root}__goods-items{
+        grid-template-columns: 1fr;
+      }
+  
+      @include media($md) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        margin: 0;
+      }
+  
+      @include media($lg) {
+        gap: 1rem;
+      }
+    }
+    
   }
 }

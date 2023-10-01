@@ -1,4 +1,149 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
 .product-card {
-  display: grid;
-  grid-template-columns: 1fr;
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(var(--color-primary-soft));
+  padding: 1px;
+  border: 1px solid rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
+
+  .shop-window__goods-items--horizontally &, &--horizontally {
+    display: grid;
+    grid-template-columns: 8.3rem 1fr;
+
+    #{$root}__img {
+      height: 100%;
+    }
+
+    #{$root}__title {
+      -webkit-line-clamp: unset;
+    }
+
+    #{$root}__sizes, #{$root}__likes {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    height: 21rem;
+    flex-shrink: 0;
+
+    & > img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__like, &__info {
+    position: absolute;
+    left: 1rem;
+  }
+
+  &__like {
+    top: 1rem;
+
+    & svg use {
+      fill: rgb(var(--color-primary));
+      stroke: rgb(var(--color-primary));
+      stroke-width: 2px;
+    }
+  }
+
+  &__info {
+    bottom: 0.5rem;
+    right: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &-wrap {
+      width: max-content;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__descr, &__descr-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__descr {
+    height: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  &__brand {
+    color: rgb(var(--color-grey));
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+  }
+
+  &__sizes, &__likes {
+    display: none;
+  }
+
+  &__sizes {
+    gap: 0.5rem;
+
+    &-variants {
+      color: rgb(var(--color-grey))
+    }
+  }
+
+  &__likes {
+    gap: 0.25rem;
+
+    & svg {
+      width: 1rem;
+      height: 1rem;
+
+      & use {
+        fill: rgb(var(--color-grey));
+        stroke: rgb(var(--color-grey));
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  &__price {
+    @extend %flex-space-between;
+
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-weight: 600;
+
+    #{$root} &-sale {
+      color: rgb(var(--color-primary));
+    }
+
+    #{$root} &--discount &-current {
+      color: rgb(var(--color-grey));
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+    }
+  }
 }
