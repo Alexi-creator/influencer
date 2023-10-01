@@ -6,7 +6,8 @@
   display: inline-flex;
   gap: 0.25rem;
   padding: 0.75rem 1.5rem;
-  border: 1px solid transparent;
+  border: 1px solid;
+  border-color: transparent;
   border-radius: var(--radius-small);
   font-weight: 600;
   background-color: rgb(var(--color-primary));
@@ -19,6 +20,12 @@
   padding: 0 0.75rem;
   background-color: transparent;
   color: rgb(var(--color-primary));
+  border-color: transparent;
+}
+
+.btn.btn--text.btn--color-grey {
+  color: rgb(var(--color-grey));
+  border-color: transparent;
 }
 
 .btn.btn--outlined {
@@ -27,8 +34,18 @@
   border: 1px solid rgb(var(--color-primary));
 }
 
+.btn.btn--outlined.btn--color-grey {
+  border-color: rgb(var(--color-black-light));
+  color: unset;
+}
+
+.btn.btn--icon {
+  padding: 0.75rem;
+}
+
 .btn.btn--color-grey {
   color: rgb(var(--color-grey));
+  border-color: rgb(var(--color-grey));
 }
 
 .btn.btn--small {
@@ -75,6 +92,42 @@
   margin: 1rem auto 1.25rem;
   border: none;
   background: rgb(var(--color-black-light));
+}
+
+.badge {
+  height: 2rem;
+  display: inline-flex;
+  align-items: baseline;
+  background-color: rgb(var(--color-primary));
+  border: 2px solid;
+  border-radius: var(--radius-small);
+  border-color: rgb(var(--color-white));
+  color: rgb(var(--color-white));
+  padding: 0.25rem 0.5rem;
+  font-family: BebasNeue;
+  font-size: 1.125rem;
+}
+
+.badge--icon {
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.badge svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.badge use {
+  width: 1rem;
+  height: 1rem;
+  stroke: rgb(var(--color-white));
+  stroke-width: 2px;
+}
+
+.badge__sub {
+  font-size: 0.625rem;
+  margin-right: 0.12rem;
 }
 
 @media (min-width: 75rem) {

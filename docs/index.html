@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20230924182030">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231001071434">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20230924182030"></script>
+  <script defer src="js/index.min.js?_v=20231001071434"></script>
 </head>
   <body>
     <header class="header">
@@ -203,6 +203,11 @@
           <ul class="share__list">
             <li>
               <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#copy"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
                 <use xlink:href="./img/icons/icons.svg#telegram"></use>
               </svg>
             </li>
@@ -238,8 +243,32 @@
       <div class="section">
         <div class="section__inner">
           <div class="shop-window">
-  <div class="shop-window__tabs">tabs</div>
-  <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
+  <div class="shop-window__controls">
+    <div class="shop-window__tabs">
+      <div class="tabs">
+  Товары Совместные покупки Test For Free Контакты
+</div>
+    </div>
+    <div class="shop-window__actions">
+      <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
+        Фильтры
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#filters"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="shop-window__actions-density-tile">
+          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+        </svg>
+        <svg class="shop-window__actions-density-grid">
+          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+  
+  <div class="shop-window__goods">
+    <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
 
 <!-- const dataMenu = [
   {
@@ -408,104 +437,328 @@
   </li>
 </ul>
 </div>
-  <div class="shop-window__goods">
-    <div class="product-card">
+    <div class="shop-window__goods-items">
+      <div class="product-card ">
   <div class="product-card__img">
     <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge badge--icon">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TTF
+</div>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
   </div>
   <div class="product-card__descr">
-    <div class="product-card__brand">
-      Yves Saint Lauren
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Комбинезон из шелковой вискозы с
+      </div>
+      <div class="product-card__sizes">
+        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
     </div>
-    <div class="product-card__title">
-      Туфли ZOE с острым носом и эластичныим ремешком сзад
-    </div>
-    <div class="product-card__price">
-      27 966
+    <div class="product-card__price product-card__price--discount">
+      <div class="product-card__price-current">
+        27 966 ₽
+      </div>
+      <div class="product-card__price-sale">
+        от 91 250 ₽
+      </div>   
     </div>
   </div>
 </div>
-    <div class="product-card">
+      <div class="product-card ">
   <div class="product-card__img">
     <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge badge--icon">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TTF
+</div>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
   </div>
   <div class="product-card__descr">
-    <div class="product-card__brand">
-      Yves Saint Lauren
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Плетеная сумка-сэтчел
+      </div>
+      <div class="product-card__sizes">
+        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
     </div>
-    <div class="product-card__title">
-      Туфли ZOE с острым носом и эластичныим ремешком сзад
-    </div>
-    <div class="product-card__price">
-      27 966
+    <div class="product-card__price product-card__price">
+      <div class="product-card__price-current">
+        27 966 ₽
+      </div>
+      <div class="product-card__price-sale">
+        
+      </div>   
     </div>
   </div>
 </div>
-    <div class="product-card">
+      <div class="product-card ">
   <div class="product-card__img">
     <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge badge--icon">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TTF
+</div>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
   </div>
   <div class="product-card__descr">
-    <div class="product-card__brand">
-      Yves Saint Lauren
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Туфли ZOE с острым носом и эластичныим
+      </div>
+      <div class="product-card__sizes">
+        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
     </div>
-    <div class="product-card__title">
-      Туфли ZOE с острым носом и эластичныим ремешком сзад
-    </div>
-    <div class="product-card__price">
-      27 966
+    <div class="product-card__price product-card__price">
+      <div class="product-card__price-current">
+        27 966 ₽
+      </div>
+      <div class="product-card__price-sale">
+        
+      </div>   
     </div>
   </div>
 </div>
-    <div class="product-card">
+      <div class="product-card ">
   <div class="product-card__img">
     <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge badge--icon">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TTF
+</div>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
   </div>
   <div class="product-card__descr">
-    <div class="product-card__brand">
-      Yves Saint Lauren
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
     </div>
-    <div class="product-card__title">
-      Туфли ZOE с острым носом и эластичныим ремешком сзад
-    </div>
-    <div class="product-card__price">
-      27 966
+    <div class="product-card__price product-card__price">
+      <div class="product-card__price-current">
+        27 966 ₽
+      </div>
+      <div class="product-card__price-sale">
+        
+      </div>   
     </div>
   </div>
 </div>
-    <div class="product-card">
+      <div class="product-card ">
   <div class="product-card__img">
     <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge badge--icon">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TTF
+</div>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
   </div>
   <div class="product-card__descr">
-    <div class="product-card__brand">
-      Yves Saint Lauren
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
     </div>
-    <div class="product-card__title">
-      Туфли ZOE с острым носом и эластичныим ремешком сзад
-    </div>
-    <div class="product-card__price">
-      27 966
+    <div class="product-card__price product-card__price">
+      <div class="product-card__price-current">
+        27 966 ₽
+      </div>
+      <div class="product-card__price-sale">
+        
+      </div>   
     </div>
   </div>
 </div>
-    <div class="product-card">
+      <div class="product-card ">
   <div class="product-card__img">
     <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge badge--icon">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TTF
+</div>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
   </div>
   <div class="product-card__descr">
-    <div class="product-card__brand">
-      Yves Saint Lauren
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
     </div>
-    <div class="product-card__title">
-      Туфли ZOE с острым носом и эластичныим ремешком сзад
-    </div>
-    <div class="product-card__price">
-      27 966
+    <div class="product-card__price product-card__price">
+      <div class="product-card__price-current">
+        27 966 ₽
+      </div>
+      <div class="product-card__price-sale">
+        
+      </div>   
     </div>
   </div>
 </div>
+    </div>
   </div>
+
 </div>
 
         </div>

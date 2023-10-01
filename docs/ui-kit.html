@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20230924182030">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20231001071434">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20230924182030"></script>
+  <script defer src="js/ui-kit.min.js?_v=20231001071434"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -21,6 +21,13 @@
         <button class="btn btn--outlined">Outlined</button>
         <button class="btn btn--tag">Tag</button>
         <button class="btn btn--tag btn--tag-checked">Tag checked</button>
+        <button class="btn btn--outlined btn--color-grey">Outlined grey</button>
+        <button class="btn btn--outlined">
+          with icons
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+        </button>
       </div>
 
       <h2>Checkbox:</h2>
@@ -123,9 +130,25 @@
     </div>
   </div>
 </div>
-
       <div class="btn" data-popup="1">open popup 1</div>
       <div class="btn" data-popup="2">open popup 2</div>
+
+      <h2>Badges:</h2>
+      <div class="ui-kit__block ui-kit__block--primary ui-kit__badges">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge badge--icon">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TTF
+</div>
+      </div>
+      
     </main>
   </body>
 </html>
