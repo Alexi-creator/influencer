@@ -5,16 +5,20 @@
 .product-card {
   $root: &;
 
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   background-color: rgb(var(--color-primary-soft));
   padding: 1px;
   border: 1px solid rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
 
-  // &--horizontally {
   .shop-window__goods--horizontally &, &--horizontally {
+    display: grid;
     grid-template-columns: 8.3rem 1fr;
+
+    #{$root}__img {
+      height: 100%;
+    }
 
     #{$root}__title {
       -webkit-line-clamp: unset;
@@ -29,6 +33,13 @@
   &__img {
     position: relative;
     overflow: hidden;
+    height: 21rem;
+    flex-shrink: 0;
+
+    & > img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__like, &__info {
@@ -74,6 +85,7 @@
   }
 
   &__descr {
+    height: 100%;
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
   }
