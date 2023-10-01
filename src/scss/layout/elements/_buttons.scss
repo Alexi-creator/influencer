@@ -4,7 +4,8 @@
   display: inline-flex;
   gap: 0.25rem;
   padding: 0.75rem 1.5rem;
-  border: 1px solid transparent;
+  border: 1px solid;
+  border-color: transparent;
   border-radius: var(--radius-small);
   font-weight: 600;
   background-color: rgb(var(--color-primary));
@@ -16,19 +17,35 @@
     padding: 0 0.75rem;
     background-color: transparent;
     color: rgb(var(--color-primary));
+    border-color: transparent;
+
+    &#{$root}--color-grey {
+      color: rgb(var(--color-grey));
+      border-color: transparent;
+    }
   }
 
   &#{$root}--outlined {
     background-color: rgb(var(--color-white));
     color: rgb(var(--color-primary));
     border: 1px solid rgb(var(--color-primary));
+
+    &#{$root}--color-grey {
+      border-color: rgb(var(--color-black-light));
+      color: unset;
+    }
+  }
+
+  &#{$root}--icon {
+    padding: 0.75rem;
   }
 
   &#{$root}--color-grey {
     color: rgb(var(--color-grey));
+    border-color: rgb(var(--color-grey));
   }
 
-  &#{$root}--small {
+   &#{$root}--small {
     padding: 0.5rem 0.75rem;
   }
 

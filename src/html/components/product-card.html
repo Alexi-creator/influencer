@@ -1,16 +1,57 @@
-<div class="product-card">
+<div class="product-card @@extra-class">
   <div class="product-card__img">
     <img src="@img/product-card.jpg" alt="product">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        @@include("./badge.html", {
+          "extra-class": "",
+          "body": '<span class="badge__sub">до</span>-50%',
+        })
+        @@include("./badge.html", {
+          "extra-class": "badge--icon",
+          "body": '<svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>',
+        })
+        @@include("./badge.html", {
+          "extra-class": "",
+          "body": "СП",
+        })
+        @@include("./badge.html", {
+          "extra-class": "",
+          "body": "TTF",
+        })
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
   </div>
   <div class="product-card__descr">
-    <div class="product-card__brand">
-      Yves Saint Lauren
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        @@title
+      </div>
+      <div class="product-card__sizes">
+        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
     </div>
-    <div class="product-card__title">
-      Туфли ZOE с острым носом и эластичныим ремешком сзад
-    </div>
-    <div class="product-card__price">
-      27 966
+    <div class="product-card__price product-card__price@@discount">
+      <div class="product-card__price-current">
+        27 966 ₽
+      </div>
+      <div class="product-card__price-sale">
+        @@sale
+      </div>   
     </div>
   </div>
 </div>

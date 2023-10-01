@@ -18,6 +18,13 @@
         <button class="btn btn--outlined">Outlined</button>
         <button class="btn btn--tag">Tag</button>
         <button class="btn btn--tag btn--tag-checked">Tag checked</button>
+        <button class="btn btn--outlined btn--color-grey">Outlined grey</button>
+        <button class="btn btn--outlined">
+          with icons
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+        </button>
       </div>
 
       <h2>Checkbox:</h2>
@@ -70,9 +77,29 @@
         "body": "<div>popup 2</div>",
         "extra-class": "",
       })
-
       <div class="btn" data-popup="1">open popup 1</div>
       <div class="btn" data-popup="2">open popup 2</div>
+
+      <h2>Badges:</h2>
+      <div class="ui-kit__block ui-kit__block--primary ui-kit__badges">
+        @@include("../components/badge.html", {
+          "extra-class": "",
+          "body": "<span class=\"badge__sub\">до</span>-50%",
+        })
+        @@include("../components/badge.html", {
+          "extra-class": "badge--icon",
+          "body": "<svg><use xlink:href=\"./img/icons/icons.svg#camera\"></use></svg>",
+        })
+        @@include("../components/badge.html", {
+          "extra-class": "",
+          "body": "СП",
+        })
+        @@include("../components/badge.html", {
+          "extra-class": "",
+          "body": "TTF",
+        })
+      </div>
+      
     </main>
   </body>
 </html>

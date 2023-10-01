@@ -3,11 +3,14 @@
 @import "../basis/_variables";
 
 .shop-window {
+  $root: &;
+
   display: grid;
   grid-template-columns: 15rem 1fr;
   gap: 2.5rem 1.25rem;
   grid-template-areas:
   "tabs tabs"
+  "actions actions"
   "menu goods"
   ;
 
@@ -19,11 +22,40 @@
     grid-area: menu;
   }
 
+  &__actions {
+    grid-area: actions;
+
+    @extend %flex-space-between;
+
+    &-filters {
+      border: 1px solid red;
+    }
+
+    &-density {
+      &#{$root}__actions-density--tile {
+        & #{$root}__actions-density-tile {
+          display: none;
+        }
+        & #{$root}__actions-density-grid {
+          display: block;
+        }
+      }
+
+      &-grid {
+        display: none;
+      }
+    }
+  }
+
   &__goods {
     grid-area: goods;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+
+    &--horizontally {
+      grid-template-columns: 1fr;
+    }
   }
 }
