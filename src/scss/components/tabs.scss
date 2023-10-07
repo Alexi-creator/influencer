@@ -1,3 +1,52 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
 .tabs {
-  
+  $root: &;
+
+  &__list {
+    @extend %flex-space-between;   
+  }
+
+  &__tab {
+    @extend %flex-center;
+
+    position: relative;
+    gap: 0.25rem;
+    padding: 0 1.25rem;
+    transition: var(--transition-base);
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      width: calc(100% - 2.5rem);
+      height: 1px;
+      bottom: 0;
+      left: 1.25rem;
+      background-color: rgb(var(--color-black));
+    }
+
+    &:hover, &--active {
+      font-weight: 600;
+
+      &::after {
+        display: block;
+      }
+    }
+
+    &-count {
+      color: rgb(var(--color-grey));
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &#{$root}__content--active {
+      display: block;
+    }
+  }
 }
