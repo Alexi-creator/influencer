@@ -5,14 +5,35 @@
 .shop-window {
   $root: &;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
+  &__title {
+    color: rgb(var(--color-grey));
+
+    @include media($md) {
+      display: none;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 0.5rem;
+
+    @include media($md) {
+      margin-top: 0;
+    }
+  }
 
   &__controls {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25rem
+    gap: 1.25rem;
+
+    @include media($lg) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__tabs {
@@ -22,7 +43,31 @@
   &__actions {
     @extend %flex-space-between;
 
+    @include media($lg) {
+      gap: 0.5rem;
+    }
+
+    & .btn {
+      font-weight: 400;
+    }
+
+    &-categories {
+      display: none;
+    }
+
+    &-sorts {
+      display: none;
+
+      @include media($lg) {
+        display: inline-flex;
+      }
+    }
+
     &-density {
+      @include media($lg) {
+        display: none;
+      }
+
       &#{$root}__actions-density--tile {
         & #{$root}__actions-density-tile {
           display: none;
@@ -67,6 +112,7 @@
 
       &--horizontally#{$root}__goods-items{
         grid-template-columns: 1fr;
+        gap: 0.5rem;
       }
   
       @include media($md) {
