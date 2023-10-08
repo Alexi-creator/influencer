@@ -1,7 +1,8 @@
 import '../common'
-import { Popup } from '../modules/popup'
 
+import { Popup } from '../modules/popup'
 import { Collapse } from '../modules/collapse'
+import { Slider } from '../modules/slider'
 
 window.addEventListener('load', () => {
   try {
@@ -11,6 +12,11 @@ window.addEventListener('load', () => {
   }
   try {
     new Popup()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Slider('.swiper-uikit', {})
   } catch (error) {
     console.log(error)
   }

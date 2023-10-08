@@ -1,5 +1,7 @@
 @import "../common";
 
+@import "../vendors/swiper-bundle.min";
+
 @import "../components/checkbox";
 @import "../components/radio";
 @import "../components/collapse";
@@ -46,6 +48,36 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  &__swiper {
+    max-width: 600px;
+    margin: 0 auto;
+
+    & .swiper-slide {
+      text-align: center;
+    }
+
+    & .swiper-button-prev {
+      & svg {
+        transform: rotate(90deg);
+
+        & use {
+          stroke: rgb(var(--color-black));
+          stroke-width: 2px;
+        }
+      }
+    }
+    & .swiper-button-next {
+      & svg {
+        transform: rotate(-90deg);
+
+        & use {
+          stroke: rgb(var(--color-black));
+          stroke-width: 2px;
+        }
+      }
+    }
   }
 }
 

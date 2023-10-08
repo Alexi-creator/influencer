@@ -6,7 +6,7 @@
   $root: &;
 
   &__list {
-    @extend %flex-space-between;   
+    @extend %flex-space-between;
   }
 
   &__tab {
