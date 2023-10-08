@@ -8,8 +8,16 @@
   max-width: var(--max-width-container);
 }
 
+.section--shop-preview {
+  padding-bottom: 0;
+}
+
 .section--shop-preview .section__inner {
   max-width: 100%;
+}
+
+.section--shop-window {
+  padding-top: 0;
 }
 
 @media (min-width: 48rem) {

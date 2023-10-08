@@ -130,6 +130,12 @@
   margin-right: 0.12rem;
 }
 
+@media (min-width: 48rem) {
+  .hr {
+    margin: 1.25rem auto;
+  }
+}
+
 @media (min-width: 75rem) {
   .hr {
     margin: 2.5rem auto;

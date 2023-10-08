@@ -154,6 +154,8 @@ button {
   --color-white: 255, 255, 255;
   --color-grey: 170, 170, 170;
   --color-grey-light: 212, 212, 212;
+  --color-grey-soft: 244, 244, 244;
+  --color-grey-pale: 230, 230, 230;
   --color-grey-dark: 206, 206, 206;
   --color-green: 80, 165, 51;
   --max-width-container: 67rem;
@@ -176,8 +178,16 @@ button {
   max-width: var(--max-width-container);
 }
 
+.section--shop-preview {
+  padding-bottom: 0;
+}
+
 .section--shop-preview .section__inner {
   max-width: 100%;
+}
+
+.section--shop-window {
+  padding-top: 0;
 }
 
 .alert {
@@ -581,6 +591,10 @@ svg {
 @media (min-width: 48rem) {
   .section {
     padding: 1.5rem 2.5rem;
+  }
+
+  .hr {
+    margin: 1.25rem auto;
   }
 
   .search__icon-search {

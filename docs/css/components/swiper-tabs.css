@@ -1,0 +1,67 @@
+.swiper-tabs .tabs__tab {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.swiper-tabs .swiper-button-prev,
+.swiper-tabs .swiper-button-next {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-round);
+}
+
+.swiper-tabs .swiper-button-prev::after,
+.swiper-tabs .swiper-button-next::after {
+  content: "";
+}
+
+.swiper-tabs .swiper-button-prev svg,
+.swiper-tabs .swiper-button-next svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.swiper-tabs .swiper-button-prev svg use,
+.swiper-tabs .swiper-button-next svg use {
+  stroke: rgb(var(--color-primary));
+  stroke-width: 2px;
+}
+
+.swiper-tabs .swiper-button-prev {
+  left: 0;
+}
+
+.swiper-tabs .swiper-button-prev svg {
+  transform: rotate(90deg);
+}
+
+.swiper-tabs .swiper-button-next {
+  right: 0;
+}
+
+.swiper-tabs .swiper-button-next svg {
+  transform: rotate(-90deg);
+}
+
+.swiper-tabs .swiper-button-disabled {
+  background-color: rgb(var(--color-grey-soft));
+  opacity: 1;
+}
+
+.swiper-tabs .swiper-button-disabled svg use {
+  stroke: rgb(var(--color-grey-pale));
+}
+
+@media (min-width: 48rem) {
+  .swiper-tabs .swiper-slide {
+    flex-shrink: unset;
+    width: unset;
+  }
+
+  .swiper-tabs .swiper-button-prev,
+  .swiper-tabs .swiper-button-next {
+    display: none;
+  }
+}

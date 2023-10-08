@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231001071434">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231008194304">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20231001071434"></script>
+  <script defer src="js/index.min.js?_v=20231008194304"></script>
 </head>
   <body>
     <header class="header">
@@ -240,35 +240,75 @@
         <hr class="hr">
       </div>
 
-      <div class="section">
+      <div class="section section--shop-window">
         <div class="section__inner">
-          <div class="shop-window">
-  <div class="shop-window__controls">
-    <div class="shop-window__tabs">
-      <div class="tabs">
-  Товары Совместные покупки Test For Free Контакты
-</div>
-    </div>
-    <div class="shop-window__actions">
-      <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
-        Фильтры
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#filters"></use>
-        </svg>
+          <div class="shop-window tabs">
+  <div class="shop-window__title">Выберите раздел магазина</div>
+  <div class="shop-window__inner">
+    <div class="shop-window__controls">
+      <div class="shop-window__tabs">
+        <div class="tabs__head">
+          <div class="swiper swiper-tabs">
+            <div class="tabs__list swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tabs__tab" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tabs__tab" data-tab-path="contacts">Контакты</div>
+              </div>
+            </div>
+            <div class="swiper-button-prev">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
+            </div>
+            <div class="swiper-button-next">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
-        <svg class="shop-window__actions-density-tile">
-          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
-        </svg>
-        <svg class="shop-window__actions-density-grid">
-          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
-        </svg>
+      <div class="shop-window__actions">
+        <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey">
+          Сортировка
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#sorts"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-categories btn btn--outlined btn--color-grey">
+          Категории
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#categories"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
+          Фильтры
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+          <svg class="shop-window__actions-density-tile">
+            <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+          </svg>
+          <svg class="shop-window__actions-density-grid">
+            <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="shop-window__goods">
-    <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
+    <div class="tabs__contents">
+      <div class="tabs__content tabs__content--active" data-tab-target="goods">
+        <div class="shop-window__goods">
+          <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
 
 <!-- const dataMenu = [
   {
@@ -437,10 +477,11 @@
   </li>
 </ul>
 </div>
-    <div class="shop-window__goods-items">
-      <div class="product-card ">
+          <div class="shop-window__goods-items">
+            <div class="product-card ">
   <div class="product-card__img">
-    <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card.webp" type="image/webp"><img class="product-card__img-first" src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card2.webp" type="image/webp"><img class="product-card__img-second" src="img/product-card2.jpg" alt="product2"></picture>
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         <div class="badge ">
@@ -472,7 +513,11 @@
         Комбинезон из шелковой вискозы с
       </div>
       <div class="product-card__sizes">
-        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>38</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
       </div>
       <div class="product-card__likes">
         <svg class="collapse__toggle-icon">
@@ -491,9 +536,10 @@
     </div>
   </div>
 </div>
-      <div class="product-card ">
+            <div class="product-card ">
   <div class="product-card__img">
-    <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card.webp" type="image/webp"><img class="product-card__img-first" src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card2.webp" type="image/webp"><img class="product-card__img-second" src="img/product-card2.jpg" alt="product2"></picture>
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         <div class="badge ">
@@ -525,7 +571,11 @@
         Плетеная сумка-сэтчел
       </div>
       <div class="product-card__sizes">
-        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
       </div>
       <div class="product-card__likes">
         <svg class="collapse__toggle-icon">
@@ -544,9 +594,10 @@
     </div>
   </div>
 </div>
-      <div class="product-card ">
+            <div class="product-card ">
   <div class="product-card__img">
-    <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card.webp" type="image/webp"><img class="product-card__img-first" src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card2.webp" type="image/webp"><img class="product-card__img-second" src="img/product-card2.jpg" alt="product2"></picture>
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         <div class="badge ">
@@ -578,7 +629,11 @@
         Туфли ZOE с острым носом и эластичныим
       </div>
       <div class="product-card__sizes">
-        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
       </div>
       <div class="product-card__likes">
         <svg class="collapse__toggle-icon">
@@ -597,9 +652,10 @@
     </div>
   </div>
 </div>
-      <div class="product-card ">
+            <div class="product-card ">
   <div class="product-card__img">
-    <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card.webp" type="image/webp"><img class="product-card__img-first" src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card2.webp" type="image/webp"><img class="product-card__img-second" src="img/product-card2.jpg" alt="product2"></picture>
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         <div class="badge ">
@@ -631,7 +687,11 @@
         Пуховик из кожи с узором monogram mi
       </div>
       <div class="product-card__sizes">
-        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
       </div>
       <div class="product-card__likes">
         <svg class="collapse__toggle-icon">
@@ -650,9 +710,10 @@
     </div>
   </div>
 </div>
-      <div class="product-card ">
+            <div class="product-card ">
   <div class="product-card__img">
-    <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card.webp" type="image/webp"><img class="product-card__img-first" src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card2.webp" type="image/webp"><img class="product-card__img-second" src="img/product-card2.jpg" alt="product2"></picture>
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         <div class="badge ">
@@ -684,7 +745,11 @@
         Пуховик из кожи с узором monogram mi
       </div>
       <div class="product-card__sizes">
-        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
       </div>
       <div class="product-card__likes">
         <svg class="collapse__toggle-icon">
@@ -703,9 +768,10 @@
     </div>
   </div>
 </div>
-      <div class="product-card ">
+            <div class="product-card ">
   <div class="product-card__img">
-    <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card.webp" type="image/webp"><img class="product-card__img-first" src="img/product-card.jpg" alt="product"></picture>
+    <picture><source srcset="img/product-card2.webp" type="image/webp"><img class="product-card__img-second" src="img/product-card2.jpg" alt="product2"></picture>
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         <div class="badge ">
@@ -737,7 +803,11 @@
         Пуховик из кожи с узором monogram mi
       </div>
       <div class="product-card__sizes">
-        Размеры: <span class="product-card__sizes-variants">13 вариантов</span>
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
       </div>
       <div class="product-card__likes">
         <svg class="collapse__toggle-icon">
@@ -756,9 +826,51 @@
     </div>
   </div>
 </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabs__content" data-tab-target="sp">
+        content Совместные покупки
+      </div>
+      <div class="tabs__content" data-tab-target="tff">
+        content Test For Free
+      </div>
+      <div class="tabs__content" data-tab-target="contacts">
+        <div class="contact-info">
+  <div class="contact-info__connect">
+    <div class="contact-info__connect-item contact-info__mail">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#mail"></use>
+      </svg>
+      info@lass-fashion.ru
+    </div>
+    <div class="contact-info__connect-item contact-info__phone">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#phone"></use>
+      </svg>
+      +7 (495) 234-34-34
+    </div>
+    <div class="contact-info__connect-item contact-info__shedule">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#clock"></use>
+      </svg>
+      ПН-ВС 10:00-20:00
     </div>
   </div>
-
+  <div class="contact-info__descr">
+    <h3 class="contact-info__descr-title">Юридическая информация:</h3>
+    <p>Полное наименование: Общество с ограниченной ответственностью «Национальный цифровой ресурс «РУКОНТ»
+      Юридический адрес: 129090, г. Москва, Протопоповский пер., д. 19, корп. 12
+      Телефон: +7(495)719-09-21
+    </p>
+    <p>ИНН/КПП: 7702823270 / 770201001
+      ОГРН: 1137746876090
+    </p>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
 </div>
 
         </div>
