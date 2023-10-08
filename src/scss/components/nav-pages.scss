@@ -1,9 +1,16 @@
 @import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
 
 .nav-pages {
+  display: none;
   background-color: rgb(var(--color-primary-pale));
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
+
+  @include media($lg) {
+    display: block;
+  }
 
   &__list {
     @extend %flex-center;

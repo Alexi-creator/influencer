@@ -9,6 +9,10 @@
 	border: none;
 	background: rgb(var(--color-black-light));
 
+  @include media($md) {
+    margin: 1.25rem auto;
+  }
+
   @include media($lg) {
     margin: 2.5rem auto;
   }

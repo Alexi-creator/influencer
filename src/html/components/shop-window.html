@@ -1,72 +1,131 @@
-<div class="shop-window">
-  <div class="shop-window__controls">
-    <div class="shop-window__tabs">
-      @@include("./tabs.html")
-    </div>
-    <div class="shop-window__actions">
-      <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
-        Фильтры
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#filters"></use>
-        </svg>
+<div class="shop-window tabs">
+  <div class="shop-window__title">Выберите раздел магазина</div>
+  <div class="shop-window__inner">
+    <div class="shop-window__controls">
+      <div class="shop-window__tabs">
+        <div class="tabs__head">
+          <div class="swiper swiper-tabs">
+            <div class="tabs__list swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tabs__tab" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tabs__tab" data-tab-path="contacts">Контакты</div>
+              </div>
+            </div>
+            <div class="swiper-button-prev">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
+            </div>
+            <div class="swiper-button-next">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
-        <svg class="shop-window__actions-density-tile">
-          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
-        </svg>
-        <svg class="shop-window__actions-density-grid">
-          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
-        </svg>
+      <div class="shop-window__actions">
+        <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey">
+          Сортировка
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#sorts"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-categories btn btn--outlined btn--color-grey">
+          Категории
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#categories"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
+          Фильтры
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+          <svg class="shop-window__actions-density-tile">
+            <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+          </svg>
+          <svg class="shop-window__actions-density-grid">
+            <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="tabs__contents">
+      <div class="tabs__content tabs__content--active" data-tab-target="goods">
+        <div class="shop-window__goods">
+          <div class="shop-window__menu">@@include("./product-menu.html")</div>
+          <div class="shop-window__goods-items">
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Комбинезон из шелковой вискозы с",
+              "discount": "--discount",
+              "sale": "от 91 250 ₽",
+              "like": "favourite",
+              "sizes": "<li>36</li><li>38</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Плетеная сумка-сэтчел",
+              "discount": "",
+              "sale": "",
+              "like": "",
+              "sizes": "<li>38</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Туфли ZOE с острым носом и эластичныим",
+              "discount": "",
+              "sale": "",
+              "like": "",
+              "sizes": "<li>36</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Пуховик из кожи с узором monogram mi",
+              "discount": "",
+              "sale": "",
+              "like": "favourite",
+              "sizes": "<li>36</li><li>38</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Пуховик из кожи с узором monogram mi",
+              "discount": "",
+              "sale": "",
+              "like": "",
+              "sizes": "<li>36</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Пуховик из кожи с узором monogram mi",
+              "discount": "",
+              "sale": "",
+              "like": "favourite",
+              "sizes": "<li>38</li><li>40</li>"
+            })
+          </div>
+        </div>
+      </div>
+      <div class="tabs__content" data-tab-target="sp">
+        content Совместные покупки
+      </div>
+      <div class="tabs__content" data-tab-target="tff">
+        content Test For Free
+      </div>
+      <div class="tabs__content" data-tab-target="contacts">
+        @@include("./contact-info.html")
       </div>
     </div>
   </div>
-  
-  <div class="shop-window__goods">
-    <div class="shop-window__menu">@@include("./product-menu.html")</div>
-    <div class="shop-window__goods-items">
-      @@include("./product-card.html", {
-        "extra-class": "",
-        "title": "Комбинезон из шелковой вискозы с",
-        "discount": "--discount",
-        "sale": "от 91 250 ₽",
-        "like": "favourite",
-      })
-      @@include("./product-card.html", {
-        "extra-class": "",
-        "title": "Плетеная сумка-сэтчел",
-        "discount": "",
-        "sale": "",
-        "like": "",
-      })
-      @@include("./product-card.html", {
-        "extra-class": "",
-        "title": "Туфли ZOE с острым носом и эластичныим",
-        "discount": "",
-        "sale": "",
-        "like": "",
-      })
-      @@include("./product-card.html", {
-        "extra-class": "",
-        "title": "Пуховик из кожи с узором monogram mi",
-        "discount": "",
-        "sale": "",
-        "like": "favourite",
-      })
-      @@include("./product-card.html", {
-        "extra-class": "",
-        "title": "Пуховик из кожи с узором monogram mi",
-        "discount": "",
-        "sale": "",
-        "like": "",
-      })
-      @@include("./product-card.html", {
-        "extra-class": "",
-        "title": "Пуховик из кожи с узором monogram mi",
-        "discount": "",
-        "sale": "",
-        "like": "favourite",
-      })
-    </div>
-  </div>
-
 </div>

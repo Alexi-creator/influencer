@@ -16,7 +16,7 @@ export const path = {
   },
   // пути для исходников
   src: {
-    // раскоментить при использовании pug и закоментить нижнию строчку
+    // раскоментить при использовании pug и закоментить ниже строчку
     // html: `${srcFolder}/*.pug`,
     htmlPages: `${srcFolder}/html/pages/*.html`,
     html: `${srcFolder}/html/**/*.html`,
