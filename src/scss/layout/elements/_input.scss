@@ -1,0 +1,40 @@
+@import "../../basis/_variables";
+@import "../../basis/_mixins";
+
+.input-text {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 0.125rem solid rgb(var(--color-primary-light));
+  border-radius: 0.1875rem;
+  padding: 0.75rem 1.25rem;
+  height: 3rem;
+
+  &--color-grey {
+    border-color: rgb(var(--color-grey-soft));
+  }
+
+  &__prefix {
+
+  }
+
+  &__input {
+    width: 100%;
+    height: 1.5rem;
+    border: none;
+    outline: none;
+    font-size: 1.125rem;
+    padding: 0;
+
+    &::placeholder {
+      color: rgb(var(--color-grey-light));
+      font-weight: 400;
+      font-size: 1.125rem;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  &__sufix {
+    
+  }
+}

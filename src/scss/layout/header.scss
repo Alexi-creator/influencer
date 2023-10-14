@@ -2,7 +2,6 @@
 @import "../basis/_mixins";
 @import "../basis/_extends";
 
-@import "../components/search";
 @import "../components/menu-mobile";
 
 .header {
@@ -123,6 +122,32 @@
 
       @include media($md) {
         margin-left: 1.5rem;
+      }
+
+      &-select {
+        display: none;
+        max-width: 11.25rem;
+        width: 100%;
+        font-size: 1rem;
+
+        @include media($md) {
+          display: flex;
+          justify-content: flex-end;
+          border-left: 2px solid rgb(var(--color-black-light));
+        }
+      }
+
+      &-icon {
+        & > svg {
+          width: 1rem;
+          height: 1rem;
+          flex-shrink: 0;
+
+          @include media ($md) {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
       }
     }
 

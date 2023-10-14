@@ -11,6 +11,7 @@
       <h2>Buttons:</h2>
       <div class="ui-kit__block ui-kit__buttons">
         <button class="btn">Standart</button>
+        <button class="btn btn--color-primary-light">primary light</button>
         <button class="btn">Count (7)</button>
         <button class="btn btn--text">Text</button>
         <button class="btn btn--text btn--color-grey">Text grey</button>
@@ -18,13 +19,54 @@
         <button class="btn btn--outlined">Outlined</button>
         <button class="btn btn--tag">Tag</button>
         <button class="btn btn--tag btn--tag-checked">Tag checked</button>
-        <button class="btn btn--outlined btn--color-grey">Outlined grey</button>
-        <button class="btn btn--outlined">
-          with icons
+        <button class="btn btn--outlined btn--color-grey">
+          Outlined grey with icons
           <svg>
             <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
         </button>
+      </div>
+
+      <h2>Input:</h2>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          placeholder: "Простой инпут",
+          prefix: "",
+          suffix: "",
+          "extra-class": "",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          placeholder: "Инпут с элементом слева",
+          prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
+          suffix: "",
+          "extra-class": "",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          placeholder: "Инпут с элементом слева и справа",
+          prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
+          suffix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#checkbox\"></use></svg>",
+          "extra-class": "",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          placeholder: "Инпут с серой рамкой",
+          prefix: "",
+          suffix: "",
+          "extra-class": "input-tex
+          "extra-class-prefix": "",t--color-grey",
+          "extra-class-suffix": "",
+        })
       </div>
 
       <h2>Checkbox:</h2>
