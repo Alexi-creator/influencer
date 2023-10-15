@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0.75rem;
+  padding: 0.75rem 0.75rem 0;
   border-radius: var(--radius-medium);
 
   @include media($md) {
@@ -56,6 +56,18 @@
       "title"
       "subscribe"
       "categories";
+    }
+  }
+
+  &__slider {
+
+    #{$root}__slide {
+
+      & img {
+        // height: 100%;
+        height: 18rem;
+        object-fit: cover;
+      }
     }
   }
 
@@ -331,7 +343,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem;
-    margin: 0 -0.75rem;
+    margin: -1rem -0.75rem 0;
 
     #{$root}--processing & {
       background-color: rgb(var(--color-primary-tag-checked));
