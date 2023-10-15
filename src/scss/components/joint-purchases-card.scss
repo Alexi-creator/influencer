@@ -96,6 +96,10 @@
       border-radius: var(--radius-round);
       background-color: rgb(var(--color-grey));
     }
+
+    #{$root}--disabled & {
+      color: rgb(var(--color-grey-dark));
+    }
   }
 
   &__categories {
@@ -107,18 +111,18 @@
     display: grid;
     grid-template-areas: 
     "discount"
-    "status"
+    "already"
     "progress"
     "divider"
-    "until"
+    "status"
     ;
     gap: 0.75rem;
 
     @include media($md) {
       grid-template-columns: max-content 1fr auto;
       grid-template-areas:
-      "discount status until"
-      "discount progress until"
+      "discount already status"
+      "discount progress status"
       ;
     }
     
@@ -126,10 +130,35 @@
       grid-template-columns: 1fr auto;
       align-items: center;
       grid-template-areas:
-      "status status"
+      "already already"
       "progress progress"
-      "discount until"
+      "discount status"
       ;
+    }
+
+    #{$root}--processing & {
+      grid-template-areas: 
+      "discount"
+      "already"
+      "progress"
+      "divider"
+      "until"
+      ;
+
+      @include media($md) {
+        grid-template-areas:
+        "discount already until"
+        "discount progress until"
+        ;
+      }
+
+      @include media($lg) {
+        grid-template-areas:
+        "already already"
+        "progress progress"
+        "discount until"
+        ;
+      }
     }
   }
 
@@ -186,14 +215,14 @@
     }
   }
 
-  &__status, &__until {
+  &__already, &__until {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
   }
 
-  &__status {
-    grid-area: status;
+  &__already {
+    grid-area: already;
 
     @include media($md) {
       justify-content: center;
@@ -245,13 +274,46 @@
 
   &__until {
     grid-area: until;
+    display: none;
 
     @include media($md) {
-      display: block;
       font-size: 1rem;
+
+      #{$root}--processing & {
+        display: block;
+      }
     }
 
     &-date {
+      font-weight: 600;
+    }
+  }
+
+  &__status {
+    grid-area: status;
+    font-size: 1rem;
+
+    #{$root}--processing & {
+      display: none;
+    }
+
+    #{$root}--ready & {
+      &-text {
+        color: rgb(var(--color-green));
+      }
+    }
+
+    #{$root}--disabled & {
+      &-text {
+        color: rgb(var(--color-red));
+      }
+    }
+
+    &-title {
+
+    }
+
+    &-text {
       font-weight: 600;
     }
   }
