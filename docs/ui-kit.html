@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20231008194304">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20231015185747">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20231008194304"></script>
+  <script defer src="js/ui-kit.min.js?_v=20231015185747"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -14,6 +14,7 @@
       <h2>Buttons:</h2>
       <div class="ui-kit__block ui-kit__buttons">
         <button class="btn">Standart</button>
+        <button class="btn btn--color-primary-light">primary light</button>
         <button class="btn">Count (7)</button>
         <button class="btn btn--text">Text</button>
         <button class="btn btn--text btn--color-grey">Text grey</button>
@@ -21,13 +22,58 @@
         <button class="btn btn--outlined">Outlined</button>
         <button class="btn btn--tag">Tag</button>
         <button class="btn btn--tag btn--tag-checked">Tag checked</button>
-        <button class="btn btn--outlined btn--color-grey">Outlined grey</button>
-        <button class="btn btn--outlined">
-          with icons
+        <button class="btn btn--outlined btn--color-grey">
+          Outlined grey with icons
           <svg>
             <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
         </button>
+      </div>
+
+      <h2>Input:</h2>
+      <div class="ui-kit__block ui-kit__input">
+        <div class="input-text ">
+  <div class="input-text__prefix ">
+    
+  </div>
+  <input class="input-text__input" type="text" placeholder="Простой инпут">
+  <div class="input-text__suffix ">
+    
+  </div>
+</div>
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        <div class="input-text ">
+  <div class="input-text__prefix ">
+    <svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg>
+  </div>
+  <input class="input-text__input" type="text" placeholder="Инпут с элементом слева">
+  <div class="input-text__suffix ">
+    
+  </div>
+</div>
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        <div class="input-text ">
+  <div class="input-text__prefix ">
+    <svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg>
+  </div>
+  <input class="input-text__input" type="text" placeholder="Инпут с элементом слева и справа">
+  <div class="input-text__suffix ">
+    <svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg>
+  </div>
+</div>
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        <div class="input-text input-text--color-grey">
+  <div class="input-text__prefix ">
+    
+  </div>
+  <input class="input-text__input" type="text" placeholder="Инпут с серой рамкой">
+  <div class="input-text__suffix ">
+    
+  </div>
+</div>
       </div>
 
       <h2>Checkbox:</h2>
@@ -136,7 +182,7 @@
       <h2>Badges:</h2>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__badges">
         <div class="badge ">
-  <span class="badge__sub">до</span>-50%
+  <span class='badge__sub'>до</span>-50%
 </div>
         <div class="badge badge--icon">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
@@ -146,6 +192,24 @@
 </div>
         <div class="badge ">
   TTF
+</div>
+        <div class="badge badge--big">
+  big
+</div>
+        <div class="badge badge--big badge--without-border">
+  big without border
+</div>
+        <div class="badge badge--font-commissioner">
+  font commissioner
+</div>
+      </div>
+
+      <div class="ui-kit__block ui-kit__badges">
+        <div class="badge badge--font-commissioner badge--color-primary-light badge--without-border">
+  color light primary
+</div>
+        <div class="badge badge--font-commissioner badge--color-green badge--without-border">
+  color green
 </div>
       </div>
 
@@ -173,6 +237,24 @@
             </svg>
           </div>
         </div>
+      </div>
+
+      <h2>Divider:</h2>
+      <div class="ui-kit__block ui-kit__divider">
+        <div class="hr"></div>
+      </div>
+
+      <h2>Progress:</h2>
+      <div class="ui-kit__block ui-kit__progress">
+        <div class="progress progress--primary">
+  <div class="progress__line" style="width:35%"></div>
+</div>
+        <div class="progress progress--green">
+  <div class="progress__line" style="width:85%"></div>
+</div>
+        <div class="progress progress--grey">
+  <div class="progress__line" style="width:20%"></div>
+</div>
       </div>
       
     </main>

@@ -158,6 +158,7 @@ button {
   --color-grey-pale: 230, 230, 230;
   --color-grey-dark: 206, 206, 206;
   --color-green: 80, 165, 51;
+  --color-red: 221, 94, 94;
   --max-width-container: 67rem;
   --transition-base: all 0.2s linear;
   --z-fixed: 100;
@@ -165,6 +166,7 @@ button {
   --z-over: 1010;
   --z-top: 9999;
   --radius-small: 0.125rem;
+  --radius-medium: 0.25rem;
   --radius-round: 68rem;
 }
 
@@ -231,6 +233,11 @@ button {
   color: unset;
 }
 
+.btn.btn--color-primary-light {
+  background-color: rgb(var(--color-primary-soft));
+  color: rgb(var(--color-primary));
+}
+
 .btn.btn--icon {
   padding: 0.75rem;
 }
@@ -287,22 +294,44 @@ button {
 }
 
 .badge {
-  height: 2rem;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   background-color: rgb(var(--color-primary));
   border: 2px solid;
   border-radius: var(--radius-small);
   border-color: rgb(var(--color-white));
   color: rgb(var(--color-white));
-  padding: 0.25rem 0.5rem;
+  padding: 0.35rem 0.5rem;
   font-family: BebasNeue;
   font-size: 1.125rem;
+  line-height: 1.125rem;
+}
+
+.badge--big {
+  padding: 0.85rem 1.25rem;
+}
+
+.badge--without-border {
+  border-color: transparent;
+}
+
+.badge--font-commissioner {
+  font-family: Commissioner;
+  font-weight: 600;
+}
+
+.badge--color-primary-light {
+  background-color: rgb(var(--color-primary-pale));
+  color: rgb(var(--color-primary));
+}
+
+.badge--color-green {
+  background-color: rgba(var(--color-green), 0.04);
+  color: rgb(var(--color-green));
 }
 
 .badge--icon {
-  align-items: center;
-  padding: 0.5rem;
+  padding: 0.4rem;
 }
 
 .badge svg {
@@ -318,8 +347,83 @@ button {
 }
 
 .badge__sub {
+  display: flex;
+  align-self: flex-end;
   font-size: 0.625rem;
+  line-height: 0.625rem;
   margin-right: 0.12rem;
+}
+
+.input-text {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 0.125rem solid rgb(var(--color-primary-light));
+  border-radius: 0.1875rem;
+  padding: 0.75rem 1.25rem;
+  height: 3rem;
+}
+
+.input-text--color-grey {
+  border-color: rgb(var(--color-grey-soft));
+}
+
+.input-text__input {
+  width: 100%;
+  height: 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1.125rem;
+  padding: 0;
+}
+
+.input-text__input::-moz-placeholder {
+  color: rgb(var(--color-grey-light));
+  font-weight: 400;
+  font-size: 1.125rem;
+  letter-spacing: -0.2px;
+}
+
+.input-text__input::placeholder {
+  color: rgb(var(--color-grey-light));
+  font-weight: 400;
+  font-size: 1.125rem;
+  letter-spacing: -0.2px;
+}
+
+.progress {
+  height: 0.75rem;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.progress--primary {
+  background-color: rgb(var(--color-primary-tag-checked));
+}
+
+.progress--primary .progress__line {
+  background-color: rgb(var(--color-primary-dark));
+}
+
+.progress--green {
+  background-color: rgba(var(--color-green), 0.04);
+}
+
+.progress--green .progress__line {
+  background-color: rgb(var(--color-green));
+}
+
+.progress--grey {
+  background-color: rgb(var(--color-grey-soft));
+}
+
+.progress--grey .progress__line {
+  background-color: rgb(var(--color-grey-dark));
+}
+
+.progress__line {
+  height: 100%;
+  border-radius: var(--radius-small);
 }
 
 .popup__overlay,
@@ -330,50 +434,64 @@ button {
   align-items: center;
 }
 
-.search {
-  display: flex;
-  align-items: center;
-  border: 0.125rem solid rgb(var(--color-primary-light));
-  border-radius: 0.1875rem;
-  padding: 0.75rem 1.25rem;
+.swiper-button-prev,
+.swiper-button-next {
+  width: 3rem;
   height: 3rem;
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-round);
 }
 
-.search__icon-search {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
 }
 
-.search__input {
-  width: 100%;
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: 1.5rem;
   height: 1.5rem;
-  margin-left: 0.5rem;
-  border: none;
-  font-size: 1.125rem;
-  padding: 0;
 }
 
-.search__input::-moz-placeholder {
-  color: rgb(var(--color-grey-light));
-  font-weight: 400;
-  font-size: 1.125rem;
-  letter-spacing: -0.2px;
+.swiper-button-prev svg use,
+.swiper-button-next svg use {
+  stroke: rgb(var(--color-primary));
+  stroke-width: 2px;
 }
 
-.search__input::placeholder {
-  color: rgb(var(--color-grey-light));
-  font-weight: 400;
-  font-size: 1.125rem;
-  letter-spacing: -0.2px;
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  background-color: rgb(var(--color-grey-soft));
+  opacity: 1;
 }
 
-.search__select {
-  display: none;
-  max-width: 11.25rem;
-  width: 100%;
-  font-size: 1rem;
-  border-left: 2px solid rgb(var(--color-black-light));
+.swiper-button-prev.swiper-button-disabled svg use,
+.swiper-button-next.swiper-button-disabled svg use {
+  stroke: rgb(var(--color-grey-pale));
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-prev svg {
+  transform: rotate(90deg);
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-next svg {
+  transform: rotate(-90deg);
+}
+
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav {
@@ -493,6 +611,19 @@ button {
   flex-grow: 1;
 }
 
+.header__nav-search-select {
+  display: none;
+  max-width: 11.25rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.header__nav-search-icon > svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
 .header__nav-feed {
   display: none;
   margin-left: 1.5rem;
@@ -597,16 +728,6 @@ svg {
     margin: 1.25rem auto;
   }
 
-  .search__icon-search {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .search__select {
-    display: flex;
-    justify-content: flex-end;
-  }
-
   .nav__list {
     gap: 2.5rem;
   }
@@ -626,6 +747,17 @@ svg {
 
   .header__nav-search {
     margin-left: 1.5rem;
+  }
+
+  .header__nav-search-select {
+    display: flex;
+    justify-content: flex-end;
+    border-left: 2px solid rgb(var(--color-black-light));
+  }
+
+  .header__nav-search-icon > svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .popup--onlymobile .popup__overlay {
