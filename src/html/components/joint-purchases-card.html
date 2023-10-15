@@ -1,0 +1,61 @@
+<div class="joint-purchases-card @@extra-class">
+  <div class="joint-purchases-card__about">
+    <div class="joint-purchases-card__logo">
+      <img src="@img/shop-avatar.png" alt="shop-avatar">
+    </div>
+    <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
+    <div class="joint-purchases-card__subscribe">
+      Подписаться
+      <span class="joint-purchases-card__subscribe-delimiter"></span>
+      <svg><use xlink:href='./img/icons/icons.svg#share-link'></use></svg>
+    </div>
+    <div class="joint-purchases-card__categories">
+      Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
+    </div>
+  </div>
+  <div class="joint-purchases-card__slider">
+    slider
+  </div>
+  <div class="joint-purchases-card__info">
+    <div class="joint-purchases-card__discount">
+      <div class="joint-purchases-card__discount-amount">
+        @@include("./badge.html", {
+          "extra-class": "badge--big badge--without-border badge--font-commissioner",
+          "body": "Скидка -30%",
+        })
+      </div>
+      <div class="joint-purchases-card__discount-from">
+        при покупке
+        <span>от 136 000 &#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__status">
+      <div class="joint-purchases-card__status-title">Уже купили на:</div>
+      <div class="joint-purchases-card__status-count">
+        <span>79 281</span>
+        <span>/</span>
+        <span>241 093</span>
+        <span>&#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__progress">
+      @@include("./progress.html", {
+        "color": "",
+        "width": "@@width",
+      })
+    </div>
+    <div class="joint-purchases-card__hr hr"></div>
+    <div class="joint-purchases-card__until">
+      Активна до:
+      <div class="joint-purchases-card__until-date">
+        27.01.2020 12:00
+      </div>
+    </div>
+  </div>
+  <div class="joint-purchases-card__brand">
+    <div class="joint-purchases-card__brand-logo">
+      <img src="@img/shop-avatar.png" alt="shop-avatar">
+    </div>
+    <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
+  </div>
+</div>

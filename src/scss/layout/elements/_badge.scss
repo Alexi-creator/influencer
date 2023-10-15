@@ -1,19 +1,41 @@
 .badge {
-  height: 2rem;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   background-color: rgb(var(--color-primary));
   border: 2px solid;
   border-radius: var(--radius-small);
   border-color: rgb(var(--color-white));
   color: rgb(var(--color-white));
-  padding: 0.25rem 0.5rem;
+  padding: 0.35rem 0.5rem;
   font-family: BebasNeue;
   font-size: 1.125rem;
+  line-height: 1.125rem;
+
+  &--big {
+    padding: 0.85rem 1.25rem;
+  }
+
+  &--without-border {
+    border-color: transparent;
+  }
+
+  &--font-commissioner {
+    font-family: Commissioner;
+    font-weight: 600;
+  }
+
+  &--color-primary-light {
+    background-color: rgb(var(--color-primary-pale));
+    color: rgb(var(--color-primary));
+  }
+
+  &--color-green {
+    background-color: rgba(var(--color-green), 0.04);
+    color: rgb(var(--color-green));
+  }
   
   &--icon {
-    align-items: center;
-    padding: 0.5rem;
+    padding: 0.4rem;
   }
 
   & svg {
@@ -29,7 +51,10 @@
   }
 
   &__sub {
+    display: flex;
+    align-self: flex-end;
     font-size: 0.625rem;
+    line-height: 0.625rem;
     margin-right: 0.12rem;
   }
 }

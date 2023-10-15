@@ -62,7 +62,8 @@
       </div>
     </div>
     <div class="tabs__contents">
-      <div class="tabs__content tabs__content--active" data-tab-target="goods">
+      <!-- <div class="tabs__content tabs__content--active" data-tab-target="goods"> -->
+      <div class="tabs__content" data-tab-target="goods">
         <div class="shop-window__goods">
           <div class="shop-window__menu">@@include("./product-menu.html")</div>
           <div class="shop-window__goods-items">
@@ -117,16 +118,39 @@
           </div>
         </div>
       </div>
-      <div class="tabs__content" data-tab-target="sp">
+      <div class="tabs__content tabs__content--active" data-tab-target="sp">
         <div class="shop-window__joint-purchases">
-          content Совместные покупки
           <div class="shop-window__joint-purchases-actions">
             <div class="shop-window__joint-purchases-search">
-              <input type="text">
+              @@include("./input-text.html", {
+                placeholder: "Введите название товара",
+                prefix: "<svg class='shop-window__joint-purchases-search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
+                suffix: "",
+                "extra-class": "input-text--color-grey",
+                "extra-class-prefix": "",
+                "extra-class-suffix": "",
+              })
             </div>
             <div class="shop-window__joint-purchases-btn">
-              <button class="btn btn--color-primary-light">Создать СП</button>
+              <button class="btn btn--color-primary-light">
+                <span class="shop-window__joint-purchases-btn-text">Создать СП</span>
+                <svg><use xlink:href='./img/icons/icons.svg#plus'></use></svg>
+              </button>
             </div>
+          </div>
+          <div class="shop-window__joint-purchases-contents">
+            @@include("./joint-purchases-card.html", {
+              "extra-class": "joint-purchases-card--processing",
+              "width": "30%",
+            })
+            @@include("./joint-purchases-card.html", {
+              "extra-class": "joint-purchases-card--ready",
+              "width": "100%",
+            })
+            @@include("./joint-purchases-card.html", {
+              "extra-class": "joint-purchases-card--disabled",
+              "width": "100%",
+            })
           </div>
         </div>
       </div>
