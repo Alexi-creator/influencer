@@ -1,7 +1,10 @@
-@import "../common";
-
+// vendors
 @import "../vendors/swiper-bundle.min";
 
+// common styles
+@import "../common";
+
+// components
 @import "../components/shop-preview";
 @import "../components/nav-pages";
 @import "../components/share";
@@ -11,3 +14,5 @@
 @import "../components/product-card";
 @import "../components/tabs";
 @import "../components/contact-info";
+@import "../components/select";
+@import "../components/joint-purchases-card";

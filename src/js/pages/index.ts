@@ -39,4 +39,24 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+  try {
+    new Slider(
+      '.swiper-joint-purchases',
+      {
+        slidesPerView: 2,
+        centeredSlides: false,
+        spaceBetween: 12,
+        breakpoints: {
+          768: {
+            slidesPerView: 3.5,
+          },
+          1200: {
+            slidesPerView: 2.5,
+          },
+        },
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
 })

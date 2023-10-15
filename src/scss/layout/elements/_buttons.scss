@@ -36,6 +36,11 @@
     }
   }
 
+  &#{$root}--color-primary-light {
+    background-color: rgb(var(--color-primary-soft));
+    color: rgb(var(--color-primary));
+  }
+
   &#{$root}--icon {
     padding: 0.75rem;
   }

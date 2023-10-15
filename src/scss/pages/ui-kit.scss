@@ -15,6 +15,7 @@
     padding: 1rem;
     background-color: rgb(var(--color-white));
     border-radius: var(--radius-small);
+    margin: 0.5rem 0;
 
     &--primary {
       background-color: rgb(var(--color-primary));
@@ -78,6 +79,12 @@
         }
       }
     }
+  }
+
+  &__progress {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 

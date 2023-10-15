@@ -1,0 +1,100 @@
+<div class="joint-purchases-card @@extra-class">
+  <div class="joint-purchases-card__about">
+    <div class="joint-purchases-card__logo">
+      <img src="@img/shop-avatar.png" alt="shop-avatar">
+    </div>
+    <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
+    <div class="joint-purchases-card__subscribe">
+      Подписаться
+      <span class="joint-purchases-card__subscribe-delimiter"></span>
+      <svg><use xlink:href='./img/icons/icons.svg#share-link'></use></svg>
+    </div>
+    <div class="joint-purchases-card__categories">
+      Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
+    </div>
+  </div>
+  <div class="joint-purchases-card__slider">
+    <div class="swiper swiper-joint-purchases">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <img src="@img/sp-slide1.jpg" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <img src="@img/sp-slide2.jpg" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <img src="@img/sp-slide3.jpg" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <img src="@img/sp-slide4.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="joint-purchases-card__info">
+    <div class="joint-purchases-card__discount">
+      <div class="joint-purchases-card__discount-amount">
+        @@include("./badge.html", {
+          "extra-class": "badge--big badge--without-border badge--font-commissioner",
+          "body": "Скидка -30%",
+        })
+      </div>
+      <div class="joint-purchases-card__discount-from">
+        при покупке
+        <span>от 136 000 &#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__already">
+      <div class="joint-purchases-card__already-title">Уже купили на:</div>
+      <div class="joint-purchases-card__already-count">
+        <span>79 281</span>
+        <span>/</span>
+        <span>241 093</span>
+        <span>&#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__progress">
+      @@include("./progress.html", {
+        "color": "",
+        "width": "@@width",
+      })
+    </div>
+    <div class="joint-purchases-card__hr hr"></div>
+    <div class="joint-purchases-card__until">
+      Активна до:
+      <div class="joint-purchases-card__until-date">
+        27.01.2020 12:00
+      </div>
+    </div>
+    <div class="joint-purchases-card__status">
+      <div class="joint-purchases-card__status-title">
+        Совм.Покупка:
+      </div>
+      <div class="joint-purchases-card__status-text">Состоялась</div>
+    </div>
+  </div>
+  <div class="joint-purchases-card__brand">
+    <div class="joint-purchases-card__brand-logo">
+      <img src="@img/shop-avatar.png" alt="shop-avatar">
+    </div>
+    <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
+  </div>
+</div>

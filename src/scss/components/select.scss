@@ -1,0 +1,14 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
+.select {
+  @extend %flex-center;
+  
+  position: relative;
+
+  & svg use {
+    stroke: rgb(var(--color-black));
+    stroke-width: 2px;
+  }
+}

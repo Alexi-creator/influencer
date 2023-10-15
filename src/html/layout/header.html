@@ -31,7 +31,14 @@
           </a>
         </li>
         <li class="header__nav-item header__nav-search">
-          @@include("../components/search.html")
+          @@include("../components/input-text.html", {
+            placeholder: "Найдите что-нибудь",
+            prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
+            suffix: "@@include('../components/select.html')",
+            "extra-class": "",
+            "extra-class-prefix": "header__nav-search-icon",
+            "extra-class-suffix": "header__nav-search-select",
+          })
         </li>
         <li class="header__nav-item header__nav-feed">
           <a href="">

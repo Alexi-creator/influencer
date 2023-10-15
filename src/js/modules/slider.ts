@@ -7,6 +7,8 @@ import { SwiperModule } from 'swiper/types/shared'
 interface IOptions extends Partial<{
   slidesPerView: number | 'auto'
   spaceBetween: number
+  centeredSlides: boolean
+  loop: boolean
   breakpoints: Record<number, IOptions>
 }> {}
 
@@ -45,7 +47,7 @@ export class Slider {
 
     if (breakMedia) {
       this.matchMedia = window.matchMedia(`(min-width:${breakMedia}px)`)
-      this.handlers()
+      this.matchMedia.addListener((e) => this.breakpointChecker(e))
     }
 
     if (this.selector) {
@@ -57,6 +59,7 @@ export class Slider {
     if (this.matchMedia?.matches) return
     
     this.slider = new Swiper(this.selector, this.constructorSlider)
+    this.handlers()
   }
 
   breakpointChecker(e: MediaQueryListEvent) {
@@ -68,6 +71,6 @@ export class Slider {
   }
 
   handlers() {
-    this.matchMedia.addListener((e) => this.breakpointChecker(e))
+
   }
 }

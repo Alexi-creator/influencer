@@ -1,0 +1,382 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
+.joint-purchases-card {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.75rem 0.75rem 0;
+  border-radius: var(--radius-medium);
+
+  @include media($md) {
+    padding: 1.5rem;
+  }
+
+  @include media($lg) {
+    padding: 1rem 1.5rem 0;
+  }
+
+  &--processing {
+    background-color: rgb(var(--color-primary-soft));
+  }
+
+  &--ready {
+    background-color: rgba(var(--color-green), 0.04);
+  }
+  
+  &--disabled {
+    background-color: rgb(var(--color-grey-pale));
+  }
+
+  &__about {
+    display: grid;
+    grid-template-areas:
+    "logo"
+    "title"
+    "subscribe"
+    "categories";
+    gap: 0.25rem;
+
+    @include media($md) {
+      grid-template-columns: 3.75rem 1fr auto;
+      gap: 0rem 0.75rem;
+      grid-template-areas:
+      "logo title subscribe"
+      "logo categories categories";
+    }
+
+    @include media($lg) {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+      grid-template-areas:
+      "logo"
+      "title"
+      "subscribe"
+      "categories";
+    }
+  }
+
+  &__slider {
+
+    #{$root}__slide {
+
+      & img {
+        // height: 100%;
+        height: 18rem;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__logo {
+    display: none;
+  
+    @include media($md) {
+      grid-area: logo;
+      display: block;
+      width: 3.75rem;
+      height: 3.75rem;
+      border-radius: var(--radius-round);
+      overflow: hidden;
+    }
+    @include media($lg) {
+      display: none;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: 1.375rem;
+    font-weight: 600;
+  }
+
+  &__subscribe {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    grid-area: subscribe;
+    font-weight: 600;
+    color: rgb(var(--color-primary));
+
+    &-delimiter {
+      width: 0.25rem;
+      height: 0.25rem;
+      border-radius: var(--radius-round);
+      background-color: rgb(var(--color-grey));
+    }
+
+    #{$root}--disabled & {
+      color: rgb(var(--color-grey-dark));
+    }
+  }
+
+  &__categories {
+    grid-area: categories;
+    color: rgb(var(--color-grey));
+  }
+
+  &__info {
+    display: grid;
+    grid-template-areas: 
+    "discount"
+    "already"
+    "progress"
+    "divider"
+    "status"
+    ;
+    gap: 0.75rem;
+
+    @include media($md) {
+      grid-template-columns: max-content 1fr auto;
+      grid-template-areas:
+      "discount already status"
+      "discount progress status"
+      ;
+    }
+    
+    @include media($lg) {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      grid-template-areas:
+      "already already"
+      "progress progress"
+      "discount status"
+      ;
+    }
+
+    #{$root}--processing & {
+      grid-template-areas: 
+      "discount"
+      "already"
+      "progress"
+      "divider"
+      "until"
+      ;
+
+      @include media($md) {
+        grid-template-areas:
+        "discount already until"
+        "discount progress until"
+        ;
+      }
+
+      @include media($lg) {
+        grid-template-areas:
+        "already already"
+        "progress progress"
+        "discount until"
+        ;
+      }
+    }
+  }
+
+  &__discount {
+    grid-area: discount;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.1rem;
+
+    @include media($md) {
+      gap: 0.5rem;
+    }
+
+    & .badge.badge--big {
+      padding: 0;
+      background-color: transparent;
+      
+      @include media($md) {
+        padding: 0.85rem 1.25rem;
+      }
+
+      #{$root}--processing & {
+        color: rgb(var(--color-primary));
+
+        @include media($md) {
+          background-color: rgb(var(--color-primary-pale));
+        }
+      }
+
+      #{$root}--ready & {
+        color: rgb(var(--color-green));
+
+        @include media($md) {
+          background-color: rgba(var(--color-green), 0.04);
+        }
+      }
+
+      #{$root}--disabled & {
+        color: rgb(var(--color-grey-dark));
+      }
+    }
+
+    &-from {
+      @include media($md) {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.875rem;
+      }
+    }
+
+    &-amount {
+      color: rgb(var(--color-primary));
+    }
+  }
+
+  &__already, &__until {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__already {
+    grid-area: already;
+
+    @include media($md) {
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    &-title {
+      @include media($md) {
+        display: none;
+      }
+      @include media($lg) {
+        display: block;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__progress {
+    grid-area: progress;
+    margin-top: -0.25rem;
+
+    & .progress {
+      #{$root}--processing & {
+        background-color: rgb(var(--color-primary-tag-checked));
+
+        &__line {
+          background-color: rgb(var(--color-primary-dark));
+        }
+      }
+
+      #{$root}--ready & {
+        background-color: rgba(var(--color-green), 0.04);
+
+        &__line {
+          background-color: rgb(var(--color-green));
+        }
+      }
+
+      #{$root}--disabled & {
+        background-color: rgb(var(--color-grey-soft));
+
+        &__line {
+          background-color: rgb(var(--color-grey-dark));
+        }
+      }
+    }
+  }
+
+  &__until {
+    grid-area: until;
+    display: none;
+
+    @include media($md) {
+      font-size: 1rem;
+
+      #{$root}--processing & {
+        display: block;
+      }
+    }
+
+    &-date {
+      font-weight: 600;
+    }
+  }
+
+  &__status {
+    grid-area: status;
+    font-size: 1rem;
+
+    #{$root}--processing & {
+      display: none;
+    }
+
+    #{$root}--ready & {
+      &-text {
+        color: rgb(var(--color-green));
+      }
+    }
+
+    #{$root}--disabled & {
+      &-text {
+        color: rgb(var(--color-red));
+      }
+    }
+
+    &-title {
+
+    }
+
+    &-text {
+      font-weight: 600;
+    }
+  }
+
+  &__hr {
+    margin: 0;
+
+    @include media($md) {
+      display: none;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    margin: -1rem -0.75rem 0;
+
+    #{$root}--processing & {
+      background-color: rgb(var(--color-primary-tag-checked));
+    }
+
+    #{$root}--ready & {
+      background-color: rgba(var(--color-green), 0.04);
+    }
+
+    #{$root}--processing & {
+      background-color: rgb(var(--color-primary-tag-checked));
+    }
+
+    @include media($md) {
+      display: none;
+    }
+    @include media($lg) {
+      display: flex;
+      margin: 0 -1.5rem;
+    }
+
+    &-logo {
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--radius-round);
+      overflow: hidden;
+    }
+
+    &-title {
+      // width: max-content;
+      // text-overflow: ellipsis;
+      // white-space: nowrap;
+      // overflow: hidden;
+    }
+  }
+}
