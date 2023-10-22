@@ -23,5 +23,19 @@ svg {
 }
 
 .main {
-  padding-bottom: 5rem;
+  padding: 1.25rem 0 5rem;
+
+  @include media($md) {
+    padding: 1.5rem 0 5rem;
+  }
+
+  @include media($lg) {
+    padding: 2.5rem 0;
+  }
+
+  @include media($full) {
+    padding: 5rem 0;
+  }
+
+  // padding: 5rem 0;
 }

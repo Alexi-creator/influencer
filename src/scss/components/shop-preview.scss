@@ -12,6 +12,10 @@
     justify-content: space-between;
   }
 
+  @include media($full) {
+    align-items: center;
+  }
+
   &__block-img {
     margin: 0 -1.25rem;
 
@@ -21,11 +25,15 @@
 
     @include media($lg) {
       width: 100%;
-      max-width: 30.25rem;
+      max-width: 52rem;
       margin: 0;
-      max-height: 16rem;
+      // max-height: 16rem;
       border-radius: 0.5rem;
       overflow: hidden;
+    }
+
+    @include media($full) {
+
     }
   }
 
@@ -43,10 +51,19 @@
     margin-top: -0.1875rem;
     font-family: BebasNeue;
     font-weight: 400;
+
+    @include media($full) {
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
   }
 
   &__about {
     margin-top: 0.75rem;
+
+    @include media($full) {
+      margin-top: 1.25rem;
+    }
   }
 
   &__bread-crumbs {
@@ -64,6 +81,10 @@
     @include media($lg) {
       margin-top: 0.75rem;
     }
+
+    @include media($full) {
+      margin-top: 1.25rem;
+    }
   }
 
   &__actions {
@@ -74,6 +95,10 @@
 
     @include media($lg) {
       margin-top: 1.5rem;
+    }
+
+    @include media($full) {
+      margin-top: 2.5rem;
     }
   }
 }

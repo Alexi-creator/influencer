@@ -16,7 +16,9 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new Slider('.swiper-uikit', {})
+    new Slider({
+      selector: '.swiper-uikit',
+    })
   } catch (error) {
     console.log(error)
   }

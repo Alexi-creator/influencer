@@ -25,17 +25,23 @@
     }
 
     #{$root}__img {
-      height: 12rem;
+      &-wrapper {
+        @include media($md) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
 
-      @include media($md) {
-        display: flex;
-
-        &-second {
-          display: block;
+        @include media($lg) {
+          grid-template-columns: 1fr;
         }
       }
-      @include media($lg) {
-        &-second {
+
+      &-second {
+        @include media($md) {
+          display: block;
+        }
+
+        @include media($lg) {
           display: none;
         }
       }
@@ -62,20 +68,17 @@
 
   &__img {
     position: relative;
-    overflow: hidden;
-    height: 17.5rem;
-    flex-shrink: 0;
 
-    @include media($md) {
-      height: 21rem;
-    }
-    @include media($lg) {
-      height: 24rem;
-    }
+    &-first, &-second {
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      padding-top: 150%;
 
-    & > img {
-      height: 100%;
-      object-fit: cover;
+      & > img {
+        position: absolute;
+        top: 0;
+      }
     }
 
     &-second {

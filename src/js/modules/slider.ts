@@ -2,8 +2,6 @@ import Swiper from 'swiper'
 import { Navigation } from 'swiper/modules'
 import { SwiperModule } from 'swiper/types/shared'
 
-// Абстракция для создания и управления slider swiper
-
 interface IOptions extends Partial<{
   slidesPerView: number | 'auto'
   spaceBetween: number
@@ -22,17 +20,31 @@ interface IConstructorSlider {
   };
 }
 
+interface IConstructor {
+  selector: string;
+  options?: IOptions;
+  breakMedia?: number;
+  initialActionIndex?: number
+}
+
+/**
+ * Абстракция для создания и управления slider swiper
+ */
 export class Slider {
   selector: string
-  slider: Swiper | null
   options?: IOptions
+  breakMedia?: number
+  initialActionIndex?: number
+  
+  slider: Swiper | null
   matchMedia: MediaQueryList
-  breakMedia: number
+
   constructorSlider: IConstructorSlider
 
-  constructor(selector: string, options?: IOptions, breakMedia?: number) {
+  constructor({ selector, options, breakMedia, initialActionIndex }: IConstructor) {
     this.selector = selector
     this.options = options
+    this.initialActionIndex = initialActionIndex || 0
 
     this.constructorSlider = {
       modules: [Navigation],
@@ -56,17 +68,26 @@ export class Slider {
   }
 
   init() {
-    if (this.matchMedia?.matches) return
-    
-    this.slider = new Swiper(this.selector, this.constructorSlider)
+    this.startSlide()
     this.handlers()
+  }
+
+  startSlide() {
+    if (this.matchMedia?.matches) return
+  
+    this.slider?.destroy()
+    this.slider = new Swiper(this.selector, this.constructorSlider)
+    
+    if (this.initialActionIndex) {
+      this.slider.slideTo(this.initialActionIndex)
+    }
   }
 
   breakpointChecker(e: MediaQueryListEvent) {
     if (e.matches) {
       this.slider?.destroy()
     } else {
-      this.slider = new Swiper(this.selector, this.constructorSlider)
+      this.startSlide()
     }
   }
 

@@ -62,6 +62,10 @@
       @include media($lg) {
         margin: 1rem -2.5rem 0;
       }
+
+      @include media($full) {
+        margin: 1rem 0 0;
+      }
     }
 
     &-item {
@@ -99,6 +103,7 @@
 
       @include media($lg) {
         display: block;
+        margin-right: 1.5rem;
       }
 
       & > a {
@@ -117,11 +122,16 @@
     }
 
     &-search {
-      margin-left: 0;
+      max-width: 47.625rem;
+      margin: 0 auto;
       flex-grow: 1;
 
       @include media($md) {
         margin-left: 1.5rem;
+      }
+
+      @include media($lg) {
+        margin-left: auto;
       }
 
       &-select {
