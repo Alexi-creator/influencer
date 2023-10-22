@@ -6,10 +6,9 @@ import { ShopWindow } from '../modules/shop-window'
 import { Tabs } from '../modules/tabs'
 import { Slider } from '../modules/slider'
 
-import { BreakpointWidth } from '../constants/sizeScreen.js'
+import { BreakpointWidth } from '../constants/index'
 
 window.addEventListener('load', () => {
-
   try {
     new Share()
   } catch (error) {
@@ -21,28 +20,29 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new ShopWindow()
-  } catch (error) {
-    console.log(error)
-  }
-  try {
     new Tabs()
   } catch (error) {
     console.log(error)
   }
   try {
-    new Slider(
-      '.swiper-tabs',
-      {},
-      BreakpointWidth.TABLET,
+    new ShopWindow(
+      new Slider({
+        selector: '.swiper-tabs',
+        options: {
+          slidesPerView: 1.5,
+          centeredSlides: true,
+          spaceBetween: 0,
+        },
+        breakMedia: BreakpointWidth.TABLET,
+      })
     )
   } catch (error) {
     console.log(error)
   }
   try {
-    new Slider(
-      '.swiper-joint-purchases',
-      {
+    new Slider({
+      selector: '.swiper-joint-purchases',
+      options: {
         slidesPerView: 2,
         centeredSlides: false,
         spaceBetween: 12,
@@ -53,9 +53,12 @@ window.addEventListener('load', () => {
           1200: {
             slidesPerView: 2.5,
           },
+          1920: {
+            slidesPerView: 4.5,
+          },
         },
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
