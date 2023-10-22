@@ -195,3 +195,10 @@
     gap: 1rem;
   }
 }
+
+@media (min-width: 120rem) {
+  .shop-window__goods-items {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}

@@ -1,3 +1,8 @@
+.joint-purchases-card__status {
+  display: flex;
+  align-items: center;
+}
+
 .joint-purchases-card {
   display: flex;
   flex-direction: column;
@@ -24,10 +29,15 @@
   gap: 0.25rem;
 }
 
+.joint-purchases-card__slider .joint-purchases-card__slide {
+  position: relative;
+  padding-top: 143%;
+  overflow: hidden;
+}
+
 .joint-purchases-card__slider .joint-purchases-card__slide img {
-  height: 18rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  position: absolute;
+  top: 0;
 }
 
 .joint-purchases-card__logo {
@@ -185,6 +195,7 @@
   -ms-grid-row: 9;
   -ms-grid-column: 1;
   grid-area: status;
+  gap: 0.5rem;
   font-size: 1rem;
 }
 

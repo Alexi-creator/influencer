@@ -52,9 +52,8 @@
 
   .shop-preview__block-img {
     width: 100%;
-    max-width: 30.25rem;
+    max-width: 52rem;
     margin: 0;
-    max-height: 16rem;
     border-radius: 0.5rem;
     overflow: hidden;
   }
@@ -74,5 +73,28 @@
 
   .shop-preview__actions {
     margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 120rem) {
+  .shop-preview {
+    align-items: center;
+  }
+
+  .shop-preview__title {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .shop-preview__about {
+    margin-top: 1.25rem;
+  }
+
+  .shop-preview__subscribers {
+    margin-top: 1.25rem;
+  }
+
+  .shop-preview__actions {
+    margin-top: 2.5rem;
   }
 }

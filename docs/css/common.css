@@ -159,7 +159,7 @@ button {
   --color-grey-dark: 206, 206, 206;
   --color-green: 80, 165, 51;
   --color-red: 221, 94, 94;
-  --max-width-container: 67rem;
+  --max-width-container: 106rem;
   --transition-base: all 0.2s linear;
   --z-fixed: 100;
   --z-popup: 1000;
@@ -171,7 +171,7 @@ button {
 }
 
 .section {
-  padding: 1.25rem;
+  padding: 0 1.25rem;
   width: 100%;
 }
 
@@ -607,7 +607,8 @@ button {
 }
 
 .header__nav-search {
-  margin-left: 0;
+  max-width: 47.625rem;
+  margin: 0 auto;
   flex-grow: 1;
 }
 
@@ -716,12 +717,12 @@ svg {
 }
 
 .main {
-  padding-bottom: 5rem;
+  padding: 1.25rem 0 5rem;
 }
 
 @media (min-width: 48rem) {
   .section {
-    padding: 1.5rem 2.5rem;
+    padding: 0rem 2.5rem;
   }
 
   .hr {
@@ -774,11 +775,15 @@ svg {
   .popup--onlymobile .popup__content {
     padding: 0;
   }
+
+  .main {
+    padding: 1.5rem 0 5rem;
+  }
 }
 
 @media (min-width: 75rem) {
   .section {
-    padding: 2.5rem 4rem;
+    padding: 0rem 4rem;
   }
 
   .section--shop-preview .section__inner {
@@ -812,6 +817,11 @@ svg {
 
   .header__nav-catalog {
     display: block;
+    margin-right: 1.5rem;
+  }
+
+  .header__nav-search {
+    margin-left: auto;
   }
 
   .header__nav-feed {
@@ -830,6 +840,24 @@ svg {
   .header__nav-more,
   .header__nav-location {
     display: none;
+  }
+
+  .main {
+    padding: 2.5rem 0;
+  }
+}
+
+@media (min-width: 120rem) {
+  .section {
+    padding: 0rem 7rem;
+  }
+
+  .header__nav-list {
+    margin: 1rem 0 0;
+  }
+
+  .main {
+    padding: 5rem 0;
   }
 }
 

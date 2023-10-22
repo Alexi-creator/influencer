@@ -1,5 +1,5 @@
 .section {
-  padding: 1.25rem;
+  padding: 0 1.25rem;
   width: 100%;
 }
 
@@ -22,16 +22,22 @@
 
 @media (min-width: 48rem) {
   .section {
-    padding: 1.5rem 2.5rem;
+    padding: 0rem 2.5rem;
   }
 }
 
 @media (min-width: 75rem) {
   .section {
-    padding: 2.5rem 4rem;
+    padding: 0rem 4rem;
   }
 
   .section--shop-preview .section__inner {
     max-width: var(--max-width-container);
+  }
+}
+
+@media (min-width: 120rem) {
+  .section {
+    padding: 0rem 7rem;
   }
 }

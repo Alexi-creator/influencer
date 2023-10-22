@@ -25,11 +25,6 @@
   grid-template-columns: 8.3rem 1fr;
 }
 
-.shop-window__goods-items--horizontally .product-card .product-card__img,
-.product-card--horizontally .product-card__img {
-  height: 12rem;
-}
-
 .shop-window__goods-items--horizontally .product-card .product-card__title,
 .product-card--horizontally .product-card__title {
   -webkit-line-clamp: unset;
@@ -45,15 +40,20 @@
 
 .product-card__img {
   position: relative;
-  overflow: hidden;
-  height: 17.5rem;
-  flex-shrink: 0;
 }
 
-.product-card__img > img {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.product-card__img-first,
+.product-card__img-second {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding-top: 150%;
+}
+
+.product-card__img-first > img,
+.product-card__img-second > img {
+  position: absolute;
+  top: 0;
 }
 
 .product-card__img-second {
@@ -177,9 +177,10 @@
     grid-template-columns: 16.6rem 1fr;
   }
 
-  .shop-window__goods-items--horizontally .product-card .product-card__img,
-  .product-card--horizontally .product-card__img {
-    display: flex;
+  .shop-window__goods-items--horizontally .product-card .product-card__img-wrapper,
+  .product-card--horizontally .product-card__img-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .shop-window__goods-items--horizontally .product-card .product-card__img-second,
@@ -191,16 +192,17 @@
   .product-card--horizontally .product-card__price {
     justify-content: flex-start;
   }
-
-  .product-card__img {
-    height: 21rem;
-  }
 }
 
 @media (min-width: 75rem) {
   .shop-window__goods-items--horizontally .product-card,
   .product-card--horizontally {
     grid-template-columns: 8.3rem 1fr;
+  }
+
+  .shop-window__goods-items--horizontally .product-card .product-card__img-wrapper,
+  .product-card--horizontally .product-card__img-wrapper {
+    grid-template-columns: 1fr;
   }
 
   .shop-window__goods-items--horizontally .product-card .product-card__img-second,
@@ -211,9 +213,5 @@
   .shop-window__goods-items--horizontally .product-card .product-card__price,
   .product-card--horizontally .product-card__price {
     justify-content: space-between;
-  }
-
-  .product-card__img {
-    height: 24rem;
   }
 }

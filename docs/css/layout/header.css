@@ -118,7 +118,8 @@
 }
 
 .header__nav-search {
-  margin-left: 0;
+  max-width: 47.625rem;
+  margin: 0 auto;
   flex-grow: 1;
 }
 
@@ -232,6 +233,11 @@
 
   .header__nav-catalog {
     display: block;
+    margin-right: 1.5rem;
+  }
+
+  .header__nav-search {
+    margin-left: auto;
   }
 
   .header__nav-feed {
@@ -250,5 +256,11 @@
   .header__nav-more,
   .header__nav-location {
     display: none;
+  }
+}
+
+@media (min-width: 120rem) {
+  .header__nav-list {
+    margin: 1rem 0 0;
   }
 }
