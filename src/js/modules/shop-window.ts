@@ -15,8 +15,6 @@ export class ShopWindow extends ToggleDensity {
 
   tabsSlider: Slider
   
-  initialActionIndexShopsTabs: number
-
   constructor(slider: Slider) {
     super()
 

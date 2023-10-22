@@ -19,6 +19,11 @@
     padding: 1rem 1.5rem 0;
   }
 
+  @include media($full) {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
   &--processing {
     background-color: rgb(var(--color-primary-soft));
   }
@@ -57,6 +62,14 @@
       "subscribe"
       "categories";
     }
+
+    @include media($full) {
+      grid-template-columns: 3.75rem 1fr auto;
+      gap: 0rem 0.75rem;
+      grid-template-areas:
+      "logo title subscribe"
+      "logo categories categories";
+    }
   }
 
   &__slider {
@@ -84,8 +97,13 @@
       border-radius: var(--radius-round);
       overflow: hidden;
     }
+
     @include media($lg) {
       display: none;
+    }
+
+    @include media($full) {
+      display: block;
     }
   }
 
@@ -150,6 +168,14 @@
       ;
     }
 
+    @include media($full) {
+      grid-template-columns: max-content 1fr auto;
+      grid-template-areas:
+      "discount already status"
+      "discount progress status"
+      ;
+    }
+
     #{$root}--processing & {
       grid-template-areas: 
       "discount"
@@ -171,6 +197,13 @@
         "already already"
         "progress progress"
         "discount until"
+        ;
+      }
+
+      @include media($full) {
+        grid-template-areas:
+        "discount already until"
+        "discount progress until"
         ;
       }
     }
@@ -365,9 +398,14 @@
     @include media($md) {
       display: none;
     }
+
     @include media($lg) {
       display: flex;
       margin: 0 -1.5rem;
+    }
+
+    @include media($full) {
+      display: none;
     }
 
     &-logo {

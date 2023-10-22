@@ -171,6 +171,10 @@
       @include media($lg) {
         grid-template-columns: 1fr 1fr;
       }
+
+      @include media($full) {
+        grid-template-columns: 34rem auto;
+      }
     }
 
     &-btn {

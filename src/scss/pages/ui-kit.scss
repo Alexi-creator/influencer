@@ -38,6 +38,11 @@
     width: 100%;
   }
 
+  &__counter {
+    display: flex;
+    gap: 2rem;
+  }
+
   &__buttons {
     display: inline-flex;
     align-items: center;

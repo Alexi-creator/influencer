@@ -17,7 +17,7 @@
       </a>
     </li>
     <li>
-      <a class="nav__item" href="#">
+      <a class="nav__item nav__item-feed" href="#">
         <svg class="nav__item-icon">
           <use xlink:href="./img/icons/icons.svg#feed"></use>
         </svg>
@@ -27,9 +27,15 @@
     <li>
       <a class="nav__item" href="#">
         <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#shopping-bag-with-circul"></use>
+          <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
         </svg>
         <div class="nav__item-title">Корзина</div>
+        <div class="nav__item-counter">
+          @@include("../components/counter.html", {
+            "count": "1",
+            "color": "green",
+          })
+        </div>
       </a>
     </li>
     <li>
