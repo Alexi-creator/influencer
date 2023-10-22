@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/blocks.min.css?_v=20231022073138">
+  <link rel="stylesheet" href="css/pages/blocks.min.css?_v=20231022175157">
   <title>Test Page blocks</title>
-  <script defer src="js/blocks.min.js?_v=20231022073138"></script>
+  <script defer src="js/blocks.min.js?_v=20231022175157"></script>
 </head>
   <body>
     <header class="header">
@@ -61,29 +61,51 @@
   </div>
 </div>
         </li>
+        <li class="header__nav-item header__nav-basket">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  9
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-favorite">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  4
+</div>
+          </div>
+        </li>
         <li class="header__nav-item header__nav-feed">
-          <a href="">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#feed"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  1
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-instagram">
+          <a href="#">
             <svg>
               <use xlink:href="./img/icons/icons.svg#camera"></use>
             </svg>
           </a>
         </li>
-        <li class="header__nav-item header__nav-basket">
-          <a href="">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-favorite">
-          <a href="">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#heart"></use>
-            </svg>
-          </a>
-        </li>
         <li class="header__nav-item header__nav-profile">
-          <a href="">
+          <a href="#">
             <svg>
               <use xlink:href="./img/icons/icons.svg#user"></use>
             </svg>
@@ -122,7 +144,7 @@
       </a>
     </li>
     <li>
-      <a class="nav__item" href="#">
+      <a class="nav__item nav__item-feed" href="#">
         <svg class="nav__item-icon">
           <use xlink:href="./img/icons/icons.svg#feed"></use>
         </svg>
@@ -132,9 +154,14 @@
     <li>
       <a class="nav__item" href="#">
         <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#shopping-bag-with-circul"></use>
+          <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
         </svg>
         <div class="nav__item-title">Корзина</div>
+        <div class="nav__item-counter">
+          <div class="counter counter--green">
+  1
+</div>
+        </div>
       </a>
     </li>
     <li>

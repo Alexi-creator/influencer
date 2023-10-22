@@ -7,7 +7,7 @@
 .nav-pages {
   display: none;
   background-color: rgb(var(--color-primary-pale));
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   margin-top: 0.5rem;
 }
 
@@ -15,6 +15,10 @@
   flex-wrap: wrap;
   gap: 0.5rem 2.5rem;
   font-weight: 600;
+}
+
+.nav-pages__list > li {
+  padding: 0.5rem 1rem;
 }
 
 @media (min-width: 75rem) {

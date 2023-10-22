@@ -6,7 +6,6 @@
 
 .tabs__list {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -16,27 +15,45 @@
   padding: 0.75rem 1.25rem;
   transition: var(--transition-base);
   cursor: pointer;
+  border: 2px solid rgb(var(--color-grey));
 }
 
-.tabs__tab::after {
-  content: "";
-  position: absolute;
-  display: none;
-  width: calc(100% - 2.5rem);
-  height: 1px;
-  bottom: 0.75rem;
-  left: 1.25rem;
-  background-color: rgb(var(--color-black));
+.tabs__tab:first-child {
+  border-radius: var(--radius-medium) 0rem 0rem var(--radius-medium);
+  border-right: 1px solid rgb(var(--color-grey));
+}
+
+.tabs__tab:last-child {
+  border-radius: 0rem var(--radius-medium) var(--radius-medium) 0rem;
+  border-left: 1px solid rgb(var(--color-grey));
+}
+
+.tabs__tab:not(:first-child):not(:last-child) {
+  border-left: 1px solid rgb(var(--color-grey));
+  border-right: 1px solid rgb(var(--color-grey));
 }
 
 .tabs__tab:hover,
 .tabs__tab--active {
+  color: rgb(var(--color-primary));
   font-weight: 600;
+  border-color: rgb(var(--color-primary));
 }
 
-.tabs__tab:hover::after,
-.tabs__tab--active::after {
-  display: block;
+.tabs__tab:hover:first-child,
+.tabs__tab--active:first-child {
+  border-right: 1px solid rgb(var(--color-primary));
+}
+
+.tabs__tab:hover:last-child,
+.tabs__tab--active:last-child {
+  border-left: 1px solid rgb(var(--color-primary));
+}
+
+.tabs__tab:hover:not(:first-child):not(:last-child),
+.tabs__tab--active:not(:first-child):not(:last-child) {
+  border-left: 1px solid rgb(var(--color-primary));
+  border-right: 1px solid rgb(var(--color-primary));
 }
 
 .tabs__tab-count {

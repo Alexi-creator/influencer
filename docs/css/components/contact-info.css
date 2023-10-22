@@ -64,3 +64,10 @@
     padding: 2.5rem;
   }
 }
+
+@media (min-width: 120rem) {
+  .contact-info {
+    max-width: 70rem;
+    margin: 2.5rem auto 0;
+  }
+}

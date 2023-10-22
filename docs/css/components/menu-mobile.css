@@ -16,16 +16,29 @@
 }
 
 .nav__item {
+  position: relative;
   display: block;
   font-size: 0.75rem;
   color: rgb(var(--color-grey));
   text-align: center;
 }
 
+.nav__item-counter {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+
 .nav__item-icon {
   width: 1.5rem;
   height: 1.5rem;
   margin: 0 auto;
+  fill: rgb(var(--color-grey));
+}
+
+.nav__item-feed {
+  stroke: rgb(var(--color-grey));
+  stroke-width: 2px;
 }
 
 .nav__item-title {
