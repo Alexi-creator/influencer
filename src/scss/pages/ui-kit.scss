@@ -5,6 +5,7 @@
 @import "../components/checkbox";
 @import "../components/radio";
 @import "../components/collapse";
+@import "../components/tabs";
 
 .ui-kit {
   min-height: 100vh;
@@ -54,6 +55,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   &__swiper {

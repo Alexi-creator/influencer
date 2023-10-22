@@ -113,7 +113,7 @@
     }
   }
 
-  &__goods {
+  &__goods, &__ttf {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
