@@ -140,14 +140,17 @@
           <div class="shop-window__joint-purchases-contents">
             @@include("./joint-purchases-card.html", {
               "extra-class": "joint-purchases-card--processing",
+              "status": "",
               "width": "30%",
             })
             @@include("./joint-purchases-card.html", {
               "extra-class": "joint-purchases-card--ready",
+              "status": "Состоялась",
               "width": "100%",
             })
             @@include("./joint-purchases-card.html", {
               "extra-class": "joint-purchases-card--disabled",
+              "status": "Не состоялась",
               "width": "100%",
             })
           </div>

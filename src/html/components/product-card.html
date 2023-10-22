@@ -1,7 +1,13 @@
 <div class="product-card @@extra-class">
   <div class="product-card__img">
-    <img class="product-card__img-first" src="@img/product-card.jpg" alt="product">
-    <img class="product-card__img-second" src="@img/product-card2.jpg" alt="product2">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <img src="@img/product-card.jpg" alt="product">
+      </div>
+      <div class="product-card__img-second">
+        <img src="@img/product-card2.jpg" alt="product2">
+      </div>
+    </div>
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         @@include("./badge.html", {
