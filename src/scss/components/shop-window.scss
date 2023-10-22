@@ -41,6 +41,10 @@
     & .tabs__tab {
       width: max-content;
       margin: 0 auto;
+
+      @include media($md) {
+        margin: unset;
+      }
     }
   
     & .swiper-slide {

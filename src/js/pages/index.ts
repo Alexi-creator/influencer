@@ -29,9 +29,14 @@ window.addEventListener('load', () => {
       new Slider({
         selector: '.swiper-tabs',
         options: {
-          slidesPerView: 1.5,
+          slidesPerView: 1,
           centeredSlides: true,
           spaceBetween: 0,
+          breakpoints: {
+            420: {
+              slidesPerView: 1.5,
+            },
+          },
         },
         breakMedia: BreakpointWidth.TABLET,
       })
