@@ -30,7 +30,7 @@ svg {
   }
 
   @include media($lg) {
-    padding: 2.5rem 0 5rem;
+    padding: 2.5rem 0;
   }
 
   @include media($full) {
