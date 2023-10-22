@@ -2228,8 +2228,8 @@ svg {
   padding-top: 150%;
 }
 
-.product-card__img-first > img,
-.product-card__img-second > img {
+.product-card__img-first img,
+.product-card__img-second img {
   position: absolute;
   top: 0;
 }
