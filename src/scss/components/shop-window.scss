@@ -41,6 +41,10 @@
     & .tabs__tab {
       width: max-content;
       margin: 0 auto;
+
+      @include media($md) {
+        margin: unset;
+      }
     }
   
     & .swiper-slide {
@@ -113,7 +117,7 @@
     }
   }
 
-  &__goods {
+  &__goods, &__ttf {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -170,6 +174,10 @@
 
       @include media($lg) {
         grid-template-columns: 1fr 1fr;
+      }
+
+      @include media($full) {
+        grid-template-columns: 34rem auto;
       }
     }
 

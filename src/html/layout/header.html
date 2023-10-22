@@ -40,29 +40,54 @@
             "extra-class-suffix": "header__nav-search-select",
           })
         </li>
+        <li class="header__nav-item header__nav-basket">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            @@include("../components/counter.html", {
+              "count": "9",
+              "color": "green",
+            })
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-favorite">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            @@include("../components/counter.html", {
+              "count": "4",
+              "color": "green",
+            })
+          </div>
+        </li>
         <li class="header__nav-item header__nav-feed">
-          <a href="">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#feed"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            @@include("../components/counter.html", {
+              "count": "1",
+              "color": "green",
+            })
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-instagram">
+          <a href="#">
             <svg>
               <use xlink:href="./img/icons/icons.svg#camera"></use>
             </svg>
           </a>
         </li>
-        <li class="header__nav-item header__nav-basket">
-          <a href="">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-favorite">
-          <a href="">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#heart"></use>
-            </svg>
-          </a>
-        </li>
         <li class="header__nav-item header__nav-profile">
-          <a href="">
+          <a href="#">
             <svg>
               <use xlink:href="./img/icons/icons.svg#user"></use>
             </svg>

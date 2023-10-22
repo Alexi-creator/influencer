@@ -6,17 +6,17 @@
         <div class="tabs__head">
           <div class="swiper swiper-tabs">
             <div class="tabs__list swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="tabs__tab" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></div>
+              <div class="swiper-slide tabs__tab" data-tab-path="goods">
+                Товары <span class="tabs__tab-count">501</span>
               </div>
-              <div class="swiper-slide">
-                <div class="tabs__tab tabs__tab--active" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></div>
+              <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="sp">
+                Совместные покупки <span class="tabs__tab-count">79</span>
               </div>
-              <div class="swiper-slide">
-                <div class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></div>
+              <div class="swiper-slide tabs__tab" data-tab-path="tff">
+                Test For Free <span class="tabs__tab-count">13</span>
               </div>
-              <div class="swiper-slide">
-                <div class="tabs__tab" data-tab-path="contacts">Контакты</div>
+              <div class="swiper-slide tabs__tab" data-tab-path="contacts">
+                Контакты
               </div>
             </div>
             <div class="swiper-button-prev">
@@ -62,6 +62,7 @@
       </div>
     </div>
     <div class="tabs__contents">
+      <!-- Товары -->
       <div class="tabs__content" data-tab-target="goods">
         <div class="shop-window__goods">
           <div class="shop-window__menu">@@include("./product-menu.html")</div>
@@ -117,6 +118,7 @@
           </div>
         </div>
       </div>
+      <!-- Совместные покупки -->
       <div class="tabs__content tabs__content--active" data-tab-target="sp">
         <div class="shop-window__joint-purchases">
           <div class="shop-window__joint-purchases-actions">
@@ -156,9 +158,63 @@
           </div>
         </div>
       </div>
+      <!-- Test for free -->
       <div class="tabs__content" data-tab-target="tff">
-        content Test For Free
+        <div class="shop-window__ttf">
+          <div class="shop-window__menu">@@include("./product-menu.html")</div>
+          <div class="shop-window__ttf-items">
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Комбинезон из шелковой вискозы с",
+              "discount": "--discount",
+              "sale": "от 91 250 ₽",
+              "like": "favourite",
+              "sizes": "<li>36</li><li>38</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Плетеная сумка-сэтчел",
+              "discount": "",
+              "sale": "",
+              "like": "",
+              "sizes": "<li>38</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Туфли ZOE с острым носом и эластичныим",
+              "discount": "",
+              "sale": "",
+              "like": "",
+              "sizes": "<li>36</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Пуховик из кожи с узором monogram mi",
+              "discount": "",
+              "sale": "",
+              "like": "favourite",
+              "sizes": "<li>36</li><li>38</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Пуховик из кожи с узором monogram mi",
+              "discount": "",
+              "sale": "",
+              "like": "",
+              "sizes": "<li>36</li><li>40</li>"
+            })
+            @@include("./product-card.html", {
+              "extra-class": "",
+              "title": "Пуховик из кожи с узором monogram mi",
+              "discount": "",
+              "sale": "",
+              "like": "favourite",
+              "sizes": "<li>38</li><li>40</li>"
+            })
+          </div>
+        </div>
       </div>
+      <!-- Contacts -->
       <div class="tabs__content" data-tab-target="contacts">
         @@include("./contact-info.html")
       </div>

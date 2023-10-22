@@ -17,6 +17,11 @@
     flex-direction: column;
   }
 
+  @include media($full) {
+    max-width: 70rem;
+    margin: 2.5rem auto 0;
+  }
+
   &__connect {
     display: flex;
     flex-direction: column;

@@ -105,6 +105,26 @@
         @@include("../components/radio.html")
       </div>
 
+      <h2>Counter:</h2>
+      <div class="ui-kit__block ui-kit__counter">
+        @@include("../components/counter.html", {
+          "count": "9",
+          "color": "green",
+        })
+        @@include("../components/counter.html", {
+          "count": "1",
+          "color": "primary",
+        })
+        @@include("../components/counter.html", {
+          "count": "32",
+          "color": "red",
+        })
+        @@include("../components/counter.html", {
+          "count": "10",
+          "color": "grey",
+        })
+      </div>
+
       <h2>Collapse:</h2>
       @@include("../components/collapse.html")
 
@@ -210,6 +230,11 @@
           "color": "grey",
           "width": "20%",
         })
+      </div>
+
+      <h2>Tabs:</h2>
+      <div class="ui-kit__block ui-kit__tabs">
+        @@include("../components/tabs.html")
       </div>
       
     </main>

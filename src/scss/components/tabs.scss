@@ -6,7 +6,8 @@
   $root: &;
 
   &__list {
-    @extend %flex-space-between;
+    // @extend %flex-space-between;
+    @extend %flex-align-center;
   }
 
   &__tab {
@@ -17,24 +18,57 @@
     padding: 0.75rem 1.25rem;
     transition: var(--transition-base);
     cursor: pointer;
+    border: 2px solid rgb(var(--color-grey));
 
-    &::after {
-      content: "";
-      position: absolute;
-      display: none;
-      width: calc(100% - 2.5rem);
-      height: 1px;
-      bottom: 0.75rem;
-      left: 1.25rem;
-      background-color: rgb(var(--color-black));
+    &:first-child {
+      border-radius: var(--radius-medium) 0rem 0rem var(--radius-medium);
+      border-right: 1px solid rgb(var(--color-grey));
     }
 
-    &:hover, &--active {
-      font-weight: 600;
+    &:last-child {
+      border-radius: 0rem var(--radius-medium) var(--radius-medium) 0rem;
+      border-left: 1px solid rgb(var(--color-grey));
+    }
 
-      &::after {
-        display: block;
+    &:not(:first-child):not(:last-child) {
+      border-left: 1px solid rgb(var(--color-grey));
+      border-right: 1px solid rgb(var(--color-grey));
+    }
+
+    // Если нужно будет подчеркивание снизу выбранного таба
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   display: none;
+    //   width: calc(100% - 2.5rem);
+    //   height: 1px;
+    //   bottom: 0.75rem;
+    //   left: 1.25rem;
+    //   background-color: rgb(var(--color-black));
+    // }
+
+    &:hover, &--active {
+      color: rgb(var(--color-primary));
+      font-weight: 600;
+      border-color: rgb(var(--color-primary));
+
+      &:first-child {
+        border-right: 1px solid rgb(var(--color-primary));
       }
+  
+      &:last-child {
+        border-left: 1px solid rgb(var(--color-primary));
+      }
+  
+      &:not(:first-child):not(:last-child) {
+        border-left: 1px solid rgb(var(--color-primary));
+        border-right: 1px solid rgb(var(--color-primary));
+      }
+
+      // Для подчеркивания под табом при наведении или когда выбран
+      // &::after {
+      //   display: block;
+      // }
     }
 
     &-count {
