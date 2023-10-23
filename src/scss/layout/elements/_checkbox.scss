@@ -1,0 +1,63 @@
+@import "../../basis/_extends";
+
+.checkbox {
+	$root: &;
+
+	@extend %inline-flex-center;
+
+	gap: 0.5rem;
+	user-select: none;
+	transition: var(--transition-base);
+	cursor: pointer;
+
+	&:hover {
+		color: rgb(var(--color-black-hover));
+	}
+
+  & input {
+    display: none;
+
+		&:checked + #{$root}__checkmark {
+			& svg {
+				opacity: 1;
+			}
+
+			& + #{$root}__label {
+      	color: rgb(var(--color-primary));
+			}
+		}
+  }
+
+  &__checkmark {
+		@extend %inline-flex-center;
+
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid rgb(var(--color-primary));
+		border-radius: var(--radius-small);
+
+		& svg {
+			opacity: 0;
+			width: 0.875rem;
+			height: 0.875rem;
+		}
+  }
+
+	&--tag {
+		#{$root}__checkmark {
+			display: none;
+		}
+
+		& input {
+			&:checked + #{$root}__checkmark {
+				& + #{$root}__label {
+					color: rgb(var(--color-black));
+					background-color: rgb(var(--color-primary-tag-checked));
+					outline-width: 2px;
+					outline-color: rgb(var(--color-primary));
+				}
+			}
+		}
+	}
+}

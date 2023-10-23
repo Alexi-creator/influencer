@@ -26,6 +26,14 @@
           </svg>
         </button>
       </div>
+      <div class="ui-kit__block ui-kit__block--primary ui-kit__buttons">
+        <button class="btn btn--color-white">
+          color white
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+        </button>
+      </div>
 
       <h2>Input:</h2>
       <div class="ui-kit__block ui-kit__input">
@@ -99,10 +107,31 @@
 
       <h2>Radio:</h2>
       <div class="ui-kit__block ui-kit__radio">
-        @@include("../components/radio.html")
-        @@include("../components/radio.html")
-        @@include("../components/radio.html")
-        @@include("../components/radio.html")
+        @@include("../components/radio.html", {
+          "name": "radio-uikit",
+          "text": "text",
+          "mod": "",
+        })
+        @@include("../components/radio.html", {
+          "name": "radio-uikit",
+          "text": "text",
+          "mod": "",
+        })
+        @@include("../components/radio.html", {
+          "name": "radio-uikit",
+          "text": "text",
+          "mod": "",
+        })
+        @@include("../components/radio.html", {
+          "name": "radio-uikit",
+          "text": "text",
+          "mod": "",
+        })
+        @@include("../components/radio.html", {
+          "name": "radio-uikit",
+          "text": "<div class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></div>",
+          "mod": "btn",
+        })
       </div>
 
       <h2>Counter:</h2>

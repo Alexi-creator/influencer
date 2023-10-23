@@ -1,15 +1,30 @@
-@import "../basis/extends";
+@import "../../basis/extends";
 
 .radio {
-  @extend %flex-space-between;
+  $root: &;
 
-  flex-direction: row-reverse;
-  position: relative;
   cursor: pointer;
   transition: var(--transition-base);
 
   &:hover {
     color: rgb(var(--color-primary));
+  }
+
+  &--btn {
+    &#{$root} {
+      justify-content: center;
+    }
+
+    #{$root}__custom {
+      display: none;
+    }
+  }
+
+  &__content {
+    @extend %flex-space-between;
+
+    flex-direction: row-reverse;
+    position: relative;
   }
 
   &__custom {
@@ -37,8 +52,13 @@
   & input {
     display: none;
 
-    &:checked + div::after {
+    &:checked + div .radio__custom::after {
       display: block;
+    }
+
+    &:checked + div .btn {
+      background-color: rgb(var(--color-primary-soft));
+      border: 1px solid rgb(var(--color-primary));
     }
   }
 }
