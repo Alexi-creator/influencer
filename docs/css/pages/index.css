@@ -989,7 +989,7 @@ button {
   padding: 0.75rem 1.5rem;
   border: 1px solid;
   border-color: transparent;
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
   font-weight: 600;
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
@@ -1025,13 +1025,23 @@ button {
   color: rgb(var(--color-primary));
 }
 
-.btn.btn--icon {
-  padding: 0.75rem;
-}
-
 .btn.btn--color-grey {
   color: rgb(var(--color-grey));
   border-color: rgb(var(--color-grey));
+}
+
+.btn.btn--color-white {
+  color: rgb(var(--color-black));
+  background-color: rgb(var(--color-white));
+}
+
+.btn.btn--color-white:hover {
+  border: 1px solid rgb(var(--color-primary));
+  color: rgb(var(--color-black));
+}
+
+.btn.btn--icon {
+  padding: 0.75rem;
 }
 
 .btn.btn--small {
@@ -1235,9 +1245,17 @@ button {
   align-items: center;
 }
 
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
 .shop-window__actions,
-.collapse__head {
+.collapse__head,
+.radio__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1343,9 +1361,200 @@ button {
   align-items: center;
 }
 
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
 .shop-window__actions,
-.collapse__head {
+.collapse__head,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radio {
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.radio:hover {
+  color: rgb(var(--color-primary));
+}
+
+.radio--btn.radio {
+  justify-content: center;
+}
+
+.radio--btn .radio__custom {
+  display: none;
+}
+
+.radio__content {
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.radio__custom {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgb(var(--color-primary));
+  border-radius: var(--radius-round);
+  background-color: rgb(var(--color-white));
+}
+
+.radio__custom::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: var(--radius-round);
+  background-color: rgb(var(--color-primary));
+}
+
+.radio input {
+  display: none;
+}
+
+.radio input:checked + div .radio__custom::after {
+  display: block;
+}
+
+.radio input:checked + div .btn {
+  background-color: rgb(var(--color-primary-soft));
+  border: 1px solid rgb(var(--color-primary));
+}
+
+.select,
+.tabs__tab,
+.product-card__sizes-variants,
+.share__block,
+.share__block-head,
+.share__list,
+.share__close,
+.nav-pages__list,
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joint-purchases-card__status,
+.tabs__list {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card__price,
+.shop-window__actions,
+.collapse__head,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox {
+  gap: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.checkbox:hover {
+  color: rgb(var(--color-black-hover));
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox input:checked + .checkbox__checkmark svg {
+  opacity: 1;
+}
+
+.checkbox input:checked + .checkbox__checkmark + .checkbox__label {
+  color: rgb(var(--color-primary));
+}
+
+.checkbox__checkmark {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgb(var(--color-primary));
+  border-radius: var(--radius-small);
+}
+
+.checkbox__checkmark svg {
+  opacity: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.checkbox--tag .checkbox__checkmark {
+  display: none;
+}
+
+.checkbox--tag input:checked + .checkbox__checkmark + .checkbox__label {
+  color: rgb(var(--color-black));
+  background-color: rgb(var(--color-primary-tag-checked));
+  outline-width: 2px;
+  outline-color: rgb(var(--color-primary));
+}
+
+.select,
+.tabs__tab,
+.product-card__sizes-variants,
+.share__block,
+.share__block-head,
+.share__list,
+.share__close,
+.nav-pages__list,
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joint-purchases-card__status,
+.tabs__list {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card__price,
+.shop-window__actions,
+.collapse__head,
+.radio__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1572,9 +1781,17 @@ button {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
 .shop-window__actions,
-.collapse__head {
+.collapse__head,
+.radio__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1689,9 +1906,17 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
 .shop-window__actions,
-.collapse__head {
+.collapse__head,
+.radio__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1736,9 +1961,17 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
 .shop-window__actions,
-.collapse__head {
+.collapse__head,
+.radio__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1938,9 +2171,17 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
 .shop-window__actions,
-.collapse__head {
+.collapse__head,
+.radio__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2040,8 +2281,16 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
 .shop-window__actions,
+.radio__content,
 .collapse__head {
   display: flex;
   justify-content: space-between;
@@ -2098,6 +2347,23 @@ svg {
 
 .shop-window__actions-density-grid {
   display: none;
+}
+
+.shop-window__filtersorting-sorting {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 0.75rem;
+  max-width: 49rem;
+  width: 100%;
+  margin: -1.5rem auto 0;
+  padding: 1.25rem 2rem;
+  background-color: rgb(var(--color-primary-pale));
+  border-radius: var(--radius-small);
+}
+
+.shop-window__filtersorting-sorting .btn {
+  font-weight: 400;
+  padding: 0.75rem;
 }
 
 .shop-window__menu {
@@ -2180,7 +2446,15 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .product-card__price,
+.radio__content,
 .collapse__head,
 .shop-window__actions {
   display: flex;
@@ -2371,6 +2645,14 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content,
 .collapse__head,
 .shop-window__actions,
 .product-card__price {
@@ -2460,6 +2742,14 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content,
 .collapse__head,
 .shop-window__actions,
 .product-card__price {
@@ -2531,6 +2821,14 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content,
 .collapse__head,
 .shop-window__actions,
 .product-card__price {
@@ -2570,6 +2868,14 @@ svg {
   align-items: center;
 }
 
+.checkbox,
+.checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content,
 .collapse__head,
 .shop-window__actions,
 .product-card__price {
@@ -3284,7 +3590,7 @@ svg {
   }
 
   .shop-window__joint-purchases-contents {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: calc(50% - 0.5rem) calc(50% - 0.5rem);
     gap: 1rem;
   }
 

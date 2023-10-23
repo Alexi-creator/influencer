@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231022180043">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231023154518">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20231022180043"></script>
+  <script defer src="js/index.min.js?_v=20231023154518"></script>
 </head>
   <body>
     <header class="header">
@@ -195,7 +195,7 @@
   </ul>
 </nav>
     <main class="main">
-      <div class="section section--shop-preview">
+      <section class="section section--shop-preview">
         <div class="section__inner">
           <div class="shop-preview">
   <div class="shop-preview__block-img">
@@ -276,9 +276,9 @@
 </div>
         </div>
         <hr class="hr">
-      </div>
+      </section>
 
-      <div class="section section--shop-window">
+      <section class="section section--shop-window">
         <div class="section__inner">
           <div class="shop-window tabs">
   <div class="shop-window__title">Выберите раздел магазина</div>
@@ -341,6 +341,69 @@
             <use xlink:href="./img/icons/icons.svg#density-grid"></use>
           </svg>
         </div>
+      </div>
+    </div>
+    <div class="shop-window__filtersorting">
+      <div class="shop-window__filtersorting-sorting">
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
+  </div>
+</label>
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
+  </div>
+</label>
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
+  </div>
+</label>
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
+  </div>
+</label>
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
+  </div>
+</label>
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
+  </div>
+</label>
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
+  </div>
+</label>
+        <label class="radio radio--btn">
+  <input name=sorting type="radio">
+  <div class="radio__content">
+    <div class="radio__custom"></div>
+    <div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
+  </div>
+</label>
+      </div>
+      <div class="shop-window__filtersorting-filter">
+        filters
       </div>
     </div>
     <div class="tabs__contents">
@@ -1854,7 +1917,7 @@
 </div>
 
         </div>
-      </div>
+      </section>
       
       <!-- @img это алиас от расширения vsCode path autocomplete -->
       <!-- <picture><source srcset="img/semantika.webp" type="image/webp"><img src="img/semantika.png" alt=""></picture> -->
