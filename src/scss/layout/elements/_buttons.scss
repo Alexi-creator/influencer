@@ -6,7 +6,7 @@
   padding: 0.75rem 1.5rem;
   border: 1px solid;
   border-color: transparent;
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
   font-weight: 600;
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
@@ -41,16 +41,26 @@
     color: rgb(var(--color-primary));
   }
 
-  &#{$root}--icon {
-    padding: 0.75rem;
-  }
-
   &#{$root}--color-grey {
     color: rgb(var(--color-grey));
     border-color: rgb(var(--color-grey));
   }
 
-   &#{$root}--small {
+  &#{$root}--color-white {
+    color: rgb(var(--color-black));
+    background-color: rgb(var(--color-white));
+
+    &:hover {
+      border: 1px solid rgb(var(--color-primary));
+      color: rgb(var(--color-black));
+    }
+  }
+
+  &#{$root}--icon {
+    padding: 0.75rem;
+  }
+
+  &#{$root}--small {
     padding: 0.5rem 0.75rem;
   }
 
