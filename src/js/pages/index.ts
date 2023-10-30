@@ -5,6 +5,8 @@ import { Collapse } from '../modules/collapse'
 import { ShopWindow } from '../modules/shop-window'
 import { Tabs } from '../modules/tabs'
 import { Slider } from '../modules/slider'
+import { Density } from '../modules/density'
+import { Sort } from '../modules/sort'
 
 import { BreakpointWidth } from '../constants/index'
 
@@ -25,6 +27,16 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
+    new Density()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Sort()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
     new ShopWindow(
       new Slider({
         selector: '.swiper-tabs',
@@ -39,7 +51,7 @@ window.addEventListener('load', () => {
           },
         },
         breakMedia: BreakpointWidth.TABLET,
-      })
+      }),
     )
   } catch (error) {
     console.log(error)

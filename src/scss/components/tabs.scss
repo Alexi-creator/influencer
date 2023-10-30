@@ -6,7 +6,6 @@
   $root: &;
 
   &__list {
-    // @extend %flex-space-between;
     @extend %flex-align-center;
   }
 
@@ -49,7 +48,6 @@
 
     &:hover, &--active {
       color: rgb(var(--color-primary));
-      font-weight: 600;
       border-color: rgb(var(--color-primary));
 
       &:first-child {

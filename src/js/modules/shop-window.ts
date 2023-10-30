@@ -1,25 +1,16 @@
-import { Slider } from './slider'
-
-import { ToggleDensity } from './toggleDensity'
-import { SelectedDensity } from '../types/index'
-
 import { shopTabs } from '../constants/index'
+
+import { Slider } from './slider'
 
 /**
  * Управление витриной (табы, товары, tff и тд)
  */
-export class ShopWindow extends ToggleDensity {
-  selectorDensity: string
-  selectorDensityGoods: string
+export class ShopWindow {
   selectorTabsWrapper: string
 
   tabsSlider: Slider
   
   constructor(slider: Slider) {
-    super()
-
-    this.selectorDensity = '.shop-window__actions-density'
-    this.selectorDensityGoods = '.shop-window__goods-items'
     this.selectorTabsWrapper = '.shop-window__tabs'
 
     this.tabsSlider = slider
@@ -44,30 +35,21 @@ export class ShopWindow extends ToggleDensity {
     }
   }
 
-  toggleDensityGoods() {
-    const blockGoods = document.querySelector(this.selectorDensityGoods)
-    if (blockGoods) {
-      if (this.selectedDensity === SelectedDensity.TILE) {
-        blockGoods.classList.add('shop-window__goods-items--horizontally')
-      } else blockGoods.classList.remove('shop-window__goods-items--horizontally')
-    }
-  }
-
   clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
-    const parentDensity = targetElement.closest(this.selectorDensity) as HTMLElement
-
-    if (parentDensity) {
-      this.toggleDensity(parentDensity)
-      this.toggleDensityGoods()
-    }
 
     if (targetElement.closest('.tabs__tab') && targetElement.closest(this.selectorTabsWrapper)) {
       this.definedActiveTab()
     }
   }
 
+  changeHandler(e: Event) {
+    const targetElement = e.target as HTMLElement
+    console.log(targetElement)
+  }
+
   handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
+    document.addEventListener('change', (e) => this.changeHandler(e))
   }
 }
