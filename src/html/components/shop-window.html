@@ -61,53 +61,77 @@
         </div>
       </div>
     </div>
-    <div class="shop-window__filtersorting">
+    <form class="shop-window__filtersorting">
       <div class="shop-window__filtersorting-sorting">
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
-          "mod": "btn",
-        })
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
-          "mod": "btn",
-        })
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
-          "mod": "btn",
-        })
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
-          "mod": "btn",
-        })
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
-          "mod": "btn",
-        })
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
-          "mod": "btn",
-        })
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
-          "mod": "btn",
-        })
-        @@include("./radio.html", {
-          "name": "sorting",
-          "text": "<div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
-          "mod": "btn",
-        })
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "mod": "btn",
+            "value": "popular-asc",
+          })
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "mod": "btn",
+            "value": "rate-asc",
+          })
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "mod": "btn",
+            "value": "cost-asc",
+          })
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "mod": "btn",
+            "value": "name-asc",
+          })
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "mod": "btn",
+            "value": "popular-desc",
+          })
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "mod": "btn",
+            "value": "rate-desc",
+          })
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "mod": "btn",
+            "value": "cost-desc",
+          })
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "mod": "btn",
+            "value": "name-desc",
+          })
+        </div>
       </div>
       <div class="shop-window__filtersorting-filter">
         filters
       </div>
-    </div>
+    </form>
     <div class="tabs__contents">
       <!-- Товары -->
       <div class="tabs__content" data-tab-target="goods">

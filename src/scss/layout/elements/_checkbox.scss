@@ -45,6 +45,12 @@
   }
 
 	&--tag {
+		.btn {
+			&:hover {
+				background-color: rgb(var(--color-primary-tag-checked));
+			}
+		}
+
 		#{$root}__checkmark {
 			display: none;
 		}
@@ -54,8 +60,7 @@
 				& + #{$root}__label {
 					color: rgb(var(--color-black));
 					background-color: rgb(var(--color-primary-tag-checked));
-					outline-width: 2px;
-					outline-color: rgb(var(--color-primary));
+					border: 2px solid rgb(var(--color-primary));
 				}
 			}
 		}

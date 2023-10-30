@@ -1,10 +1,11 @@
 .btn {
   $root: &;
 
+  height: 3rem;
   display: inline-flex;
   gap: 0.25rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid;
+  padding: 0.65rem 1.5rem;
+  border: 2px solid;
   border-color: transparent;
   border-radius: var(--radius-medium);
   font-weight: 600;
@@ -14,7 +15,7 @@
   cursor: pointer;
 
   &#{$root}--text {
-    padding: 0 0.75rem;
+    padding: 0.5rem 0.75rem;
     background-color: transparent;
     color: rgb(var(--color-primary));
     border-color: transparent;
@@ -28,7 +29,7 @@
   &#{$root}--outlined {
     background-color: rgb(var(--color-white));
     color: rgb(var(--color-primary));
-    border: 1px solid rgb(var(--color-primary));
+    border: 2px solid rgb(var(--color-primary));
 
     &#{$root}--color-grey {
       border-color: rgb(var(--color-black-light));
@@ -51,7 +52,7 @@
     background-color: rgb(var(--color-white));
 
     &:hover {
-      border: 1px solid rgb(var(--color-primary));
+      border: 2px solid rgb(var(--color-primary));
       color: rgb(var(--color-black));
     }
   }
@@ -61,26 +62,24 @@
   }
 
   &#{$root}--small {
-    padding: 0.5rem 0.75rem;
+    height: 2.5rem;
+    padding: 0.4rem 0.75rem;
   }
 
   &#{$root}--tag {
-    padding: 0.5rem 0.75rem;
     background-color: rgb(var(--color-white));
     color: rgb(var(--color-black));
     font-weight: 400;
     border: none;
-    outline: 1px solid rgb(var(--color-primary-light));
+    border: 2px solid rgb(var(--color-primary-light));
 
     &:hover {
-      outline-width: 2px;
-      outline-color: rgb(var(--color-primary));
+      border: 2px solid rgb(var(--color-primary-light));
     }
 
     &-checked {
       background-color: rgb(var(--color-primary-tag-checked));
-      outline-width: 2px;
-      outline-color: rgb(var(--color-primary));
+      border: 2px solid rgb(var(--color-primary-light));
     }
   }
 }
