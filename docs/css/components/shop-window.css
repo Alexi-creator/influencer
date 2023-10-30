@@ -57,15 +57,11 @@
 }
 
 .shop-window__filtersorting-sorting {
+  display: none;
+}
+
+.shop-window__filtersorting-sorting.active {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
-  gap: 0.75rem;
-  max-width: 49rem;
-  width: 100%;
-  margin: -1.5rem auto 0;
-  padding: 1.25rem 2rem;
-  background-color: rgb(var(--color-primary-pale));
-  border-radius: var(--radius-small);
 }
 
 .shop-window__filtersorting-sorting .btn {
@@ -199,6 +195,17 @@
     display: none;
   }
 
+  .shop-window__filtersorting-sorting {
+    grid-template-columns: repeat(4, max-content);
+    gap: 0.75rem;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: -1.5rem auto 0;
+    padding: 1.25rem 2rem;
+    background-color: rgb(var(--color-primary-pale));
+    border-radius: var(--radius-small);
+  }
+
   .shop-window__menu {
     display: block;
   }
@@ -224,6 +231,45 @@
 }
 
 @media (min-width: 120rem) {
+  .shop-window__filtersorting-sorting {
+    grid-template-columns: repeat(8, max-content);
+    grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
+    gap: 1.25rem;
+    padding: 2.5rem;
+  }
+
+  .shop-window__filtersorting-sorting-btn--popular-up {
+    grid-area: popular-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--popular-down {
+    grid-area: popular-desc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--rate-up {
+    grid-area: rate-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--rate-down {
+    grid-area: rate-desc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--cost-up {
+    grid-area: cost-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--cost-down {
+    grid-area: cost-desc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--name-up {
+    grid-area: name-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--name-down {
+    grid-area: name-desc;
+  }
+
   .shop-window__goods-items,
   .shop-window__ttf-items {
     grid-template-columns: repeat(4, 1fr);
@@ -232,5 +278,40 @@
 
   .shop-window__joint-purchases-actions {
     grid-template-columns: 34rem auto;
+  }
+}
+
+@media (min-width: 120rem) {
+  .shop-window__filtersorting-sorting-btn--popular-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .shop-window__filtersorting-sorting-btn--popular-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .shop-window__filtersorting-sorting-btn--rate-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+  }
+  .shop-window__filtersorting-sorting-btn--rate-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+  }
+  .shop-window__filtersorting-sorting-btn--cost-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 9;
+  }
+  .shop-window__filtersorting-sorting-btn--cost-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 11;
+  }
+  .shop-window__filtersorting-sorting-btn--name-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 13;
+  }
+  .shop-window__filtersorting-sorting-btn--name-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 15;
   }
 }

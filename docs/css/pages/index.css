@@ -787,8 +787,6 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-/* Указываем box sizing */
-
 *,
 *::before,
 *::after {
@@ -984,10 +982,11 @@ button {
 }
 
 .btn {
+  height: 3rem;
   display: inline-flex;
   gap: 0.25rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid;
+  padding: 0.65rem 1.5rem;
+  border: 2px solid;
   border-color: transparent;
   border-radius: var(--radius-medium);
   font-weight: 600;
@@ -998,7 +997,7 @@ button {
 }
 
 .btn.btn--text {
-  padding: 0 0.75rem;
+  padding: 0.5rem 0.75rem;
   background-color: transparent;
   color: rgb(var(--color-primary));
   border-color: transparent;
@@ -1012,7 +1011,7 @@ button {
 .btn.btn--outlined {
   background-color: rgb(var(--color-white));
   color: rgb(var(--color-primary));
-  border: 1px solid rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
 }
 
 .btn.btn--outlined.btn--color-grey {
@@ -1036,7 +1035,7 @@ button {
 }
 
 .btn.btn--color-white:hover {
-  border: 1px solid rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
   color: rgb(var(--color-black));
 }
 
@@ -1045,27 +1044,25 @@ button {
 }
 
 .btn.btn--small {
-  padding: 0.5rem 0.75rem;
+  height: 2.5rem;
+  padding: 0.4rem 0.75rem;
 }
 
 .btn.btn--tag {
-  padding: 0.5rem 0.75rem;
   background-color: rgb(var(--color-white));
   color: rgb(var(--color-black));
   font-weight: 400;
   border: none;
-  outline: 1px solid rgb(var(--color-primary-light));
+  border: 2px solid rgb(var(--color-primary-light));
 }
 
 .btn.btn--tag:hover {
-  outline-width: 2px;
-  outline-color: rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary-light));
 }
 
 .btn.btn--tag-checked {
   background-color: rgb(var(--color-primary-tag-checked));
-  outline-width: 2px;
-  outline-color: rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary-light));
 }
 
 .breadcrumbs {
@@ -1431,7 +1428,7 @@ button {
 
 .radio input:checked + div .btn {
   background-color: rgb(var(--color-primary-soft));
-  border: 1px solid rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
 }
 
 .select,
@@ -1511,6 +1508,10 @@ button {
   height: 0.875rem;
 }
 
+.checkbox--tag .btn:hover {
+  background-color: rgb(var(--color-primary-tag-checked));
+}
+
 .checkbox--tag .checkbox__checkmark {
   display: none;
 }
@@ -1518,8 +1519,7 @@ button {
 .checkbox--tag input:checked + .checkbox__checkmark + .checkbox__label {
   color: rgb(var(--color-black));
   background-color: rgb(var(--color-primary-tag-checked));
-  outline-width: 2px;
-  outline-color: rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
 }
 
 .select,
@@ -2350,15 +2350,11 @@ svg {
 }
 
 .shop-window__filtersorting-sorting {
+  display: none;
+}
+
+.shop-window__filtersorting-sorting.active {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
-  gap: 0.75rem;
-  max-width: 49rem;
-  width: 100%;
-  margin: -1.5rem auto 0;
-  padding: 1.25rem 2rem;
-  background-color: rgb(var(--color-primary-pale));
-  border-radius: var(--radius-small);
 }
 
 .shop-window__filtersorting-sorting .btn {
@@ -2688,7 +2684,6 @@ svg {
 .tabs__tab:hover,
 .tabs__tab--active {
   color: rgb(var(--color-primary));
-  font-weight: 600;
   border-color: rgb(var(--color-primary));
 }
 
@@ -3571,6 +3566,17 @@ svg {
     display: none;
   }
 
+  .shop-window__filtersorting-sorting {
+    grid-template-columns: repeat(4, max-content);
+    gap: 0.75rem;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: -1.5rem auto 0;
+    padding: 1.25rem 2rem;
+    background-color: rgb(var(--color-primary-pale));
+    border-radius: var(--radius-small);
+  }
+
   .shop-window__menu {
     display: block;
   }
@@ -3768,6 +3774,45 @@ svg {
     margin-top: 2.5rem;
   }
 
+  .shop-window__filtersorting-sorting {
+    grid-template-columns: repeat(8, max-content);
+    grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
+    gap: 1.25rem;
+    padding: 2.5rem;
+  }
+
+  .shop-window__filtersorting-sorting-btn--popular-up {
+    grid-area: popular-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--popular-down {
+    grid-area: popular-desc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--rate-up {
+    grid-area: rate-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--rate-down {
+    grid-area: rate-desc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--cost-up {
+    grid-area: cost-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--cost-down {
+    grid-area: cost-desc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--name-up {
+    grid-area: name-asc;
+  }
+
+  .shop-window__filtersorting-sorting-btn--name-down {
+    grid-area: name-desc;
+  }
+
   .shop-window__goods-items,
   .shop-window__ttf-items {
     grid-template-columns: repeat(4, 1fr);
@@ -3879,6 +3924,49 @@ svg {
     -ms-grid-row: 1;
     -ms-grid-row-span: 3;
     -ms-grid-column: 1;
+  }
+}
+
+@media (min-width: 120rem){
+
+  .shop-window__filtersorting-sorting-btn--popular-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  .shop-window__filtersorting-sorting-btn--popular-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+
+  .shop-window__filtersorting-sorting-btn--rate-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+  }
+
+  .shop-window__filtersorting-sorting-btn--rate-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+  }
+
+  .shop-window__filtersorting-sorting-btn--cost-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 9;
+  }
+
+  .shop-window__filtersorting-sorting-btn--cost-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 11;
+  }
+
+  .shop-window__filtersorting-sorting-btn--name-up {
+    -ms-grid-row: 1;
+    -ms-grid-column: 13;
+  }
+
+  .shop-window__filtersorting-sorting-btn--name-down {
+    -ms-grid-row: 1;
+    -ms-grid-column: 15;
   }
 }
 

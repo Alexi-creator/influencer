@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-/* Указываем box sizing */
-
 *,
 *::before,
 *::after {
@@ -197,10 +195,11 @@ button {
 }
 
 .btn {
+  height: 3rem;
   display: inline-flex;
   gap: 0.25rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid;
+  padding: 0.65rem 1.5rem;
+  border: 2px solid;
   border-color: transparent;
   border-radius: var(--radius-medium);
   font-weight: 600;
@@ -211,7 +210,7 @@ button {
 }
 
 .btn.btn--text {
-  padding: 0 0.75rem;
+  padding: 0.5rem 0.75rem;
   background-color: transparent;
   color: rgb(var(--color-primary));
   border-color: transparent;
@@ -225,7 +224,7 @@ button {
 .btn.btn--outlined {
   background-color: rgb(var(--color-white));
   color: rgb(var(--color-primary));
-  border: 1px solid rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
 }
 
 .btn.btn--outlined.btn--color-grey {
@@ -249,7 +248,7 @@ button {
 }
 
 .btn.btn--color-white:hover {
-  border: 1px solid rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
   color: rgb(var(--color-black));
 }
 
@@ -258,27 +257,25 @@ button {
 }
 
 .btn.btn--small {
-  padding: 0.5rem 0.75rem;
+  height: 2.5rem;
+  padding: 0.4rem 0.75rem;
 }
 
 .btn.btn--tag {
-  padding: 0.5rem 0.75rem;
   background-color: rgb(var(--color-white));
   color: rgb(var(--color-black));
   font-weight: 400;
   border: none;
-  outline: 1px solid rgb(var(--color-primary-light));
+  border: 2px solid rgb(var(--color-primary-light));
 }
 
 .btn.btn--tag:hover {
-  outline-width: 2px;
-  outline-color: rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary-light));
 }
 
 .btn.btn--tag-checked {
   background-color: rgb(var(--color-primary-tag-checked));
-  outline-width: 2px;
-  outline-color: rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary-light));
 }
 
 .breadcrumbs {
@@ -610,7 +607,7 @@ button {
 
 .radio input:checked + div .btn {
   background-color: rgb(var(--color-primary-soft));
-  border: 1px solid rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
 }
 
 .popup__overlay,
@@ -673,6 +670,10 @@ button {
   height: 0.875rem;
 }
 
+.checkbox--tag .btn:hover {
+  background-color: rgb(var(--color-primary-tag-checked));
+}
+
 .checkbox--tag .checkbox__checkmark {
   display: none;
 }
@@ -680,8 +681,7 @@ button {
 .checkbox--tag input:checked + .checkbox__checkmark + .checkbox__label {
   color: rgb(var(--color-black));
   background-color: rgb(var(--color-primary-tag-checked));
-  outline-width: 2px;
-  outline-color: rgb(var(--color-primary));
+  border: 2px solid rgb(var(--color-primary));
 }
 
 .popup__overlay,

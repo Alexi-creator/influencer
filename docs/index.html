@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231023154518">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231030070925">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20231023154518"></script>
+  <script defer src="js/index.min.js?_v=20231030070925"></script>
 </head>
   <body>
     <header class="header">
@@ -343,69 +343,85 @@
         </div>
       </div>
     </div>
-    <div class="shop-window__filtersorting">
+    <form class="shop-window__filtersorting">
       <div class="shop-window__filtersorting-sorting">
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=popular-asc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
   </div>
 </label>
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-asc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=rate-asc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
   </div>
 </label>
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-asc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=cost-asc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
   </div>
 </label>
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-asc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=name-asc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
   </div>
 </label>
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-desc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=popular-desc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
   </div>
 </label>
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-desc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=rate-desc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
   </div>
 </label>
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-desc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=cost-desc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
   </div>
 </label>
-        <label class="radio radio--btn">
-  <input name=sorting type="radio">
+        </div>
+        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-desc">
+          <label class="radio radio--btn">
+  <input name=sorting type="radio" value=name-desc>
   <div class="radio__content">
     <div class="radio__custom"></div>
     <div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
   </div>
 </label>
+        </div>
       </div>
       <div class="shop-window__filtersorting-filter">
         filters
       </div>
-    </div>
+    </form>
     <div class="tabs__contents">
       <!-- Товары -->
       <div class="tabs__content" data-tab-target="goods">

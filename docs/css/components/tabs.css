@@ -36,7 +36,6 @@
 .tabs__tab:hover,
 .tabs__tab--active {
   color: rgb(var(--color-primary));
-  font-weight: 600;
   border-color: rgb(var(--color-primary));
 }
 
