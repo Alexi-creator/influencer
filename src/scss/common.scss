@@ -37,3 +37,8 @@ svg {
     padding: 5rem 0;
   }
 }
+
+.noselect,
+.noselect * {
+  user-select: none;
+}

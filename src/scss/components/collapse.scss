@@ -26,20 +26,29 @@
   &__head {
     @extend %flex-space-between;
 
+    gap: 0.5rem;
     font-weight: 600;
     cursor: pointer;
 
     &:hover {
-      & #{$root}__toggle-icon use {
+      & #{$root}__head-icon use {
         fill: rgb(var(--color-black));
       }
     }
-  }
 
-  &__toggle-icon {
-    & use {
-      fill: rgb(var(--color-black-middle));
-      transition: var(--transition-base);
+    &-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &-icon {
+      flex-shrink: 0;
+
+      & use {
+        fill: rgb(var(--color-black-middle));
+        transition: var(--transition-base);
+      }
     }
   }
 

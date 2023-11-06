@@ -7,6 +7,7 @@ import { Tabs } from '../modules/tabs'
 import { Slider } from '../modules/slider'
 import { Density } from '../modules/density'
 import { Sort } from '../modules/sort'
+import { Filter } from '../modules/filter'
 
 import { BreakpointWidth } from '../constants/index'
 
@@ -33,6 +34,11 @@ window.addEventListener('load', () => {
   }
   try {
     new Sort()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Filter()
   } catch (error) {
     console.log(error)
   }

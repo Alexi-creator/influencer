@@ -128,8 +128,52 @@
           })
         </div>
       </div>
+      <div class="shop-window__filtersorting-chips">
+        chips
+      </div>
       <div class="shop-window__filtersorting-filter">
-        filters
+        <div class="shop-window__filtersorting-filter-filters filters">
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Специальные предложение",
+              "body": '<div class="filters__collapse">@@include("./checkbox.html", { "name": "specials36", "text": "Test For Free", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials38", "text": "Совместная Покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials40", "text": "Благотворительная покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials42", "text": "Акция “2 по цене 1”", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер2",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "2size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер3",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "3size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер4",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "4size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер5",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "5size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+        </div>
+        <div class="shop-window__filtersorting-filter-actions">
+          <button class="btn btn--text">Очистить все фильтры</button>
+          <button class="btn">Применить (30)</button>
+        </div>
       </div>
     </form>
     <div class="tabs__contents">

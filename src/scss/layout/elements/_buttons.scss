@@ -12,6 +12,7 @@
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
   transition: var(--transition-base);
+  user-select: none;
   cursor: pointer;
 
   &#{$root}--text {

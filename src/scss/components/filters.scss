@@ -1,0 +1,31 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+
+  @include media($full) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__item {
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+
+  &__collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      gap: 1.25rem 1.88rem;
+    }
+  }
+}

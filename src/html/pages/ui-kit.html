@@ -160,7 +160,10 @@
       </div>
 
       <h2>Collapse:</h2>
-      @@include("../components/collapse.html")
+      @@include("../components/collapse.html", {
+        "title": "Title",
+        "body": "<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>",
+      })
 
       <h2>Popup (Modals):</h2>
       @@include("../components/popup.html", {
@@ -269,6 +272,25 @@
       <h2>Tabs:</h2>
       <div class="ui-kit__block ui-kit__tabs">
         @@include("../components/tabs.html")
+      </div>
+
+      <h2>Chips:</h2>
+      <div class="ui-kit__block ui-kit__chips">
+        @@include("../components/chip.html", {
+          "title": "Размеры",
+          "options": "36, 38, 40",
+          "count": "22",
+        })
+        @@include("../components/chip.html", {
+          "title": "Размеры2",
+          "options": "36, 38, 40",
+          "count": "42",
+        })
+        @@include("../components/chip.html", {
+          "title": "Размеры3",
+          "options": "36, 38, 40",
+          "count": "18",
+        })
       </div>
       
     </main>
