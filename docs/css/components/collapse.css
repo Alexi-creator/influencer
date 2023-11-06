@@ -23,15 +23,26 @@
 }
 
 .collapse__head {
+  gap: 0.5rem;
   font-weight: 600;
   cursor: pointer;
 }
 
-.collapse__head:hover .collapse__toggle-icon use {
+.collapse__head:hover .collapse__head-icon use {
   fill: rgb(var(--color-black));
 }
 
-.collapse__toggle-icon use {
+.collapse__head-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collapse__head-icon {
+  flex-shrink: 0;
+}
+
+.collapse__head-icon use {
   fill: rgb(var(--color-black-middle));
   transition: var(--transition-base);
 }

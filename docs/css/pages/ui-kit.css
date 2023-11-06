@@ -206,6 +206,9 @@ button {
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
   transition: var(--transition-base);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -447,6 +450,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -553,6 +557,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -638,6 +643,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -719,8 +725,56 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox,
 .checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapse__head,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chip {
+  gap: 0.25rem;
+  height: 3rem;
+  padding: 0 1.25rem;
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
+}
+
+.chip__title,
+.chip__more {
+  color: rgb(var(--color-grey));
+}
+
+.chip__cross {
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.tabs__tab,
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs__list {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -947,7 +1001,8 @@ button {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1006,6 +1061,13 @@ svg {
 
 .main {
   padding: 1.25rem 0 5rem;
+}
+
+.noselect,
+.noselect * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 /**
@@ -1810,7 +1872,8 @@ button.swiper-pagination-bullet {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1842,15 +1905,26 @@ button.swiper-pagination-bullet {
 }
 
 .collapse__head {
+  gap: 0.5rem;
   font-weight: 600;
   cursor: pointer;
 }
 
-.collapse__head:hover .collapse__toggle-icon use {
+.collapse__head:hover .collapse__head-icon use {
   fill: rgb(var(--color-black));
 }
 
-.collapse__toggle-icon use {
+.collapse__head-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collapse__head-icon {
+  flex-shrink: 0;
+}
+
+.collapse__head-icon use {
   fill: rgb(var(--color-black-middle));
   transition: var(--transition-base);
 }
@@ -1910,7 +1984,8 @@ button.swiper-pagination-bullet {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1930,6 +2005,9 @@ button.swiper-pagination-bullet {
   transition: var(--transition-base);
   cursor: pointer;
   border: 2px solid rgb(var(--color-grey));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .tabs__tab:first-child {
@@ -2066,6 +2144,12 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.ui-kit__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 h1 {

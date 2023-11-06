@@ -16,6 +16,9 @@
   transition: var(--transition-base);
   cursor: pointer;
   border: 2px solid rgb(var(--color-grey));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .tabs__tab:first-child {

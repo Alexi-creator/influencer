@@ -206,6 +206,9 @@ button {
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
   transition: var(--transition-base);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -441,6 +444,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -540,6 +544,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -618,6 +623,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -692,8 +698,49 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox,
 .checkbox__checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chip {
+  gap: 0.25rem;
+  height: 3rem;
+  padding: 0 1.25rem;
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
+}
+
+.chip__title,
+.chip__more {
+  color: rgb(var(--color-grey));
+}
+
+.chip__cross {
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -913,7 +960,8 @@ button {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -973,6 +1021,13 @@ svg {
   padding: 1.25rem 0 5rem;
 }
 
+.noselect,
+.noselect * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .header__top-location,
 .header__top-info,
 .popup__overlay {
@@ -982,7 +1037,8 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;

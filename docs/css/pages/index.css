@@ -993,6 +993,9 @@ button {
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
   transition: var(--transition-base);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -1242,6 +1245,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -1250,6 +1254,7 @@ button {
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -1358,6 +1363,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -1366,6 +1372,7 @@ button {
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -1453,6 +1460,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox__checkmark,
 .checkbox {
   display: inline-flex;
@@ -1461,6 +1469,7 @@ button {
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -1544,6 +1553,7 @@ button {
   align-items: center;
 }
 
+.chip,
 .checkbox,
 .checkbox__checkmark {
   display: inline-flex;
@@ -1552,6 +1562,65 @@ button {
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
+.shop-window__actions,
+.collapse__head,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chip {
+  gap: 0.25rem;
+  height: 3rem;
+  padding: 0 1.25rem;
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
+}
+
+.chip__title,
+.chip__more {
+  color: rgb(var(--color-grey));
+}
+
+.chip__cross {
+  margin-left: 0.25rem;
+  cursor: pointer;
+}
+
+.select,
+.tabs__tab,
+.product-card__sizes-variants,
+.share__block,
+.share__block-head,
+.share__list,
+.share__close,
+.nav-pages__list,
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joint-purchases-card__status,
+.tabs__list {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -1782,13 +1851,15 @@ button {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -1843,6 +1914,13 @@ svg {
 
 .main {
   padding: 1.25rem 0 5rem;
+}
+
+.noselect,
+.noselect * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .shop-preview {
@@ -1907,13 +1985,15 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -1962,13 +2042,15 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -2172,13 +2254,15 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .collapse__head,
 .radio__content {
@@ -2206,15 +2290,26 @@ svg {
 }
 
 .collapse__head {
+  gap: 0.5rem;
   font-weight: 600;
   cursor: pointer;
 }
 
-.collapse__head:hover .collapse__toggle-icon use {
+.collapse__head:hover .collapse__head-icon use {
   fill: rgb(var(--color-black));
 }
 
-.collapse__toggle-icon use {
+.collapse__head-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collapse__head-icon {
+  flex-shrink: 0;
+}
+
+.collapse__head-icon use {
   fill: rgb(var(--color-black-middle));
   transition: var(--transition-base);
 }
@@ -2282,13 +2377,15 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 .product-card__price,
+.shop-window__filtersorting-filter-actions,
 .shop-window__actions,
 .radio__content,
 .collapse__head {
@@ -2302,10 +2399,11 @@ svg {
 }
 
 .shop-window__inner {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
   margin-top: 0.5rem;
+}
+
+.shop-window__inner > * {
+  margin-top: 2.5rem;
 }
 
 .shop-window__controls {
@@ -2349,6 +2447,10 @@ svg {
   display: none;
 }
 
+.shop-window__filtersorting > *:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
 .shop-window__filtersorting-sorting {
   display: none;
 }
@@ -2360,6 +2462,34 @@ svg {
 .shop-window__filtersorting-sorting .btn {
   font-weight: 400;
   padding: 0.75rem;
+}
+
+.shop-window__filtersorting-chips {
+  display: none;
+}
+
+.shop-window__filtersorting-filter {
+  display: none;
+  padding: 2rem 3rem;
+  background-color: rgb(var(--color-primary-pale));
+}
+
+.shop-window__filtersorting-filter.active {
+  display: block;
+}
+
+.shop-window__filtersorting-filter-filters {
+  margin-bottom: 1.25rem;
+}
+
+.shop-window__filtersorting-filter-actions {
+  padding: 1.25rem 0 0;
+  border-top: 1px solid rgb(var(--color-black-light));
+}
+
+.shop-window__filtersorting-filter-actions .btn--text {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .shop-window__menu {
@@ -2443,7 +2573,8 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2452,7 +2583,8 @@ svg {
 .product-card__price,
 .radio__content,
 .collapse__head,
-.shop-window__actions {
+.shop-window__actions,
+.shop-window__filtersorting-filter-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2642,7 +2774,8 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2651,6 +2784,7 @@ svg {
 .radio__content,
 .collapse__head,
 .shop-window__actions,
+.shop-window__filtersorting-filter-actions,
 .product-card__price {
   display: flex;
   justify-content: space-between;
@@ -2664,6 +2798,9 @@ svg {
   transition: var(--transition-base);
   cursor: pointer;
   border: 2px solid rgb(var(--color-grey));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .tabs__tab:first-child {
@@ -2738,7 +2875,8 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2747,6 +2885,7 @@ svg {
 .radio__content,
 .collapse__head,
 .shop-window__actions,
+.shop-window__filtersorting-filter-actions,
 .product-card__price {
   display: flex;
   justify-content: space-between;
@@ -2817,7 +2956,8 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2826,6 +2966,7 @@ svg {
 .radio__content,
 .collapse__head,
 .shop-window__actions,
+.shop-window__filtersorting-filter-actions,
 .product-card__price {
   display: flex;
   justify-content: space-between;
@@ -2864,7 +3005,8 @@ svg {
 }
 
 .checkbox,
-.checkbox__checkmark {
+.checkbox__checkmark,
+.chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -2873,6 +3015,7 @@ svg {
 .radio__content,
 .collapse__head,
 .shop-window__actions,
+.shop-window__filtersorting-filter-actions,
 .product-card__price {
   display: flex;
   justify-content: space-between;
@@ -3120,6 +3263,70 @@ svg {
   height: 2rem;
   border-radius: var(--radius-round);
   overflow: hidden;
+}
+
+.header__top-location,
+.header__top-info,
+.popup__overlay,
+.nav-pages__list,
+.share__block,
+.share__block-head,
+.share__list,
+.share__close,
+.product-card__sizes-variants,
+.tabs__tab,
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs__list,
+.joint-purchases-card__status {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content,
+.collapse__head,
+.shop-window__actions,
+.shop-window__filtersorting-filter-actions,
+.product-card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.filters__item {
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.filters__collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.filters__collapse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 1.25rem 1.88rem;
 }
 
 @media (min-width: 48rem) {
@@ -3854,6 +4061,10 @@ svg {
 
   .joint-purchases-card__brand {
     display: none;
+  }
+
+  .filters {
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .joint-purchases-card__title {
