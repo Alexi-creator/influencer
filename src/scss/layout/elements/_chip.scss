@@ -1,0 +1,26 @@
+@import "../../basis/_extends";
+@import "../../basis/_mixins";
+@import "../../basis/_variables";
+
+.chip {
+  @extend %inline-flex-center;
+
+  gap: 0.25rem;
+  height: 3rem;
+  padding: 0 1.25rem;
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
+
+  &__title, &__more {
+    color: rgb(var(--color-grey));
+  }
+
+  &__cross {
+    margin-left: 0.25rem;
+    cursor: pointer;
+
+    & use {
+      // stroke: rgb(var(--color-black));
+    }
+  }
+}

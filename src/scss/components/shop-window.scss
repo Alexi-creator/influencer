@@ -14,10 +14,11 @@
   }
 
   &__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
     margin-top: 0.5rem;
+
+    & > * {
+      margin-top: 2.5rem;
+    }
 
     @include media($md) {
       margin-top: 0;
@@ -110,6 +111,10 @@
   }
 
   &__filtersorting {
+    & > *:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+
     &-sorting {
       display: none;
 
@@ -165,6 +170,37 @@
           &--name-down {
             grid-area: name-desc;
           }
+        }
+      }
+    }
+
+    &-chips {
+      display: none;
+    }
+
+    &-filter {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      padding: 2rem 3rem;
+      background-color: rgb(var(--color-primary-pale));
+
+      &-filters {
+        margin-bottom: 1.25rem;
+      }
+
+      &-actions {
+        @extend %flex-space-between;
+
+        padding: 1.25rem 0 0;
+        border-top: 1px solid rgb(var(--color-black-light));
+
+        & .btn--text {
+          padding-left: 0;
+          padding-right: 0;
         }
       }
     }
