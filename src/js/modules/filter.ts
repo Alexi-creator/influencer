@@ -11,6 +11,7 @@ export class Filter {
   selectorFilterWrapper: string
   selectorFiltersWrapper: string
   selectorChips: string
+  selectorChipCross: string
   filterActionBtn: HTMLElement | null
   filterWrapper: HTMLElement | null
   filtersWrapper: HTMLElement | null
@@ -23,6 +24,7 @@ export class Filter {
     this.selectorFilterWrapper = '.shop-window__filtersorting-filter'
     this.selectorChips = '.shop-window__filtersorting-chips'
     this.selectorFiltersWrapper = '.filters'
+    this.selectorChipCross = '.chip__cross'
 
     this.filterActionBtn = document.querySelector(this.selectorFilterAction)
     this.filterWrapper = document.querySelector(this.selectorFilterWrapper)
@@ -37,6 +39,19 @@ export class Filter {
   init() {
     this.handlers()
     this.collectionOptions()
+  }
+
+  chipTemplate(title: string, options: string, moreCount: number) {
+    return `
+      <div class="chip">
+        <span class="chip__title">${title}:</span>
+        <span class="chip__options">${options}</span>
+        ${moreCount > 0 ? `<span class="chip__more">и еще ${moreCount}</span>` : ''}
+        <svg class="chip__cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </div>
+    `
   }
 
   collectionOptions() {
@@ -75,16 +90,46 @@ export class Filter {
       }
   
       this.filters[title].moreCount = this.filters[title].selectedOptions.length - 3
-    }  
+    }
+
+    this.addChips()
   }
 
   displayChips() {
     const filterOptions = Object.entries(this.filters).filter(item => item[1].selectedOptions.length)
     if (filterOptions.length) {
-      // console.log('filterOptions', filterOptions)
-      Object.fromEntries(filterOptions)
-      // отображаем чипсы filterOptions
+      filterOptions.forEach(([title, { moreCount, selectedOptions }]) => {
+        const options = selectedOptions.slice(0, 3).join(', ')
+        const template = this.chipTemplate(title, options, moreCount)
+
+        if (this.chipsWrapper) {
+          this.chipsWrapper.innerHTML += template
+          this.chipsWrapper.classList.add('active')
+        }
+      })
     }
+  }
+
+  removeChips(targetElement: HTMLElement) {
+    const chip = targetElement.closest('.chip')
+    const title = chip?.querySelector('.chip__title')?.textContent?.trim().replace(':', '')
+
+    if (title && this.filterWrapper) {
+      const filter = Array.from(this.filterWrapper.querySelectorAll('.collapse__head-title'))
+        .filter(item => item?.textContent?.trim() === title)
+      const parent = filter[0].closest('.filters__item')
+      const inputs = parent?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
+      inputs?.forEach(input => input.checked = false)
+      chip?.dispatchEvent(new Event('change', { bubbles: true }))
+
+      this.filters[title].selectedOptions = []
+    }
+
+    chip?.remove()
+  }
+
+  addChips() {
+    // добавить новый чипс или внести внего изменения
   }
 
   toggleFilter() {
@@ -96,6 +141,10 @@ export class Filter {
 
     if (targetElement.closest(this.selectorFilterAction)) {
       this.toggleFilter()
+    }
+
+    if (targetElement.closest(this.selectorChipCross)) {
+      this.removeChips(targetElement)
     }
   }
 
