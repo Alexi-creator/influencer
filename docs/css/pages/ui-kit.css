@@ -748,7 +748,6 @@ button {
   border-radius: var(--radius-small);
 }
 
-.chip__title,
 .chip__more {
   color: rgb(var(--color-grey));
 }

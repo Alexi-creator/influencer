@@ -1579,7 +1579,6 @@ button {
   border-radius: var(--radius-small);
 }
 
-.chip__title,
 .chip__more {
   color: rgb(var(--color-grey));
 }
@@ -2466,6 +2465,12 @@ svg {
 
 .shop-window__filtersorting-chips {
   display: none;
+}
+
+.shop-window__filtersorting-chips.active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .shop-window__filtersorting-filter {

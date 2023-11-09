@@ -79,6 +79,12 @@
   display: none;
 }
 
+.shop-window__filtersorting-chips.active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .shop-window__filtersorting-filter {
   display: none;
   padding: 2rem 3rem;
