@@ -7,11 +7,13 @@ import { Slider } from './slider'
  */
 export class ShopWindow {
   selectorTabsWrapper: string
+  selectorForm: string
 
   tabsSlider: Slider
   
   constructor(slider: Slider) {
     this.selectorTabsWrapper = '.shop-window__tabs'
+    this.selectorForm = '.shop-window__filtersorting'
 
     this.tabsSlider = slider
     
@@ -45,7 +47,10 @@ export class ShopWindow {
 
   changeHandler(e: Event) {
     const targetElement = e.target as HTMLElement
-    console.log(targetElement)
+
+    if (targetElement.closest(this.selectorForm)) {
+      console.log(targetElement)
+    }
   }
 
   handlers() {

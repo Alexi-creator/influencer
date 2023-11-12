@@ -90,9 +90,13 @@ export class Filter {
       }
   
       this.filters[title].moreCount = this.filters[title].selectedOptions.length - 3
-    }
 
-    this.addChips()
+      if (this.chipsWrapper) {
+        this.chipsWrapper.innerHTML = ''
+        this.displayChips()
+        this.toggleChips()
+      }
+    }
   }
 
   displayChips() {
@@ -117,19 +121,24 @@ export class Filter {
     if (title && this.filterWrapper) {
       const filter = Array.from(this.filterWrapper.querySelectorAll('.collapse__head-title'))
         .filter(item => item?.textContent?.trim() === title)
+
       const parent = filter[0].closest('.filters__item')
       const inputs = parent?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
       inputs?.forEach(input => input.checked = false)
-      chip?.dispatchEvent(new Event('change', { bubbles: true }))
 
       this.filters[title].selectedOptions = []
     }
 
     chip?.remove()
+    this.toggleChips()
   }
 
-  addChips() {
-    // добавить новый чипс или внести внего изменения
+  toggleChips() {
+    if (this.chipsWrapper) {
+      if (Array.from(this.chipsWrapper?.children || []).length === 0) {
+        this.chipsWrapper.classList.remove('active')
+      }
+    }
   }
 
   toggleFilter() {
