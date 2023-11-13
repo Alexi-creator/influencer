@@ -1,15 +1,16 @@
 import '../common.ts'
 
-import { Share } from '../modules/share'
-import { Collapse } from '../modules/collapse'
-import { ShopWindow } from '../modules/shop-window'
-import { Tabs } from '../modules/tabs'
-import { Slider } from '../modules/slider'
-import { Density } from '../modules/density'
-import { Sort } from '../modules/sort'
-import { Filter } from '../modules/filter'
+import { API_URLS, BreakpointWidth, Methods } from '../constants/index'
 
-import { BreakpointWidth } from '../constants/index'
+import { Share } from '../modules/Share'
+import { Collapse } from '../modules/Collapse'
+import { ShopWindow } from '../modules/Shop-window'
+import { Tabs } from '../modules/Tabs'
+import { Slider } from '../modules/Slider'
+import { Density } from '../modules/Density'
+import { Sort } from '../modules/Sort'
+import { Filter } from '../modules/Filter'
+import { Form } from '../modules/Form'
 
 window.addEventListener('load', () => {
   try {
@@ -58,6 +59,13 @@ window.addEventListener('load', () => {
         },
         breakMedia: BreakpointWidth.TABLET,
       }),
+      new Form(
+        '.shop-window__filtersorting', 
+        API_URLS.shops.test,
+        {
+          method: Methods.GET
+        },
+      ),
     )
   } catch (error) {
     console.log(error)

@@ -36,12 +36,12 @@ export class Filter {
     this.init()
   }
 
-  init() {
+  private init() {
     this.handlers()
     this.collectionOptions()
   }
 
-  chipTemplate(title: string, options: string, moreCount: number) {
+  private chipTemplate(title: string, options: string, moreCount: number) {
     return `
       <div class="chip">
         <span class="chip__title">${title}:</span>
@@ -54,7 +54,7 @@ export class Filter {
     `
   }
 
-  collectionOptions() {
+  private collectionOptions() {
     if (this.filtersWrapper) {
       this.filters = Array.from(this.filtersWrapper.children).reduce((acc, filter) => {
         const title = filter.querySelector('.collapse__head-title')?.textContent?.trim()
@@ -75,7 +75,7 @@ export class Filter {
     }
   }
 
-  changeOptions(targetElement: HTMLInputElement) {
+  private changeOptions(targetElement: HTMLInputElement) {
     const { checked } = targetElement
     const title = targetElement.closest('.collapse')?.querySelector('.collapse__head-title')?.textContent?.trim()
     const option = targetElement.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
@@ -90,12 +90,16 @@ export class Filter {
       }
   
       this.filters[title].moreCount = this.filters[title].selectedOptions.length - 3
-    }
 
-    this.addChips()
+      if (this.chipsWrapper) {
+        this.chipsWrapper.innerHTML = ''
+        this.displayChips()
+        this.toggleChips()
+      }
+    }
   }
 
-  displayChips() {
+  private displayChips() {
     const filterOptions = Object.entries(this.filters).filter(item => item[1].selectedOptions.length)
     if (filterOptions.length) {
       filterOptions.forEach(([title, { moreCount, selectedOptions }]) => {
@@ -110,33 +114,38 @@ export class Filter {
     }
   }
 
-  removeChips(targetElement: HTMLElement) {
+  private removeChips(targetElement: HTMLElement) {
     const chip = targetElement.closest('.chip')
     const title = chip?.querySelector('.chip__title')?.textContent?.trim().replace(':', '')
 
     if (title && this.filterWrapper) {
       const filter = Array.from(this.filterWrapper.querySelectorAll('.collapse__head-title'))
         .filter(item => item?.textContent?.trim() === title)
+
       const parent = filter[0].closest('.filters__item')
       const inputs = parent?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
       inputs?.forEach(input => input.checked = false)
-      chip?.dispatchEvent(new Event('change', { bubbles: true }))
 
       this.filters[title].selectedOptions = []
     }
 
     chip?.remove()
+    this.toggleChips()
   }
 
-  addChips() {
-    // добавить новый чипс или внести внего изменения
+  private toggleChips() {
+    if (this.chipsWrapper) {
+      if (Array.from(this.chipsWrapper?.children || []).length === 0) {
+        this.chipsWrapper.classList.remove('active')
+      }
+    }
   }
 
-  toggleFilter() {
+  private toggleFilter() {
     this.filterWrapper?.classList.toggle('active')
   }
 
-  clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
     if (targetElement.closest(this.selectorFilterAction)) {
@@ -148,7 +157,7 @@ export class Filter {
     }
   }
 
-  changeHandler(e: Event) {
+  private changeHandler(e: Event) {
     const targetElement = e.target as HTMLInputElement
 
     if (targetElement.closest(this.selectorFiltersWrapper)) {
@@ -156,7 +165,7 @@ export class Filter {
     }
   }
 
-  handlers() {
+  private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
     document.addEventListener('change', (e) => this.changeHandler(e))
   }

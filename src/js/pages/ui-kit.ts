@@ -1,18 +1,12 @@
 import '../common'
 
-import { Popup } from '../modules/popup'
-import { Collapse } from '../modules/collapse'
-import { Slider } from '../modules/slider'
-import { Tabs } from '../modules/tabs'
+import { Collapse } from '../modules/Collapse'
+import { Slider } from '../modules/Slider'
+import { Tabs } from '../modules/Tabs'
 
 window.addEventListener('load', () => {
   try {
     new Collapse()
-  } catch (error) {
-    console.log(error)
-  }
-  try {
-    new Popup()
   } catch (error) {
     console.log(error)
   }
