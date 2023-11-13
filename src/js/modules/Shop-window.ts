@@ -1,31 +1,34 @@
 import { shopTabs } from '../constants/index'
 
-import { Slider } from './slider'
+import { Form } from './Form'
+import { Slider } from './Slider'
 
 /**
  * Управление витриной (табы, товары, tff и тд)
  */
 export class ShopWindow {
-  selectorTabsWrapper: string
-  selectorForm: string
+  private selectorTabsWrapper: string
+  private selectorForm: string
 
-  tabsSlider: Slider
+  private tabsSlider: Slider
+  private form: Form
   
-  constructor(slider: Slider) {
+  constructor(slider: Slider, form: Form) {
     this.selectorTabsWrapper = '.shop-window__tabs'
     this.selectorForm = '.shop-window__filtersorting'
 
     this.tabsSlider = slider
-    
+    this.form = form
+
     this.init()
   }
 
-  init() {
+  private init() {
     this.handlers()
     this.definedActiveTab()
   }
 
-  definedActiveTab() {
+  private definedActiveTab() {
     const tabsWrapper = document.querySelector(this.selectorTabsWrapper)
     const activeTab = (tabsWrapper?.querySelector('.tabs__tab--active') as HTMLElement)?.dataset.tabPath
 
@@ -37,7 +40,7 @@ export class ShopWindow {
     }
   }
 
-  clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
     if (targetElement.closest('.tabs__tab') && targetElement.closest(this.selectorTabsWrapper)) {
@@ -45,16 +48,18 @@ export class ShopWindow {
     }
   }
 
-  changeHandler(e: Event) {
-    const targetElement = e.target as HTMLElement
+  private changeHandler(e: Event) {
+    const targetElement = e.target as HTMLInputElement
 
     if (targetElement.closest(this.selectorForm)) {
-      console.log(targetElement)
+      if(targetElement.name === 'sorting') {
+        this.form.submitForm()
+      }
     }
   }
 
-  handlers() {
-    document.addEventListener('click', (e) => this.clickHandler(e))
-    document.addEventListener('change', (e) => this.changeHandler(e))
+  private handlers() {
+    document.addEventListener('click', (e: MouseEvent) => this.clickHandler(e))
+    document.addEventListener('change', (e: Event) => this.changeHandler(e))
   }
 }
