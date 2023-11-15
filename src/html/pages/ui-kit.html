@@ -77,6 +77,32 @@
         })
       </div>
 
+      <h2>Select:</h2>
+      <div class="ui-kit__block ui-kit__select">
+        @@include("../components/select.html", {
+          "label1": "Везде",
+          "label2": "Везде2",
+          "label3": "Везде3 очень длинный текст",
+          "data-value1": "val1",
+          "data-value2": "val2",
+          "data-value3": "val3",
+          "name": "select",
+          "extra-class": "",
+          "value": "val2",
+        })
+        @@include("../components/select.html", {
+          "label1": "Опция1",
+          "label2": "Опция2",
+          "label3": "Опция3 очень длинный текст",
+          "data-value1": "val21",
+          "data-value2": "val22",
+          "data-value3": "val23",
+          "name": "select2",
+          "extra-class": "select--transparent",
+          "value": "val23",
+        })
+      </div>
+
       <h2>Checkbox:</h2>
       <div class="ui-kit__block ui-kit__checkbox">
         @@include("../components/checkbox.html", {

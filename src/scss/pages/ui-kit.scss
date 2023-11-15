@@ -4,6 +4,7 @@
 
 @import "../components/collapse";
 @import "../components/tabs";
+@import "../components/select";
 
 .ui-kit {
   min-height: 100vh;
@@ -97,6 +98,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+
+  &__select {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 

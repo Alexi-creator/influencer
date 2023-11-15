@@ -11,6 +11,7 @@ import { Density } from '../modules/Density'
 import { Sort } from '../modules/Sort'
 import { Filter } from '../modules/Filter'
 import { Form } from '../modules/Form'
+import { Select } from '../modules/Select'
 
 window.addEventListener('load', () => {
   try {
@@ -40,6 +41,11 @@ window.addEventListener('load', () => {
   }
   try {
     new Filter()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Select()
   } catch (error) {
     console.log(error)
   }

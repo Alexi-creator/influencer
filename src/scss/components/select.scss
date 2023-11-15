@@ -3,12 +3,66 @@
 @import "../basis/_variables";
 
 .select {
-  @extend %flex-center;
-  
-  position: relative;
+  $root: &;
 
-  & svg use {
-    stroke: rgb(var(--color-black));
-    stroke-width: 2px;
+  position: relative;
+  width: 100%;
+  background-color: rgb(var(--color-white));
+  border: 1px solid rgb(var(--color-primary));
+  border-radius: var(--radius-medium);
+  padding: 0.5rem;
+
+  &--transparent {
+    border: none;
+  }
+  
+  &__header {
+    @extend %flex-space-between;
+
+    gap: 0.5rem;
+    overflow: hidden;
+  }
+
+  &__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__options {
+    display: none;
+    position: absolute;
+    width: max-content;
+    min-width: 100%;
+    top: calc(100%);
+    left: 0;
+    background-color: rgb(var(--color-white));
+    border: 1px solid rgb(var(--color-primary));
+    border-radius: var(--radius-medium);
+    padding: 0.5rem;
+    z-index: var(--z-popup);
+
+    #{$root}.active & {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    // #{$root}--transparent & {
+    //   border: none;
+    // }
+  }
+
+  &__icon {
+    transition: var(--transition-base);
+
+    &.active {
+      transform: rotate(180deg);
+    }
+
+    & svg use {
+      stroke: rgb(var(--color-black));
+      stroke-width: 2px;
+    }
   }
 }
