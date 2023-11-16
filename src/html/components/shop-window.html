@@ -47,9 +47,11 @@
         </div>
         <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
           Фильтры
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#filters"></use>
-          </svg>
+          <div class="shop-window__actions-filters-icon">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#filters"></use>
+            </svg>
+          </div>
         </div>
         <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
           <svg class="shop-window__actions-density-tile">
@@ -289,8 +291,8 @@
           </div>
         </div>
         <div class="shop-window__filtersorting-filter-actions">
-          <button class="btn btn--text">Очистить все фильтры</button>
-          <button class="btn">Применить (30)</button>
+          <button type="button" class="btn btn--text shop-window__filtersorting-filter-clear">Очистить все фильтры</button>
+          <button type="submit" class="btn">Применить (30)</button>
         </div>
       </div>
     </form>
