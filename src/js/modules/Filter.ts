@@ -7,11 +7,15 @@ interface IFilter {
  * Выбор фильтров
  */
 export class Filter {
-  selectorFilterAction: string
+  selectorFilterBtn: string
   selectorFilterWrapper: string
   selectorFiltersWrapper: string
   selectorChips: string
   selectorChipCross: string
+  selectorClearBtn: string
+  defaultContentBtn: string
+  selectorBtnIcon: string
+  svgCross: string
   filterActionBtn: HTMLElement | null
   filterWrapper: HTMLElement | null
   filtersWrapper: HTMLElement | null
@@ -20,16 +24,21 @@ export class Filter {
   filters: Record<string, IFilter>
 
   constructor() {
-    this.selectorFilterAction = '.shop-window__actions-filters'
+    this.selectorFilterBtn = '.shop-window__actions-filters'
     this.selectorFilterWrapper = '.shop-window__filtersorting-filter'
     this.selectorChips = '.shop-window__filtersorting-chips'
     this.selectorFiltersWrapper = '.filters'
     this.selectorChipCross = '.chip__cross'
+    this.selectorClearBtn = '.shop-window__filtersorting-filter-clear'
+    this.selectorBtnIcon = '.shop-window__actions-filters-icon'
+    this.svgCross = '<svg><use xlink:href="./img/icons/icons.svg#cross"></use></svg>'
 
-    this.filterActionBtn = document.querySelector(this.selectorFilterAction)
+    this.filterActionBtn = document.querySelector(this.selectorFilterBtn)
     this.filterWrapper = document.querySelector(this.selectorFilterWrapper)
     this.filtersWrapper = document.querySelector(this.selectorFiltersWrapper)
     this.chipsWrapper = document.querySelector(this.selectorChips)
+
+    this.defaultContentBtn = ''
 
     if (!this.filterActionBtn || !this.filterWrapper) return
 
@@ -37,6 +46,10 @@ export class Filter {
   }
 
   private init() {
+    if (this.filterActionBtn) {
+      this.defaultContentBtn = this.filterActionBtn.innerHTML
+    }
+
     this.handlers()
     this.collectionOptions()
   }
@@ -72,7 +85,48 @@ export class Filter {
       }, {})
 
       this.displayChips()
+      this.changeIcon()
     }
+  }
+
+  private changeIcon() {
+    const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
+    const btnIconElement = this.filterActionBtn?.querySelector(this.selectorBtnIcon)
+    const isOpen = this.filterWrapper?.classList.contains('active')
+
+    if (this.filterActionBtn) {
+      if (selectedCount && btnIconElement && this.filterActionBtn) {
+        this.filterActionBtn.classList.add('btn--tag', 'btn--tag-checked')
+        this.filterActionBtn.classList.remove('btn--color-grey')
+
+        if (isOpen) {
+          btnIconElement.innerHTML = this.svgCross
+        } else {
+          btnIconElement.innerHTML = String(selectedCount)
+        }
+      } else {
+        this.filterActionBtn.innerHTML = this.defaultContentBtn
+        this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
+        this.filterActionBtn.classList.add('btn--color-grey')
+      }
+    }
+  }
+
+  private clearAllFilters() {
+    Object.entries(this.filters).forEach(elem => {
+      elem[1].selectedOptions = []
+      elem[1].moreCount = -3
+    })
+    
+    const inputs = this.filtersWrapper?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
+    inputs?.forEach(input => input.checked = false)
+
+    if (this.chipsWrapper) {
+      this.chipsWrapper.innerHTML = ''
+      this.chipsWrapper.classList.toggle('active')
+    }
+
+    this.changeIcon()
   }
 
   private changeOptions(targetElement: HTMLInputElement) {
@@ -95,6 +149,7 @@ export class Filter {
         this.chipsWrapper.innerHTML = ''
         this.displayChips()
         this.toggleChips()
+        this.changeIcon()
       }
     }
   }
@@ -131,6 +186,7 @@ export class Filter {
 
     chip?.remove()
     this.toggleChips()
+    this.changeIcon()
   }
 
   private toggleChips() {
@@ -143,17 +199,22 @@ export class Filter {
 
   private toggleFilter() {
     this.filterWrapper?.classList.toggle('active')
+    this.changeIcon()
   }
 
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
-    if (targetElement.closest(this.selectorFilterAction)) {
+    if (targetElement.closest(this.selectorFilterBtn)) {
       this.toggleFilter()
     }
 
     if (targetElement.closest(this.selectorChipCross)) {
       this.removeChips(targetElement)
+    }
+
+    if (targetElement.closest(this.selectorClearBtn)) {
+      this.clearAllFilters()
     }
   }
 
