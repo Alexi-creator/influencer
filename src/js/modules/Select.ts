@@ -12,7 +12,7 @@ export class Select {
     this.selectorHeader = '.select__header'
     this.selectorTitle = '.select__title'
     this.selectorOptions = '.select__options'
-    this.selectorItem = '.select__item'
+    this.selectorItem = '.select__options-item'
     this.selectorIcon = '.select__icon'
 
     this.allSelects = Array.from(document.querySelectorAll('.select'))
@@ -30,15 +30,22 @@ export class Select {
     this.allSelects.forEach(select => {
       const value = select.querySelector('input')?.value
       const titleElem = select.querySelector(this.selectorTitle)
-      let label
+      let label: string | undefined
+      let selectedOption
 
       if (value) {
-        label = select.querySelector(`[data-value=${value}]`)?.innerHTML
+        const optionElement = select.querySelector(`[data-value=${value}]`)
+        label = optionElement?.innerHTML
+        selectedOption = optionElement
       } else {
-        label = select.querySelector(this.selectorItem)?.innerHTML
+        const optionElement = select.querySelector(this.selectorItem)
+        label = optionElement?.innerHTML
+        selectedOption = optionElement
       }
 
-      if (titleElem) titleElem.innerHTML = label
+      if (titleElem && label) titleElem.innerHTML = label
+
+      selectedOption.classList.add('active')
     })
   }
 
@@ -62,6 +69,10 @@ export class Select {
 
       this.toggle(select)
     }
+
+    select.querySelectorAll(this.selectorItem).forEach(option => option.classList.remove('active'))
+    targetElement?.closest(this.selectorItem)?.classList.add('active')
+   
   }
 
   private clickHandler(e: MouseEvent) {
@@ -69,7 +80,12 @@ export class Select {
     const select = targetElement?.closest(this.selectorSelect) as HTMLElement
 
     this.allSelects.forEach(selectItem => {
-      if (select !== selectItem) selectItem.classList.remove('active')
+      if (select !== selectItem) {
+        selectItem.classList.remove('active')
+
+        const iconElement = selectItem.querySelector(this.selectorIcon)
+        iconElement?.classList.remove('active')
+      }
     })
 
     if (select) {

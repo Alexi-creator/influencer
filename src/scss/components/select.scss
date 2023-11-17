@@ -21,36 +21,13 @@
 
     gap: 0.5rem;
     overflow: hidden;
+    cursor: pointer;
   }
 
   &__title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  &__options {
-    display: none;
-    position: absolute;
-    width: max-content;
-    min-width: 100%;
-    top: calc(100%);
-    left: 0;
-    background-color: rgb(var(--color-white));
-    border: 1px solid rgb(var(--color-primary));
-    border-radius: var(--radius-medium);
-    padding: 0.5rem;
-    z-index: var(--z-popup);
-
-    #{$root}.active & {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    // #{$root}--transparent & {
-    //   border: none;
-    // }
   }
 
   &__icon {
@@ -63,6 +40,45 @@
     & svg use {
       stroke: rgb(var(--color-black));
       stroke-width: 2px;
+    }
+  }
+
+  &__options {
+    display: none;
+    position: absolute;
+    width: max-content;
+    min-width: 100%;
+    max-height: 30vh;
+    overflow-y: auto;
+    top: calc(100%);
+    left: 0;
+    background-color: rgb(var(--color-white));
+    border: 1px solid rgb(var(--color-primary));
+    border-radius: var(--radius-medium);
+    z-index: var(--z-popup);
+
+    #{$root}.active & {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    // #{$root}--transparent & {
+    //   border: none;
+    // }
+
+    &-item {
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      transition: var(--transition-base);
+
+      &:hover {
+        background-color: rgba(var(--color-primary), 0.1);
+      }
+
+      &.active {
+        background-color: rgba(var(--color-primary), 0.1);
+      }
     }
   }
 }
