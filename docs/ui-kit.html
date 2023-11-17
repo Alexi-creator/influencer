@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20231116091659">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20231117084942">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20231116091659"></script>
+  <script defer src="js/ui-kit.min.js?_v=20231117084942"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -88,32 +88,56 @@
       <div class="ui-kit__block ui-kit__select">
         <div class="select ">
   <div class="select__header">
-    <div class="select__title"></div>
+    <div class="select__title noselect"></div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1>Везде</li>
-    <li class="select__options-item" data-value=val2>Везде2</li>
-    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
+    <li class="select__options-item noselect" data-value=val1>Везде</li>
+    <li class="select__options-item noselect" data-value=val2>Везде2</li>
+    <li class="select__options-item noselect" data-value=val3>Везде3 очень длинный текст</li>
   </ul>
   <input name=select type="text" value=val2 hidden>
 </div>
         <div class="select select--transparent">
   <div class="select__header">
-    <div class="select__title"></div>
+    <div class="select__title noselect"></div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val21>Опция1</li>
-    <li class="select__options-item" data-value=val22>Опция2</li>
-    <li class="select__options-item" data-value=val23>Опция3 очень длинный текст</li>
+    <li class="select__options-item noselect" data-value=val21>Опция1</li>
+    <li class="select__options-item noselect" data-value=val22>Опция2</li>
+    <li class="select__options-item noselect" data-value=val23>Опция3 очень длинный текст</li>
   </ul>
   <input name=select2 type="text" value=val23 hidden>
 </div>
+        <div class="select">
+          <div class="select__header">
+            <div class="select__title noselect"></div>
+            <div class="select__icon active">
+              <svg><use xlink:href="./img/icons/icons.svg#arrow"></use></svg>
+            </div>
+          </div>
+          <ul class="select__options">
+            <li class="select__options-item noselect" data-value="val31">Очень много опций</li>
+            <li class="select__options-item noselect" data-value="val32">Очень много опций 2</li>
+            <li class="select__options-item noselect" data-value="val33">Очень много опций 3</li>
+            <li class="select__options-item noselect" data-value="val34">Очень много опций 4</li>
+            <li class="select__options-item noselect" data-value="val35">Очень много опций 5</li>
+            <li class="select__options-item noselect" data-value="val36">Очень много опций 6</li>
+            <li class="select__options-item noselect" data-value="val37">Очень много опций 7</li>
+            <li class="select__options-item noselect" data-value="val38">Очень много опций 8</li>
+            <li class="select__options-item noselect" data-value="val39">Очень много опций 9</li>
+            <li class="select__options-item noselect" data-value="val40">Очень много опций 10</li>
+            <li class="select__options-item noselect" data-value="val41">Очень много опций 11</li>
+            <li class="select__options-item noselect" data-value="val42">Очень много опций 12</li>
+            <li class="select__options-item noselect" data-value="val43">Очень много опций 13</li>
+          </ul>
+          <input name="select" type="text" value="val31" hidden="">
+        </div>
       </div>
 
       <h2>Checkbox:</h2>

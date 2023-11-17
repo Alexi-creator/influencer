@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231116091659">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231117084942">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20231116091659"></script>
+  <script defer src="js/index.min.js?_v=20231117084942"></script>
 </head>
   <body>
     <header class="header">
@@ -20,9 +20,20 @@
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="header__top-language">
-          Русский
-        </div>
+        <div class="select select--transparent header__top-language">
+  <div class="select__header">
+    <div class="select__title noselect"></div>
+    <div class="select__icon">
+      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
+    </div>
+  </div>
+  <ul class="select__options">
+    <li class="select__options-item noselect" data-value=val1>Русский</li>
+    <li class="select__options-item noselect" data-value=val2>Английский</li>
+    <li class="select__options-item noselect" data-value=val3>Казахский</li>
+  </ul>
+  <input name=language type="text" value=val1 hidden>
+</div>
       </div>
     </div>
     <nav class="header__nav">
@@ -49,15 +60,15 @@
   <div class="input-text__suffix header__nav-search-select">
     <div class="select select--transparent">
   <div class="select__header">
-    <div class="select__title"></div>
+    <div class="select__title noselect"></div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1>Везде</li>
-    <li class="select__options-item" data-value=val2>Везде2</li>
-    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
+    <li class="select__options-item noselect" data-value=val1>Везде</li>
+    <li class="select__options-item noselect" data-value=val2>Везде2</li>
+    <li class="select__options-item noselect" data-value=val3>Везде3 очень длинный текст</li>
   </ul>
   <input name=select type="text" value=val2 hidden>
 </div>

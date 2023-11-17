@@ -90,6 +90,14 @@
   color: rgb(var(--color-grey));
 }
 
+.header__top-language.select {
+  padding: 0;
+}
+
+.header__top-language .select__icon svg use {
+  stroke: rgb(var(--color-grey));
+}
+
 .header__nav-list {
   display: flex;
   align-items: center;
@@ -148,6 +156,14 @@
   max-width: 11.25rem;
   width: 100%;
   font-size: 1rem;
+}
+
+.header__nav-search-select .select {
+  padding: 0;
+}
+
+.header__nav-search-select .select__header {
+  justify-content: flex-end;
 }
 
 .header__nav-search-icon > svg {
@@ -224,8 +240,9 @@
   }
 
   .header__nav-search-select {
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
+    padding-left: 0.25rem;
     border-left: 2px solid rgb(var(--color-black-light));
   }
 
