@@ -10,9 +10,17 @@
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="header__top-language">
-          Русский
-        </div>
+        @@include("../components/select.html", {
+          "label1": "Русский",
+          "label2": "Английский",
+          "label3": "Казахский",
+          "data-value1": "val1",
+          "data-value2": "val2",
+          "data-value3": "val3",
+          "name": "language",
+          "extra-class": "select--transparent header__top-language",
+          "value": "val1",
+        })
       </div>
     </div>
     <nav class="header__nav">

@@ -52,6 +52,18 @@
       gap: 1.5rem;
       color: rgb(var(--color-grey));
     }
+
+    &-language {
+      &.select {
+        padding: 0;
+      }
+
+      & .select__icon {
+        & svg use {
+          stroke: rgb(var(--color-grey));
+        }
+      }
+    }
   }
 
   &__nav {
@@ -157,9 +169,18 @@
         font-size: 1rem;
 
         @include media($md) {
-          display: flex;
+          display: inline-flex;
           justify-content: flex-end;
+          padding-left: 0.25rem;
           border-left: 2px solid rgb(var(--color-black-light));
+        }
+
+        & .select {
+          padding: 0;
+          
+          &__header {
+            justify-content: flex-end;
+          }
         }
       }
 
