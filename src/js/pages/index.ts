@@ -77,24 +77,34 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new Slider({
-      selector: '.swiper-joint-purchases',
-      options: {
-        slidesPerView: 2,
-        centeredSlides: false,
-        spaceBetween: 12,
-        breakpoints: {
-          768: {
-            slidesPerView: 3.5,
-          },
-          1200: {
-            slidesPerView: 2.5,
-          },
-          1920: {
-            slidesPerView: 4.5,
+    document.querySelectorAll('.joint-purchases-card__slider').forEach(swiper => {
+      const swiperElement = swiper.querySelector('.swiper-joint-purchases') as HTMLElement
+      const prevBtn = swiper.querySelector('.swiper-button-prev') as HTMLElement
+      const nextBtn = swiper.querySelector('.swiper-button-next') as HTMLElement      
+
+      new Slider({
+        selector: swiperElement ? swiperElement : '',
+        options: {
+          slidesPerView: 2,
+          centeredSlides: false,
+          spaceBetween: 12,
+          breakpoints: {
+            768: {
+              slidesPerView: 3.5,
+            },
+            1200: {
+              slidesPerView: 2.5,
+            },
+            1920: {
+              slidesPerView: 4.5,
+            },
           },
         },
-      },
+        btnsElements: {
+          prevElement: prevBtn ? prevBtn : '',
+          nextElement: nextBtn ? nextBtn : '',
+        },
+    })
     })
   } catch (error) {
     console.log(error)

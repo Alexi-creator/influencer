@@ -10,28 +10,32 @@ interface IOptions extends Partial<{
   breakpoints: Record<number, IOptions>
 }> {}
 
-interface IConstructorSlider {
+interface IConstructorSwiper {
   modules?: SwiperModule[];
   centeredSlides?: boolean;
   loop?: boolean;
   navigation?: {
-    nextEl: string
-    prevEl: string
+    nextEl: string | HTMLElement
+    prevEl: string | HTMLElement
   };
 }
 
 interface IConstructor {
-  selector: string;
+  selector: string | HTMLElement;
   options?: IOptions;
   breakMedia?: number;
   initialActionIndex?: number
+  btnsElements?: {
+    prevElement: HTMLElement | ''
+    nextElement: HTMLElement | ''
+  }
 }
 
 /**
- * Абстракция для создания и управления slider swiper
+ * Абстракция для создания и управления swiper
  */
 export class Slider {
-  selector: string
+  selector: string | HTMLElement
   options?: IOptions
   breakMedia?: number
   initialActionIndex?: number
@@ -39,9 +43,9 @@ export class Slider {
   slider: Swiper | null
   matchMedia: MediaQueryList
 
-  constructorSlider: IConstructorSlider
+  constructorSlider: IConstructorSwiper
 
-  constructor({ selector, options, breakMedia, initialActionIndex }: IConstructor) {
+  constructor({ selector, options, breakMedia, initialActionIndex, btnsElements }: IConstructor) {
     this.selector = selector
     this.options = options
     this.initialActionIndex = initialActionIndex || 0
@@ -51,8 +55,8 @@ export class Slider {
       centeredSlides: true,
       loop: false,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: btnsElements?.nextElement || '.swiper-button-next',
+        prevEl: btnsElements?.prevElement || '.swiper-button-prev',
       },
       ...this.options
     }

@@ -37,6 +37,7 @@
 
 .swiper-button-prev {
   left: 0;
+  transform: translateX(-50%);
 
   & svg {
     transform: rotate(90deg);
@@ -45,6 +46,7 @@
 
 .swiper-button-next {
   right: 0;
+  transform: translateX(50%);
 
   & svg {
     transform: rotate(-90deg);

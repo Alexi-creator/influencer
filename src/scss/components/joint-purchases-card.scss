@@ -73,6 +73,14 @@
   }
 
   &__slider {
+    position: relative;
+    margin: 0 1.5rem;
+
+    & > .swiper {
+      // margin: 0 1.5rem;
+      // padding: 0 1.5rem;
+      // padding: 0 0 0 1.5rem;
+    }
 
     #{$root}__slide {
       position: relative;
