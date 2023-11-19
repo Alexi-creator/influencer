@@ -13,13 +13,16 @@ export class Filter {
   selectorChips: string
   selectorChipCross: string
   selectorClearBtn: string
+  selectorSubmitBtn: string
   defaultContentBtn: string
   selectorBtnIcon: string
   svgCross: string
+
   filterActionBtn: HTMLElement | null
   filterWrapper: HTMLElement | null
   filtersWrapper: HTMLElement | null
   chipsWrapper: HTMLElement | null
+  submitBtn: HTMLElement | null
 
   filters: Record<string, IFilter>
 
@@ -30,6 +33,7 @@ export class Filter {
     this.selectorFiltersWrapper = '.filters'
     this.selectorChipCross = '.chip__cross'
     this.selectorClearBtn = '.shop-window__filtersorting-filter-clear'
+    this.selectorSubmitBtn = '.shop-window__filtersorting-filter-submit'
     this.selectorBtnIcon = '.shop-window__actions-filters-icon'
     this.svgCross = '<svg><use xlink:href="./img/icons/icons.svg#cross"></use></svg>'
 
@@ -37,6 +41,7 @@ export class Filter {
     this.filterWrapper = document.querySelector(this.selectorFilterWrapper)
     this.filtersWrapper = document.querySelector(this.selectorFiltersWrapper)
     this.chipsWrapper = document.querySelector(this.selectorChips)
+    this.submitBtn = document.querySelector(this.selectorSubmitBtn)
 
     this.defaultContentBtn = ''
 
@@ -93,6 +98,11 @@ export class Filter {
     const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
     const btnIconElement = this.filterActionBtn?.querySelector(this.selectorBtnIcon)
     const isOpen = this.filterWrapper?.classList.contains('active')
+
+    const countBtn = this.submitBtn?.querySelector('.btn__suffix')
+    if (countBtn) {
+      countBtn.innerHTML = `(${selectedCount})`
+    }
 
     if (this.filterActionBtn) {
       if (selectedCount && btnIconElement && this.filterActionBtn) {

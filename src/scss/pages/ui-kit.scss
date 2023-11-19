@@ -1,10 +1,12 @@
-@import "../common";
-
 @import "../vendors/swiper-bundle.min";
+@import "../vendors/nouislider.min";
+
+@import "../common";
 
 @import "../components/collapse";
 @import "../components/tabs";
 @import "../components/select";
+@import "../components/range-slider";
 
 ::-webkit-scrollbar-track {
   background-color: rgb(var(--color-primary-pale));
@@ -63,11 +65,13 @@
   }
 
   &__swiper {
+    position: relative;
     max-width: 600px;
     margin: 0 auto;
 
     & .swiper-slide {
       text-align: center;
+      padding: 1rem 0;     
     }
 
     & .swiper-button-prev {
@@ -90,6 +94,11 @@
         }
       }
     }
+  }
+
+  &__slider {
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   &__progress {

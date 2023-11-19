@@ -52,11 +52,11 @@
   & input {
     display: none;
 
-    &:checked + div .radio__custom::after {
+    &:checked + span .radio__custom::after {
       display: block;
     }
 
-    &:checked + div .btn {
+    &:checked + span .btn {
       background-color: rgb(var(--color-primary-soft));
       border: 2px solid rgb(var(--color-primary));
     }

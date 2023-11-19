@@ -5,6 +5,10 @@ import { Methods } from '../constants'
 
 /**
  * Управление формой
+ * @param {Object} { selectorForm, url, apiOptions }
+ * @param selectorForm - селектор формы (.classForm)
+ * @param url - url ресурса для запроса формы
+ * @param apiOptions - опции для работы с запросами к api
  */
 export class Form {
   selectorForm: string

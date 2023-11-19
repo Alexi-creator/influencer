@@ -30,8 +30,12 @@ export class Select {
     this.allSelects.forEach(select => {
       const value = select.querySelector('input')?.value
       const titleElem = select.querySelector(this.selectorTitle)
+      const titleElemText = titleElem?.textContent
+
+      if (titleElemText) return
+
       let label: string | undefined
-      let selectedOption
+      let selectedOption: Element | null
 
       if (value) {
         const optionElement = select.querySelector(`[data-value=${value}]`)
@@ -45,7 +49,7 @@ export class Select {
 
       if (titleElem && label) titleElem.innerHTML = label
 
-      selectedOption.classList.add('active')
+      selectedOption?.classList.add('active')
     })
   }
 
