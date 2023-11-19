@@ -59,13 +59,11 @@
 }
 
 .select.active .select__options {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  display: block;
 }
 
 .select__options-item {
-  padding: 0.25rem 0.5rem;
+  padding: 0.4rem 0.5rem;
   cursor: pointer;
   transition: var(--transition-base);
 }

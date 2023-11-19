@@ -29,6 +29,11 @@
   gap: 0.25rem;
 }
 
+.joint-purchases-card__slider {
+  position: relative;
+  margin: 0 1.5rem;
+}
+
 .joint-purchases-card__slider .joint-purchases-card__slide {
   position: relative;
   padding-top: 143%;

@@ -433,7 +433,7 @@ button {
 
 .progress__line {
   height: 100%;
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
 }
 
 .popup__overlay,
@@ -497,6 +497,7 @@ button {
 
 .swiper-button-prev {
   left: 0;
+  transform: translateX(-50%);
 }
 
 .swiper-button-prev svg {
@@ -505,6 +506,7 @@ button {
 
 .swiper-button-next {
   right: 0;
+  transform: translateX(50%);
 }
 
 .swiper-button-next svg {

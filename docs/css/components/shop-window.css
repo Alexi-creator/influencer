@@ -23,6 +23,19 @@
   gap: 1.25rem;
 }
 
+.shop-window__tabs {
+  position: relative;
+  margin: 0 1.5rem;
+}
+
+.shop-window__tabs .swiper-button-next {
+  transform: translate(50%, -3px);
+}
+
+.shop-window__tabs .swiper-button-prev {
+  transform: translate(-50%, -3px);
+}
+
 .shop-window__tabs .tabs__tab {
   width: -moz-max-content;
   width: max-content;
