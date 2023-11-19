@@ -10,88 +10,90 @@ interface IOptions extends Partial<{
   breakpoints: Record<number, IOptions>
 }> {}
 
-interface IConstructorSlider {
+interface IConstructorSwiper {
   modules?: SwiperModule[];
   centeredSlides?: boolean;
   loop?: boolean;
   navigation?: {
-    nextEl: string
-    prevEl: string
+    nextEl: string | HTMLElement
+    prevEl: string | HTMLElement
   };
 }
 
 interface IConstructor {
-  selector: string;
+  target: string | HTMLElement;
   options?: IOptions;
   breakMedia?: number;
   initialActionIndex?: number
+  btnsElements?: {
+    prevElement: HTMLElement | ''
+    nextElement: HTMLElement | ''
+  }
 }
 
 /**
- * Абстракция для создания и управления slider swiper
+ * Абстракция для создания и управления swiper
  */
-export class Slider {
-  selector: string
+export class CustomSwiper {
+  target: string | HTMLElement
   options?: IOptions
   breakMedia?: number
   initialActionIndex?: number
   
-  slider: Swiper | null
+  swiper: Swiper | null
   matchMedia: MediaQueryList
 
-  constructorSlider: IConstructorSlider
+  constructorSwiper: IConstructorSwiper
 
-  constructor({ selector, options, breakMedia, initialActionIndex }: IConstructor) {
-    this.selector = selector
+  constructor({ target, options, breakMedia, initialActionIndex, btnsElements }: IConstructor) {
+    this.target = target
     this.options = options
     this.initialActionIndex = initialActionIndex || 0
 
-    this.constructorSlider = {
+    this.constructorSwiper = {
       modules: [Navigation],
       centeredSlides: true,
       loop: false,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: btnsElements?.nextElement || '.swiper-button-next',
+        prevEl: btnsElements?.prevElement || '.swiper-button-prev',
       },
       ...this.options
     }
 
+    if (!this.target) return
+    
     if (breakMedia) {
       this.matchMedia = window.matchMedia(`(min-width:${breakMedia}px)`)
       this.matchMedia.addListener((e) => this.breakpointChecker(e))
     }
 
-    if (this.selector) {
-      this.init()
-    }
+    this.init()
   }
 
   init() {
     this.startSlide()
-    this.handlers()
+    // this.handlers()
   }
 
   startSlide() {
     if (this.matchMedia?.matches) return
   
-    this.slider?.destroy()
-    this.slider = new Swiper(this.selector, this.constructorSlider)
+    this.swiper?.destroy()
+    this.swiper = new Swiper(this.target, this.constructorSwiper)
     
     if (this.initialActionIndex) {
-      this.slider.slideTo(this.initialActionIndex)
+      this.swiper.slideTo(this.initialActionIndex)
     }
   }
 
   breakpointChecker(e: MediaQueryListEvent) {
     if (e.matches) {
-      this.slider?.destroy()
+      this.swiper?.destroy()
     } else {
       this.startSlide()
     }
   }
 
-  handlers() {
-
-  }
+  // handlers() {}
 }
