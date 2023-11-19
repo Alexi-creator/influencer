@@ -39,6 +39,17 @@
   }
 
   &__tabs {
+    position: relative;
+    margin: 0 1.5rem;
+
+    & .swiper-button-next {
+      transform: translate(50%, -3px);
+    }
+
+    & .swiper-button-prev {
+      transform: translate(-50%, -3px);
+    }
+
     & .tabs__tab {
       width: max-content;
       margin: 0 auto;

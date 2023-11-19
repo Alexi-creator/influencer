@@ -2,9 +2,9 @@
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
     <div class="shop-window__controls">
-      <div class="shop-window__tabs">
-        <div class="tabs__head">
-          <div class="swiper swiper-tabs">
+      <!-- <div class="shop-window__tabs"> -->
+        <div class="shop-window__tabs tabs__head">
+          <div class="swiper shop-window__tabs-swiper">
             <div class="tabs__list swiper-wrapper">
               <div class="swiper-slide tabs__tab" data-tab-path="goods">
                 Товары <span class="tabs__tab-count">501</span>
@@ -19,7 +19,7 @@
                 Контакты
               </div>
             </div>
-            <div class="swiper-button-prev">
+            <!-- <div class="swiper-button-prev">
               <svg>
                 <use xlink:href="./img/icons/icons.svg#arrow"></use>
               </svg>
@@ -28,10 +28,20 @@
               <svg>
                 <use xlink:href="./img/icons/icons.svg#arrow"></use>
               </svg>
-            </div>
+            </div> -->
+          </div>
+          <div class="swiper-button-prev">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#arrow"></use>
+            </svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#arrow"></use>
+            </svg>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
       <div class="shop-window__actions">
         <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey">
           Сортировка

@@ -1,7 +1,7 @@
 import { shopTabs } from '../constants/index'
 
 import { Form } from './Form'
-import { Slider } from './Slider'
+import { CustomSwiper } from './CustomSwiper'
 
 /**
  * Управление витриной (табы, товары, tff и тд)
@@ -10,10 +10,10 @@ export class ShopWindow {
   private selectorTabsWrapper: string
   private selectorForm: string
 
-  private tabsSlider: Slider
+  private tabsSlider: CustomSwiper
   private form: Form
   
-  constructor(slider: Slider, form: Form) {
+  constructor(slider: CustomSwiper, form: Form) {
     this.selectorTabsWrapper = '.shop-window__tabs'
     this.selectorForm = '.shop-window__filtersorting'
 

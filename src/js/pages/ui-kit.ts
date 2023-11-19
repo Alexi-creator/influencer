@@ -2,7 +2,7 @@ import '../common'
 
 import { Collapse } from '../modules/Collapse'
 import { Select } from '../modules/Select'
-import { Slider } from '../modules/Slider'
+import { CustomSwiper } from '../modules/CustomSwiper'
 import { Tabs } from '../modules/Tabs'
 
 window.addEventListener('load', () => {
@@ -12,8 +12,8 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new Slider({
-      selector: '.swiper-uikit',
+    new CustomSwiper({
+      target: '.swiper-uikit',
     })
   } catch (error) {
     console.log(error)

@@ -6,7 +6,7 @@ import { Share } from '../modules/Share'
 import { Collapse } from '../modules/Collapse'
 import { ShopWindow } from '../modules/Shop-window'
 import { Tabs } from '../modules/Tabs'
-import { Slider } from '../modules/Slider'
+import { CustomSwiper } from '../modules/CustomSwiper'
 import { Density } from '../modules/Density'
 import { Sort } from '../modules/Sort'
 import { Filter } from '../modules/Filter'
@@ -51,8 +51,8 @@ window.addEventListener('load', () => {
   }
   try {
     new ShopWindow(
-      new Slider({
-        selector: '.swiper-tabs',
+      new CustomSwiper({
+        target: '.shop-window__tabs-swiper',
         options: {
           slidesPerView: 1,
           centeredSlides: true,
@@ -82,8 +82,8 @@ window.addEventListener('load', () => {
       const prevBtn = swiper.querySelector('.swiper-button-prev') as HTMLElement
       const nextBtn = swiper.querySelector('.swiper-button-next') as HTMLElement      
 
-      new Slider({
-        selector: swiperElement ? swiperElement : '',
+      new CustomSwiper({
+        target: swiperElement,
         options: {
           slidesPerView: 2,
           centeredSlides: false,
@@ -101,8 +101,8 @@ window.addEventListener('load', () => {
           },
         },
         btnsElements: {
-          prevElement: prevBtn ? prevBtn : '',
-          nextElement: nextBtn ? nextBtn : '',
+          prevElement: prevBtn,
+          nextElement: nextBtn,
         },
     })
     })
