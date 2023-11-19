@@ -1,0 +1,39 @@
+.range__min,
+.range__max {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range__inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.range__inputs {
+  gap: 0.25rem;
+  margin-top: 1.25rem;
+}
+
+.range__min,
+.range__max {
+  gap: 0.25rem;
+}
+
+.range__input-wrapper {
+  max-width: 8rem;
+}
+
+.range__input {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.range__input::-moz-placeholder {
+  font-size: 1rem;
+}
+
+.range__input::placeholder {
+  font-size: 1rem;
+}

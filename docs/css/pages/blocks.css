@@ -608,11 +608,11 @@ button {
   display: none;
 }
 
-.radio input:checked + div .radio__custom::after {
+.radio input:checked + span .radio__custom::after {
   display: block;
 }
 
-.radio input:checked + div .btn {
+.radio input:checked + span .btn {
   background-color: rgb(var(--color-primary-soft));
   border: 2px solid rgb(var(--color-primary));
 }

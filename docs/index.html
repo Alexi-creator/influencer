@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231119085827">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231119192612">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20231119085827"></script>
+  <script defer src="js/index.min.js?_v=20231119192612"></script>
 </head>
   <body>
     <header class="header">
@@ -20,17 +20,17 @@
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="select select--transparent header__top-language">
+        <div class="select select--transparent header__top-language noselect">
   <div class="select__header">
-    <div class="select__title noselect"></div>
+    <div class="select__title">Русский</div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item noselect" data-value=val1>Русский</li>
-    <li class="select__options-item noselect" data-value=val2>Английский</li>
-    <li class="select__options-item noselect" data-value=val3>Казахский</li>
+    <li class="select__options-item" data-value=val1>Русский</li>
+    <li class="select__options-item" data-value=val2>Английский</li>
+    <li class="select__options-item" data-value=val3>Казахский</li>
   </ul>
   <input name=language type="text" value=val1 hidden>
 </div>
@@ -40,7 +40,7 @@
       <ul class="header__nav-list">
         <li class="header__nav-item header__nav-logo">
           <a href="#">
-            <img width="106px" height="24px" src="img/logo.svg" alt="logo">
+            <img width="106" height="24" src="img/logo.svg" alt="logo">
           </a>
         </li>
         <li class="header__nav-item header__nav-catalog">
@@ -58,17 +58,17 @@
   </div>
   <input class="input-text__input" type="text" placeholder="Найдите что-нибудь">
   <div class="input-text__suffix header__nav-search-select">
-    <div class="select select--transparent">
+    <div class="select select--transparent noselect">
   <div class="select__header">
-    <div class="select__title noselect"></div>
+    <div class="select__title">Везде</div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item noselect" data-value=val1>Везде</li>
-    <li class="select__options-item noselect" data-value=val2>Везде2</li>
-    <li class="select__options-item noselect" data-value=val3>Везде3 очень длинный текст</li>
+    <li class="select__options-item" data-value=val1>Везде</li>
+    <li class="select__options-item" data-value=val2>Везде2</li>
+    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
   </ul>
   <input name=select type="text" value=val2 hidden>
 </div>
@@ -298,46 +298,34 @@
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
     <div class="shop-window__controls">
-      <!-- <div class="shop-window__tabs"> -->
-        <div class="shop-window__tabs tabs__head">
-          <div class="swiper shop-window__tabs-swiper">
-            <div class="tabs__list swiper-wrapper">
-              <div class="swiper-slide tabs__tab" data-tab-path="goods">
-                Товары <span class="tabs__tab-count">501</span>
-              </div>
-              <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="sp">
-                Совместные покупки <span class="tabs__tab-count">79</span>
-              </div>
-              <div class="swiper-slide tabs__tab" data-tab-path="tff">
-                Test For Free <span class="tabs__tab-count">13</span>
-              </div>
-              <div class="swiper-slide tabs__tab" data-tab-path="contacts">
-                Контакты
-              </div>
+      <div class="shop-window__tabs tabs__head">
+        <div class="swiper shop-window__tabs-swiper">
+          <div class="tabs__list swiper-wrapper">
+            <div class="swiper-slide tabs__tab" data-tab-path="goods">
+              Товары <span class="tabs__tab-count">501</span>
             </div>
-            <!-- <div class="swiper-button-prev">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#arrow"></use>
-              </svg>
+            <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="sp">
+              Совместные покупки <span class="tabs__tab-count">79</span>
             </div>
-            <div class="swiper-button-next">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#arrow"></use>
-              </svg>
-            </div> -->
-          </div>
-          <div class="swiper-button-prev">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#arrow"></use>
-            </svg>
-          </div>
-          <div class="swiper-button-next">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#arrow"></use>
-            </svg>
+            <div class="swiper-slide tabs__tab" data-tab-path="tff">
+              Test For Free <span class="tabs__tab-count">13</span>
+            </div>
+            <div class="swiper-slide tabs__tab" data-tab-path="contacts">
+              Контакты
+            </div>
           </div>
         </div>
-      <!-- </div> -->
+        <div class="swiper-button-prev">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+      </div>
       <div class="shop-window__actions">
         <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey">
           Сортировка
@@ -373,74 +361,74 @@
       <div class="shop-window__filtersorting-sorting">
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=popular-asc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="popular-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
 </label>
         </div>
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-asc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=rate-asc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="rate-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
 </label>
         </div>
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-asc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=cost-asc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="cost-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
 </label>
         </div>
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-asc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=name-asc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="name-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
 </label>
         </div>
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-desc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=popular-desc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="popular-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
 </label>
         </div>
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-desc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=rate-desc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="rate-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
 </label>
         </div>
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-desc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=cost-desc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="cost-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
 </label>
         </div>
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-desc">
           <label class="radio radio--btn">
-  <input name=sorting type="radio" value=name-desc>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>
-  </div>
+  <input name="sorting" type="radio" value="name-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
 </label>
         </div>
       </div>
@@ -449,123 +437,113 @@
         <div class="shop-window__filtersorting-filter-filters filters">
           <div class="filters__item">
             <div class="collapse">
-              <div class="collapse__head">
-                <span class="collapse__head-title">
-                  Размер0
-                </span>
-                <svg class="collapse__head-icon">
-                  <use xlink:href="./img/icons/icons.svg#collapse"></use>
-                </svg>
-              </div>
-              <div class="collapse__content">
-                <div class="filters__collapse filters__collapse-grid">
-                  <label class="checkbox ">
-                    <input name="0size36" type="checkbox" checked>
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      36
-                    </div>
-                  </label>
-                  <label class="checkbox ">
-                    <input name="0size38" type="checkbox" checked>
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      38
-                    </div>
-                  </label>
-                <label class="checkbox ">
-                  <input name="0size40" type="checkbox" checked>
-                  <div class="checkbox__checkmark">
-                    <svg>
-                      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                    </svg>
-                  </div>
-                  <div class="checkbox__label ">
-                    40
-                  </div>
-                </label>
-              <label class="checkbox ">
-                <input name="0size42" type="checkbox" checked>
-                <div class="checkbox__checkmark">
-                  <svg>
-                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                  </svg>
-                </div>
-                <div class="checkbox__label ">
-                  42
-                </div>
-              </label>
-            </div>
-              </div>
-            </div>
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер0
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
           </div>
           <div class="filters__item">
             <div class="collapse">
-              <div class="collapse__head">
-                <span class="collapse__head-title">
-                  Размер10
-                </span>
-                <svg class="collapse__head-icon">
-                  <use xlink:href="./img/icons/icons.svg#collapse"></use>
-                </svg>
-              </div>
-              <div class="collapse__content">
-                <div class="filters__collapse filters__collapse-grid">
-                  <label class="checkbox ">
-                    <input name="10size36" type="checkbox">
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      36
-                    </div>
-                  </label>
-                  <label class="checkbox ">
-                    <input name="10size38" type="checkbox">
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      38
-                    </div>
-                  </label>
-                <label class="checkbox ">
-                  <input name="10size40" type="checkbox" checked>
-                  <div class="checkbox__checkmark">
-                    <svg>
-                      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                    </svg>
-                  </div>
-                  <div class="checkbox__label ">
-                    40
-                  </div>
-                </label>
-              <label class="checkbox ">
-                <input name="10size42" type="checkbox" checked>
-                <div class="checkbox__checkmark">
-                  <svg>
-                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                  </svg>
-                </div>
-                <div class="checkbox__label ">
-                  42
-                </div>
-              </label>
-            </div>
-              </div>
-            </div>
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер10
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
           </div>
           <div class="filters__item">
             <div class="collapse">
@@ -580,44 +558,44 @@
   <div class="collapse__content">
     <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
   <input name="size36" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     36
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="size38" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     38
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="size40" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     40
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="size42" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     42
-  </div>
+  </span>
 </label></div>
   </div>
 </div>
@@ -635,44 +613,44 @@
   <div class="collapse__content">
     <div class="filters__collapse"><label class="checkbox ">
   <input name="specials36" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     Test For Free
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="specials38" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     Совместная Покупка
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="specials40" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     Благотворительная покупка
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="specials42" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     Акция “2 по цене 1”
-  </div>
+  </span>
 </label></div>
   </div>
 </div>
@@ -690,44 +668,44 @@
   <div class="collapse__content">
     <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
   <input name="2size36" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     36
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="2size38" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     38
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="2size40" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     40
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="2size42" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     42
-  </div>
+  </span>
 </label></div>
   </div>
 </div>
@@ -745,44 +723,44 @@
   <div class="collapse__content">
     <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
   <input name="3size36" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     36
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="3size38" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     38
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="3size40" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     40
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="3size42" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     42
-  </div>
+  </span>
 </label></div>
   </div>
 </div>
@@ -800,44 +778,44 @@
   <div class="collapse__content">
     <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
   <input name="4size36" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     36
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="4size38" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     38
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="4size40" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     40
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="4size42" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     42
-  </div>
+  </span>
 </label></div>
   </div>
 </div>
@@ -855,52 +833,55 @@
   <div class="collapse__content">
     <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
   <input name="5size36" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     36
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="5size38" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     38
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="5size40" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     40
-  </div>
+  </span>
 </label> <label class="checkbox ">
   <input name="5size42" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     42
-  </div>
+  </span>
 </label></div>
   </div>
 </div>
           </div>
         </div>
-        <div class="shop-window__filtersorting-filter-actions">
+        <div class="shop-window__filtersorting-filter-actions form__btns">
           <button type="button" class="btn btn--text shop-window__filtersorting-filter-clear">Очистить все фильтры</button>
-          <button type="submit" class="btn">Применить (30)</button>
+          <button type="submit" class="btn shop-window__filtersorting-filter-submit">
+            Применить
+            <span class="btn__suffix"></span>
+          </button>
         </div>
       </div>
     </form>

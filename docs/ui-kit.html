@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20231119085827">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20231119192612">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20231119085827"></script>
+  <script defer src="js/ui-kit.min.js?_v=20231119192612"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -15,7 +15,10 @@
       <div class="ui-kit__block ui-kit__buttons">
         <button class="btn">Standart</button>
         <button class="btn btn--color-primary-light">primary light</button>
-        <button class="btn">Count (7)</button>
+        <button class="btn">
+          Count
+          <span class="btn__suffix">(7)</span>
+        </button>
         <button class="btn btn--text">Text</button>
         <button class="btn btn--text btn--color-grey">Text grey</button>
         <button class="btn btn--small">Small</button>
@@ -37,7 +40,7 @@
           </svg>
         </button>
       </div>
-
+      
       <h2>Input:</h2>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text ">
@@ -86,55 +89,55 @@
 
       <h2>Select:</h2>
       <div class="ui-kit__block ui-kit__select">
-        <div class="select ">
+        <div class="select  noselect">
   <div class="select__header">
-    <div class="select__title noselect"></div>
+    <div class="select__title">Везде</div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item noselect" data-value=val1>Везде</li>
-    <li class="select__options-item noselect" data-value=val2>Везде2</li>
-    <li class="select__options-item noselect" data-value=val3>Везде3 очень длинный текст</li>
+    <li class="select__options-item" data-value=val1>Везде</li>
+    <li class="select__options-item" data-value=val2>Везде2</li>
+    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
   </ul>
   <input name=select type="text" value=val2 hidden>
 </div>
-        <div class="select select--transparent">
+        <div class="select select--transparent noselect">
   <div class="select__header">
-    <div class="select__title noselect"></div>
+    <div class="select__title">Опция1</div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item noselect" data-value=val21>Опция1</li>
-    <li class="select__options-item noselect" data-value=val22>Опция2</li>
-    <li class="select__options-item noselect" data-value=val23>Опция3 очень длинный текст</li>
+    <li class="select__options-item" data-value=val21>Опция1</li>
+    <li class="select__options-item" data-value=val22>Опция2</li>
+    <li class="select__options-item" data-value=val23>Опция3 очень длинный текст</li>
   </ul>
   <input name=select2 type="text" value=val23 hidden>
 </div>
-        <div class="select">
+        <div class="select noselect">
           <div class="select__header">
-            <div class="select__title noselect"></div>
-            <div class="select__icon active">
+            <div class="select__title"></div>
+            <div class="select__icon">
               <svg><use xlink:href="./img/icons/icons.svg#arrow"></use></svg>
             </div>
           </div>
           <ul class="select__options">
-            <li class="select__options-item noselect" data-value="val31">Очень много опций</li>
-            <li class="select__options-item noselect" data-value="val32">Очень много опций 2</li>
-            <li class="select__options-item noselect" data-value="val33">Очень много опций 3</li>
-            <li class="select__options-item noselect" data-value="val34">Очень много опций 4</li>
-            <li class="select__options-item noselect" data-value="val35">Очень много опций 5</li>
-            <li class="select__options-item noselect" data-value="val36">Очень много опций 6</li>
-            <li class="select__options-item noselect" data-value="val37">Очень много опций 7</li>
-            <li class="select__options-item noselect" data-value="val38">Очень много опций 8</li>
-            <li class="select__options-item noselect" data-value="val39">Очень много опций 9</li>
-            <li class="select__options-item noselect" data-value="val40">Очень много опций 10</li>
-            <li class="select__options-item noselect" data-value="val41">Очень много опций 11</li>
-            <li class="select__options-item noselect" data-value="val42">Очень много опций 12</li>
-            <li class="select__options-item noselect" data-value="val43">Очень много опций 13</li>
+            <li class="select__options-item" data-value="val31">Очень много опций</li>
+            <li class="select__options-item" data-value="val32">Очень много опций 2</li>
+            <li class="select__options-item" data-value="val33">Очень много опций 3</li>
+            <li class="select__options-item" data-value="val34">Очень много опций 4</li>
+            <li class="select__options-item" data-value="val35">Очень много опций 5</li>
+            <li class="select__options-item" data-value="val36">Очень много опций 6</li>
+            <li class="select__options-item" data-value="val37">Очень много опций 7</li>
+            <li class="select__options-item" data-value="val38">Очень много опций 8</li>
+            <li class="select__options-item" data-value="val39">Очень много опций 9</li>
+            <li class="select__options-item" data-value="val40">Очень много опций 10</li>
+            <li class="select__options-item" data-value="val41">Очень много опций 11</li>
+            <li class="select__options-item" data-value="val42">Очень много опций 12</li>
+            <li class="select__options-item" data-value="val43">Очень много опций 13</li>
           </ul>
           <input name="select" type="text" value="val31" hidden="">
         </div>
@@ -144,86 +147,86 @@
       <div class="ui-kit__block ui-kit__checkbox">
         <label class="checkbox ">
   <input name="checkbox" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     text
-  </div>
+  </span>
 </label>
         <label class="checkbox ">
   <input name="checkbox" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label ">
+  </span>
+  <span class="checkbox__label ">
     text 2
-  </div>
+  </span>
 </label>
         <label class="checkbox checkbox--tag">
   <input name="checkbox" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label btn btn--tag btn--small">
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
     По популярности
-  </div>
+  </span>
 </label>
         <label class="checkbox checkbox--tag">
   <input name="checkbox" type="checkbox">
-  <div class="checkbox__checkmark">
+  <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
-  </div>
-  <div class="checkbox__label btn btn--tag btn--small">
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
     По цене
-  </div>
+  </span>
 </label>
       </div>
 
       <h2>Radio:</h2>
       <div class="ui-kit__block ui-kit__radio">
         <label class="radio radio--">
-  <input name=radio-uikit type="radio" value=1>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
+  <input name="radio-uikit" type="radio" value="1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
     text
-  </div>
+  </span>
 </label>
         <label class="radio radio--">
-  <input name=radio-uikit type="radio" value=2>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
+  <input name="radio-uikit" type="radio" value="2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
     text
-  </div>
+  </span>
 </label>
         <label class="radio radio--">
-  <input name=radio-uikit type="radio" value=3>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
+  <input name="radio-uikit" type="radio" value="3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
     text
-  </div>
+  </span>
 </label>
         <label class="radio radio--">
-  <input name=radio-uikit type="radio" value=4>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
+  <input name="radio-uikit" type="radio" value="4">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
     text
-  </div>
+  </span>
 </label>
         <label class="radio radio--btn">
-  <input name=radio-uikit type="radio" value=btn>
-  <div class="radio__content">
-    <div class="radio__custom"></div>
-    <div class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></div>
-  </div>
+  <input name="radio-uikit" type="radio" value="btn">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></span>
+  </span>
 </label>
       </div>
 
@@ -310,30 +313,49 @@
 </div>
       </div>
 
-      <h2>Slider:</h2>
+      <h2>Swiper:</h2>
       <div class="ui-kit__block ui-kit__swiper">
         <div class="swiper swiper-uikit">
-          <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
-            <!-- Slides -->
             <div class="swiper-slide">Slide 1</div>
             <div class="swiper-slide">Slide 2</div>
             <div class="swiper-slide">Slide 3</div>
             ...
           </div>
-        
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#arrow"></use>
-            </svg>
-          </div>
-          <div class="swiper-button-next">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#arrow"></use>
-            </svg>
-          </div>
         </div>
+        <div class="swiper-button-prev">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+      </div>
+
+      <h2>Range Slider nouislider:</h2>
+      <div class="ui-kit__block ui-kit__slider">
+        <div class="range">
+  <div class="range__slider"></div>
+  <div class="range__inputs">
+    <div class="range__min">
+      <div>от</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="1000" data-min="0" placeholder="0">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+    <div class="range__max">
+      <div>до</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="100000" data-max="1000000" placeholder="1000000">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+  </div>
+</div>
       </div>
 
       <h2>Divider:</h2>
@@ -409,7 +431,7 @@
   </svg>
 </div>
       </div>
-      
+
     </main>
   </body>
 </html>
