@@ -2,46 +2,34 @@
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
     <div class="shop-window__controls">
-      <!-- <div class="shop-window__tabs"> -->
-        <div class="shop-window__tabs tabs__head">
-          <div class="swiper shop-window__tabs-swiper">
-            <div class="tabs__list swiper-wrapper">
-              <div class="swiper-slide tabs__tab" data-tab-path="goods">
-                Товары <span class="tabs__tab-count">501</span>
-              </div>
-              <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="sp">
-                Совместные покупки <span class="tabs__tab-count">79</span>
-              </div>
-              <div class="swiper-slide tabs__tab" data-tab-path="tff">
-                Test For Free <span class="tabs__tab-count">13</span>
-              </div>
-              <div class="swiper-slide tabs__tab" data-tab-path="contacts">
-                Контакты
-              </div>
+      <div class="shop-window__tabs tabs__head">
+        <div class="swiper shop-window__tabs-swiper">
+          <div class="tabs__list swiper-wrapper">
+            <div class="swiper-slide tabs__tab" data-tab-path="goods">
+              Товары <span class="tabs__tab-count">501</span>
             </div>
-            <!-- <div class="swiper-button-prev">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#arrow"></use>
-              </svg>
+            <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="sp">
+              Совместные покупки <span class="tabs__tab-count">79</span>
             </div>
-            <div class="swiper-button-next">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#arrow"></use>
-              </svg>
-            </div> -->
-          </div>
-          <div class="swiper-button-prev">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#arrow"></use>
-            </svg>
-          </div>
-          <div class="swiper-button-next">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#arrow"></use>
-            </svg>
+            <div class="swiper-slide tabs__tab" data-tab-path="tff">
+              Test For Free <span class="tabs__tab-count">13</span>
+            </div>
+            <div class="swiper-slide tabs__tab" data-tab-path="contacts">
+              Контакты
+            </div>
           </div>
         </div>
-      <!-- </div> -->
+        <div class="swiper-button-prev">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+      </div>
       <div class="shop-window__actions">
         <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey">
           Сортировка
@@ -78,7 +66,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "popular-asc",
           })
@@ -86,7 +74,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "rate-asc",
           })
@@ -94,7 +82,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "cost-asc",
           })
@@ -102,7 +90,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "name-asc",
           })
@@ -110,7 +98,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "popular-desc",
           })
@@ -118,7 +106,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "rate-desc",
           })
@@ -126,7 +114,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "cost-desc",
           })
@@ -134,7 +122,7 @@
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<div class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></div>",
+            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "name-desc",
           })
@@ -144,124 +132,16 @@
       <div class="shop-window__filtersorting-filter">
         <div class="shop-window__filtersorting-filter-filters filters">
           <div class="filters__item">
-            <div class="collapse">
-              <div class="collapse__head">
-                <span class="collapse__head-title">
-                  Размер0
-                </span>
-                <svg class="collapse__head-icon">
-                  <use xlink:href="./img/icons/icons.svg#collapse"></use>
-                </svg>
-              </div>
-              <div class="collapse__content">
-                <div class="filters__collapse filters__collapse-grid">
-                  <label class="checkbox ">
-                    <input name="0size36" type="checkbox" checked>
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      36
-                    </div>
-                  </label>
-                  <label class="checkbox ">
-                    <input name="0size38" type="checkbox" checked>
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      38
-                    </div>
-                  </label>
-                <label class="checkbox ">
-                  <input name="0size40" type="checkbox" checked>
-                  <div class="checkbox__checkmark">
-                    <svg>
-                      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                    </svg>
-                  </div>
-                  <div class="checkbox__label ">
-                    40
-                  </div>
-                </label>
-              <label class="checkbox ">
-                <input name="0size42" type="checkbox" checked>
-                <div class="checkbox__checkmark">
-                  <svg>
-                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                  </svg>
-                </div>
-                <div class="checkbox__label ">
-                  42
-                </div>
-              </label>
-            </div>
-              </div>
-            </div>
+            @@include("./collapse.html", {
+              "title": "Размер0",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "0size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
           </div>
           <div class="filters__item">
-            <div class="collapse">
-              <div class="collapse__head">
-                <span class="collapse__head-title">
-                  Размер10
-                </span>
-                <svg class="collapse__head-icon">
-                  <use xlink:href="./img/icons/icons.svg#collapse"></use>
-                </svg>
-              </div>
-              <div class="collapse__content">
-                <div class="filters__collapse filters__collapse-grid">
-                  <label class="checkbox ">
-                    <input name="10size36" type="checkbox">
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      36
-                    </div>
-                  </label>
-                  <label class="checkbox ">
-                    <input name="10size38" type="checkbox">
-                    <div class="checkbox__checkmark">
-                      <svg>
-                        <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                      </svg>
-                    </div>
-                    <div class="checkbox__label ">
-                      38
-                    </div>
-                  </label>
-                <label class="checkbox ">
-                  <input name="10size40" type="checkbox" checked>
-                  <div class="checkbox__checkmark">
-                    <svg>
-                      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                    </svg>
-                  </div>
-                  <div class="checkbox__label ">
-                    40
-                  </div>
-                </label>
-              <label class="checkbox ">
-                <input name="10size42" type="checkbox" checked>
-                <div class="checkbox__checkmark">
-                  <svg>
-                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                  </svg>
-                </div>
-                <div class="checkbox__label ">
-                  42
-                </div>
-              </label>
-            </div>
-              </div>
-            </div>
+            @@include("./collapse.html", {
+              "title": "Размер10",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "10size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
           </div>
           <div class="filters__item">
             @@include("./collapse.html", {
@@ -300,9 +180,12 @@
             })
           </div>
         </div>
-        <div class="shop-window__filtersorting-filter-actions">
+        <div class="shop-window__filtersorting-filter-actions form__btns">
           <button type="button" class="btn btn--text shop-window__filtersorting-filter-clear">Очистить все фильтры</button>
-          <button type="submit" class="btn">Применить (30)</button>
+          <button type="submit" class="btn shop-window__filtersorting-filter-submit">
+            Применить
+            <span class="btn__suffix"></span>
+          </button>
         </div>
       </div>
     </form>

@@ -4,7 +4,7 @@ import { API_URLS, BreakpointWidth, Methods } from '../constants/index'
 
 import { Share } from '../modules/Share'
 import { Collapse } from '../modules/Collapse'
-import { ShopWindow } from '../modules/Shop-window'
+import { ShopWindow } from '../modules/ShopWindow'
 import { Tabs } from '../modules/Tabs'
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { Density } from '../modules/Density'
@@ -12,6 +12,7 @@ import { Sort } from '../modules/Sort'
 import { Filter } from '../modules/Filter'
 import { Form } from '../modules/Form'
 import { Select } from '../modules/Select'
+import { RangeSlider } from '../modules/RangeSlider'
 
 window.addEventListener('load', () => {
   try {
@@ -50,9 +51,18 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
+    new RangeSlider()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    const swiperElement = document.querySelector('.shop-window__tabs-swiper') as HTMLElement
+    const prevBtn = swiperElement.querySelector('.swiper-button-prev') as HTMLElement
+    const nextBtn = swiperElement.querySelector('.swiper-button-next') as HTMLElement 
+
     new ShopWindow(
       new CustomSwiper({
-        target: '.shop-window__tabs-swiper',
+        target: swiperElement,
         options: {
           slidesPerView: 1,
           centeredSlides: true,
@@ -64,6 +74,10 @@ window.addEventListener('load', () => {
           },
         },
         breakMedia: BreakpointWidth.TABLET,
+        btnsElements: {
+          prevElement: prevBtn,
+          nextElement: nextBtn,
+        },
       }),
       new Form(
         '.shop-window__filtersorting', 

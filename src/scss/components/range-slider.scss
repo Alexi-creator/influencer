@@ -1,0 +1,33 @@
+@import "../basis/_variables";
+@import "../basis/_mixins";
+@import "../basis/_extends";
+
+.range {
+  $root: &;
+
+  &__inputs {
+    @extend %flex-space-between;
+
+    gap: 0.25rem;
+    margin-top: 1.25rem;
+  }
+
+  &__min, &__max {
+    @extend %flex-center;
+
+    gap: 0.25rem;
+  }
+
+  &__input-wrapper {
+    max-width: 8rem;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 1rem;
+
+    &::placeholder {
+      font-size: 1rem;
+    }
+  }
+}
