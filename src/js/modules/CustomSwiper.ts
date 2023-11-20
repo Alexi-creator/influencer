@@ -10,7 +10,7 @@ interface IOptions extends Partial<{
   breakpoints: Record<number, IOptions>
 }> {}
 
-interface IConstructorSwiper {
+interface ISwiperOptions {
   modules?: SwiperModule[];
   centeredSlides?: boolean;
   loop?: boolean;
@@ -39,24 +39,24 @@ export class CustomSwiper {
   options?: IOptions
   breakMedia?: number
   initialActionIndex?: number
+  swiperOptions: ISwiperOptions
   
   swiper: Swiper | null
   matchMedia: MediaQueryList
 
-  constructorSwiper: IConstructorSwiper
-
   constructor({ target, options, breakMedia, initialActionIndex, btnsElements }: IConstructor) {
     this.target = target
     this.options = options
-    this.initialActionIndex = initialActionIndex || 0
+    this.initialActionIndex = initialActionIndex || 0 
 
-    this.constructorSwiper = {
+    this.swiperOptions = {
       modules: [Navigation],
       centeredSlides: true,
       loop: false,
       navigation: {
         nextEl: btnsElements?.nextElement || '.swiper-button-next',
         prevEl: btnsElements?.prevElement || '.swiper-button-prev',
+
       },
       ...this.options
     }
@@ -73,14 +73,13 @@ export class CustomSwiper {
 
   init() {
     this.startSlide()
-    // this.handlers()
   }
 
   startSlide() {
     if (this.matchMedia?.matches) return
   
     this.swiper?.destroy()
-    this.swiper = new Swiper(this.target, this.constructorSwiper)
+    this.swiper = new Swiper(this.target, this.swiperOptions)   
     
     if (this.initialActionIndex) {
       this.swiper.slideTo(this.initialActionIndex)
@@ -94,6 +93,4 @@ export class CustomSwiper {
       this.startSlide()
     }
   }
-
-  // handlers() {}
 }
