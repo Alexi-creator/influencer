@@ -189,6 +189,10 @@
     margin-top: 0;
   }
 
+  .shop-window__tabs {
+    margin: 0;
+  }
+
   .shop-window__tabs .tabs__tab {
     margin: unset;
   }
