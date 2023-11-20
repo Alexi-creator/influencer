@@ -56,9 +56,10 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    const swiperElement = document.querySelector('.shop-window__tabs-swiper') as HTMLElement
-    const prevBtn = swiperElement.querySelector('.swiper-button-prev') as HTMLElement
-    const nextBtn = swiperElement.querySelector('.swiper-button-next') as HTMLElement 
+    const parentElement = document.querySelector('.shop-window__tabs') as HTMLElement
+    const swiperElement = parentElement.querySelector('.shop-window__tabs-swiper') as HTMLElement
+    const prevBtn = parentElement.querySelector('.swiper-button-prev') as HTMLElement
+    const nextBtn = parentElement.querySelector('.swiper-button-next') as HTMLElement 
 
     new ShopWindow(
       new CustomSwiper({
