@@ -5,11 +5,14 @@
 .range {
   $root: &;
 
+  width: 100%;
+  padding-top: 1.37rem;
+
   &__inputs {
     @extend %flex-space-between;
 
     gap: 0.25rem;
-    margin-top: 1.25rem;
+    margin-top: calc(1.25rem + 1.37rem);
   }
 
   &__min, &__max {

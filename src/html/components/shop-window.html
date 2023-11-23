@@ -133,6 +133,12 @@
         <div class="shop-window__filtersorting-filter-filters filters">
           <div class="filters__item">
             @@include("./collapse.html", {
+              "title": "Прайс",
+              "body": '<div class="filters__collapse">@@include("./range-slider.html", { "minName": "rangemin", "maxName": "rangemax", "minValue": "200000", "maxValue": "500000", "min": "0", "max": "1000000", "currencySymbol": "&#8381;", "step": "1000" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
               "title": "Размер0",
               "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "0size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size42", "text": "42", "mod": "", "classes": "" })</div>',
             })

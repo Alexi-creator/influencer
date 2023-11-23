@@ -1,0 +1,33 @@
+.noUi-horizontal {
+  height: 0.3125rem;
+
+  & .noUi-handle {
+    top: 0.155rem;
+    transform: translateY(-50%);
+    width: 2.74rem;
+    height: 2.74rem;
+    border-radius: var(--radius-round);
+    background-color: rgb(var(--color-primary));
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+
+    &::after, &::before {
+      display: none;
+    }
+
+    &.noUi-handle-lower {
+      right: -25px;
+    }
+  }
+}
+
+.noUi-target {
+  background-color: rgb(var(--color-primary-pale));
+  border-radius: var(--radius-big);
+  border: none;
+}
+
+.noUi-connect {
+  background-color: rgb(var(--color-primary-dark));
+}
