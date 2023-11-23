@@ -11,9 +11,14 @@
   align-items: center;
 }
 
+.range {
+  width: 100%;
+  padding-top: 1.37rem;
+}
+
 .range__inputs {
   gap: 0.25rem;
-  margin-top: 1.25rem;
+  margin-top: 2.62rem;
 }
 
 .range__min,
