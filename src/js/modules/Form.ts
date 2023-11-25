@@ -11,11 +11,11 @@ import { Methods } from '../constants'
  * @param apiOptions - опции для работы с запросами к api
  */
 export class Form {
-  selectorForm: string
-  url: string
-  apiOptions: IOptions
+  private selectorForm: string
+  private url: string
+  private apiOptions: IOptions
 
-  form: HTMLFormElement
+  private form: HTMLFormElement
   
   constructor(selectorForm: string, url: string, apiOptions: IOptions) {
     this.selectorForm = selectorForm

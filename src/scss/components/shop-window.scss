@@ -250,10 +250,15 @@
       gap: 1px;
       margin: 0 -1.25rem;
 
-      &--horizontally#{$root}__goods-items{
+      #{$root}--horizontally & {
         grid-template-columns: 1fr;
         gap: 0.5rem;
       }
+
+      // &--horizontally#{$root}__goods-items{
+      //   grid-template-columns: 1fr;
+      //   gap: 0.5rem;
+      // }
   
       @include media($md) {
         grid-template-columns: repeat(3, 1fr);
