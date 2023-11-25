@@ -7,24 +7,24 @@ interface IFilter {
  * Выбор фильтров
  */
 export class Filter {
-  selectorFilterBtn: string
-  selectorFilterWrapper: string
-  selectorFiltersWrapper: string
-  selectorChips: string
-  selectorChipCross: string
-  selectorClearBtn: string
-  selectorSubmitBtn: string
-  defaultContentBtn: string
-  selectorBtnIcon: string
-  svgCross: string
+  private selectorFilterBtn: string
+  private selectorFilterWrapper: string
+  private selectorFiltersWrapper: string
+  private selectorChips: string
+  private selectorChipCross: string
+  private selectorClearBtn: string
+  private selectorSubmitBtn: string
+  private defaultContentBtn: string
+  private selectorBtnIcon: string
+  private svgCross: string
 
-  filterActionBtn: HTMLElement | null
-  filterWrapper: HTMLElement | null
-  filtersWrapper: HTMLElement | null
-  chipsWrapper: HTMLElement | null
-  submitBtn: HTMLElement | null
+  private filterActionBtn: HTMLElement | null
+  private filterWrapper: HTMLElement | null
+  private filtersWrapper: HTMLElement | null
+  private chipsWrapper: HTMLElement | null
+  private submitBtn: HTMLElement | null
 
-  filters: Record<string, IFilter>
+  private filters: Record<string, IFilter>
 
   constructor() {
     this.selectorFilterBtn = '.shop-window__actions-filters'

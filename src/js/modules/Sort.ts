@@ -2,13 +2,13 @@
  * Выбор сортировки
  */
 export class Sort {
-  selectorSortingWrapper: string
-  selectorSortingAction: string
+  private selectorSortingWrapper: string
+  private selectorSortingAction: string
 
-  defaultContentBtn: string
-  isSelected: boolean
-  isOpen: boolean
-  lastSelectedIcon: string
+  private defaultContentBtn: string
+  private isSelected: boolean
+  private isOpen: boolean
+  private lastSelectedIcon: string
 
   constructor() {
     this.selectorSortingWrapper = '.shop-window__filtersorting-sorting'
@@ -22,7 +22,7 @@ export class Sort {
     this.init()
   }
 
-  init() {
+  private init() {
     const sortingActionBtn = document.querySelector(this.selectorSortingAction)
   
     if (sortingActionBtn) {
@@ -32,7 +32,7 @@ export class Sort {
     this.handlers()
   }
 
-  changeIcon() {
+  private changeIcon() {
     const sortingActionBtn = document.querySelector(this.selectorSortingAction) as HTMLElement
     const svg = sortingActionBtn.querySelector('use')
     const splitIconPath = svg?.getAttribute('xlink:href')?.split('#')
@@ -46,7 +46,7 @@ export class Sort {
     }
   }
 
-  toggleSorting() {  
+  private toggleSorting() {  
     const sortingWrapper = document.querySelector(this.selectorSortingWrapper)
 
     if (this.isOpen) {
@@ -60,7 +60,7 @@ export class Sort {
     this.changeIcon()
   }
 
-  chooseSorting(targetElement: HTMLElement) {
+  private chooseSorting(targetElement: HTMLElement) {
     this.isSelected = true
 
     const parent = targetElement.closest('.radio')
@@ -81,7 +81,7 @@ export class Sort {
     this.toggleSorting()
   }
 
-  clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
     const sortingActionBtn = targetElement.closest(this.selectorSortingAction)
     const tagName = targetElement.tagName   
@@ -117,7 +117,7 @@ export class Sort {
     }
   }
 
-  changeHandler(e: Event) {
+  private changeHandler(e: Event) {
     const targetElement = e.target as HTMLInputElement
 
     if (targetElement.checked && targetElement.closest(this.selectorSortingWrapper)) {
@@ -125,7 +125,7 @@ export class Sort {
     }
   }
 
-  handlers() {
+  private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
     document.addEventListener('change', (e) => this.changeHandler(e))
   }
