@@ -519,8 +519,8 @@
   border-radius: var(--radius-round);
   background-color: rgb(var(--color-primary));
   border: none;
-  cursor: pointer;
   box-shadow: none;
+  cursor: pointer;
 }
 
 .noUi-horizontal .noUi-handle::after,
@@ -528,14 +528,11 @@
   display: none;
 }
 
-.noUi-horizontal .noUi-handle.noUi-handle-lower {
-  right: -25px;
-}
-
 .noUi-target {
   background-color: rgb(var(--color-primary-pale));
   border-radius: var(--radius-big);
   border: none;
+  padding: 0 17px 0 27px;
 }
 
 .noUi-connect {
