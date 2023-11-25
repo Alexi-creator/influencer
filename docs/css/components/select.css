@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.select__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .select {
   position: relative;
   width: 100%;
@@ -21,12 +27,6 @@
   gap: 0.5rem;
   overflow: hidden;
   cursor: pointer;
-}
-
-.select__title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .select__icon {

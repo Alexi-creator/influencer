@@ -8,8 +8,6 @@
   padding: 0;
 }
 
-/* Выставляем основные настройки по-умолчанию для body */
-
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -29,15 +27,16 @@ a:active {
   color: inherit;
 }
 
-/* Упрощаем работу с изображениями */
-
 img {
   max-width: 100%;
   width: 100%;
-  display: block;
+  height: auto;
+  vertical-align: middle;
+  font-family: sans-serif;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-/* Наследуем шрифты для инпутов и кнопок */
 
 input,
 button,
@@ -309,7 +308,7 @@ button {
   align-items: center;
   background-color: rgb(var(--color-primary));
   border: 2px solid;
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
   border-color: rgb(var(--color-white));
   color: rgb(var(--color-white));
   padding: 0.35rem 0.5rem;

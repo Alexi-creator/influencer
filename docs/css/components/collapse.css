@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.collapse__head-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .collapse {
   padding: 1rem 1.25rem;
   background-color: rgb(var(--color-white));
@@ -30,12 +36,6 @@
 
 .collapse__head:hover .collapse__head-icon use {
   fill: rgb(var(--color-black));
-}
-
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .collapse__head-icon {

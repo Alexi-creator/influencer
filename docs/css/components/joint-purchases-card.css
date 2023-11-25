@@ -3,12 +3,21 @@
   align-items: center;
 }
 
+.joint-purchases-card__slider .joint-purchases-card__slide-info-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .joint-purchases-card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 0.75rem 0.75rem 0;
   border-radius: var(--radius-medium);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .joint-purchases-card--processing {
@@ -38,11 +47,62 @@
   position: relative;
   padding-top: 143%;
   overflow: hidden;
+  border-radius: var(--radius-medium);
+  cursor: pointer;
 }
 
-.joint-purchases-card__slider .joint-purchases-card__slide img {
+.joint-purchases-card__slider .joint-purchases-card__slide > img {
   position: absolute;
   top: 0;
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide-img-more {
+  opacity: 0;
+  transition: var(--transition-base);
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(var(--color-primary-soft));
+  padding: 0.5rem;
+  opacity: 0;
+  transition: var(--transition-base);
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide-info-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  font-size: 0.875rem;
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide-info-price {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide-info-price-old {
+  color: rgb(var(--color-grey));
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide-info-price-new {
+  color: rgb(var(--color-primary));
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide:hover .joint-purchases-card__slide-img-more {
+  opacity: 1;
+}
+
+.joint-purchases-card__slider .joint-purchases-card__slide:hover .joint-purchases-card__slide-info {
+  opacity: 1;
 }
 
 .joint-purchases-card__logo {

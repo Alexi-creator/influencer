@@ -141,8 +141,8 @@
   margin: 0 -1.25rem;
 }
 
-.shop-window__goods-items--horizontally.shop-window__goods-items,
-.shop-window__ttf-items--horizontally.shop-window__goods-items {
+.shop-window--horizontally .shop-window__goods-items,
+.shop-window--horizontally .shop-window__ttf-items {
   grid-template-columns: 1fr;
   gap: 0.5rem;
 }
