@@ -77,11 +77,12 @@ export class RangeSlider {
     this.init()
   }
 
-  init() {
+  private init() {
+    this.handlers()
     this.initSliders()
   }
 
-  changeSlider(slider: SliderInstance, e: [string, string]) {
+  private changeSlider(slider: SliderInstance, e: [string, string]) {
     const [startVal, endVal] = e
     const settingsSlider =  this.allSliders.get(slider.target)
 
@@ -92,23 +93,84 @@ export class RangeSlider {
     }
   }
 
-  changeInputs(e: Event) {
-    const inputElem = e.target as HTMLInputElement
-    const value = inputElem.value
-    const correctValue = value.replace(/[^0-9]/g, '')
-    inputElem.value = correctValue
+  private changeInputs(e: Event) {
+    const currentInputElem = e.target as HTMLInputElement
+    const isMaxInput = currentInputElem.classList.contains('range__input-max')
+    const isMinInput = currentInputElem.classList.contains('range__input-min')
+    
+    const value = currentInputElem.value
+    const correctValue = Number(value.replace(/^0+|[^0-9]/g, ''))
 
-    const parentSlider = inputElem.closest(this.selectorParent) as HTMLElement
+    const parentSlider = currentInputElem.closest(this.selectorParent) as HTMLElement
     const slider = parentSlider.querySelector(this.selectorSlider) as HTMLElement
 
     if (slider) {
-      // нужно проверять меньше конечное чем начальное и наоборот
-      // убрать тестовый хардкод с 0 значением
-      this.allSliders.get(slider)?.entitySlider?.set([0, Number(correctValue)])
+      const currentSlider = this.allSliders.get(slider)
+      const currentEntitySlider = currentSlider?.entitySlider
+      const initOptions = currentSlider?.initOptions
+
+      if (currentEntitySlider && initOptions) {     
+        const [startValue, endValue] = currentEntitySlider.get() as string[]
+        const [min, max] = Object.values(initOptions.range)
+        const isMinMaxValidValue = (correctValue <= max && correctValue >= min)
+
+        if (isMaxInput) {
+          if (isMinMaxValidValue) {
+            if (correctValue < Number(startValue.split('.')[0])) {
+              currentInputElem.value = String(min)
+              currentSlider?.entitySlider?.set([min, min])
+  
+              const startInput = currentSlider?.inputsElem?.[0] as HTMLInputElement
+              startInput.value = String(min)
+            } else {
+              currentInputElem.value = String(correctValue)
+              currentSlider?.entitySlider?.set([Number(startValue.split('.')[0]), correctValue])
+            }
+          } else {
+            if (correctValue > max) {
+              currentInputElem.value = String(max)
+              currentSlider?.entitySlider?.set([Number(startValue), max])
+            }
+            if (correctValue < min) {
+              currentInputElem.value = String(correctValue)
+              currentSlider?.entitySlider?.set([min, Number(endValue)])
+
+              const startInput = currentSlider?.inputsElem?.[0] as HTMLInputElement
+              startInput.value = String(min)
+            }
+          }
+        }
+
+        if (isMinInput) {
+          if (isMinMaxValidValue) {
+            if (correctValue > Number(endValue.split('.')[0])) {
+              currentInputElem.value = String(correctValue)
+              currentSlider?.entitySlider?.set([correctValue, correctValue])
+              const endInput = currentSlider?.inputsElem?.[1] as HTMLInputElement
+              endInput.value = String(correctValue)
+            } else {
+              currentInputElem.value = String(correctValue)
+              currentSlider?.entitySlider?.set([correctValue, Number(endValue.split('.')[0])])
+            }
+          } else {
+            if (correctValue > max) {
+              currentInputElem.value = String(max)
+              currentSlider?.entitySlider?.set([max, max])
+
+              const endInput = currentSlider?.inputsElem?.[1] as HTMLInputElement
+              endInput.value = String(max)
+            }
+            if (correctValue < min) {
+              currentInputElem.value = String(correctValue)
+              currentSlider?.entitySlider?.set([min, Number(endValue)])
+            }
+          }
+        }
+      }
     }
   }
 
-  initSliders() {
+  private initSliders() {
     this.allSliders.forEach((val, slider) => {    
       const entitySlider = noUiSlider.create(slider, { ...val.initOptions })
 
@@ -121,5 +183,40 @@ export class RangeSlider {
         this.changeSlider(entitySlider, e as [string, string])
       })
     })
+  }
+
+  private changeMinMaxValue(inputElem: HTMLInputElement, minMax: 'min' | 'max') {
+    const value = Number(inputElem.value)
+    const parent = inputElem.closest(this.selectorParent)
+    const sliderElem = parent?.querySelector(this.selectorSlider) as HTMLElement
+    const slider = this.allSliders.get(sliderElem)
+    const entitySlider = slider?.entitySlider
+
+    if (entitySlider) {
+      const sliderValues = entitySlider.get()
+      const start = Number(sliderValues[0].split('.')[0])
+      const end = Number(sliderValues[1].split('.')[0])
+
+      if (minMax === 'max' && (value !== end)) {
+        inputElem.value = String(end)
+      }
+      if (minMax === 'min' && (value !== start)) {
+        inputElem.value = String(start)
+      }
+    }
+  }
+
+  private changeHandler(e: Event) {
+    const inputElem = e.target as HTMLInputElement
+    if (inputElem.closest(this.selectorMaxInput)) {
+      this.changeMinMaxValue(inputElem, 'max')
+    }
+    if (inputElem.closest(this.selectorMinInput)) {
+      this.changeMinMaxValue(inputElem, 'min')
+    }
+  }
+
+  private handlers() {
+    document.addEventListener('change', (e: Event) => this.changeHandler(e))
   }
 }
