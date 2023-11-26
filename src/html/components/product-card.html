@@ -1,4 +1,4 @@
-<div class="product-card @@extra-class">
+<a class="product-card @@extra-class" href="#">
   <div class="product-card__img">
     <div class="product-card__img-wrapper">
       <div class="product-card__img-first">
@@ -8,6 +8,33 @@
         <img src="@img/product-card2.jpg" alt="product2">
       </div>
     </div>
+    <!-- <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        @@include("./badge.html", {
+          "extra-class": "",
+          "body": '<span class="badge__sub">до</span>-50%',
+        })
+        @@include("./badge.html", {
+          "extra-class": "badge--icon",
+          "body": '<svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>',
+        })
+        @@include("./badge.html", {
+          "extra-class": "",
+          "body": "СП",
+        })
+        @@include("./badge.html", {
+          "extra-class": "",
+          "body": "TTF",
+        })
+      </div>
+    </div> -->
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#@@like"></use>
+      </svg>
+    </div>
+  </div>
+  <div class="product-card__descr">
     <div class="product-card__info">
       <div class="product-card__info-wrap">
         @@include("./badge.html", {
@@ -28,13 +55,6 @@
         })
       </div>
     </div>
-    <div class="product-card__like">
-      <svg class="collapse__toggle-icon">
-        <use xlink:href="./img/icons/icons.svg#@@like"></use>
-      </svg>
-    </div>
-  </div>
-  <div class="product-card__descr">
     <div class="product-card__descr-top">
       <div class="product-card__brand">
         Yves Saint Lauren
@@ -65,4 +85,4 @@
       </div>   
     </div>
   </div>
-</div>
+</a>
