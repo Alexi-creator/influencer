@@ -2347,6 +2347,7 @@ svg {
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -3095,12 +3096,15 @@ svg {
 }
 
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: rgb(var(--color-primary-soft));
   padding: 1px;
-  border: 1px solid rgb(var(--color-primary-soft));
+  border: 2px solid rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
+  transition: var(--transition-base);
+  cursor: pointer;
 }
 
 .shop-window--horizontally .product-card,
@@ -3120,6 +3124,18 @@ svg {
 .product-card--horizontally .product-card__likes {
   display: inline-flex;
   align-items: center;
+}
+
+.shop-window--horizontally .product-card .product-card__descr,
+.product-card--horizontally .product-card__descr {
+  position: static;
+}
+
+.shop-window--horizontally .product-card .product-card__info,
+.product-card--horizontally .product-card__info {
+  max-width: 15.6rem;
+  bottom: 0.5rem;
+  top: unset;
 }
 
 .product-card__img {
@@ -3161,7 +3177,8 @@ svg {
 }
 
 .product-card__info {
-  bottom: 0.5rem;
+  position: absolute;
+  top: -2.5rem;
   right: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -3190,7 +3207,9 @@ svg {
 }
 
 .product-card__descr {
+  position: relative;
   height: 100%;
+  min-height: 6.6625rem;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
 }
@@ -4568,6 +4587,33 @@ svg {
   .shop-window__joint-purchases-contents {
     grid-template-columns: calc(50% - 0.5rem) calc(50% - 0.5rem);
     gap: 1rem;
+  }
+
+  .product-card:hover {
+    padding: 0;
+    border: 2px solid rgb(var(--color-primary-light));
+  }
+
+  .product-card:hover .product-card__sizes,
+  .product-card:hover .product-card__likes {
+    display: inline-flex;
+  }
+
+  .product-card:hover .product-card__img-first {
+    display: none;
+  }
+
+  .product-card:hover .product-card__img-second {
+    display: block;
+  }
+
+  .product-card:hover .product-card__descr {
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(252, 249, 246);
   }
 
   .shop-window--horizontally .product-card,
