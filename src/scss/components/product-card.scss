@@ -5,12 +5,44 @@
 .product-card {
   $root: &;
 
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: rgb(var(--color-primary-soft));
   padding: 1px;
-  border: 1px solid rgb(var(--color-primary-soft));
+  border: 2px solid rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
+  transition: var(--transition-base);
+  cursor: pointer;
+
+  &:hover {
+    @include media($lg) {
+      padding: 0;
+      border: 2px solid rgb(var(--color-primary-light));
+  
+      #{$root}__sizes, #{$root}__likes {
+        display: inline-flex;
+      }
+  
+      #{$root}__img {
+        &-first {
+          display: none;
+        }
+        &-second {
+          display: block;
+        }
+      }
+  
+      #{$root}__descr {
+        position: absolute;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(252, 249, 246, 1);
+      }
+    }
+  }
 
   .shop-window--horizontally &, &--horizontally {
     display: grid;
@@ -64,6 +96,16 @@
         justify-content: space-between;
       }
     }
+
+    #{$root}__descr {
+      position: static;
+    }
+
+    #{$root}__info {
+      max-width: 15.6rem;
+      bottom: 0.5rem;
+      top: unset;
+    }
   }
 
   &__img {
@@ -102,7 +144,8 @@
   }
 
   &__info {
-    bottom: 0.5rem;
+    position: absolute;
+    top: -2.5rem;
     right: 0;
     overflow-x: auto;
     scrollbar-width: none;
@@ -129,7 +172,9 @@
   }
 
   &__descr {
+    position: relative;
     height: 100%;
+    min-height: 6.6625rem;
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
   }
