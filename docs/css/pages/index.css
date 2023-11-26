@@ -3669,7 +3669,7 @@ svg {
   cursor: pointer;
 }
 
-.joint-purchases-card__slider .joint-purchases-card__slide > img {
+.joint-purchases-card__slider .joint-purchases-card__slide img {
   position: absolute;
   top: 0;
 }
