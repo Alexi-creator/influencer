@@ -71,8 +71,12 @@
   display: none;
 }
 
+.shop-window__filtersorting {
+  margin-top: 1.25rem;
+}
+
 .shop-window__filtersorting > *:not(:first-child) {
-  margin-top: 2.5rem;
+  margin-top: 1.25rem;
 }
 
 .shop-window__filtersorting-sorting {
@@ -257,7 +261,7 @@
     gap: 0.75rem;
     max-width: -moz-max-content;
     max-width: max-content;
-    margin: -1.5rem auto 0;
+    margin: 0 auto;
     padding: 1.25rem 2rem;
     background-color: rgb(var(--color-primary-pale));
     border-radius: var(--radius-small);

@@ -210,6 +210,10 @@
   .product-card--horizontally .product-card__price {
     justify-content: flex-start;
   }
+
+  .product-card__descr {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 75rem) {
@@ -221,6 +225,7 @@
   .product-card:hover .product-card__sizes,
   .product-card:hover .product-card__likes {
     display: inline-flex;
+    align-items: center;
   }
 
   .product-card:hover .product-card__img-first {
@@ -258,5 +263,9 @@
   .shop-window--horizontally .product-card .product-card__price,
   .product-card--horizontally .product-card__price {
     justify-content: space-between;
+  }
+
+  .product-card__price {
+    font-size: 1.125rem;
   }
 }
