@@ -22,6 +22,7 @@
   
       #{$root}__sizes, #{$root}__likes {
         display: inline-flex;
+        align-items: center;
       }
   
       #{$root}__img {
@@ -177,6 +178,10 @@
     min-height: 6.6625rem;
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
+
+    @include media($md) {
+      font-size: 1rem;
+    }
   }
 
   &__brand {
@@ -238,6 +243,10 @@
       color: rgb(var(--color-grey));
       text-decoration: line-through;
       text-decoration-thickness: 2px;
+    }
+
+    @include media($lg) {
+      font-size: 1.125rem;
     }
   }
 }
