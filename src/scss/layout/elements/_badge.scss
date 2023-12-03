@@ -1,3 +1,7 @@
+@import "../../basis/_extends";
+@import "../../basis/_mixins";
+@import "../../basis/_variables";
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -15,6 +19,18 @@
     padding: 0.85rem 1.25rem;
   }
 
+  &--round {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: var(--radius-round);
+    line-height: 1.33;
+    
+    @include media($md) {
+      padding: 0.4rem 1.25rem;
+      font-size: 1.125rem;
+    }
+  }
+
   &--without-border {
     border-color: transparent;
   }
@@ -26,6 +42,11 @@
 
   &--color-primary-light {
     background-color: rgb(var(--color-primary-pale));
+    color: rgb(var(--color-primary));
+  }
+
+  &--color-white{
+    background-color: rgb(var(--color-white));
     color: rgb(var(--color-primary));
   }
 

@@ -33,6 +33,10 @@
           display: block;
         }
       }
+
+      #{$root}__application-status, #{$root}__status {
+        display: none;
+      }
   
       #{$root}__descr {
         position: absolute;
@@ -40,7 +44,13 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(252, 249, 246, 1);
+        background-color: rgb(var(--color-primary-soft));
+      }
+
+      &#{$root}--status-consideration-applications {
+        #{$root}__date {
+          display: block;
+        }
       }
     }
   }
@@ -107,6 +117,74 @@
       bottom: 0.5rem;
       top: unset;
     }
+
+    #{$root}__application-status {
+      top: 0.5rem;
+      left: 1rem;
+      margin: 0;
+      transform: unset;
+    }
+  }
+
+  &--status-promotion-over, &--status-consideration-applications {
+    #{$root}__descr {
+      background-color: rgb(var(--color-grey-pale));
+    }
+
+    #{$root}__status {
+      display: block;
+    }
+
+    #{$root}__date {
+      display: none;
+    }
+  }
+
+  &--status-promotion-over {
+    #{$root}__status {
+      font-weight: 600;
+    }
+  }
+
+  &--status-consideration-applications {
+
+  }
+
+  &--application-submitted, &--application-rejected, &--application-approved {
+    #{$root}__application-status {
+      display: block;
+    }
+  }
+
+  &--application-rejected {
+    #{$root}__application-status {
+      & .badge {
+        color: rgb(var(--color-red));
+      }
+    }
+  }
+
+  &--application-approved {
+    #{$root}__application-status {
+      & .badge {
+        color: rgb(var(--color-green));
+      }
+    }
+
+    #{$root}__descr {
+      background-color: rgb(var(--color-green-light));
+    }
+  }
+
+  &__application-status {
+    display: none;
+    position: absolute;
+    width: max-content;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
   }
 
   &__img {
@@ -144,6 +222,10 @@
     }
   }
 
+  &__status {
+    display: none;
+  }
+
   &__info {
     position: absolute;
     top: -2.5rem;
@@ -165,7 +247,7 @@
     }
   }
 
-  &__descr, &__descr-top {
+  &__descr, &__descr-top, &__descr-bottom {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
