@@ -13,6 +13,9 @@
         <use xlink:href="./img/icons/icons.svg#@@like"></use>
       </svg>
     </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
   </div>
   <div class="product-card__descr">
     <div class="product-card__info">
@@ -49,6 +52,9 @@
         </ul>
         <span class="product-card__sizes-more">еще 13</span>
       </div>
+      <div class="product-card__date">
+        До завершения: @@date
+      </div>
       <div class="product-card__likes">
         <svg class="collapse__toggle-icon">
           <use xlink:href="./img/icons/icons.svg#favourite"></use>
@@ -56,13 +62,18 @@
         89
       </div>
     </div>
-    <div class="product-card__price product-card__price@@discount">
-      <div class="product-card__price-current">
-        27 966 ₽
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: @@status
       </div>
-      <div class="product-card__price-sale">
-        @@sale
-      </div>   
+      <div class="product-card__price product-card__price@@discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          @@sale
+        </div>   
+      </div>
     </div>
   </div>
 </a>
