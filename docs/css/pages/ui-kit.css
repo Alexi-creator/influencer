@@ -1249,6 +1249,7 @@ button {
   --color-grey-pale: 230, 230, 230;
   --color-grey-dark: 206, 206, 206;
   --color-green: 80, 165, 51;
+  --color-green-light: 249, 253, 248;
   --color-red: 221, 94, 94;
   --max-width-container: 106rem;
   --transition-base: all 0.2s linear;
@@ -1397,6 +1398,46 @@ button {
   background: rgb(var(--color-black-light));
 }
 
+.range__min,
+.range__max,
+.tabs__tab,
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs__list {
+  display: flex;
+  align-items: center;
+}
+
+.chip,
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range__inputs,
+.select__header,
+.collapse__head,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select__title,
+.collapse__head-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -1415,6 +1456,13 @@ button {
   padding: 0.85rem 1.25rem;
 }
 
+.badge--round {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: var(--radius-round);
+  line-height: 1.33;
+}
+
 .badge--without-border {
   border-color: transparent;
 }
@@ -1426,6 +1474,11 @@ button {
 
 .badge--color-primary-light {
   background-color: rgb(var(--color-primary-pale));
+  color: rgb(var(--color-primary));
+}
+
+.badge--color-white {
+  background-color: rgb(var(--color-white));
   color: rgb(var(--color-primary));
 }
 
@@ -2816,6 +2869,11 @@ h2 {
 
   .hr {
     margin: 1.25rem auto;
+  }
+
+  .badge--round {
+    padding: 0.4rem 1.25rem;
+    font-size: 1.125rem;
   }
 
   .nav__list {

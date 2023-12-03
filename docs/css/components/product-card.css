@@ -53,6 +53,63 @@
   top: unset;
 }
 
+.shop-window--horizontally .product-card .product-card__application-status,
+.product-card--horizontally .product-card__application-status {
+  top: 0.5rem;
+  left: 1rem;
+  margin: 0;
+  transform: unset;
+}
+
+.product-card--status-promotion-over .product-card__descr,
+.product-card--status-consideration-applications .product-card__descr {
+  background-color: rgb(var(--color-grey-pale));
+}
+
+.product-card--status-promotion-over .product-card__status,
+.product-card--status-consideration-applications .product-card__status {
+  display: block;
+}
+
+.product-card--status-promotion-over .product-card__date,
+.product-card--status-consideration-applications .product-card__date {
+  display: none;
+}
+
+.product-card--status-promotion-over .product-card__status {
+  font-weight: 600;
+}
+
+.product-card--application-submitted .product-card__application-status,
+.product-card--application-rejected .product-card__application-status,
+.product-card--application-approved .product-card__application-status {
+  display: block;
+}
+
+.product-card--application-rejected .product-card__application-status .badge {
+  color: rgb(var(--color-red));
+}
+
+.product-card--application-approved .product-card__application-status .badge {
+  color: rgb(var(--color-green));
+}
+
+.product-card--application-approved .product-card__descr {
+  background-color: rgb(var(--color-green-light));
+}
+
+.product-card__application-status {
+  display: none;
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+
 .product-card__img {
   position: relative;
 }
@@ -91,6 +148,10 @@
   stroke-width: 2px;
 }
 
+.product-card__status {
+  display: none;
+}
+
 .product-card__info {
   position: absolute;
   top: -2.5rem;
@@ -114,7 +175,8 @@
 }
 
 .product-card__descr,
-.product-card__descr-top {
+.product-card__descr-top,
+.product-card__descr-bottom {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -236,13 +298,22 @@
     display: block;
   }
 
+  .product-card:hover .product-card__application-status,
+  .product-card:hover .product-card__status {
+    display: none;
+  }
+
   .product-card:hover .product-card__descr {
     position: absolute;
     height: auto;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(252, 249, 246);
+    background-color: rgb(var(--color-primary-soft));
+  }
+
+  .product-card:hover.product-card--status-consideration-applications .product-card__date {
+    display: block;
   }
 
   .shop-window--horizontally .product-card,

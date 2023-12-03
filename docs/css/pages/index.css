@@ -1249,6 +1249,7 @@ button {
   --color-grey-pale: 230, 230, 230;
   --color-grey-dark: 206, 206, 206;
   --color-green: 80, 165, 51;
+  --color-green-light: 249, 253, 248;
   --color-red: 221, 94, 94;
   --max-width-container: 106rem;
   --transition-base: all 0.2s linear;
@@ -1397,6 +1398,57 @@ button {
   background: rgb(var(--color-black-light));
 }
 
+.range__min,
+.range__max,
+.tabs__tab,
+.product-card__sizes-variants,
+.share__block,
+.share__block-head,
+.share__list,
+.share__close,
+.nav-pages__list,
+.popup__overlay,
+.header__top-location,
+.header__top-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joint-purchases-card__status,
+.tabs__list {
+  display: flex;
+  align-items: center;
+}
+
+.chip,
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range__inputs,
+.joint-purchases-card__slider .joint-purchases-card__slide-info-price,
+.select__header,
+.product-card__price,
+.shop-window__filtersorting-filter-actions,
+.shop-window__actions,
+.collapse__head,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select__title,
+.collapse__head-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -1415,6 +1467,13 @@ button {
   padding: 0.85rem 1.25rem;
 }
 
+.badge--round {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: var(--radius-round);
+  line-height: 1.33;
+}
+
 .badge--without-border {
   border-color: transparent;
 }
@@ -1426,6 +1485,11 @@ button {
 
 .badge--color-primary-light {
   background-color: rgb(var(--color-primary-pale));
+  color: rgb(var(--color-primary));
+}
+
+.badge--color-white {
+  background-color: rgb(var(--color-white));
   color: rgb(var(--color-primary));
 }
 
@@ -3142,6 +3206,63 @@ svg {
   top: unset;
 }
 
+.shop-window--horizontally .product-card .product-card__application-status,
+.product-card--horizontally .product-card__application-status {
+  top: 0.5rem;
+  left: 1rem;
+  margin: 0;
+  transform: unset;
+}
+
+.product-card--status-promotion-over .product-card__descr,
+.product-card--status-consideration-applications .product-card__descr {
+  background-color: rgb(var(--color-grey-pale));
+}
+
+.product-card--status-promotion-over .product-card__status,
+.product-card--status-consideration-applications .product-card__status {
+  display: block;
+}
+
+.product-card--status-promotion-over .product-card__date,
+.product-card--status-consideration-applications .product-card__date {
+  display: none;
+}
+
+.product-card--status-promotion-over .product-card__status {
+  font-weight: 600;
+}
+
+.product-card--application-submitted .product-card__application-status,
+.product-card--application-rejected .product-card__application-status,
+.product-card--application-approved .product-card__application-status {
+  display: block;
+}
+
+.product-card--application-rejected .product-card__application-status .badge {
+  color: rgb(var(--color-red));
+}
+
+.product-card--application-approved .product-card__application-status .badge {
+  color: rgb(var(--color-green));
+}
+
+.product-card--application-approved .product-card__descr {
+  background-color: rgb(var(--color-green-light));
+}
+
+.product-card__application-status {
+  display: none;
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+
 .product-card__img {
   position: relative;
 }
@@ -3180,6 +3301,10 @@ svg {
   stroke-width: 2px;
 }
 
+.product-card__status {
+  display: none;
+}
+
 .product-card__info {
   position: absolute;
   top: -2.5rem;
@@ -3203,7 +3328,8 @@ svg {
 }
 
 .product-card__descr,
-.product-card__descr-top {
+.product-card__descr-top,
+.product-card__descr-bottom {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -4119,6 +4245,11 @@ svg {
     margin: 1.25rem auto;
   }
 
+  .badge--round {
+    padding: 0.4rem 1.25rem;
+    font-size: 1.125rem;
+  }
+
   .nav__list {
     gap: 2.5rem;
   }
@@ -4616,13 +4747,22 @@ svg {
     display: block;
   }
 
+  .product-card:hover .product-card__application-status,
+  .product-card:hover .product-card__status {
+    display: none;
+  }
+
   .product-card:hover .product-card__descr {
     position: absolute;
     height: auto;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(252, 249, 246);
+    background-color: rgb(var(--color-primary-soft));
+  }
+
+  .product-card:hover.product-card--status-consideration-applications .product-card__date {
+    display: block;
   }
 
   .shop-window--horizontally .product-card,

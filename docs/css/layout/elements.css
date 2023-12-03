@@ -111,6 +111,20 @@
   background: rgb(var(--color-black-light));
 }
 
+.chip,
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -129,6 +143,13 @@
   padding: 0.85rem 1.25rem;
 }
 
+.badge--round {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: var(--radius-round);
+  line-height: 1.33;
+}
+
 .badge--without-border {
   border-color: transparent;
 }
@@ -140,6 +161,11 @@
 
 .badge--color-primary-light {
   background-color: rgb(var(--color-primary-pale));
+  color: rgb(var(--color-primary));
+}
+
+.badge--color-white {
+  background-color: rgb(var(--color-white));
   color: rgb(var(--color-primary));
 }
 
@@ -542,6 +568,11 @@
 @media (min-width: 48rem) {
   .hr {
     margin: 1.25rem auto;
+  }
+
+  .badge--round {
+    padding: 0.4rem 1.25rem;
+    font-size: 1.125rem;
   }
 }
 
