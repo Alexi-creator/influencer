@@ -74,7 +74,7 @@ export class Filter {
 
   private collectionOptions() {
     if (this.filtersWrapper) {
-      this.filters = Array.from(this.filtersWrapper.children).reduce((acc, filter) => {
+      this.filters = Array.from(this.filtersWrapper.querySelectorAll('.filters__item')).reduce((acc, filter) => {
         const title = filter.querySelector('.collapse__head-title')?.textContent?.trim()
         const selectedOptions = Array.from(filter.querySelectorAll('input[type="checkbox"]:checked'))
           .map(item => {

@@ -156,9 +156,9 @@
     }
   }
 
-  &--status-consideration-applications {
+  // &--status-consideration-applications {
 
-  }
+  // }
 
   &--application-submitted, &--application-rejected, &--application-approved {
     #{$root}__application-status {
