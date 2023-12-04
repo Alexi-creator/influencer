@@ -1,3 +1,4 @@
+.isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info {
   display: flex;
@@ -213,6 +214,31 @@
   flex-shrink: 0;
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.header__nav-profile .header__nav-account {
+  display: none;
+}
+
+.header__nav-profile .header__nav-account .header__nav-rating {
+  color: rgb(var(--color-black));
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.header__nav-profile .header__nav-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-round);
+}
+
+.isAuth .header__nav-profile .header__nav-sign-in {
+  display: none;
+}
+
+.isAuth .header__nav-profile .header__nav-account {
+  gap: 1rem;
 }
 
 .header__nav-more,

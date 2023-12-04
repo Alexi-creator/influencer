@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="isAuth">
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231204062319">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231204082805">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20231204062319"></script>
+  <script defer src="js/index.min.js?_v=20231204082805"></script>
 </head>
   <body>
     <header class="header">
@@ -119,11 +119,19 @@
           </a>
         </li>
         <li class="header__nav-item header__nav-profile">
-          <a href="#">
+          <a class="header__nav-sign-in" href="#">
             <svg>
               <use xlink:href="./img/icons/icons.svg#user"></use>
             </svg>
             Войти в аккаунт
+          </a>
+          <a class="header__nav-account" href="#">
+            <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">
+              Мой рейтинг: 109
+            </div>
+            <div class="header__nav-avatar">
+              <picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture>
+            </div>
           </a>
         </li>
         <li class="header__nav-item header__nav-more">
