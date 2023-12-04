@@ -39,7 +39,7 @@
     }
 
     &-location, &-info {
-      @extend %flex-center
+      @extend %flex-center;
     }
 
     &-location {
@@ -251,6 +251,35 @@
           flex-shrink: 0;
           width: 2.5rem;
           height: 2.5rem;
+        }
+      }
+
+      #{$root}__nav-account {
+        display: none;
+
+        #{$root}__nav-rating {
+          color: rgb(var(--color-black));
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+
+      #{$root}__nav-avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+        overflow: hidden;
+        border-radius: var(--radius-round);
+      }
+
+      .isAuth & {
+        #{$root}__nav-sign-in {
+          display: none;
+        }
+
+        #{$root}__nav-account {
+          @extend %flex-center;
+          
+          gap: 1rem;
         }
       }
     }
