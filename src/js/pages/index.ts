@@ -13,8 +13,23 @@ import { Filter } from '../modules/Filter'
 import { Form } from '../modules/Form'
 import { Select } from '../modules/Select'
 import { RangeSlider } from '../modules/RangeSlider'
+import { Masonry } from '../modules/Masonry'
 
 window.addEventListener('load', () => {
+  // Masonry должен вызываться раньше чем Filter
+  try {
+    new Masonry({
+      selectorContainer: '.filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
   try {
     new Share()
   } catch (error) {
