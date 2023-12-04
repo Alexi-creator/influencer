@@ -1,12 +1,11 @@
 .filters {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1.25rem;
 }
 
-.filters__item {
+.filters__column > div:not(:last-child) {
   margin-bottom: 1.25rem;
-  overflow: hidden;
 }
 
 .filters__collapse {
@@ -20,6 +19,18 @@
   display: grid;
   grid-template-columns: repeat(3, max-content);
   gap: 1.25rem 1.88rem;
+}
+
+@media (min-width: 48rem) {
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 75rem) {
+  .filters {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 120rem) {

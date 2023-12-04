@@ -61,6 +61,14 @@
   transform: unset;
 }
 
+.product-card--ttf .product-card__date {
+  display: block;
+}
+
+.product-card--ttf .product-card__descr {
+  min-height: 10rem;
+}
+
 .product-card--status-promotion-over .product-card__descr,
 .product-card--status-consideration-applications .product-card__descr {
   background-color: rgb(var(--color-grey-pale));
@@ -148,7 +156,8 @@
   stroke-width: 2px;
 }
 
-.product-card__status {
+.product-card__status,
+.product-card__date {
   display: none;
 }
 
@@ -186,7 +195,7 @@
 .product-card__descr {
   position: relative;
   height: 100%;
-  min-height: 6.6625rem;
+  min-height: 7.6625rem;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
 }

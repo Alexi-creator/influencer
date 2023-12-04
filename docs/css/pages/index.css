@@ -3214,6 +3214,14 @@ svg {
   transform: unset;
 }
 
+.product-card--ttf .product-card__date {
+  display: block;
+}
+
+.product-card--ttf .product-card__descr {
+  min-height: 10rem;
+}
+
 .product-card--status-promotion-over .product-card__descr,
 .product-card--status-consideration-applications .product-card__descr {
   background-color: rgb(var(--color-grey-pale));
@@ -3301,7 +3309,8 @@ svg {
   stroke-width: 2px;
 }
 
-.product-card__status {
+.product-card__status,
+.product-card__date {
   display: none;
 }
 
@@ -3339,7 +3348,7 @@ svg {
 .product-card__descr {
   position: relative;
   height: 100%;
-  min-height: 6.6625rem;
+  min-height: 7.6625rem;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
 }
@@ -4131,13 +4140,12 @@ svg {
 
 .filters {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1.25rem;
 }
 
-.filters__item {
+.filters__column > div:not(:last-child) {
   margin-bottom: 1.25rem;
-  overflow: hidden;
 }
 
 .filters__collapse {
@@ -4513,6 +4521,10 @@ svg {
     display: none;
   }
 
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .joint-purchases-card__title {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -4832,6 +4844,10 @@ svg {
   .joint-purchases-card__brand {
     display: flex;
     margin: 0 -1.5rem;
+  }
+
+  .filters {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .joint-purchases-card__title {
