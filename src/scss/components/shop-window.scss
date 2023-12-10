@@ -17,7 +17,19 @@
     margin-top: 0.5rem;
 
     & > * {
-      margin-top: 2.5rem;
+      margin-top: 1.25rem;
+
+      @include media($md) {
+        margin-top: 1.5rem;
+      }
+
+      @include media($lg) {
+        margin-top: 1.25rem;
+      }
+
+      @include media($full) {
+        margin-top: 2.5rem;
+      }
     }
 
     @include media($md) {
@@ -43,6 +55,7 @@
     margin: 0 1.5rem;
 
     @include media($md) {
+      display: inline-block;
       margin: 0;
     }
 
@@ -55,6 +68,8 @@
     }
 
     & .tabs__tab {
+      @extend %ellipsis;
+
       width: max-content;
       margin: 0 auto;
 
@@ -79,31 +94,71 @@
   }
 
   &__actions {
-    @extend %flex-space-between;
+    @extend %flex-end;
+
+    gap: 0.5rem;
+    position: sticky;
+    top: 81px;
+    margin-left: auto;
+    margin-top: 1.5rem;
+    z-index: var(--z-popup);
 
     @include media($lg) {
       gap: 0.5rem;
+      top: 113px;
+      float: right;
+      margin-top: 0;
+    }
+
+    &--active {
+      width: max-content;
+
+      #{$root}__actions-text {
+        display: none;
+      }
+
+      #{$root}__actions-density {
+        margin-left: none;
+      }
+
+      @include media($full) {
+        #{$root}__actions-text {
+          display: block;
+        }
+      }
     }
 
     & .btn {
       font-weight: 400;
+      padding-left: 0.65rem;
+      padding-right: 0.65rem;
     }
 
-    &-categories {
-      display: none;
-    }
-
-    &-sorts {
+    &-categories, &-filters, &-sorts, &-density {
       display: none;
 
-      @include media($lg) {
+      &--active {
         display: inline-flex;
       }
     }
 
+    &-sorts {
+
+    }
+
     &-density {
+      margin-left: auto;
+
       @include media($lg) {
         display: none;
+      }
+
+      &--active {
+        display: inline-flex;
+
+        @include media($lg) {
+          display: none;
+        }
       }
 
       &#{$root}__actions-density--tile {
@@ -256,11 +311,6 @@
         grid-template-columns: 1fr;
         gap: 0.5rem;
       }
-
-      // &--horizontally#{$root}__goods-items{
-      //   grid-template-columns: 1fr;
-      //   gap: 0.5rem;
-      // }
   
       @include media($md) {
         grid-template-columns: repeat(3, 1fr);

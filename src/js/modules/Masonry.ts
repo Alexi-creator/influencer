@@ -1,5 +1,3 @@
-// import { BreakpointWidth } from '../constants'
-
 type IBreakpointsSettings = Record<number, number>
 
 interface IConstructor {
@@ -23,9 +21,7 @@ export class Masonry {
     this.items = []
 
     const containerElem = document.querySelector(this.selectorContainer)
-    if (containerElem) {
-      this.containerElem = containerElem as HTMLElement
-    }
+    if (containerElem) this.containerElem = containerElem as HTMLElement
 
     if (!this.containerElem || !Object.keys(breakpointsSettings).length) return
 

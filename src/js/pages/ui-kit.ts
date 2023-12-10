@@ -5,10 +5,16 @@ import { Select } from '../modules/Select'
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { Tabs } from '../modules/Tabs'
 import { RangeSlider } from '../modules/RangeSlider'
+import { ScrollIntoView } from '../modules/ScrollIntoView'
 
 window.addEventListener('load', () => {
   try {
     new Collapse()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new ScrollIntoView()
   } catch (error) {
     console.log(error)
   }
