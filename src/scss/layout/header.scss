@@ -237,6 +237,7 @@
 
       @include media($lg) {
         display: block;
+        flex-shrink: 0;
       }
 
       & > a {

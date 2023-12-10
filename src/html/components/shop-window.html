@@ -1,7 +1,7 @@
 <div class="shop-window tabs">
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
-    <div class="shop-window__controls">
+    <!-- <div class="shop-window__controls"> -->
       <div class="shop-window__tabs tabs__head">
         <div class="swiper shop-window__tabs-swiper">
           <div class="tabs__list swiper-wrapper">
@@ -31,20 +31,20 @@
         </div>
       </div>
       <div class="shop-window__actions">
-        <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey">
-          Сортировка
+        <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
+          <div class="shop-window__actions-text">Сортировка</div>
           <svg>
             <use xlink:href="./img/icons/icons.svg#sorts"></use>
           </svg>
         </div>
-        <div class="shop-window__actions-categories btn btn--outlined btn--color-grey">
-          Категории
+        <div class="shop-window__actions-categories btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
+          <div class="shop-window__actions-text">Категории</div>
           <svg>
             <use xlink:href="./img/icons/icons.svg#categories"></use>
           </svg>
         </div>
-        <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
-          Фильтры
+        <div class="shop-window__actions-filters btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
+          <div class="shop-window__actions-text">Фильтры</div>
           <div class="shop-window__actions-filters-icon">
             <svg>
               <use xlink:href="./img/icons/icons.svg#filters"></use>
@@ -60,7 +60,7 @@
           </svg>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
     <form class="shop-window__filtersorting">
       <div class="shop-window__filtersorting-sorting">
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">

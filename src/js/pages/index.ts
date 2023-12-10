@@ -14,6 +14,9 @@ import { Form } from '../modules/Form'
 import { Select } from '../modules/Select'
 import { RangeSlider } from '../modules/RangeSlider'
 import { Masonry } from '../modules/Masonry'
+import { ScrollIntoView } from '../modules/ScrollIntoView'
+import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
+import { observerBrandCallback } from '../modules/observerBrandCallback'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -32,6 +35,22 @@ window.addEventListener('load', () => {
   }
   try {
     new Share()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    const targetElement = document.querySelector('.shop-window__tabs') as HTMLElement
+
+    new CustomIntersectionObserver({
+      element: targetElement,
+      callback: observerBrandCallback,
+      options: {},
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new ScrollIntoView()
   } catch (error) {
     console.log(error)
   }
