@@ -31,7 +31,6 @@ img {
   max-width: 100%;
   width: 100%;
   height: auto;
-  vertical-align: middle;
   font-family: sans-serif;
   font-style: italic;
   background-repeat: no-repeat;
@@ -1278,6 +1277,7 @@ svg {
 
   .header__nav-profile {
     display: block;
+    flex-shrink: 0;
   }
 
   .header__nav-more,

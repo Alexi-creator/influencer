@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231204082805">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20231210114956">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20231204082805"></script>
+  <script defer src="js/index.min.js?_v=20231210114956"></script>
 </head>
   <body>
     <header class="header">
@@ -241,10 +241,25 @@
   </ul>
 </div>
     </div>
-    <div class="shop-preview__subscribers">112 подписчиков</div>
+    <div class="shop-preview__followers">112 подписчиков</div>
     <div class="shop-preview__actions">
-      <button class="btn">Подписаться</button>
-      <div class="share">
+      <button class="shop-preview__btn-top scroll">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#go-up"></use>
+        </svg>
+      </button>
+      <div class="shop-preview__brand">
+        <div class="shop-preview__brand-logo">
+          <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+        </div>
+        <div class="shop-preview__brand-name">
+          Интернет магазин женской одежды и аксессуаров Lass
+        </div>
+      </div>
+      <div class="shop-preview__subscribe">
+        <button class="btn">Подписаться</button>
+        <span class="shop-preview__subscribe-dote"></span>
+        <div class="share">
   <svg class="share__open" data-popup="share">
     <use xlink:href="./img/icons/icons.svg#share-link"></use>
   </svg>
@@ -293,6 +308,7 @@
   </div>
 </div>
 
+      </div>
     </div>
   </div>
 </div>
@@ -305,7 +321,7 @@
           <div class="shop-window tabs">
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
-    <div class="shop-window__controls">
+    <!-- <div class="shop-window__controls"> -->
       <div class="shop-window__tabs tabs__head">
         <div class="swiper shop-window__tabs-swiper">
           <div class="tabs__list swiper-wrapper">
@@ -335,20 +351,20 @@
         </div>
       </div>
       <div class="shop-window__actions">
-        <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey">
-          Сортировка
+        <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
+          <div class="shop-window__actions-text">Сортировка</div>
           <svg>
             <use xlink:href="./img/icons/icons.svg#sorts"></use>
           </svg>
         </div>
-        <div class="shop-window__actions-categories btn btn--outlined btn--color-grey">
-          Категории
+        <div class="shop-window__actions-categories btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
+          <div class="shop-window__actions-text">Категории</div>
           <svg>
             <use xlink:href="./img/icons/icons.svg#categories"></use>
           </svg>
         </div>
-        <div class="shop-window__actions-filters btn btn--outlined btn--color-grey">
-          Фильтры
+        <div class="shop-window__actions-filters btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
+          <div class="shop-window__actions-text">Фильтры</div>
           <div class="shop-window__actions-filters-icon">
             <svg>
               <use xlink:href="./img/icons/icons.svg#filters"></use>
@@ -364,7 +380,7 @@
           </svg>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
     <form class="shop-window__filtersorting">
       <div class="shop-window__filtersorting-sorting">
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">

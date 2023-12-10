@@ -321,6 +321,7 @@
 
   .header__nav-profile {
     display: block;
+    flex-shrink: 0;
   }
 
   .header__nav-more,
