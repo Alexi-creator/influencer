@@ -5059,6 +5059,7 @@ svg {
 
   .shop-preview__actions--active {
     top: 104px;
+    margin-top: 0;
     padding: 0.5rem 4rem;
   }
 
@@ -5370,6 +5371,7 @@ svg {
   }
 
   .shop-preview__actions--active {
+    margin-top: 0;
     padding: 0.5rem 0;
     left: 0;
     right: 0;
@@ -5381,6 +5383,10 @@ svg {
 
   .shop-window__tabs {
     margin: 0;
+  }
+
+  .shop-window__actions {
+    margin-top: 0;
   }
 
   .shop-window__actions--active {

@@ -368,6 +368,10 @@
     margin: 0;
   }
 
+  .shop-window__actions {
+    margin-top: 0;
+  }
+
   .shop-window__actions--active {
     margin-top: 0;
   }
