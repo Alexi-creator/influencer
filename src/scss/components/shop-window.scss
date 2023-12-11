@@ -118,6 +118,10 @@
       margin-top: 0;
     }
 
+    @include media($full) {
+      margin-top: 0;
+    }
+
     &--active {
       width: max-content;
 
