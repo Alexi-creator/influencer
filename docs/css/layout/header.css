@@ -263,6 +263,11 @@
     display: block;
     flex-shrink: 0;
     margin-right: 1.5rem;
+    margin-left: 0;
+  }
+
+  .header__nav-search {
+    margin: 0 auto;
   }
 
   .header__nav-search-select {
@@ -309,6 +314,10 @@
     margin-right: 1.5rem;
   }
 
+  .header__nav-search {
+    margin: 0 auto;
+  }
+
   .header__nav-feed {
     display: block;
   }
@@ -337,5 +346,17 @@
 
   .header__nav-item {
     margin-left: 1.5rem;
+  }
+
+  .header__nav-logo {
+    margin-left: 0;
+  }
+
+  .header__nav-catalog {
+    margin-left: 1.5rem;
+  }
+
+  .header__nav-search {
+    margin: 0 auto;
   }
 }

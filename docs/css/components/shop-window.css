@@ -301,10 +301,18 @@
     align-items: center;
   }
 
+  .shop-window__tabs {
+    margin: 0;
+  }
+
   .shop-window__actions {
     gap: 0.5rem;
     top: 113px;
     float: right;
+    margin-top: 0;
+  }
+
+  .shop-window__actions--active {
     margin-top: 0;
   }
 
@@ -354,6 +362,14 @@
 @media (min-width: 120rem) {
   .shop-window__inner > * {
     margin-top: 2.5rem;
+  }
+
+  .shop-window__tabs {
+    margin: 0;
+  }
+
+  .shop-window__actions--active {
+    margin-top: 0;
   }
 
   .shop-window__actions--active .shop-window__actions-text {
