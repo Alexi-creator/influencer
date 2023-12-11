@@ -1418,7 +1418,7 @@ button {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -1623,7 +1623,7 @@ button {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -1763,7 +1763,7 @@ button {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -1880,7 +1880,7 @@ button {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -1993,7 +1993,7 @@ button {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -2102,7 +2102,7 @@ button {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -2402,7 +2402,7 @@ button {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -2532,7 +2532,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -2683,7 +2683,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -2760,7 +2760,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -2992,7 +2992,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -3129,7 +3129,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -3406,7 +3406,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -3716,7 +3716,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -3837,7 +3837,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -3938,7 +3938,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -4064,7 +4064,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .joint-purchases-card__status,
@@ -4426,7 +4426,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .shop-preview__actions,
@@ -4509,7 +4509,7 @@ svg {
 
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .shop-preview__actions,

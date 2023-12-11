@@ -1,6 +1,6 @@
 .shop-window__actions {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .shop-window__filtersorting-filter-actions {
