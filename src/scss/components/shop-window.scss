@@ -59,6 +59,14 @@
       margin: 0;
     }
 
+    @include media($lg) {
+      margin: 0;
+    }
+
+    @include media($full) {
+      margin: 0;
+    }
+
     & .swiper-button-next {
       transform: translate(50%, -3px);
     }
@@ -121,7 +129,13 @@
         margin-left: none;
       }
 
+      @include media($lg) {
+        margin-top: 0;
+      }
+
       @include media($full) {
+        margin-top: 0;
+
         #{$root}__actions-text {
           display: block;
         }
