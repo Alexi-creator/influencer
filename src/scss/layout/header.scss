@@ -118,10 +118,15 @@
         display: block;
         flex-shrink: 0;
         margin-right: 1.5rem;
+        margin-left: 0;
       }
 
       @include media($lg) {
         margin-right: 0;
+      }
+
+      @include media($full) {
+        margin-left: 0;
       }
     }
 
@@ -132,6 +137,10 @@
       @include media($lg) {
         display: block;
         margin-right: 1.5rem;
+      }
+
+      @include media($full) {
+        margin-left: 1.5rem;
       }
 
       & > a {
@@ -154,13 +163,17 @@
       margin: 0 auto;
       flex-grow: 1;
 
-      // @include media($md) {
-      //   margin-left: 1.5rem;
-      // }
+      @include media($md) {
+        margin: 0 auto;
+      }
 
-      // @include media($lg) {
-      //   margin-left: auto;
-      // }
+      @include media($lg) {
+        margin: 0 auto;
+      }
+
+      @include media($full) {
+        margin: 0 auto;
+      }
 
       &-select {
         display: none;
