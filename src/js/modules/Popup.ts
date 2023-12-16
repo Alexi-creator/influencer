@@ -4,16 +4,13 @@ import { BreakpointWidth } from '../constants/sizeScreen'
   Popup (модальное окно). Для работы необходимо в разметке указать для каждого popup уникальный Id
   А так же нужно добавить data атрибут (data-popup) с этим же значением как id у popup на элемент по которому будет клик
 
-  this.onlyMobilePopups массив попапов к которым будет добаваляться класс popup--onlymobile,
-  данный класс убирает стилизацию попапа как будто его и нет для не мобильных разрешений экрана
+  Для открытия popup только на определенных разрешениях, нужно на элемент popup добавить дата атрибут media с размером data-media="1200"
 */
 export class Popup {
   selector: string
   popupCloseSelector: string
 
   dataAttributePopup: string
-  onlyMobilePopups: string[]
-  onlyMobileClass: string
   popupOpenClass: string
   overflowClass: string
   popupOverlayClass: string
@@ -23,8 +20,6 @@ export class Popup {
     this.popupCloseSelector = '.popup__close'
   
     this.dataAttributePopup = '[data-popup]'
-    this.onlyMobilePopups = ['share']
-    this.onlyMobileClass = 'popup--onlymobile'
     this.popupOpenClass = 'popup--open'
     this.overflowClass = 'overflow'
     this.popupOverlayClass = 'popup__overlay'
@@ -35,38 +30,62 @@ export class Popup {
   private init() {
     this.handlers()
 
-    const matchMedia = window.matchMedia(`(min-width:${BreakpointWidth.TABLET}px)`)
-    matchMedia.addListener((e) => this.breakpointChecker(e))
+    const breakpoints = [BreakpointWidth.TABLET, BreakpointWidth.DESKTOP]
+    breakpoints.forEach(breakpoint => {
+      const mediaQueryList = window.matchMedia(`(min-width:${breakpoint}px)`)
+      mediaQueryList.addListener((e) => this.breakpointChecker(e))
+    })
   }
 
   private breakpointChecker(e: MediaQueryListEvent) {
-    if (e.matches) {
-      document.body.classList.remove(this.overflowClass)
-    }
+    const currentMedia = e.media.replace(/\D/g, '')
+    const openPopups: HTMLElement[] = Array.from(document.querySelectorAll(`${this.selector}--open`))
+
+    openPopups.forEach(popup => {
+      const popupMedia = popup.dataset.media
+
+      if (Number(currentMedia) >= Number(popupMedia)) {
+        this.closePopup(popup)
+      }
+    })
   }
 
   private openPopup(actionEl: HTMLElement) {
-    const namePopup = actionEl.dataset.popup
+    const popup = document.getElementById(actionEl.dataset.popup || '')
 
-    if (namePopup) {
-      const popup = document.getElementById(namePopup)
-      const isMobilePopup = popup?.classList.contains(this.onlyMobileClass)
+    if (popup) {
+      let isNeedOpen = true
+      const media = Number(popup.dataset.media)
 
-      if ((isMobilePopup && window.innerWidth < BreakpointWidth.TABLET) || !isMobilePopup) {
-        popup?.classList.add(this.popupOpenClass)
+      if (media && (media < window.innerWidth)) {
+        isNeedOpen = false
+      }
+
+      if (isNeedOpen) {
+        popup.classList.add(this.popupOpenClass)
         document.body.classList.add(this.overflowClass)
+
+        const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')
+        if (shopPreviewActionsElem) {
+          shopPreviewActionsElem.classList.add('shop-preview__actions--over')
+        }
       }
     } else {
       throw new Error(`no attribute value: ${this.dataAttributePopup}`)
     }
   }
 
-  private closePopup(actionEl: HTMLElement) {
+  private closePopup(actionEl: HTMLElement) {   
     const popupEl = actionEl.closest(this.selector)
 
     document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))
     popupEl?.classList.remove(this.popupOpenClass)
     document.body.classList.remove(this.overflowClass)
+
+    const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')
+    if (shopPreviewActionsElem) {
+      shopPreviewActionsElem.classList.remove('shop-preview__actions--over')
+    }
   }
 
   private clickHandler(e: MouseEvent) {

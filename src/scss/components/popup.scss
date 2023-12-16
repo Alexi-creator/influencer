@@ -22,7 +22,7 @@
   }
 
   &--onlymobile {
-    @include media($md) {
+    @include media($lg) {
 
       & #{$root}__overlay {
         position: relative;

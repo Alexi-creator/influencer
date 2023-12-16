@@ -75,17 +75,10 @@
   }
 
   &--open {
-    & #{$root}__open {
-
-      @include media($md) {
-        display: none;
-      }
-    }
-
     & #{$root}__block {
       height: auto;
 
-      @include media($md) {
+      @include media($lg) {
         animation: slide-in 0.4s forwards;
       }
     }

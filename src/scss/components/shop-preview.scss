@@ -94,6 +94,11 @@
     
     gap: 1.25rem;
     margin-top: 1rem;
+    z-index: var(--z-popup);
+
+    &--over {
+      z-index: var(--z-over);
+    }
 
     @include media($lg) {
       margin-top: 1.5rem;
@@ -116,7 +121,6 @@
       padding: 0.5rem 1.25rem;
       max-width: var(--max-width-container);
       background-color: rgb(var(--color-white));
-      z-index: var(--z-popup);
 
       #{$root}__btn-top, #{$root}__brand {
         display: flex;
