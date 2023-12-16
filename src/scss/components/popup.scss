@@ -17,7 +17,7 @@
     padding: 1.25rem;
     background: rgba(0, 0, 0, 0.50);
     backdrop-filter: blur(6px);
-    z-index: var(--z-popup);
+    z-index: var(--z-over);
     cursor: pointer;
   }
 

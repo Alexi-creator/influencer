@@ -13,11 +13,11 @@ export class Share {
     this.init()
   }
 
-  init() {
+  private init() {
     this.handlers()
   }
 
-  closePopupEvent(e) {
+  private closePopupEvent(e) {
     const popupEl = document.getElementById(e.detail)   
     const shareEl = popupEl?.closest('.share')
 
@@ -27,7 +27,7 @@ export class Share {
     }
   }
 
-  clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {
     const targetElement = e.target as Element
     
     if (targetElement.closest('.share__open')) {
@@ -40,7 +40,7 @@ export class Share {
     }
   }
 
-  handlers() {
+  private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
     document.addEventListener('closePopup', (e) => this.closePopupEvent(e))
   }

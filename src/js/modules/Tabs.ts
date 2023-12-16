@@ -3,11 +3,11 @@ export class Tabs {
     this.init()
   }
 
-  init() {
+  private init() {
     this.handlers()
   }
 
-  changeTab(tabsNode: HTMLElement) {
+  private changeTab(tabsNode: HTMLElement) {
     const path = tabsNode.dataset.tabPath
 
     const tabsParent = tabsNode.closest('.tabs__list')
@@ -24,14 +24,14 @@ export class Tabs {
     requiredContent?.classList.add('tabs__content--active')
   }
 
-  clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
     const parent = targetElement.closest('.tabs__tab') as HTMLElement  
 
     if (parent) this.changeTab(parent)
   }
 
-  handlers() {
+  private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
   }
 }

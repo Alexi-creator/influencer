@@ -1,6 +1,6 @@
 import '../common.ts'
 
-import { API_URLS, BreakpointWidth, Methods } from '../constants/index'
+import { API_URLS, BreakpointWidth, HttpMethods } from '../constants/index'
 
 import { Share } from '../modules/Share'
 import { Collapse } from '../modules/Collapse'
@@ -118,7 +118,7 @@ window.addEventListener('load', () => {
         '.shop-window__filtersorting', 
         API_URLS.shops.test,
         {
-          method: Methods.GET
+          method: HttpMethods.GET
         },
       ),
     )
