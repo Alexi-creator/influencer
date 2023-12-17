@@ -1,7 +1,7 @@
 import { IOptions } from '../utils/request'
 
 import { request } from '../utils'
-import { Methods } from '../constants'
+import { HttpMethods } from '../constants'
 
 /**
  * Управление формой
@@ -51,7 +51,7 @@ export class Form {
     const { method } = this.apiOptions
     let url = this.url
 
-    if (method === Methods.GET) {
+    if (method === HttpMethods.GET) {
       const params = new URLSearchParams()
       Object.entries(data).forEach(([key, val]) => params.append(key, String(val)))
       url = `${this.url}?${params.toString()}`

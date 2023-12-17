@@ -94,6 +94,11 @@
     
     gap: 1.25rem;
     margin-top: 1rem;
+    z-index: var(--z-popup);
+
+    &--over {
+      z-index: var(--z-over);
+    }
 
     @include media($lg) {
       margin-top: 1.5rem;
@@ -109,14 +114,13 @@
 
     &--active {
       position: fixed;
-      top: 73px;
+      top: 72px;
       left: 0;
       right: 0;
       margin: 0 auto;
       padding: 0.5rem 1.25rem;
       max-width: var(--max-width-container);
       background-color: rgb(var(--color-white));
-      z-index: var(--z-popup);
 
       #{$root}__btn-top, #{$root}__brand {
         display: flex;
@@ -150,7 +154,7 @@
       }
   
       @include media($lg) {
-        top: 104px;
+        top: 103px;
         margin-top: 0;
         padding: 0.5rem 4rem;
 

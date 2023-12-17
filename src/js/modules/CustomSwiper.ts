@@ -71,11 +71,11 @@ export class CustomSwiper {
     this.init()
   }
 
-  init() {
+  private init() {
     this.startSlide()
   }
 
-  startSlide() {
+  public startSlide() {
     if (this.matchMedia?.matches) return
   
     this.swiper?.destroy()
@@ -86,7 +86,7 @@ export class CustomSwiper {
     }
   }
 
-  breakpointChecker(e: MediaQueryListEvent) {
+  private breakpointChecker(e: MediaQueryListEvent) {
     if (e.matches) {
       this.swiper?.destroy()
     } else {

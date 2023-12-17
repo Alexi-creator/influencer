@@ -1,48 +1,97 @@
+import { BreakpointWidth } from '../constants/sizeScreen'
+
 /*
   Popup (модальное окно). Для работы необходимо в разметке указать для каждого popup уникальный Id
   А так же нужно добавить data атрибут (data-popup) с этим же значением как id у popup на элемент по которому будет клик
 
-  this.onlyMobilePopups массив попапов к которым будет добаваляться класс popup--onlymobile,
-  данный класс убирает стилизацию попапа как будто его и нет для не мобильных разрешений экрана
+  Для открытия popup только на определенных разрешениях, нужно на элемент popup добавить дата атрибут media с размером data-media="1200"
 */
 export class Popup {
   selector: string
+  popupCloseSelector: string
+
   dataAttributePopup: string
-  onlyMobilePopups: string[]
+  popupOpenClass: string
+  overflowClass: string
+  popupOverlayClass: string
 
   constructor() {
     this.selector = '.popup'
+    this.popupCloseSelector = '.popup__close'
+  
     this.dataAttributePopup = '[data-popup]'
-    this.onlyMobilePopups = ['share']
+    this.popupOpenClass = 'popup--open'
+    this.overflowClass = 'overflow'
+    this.popupOverlayClass = 'popup__overlay'
 
     this.init()
   }
 
-  init() {
+  private init() {
     this.handlers()
+
+    const breakpoints = [BreakpointWidth.TABLET, BreakpointWidth.DESKTOP]
+    breakpoints.forEach(breakpoint => {
+      const mediaQueryList = window.matchMedia(`(min-width:${breakpoint}px)`)
+      mediaQueryList.addListener((e) => this.breakpointChecker(e))
+    })
   }
 
-  openPopup(actionEl: HTMLElement) {
-    const namePopup = actionEl.dataset.popup
+  private breakpointChecker(e: MediaQueryListEvent) {
+    const currentMedia = e.media.replace(/\D/g, '')
+    const openPopups: HTMLElement[] = Array.from(document.querySelectorAll(`${this.selector}--open`))
 
-    if (namePopup) {
-      return document.getElementById(namePopup)?.classList.add('popup--open')
+    openPopups.forEach(popup => {
+      const popupMedia = popup.dataset.media
+
+      if (Number(currentMedia) >= Number(popupMedia)) {
+        this.closePopup(popup)
+      }
+    })
+  }
+
+  private openPopup(actionEl: HTMLElement) {
+    const popup = document.getElementById(actionEl.dataset.popup || '')
+
+    if (popup) {
+      let isNeedOpen = true
+      const media = Number(popup.dataset.media)
+
+      if (media && (media < window.innerWidth)) {
+        isNeedOpen = false
+      }
+
+      if (isNeedOpen) {
+        popup.classList.add(this.popupOpenClass)
+        document.body.classList.add(this.overflowClass)
+
+        const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')
+        if (shopPreviewActionsElem) {
+          shopPreviewActionsElem.classList.add('shop-preview__actions--over')
+        }
+      }
     } else {
       throw new Error(`no attribute value: ${this.dataAttributePopup}`)
     }
   }
 
-  closePopup(actionEl: HTMLElement) {
+  private closePopup(actionEl: HTMLElement) {   
     const popupEl = actionEl.closest(this.selector)
 
     document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))
-    return popupEl?.classList.remove('popup--open')
+    popupEl?.classList.remove(this.popupOpenClass)
+    document.body.classList.remove(this.overflowClass)
+
+    const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')
+    if (shopPreviewActionsElem) {
+      shopPreviewActionsElem.classList.remove('shop-preview__actions--over')
+    }
   }
 
-  clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
-    if (targetElement.classList.contains('popup__overlay') || targetElement.closest('.popup__close')) {
+    if (targetElement.classList.contains(this.popupOverlayClass) || targetElement.closest(this.popupCloseSelector)) {
       return this.closePopup(targetElement)     
     }
 
@@ -51,7 +100,7 @@ export class Popup {
     } 
   }
 
-  handlers() {
+  private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
   }
 }

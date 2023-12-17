@@ -7,11 +7,11 @@ export class Collapse {
     this.init()
   }
 
-  init() {
+  private init() {
     this.handlers()
   }
 
-  clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
     let parent: HTMLElement | null
 
@@ -33,7 +33,7 @@ export class Collapse {
     }
   }
 
-  handlers() {
+  private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
   }
 }
