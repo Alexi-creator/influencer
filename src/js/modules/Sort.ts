@@ -1,8 +1,11 @@
+import { BreakpointWidth } from '../constants/sizeScreen'
+
 /**
  * Выбор сортировки
  */
 export class Sort {
   private selectorSortingWrapper: string
+  private selectorCross: string
   private selectorSortingAction: string
 
   private defaultContentBtn: string
@@ -12,6 +15,7 @@ export class Sort {
 
   constructor() {
     this.selectorSortingWrapper = '.shop-window__filtersorting-sorting'
+    this.selectorCross = '.shop-window__filtersorting-sorting-cross'
     this.selectorSortingAction = '.shop-window__actions-sorts'
 
     this.defaultContentBtn = ''
@@ -30,6 +34,14 @@ export class Sort {
     }
 
     this.handlers()
+
+    const mediaQueryList = window.matchMedia(`(min-width:${BreakpointWidth.DESKTOP}px)`)
+    mediaQueryList.addListener((e) => this.breakpointChecker(e))
+  }
+
+  private breakpointChecker(e: MediaQueryListEvent) {
+    if (e.matches && this.isOpen) return document.body.classList.remove('overflow')
+    if (!e.matches && this.isOpen) document.body.classList.add('overflow')
   }
 
   private changeIcon() {
@@ -52,9 +64,11 @@ export class Sort {
     if (this.isOpen) {
       sortingWrapper?.classList.remove('active')
       this.isOpen = false
+      document.body.classList.remove('overflow')
     } else {
       sortingWrapper?.classList.add('active')
       this.isOpen = true
+      window.innerWidth < BreakpointWidth.DESKTOP && document.body.classList.add('overflow')
     }
 
     this.changeIcon()
@@ -112,7 +126,7 @@ export class Sort {
       }
     }
     
-    if (sortingActionBtn) {
+    if (sortingActionBtn || targetElement.closest(this.selectorCross)) {
       this.toggleSorting()
     }
   }

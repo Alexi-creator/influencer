@@ -1,3 +1,5 @@
+import { BreakpointWidth } from '../constants/sizeScreen'
+
 type IBreakpointsSettings = Record<number, number>
 
 interface IConstructor {
@@ -49,8 +51,8 @@ export class Masonry {
     const currentSettings = Object.keys(this.breakpointsSettings)
       .map(breakpoint => Number(breakpoint))
       .filter(elem => elem <= windowWidth)
-
-    return this.breakpointsSettings[currentSettings?.at(-1) || currentSettings[0]]
+    
+    return this.breakpointsSettings[currentSettings?.at(-1) || currentSettings[0] || BreakpointWidth.MOBILE]
   }
 
   private build() {
