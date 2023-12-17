@@ -114,7 +114,7 @@
 
     &--active {
       position: fixed;
-      top: 73px;
+      top: 72px;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -154,7 +154,7 @@
       }
   
       @include media($lg) {
-        top: 104px;
+        top: 103px;
         margin-top: 0;
         padding: 0.5rem 4rem;
 
