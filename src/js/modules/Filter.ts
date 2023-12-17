@@ -1,3 +1,5 @@
+import { BreakpointWidth } from '../constants'
+
 interface IFilter {
   selectedOptions: string[]
   moreCount: number
@@ -10,6 +12,7 @@ export class Filter {
   private selectorFilterBtn: string
   private selectorFilterWrapper: string
   private selectorFiltersWrapper: string
+  private selectorFilterCross: string
   private selectorChips: string
   private selectorChipCross: string
   private selectorClearBtn: string
@@ -29,6 +32,7 @@ export class Filter {
   constructor() {
     this.selectorFilterBtn = '.shop-window__actions-filters'
     this.selectorFilterWrapper = '.shop-window__filtersorting-filter'
+    this.selectorFilterCross = '.shop-window__filtersorting-filter-cross'
     this.selectorChips = '.shop-window__filtersorting-chips'
     this.selectorFiltersWrapper = '.filters'
     this.selectorChipCross = '.chip__cross'
@@ -57,6 +61,16 @@ export class Filter {
 
     this.handlers()
     this.collectionOptions()
+
+    const mediaQueryList = window.matchMedia(`(min-width:${BreakpointWidth.DESKTOP}px)`)
+    mediaQueryList.addListener((e) => this.breakpointChecker(e))
+  }
+
+  private breakpointChecker(e: MediaQueryListEvent) {
+    const isOpen = this.filterWrapper?.classList.contains('active')
+
+    if (e.matches && isOpen) return document.body.classList.remove('overflow')
+    if (!e.matches && isOpen) document.body.classList.add('overflow')
   }
 
   private chipTemplate(title: string, options: string, moreCount: number) {
@@ -210,6 +224,8 @@ export class Filter {
   private toggleFilter() {
     this.filterWrapper?.classList.toggle('active')
     this.changeIcon()
+
+    if (window.innerWidth < BreakpointWidth.DESKTOP) document.body.classList.add('overflow')
   }
 
   private clickHandler(e: MouseEvent) {
@@ -225,6 +241,10 @@ export class Filter {
 
     if (targetElement.closest(this.selectorClearBtn)) {
       this.clearAllFilters()
+    }
+
+    if (targetElement.closest(this.selectorFilterCross)) {
+      this.toggleFilter()
     }
   }
 

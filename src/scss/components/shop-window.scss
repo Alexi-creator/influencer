@@ -209,24 +209,89 @@
       display: none;
 
       &.active {
-        display: grid;
-      }
-
-      @include media($lg) {
-        grid-template-columns: repeat(4, max-content);
-        gap: 0.75rem;
-        max-width: max-content;
-        margin: 0 auto;
-        padding: 1.25rem 2rem;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 1.25rem;
         background-color: rgb(var(--color-primary-pale));
-        border-radius: var(--radius-small);
+        z-index: var(--z-top);
+        overflow-y: auto;
+
+        #{$root}__filtersorting-sorting-btn {
+          & .radio__custom {
+            display: block;
+          }
+
+          & .btn {
+            background-color: transparent;
+            border-color: transparent;
+          }
+        }
+
+        @include media($md) {
+          padding: 2rem 10rem;
+        }
+
+        @include media($lg) {
+          position: relative;
+          display: grid;
+          grid-template-columns: repeat(4, max-content);
+          gap: 0.75rem;
+          max-width: max-content;
+          margin: 0 auto;
+          padding: 1.25rem 2rem;
+          border-radius: var(--radius-small);
+          z-index: unset;
+
+          #{$root}__filtersorting-sorting-btn {
+            & .radio__custom {
+              display: none;
+            }
+  
+            & .btn {
+              background-color: rgb(var(--color-white));
+
+              &:hover {
+                border-color: rgb(var(--color-primary));
+              }
+            }
+
+            & .radio input:checked + span {
+              & .btn {
+                border-color: rgb(var(--color-primary));
+              }
+            }
+          }
+        }
+
+        @include media($full) {
+          grid-template-columns: repeat(8, max-content);
+          grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
+          gap: 1.25rem;
+          padding: 2.5rem;
+        }
       }
 
-      @include media($full) {
-        grid-template-columns: repeat(8, max-content);
-        grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
-        gap: 1.25rem;
-        padding: 2.5rem;
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 1.375rem;
+        font-weight: 600;
+
+        #{$root}__filtersorting-sorting-cross {
+          cursor: pointer;
+        }
+
+        @include media($lg) {
+          display: none;
+        }
       }
 
       & .btn {
@@ -235,6 +300,18 @@
       }
 
       &-btn {
+        &:not(:last-child) {
+          border-bottom: 1px solid rgb(var(--color-black-light));
+          padding-bottom: 0.5rem;
+        }
+
+        @include media($lg) {
+          &:not(:last-child) {
+            border-bottom: unset;
+            padding-bottom: unset;
+          }
+        }
+
         @include media($full) {
           &--popular-up {
             grid-area: popular-asc;
@@ -279,6 +356,39 @@
 
       &.active {
         display: block;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: 0;
+        overflow-y: auto;
+        z-index: var(--z-top);
+
+        @include media($lg) {
+          position: relative;
+          margin-top: 1.25rem;
+          z-index: unset;
+        }
+      }
+
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        font-size: 1.375rem;
+        font-weight: 600;
+
+        #{$root}__filtersorting-filter-cross {
+          cursor: pointer;
+        }
+
+        @include media($lg) {
+          display: none;
+          margin-bottom: 0;
+        }
       }
 
       padding: 2rem 3rem;
@@ -289,7 +399,15 @@
       }
 
       &-actions {
-        @extend %flex-space-between;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+
+        @include media($md) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
 
         padding: 1.25rem 0 0;
         border-top: 1px solid rgb(var(--color-white));

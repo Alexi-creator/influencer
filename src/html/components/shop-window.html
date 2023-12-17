@@ -1,68 +1,74 @@
 <div class="shop-window tabs">
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
-    <!-- <div class="shop-window__controls"> -->
-      <div class="shop-window__tabs tabs__head">
-        <div class="swiper shop-window__tabs-swiper">
-          <div class="tabs__list swiper-wrapper">
-            <div class="swiper-slide tabs__tab" data-tab-path="goods">
-              Товары <span class="tabs__tab-count">501</span>
-            </div>
-            <div class="swiper-slide tabs__tab" data-tab-path="sp">
-              Совместные покупки <span class="tabs__tab-count">79</span>
-            </div>
-            <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="tff">
-              Test For Free <span class="tabs__tab-count">13</span>
-            </div>
-            <div class="swiper-slide tabs__tab" data-tab-path="contacts">
-              Контакты
-            </div>
+    <div class="shop-window__tabs tabs__head">
+      <div class="swiper shop-window__tabs-swiper">
+        <div class="tabs__list swiper-wrapper">
+          <div class="swiper-slide tabs__tab" data-tab-path="goods">
+            Товары <span class="tabs__tab-count">501</span>
+          </div>
+          <div class="swiper-slide tabs__tab" data-tab-path="sp">
+            Совместные покупки <span class="tabs__tab-count">79</span>
+          </div>
+          <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="tff">
+            Test For Free <span class="tabs__tab-count">13</span>
+          </div>
+          <div class="swiper-slide tabs__tab" data-tab-path="contacts">
+            Контакты
           </div>
         </div>
-        <div class="swiper-button-prev">
+      </div>
+      <div class="swiper-button-prev">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="shop-window__actions">
+      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Сортировка</div>
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-categories btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Категории</div>
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#categories"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-filters btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Фильтры</div>
+        <div class="shop-window__actions-filters-icon">
           <svg>
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </div>
-        <div class="swiper-button-next">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
         </div>
       </div>
-      <div class="shop-window__actions">
-        <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
-          <div class="shop-window__actions-text">Сортировка</div>
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#sorts"></use>
-          </svg>
-        </div>
-        <div class="shop-window__actions-categories btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
-          <div class="shop-window__actions-text">Категории</div>
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#categories"></use>
-          </svg>
-        </div>
-        <div class="shop-window__actions-filters btn btn--outlined btn--color-grey scroll" data-target="shop-window__tabs">
-          <div class="shop-window__actions-text">Фильтры</div>
-          <div class="shop-window__actions-filters-icon">
+      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="shop-window__actions-density-tile">
+          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+        </svg>
+        <svg class="shop-window__actions-density-grid">
+          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+        </svg>
+      </div>
+    </div>
+    <form class="shop-window__filtersorting">
+      <div class="shop-window__filtersorting-sorting">
+        <div class="shop-window__filtersorting-sorting-title">
+          Сортировка
+          <div class="shop-window__filtersorting-sorting-cross">
             <svg>
-              <use xlink:href="./img/icons/icons.svg#filters"></use>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
             </svg>
           </div>
         </div>
-        <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
-          <svg class="shop-window__actions-density-tile">
-            <use xlink:href="./img/icons/icons.svg#density-tile"></use>
-          </svg>
-          <svg class="shop-window__actions-density-grid">
-            <use xlink:href="./img/icons/icons.svg#density-grid"></use>
-          </svg>
-        </div>
-      </div>
-    <!-- </div> -->
-    <form class="shop-window__filtersorting">
-      <div class="shop-window__filtersorting-sorting">
         <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">
           @@include("./radio.html", {
             "name": "sorting",
@@ -130,6 +136,14 @@
       </div>
       <div class="shop-window__filtersorting-chips"></div>
       <div class="shop-window__filtersorting-filter">
+        <div class="shop-window__filtersorting-filter-title">
+          Фильтры
+          <div class="shop-window__filtersorting-filter-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
         <div class="shop-window__filtersorting-filter-filters filters">
           <div class="filters__item">
             @@include("./collapse.html", {
