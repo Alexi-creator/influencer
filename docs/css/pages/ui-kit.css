@@ -1299,7 +1299,6 @@ button {
   font-weight: 600;
   background-color: rgb(var(--color-primary));
   color: rgb(var(--color-white));
-  transition: var(--transition-base);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
