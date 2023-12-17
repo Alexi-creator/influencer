@@ -21,11 +21,14 @@ export class Filter {
   private selectorBtnIcon: string
   private svgCross: string
 
+  private selectorSortWrapper: string
+
   private filterActionBtn: HTMLElement | null
   private filterWrapper: HTMLElement | null
   private filtersWrapper: HTMLElement | null
   private chipsWrapper: HTMLElement | null
   private submitBtn: HTMLElement | null
+  private sortWrapper: HTMLElement | null
 
   private filters: Record<string, IFilter>
 
@@ -41,11 +44,14 @@ export class Filter {
     this.selectorBtnIcon = '.shop-window__actions-filters-icon'
     this.svgCross = '<svg><use xlink:href="./img/icons/icons.svg#cross"></use></svg>'
 
+    this.selectorSortWrapper = '.shop-window__filtersorting-sorting'
+
     this.filterActionBtn = document.querySelector(this.selectorFilterBtn)
     this.filterWrapper = document.querySelector(this.selectorFilterWrapper)
     this.filtersWrapper = document.querySelector(this.selectorFiltersWrapper)
     this.chipsWrapper = document.querySelector(this.selectorChips)
     this.submitBtn = document.querySelector(this.selectorSubmitBtn)
+    this.sortWrapper = document.querySelector(this.selectorSortWrapper)
 
     this.defaultContentBtn = ''
 
@@ -222,10 +228,16 @@ export class Filter {
   }
 
   private toggleFilter() {
+    if (window.innerWidth < BreakpointWidth.DESKTOP) {
+      document.body.classList.toggle('overflow')
+
+      if (this.sortWrapper?.classList.contains('active')) {
+        document.body.classList.add('overflow')
+      }
+    }
+
     this.filterWrapper?.classList.toggle('active')
     this.changeIcon()
-
-    if (window.innerWidth < BreakpointWidth.DESKTOP) document.body.classList.add('overflow')
   }
 
   private clickHandler(e: MouseEvent) {
