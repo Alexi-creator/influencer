@@ -123,15 +123,13 @@
     border-radius: unset;
   }
 
-  .share--open .share__open {
-    display: none;
-  }
-
-  .share--open .share__block {
-    animation: slide-in 0.4s forwards;
-  }
-
   .share--close .share__block {
     animation: slide-out 0.4s forwards;
+  }
+}
+
+@media (min-width: 75rem) {
+  .share--open .share__block {
+    animation: slide-in 0.4s forwards;
   }
 }

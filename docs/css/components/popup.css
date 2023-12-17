@@ -15,7 +15,7 @@
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
-  z-index: var(--z-popup);
+  z-index: var(--z-over);
   cursor: pointer;
 }
 
@@ -32,7 +32,7 @@
   cursor: default;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 75rem) {
   .popup--onlymobile .popup__overlay {
     position: relative;
     height: 0;

@@ -5,7 +5,6 @@
   right: 0;
   background-color: rgb(var(--color-white));
   padding: 0.62rem 0.69rem;
-  z-index: var(--z-fixed);
 }
 
 .nav__list {
@@ -29,10 +28,14 @@
   right: 20px;
 }
 
-.nav__item-icon {
+.nav__item-icon,
+.nav__item .nav__avatar {
   width: 1.5rem;
   height: 1.5rem;
   margin: 0 auto;
+}
+
+.nav__item-icon {
   fill: rgb(var(--color-grey));
 }
 
@@ -49,6 +52,20 @@
 .nav__item-catalog use {
   stroke: rgb(var(--color-grey));
   stroke-width: 2px;
+}
+
+.isAuth .nav__item-profile .nav__item-icon {
+  display: none;
+}
+
+.nav__avatar {
+  display: none;
+  border-radius: var(--radius-round);
+  overflow: hidden;
+}
+
+.isAuth .nav__avatar {
+  display: block;
 }
 
 @media (min-width: 48rem) {

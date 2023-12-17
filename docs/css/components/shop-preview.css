@@ -50,6 +50,11 @@
 .shop-preview__actions {
   gap: 1.25rem;
   margin-top: 1rem;
+  z-index: var(--z-popup);
+}
+
+.shop-preview__actions--over {
+  z-index: var(--z-over);
 }
 
 .shop-preview__actions .shop-preview__btn-top,
@@ -59,14 +64,13 @@
 
 .shop-preview__actions--active {
   position: fixed;
-  top: 73px;
+  top: 72px;
   left: 0;
   right: 0;
   margin: 0 auto;
   padding: 0.5rem 1.25rem;
   max-width: var(--max-width-container);
   background-color: rgb(var(--color-white));
-  z-index: var(--z-popup);
 }
 
 .shop-preview__actions--active .shop-preview__btn-top,
@@ -168,7 +172,7 @@
   }
 
   .shop-preview__actions--active {
-    top: 104px;
+    top: 103px;
     margin-top: 0;
     padding: 0.5rem 4rem;
   }
