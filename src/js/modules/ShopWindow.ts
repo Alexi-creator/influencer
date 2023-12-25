@@ -2,6 +2,7 @@ import { ShopTabsEnum, shopTabsArray } from '../constants/index'
 
 import { Form } from './Form'
 import { CustomSwiper } from './CustomSwiper'
+import { Filter } from './Filter'
 
 /**
  * Управление витриной (табы, товары, tff и тд)
@@ -21,8 +22,9 @@ export class ShopWindow {
 
   private tabsSlider: CustomSwiper
   private form: Form
+  private filter: Filter
   
-  constructor(slider: CustomSwiper, form: Form) {
+  constructor(filter: Filter, slider: CustomSwiper, form: Form) {
     this.selectorTabsWrapper = '.shop-window__tabs'
     this.selectorForm = '.shop-window__filtersorting'
     this.selectorSortsBtn = '.shop-window__actions-sorts'
@@ -45,6 +47,7 @@ export class ShopWindow {
 
     this.tabsSlider = slider
     this.form = form
+    this.filter = filter
 
     this.init()
   }
@@ -96,6 +99,7 @@ export class ShopWindow {
 
     if (targetElement.closest('.tabs__tab') && targetElement.closest(this.selectorTabsWrapper)) {
       this.definedActiveTab()
+      // this.filter.closeFilters()
     }
   }
 

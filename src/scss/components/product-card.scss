@@ -113,9 +113,13 @@
     }
 
     #{$root}__info {
-      max-width: 15.6rem;
+      max-width: 7rem;
       bottom: 0.5rem;
       top: unset;
+
+      @include media($md) {
+        max-width: 15.6rem;
+      }
     }
 
     #{$root}__application-status {
