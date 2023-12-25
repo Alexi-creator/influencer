@@ -160,6 +160,16 @@
       }
     }
 
+    &-filters {
+      &-count {
+        display: none;
+
+        &--active {
+          display: block;
+        }
+      }
+    }
+
     &-sorts {
 
     }

@@ -17,18 +17,20 @@ export class Filter {
   private selectorChipCross: string
   private selectorClearBtn: string
   private selectorSubmitBtn: string
-  private defaultContentBtn: string
-  private selectorBtnIcon: string
-  private svgCross: string
+  // private defaultContentBtn: string
+  // private selectorBtnIcon: string
+  private selectorBtnCount: string
+  // private svgCross: string
 
   private selectorSortWrapper: string
 
-  private filterActionBtn: HTMLElement | null
+  private filterActionBtn: Element
   private filterWrapper: HTMLElement | null
   private filtersWrapper: HTMLElement | null
   private chipsWrapper: HTMLElement | null
-  private submitBtn: HTMLElement | null
+  private submitBtn: Element
   private sortWrapper: HTMLElement | null
+  private btnCount: Element
 
   private filters: Record<string, IFilter>
 
@@ -41,19 +43,27 @@ export class Filter {
     this.selectorChipCross = '.chip__cross'
     this.selectorClearBtn = '.shop-window__filtersorting-filter-clear'
     this.selectorSubmitBtn = '.shop-window__filtersorting-filter-submit'
-    this.selectorBtnIcon = '.shop-window__actions-filters-icon'
-    this.svgCross = '<svg><use xlink:href="./img/icons/icons.svg#cross"></use></svg>'
+    // this.selectorBtnIcon = '.shop-window__actions-filters-icon'
+    this.selectorBtnCount = '.shop-window__actions-filters-count'
+    // this.svgCross = '<svg><use xlink:href="./img/icons/icons.svg#cross"></use></svg>'
 
     this.selectorSortWrapper = '.shop-window__filtersorting-sorting'
 
-    this.filterActionBtn = document.querySelector(this.selectorFilterBtn)
+    // this.filterActionBtn = document.querySelector(this.selectorFilterBtn)
     this.filterWrapper = document.querySelector(this.selectorFilterWrapper)
     this.filtersWrapper = document.querySelector(this.selectorFiltersWrapper)
     this.chipsWrapper = document.querySelector(this.selectorChips)
-    this.submitBtn = document.querySelector(this.selectorSubmitBtn)
+    // this.submitBtn = document.querySelector(this.selectorSubmitBtn)
     this.sortWrapper = document.querySelector(this.selectorSortWrapper)
 
-    this.defaultContentBtn = ''
+    const filterActionBtn = document.querySelector(this.selectorFilterBtn)
+    if (filterActionBtn) this.filterActionBtn = filterActionBtn
+    const btnCount = document.querySelector(this.selectorBtnCount)
+    if (btnCount) this.btnCount = btnCount
+    const submitBtn = document.querySelector(this.selectorSubmitBtn)
+    if (submitBtn) this.submitBtn = submitBtn
+
+    // this.defaultContentBtn = ''
 
     if (!this.filterActionBtn || !this.filterWrapper) return
 
@@ -61,9 +71,9 @@ export class Filter {
   }
 
   private init() {
-    if (this.filterActionBtn) {
-      this.defaultContentBtn = this.filterActionBtn.innerHTML
-    }
+    // if (this.filterActionBtn) {
+    //   this.defaultContentBtn = this.filterActionBtn.innerHTML
+    // }
 
     this.handlers()
     this.collectionOptions()
@@ -110,37 +120,59 @@ export class Filter {
       }, {})
 
       this.displayChips()
-      this.changeIcon()
+      // this.changeIcon()
+      this.changeCount()
     }
   }
 
-  private changeIcon() {
+  private changeCount() {
     const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
-    const btnIconElement = this.filterActionBtn?.querySelector(this.selectorBtnIcon)
-    const isOpen = this.filterWrapper?.classList.contains('active')
+    const countBtn = this.submitBtn.querySelector('.btn__suffix') as HTMLElement
+    
+    if (selectedCount) {
+      this.filterActionBtn.classList.add('btn--tag', 'btn--tag-checked')
+      this.filterActionBtn.classList.remove('btn--color-grey')
 
-    const countBtn = this.submitBtn?.querySelector('.btn__suffix')
-    if (countBtn) {
+      this.btnCount.innerHTML = String(selectedCount)
+      this.btnCount.classList.add(`${this.selectorBtnCount.substring(1)}--active`)
+
       countBtn.innerHTML = `(${selectedCount})`
-    }
+    } else {
+      this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
+      this.filterActionBtn.classList.add('btn--color-grey')
+      this.btnCount.classList.remove(`${this.selectorBtnCount.substring(1)}--active`)
 
-    if (this.filterActionBtn) {
-      if (selectedCount && btnIconElement && this.filterActionBtn) {
-        this.filterActionBtn.classList.add('btn--tag', 'btn--tag-checked')
-        this.filterActionBtn.classList.remove('btn--color-grey')
-
-        if (isOpen) {
-          btnIconElement.innerHTML = this.svgCross
-        } else {
-          btnIconElement.innerHTML = String(selectedCount)
-        }
-      } else {
-        this.filterActionBtn.innerHTML = this.defaultContentBtn
-        this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
-        this.filterActionBtn.classList.add('btn--color-grey')
-      }
+      countBtn.innerHTML = ''
     }
   }
+
+  // private changeIcon() {
+  //   const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
+  //   const btnIconElement = this.filterActionBtn?.querySelector(this.selectorBtnIcon)
+  //   const isOpen = this.filterWrapper?.classList.contains('active')
+
+  //   const countBtn = this.submitBtn?.querySelector('.btn__suffix')
+  //   if (countBtn) {
+  //     countBtn.innerHTML = `(${selectedCount})`
+  //   }
+
+  //   if (this.filterActionBtn) {
+  //     if (selectedCount && btnIconElement && this.filterActionBtn) {
+  //       this.filterActionBtn.classList.add('btn--tag', 'btn--tag-checked')
+  //       this.filterActionBtn.classList.remove('btn--color-grey')
+
+  //       if (isOpen) {
+  //         btnIconElement.innerHTML = this.svgCross
+  //       } else {
+  //         btnIconElement.innerHTML = String(selectedCount)
+  //       }
+  //     } else {
+  //       this.filterActionBtn.innerHTML = this.defaultContentBtn
+  //       this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
+  //       this.filterActionBtn.classList.add('btn--color-grey')
+  //     }
+  //   }
+  // }
 
   private clearAllFilters() {
     Object.entries(this.filters).forEach(elem => {
@@ -156,7 +188,8 @@ export class Filter {
       this.chipsWrapper.classList.toggle('active')
     }
 
-    this.changeIcon()
+    // this.changeIcon()
+    this.changeCount()
   }
 
   private changeOptions(targetElement: HTMLInputElement) {
@@ -179,7 +212,8 @@ export class Filter {
         this.chipsWrapper.innerHTML = ''
         this.displayChips()
         this.toggleChips()
-        this.changeIcon()
+        // this.changeIcon()
+        this.changeCount()
       }
     }
   }
@@ -216,7 +250,8 @@ export class Filter {
 
     chip?.remove()
     this.toggleChips()
-    this.changeIcon()
+    // this.changeIcon()
+    this.changeCount()
   }
 
   private toggleChips() {
@@ -237,13 +272,19 @@ export class Filter {
     }
 
     this.filterWrapper?.classList.toggle('active')
-    this.changeIcon()
+    // this.changeIcon()
+    this.changeCount()
+  }
+
+  public closeFilters() {
+    this.filterWrapper?.classList.remove('active')
+    this.chipsWrapper?.classList.remove('active')
   }
 
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
-    if (targetElement.closest(this.selectorFilterBtn)) {
+    if (targetElement.closest(this.selectorFilterBtn) || targetElement.closest(this.selectorFilterCross)) {
       this.toggleFilter()
     }
 
@@ -253,10 +294,6 @@ export class Filter {
 
     if (targetElement.closest(this.selectorClearBtn)) {
       this.clearAllFilters()
-    }
-
-    if (targetElement.closest(this.selectorFilterCross)) {
-      this.toggleFilter()
     }
   }
 

@@ -74,11 +74,11 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
-  try {
-    new Filter()
-  } catch (error) {
-    console.log(error)
-  }
+  // try {
+  //   new Filter()
+  // } catch (error) {
+  //   console.log(error)
+  // }
   try {
     new Select()
   } catch (error) {
@@ -96,6 +96,7 @@ window.addEventListener('load', () => {
     const nextBtn = parentElement.querySelector('.swiper-button-next') as HTMLElement 
 
     new ShopWindow(
+      new Filter(),
       new CustomSwiper({
         target: swiperElement,
         options: {
