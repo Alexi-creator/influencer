@@ -88,6 +88,14 @@
   display: inline-flex;
 }
 
+.shop-window__actions-filters-count {
+  display: none;
+}
+
+.shop-window__actions-filters-count--active {
+  display: block;
+}
+
 .shop-window__actions-density {
   margin-left: auto;
 }

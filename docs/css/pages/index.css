@@ -3259,6 +3259,14 @@ svg {
   display: inline-flex;
 }
 
+.shop-window__actions-filters-count {
+  display: none;
+}
+
+.shop-window__actions-filters-count--active {
+  display: block;
+}
+
 .shop-window__actions-density {
   margin-left: auto;
 }
@@ -3556,7 +3564,7 @@ svg {
 
 .shop-window--horizontally .product-card .product-card__info,
 .product-card--horizontally .product-card__info {
-  max-width: 15.6rem;
+  max-width: 7rem;
   bottom: 0.5rem;
   top: unset;
 }
@@ -4839,6 +4847,11 @@ svg {
   .shop-window--horizontally .product-card .product-card__price,
   .product-card--horizontally .product-card__price {
     justify-content: flex-start;
+  }
+
+  .shop-window--horizontally .product-card .product-card__info,
+  .product-card--horizontally .product-card__info {
+    max-width: 15.6rem;
   }
 
   .product-card__descr {
