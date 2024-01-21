@@ -15,22 +15,29 @@ export class ShopWindow {
   private selectorFilterBtn: string
   private selectorDensityBtn: string
 
+  private selectorActions: string
+
   private sortsBtnElem: HTMLElement
   private filterBtnElem: HTMLElement
   private categoriesBtnElem: HTMLElement
   private densityBtnElem: HTMLElement
 
+  private actionsElems: HTMLElement[]
+  private formsElems: HTMLElement[]
+
   private tabsSlider: CustomSwiper
   private form: Form
   private filter: Filter
   
-  constructor(filter: Filter, slider: CustomSwiper, form: Form) {
+  // constructor(filter: Filter, slider: CustomSwiper, form: Form) {
+  constructor(slider: CustomSwiper) {
     this.selectorTabsWrapper = '.shop-window__tabs'
-    this.selectorForm = '.shop-window__filtersorting'
+    this.selectorForm = '.shop-window__form'
     this.selectorSortsBtn = '.shop-window__actions-sorts'
     this.selectorCategoriesBtn = '.shop-window__actions-categories'
     this.selectorFilterBtn = '.shop-window__actions-filters'
     this.selectorDensityBtn = '.shop-window__actions-density'
+    this.selectorActions = '.shop-window__actions'
 
     const filterBtnElem = document.querySelector(this.selectorFilterBtn)
     if (filterBtnElem) this.filterBtnElem = filterBtnElem as HTMLElement
@@ -43,11 +50,17 @@ export class ShopWindow {
 
     const densityBtnElem = document.querySelector(this.selectorDensityBtn)
     if (densityBtnElem) this.densityBtnElem = densityBtnElem as HTMLElement
+
+    const actionsElems = Array.from(document.querySelectorAll(this.selectorActions))
+    if (actionsElems.length) this.actionsElems = actionsElems as HTMLElement[]
+
+    const formsElems = Array.from(document.querySelectorAll(this.selectorForm))
+    if (actionsElems.length) this.formsElems = formsElems as HTMLElement[]
     
 
     this.tabsSlider = slider
-    this.form = form
-    this.filter = filter
+    // this.form = form
+    // this.filter = filter
 
     this.init()
   }
@@ -59,24 +72,18 @@ export class ShopWindow {
 
   // изменение отображение кнопок (фильтры, категории) в зависимости от выбранного таба
   private changeActionsDisplay(activeTab: string) {
-    if (activeTab === ShopTabsEnum.goods || activeTab === ShopTabsEnum.tff) {     
-      this.categoriesBtnElem.classList.remove(`${this.selectorCategoriesBtn.substring(1)}--active`)
-      this.sortsBtnElem.classList.add(`${this.selectorSortsBtn.substring(1)}--active`)
-      this.filterBtnElem.classList.add(`${this.selectorFilterBtn.substring(1)}--active`)
-      this.densityBtnElem.classList.add(`${this.selectorDensityBtn.substring(1)}--active`)
-    }
-    if (activeTab === ShopTabsEnum.sp) {
-      this.categoriesBtnElem.classList.add(`${this.selectorCategoriesBtn.substring(1)}--active`)
-      this.sortsBtnElem.classList.add(`${this.selectorSortsBtn.substring(1)}--active`)
-      this.filterBtnElem.classList.remove(`${this.selectorFilterBtn.substring(1)}--active`)
-      this.densityBtnElem.classList.remove(`${this.selectorDensityBtn.substring(1)}--active`)
-    }
-    if (activeTab === ShopTabsEnum.contacts) {
-      this.categoriesBtnElem.classList.remove(`${this.selectorCategoriesBtn.substring(1)}--active`)
-      this.sortsBtnElem.classList.remove(`${this.selectorSortsBtn.substring(1)}--active`)
-      this.filterBtnElem.classList.remove(`${this.selectorFilterBtn.substring(1)}--active`)
-      this.densityBtnElem.classList.remove(`${this.selectorDensityBtn.substring(1)}--active`)
-    }
+    this.actionsElems.forEach(elem => elem.classList.remove('active'))
+
+    const activeActionBlock = this.actionsElems.find(elem => elem.classList.contains(`${this.selectorActions.substring(1)}-${activeTab}`))      
+    activeActionBlock?.classList.add('active')
+  }
+  
+  // изменение отображение форм (goods, sp, tff) чипсы и фильтры при переключении табов
+  private changeFormsDisplay(activeTab: string) {
+    this.formsElems.forEach(elem => elem.classList.add('hide'))
+
+    const activeFormBlock = this.formsElems.find(elem => elem.classList.contains(`${this.selectorForm.substring(1)}-${activeTab}`))
+    activeFormBlock?.classList.remove('hide')
   }
 
   private definedActiveTab() {
@@ -91,6 +98,7 @@ export class ShopWindow {
       this.tabsSlider.startSlide()
 
       this.changeActionsDisplay(activeTab)
+      this.changeFormsDisplay(activeTab)
     }
   }
 

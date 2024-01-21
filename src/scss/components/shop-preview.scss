@@ -30,8 +30,11 @@
       width: 100%;
       max-width: 52rem;
       margin: 0;
-      border-radius: 0.5rem;
       overflow: hidden;
+
+      & img {
+        border-radius: var(--radius-lg);
+      }
     }
 
     @include media($full) {

@@ -1,17 +1,17 @@
 const actionsPreviewSelector = '.shop-preview__actions'
-const actionsWindowSelector = '.shop-window__actions'
+const actionsShopWindowSelector = '.shop-window__actions'
 
 const actionsPreviewElem = document.querySelector(actionsPreviewSelector)
-const actionsWindowElem = document.querySelector(actionsWindowSelector)
+const actionsShopWindowElems = Array.from(document.querySelectorAll(actionsShopWindowSelector)) as HTMLElement[]
 
 const addIsActive = () => {
   actionsPreviewElem?.classList.add(`${actionsPreviewSelector.substring(1)}--active`)
-  actionsWindowElem?.classList.add(`${actionsWindowSelector.substring(1)}--active`)
+  actionsShopWindowElems.find(elem => elem.classList.contains('active'))?.classList.add(`${actionsShopWindowSelector.substring(1)}--active`)
 }
 
 const removeIsActive = () => {
   actionsPreviewElem?.classList.remove(`${actionsPreviewSelector.substring(1)}--active`)
-  actionsWindowElem?.classList.remove(`${actionsWindowSelector.substring(1)}--active`)
+  actionsShopWindowElems.find(elem => elem.classList.contains('active'))?.classList.remove(`${actionsShopWindowSelector.substring(1)}--active`)
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

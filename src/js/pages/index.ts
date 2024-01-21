@@ -22,7 +22,33 @@ window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
   try {
     new Masonry({
-      selectorContainer: '.filters',
+      selectorContainer: '.shop-window__form-goods .shop-window__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Masonry({
+      selectorContainer: '.shop-window__form-sp .shop-window__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 4,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Masonry({
+      selectorContainer: '.shop-window__form-tff .shop-window__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -70,16 +96,6 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new Sort()
-  } catch (error) {
-    console.log(error)
-  }
-  // try {
-  //   new Filter()
-  // } catch (error) {
-  //   console.log(error)
-  // }
-  try {
     new Select()
   } catch (error) {
     console.log(error)
@@ -90,13 +106,77 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
+    new Sort(
+      '.shop-window__actions-sorts-goods',
+    )
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Filter({
+      selectorContainer: '.shop-window__form-goods',
+      selectorActionBtn: '.shop-window__actions-filters-goods',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Filter({
+      selectorContainer: '.shop-window__form-sp',
+      selectorActionBtn: '.shop-window__actions-categories-sp',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Filter({
+      selectorContainer: '.shop-window__form-tff',
+      selectorActionBtn: '.shop-window__actions-filters-tff',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Form(
+      '.shop-window__form-goods', 
+      API_URLS.shops.test,
+      {
+        method: HttpMethods.GET
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Form(
+      '.shop-window__form-sp', 
+      API_URLS.shops.test,
+      {
+        method: HttpMethods.GET
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Form(
+      '.shop-window__form-tff', 
+      API_URLS.shops.test,
+      {
+        method: HttpMethods.GET
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+  try {
     const parentElement = document.querySelector('.shop-window__tabs') as HTMLElement
     const swiperElement = parentElement.querySelector('.shop-window__tabs-swiper') as HTMLElement
     const prevBtn = parentElement.querySelector('.swiper-button-prev') as HTMLElement
     const nextBtn = parentElement.querySelector('.swiper-button-next') as HTMLElement 
 
     new ShopWindow(
-      new Filter(),
+      // new Filter('.filter-goods'),
       new CustomSwiper({
         target: swiperElement,
         options: {
@@ -115,13 +195,13 @@ window.addEventListener('load', () => {
           nextElement: nextBtn,
         },
       }),
-      new Form(
-        '.shop-window__filtersorting', 
-        API_URLS.shops.test,
-        {
-          method: HttpMethods.GET
-        },
-      ),
+      // new Form(
+      //   '.shop-window__form', 
+      //   API_URLS.shops.test,
+      //   {
+      //     method: HttpMethods.GET
+      //   },
+      // ),
     )
   } catch (error) {
     console.log(error)

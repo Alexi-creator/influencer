@@ -25,6 +25,20 @@
     }
   }
 
+  &--sp {
+    @include media($md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @include media($lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    @include media($full) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
   // &__item {
   //   margin-bottom: 1.25rem;
   //   overflow: hidden;

@@ -13,10 +13,11 @@ export class Sort {
   private isOpen: boolean
   private lastSelectedIcon: string
 
-  constructor() {
-    this.selectorSortingWrapper = '.shop-window__filtersorting-sorting'
-    this.selectorCross = '.shop-window__filtersorting-sorting-cross'
-    this.selectorSortingAction = '.shop-window__actions-sorts'
+  constructor(selectorSortingAction: string) {
+    this.selectorSortingWrapper = '.shop-window__form-sorting'
+    this.selectorCross = '.shop-window__form-sorting-cross'
+    // this.selectorSortingAction = '.shop-window__actions-sorts'
+    this.selectorSortingAction = selectorSortingAction
 
     this.defaultContentBtn = ''
     this.isSelected = false

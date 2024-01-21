@@ -4,13 +4,13 @@
     <div class="shop-window__tabs tabs__head">
       <div class="swiper shop-window__tabs-swiper">
         <div class="tabs__list swiper-wrapper">
-          <div class="swiper-slide tabs__tab" data-tab-path="goods">
+          <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="goods">
             Товары <span class="tabs__tab-count">501</span>
           </div>
           <div class="swiper-slide tabs__tab" data-tab-path="sp">
             Совместные покупки <span class="tabs__tab-count">79</span>
           </div>
-          <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="tff">
+          <div class="swiper-slide tabs__tab" data-tab-path="tff">
             Test For Free <span class="tabs__tab-count">13</span>
           </div>
           <div class="swiper-slide tabs__tab" data-tab-path="contacts">
@@ -29,21 +29,16 @@
         </svg>
       </div>
     </div>
-    <div class="shop-window__actions">
-      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Сортировка</div>
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки товаров -->
+    <div class="shop-window__actions shop-window__actions-goods">
+      <div class="shop-window__actions-sorts shop-window__actions-sorts-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Сортировка G</div>
         <svg>
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
         </svg>
       </div>
-      <div class="shop-window__actions-categories btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Категории</div>
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#categories"></use>
-        </svg>
-      </div>
-      <div class="shop-window__actions-filters btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Фильтры</div>
+      <div class="shop-window__actions-filters shop-window__actions-filters-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Фильтры G</div>
         <div class="shop-window__actions-filters-icon">
           <svg>
             <use xlink:href="./img/icons/icons.svg#filters"></use>
@@ -60,17 +55,65 @@
         </svg>
       </div>
     </div>
-    <form class="shop-window__filtersorting">
-      <div class="shop-window__filtersorting-sorting">
-        <div class="shop-window__filtersorting-sorting-title">
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки совместных покупок -->
+    <div class="shop-window__actions shop-window__actions-sp">
+      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Сортировка SP</div>
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Категории SP</div>
+        <!-- <svg>
+          <use xlink:href="./img/icons/icons.svg#categories"></use>
+        </svg> -->
+        <div class="shop-window__actions-filters-icon">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#categories"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-filters-count"></div>
+      </div>
+    </div>
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки tff -->
+    <div class="shop-window__actions shop-window__actions-tff">
+      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Сортировка TFF</div>
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-filters shop-window__actions-filters-tff btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Фильтры TFF</div>
+        <div class="shop-window__actions-filters-icon">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-filters-count"></div>
+      </div>
+      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="shop-window__actions-density-tile">
+          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+        </svg>
+        <svg class="shop-window__actions-density-grid">
+          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+        </svg>
+      </div>
+    </div>
+    <!-- Форма с фильтрами и сортировками для товаров -->
+    <form class="shop-window__form shop-window__form-goods">
+      <div class="shop-window__form-sorting">
+        <div class="shop-window__form-sorting-title">
           Сортировка
-          <div class="shop-window__filtersorting-sorting-cross">
+          <div class="shop-window__form-sorting-cross">
             <svg>
               <use xlink:href="./img/icons/icons.svg#cross"></use>
             </svg>
           </div>
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-asc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
@@ -78,7 +121,7 @@
             "value": "popular-asc",
           })
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-asc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
@@ -86,7 +129,7 @@
             "value": "rate-asc",
           })
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-asc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
@@ -94,7 +137,7 @@
             "value": "cost-asc",
           })
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-asc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
@@ -102,7 +145,7 @@
             "value": "name-asc",
           })
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--popular-desc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
@@ -110,7 +153,7 @@
             "value": "popular-desc",
           })
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--rate-desc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
@@ -118,7 +161,7 @@
             "value": "rate-desc",
           })
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--cost-desc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
@@ -126,7 +169,7 @@
             "value": "cost-desc",
           })
         </div>
-        <div class="shop-window__filtersorting-sorting-btn shop-window__filtersorting-sorting-btn--name-desc">
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
           @@include("./radio.html", {
             "name": "sorting",
             "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
@@ -135,17 +178,17 @@
           })
         </div>
       </div>
-      <div class="shop-window__filtersorting-chips"></div>
-      <div class="shop-window__filtersorting-filter">
-        <div class="shop-window__filtersorting-filter-title">
+      <div class="shop-window__form-chips"></div>
+      <div class="shop-window__form-filter">
+        <div class="shop-window__form-filter-title">
           Фильтры
-          <div class="shop-window__filtersorting-filter-cross">
+          <div class="shop-window__form-filter-cross">
             <svg>
               <use xlink:href="./img/icons/icons.svg#cross"></use>
             </svg>
           </div>
         </div>
-        <div class="shop-window__filtersorting-filter-filters filters">
+        <div class="shop-window__form-filter-filters filters">
           <div class="filters__item">
             @@include("./collapse.html", {
               "title": "Прайс",
@@ -201,11 +244,317 @@
             })
           </div>
         </div>
-        <div class="shop-window__filtersorting-filter-actions form__btns">
-          <button type="button" class="btn btn--text shop-window__filtersorting-filter-clear">
+        <div class="shop-window__form-filter-actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear">
             Очистить все фильтры
           </button>
-          <button type="submit" class="btn shop-window__filtersorting-filter-submit">
+          <button type="submit" class="btn shop-window__form-filter-submit">
+            Применить
+            <span class="btn__suffix"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- Форма с фильтрами и сортировками для совместных покупок -->
+    <form class="shop-window__form shop-window__form-sp">
+      <div class="shop-window__form-sorting">
+        <div class="shop-window__form-sorting-title">
+          Сортировка
+          <div class="shop-window__form-sorting-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "popular-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "rate-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "cost-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "name-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "popular-desc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "rate-desc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "cost-desc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "name-desc",
+          })
+        </div>
+      </div>
+      <div class="shop-window__form-chips"></div>
+      <div class="shop-window__form-filter">
+        <div class="shop-window__form-filter-title">
+          Фильтры
+          <div class="shop-window__form-filter-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-filters filters filters--sp">
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Прайс",
+              "body": '<div class="filters__collapse">@@include("./range-slider.html", { "minName": "rangemin", "maxName": "rangemax", "minValue": "200000", "maxValue": "500000", "min": "0", "max": "1000000", "currencySymbol": "&#8381;", "step": "1000" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер0",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "0size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер10",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "10size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Специальные предложение",
+              "body": '<div class="filters__collapse">@@include("./checkbox.html", { "name": "specials36", "text": "Test For Free", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials38", "text": "Совместная Покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials40", "text": "Благотворительная покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials42", "text": "Акция “2 по цене 1”", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер2",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "2size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер3",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "3size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер4",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "4size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер5",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "5size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+        </div>
+        <div class="shop-window__form-filter-actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear">
+            Очистить все фильтры
+          </button>
+          <button type="submit" class="btn shop-window__form-filter-submit">
+            Применить
+            <span class="btn__suffix"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- Форма с фильтрами и сортировками для tff -->
+    <form class="shop-window__form shop-window__form-tff">
+      <div class="shop-window__form-sorting">
+        <div class="shop-window__form-sorting-title">
+          Сортировка
+          <div class="shop-window__form-sorting-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "popular-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "rate-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "cost-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "mod": "btn",
+            "value": "name-asc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "popular-desc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "rate-desc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "cost-desc",
+          })
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+          @@include("./radio.html", {
+            "name": "sorting",
+            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "mod": "btn",
+            "value": "name-desc",
+          })
+        </div>
+      </div>
+      <div class="shop-window__form-chips"></div>
+      <div class="shop-window__form-filter">
+        <div class="shop-window__form-filter-title">
+          Фильтры
+          <div class="shop-window__form-filter-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-filters filters">
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Прайс",
+              "body": '<div class="filters__collapse">@@include("./range-slider.html", { "minName": "rangemin", "maxName": "rangemax", "minValue": "200000", "maxValue": "500000", "min": "0", "max": "1000000", "currencySymbol": "&#8381;", "step": "1000" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер0",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "0size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер10",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "10size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Специальные предложение",
+              "body": '<div class="filters__collapse">@@include("./checkbox.html", { "name": "specials36", "text": "Test For Free", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials38", "text": "Совместная Покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials40", "text": "Благотворительная покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials42", "text": "Акция “2 по цене 1”", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер2",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "2size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер3",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "3size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер4",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "4size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+          <div class="filters__item">
+            @@include("./collapse.html", {
+              "title": "Размер5",
+              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "5size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size42", "text": "42", "mod": "", "classes": "" })</div>',
+            })
+          </div>
+        </div>
+        <div class="shop-window__form-filter-actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear">
+            Очистить все фильтры
+          </button>
+          <button type="submit" class="btn shop-window__form-filter-submit">
             Применить
             <span class="btn__suffix"></span>
           </button>
@@ -311,11 +660,11 @@
       </div>
       <!-- Test for free -->
       <div class="tabs__content tabs__content--active" data-tab-target="tff">
-        <div class="shop-window__ttf">
+        <div class="shop-window__tff">
           <div class="shop-window__menu">@@include("./product-menu.html")</div>
-          <div class="shop-window__ttf-items">
+          <div class="shop-window__tff-items">
             @@include("./product-card.html", {
-              "extra-class": "product-card--ttf product-card--application-submitted",
+              "extra-class": "product-card--tff product-card--application-submitted",
               "title": "Комбинезон из шелковой вискозы с",
               "discount": "--discount",
               "sale": "0 ₽ (бесплатно)",
@@ -326,7 +675,7 @@
               "application-status": "@@include('./badge.html', {'extra-class': 'badge--round badge--font-commissioner badge--color-white', 'body': 'Вы подали заявку'})"
             })
             @@include("./product-card.html", {
-              "extra-class": "product-card--ttf product-card--application-rejected",
+              "extra-class": "product-card--tff product-card--application-rejected",
               "title": "Плетеная сумка-сэтчел",
               "discount": "",
               "sale": "0 ₽ (бесплатно)",
@@ -337,7 +686,7 @@
               "application-status": "@@include('./badge.html', {'extra-class': 'badge--round badge--font-commissioner badge--color-white', 'body': 'Заявка отклонена'})"
             })
             @@include("./product-card.html", {
-              "extra-class": "product-card--ttf product-card--application-approved",
+              "extra-class": "product-card--tff product-card--application-approved",
               "title": "Туфли ZOE с острым носом и эластичныим",
               "discount": "",
               "sale": "0 ₽ (бесплатно)",
@@ -348,7 +697,7 @@
               "application-status": "@@include('./badge.html', {'extra-class': 'badge--round badge--font-commissioner badge--color-white', 'body': 'Заявка одобрена'})"
             })
             @@include("./product-card.html", {
-              "extra-class": "product-card--ttf product-card--status-promotion-over",
+              "extra-class": "product-card--tff product-card--status-promotion-over",
               "title": "Пуховик из кожи с узором monogram mi",
               "discount": "",
               "sale": "0 ₽ (бесплатно)",
@@ -358,7 +707,7 @@
               "status": "акция завершена",
             })
             @@include("./product-card.html", {
-              "extra-class": "product-card--ttf product-card--status-consideration-applications",
+              "extra-class": "product-card--tff product-card--status-consideration-applications",
               "title": "Пуховик из кожи с узором monogram mi",
               "discount": "",
               "sale": "0 ₽ (бесплатно)",
@@ -368,7 +717,7 @@
               "status": "рассмотрение заявок",
             })
             @@include("./product-card.html", {
-              "extra-class": "product-card--ttf",
+              "extra-class": "product-card--tff",
               "title": "Пуховик из кожи с узором monogram mi",
               "discount": "",
               "sale": "0 ₽ (бесплатно)",
