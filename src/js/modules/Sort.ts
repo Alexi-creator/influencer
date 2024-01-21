@@ -4,36 +4,51 @@ import { BreakpointWidth } from '../constants/sizeScreen'
  * Выбор сортировки
  */
 export class Sort {
+  // селекторы
+  private selectorContainer: string
+  private selectorActionBtn: string
+
   private selectorSortingWrapper: string
   private selectorCross: string
-  private selectorSortingAction: string
 
   private defaultContentBtn: string
   private isSelected: boolean
   private isOpen: boolean
-  private lastSelectedIcon: string
 
-  constructor(selectorSortingAction: string) {
+  // dom элементы
+  private container: HTMLElement
+  private sortingActionBtn: HTMLElement
+
+  private sortingWrapper: HTMLElement
+  private sortingCross: HTMLElement
+
+  constructor({ selectorContainer, selectorActionBtn }: { selectorContainer: string, selectorActionBtn: string }) {
+    this.selectorContainer = selectorContainer
+    this.selectorActionBtn = selectorActionBtn
+
     this.selectorSortingWrapper = '.shop-window__form-sorting'
     this.selectorCross = '.shop-window__form-sorting-cross'
-    // this.selectorSortingAction = '.shop-window__actions-sorts'
-    this.selectorSortingAction = selectorSortingAction
+    
+    const container = document.querySelector(this.selectorContainer)
+    if (container) this.container = container as HTMLElement
+    const sortingActionBtn = document.querySelector(this.selectorActionBtn)
+    if (sortingActionBtn) this.sortingActionBtn = sortingActionBtn as HTMLElement
 
-    this.defaultContentBtn = ''
-    this.isSelected = false
+    const sortingWrapper = this.container.querySelector(this.selectorSortingWrapper)
+    if (sortingWrapper) this.sortingWrapper = sortingWrapper as HTMLElement
+    const sortingCross = this.container.querySelector(this.selectorCross)
+    if (sortingCross) this.sortingCross = sortingCross as HTMLElement
+
     this.isOpen = false
-    this.lastSelectedIcon = ''
+    this.isSelected = false
+    this.defaultContentBtn = this.sortingActionBtn.innerHTML
+
+    if (!this.sortingActionBtn || !this.container) return
 
     this.init()
   }
 
   private init() {
-    const sortingActionBtn = document.querySelector(this.selectorSortingAction)
-  
-    if (sortingActionBtn) {
-      this.defaultContentBtn = sortingActionBtn.innerHTML
-    }
-
     this.handlers()
 
     const mediaQueryList = window.matchMedia(`(min-width:${BreakpointWidth.DESKTOP}px)`)
@@ -41,107 +56,64 @@ export class Sort {
   }
 
   private breakpointChecker(e: MediaQueryListEvent) {
-    if (e.matches && this.isOpen) return document.body.classList.remove('overflow')
-    if (!e.matches && this.isOpen) document.body.classList.add('overflow')
-  }
-
-  private changeIcon() {
-    const sortingActionBtn = document.querySelector(this.selectorSortingAction) as HTMLElement
-    const svg = sortingActionBtn.querySelector('use')
-    const splitIconPath = svg?.getAttribute('xlink:href')?.split('#')
-
-    if (this.isSelected && this.isOpen) {
-      return svg?.setAttribute('xlink:href', `${splitIconPath?.[0]}#cross`)
-    }
-
-    if (this.isSelected && !this.isOpen) {
-      svg?.setAttribute('xlink:href', `${splitIconPath?.[0]}#${this.lastSelectedIcon}`)
+    if (!this.container.classList.contains('hide')) {
+      if (e.matches && this.isOpen) return document.body.classList.remove('overflow')
+      if (!e.matches && this.isOpen) document.body.classList.add('overflow')
     }
   }
 
   private toggleSorting() {  
-    const sortingWrapper = document.querySelector(this.selectorSortingWrapper)
-
     if (this.isOpen) {
-      sortingWrapper?.classList.remove('active')
+      this.sortingWrapper.classList.remove('active')
       this.isOpen = false
       document.body.classList.remove('overflow')
     } else {
-      sortingWrapper?.classList.add('active')
+      this.sortingWrapper.classList.add('active')
       this.isOpen = true
       window.innerWidth < BreakpointWidth.DESKTOP && document.body.classList.add('overflow')
     }
-
-    this.changeIcon()
   }
 
-  private chooseSorting(targetElement: HTMLElement) {
+  private chooseSorting(targetElement: HTMLElement) {    
     this.isSelected = true
 
-    const parent = targetElement.closest('.radio')
+    const parent = targetElement.closest('.radio')    
     const clonedContentBtn = parent?.querySelector('.btn')?.innerHTML
 
-    const sortingActionBtn = document.querySelector(this.selectorSortingAction) as HTMLElement
-
-    if (sortingActionBtn && clonedContentBtn) {
-      sortingActionBtn.innerHTML = clonedContentBtn
-      sortingActionBtn.classList.remove('btn--color-grey')
-      sortingActionBtn.classList.add('btn--tag', 'btn--tag-checked')
-
-      const svg = sortingActionBtn.querySelector('use')
-      const currentIcon = svg?.getAttribute('xlink:href')?.split('#')[1]
-      this.lastSelectedIcon = currentIcon || ''
+    if (clonedContentBtn) {
+      this.sortingActionBtn.innerHTML = clonedContentBtn
+      this.sortingActionBtn.insertAdjacentHTML(
+        'beforeend',
+        '<svg class="shop-window__actions-icon-default"><use xlink:href="./img/icons/icons.svg#sorts"></use></svg>'
+      )
     }
+
+    this.sortingActionBtn.classList.remove('btn--color-grey')
+    this.sortingActionBtn.classList.add('btn--tag', 'btn--tag-checked')
 
     this.toggleSorting()
-  }
-
-  private clickHandler(e: MouseEvent) {
-    const targetElement = e.target as HTMLElement
-    const sortingActionBtn = targetElement.closest(this.selectorSortingAction)
-    const tagName = targetElement.tagName   
-
-    if ((tagName === 'svg' || tagName === 'use') && sortingActionBtn) {
-      const svg = sortingActionBtn.querySelector('use')
-      const currentIcon = svg?.getAttribute('xlink:href')?.split('#')[1]
-
-      if (currentIcon === 'cross') {
-        this.isSelected = false
-        this.isOpen = false
-        
-        sortingActionBtn.innerHTML = this.defaultContentBtn
-        sortingActionBtn.classList.add('btn--color-grey')
-        sortingActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
-
-        const sortingWrapper = document.querySelector(this.selectorSortingWrapper)
-        if (sortingWrapper) sortingWrapper.classList.remove('active')     
-
-        const checkedRadio = sortingWrapper?.querySelector('input[type="radio"]:checked') as HTMLInputElement
-        
-        if (checkedRadio) {
-          checkedRadio.checked = false
-          checkedRadio.dispatchEvent(new Event('change', { bubbles: true }))
-        }
-
-        return
-      }
-    }
-    
-    if (sortingActionBtn || targetElement.closest(this.selectorCross)) {
-      this.toggleSorting()
-    }
   }
 
   private changeHandler(e: Event) {
     const targetElement = e.target as HTMLInputElement
 
-    if (targetElement.checked && targetElement.closest(this.selectorSortingWrapper)) {
+    // выбор сортировки
+    if (targetElement.checked && this.sortingWrapper.contains(targetElement)) {
       this.chooseSorting(targetElement)
+    }
+  }
+
+  private clickHandler(e: MouseEvent) {
+    const targetElement = e.target as HTMLElement
+
+    // открытие / зыкрытие блока с сортировкой
+    if (this.sortingActionBtn.contains(targetElement) || this.sortingCross.contains(targetElement)) {      
+      return this.toggleSorting()
     }
   }
 
   private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
-    document.addEventListener('change', (e) => this.changeHandler(e))
+    this.sortingWrapper.addEventListener('change', (e) => this.changeHandler(e))
   }
 }

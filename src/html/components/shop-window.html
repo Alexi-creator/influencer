@@ -29,11 +29,11 @@
         </svg>
       </div>
     </div>
-    <!-- Блок с кнопками сортировки и фильтрации для вкладки товаров -->
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки goods -->
     <div class="shop-window__actions shop-window__actions-goods">
-      <div class="shop-window__actions-sorts shop-window__actions-sorts-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка G</div>
-        <svg>
+        <svg class="shop-window__actions-icon">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
         </svg>
       </div>
@@ -55,7 +55,7 @@
         </svg>
       </div>
     </div>
-    <!-- Блок с кнопками сортировки и фильтрации для вкладки совместных покупок -->
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки sp -->
     <div class="shop-window__actions shop-window__actions-sp">
       <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка SP</div>
@@ -65,9 +65,6 @@
       </div>
       <div class="shop-window__actions-categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Категории SP</div>
-        <!-- <svg>
-          <use xlink:href="./img/icons/icons.svg#categories"></use>
-        </svg> -->
         <div class="shop-window__actions-filters-icon">
           <svg>
             <use xlink:href="./img/icons/icons.svg#categories"></use>
@@ -102,7 +99,7 @@
         </svg>
       </div>
     </div>
-    <!-- Форма с фильтрами и сортировками для товаров -->
+    <!-- Форма с фильтрами и сортировками для товаров goods -->
     <form class="shop-window__form shop-window__form-goods">
       <div class="shop-window__form-sorting">
         <div class="shop-window__form-sorting-title">
@@ -116,7 +113,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "popular-asc",
           })
@@ -124,7 +121,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "rate-asc",
           })
@@ -132,7 +129,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "cost-asc",
           })
@@ -140,7 +137,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "name-asc",
           })
@@ -148,7 +145,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "popular-desc",
           })
@@ -156,7 +153,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "rate-desc",
           })
@@ -164,7 +161,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "cost-desc",
           })
@@ -172,7 +169,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "name-desc",
           })
@@ -255,7 +252,7 @@
         </div>
       </div>
     </form>
-    <!-- Форма с фильтрами и сортировками для совместных покупок -->
+    <!-- Форма с фильтрами и сортировками для совместных покупок sp -->
     <form class="shop-window__form shop-window__form-sp">
       <div class="shop-window__form-sorting">
         <div class="shop-window__form-sorting-title">
@@ -269,7 +266,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "popular-asc",
           })
@@ -277,7 +274,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "rate-asc",
           })
@@ -285,7 +282,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "cost-asc",
           })
@@ -293,7 +290,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "name-asc",
           })
@@ -301,7 +298,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "popular-desc",
           })
@@ -309,7 +306,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "rate-desc",
           })
@@ -317,7 +314,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "cost-desc",
           })
@@ -325,7 +322,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "name-desc",
           })
@@ -422,7 +419,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "popular-asc",
           })
@@ -430,7 +427,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "rate-asc",
           })
@@ -438,7 +435,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "cost-asc",
           })
@@ -446,7 +443,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
             "mod": "btn",
             "value": "name-asc",
           })
@@ -454,7 +451,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По популярности <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "popular-desc",
           })
@@ -462,7 +459,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По рейтингу <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "rate-desc",
           })
@@ -470,7 +467,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По стоимости <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "cost-desc",
           })
@@ -478,7 +475,7 @@
         <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
           @@include("./radio.html", {
             "name": "sorting",
-            "text": "<span class='btn btn--color-white'>По названию <svg><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+            "text": "<span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
             "mod": "btn",
             "value": "name-desc",
           })

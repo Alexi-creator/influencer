@@ -20,7 +20,8 @@ export class Filter {
   private selectorClearBtn: string
   private selectorSubmitBtn: string
   private selectorBtnCount: string
-  private selectorSortWrapper: string
+  // private selectorSortWrapper: string
+  private isOpen: boolean
 
   // dom элементы
   private container: HTMLElement
@@ -29,9 +30,10 @@ export class Filter {
   private filtersWrapper: HTMLElement
   private chipsWrapper: HTMLElement
   private submitBtn: Element
-  private sortWrapper: HTMLElement
+  // private sortWrapper: HTMLElement
   private btnCount: Element
   private filterCross: HTMLElement
+  private clearBtn: HTMLElement
 
   // объект с состоянием фильтров (выбранные позиции, кол-во выбранных)
   private filters: Record<string, IFilter>
@@ -40,7 +42,7 @@ export class Filter {
     this.selectorContainer = selectorContainer
     this.selectorActionBtn = selectorActionBtn
 
-    this.selectorSortWrapper = '.shop-window__form-sorting'
+    // this.selectorSortWrapper = '.shop-window__form-sorting'
     this.selectorFilterWrapper = '.shop-window__form-filter',
     this.selectorFiltersWrapper = '.shop-window__form-filter-filters'
     this.selectorChips = '.shop-window__form-chips',
@@ -49,6 +51,7 @@ export class Filter {
     this.selectorClearBtn = '.shop-window__form-filter-clear'
     this.selectorSubmitBtn = '.shop-window__form-filter-submit'
     this.selectorBtnCount = '.shop-window__actions-filters-count'
+    this.isOpen = false
 
     const container = document.querySelector(this.selectorContainer)
     if (container) this.container = container as HTMLElement
@@ -61,12 +64,14 @@ export class Filter {
     if (filtersWrapper) this.filtersWrapper = filtersWrapper as HTMLElement
     const chipsWrapper = this.container.querySelector(this.selectorChips)
     if (chipsWrapper) this.chipsWrapper = chipsWrapper as HTMLElement
-    const sortWrapper = this.container.querySelector(this.selectorSortWrapper)
-    if (sortWrapper) this.sortWrapper = sortWrapper as HTMLElement
+    // const sortWrapper = this.container.querySelector(this.selectorSortWrapper)
+    // if (sortWrapper) this.sortWrapper = sortWrapper as HTMLElement
     const btnCount = this.filterActionBtn.querySelector(this.selectorBtnCount)
     if (btnCount) this.btnCount = btnCount as HTMLElement
     const submitBtn = this.filterWrapper.querySelector(this.selectorSubmitBtn)
     if (submitBtn) this.submitBtn = submitBtn as HTMLElement
+    const clearBtn = this.filterWrapper.querySelector(this.selectorClearBtn)
+    if (clearBtn) this.clearBtn = clearBtn as HTMLElement
     const filterCross = this.container.querySelector(this.selectorFilterCross)
     if (filterCross) this.filterCross = filterCross as HTMLElement
 
@@ -84,10 +89,10 @@ export class Filter {
   }
 
   private breakpointChecker(e: MediaQueryListEvent) {
-    const isOpen = this.filterWrapper.classList.contains('active')
-
-    if (e.matches && isOpen) return document.body.classList.remove('overflow')
-    if (!e.matches && isOpen) document.body.classList.add('overflow')
+    if (!this.container.classList.contains('hide')) {      
+      if (e.matches && this.isOpen) return document.body.classList.remove('overflow')
+      if (!e.matches && this.isOpen) document.body.classList.add('overflow')
+    }
   }
 
   private chipTemplate(title: string, options: string, moreCount: number) {
@@ -147,23 +152,6 @@ export class Filter {
     }
   }
 
-  private clearAllFilters() {
-    Object.entries(this.filters).forEach(elem => {
-      elem[1].selectedOptions = []
-      elem[1].moreCount = -3
-    })
-    
-    const inputs = this.filtersWrapper.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
-    inputs?.forEach(input => input.checked = false)
-
-    if (this.chipsWrapper) {
-      this.chipsWrapper.innerHTML = ''
-      this.chipsWrapper.classList.toggle('active')
-    }
-
-    this.changeCount()
-  }
-
   private changeOptions(targetElement: HTMLInputElement) {
     const { checked } = targetElement
     
@@ -205,11 +193,11 @@ export class Filter {
     }
   }
 
-  private removeChips(targetElement: HTMLElement) {
+  private removeChips(targetElement: HTMLElement) {   
     const chip = targetElement.closest('.chip')
     const title = chip?.querySelector('.chip__title')?.textContent?.trim().replace(':', '')
 
-    if (title && this.filterWrapper) {
+    if (title) {
       const filter = Array.from(this.filterWrapper.querySelectorAll('.collapse__head-title'))
         .filter(item => item?.textContent?.trim() === title)
 
@@ -233,16 +221,15 @@ export class Filter {
     }
   }
 
-  private toggleFilter() {   
-    this.filterWrapper.classList.toggle('active')
-    this.changeCount()
-
-    if (window.innerWidth < BreakpointWidth.DESKTOP) {
-      document.body.classList.toggle('overflow')
-
-      if (this.sortWrapper.classList.contains('active')) {
-        document.body.classList.add('overflow')
-      }
+  private toggleFilter() {
+    if (this.isOpen) {
+      this.filterWrapper.classList.remove('active')
+      this.isOpen = false
+      document.body.classList.remove('overflow')
+    } else {
+      this.filterWrapper.classList.add('active')
+      this.isOpen = true      
+      window.innerWidth < BreakpointWidth.DESKTOP && document.body.classList.add('overflow')
     }
   }
 
@@ -251,19 +238,39 @@ export class Filter {
     this.chipsWrapper.classList.remove('active')
   }
 
+  private clearAllFilters() {
+    Object.entries(this.filters).forEach(elem => {
+      elem[1].selectedOptions = []
+      elem[1].moreCount = -3
+    })
+    
+    const inputs = this.filtersWrapper.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
+    inputs?.forEach(input => input.checked = false)
+
+    if (this.chipsWrapper) {
+      this.chipsWrapper.innerHTML = ''
+      this.chipsWrapper.classList.toggle('active')
+    }
+
+    this.changeCount()
+  }
+
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
-    if (targetElement.closest(this.selectorActionBtn) || this.filterCross.contains(targetElement)) {
-      this.toggleFilter()
+    // открытие / закрытие блока с фильтрами
+    if (this.filterActionBtn.contains(targetElement) || this.filterCross.contains(targetElement)) {
+      return this.toggleFilter()
     }
 
-    if (targetElement.closest(this.selectorChipCross)) {
-      this.removeChips(targetElement)
+    // удаление чипсов и фильтров
+    if (targetElement.closest(this.selectorChipCross) && this.container.contains(targetElement)) {
+      return this.removeChips(targetElement)
     }
 
-    if (targetElement.closest(this.selectorClearBtn)) {
-      this.clearAllFilters()
+    // очистка всех фильтров
+    if (this.clearBtn.contains(targetElement)) {
+      return this.clearAllFilters()
     }
   }
 
@@ -277,6 +284,6 @@ export class Filter {
 
   private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
-    document.addEventListener('change', (e) => this.changeHandler(e))
+    this.filterWrapper.addEventListener('change', (e) => this.changeHandler(e))
   }
 }

@@ -106,9 +106,26 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new Sort(
-      '.shop-window__actions-sorts-goods',
-    )
+    new Sort({
+      selectorContainer: '.shop-window__form-goods',
+      selectorActionBtn: '.shop-window__actions-goods .shop-window__actions-sorts',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Sort({
+      selectorContainer: '.shop-window__form-sp',
+      selectorActionBtn: '.shop-window__actions-sp .shop-window__actions-sorts',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Sort({
+      selectorContainer: '.shop-window__form-tff',
+      selectorActionBtn: '.shop-window__actions-tff .shop-window__actions-sorts',
+    })
   } catch (error) {
     console.log(error)
   }

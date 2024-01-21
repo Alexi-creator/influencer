@@ -138,6 +138,14 @@
         margin-left: none;
       }
 
+      @include media($md) {
+        #{$root}__actions-sorts {
+          #{$root}__actions-text {
+            display: block;
+          }
+        }
+      }
+
       @include media($lg) {
         margin-top: 0;
       }
@@ -184,7 +192,15 @@
     }
 
     &-sorts {
+      &.btn--tag-checked {
+        #{$root}__actions-icon {
+          display: none;
 
+          @include media($md) {
+            display: block;
+          }
+        }
+      }
     }
 
     &-density {
@@ -219,6 +235,22 @@
         display: none;
       }
     }
+
+    &-icon {
+      // display: none;
+
+      @include media($md) {
+        display: block;
+      } 
+    }
+
+    &-icon-default {
+      display: block;
+
+      @include media($md) {
+        display: none;
+      } 
+    }
   }
 
   &__form {
@@ -250,7 +282,7 @@
         overflow-y: auto;
 
         #{$root}__form-sorting-btn {
-          & .radio__custom {
+          & .radio__custom, #{$root}__actions-text, #{$root}__actions-icon {
             display: block;
           }
 
