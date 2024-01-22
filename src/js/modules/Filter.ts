@@ -9,72 +9,74 @@ interface IFilter {
  * Выбор фильтров
  */
 export class Filter {
-  private selectorFilterBtn: string
+  // селекторы
+  private selectorContainer: string
   private selectorFilterWrapper: string
   private selectorFiltersWrapper: string
+  private selectorActionBtn: string
   private selectorFilterCross: string
   private selectorChips: string
   private selectorChipCross: string
   private selectorClearBtn: string
   private selectorSubmitBtn: string
-  // private defaultContentBtn: string
-  // private selectorBtnIcon: string
   private selectorBtnCount: string
-  // private svgCross: string
+  
+  private isOpen: boolean
 
-  private selectorSortWrapper: string
-
+  // dom элементы
+  private container: HTMLElement
   private filterActionBtn: Element
-  private filterWrapper: HTMLElement | null
-  private filtersWrapper: HTMLElement | null
-  private chipsWrapper: HTMLElement | null
+  private filterWrapper: HTMLElement
+  private filtersWrapper: HTMLElement
+  private chipsWrapper: HTMLElement
   private submitBtn: Element
-  private sortWrapper: HTMLElement | null
   private btnCount: Element
+  private filterCross: HTMLElement
+  private clearBtn: HTMLElement
 
+  // объект с состоянием фильтров (выбранные позиции, кол-во выбранных)
   private filters: Record<string, IFilter>
 
-  constructor() {
-    this.selectorFilterBtn = '.shop-window__actions-filters'
-    this.selectorFilterWrapper = '.shop-window__filtersorting-filter'
-    this.selectorFilterCross = '.shop-window__filtersorting-filter-cross'
-    this.selectorChips = '.shop-window__filtersorting-chips'
-    this.selectorFiltersWrapper = '.filters'
+  constructor({ selectorContainer, selectorActionBtn }: { selectorContainer: string, selectorActionBtn: string }) {
+    this.selectorContainer = selectorContainer
+    this.selectorActionBtn = selectorActionBtn
+
+    this.selectorFilterWrapper = '.shop-window__form-filter',
+    this.selectorFiltersWrapper = '.shop-window__form-filter-filters'
+    this.selectorChips = '.shop-window__form-chips',
+    this.selectorFilterCross = '.shop-window__form-filter-cross'
     this.selectorChipCross = '.chip__cross'
-    this.selectorClearBtn = '.shop-window__filtersorting-filter-clear'
-    this.selectorSubmitBtn = '.shop-window__filtersorting-filter-submit'
-    // this.selectorBtnIcon = '.shop-window__actions-filters-icon'
+    this.selectorClearBtn = '.shop-window__form-filter-clear'
+    this.selectorSubmitBtn = '.shop-window__form-filter-submit'
     this.selectorBtnCount = '.shop-window__actions-filters-count'
-    // this.svgCross = '<svg><use xlink:href="./img/icons/icons.svg#cross"></use></svg>'
+    this.isOpen = false
 
-    this.selectorSortWrapper = '.shop-window__filtersorting-sorting'
+    const container = document.querySelector(this.selectorContainer)
+    if (container) this.container = container as HTMLElement
+    const filterActionBtn = document.querySelector(this.selectorActionBtn)
+    if (filterActionBtn) this.filterActionBtn = filterActionBtn as HTMLElement
 
-    // this.filterActionBtn = document.querySelector(this.selectorFilterBtn)
-    this.filterWrapper = document.querySelector(this.selectorFilterWrapper)
-    this.filtersWrapper = document.querySelector(this.selectorFiltersWrapper)
-    this.chipsWrapper = document.querySelector(this.selectorChips)
-    // this.submitBtn = document.querySelector(this.selectorSubmitBtn)
-    this.sortWrapper = document.querySelector(this.selectorSortWrapper)
+    const filterWrapper = this.container.querySelector(this.selectorFilterWrapper)
+    if (filterWrapper) this.filterWrapper = filterWrapper as HTMLElement
+    const filtersWrapper = this.container.querySelector(this.selectorFiltersWrapper)
+    if (filtersWrapper) this.filtersWrapper = filtersWrapper as HTMLElement
+    const chipsWrapper = this.container.querySelector(this.selectorChips)
+    if (chipsWrapper) this.chipsWrapper = chipsWrapper as HTMLElement
+    const btnCount = this.filterActionBtn.querySelector(this.selectorBtnCount)
+    if (btnCount) this.btnCount = btnCount as HTMLElement
+    const submitBtn = this.filterWrapper.querySelector(this.selectorSubmitBtn)
+    if (submitBtn) this.submitBtn = submitBtn as HTMLElement
+    const clearBtn = this.filterWrapper.querySelector(this.selectorClearBtn)
+    if (clearBtn) this.clearBtn = clearBtn as HTMLElement
+    const filterCross = this.container.querySelector(this.selectorFilterCross)
+    if (filterCross) this.filterCross = filterCross as HTMLElement
 
-    const filterActionBtn = document.querySelector(this.selectorFilterBtn)
-    if (filterActionBtn) this.filterActionBtn = filterActionBtn
-    const btnCount = document.querySelector(this.selectorBtnCount)
-    if (btnCount) this.btnCount = btnCount
-    const submitBtn = document.querySelector(this.selectorSubmitBtn)
-    if (submitBtn) this.submitBtn = submitBtn
-
-    // this.defaultContentBtn = ''
-
-    if (!this.filterActionBtn || !this.filterWrapper) return
+    if (!this.filterActionBtn || !this.container) return
 
     this.init()
   }
 
   private init() {
-    // if (this.filterActionBtn) {
-    //   this.defaultContentBtn = this.filterActionBtn.innerHTML
-    // }
-
     this.handlers()
     this.collectionOptions()
 
@@ -83,10 +85,10 @@ export class Filter {
   }
 
   private breakpointChecker(e: MediaQueryListEvent) {
-    const isOpen = this.filterWrapper?.classList.contains('active')
-
-    if (e.matches && isOpen) return document.body.classList.remove('overflow')
-    if (!e.matches && isOpen) document.body.classList.add('overflow')
+    if (!this.container.classList.contains('hide')) {      
+      if (e.matches && this.isOpen) return document.body.classList.remove('overflow')
+      if (!e.matches && this.isOpen) document.body.classList.add('overflow')
+    }
   }
 
   private chipTemplate(title: string, options: string, moreCount: number) {
@@ -120,13 +122,13 @@ export class Filter {
       }, {})
 
       this.displayChips()
-      // this.changeIcon()
       this.changeCount()
     }
   }
 
   private changeCount() {
     const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
+    
     const countBtn = this.submitBtn.querySelector('.btn__suffix') as HTMLElement
     
     if (selectedCount) {
@@ -146,54 +148,9 @@ export class Filter {
     }
   }
 
-  // private changeIcon() {
-  //   const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
-  //   const btnIconElement = this.filterActionBtn?.querySelector(this.selectorBtnIcon)
-  //   const isOpen = this.filterWrapper?.classList.contains('active')
-
-  //   const countBtn = this.submitBtn?.querySelector('.btn__suffix')
-  //   if (countBtn) {
-  //     countBtn.innerHTML = `(${selectedCount})`
-  //   }
-
-  //   if (this.filterActionBtn) {
-  //     if (selectedCount && btnIconElement && this.filterActionBtn) {
-  //       this.filterActionBtn.classList.add('btn--tag', 'btn--tag-checked')
-  //       this.filterActionBtn.classList.remove('btn--color-grey')
-
-  //       if (isOpen) {
-  //         btnIconElement.innerHTML = this.svgCross
-  //       } else {
-  //         btnIconElement.innerHTML = String(selectedCount)
-  //       }
-  //     } else {
-  //       this.filterActionBtn.innerHTML = this.defaultContentBtn
-  //       this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
-  //       this.filterActionBtn.classList.add('btn--color-grey')
-  //     }
-  //   }
-  // }
-
-  private clearAllFilters() {
-    Object.entries(this.filters).forEach(elem => {
-      elem[1].selectedOptions = []
-      elem[1].moreCount = -3
-    })
-    
-    const inputs = this.filtersWrapper?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
-    inputs?.forEach(input => input.checked = false)
-
-    if (this.chipsWrapper) {
-      this.chipsWrapper.innerHTML = ''
-      this.chipsWrapper.classList.toggle('active')
-    }
-
-    // this.changeIcon()
-    this.changeCount()
-  }
-
   private changeOptions(targetElement: HTMLInputElement) {
     const { checked } = targetElement
+    
     const title = targetElement.closest('.collapse')?.querySelector('.collapse__head-title')?.textContent?.trim()
     const option = targetElement.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
     
@@ -212,7 +169,6 @@ export class Filter {
         this.chipsWrapper.innerHTML = ''
         this.displayChips()
         this.toggleChips()
-        // this.changeIcon()
         this.changeCount()
       }
     }
@@ -233,11 +189,11 @@ export class Filter {
     }
   }
 
-  private removeChips(targetElement: HTMLElement) {
+  private removeChips(targetElement: HTMLElement) {   
     const chip = targetElement.closest('.chip')
     const title = chip?.querySelector('.chip__title')?.textContent?.trim().replace(':', '')
 
-    if (title && this.filterWrapper) {
+    if (title) {
       const filter = Array.from(this.filterWrapper.querySelectorAll('.collapse__head-title'))
         .filter(item => item?.textContent?.trim() === title)
 
@@ -250,63 +206,80 @@ export class Filter {
 
     chip?.remove()
     this.toggleChips()
-    // this.changeIcon()
     this.changeCount()
   }
 
   private toggleChips() {
     if (this.chipsWrapper) {
-      if (Array.from(this.chipsWrapper?.children || []).length === 0) {
+      if (Array.from(this.chipsWrapper.children || []).length === 0) {
         this.chipsWrapper.classList.remove('active')
       }
     }
   }
 
   private toggleFilter() {
-    if (window.innerWidth < BreakpointWidth.DESKTOP) {
-      document.body.classList.toggle('overflow')
-
-      if (this.sortWrapper?.classList.contains('active')) {
-        document.body.classList.add('overflow')
-      }
+    if (this.isOpen) {
+      this.filterWrapper.classList.remove('active')
+      this.isOpen = false
+      document.body.classList.remove('overflow')
+    } else {
+      this.filterWrapper.classList.add('active')
+      this.isOpen = true      
+      window.innerWidth < BreakpointWidth.DESKTOP && document.body.classList.add('overflow')
     }
-
-    this.filterWrapper?.classList.toggle('active')
-    // this.changeIcon()
-    this.changeCount()
   }
 
   public closeFilters() {
-    this.filterWrapper?.classList.remove('active')
-    this.chipsWrapper?.classList.remove('active')
+    this.filterWrapper.classList.remove('active')
+    this.chipsWrapper.classList.remove('active')
+  }
+
+  private clearAllFilters() {
+    Object.entries(this.filters).forEach(elem => {
+      elem[1].selectedOptions = []
+      elem[1].moreCount = -3
+    })
+    
+    const inputs = this.filtersWrapper.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
+    inputs?.forEach(input => input.checked = false)
+
+    if (this.chipsWrapper) {
+      this.chipsWrapper.innerHTML = ''
+      this.chipsWrapper.classList.toggle('active')
+    }
+
+    this.changeCount()
   }
 
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
-    if (targetElement.closest(this.selectorFilterBtn) || targetElement.closest(this.selectorFilterCross)) {
-      this.toggleFilter()
+    // открытие / закрытие блока с фильтрами
+    if (this.filterActionBtn.contains(targetElement) || this.filterCross.contains(targetElement)) {
+      return this.toggleFilter()
     }
 
-    if (targetElement.closest(this.selectorChipCross)) {
-      this.removeChips(targetElement)
+    // удаление чипсов и фильтров
+    if (targetElement.closest(this.selectorChipCross) && this.container.contains(targetElement)) {
+      return this.removeChips(targetElement)
     }
 
-    if (targetElement.closest(this.selectorClearBtn)) {
-      this.clearAllFilters()
+    // очистка всех фильтров
+    if (this.clearBtn.contains(targetElement)) {
+      return this.clearAllFilters()
     }
   }
 
   private changeHandler(e: Event) {
     const targetElement = e.target as HTMLInputElement
 
-    if (targetElement.closest(this.selectorFiltersWrapper)) {
+    if (this.filtersWrapper.contains(targetElement)) {
       this.changeOptions(targetElement)
     }
   }
 
   private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
-    document.addEventListener('change', (e) => this.changeHandler(e))
+    this.filterWrapper.addEventListener('change', (e) => this.changeHandler(e))
   }
 }

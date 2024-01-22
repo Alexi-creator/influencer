@@ -62,32 +62,333 @@
 <ul class="product-menu">
   <!-- Элемент первого уровня -->
   <li class="product-menu__item collapse">
+    <div class="collapse__head">
+      @@include("./radio.html", {
+        "name": "@@name",
+        "text": '<span class="product-menu__title">Одежда level 1<span class="product-menu__count product-menu__count">1200</span></span>',
+        "mod": "",
+        "value": "cloth-level-1",
+      })
+      <!-- Одежда level 1
+      <span class="product-menu__count product-menu__count">1200</span> -->
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          @@include("./radio.html", {
+            "name": "@@name",
+            "text": '<span class="product-menu__title">Одежда level 2-1<span class="product-menu__count product-menu__count"></span></span>',
+            "mod": "",
+            "value": "cloth-level-2-1",
+          })
+          <!-- Одежда level 2-1 -->
+          <!-- <span class="product-menu__count product-menu__count"></span> -->
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Одежда level 3-1<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "cloth-level-3-1",
+            })
+            <!-- Одежда level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Одежда level 3-2<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "cloth-level-3-2",
+            })
+            <!-- Одежда level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Одежда level 3-3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "cloth-level-3-3",
+            })
+            <!-- Одежда level 3 -->
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          @@include("./radio.html", {
+            "name": "@@name",
+            "text": '<span class="product-menu__title">Одежда level 2-2<span class="product-menu__count product-menu__count"></span></span>',
+            "mod": "",
+            "value": "cloth-level-2-2",
+          })
+          <!-- Одежда level 2-2 -->
+          <!-- <span class="product-menu__count product-menu__count"></span> -->
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "cloth-level-3",
+            })  
+            <!-- Одежда level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "cloth-level-3",
+            })  
+            <!-- Одежда level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "cloth-level-3",
+            })  
+            <!-- Одежда level 3 -->
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      @@include("./radio.html", {
+        "name": "@@name",
+        "text": '<span class="product-menu__title">Обувь level 1<span class="product-menu__count product-menu__count"></span></span>',
+        "mod": "",
+        "value": "shoes-level-1",
+      })
+      <!-- Обувь level 1 -->
+      <!-- <span class="product-menu__count product-menu__count"></span> -->
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          @@include("./radio.html", {
+            "name": "@@name",
+            "text": '<span class="product-menu__title">Обувь level 2-1<span class="product-menu__count product-menu__count"></span></span>',
+            "mod": "",
+            "value": "shoes-level-2-1",
+          })
+          <!-- Обувь level 2-1 -->
+          <!-- <span class="product-menu__count product-menu__count"></span> -->
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "shoes-level-3",
+            })
+            <!-- Обувь level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "shoes-level-3",
+            })
+            <!-- Обувь level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "shoes-level-3",
+            })
+            <!-- Обувь level 3 -->
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          @@include("./radio.html", {
+            "name": "@@name",
+            "text": '<span class="product-menu__title">Обувь level 2-2<span class="product-menu__count product-menu__count"></span></span>',
+            "mod": "",
+            "value": "shoes-level-2-2",
+          })
+          <!-- Обувь level 2-2 -->
+          <!-- <span class="product-menu__count product-menu__count"></span> -->
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "shoes-level-3",
+            })  
+            <!-- Обувь level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "shoes-level-3",
+            })  
+            <!-- Обувь level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "shoes-level-3",
+            })  
+            <!-- Обувь level 3 -->
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      @@include("./radio.html", {
+        "name": "@@name",
+        "text": '<span class="product-menu__title">Бытовая техника level 1<span class="product-menu__count product-menu__count"></span></span>',
+        "mod": "",
+        "value": "Appliances-level-1",
+      })
+      <!-- Бытовая техника level 1 -->
+      <!-- <span class="product-menu__count product-menu__count"></span> -->
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          @@include("./radio.html", {
+            "name": "@@name",
+            "text": '<span class="product-menu__title">Бытовая техника level 2-1<span class="product-menu__count product-menu__count"></span></span>',
+            "mod": "",
+            "value": "Appliances-level-2-1",
+          })
+          <!-- Бытовая техника level 2-1 -->
+          <!-- <span class="product-menu__count product-menu__count"></span> -->
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "Appliances-level-3",
+            })
+            <!-- Бытовая техника level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "Appliances-level-3",
+            })
+            <!-- Бытовая техника level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "Appliances-level-3",
+            })
+            <!-- Бытовая техника level 3 -->
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          @@include("./radio.html", {
+            "name": "@@name",
+            "text": '<span class="product-menu__title">Бытовая техника level 2-2<span class="product-menu__count product-menu__count"></span></span>',
+            "mod": "",
+            "value": "Appliances-level-2-2",
+          })
+          <!-- Бытовая техника level 2-2 -->
+          <!-- <span class="product-menu__count product-menu__count"></span> -->
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "Appliances-level-3",
+            })
+            <!-- Бытовая техника level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "Appliances-level-3",
+            })
+            <!-- Бытовая техника level 3 -->
+          </li>
+          <li>
+            @@include("./radio.html", {
+              "name": "@@name",
+              "text": '<span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>',
+              "mod": "",
+              "value": "Appliances-level-3",
+            })
+            <!-- Бытовая техника level 3 -->
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- <ul class="product-menu">
+  <li class="product-menu__item collapse">
     <div class="product-menu__title collapse__head">
       Одежда level 1
       <span class="product-menu__count product-menu__count">1200</span>
     </div>
     <ul class="product-menu__submenu collapse__content">
-      <!-- Элементы второго уровня -->
       <li class="product-menu__item collapse collapse--close">
         <div class="product-menu__title collapse__head">
           Одежда level 2-1
           <span class="product-menu__count product-menu__count"></span>
         </div>
         <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
           <li>Одежда level 3</li>
           <li>Одежда level 3</li>
           <li>Одежда level 3</li>
         </ul>
       </li>
-      <!-- Элементы второго уровня -->
       <li class="product-menu__item collapse collapse--close">
         <div class="product-menu__title collapse__head">
           Одежда level 2-2
           <span class="product-menu__count product-menu__count"></span>
         </div>
         <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
           <li>Одежда level 3</li>
           <li>Одежда level 3</li>
           <li>Одежда level 3</li>
@@ -102,27 +403,23 @@
       <span class="product-menu__count product-menu__count"></span>
     </div>
     <ul class="product-menu__submenu collapse__content">
-      <!-- Элементы второго уровня -->
       <li class="product-menu__item collapse collapse--close">
         <div class="product-menu__title collapse__head">
           Обувь level 2-1
           <span class="product-menu__count product-menu__count"></span>
         </div>
         <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
           <li>Обувь level 3</li>
           <li>Обувь level 3</li>
           <li>Обувь level 3</li>
         </ul>
       </li>
-      <!-- Элементы второго уровня -->
       <li class="product-menu__item collapse collapse--close">
         <div class="product-menu__title collapse__head">
           Обувь level 2-2
           <span class="product-menu__count product-menu__count"></span>
         </div>
         <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
           <li>Обувь level 3</li>
           <li>Обувь level 3</li>
           <li>Обувь level 3</li>
@@ -137,27 +434,23 @@
       <span class="product-menu__count product-menu__count"></span>
     </div>
     <ul class="product-menu__submenu collapse__content">
-      <!-- Элементы второго уровня -->
       <li class="product-menu__item collapse collapse--close">
         <div class="product-menu__title collapse__head">
           Бытовая техника level 2-1
           <span class="product-menu__count product-menu__count"></span>
         </div>
         <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
           <li>Бытовая техника level 3</li>
           <li>Бытовая техника level 3</li>
           <li>Бытовая техника level 3</li>
         </ul>
       </li>
-      <!-- Элементы второго уровня -->
       <li class="product-menu__item collapse collapse--close">
         <div class="product-menu__title collapse__head">
           Бытовая техника level 2-2
           <span class="product-menu__count product-menu__count"></span>
         </div>
         <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
           <li>Бытовая техника level 3</li>
           <li>Бытовая техника level 3</li>
           <li>Бытовая техника level 3</li>
@@ -165,4 +458,4 @@
       </li>
     </ul>
   </li>
-</ul>
+</ul> -->

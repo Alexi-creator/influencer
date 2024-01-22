@@ -102,14 +102,17 @@
   }
 
   &__actions {
-    @extend %flex-end;
-
+    display: none;
     gap: 0.5rem;
     position: sticky;
     top: 81px;
     margin-left: auto;
     margin-top: 1.5rem;
     z-index: var(--z-popup);
+
+    &.active {
+      @extend %flex-end;
+    }
 
     @include media($lg) {
       gap: 0.5rem;
@@ -123,6 +126,8 @@
     }
 
     &--active {
+      @extend %flex-end;
+
       width: max-content;
 
       #{$root}__actions-text {
@@ -131,6 +136,14 @@
 
       #{$root}__actions-density {
         margin-left: none;
+      }
+
+      @include media($md) {
+        #{$root}__actions-sorts {
+          #{$root}__actions-text {
+            display: block;
+          }
+        }
       }
 
       @include media($lg) {
@@ -152,8 +165,16 @@
       padding-right: 0.65rem;
     }
 
-    &-categories, &-filters, &-sorts, &-density {
+    &-text {
       display: none;
+
+      @include media($md) {
+        display: block;
+      }
+    }
+
+    &-categories, &-filters, &-sorts, &-density {
+      // display: none;
 
       &--active {
         display: inline-flex;
@@ -171,7 +192,15 @@
     }
 
     &-sorts {
+      &.btn--tag-checked {
+        #{$root}__actions-icon {
+          display: none;
 
+          @include media($md) {
+            display: block;
+          }
+        }
+      }
     }
 
     &-density {
@@ -206,10 +235,30 @@
         display: none;
       }
     }
+
+    &-icon {
+      // display: none;
+
+      @include media($md) {
+        display: block;
+      } 
+    }
+
+    &-icon-default {
+      display: block;
+
+      @include media($md) {
+        display: none;
+      } 
+    }
   }
 
-  &__filtersorting {
+  &__form {
     margin-top: 1.25rem;
+
+    &.hide {
+      display: none;
+    }
 
     & > *:not(:first-child) {
       margin-top: 1.25rem;
@@ -232,8 +281,8 @@
         z-index: var(--z-top);
         overflow-y: auto;
 
-        #{$root}__filtersorting-sorting-btn {
-          & .radio__custom {
+        #{$root}__form-sorting-btn {
+          & .radio__custom, #{$root}__actions-text, #{$root}__actions-icon {
             display: block;
           }
 
@@ -258,7 +307,7 @@
           border-radius: var(--radius-small);
           z-index: unset;
 
-          #{$root}__filtersorting-sorting-btn {
+          #{$root}__form-sorting-btn {
             & .radio__custom {
               display: none;
             }
@@ -295,7 +344,7 @@
         font-size: 1.375rem;
         font-weight: 600;
 
-        #{$root}__filtersorting-sorting-cross {
+        #{$root}__form-sorting-cross {
           cursor: pointer;
         }
 
@@ -391,7 +440,7 @@
         font-size: 1.375rem;
         font-weight: 600;
 
-        #{$root}__filtersorting-filter-cross {
+        #{$root}__form-filter-cross {
           cursor: pointer;
         }
 
@@ -438,7 +487,7 @@
     }
   }
 
-  &__goods, &__ttf {
+  &__goods, &__tff {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
