@@ -574,9 +574,9 @@
     </form>
     <div class="tabs__contents">
       <!-- Товары -->
-      <div class="tabs__content" data-tab-target="goods">
+      <div class="tabs__content tabs__content--active" data-tab-target="goods">
         <div class="shop-window__goods">
-          <div class="shop-window__menu">@@include("./product-menu.html", { "name": "categories-goods" })</div>
+          <div class="shop-window__menu">@@include("./product-menu.html", {"name": "categories-goods"})</div>
           <div class="shop-window__goods-items">
             @@include("./product-card.html", {
               "extra-class": "",
@@ -670,9 +670,9 @@
         </div>
       </div>
       <!-- Test for free -->
-      <div class="tabs__content tabs__content--active" data-tab-target="tff">
+      <div class="tabs__content" data-tab-target="tff">
         <div class="shop-window__tff">
-          <div class="shop-window__menu">@@include("./product-menu.html")</div>
+          <div class="shop-window__menu">@@include("./product-menu.html", {"name": "categories-tff"})</div>
           <div class="shop-window__tff-items">
             @@include("./product-card.html", {
               "extra-class": "product-card--tff product-card--application-submitted",
