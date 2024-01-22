@@ -79,3 +79,13 @@
   border-bottom: 1px solid rgb(var(--color-primary));
   font-weight: 600;
 }
+
+@media (min-width: 75rem) {
+  .product-menu .radio__custom {
+    display: none;
+  }
+
+  .product-menu .radio input:checked + span {
+    color: rgb(var(--color-primary));
+  }
+}

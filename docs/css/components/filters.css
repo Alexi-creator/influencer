@@ -25,16 +25,32 @@
   .filters {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .filters--sp {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 75rem) {
   .filters {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .filters--sp {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filters__item--categories {
+    display: none;
+  }
 }
 
 @media (min-width: 120rem) {
   .filters {
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .filters--sp {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

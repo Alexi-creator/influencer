@@ -1,4 +1,5 @@
-.shop-window__actions {
+.shop-window__actions--active,
+.shop-window__actions.active {
   display: flex;
   justify-content: flex-end;
 }
@@ -47,6 +48,7 @@
 }
 
 .shop-window__actions {
+  display: none;
   gap: 0.5rem;
   position: sticky;
   top: 81px;
@@ -74,10 +76,7 @@
   padding-right: 0.65rem;
 }
 
-.shop-window__actions-categories,
-.shop-window__actions-filters,
-.shop-window__actions-sorts,
-.shop-window__actions-density {
+.shop-window__actions-text {
   display: none;
 }
 
@@ -94,6 +93,10 @@
 
 .shop-window__actions-filters-count--active {
   display: block;
+}
+
+.shop-window__actions-sorts.btn--tag-checked .shop-window__actions-icon {
+  display: none;
 }
 
 .shop-window__actions-density {
@@ -121,19 +124,27 @@
   display: none;
 }
 
-.shop-window__filtersorting {
+.shop-window__actions-icon-default {
+  display: block;
+}
+
+.shop-window__form {
   margin-top: 1.25rem;
 }
 
-.shop-window__filtersorting > *:not(:first-child) {
-  margin-top: 1.25rem;
-}
-
-.shop-window__filtersorting-sorting {
+.shop-window__form.hide {
   display: none;
 }
 
-.shop-window__filtersorting-sorting.active {
+.shop-window__form > *:not(:first-child) {
+  margin-top: 1.25rem;
+}
+
+.shop-window__form-sorting {
+  display: none;
+}
+
+.shop-window__form-sorting.active {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -148,16 +159,18 @@
   overflow-y: auto;
 }
 
-.shop-window__filtersorting-sorting.active .shop-window__filtersorting-sorting-btn .radio__custom {
+.shop-window__form-sorting.active .shop-window__form-sorting-btn .radio__custom,
+.shop-window__form-sorting.active .shop-window__form-sorting-btn .shop-window__actions-text,
+.shop-window__form-sorting.active .shop-window__form-sorting-btn .shop-window__actions-icon {
   display: block;
 }
 
-.shop-window__filtersorting-sorting.active .shop-window__filtersorting-sorting-btn .btn {
+.shop-window__form-sorting.active .shop-window__form-sorting-btn .btn {
   background-color: transparent;
   border-color: transparent;
 }
 
-.shop-window__filtersorting-sorting-title {
+.shop-window__form-sorting-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -165,37 +178,37 @@
   font-weight: 600;
 }
 
-.shop-window__filtersorting-sorting-title .shop-window__filtersorting-sorting-cross {
+.shop-window__form-sorting-title .shop-window__form-sorting-cross {
   cursor: pointer;
 }
 
-.shop-window__filtersorting-sorting .btn {
+.shop-window__form-sorting .btn {
   font-weight: 400;
   padding: 0.75rem;
 }
 
-.shop-window__filtersorting-sorting-btn:not(:last-child) {
+.shop-window__form-sorting-btn:not(:last-child) {
   border-bottom: 1px solid rgb(var(--color-black-light));
   padding-bottom: 0.5rem;
 }
 
-.shop-window__filtersorting-chips {
+.shop-window__form-chips {
   display: none;
 }
 
-.shop-window__filtersorting-chips.active {
+.shop-window__form-chips.active {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.shop-window__filtersorting-filter {
+.shop-window__form-filter {
   display: none;
   padding: 2rem 3rem;
   background-color: rgb(var(--color-primary-pale));
 }
 
-.shop-window__filtersorting-filter.active {
+.shop-window__form-filter.active {
   display: block;
   position: fixed;
   top: 0;
@@ -207,7 +220,7 @@
   z-index: var(--z-top);
 }
 
-.shop-window__filtersorting-filter-title {
+.shop-window__form-filter-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -216,15 +229,15 @@
   font-weight: 600;
 }
 
-.shop-window__filtersorting-filter-title .shop-window__filtersorting-filter-cross {
+.shop-window__form-filter-title .shop-window__form-filter-cross {
   cursor: pointer;
 }
 
-.shop-window__filtersorting-filter-filters {
+.shop-window__form-filter-filters {
   margin-bottom: 1.25rem;
 }
 
-.shop-window__filtersorting-filter-actions {
+.shop-window__form-filter-actions {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -233,7 +246,7 @@
   border-top: 1px solid rgb(var(--color-white));
 }
 
-.shop-window__filtersorting-filter-actions .btn--text {
+.shop-window__form-filter-actions .btn--text {
   padding-left: 0;
   padding-right: 0;
 }
@@ -243,14 +256,14 @@
 }
 
 .shop-window__goods,
-.shop-window__ttf {
+.shop-window__tff {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
 .shop-window__goods-items,
-.shop-window__ttf-items {
+.shop-window__tff-items {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
@@ -258,7 +271,7 @@
 }
 
 .shop-window--horizontally .shop-window__goods-items,
-.shop-window--horizontally .shop-window__ttf-items {
+.shop-window--horizontally .shop-window__tff-items {
   grid-template-columns: 1fr;
   gap: 0.5rem;
 }
@@ -328,17 +341,37 @@
     display: none;
   }
 
-  .shop-window__filtersorting-sorting.active {
+  .shop-window__actions--active .shop-window__actions-sorts .shop-window__actions-text {
+    display: block;
+  }
+
+  .shop-window__actions-text {
+    display: block;
+  }
+
+  .shop-window__actions-sorts.btn--tag-checked .shop-window__actions-icon {
+    display: block;
+  }
+
+  .shop-window__actions-icon {
+    display: block;
+  }
+
+  .shop-window__actions-icon-default {
+    display: none;
+  }
+
+  .shop-window__form-sorting.active {
     padding: 2rem 10rem;
   }
 
-  .shop-window__filtersorting-filter-actions {
+  .shop-window__form-filter-actions {
     flex-direction: row;
     justify-content: space-between;
   }
 
   .shop-window__goods-items,
-  .shop-window__ttf-items {
+  .shop-window__tff-items {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
     margin: 0;
@@ -397,7 +430,7 @@
     display: none;
   }
 
-  .shop-window__filtersorting-sorting.active {
+  .shop-window__form-sorting.active {
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, max-content);
@@ -410,38 +443,38 @@
     z-index: unset;
   }
 
-  .shop-window__filtersorting-sorting.active .shop-window__filtersorting-sorting-btn .radio__custom {
+  .shop-window__form-sorting.active .shop-window__form-sorting-btn .radio__custom {
     display: none;
   }
 
-  .shop-window__filtersorting-sorting.active .shop-window__filtersorting-sorting-btn .btn {
+  .shop-window__form-sorting.active .shop-window__form-sorting-btn .btn {
     background-color: rgb(var(--color-white));
   }
 
-  .shop-window__filtersorting-sorting.active .shop-window__filtersorting-sorting-btn .btn:hover {
+  .shop-window__form-sorting.active .shop-window__form-sorting-btn .btn:hover {
     border-color: rgb(var(--color-primary));
   }
 
-  .shop-window__filtersorting-sorting.active .shop-window__filtersorting-sorting-btn .radio input:checked + span .btn {
+  .shop-window__form-sorting.active .shop-window__form-sorting-btn .radio input:checked + span .btn {
     border-color: rgb(var(--color-primary));
   }
 
-  .shop-window__filtersorting-sorting-title {
+  .shop-window__form-sorting-title {
     display: none;
   }
 
-  .shop-window__filtersorting-sorting-btn:not(:last-child) {
+  .shop-window__form-sorting-btn:not(:last-child) {
     border-bottom: unset;
     padding-bottom: unset;
   }
 
-  .shop-window__filtersorting-filter.active {
+  .shop-window__form-filter.active {
     position: relative;
     margin-top: 1.25rem;
     z-index: unset;
   }
 
-  .shop-window__filtersorting-filter-title {
+  .shop-window__form-filter-title {
     display: none;
     margin-bottom: 0;
   }
@@ -451,12 +484,12 @@
   }
 
   .shop-window__goods,
-  .shop-window__ttf {
+  .shop-window__tff {
     grid-template-columns: 15rem 1fr;
   }
 
   .shop-window__goods-items,
-  .shop-window__ttf-items {
+  .shop-window__tff-items {
     gap: 1rem;
   }
 
@@ -491,47 +524,47 @@
     display: block;
   }
 
-  .shop-window__filtersorting-sorting.active {
+  .shop-window__form-sorting.active {
     grid-template-columns: repeat(8, max-content);
     grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
     gap: 1.25rem;
     padding: 2.5rem;
   }
 
-  .shop-window__filtersorting-sorting-btn--popular-up {
+  .shop-window__form-sorting-btn--popular-up {
     grid-area: popular-asc;
   }
 
-  .shop-window__filtersorting-sorting-btn--popular-down {
+  .shop-window__form-sorting-btn--popular-down {
     grid-area: popular-desc;
   }
 
-  .shop-window__filtersorting-sorting-btn--rate-up {
+  .shop-window__form-sorting-btn--rate-up {
     grid-area: rate-asc;
   }
 
-  .shop-window__filtersorting-sorting-btn--rate-down {
+  .shop-window__form-sorting-btn--rate-down {
     grid-area: rate-desc;
   }
 
-  .shop-window__filtersorting-sorting-btn--cost-up {
+  .shop-window__form-sorting-btn--cost-up {
     grid-area: cost-asc;
   }
 
-  .shop-window__filtersorting-sorting-btn--cost-down {
+  .shop-window__form-sorting-btn--cost-down {
     grid-area: cost-desc;
   }
 
-  .shop-window__filtersorting-sorting-btn--name-up {
+  .shop-window__form-sorting-btn--name-up {
     grid-area: name-asc;
   }
 
-  .shop-window__filtersorting-sorting-btn--name-down {
+  .shop-window__form-sorting-btn--name-down {
     grid-area: name-desc;
   }
 
   .shop-window__goods-items,
-  .shop-window__ttf-items {
+  .shop-window__tff-items {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
   }
@@ -543,42 +576,42 @@
 
 @media (min-width: 120rem) {
 
-  .shop-window__filtersorting-sorting-btn--popular-up {
+  .shop-window__form-sorting-btn--popular-up {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
   }
 
-  .shop-window__filtersorting-sorting-btn--popular-down {
+  .shop-window__form-sorting-btn--popular-down {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
   }
 
-  .shop-window__filtersorting-sorting-btn--rate-up {
+  .shop-window__form-sorting-btn--rate-up {
     -ms-grid-row: 1;
     -ms-grid-column: 5;
   }
 
-  .shop-window__filtersorting-sorting-btn--rate-down {
+  .shop-window__form-sorting-btn--rate-down {
     -ms-grid-row: 1;
     -ms-grid-column: 7;
   }
 
-  .shop-window__filtersorting-sorting-btn--cost-up {
+  .shop-window__form-sorting-btn--cost-up {
     -ms-grid-row: 1;
     -ms-grid-column: 9;
   }
 
-  .shop-window__filtersorting-sorting-btn--cost-down {
+  .shop-window__form-sorting-btn--cost-down {
     -ms-grid-row: 1;
     -ms-grid-column: 11;
   }
 
-  .shop-window__filtersorting-sorting-btn--name-up {
+  .shop-window__form-sorting-btn--name-up {
     -ms-grid-row: 1;
     -ms-grid-column: 13;
   }
 
-  .shop-window__filtersorting-sorting-btn--name-down {
+  .shop-window__form-sorting-btn--name-down {
     -ms-grid-row: 1;
     -ms-grid-column: 15;
   }

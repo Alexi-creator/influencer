@@ -61,11 +61,11 @@
   transform: unset;
 }
 
-.product-card--ttf .product-card__date {
+.product-card--tff .product-card__date {
   display: block;
 }
 
-.product-card--ttf .product-card__descr {
+.product-card--tff .product-card__descr {
   min-height: 10rem;
 }
 
