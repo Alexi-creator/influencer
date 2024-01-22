@@ -186,6 +186,13 @@
           </div>
         </div>
         <div class="shop-window__form-filter-filters filters">
+          <!-- filters__item--categories нужно добавить по дефолту -->
+          <div class="filters__item filters__item--categories">
+            @@include("./collapse.html", {
+              "title": "Категории",
+              "body": '<div class="filters__collapse"></div>',
+            })
+          </div>
           <div class="filters__item">
             @@include("./collapse.html", {
               "title": "Прайс",
@@ -492,6 +499,13 @@
           </div>
         </div>
         <div class="shop-window__form-filter-filters filters">
+          <!-- filters__item--categories нужно добавить по дефолту -->
+          <div class="filters__item filters__item--categories">
+            @@include("./collapse.html", {
+              "title": "Категории",
+              "body": '<div class="filters__collapse"></div>',
+            })
+          </div>
           <div class="filters__item">
             @@include("./collapse.html", {
               "title": "Прайс",
@@ -562,7 +576,7 @@
       <!-- Товары -->
       <div class="tabs__content" data-tab-target="goods">
         <div class="shop-window__goods">
-          <div class="shop-window__menu">@@include("./product-menu.html")</div>
+          <div class="shop-window__menu">@@include("./product-menu.html", { "name": "categories-goods" })</div>
           <div class="shop-window__goods-items">
             @@include("./product-card.html", {
               "extra-class": "",

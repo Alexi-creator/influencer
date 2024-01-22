@@ -17,6 +17,7 @@ import { Masonry } from '../modules/Masonry'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
+import { MoveCategories } from '../modules/MoveCategories'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -253,6 +254,14 @@ window.addEventListener('load', () => {
         },
     })
     })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new MoveCategories([
+      { categoriesSelector: '.shop-window__goods', filterWrapperSelector: '.shop-window__form-goods' },
+      { categoriesSelector: '.shop-window__tff', filterWrapperSelector: '.shop-window__form-tff' },
+    ])
   } catch (error) {
     console.log(error)
   }

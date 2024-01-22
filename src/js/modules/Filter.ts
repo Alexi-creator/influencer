@@ -20,7 +20,7 @@ export class Filter {
   private selectorClearBtn: string
   private selectorSubmitBtn: string
   private selectorBtnCount: string
-  // private selectorSortWrapper: string
+  
   private isOpen: boolean
 
   // dom элементы
@@ -30,7 +30,6 @@ export class Filter {
   private filtersWrapper: HTMLElement
   private chipsWrapper: HTMLElement
   private submitBtn: Element
-  // private sortWrapper: HTMLElement
   private btnCount: Element
   private filterCross: HTMLElement
   private clearBtn: HTMLElement
@@ -42,7 +41,6 @@ export class Filter {
     this.selectorContainer = selectorContainer
     this.selectorActionBtn = selectorActionBtn
 
-    // this.selectorSortWrapper = '.shop-window__form-sorting'
     this.selectorFilterWrapper = '.shop-window__form-filter',
     this.selectorFiltersWrapper = '.shop-window__form-filter-filters'
     this.selectorChips = '.shop-window__form-chips',
@@ -64,8 +62,6 @@ export class Filter {
     if (filtersWrapper) this.filtersWrapper = filtersWrapper as HTMLElement
     const chipsWrapper = this.container.querySelector(this.selectorChips)
     if (chipsWrapper) this.chipsWrapper = chipsWrapper as HTMLElement
-    // const sortWrapper = this.container.querySelector(this.selectorSortWrapper)
-    // if (sortWrapper) this.sortWrapper = sortWrapper as HTMLElement
     const btnCount = this.filterActionBtn.querySelector(this.selectorBtnCount)
     if (btnCount) this.btnCount = btnCount as HTMLElement
     const submitBtn = this.filterWrapper.querySelector(this.selectorSubmitBtn)

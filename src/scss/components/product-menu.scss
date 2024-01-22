@@ -1,3 +1,7 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
 .product-menu {
   $root: &;
 
@@ -82,5 +86,17 @@
     color: rgb(var(--color-primary));
     border-bottom: 1px solid rgb(var(--color-primary));
     font-weight: 600;
+  }
+
+  @include media($lg) {
+    & .radio__custom {
+      display: none;
+    }
+
+    & .radio input {
+      &:checked + span {
+        color: rgb(var(--color-primary));
+      }
+    }
   }
 }
