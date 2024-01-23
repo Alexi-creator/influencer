@@ -3022,7 +3022,7 @@ svg {
 
 .product-menu .product-menu__submenu {
   margin-top: 0;
-  margin-left: 1.25rem;
+  padding-left: 1.25rem;
   font-size: 1rem;
 }
 
@@ -3447,8 +3447,8 @@ svg {
 
 .shop-window__form-filter {
   display: none;
-  padding: 2rem 3rem;
-  background-color: rgb(var(--color-primary-pale));
+  padding: 1rem 1.25rem;
+  background-color: rgb(var(--color-white));
 }
 
 .shop-window__form-filter.active {
@@ -4651,8 +4651,43 @@ svg {
 
 .filters__collapse-grid {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
-  gap: 1.25rem 1.88rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: flex-start;
+}
+
+.filters__collapse .product-menu {
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.filters__collapse .product-menu__item {
+  width: 100%;
+}
+
+.filters__collapse .product-menu__item .collapse__head,
+.filters__collapse .product-menu__item .radio,
+.filters__collapse .product-menu__item .product-menu__submenu {
+  width: 100%;
+}
+
+.filters__collapse .product-menu__item .collapse__head li:not([class]),
+.filters__collapse .product-menu__item .radio li:not([class]),
+.filters__collapse .product-menu__item .product-menu__submenu li:not([class]) {
+  width: 100%;
+}
+
+.filters__collapse .product-menu__item .product-menu__title {
+  border-width: 0px;
+}
+
+.filters__collapse .radio__content {
+  border-bottom: 1px solid rgb(var(--color-black-light));
+  padding-bottom: 0.7rem;
+}
+
+.filters.shop-window__form-filter-filters .filters__item {
+  margin: 0 -1.25rem;
+  border-bottom: 1px solid rgb(var(--color-black-light));
 }
 
 .range__min,
@@ -5076,6 +5111,15 @@ svg {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .filters.shop-window__form-filter-filters .filters__item {
+    margin: 0 0 1.25rem;
+    border-bottom: 1px solid transparent;
+  }
+
+  .filters.shop-window__form-filter-filters .filters__item .collapse {
+    background-color: rgb(var(--color-primary-soft));
+  }
+
   .joint-purchases-card__title {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -5358,6 +5402,8 @@ svg {
   .shop-window__form-filter.active {
     position: relative;
     margin-top: 1.25rem;
+    padding: 2rem 3rem;
+    background-color: rgb(var(--color-primary-pale));
     z-index: unset;
   }
 
@@ -5505,6 +5551,15 @@ svg {
 
   .filters__item--categories {
     display: none;
+  }
+
+  .filters__collapse-grid {
+    grid-template-columns: repeat(3, max-content);
+    gap: 1.25rem 1.88rem;
+  }
+
+  .filters.shop-window__form-filter-filters .filters__item .collapse {
+    background-color: rgb(var(--color-white));
   }
 
   .joint-purchases-card__title {

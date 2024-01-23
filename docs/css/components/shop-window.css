@@ -204,8 +204,8 @@
 
 .shop-window__form-filter {
   display: none;
-  padding: 2rem 3rem;
-  background-color: rgb(var(--color-primary-pale));
+  padding: 1rem 1.25rem;
+  background-color: rgb(var(--color-white));
 }
 
 .shop-window__form-filter.active {
@@ -471,6 +471,8 @@
   .shop-window__form-filter.active {
     position: relative;
     margin-top: 1.25rem;
+    padding: 2rem 3rem;
+    background-color: rgb(var(--color-primary-pale));
     z-index: unset;
   }
 
