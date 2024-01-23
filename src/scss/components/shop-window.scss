@@ -412,6 +412,8 @@
 
     &-filter {
       display: none;
+      padding: 1rem 1.25rem;
+      background-color: rgb(var(--color-white));
 
       &.active {
         display: block;
@@ -428,6 +430,8 @@
         @include media($lg) {
           position: relative;
           margin-top: 1.25rem;
+          padding: 2rem 3rem;
+          background-color: rgb(var(--color-primary-pale));
           z-index: unset;
         }
       }
@@ -449,9 +453,6 @@
           margin-bottom: 0;
         }
       }
-
-      padding: 2rem 3rem;
-      background-color: rgb(var(--color-primary-pale));
 
       &-filters {
         margin-bottom: 1.25rem;
