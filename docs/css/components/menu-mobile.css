@@ -54,6 +54,11 @@
   stroke-width: 2px;
 }
 
+.nav__item-publication use {
+  stroke: rgb(var(--color-grey));
+  stroke-width: 2px;
+}
+
 .isAuth .nav__item-profile .nav__item-icon {
   display: none;
 }

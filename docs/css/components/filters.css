@@ -42,8 +42,25 @@
   width: 100%;
 }
 
+.filters__collapse .product-menu__item .radio:hover {
+  color: rgb(var(--color-black)) !important;
+}
+
+.filters__collapse .product-menu__item .radio input:checked + span .product-menu__title {
+  font-weight: 600;
+}
+
 .filters__collapse .product-menu__item .product-menu__title {
+  font-weight: 400;
   border-width: 0px;
+}
+
+.filters__collapse .product-menu__item .product-menu__title:hover {
+  color: unset;
+}
+
+.filters__collapse .product-menu__item li:not([class]):hover {
+  border-bottom: 1px solid transparent;
 }
 
 .filters__collapse .radio__content {
