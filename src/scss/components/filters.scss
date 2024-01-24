@@ -80,8 +80,29 @@
         }
       }
 
+      & .radio:hover {
+        color: rgb(var(--color-black)) !important;
+      }
+
+      & .radio {
+        & input {
+          &:checked + span .product-menu__title {
+            font-weight: 600;
+          }
+        }
+      }
+
       & .product-menu__title {
+        font-weight: 400;
         border-width: 0px;
+
+        &:hover {
+          color: unset;
+        }
+      }
+
+      & li:not([class]):hover {
+        border-bottom: 1px solid transparent;
       }
     }
 
