@@ -66,6 +66,13 @@
       }
     }
 
+    &-publication {
+      & use {
+        stroke: rgb(var(--color-grey));
+        stroke-width: 2px
+      }
+    }
+
     &-profile {
       .isAuth & #{$root}__item-icon {
         display: none;
