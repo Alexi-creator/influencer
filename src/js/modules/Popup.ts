@@ -7,19 +7,21 @@ import { BreakpointWidth } from '../constants/sizeScreen'
   Для открытия popup только на определенных разрешениях, нужно на элемент popup добавить дата атрибут media с размером data-media="1200"
 */
 export class Popup {
-  selector: string
-  popupCloseSelector: string
+  private selector: string
+  private popupCloseSelector: string
 
-  dataAttributePopup: string
-  popupOpenClass: string
-  overflowClass: string
-  popupOverlayClass: string
+  private dataAttributePopup: string
+  private dataAttributeClosePopup: string
+  private popupOpenClass: string
+  private overflowClass: string
+  private popupOverlayClass: string
 
   constructor() {
     this.selector = '.popup'
     this.popupCloseSelector = '.popup__close'
   
     this.dataAttributePopup = '[data-popup]'
+    this.dataAttributeClosePopup = '[data-close-popup]'
     this.popupOpenClass = 'popup--open'
     this.overflowClass = 'overflow'
     this.popupOverlayClass = 'popup__overlay'
@@ -76,12 +78,13 @@ export class Popup {
   }
 
   private closePopup(actionEl: HTMLElement) {   
-    const popupEl = actionEl.closest(this.selector)
+    const popupEl = actionEl.closest(this.selector) || document.getElementById(actionEl?.dataset?.closePopup || '')
 
     document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))
     popupEl?.classList.remove(this.popupOpenClass)
     document.body.classList.remove(this.overflowClass)
 
+    // TODO переделать не должно быть лишней логики
     const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')
     if (shopPreviewActionsElem) {
       shopPreviewActionsElem.classList.remove('shop-preview__actions--over')
@@ -91,8 +94,11 @@ export class Popup {
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
 
-    if (targetElement.classList.contains(this.popupOverlayClass) || targetElement.closest(this.popupCloseSelector)) {
-      return this.closePopup(targetElement)     
+    if (targetElement.classList.contains(this.popupOverlayClass) ||
+      targetElement.closest(this.popupCloseSelector) ||
+      targetElement.closest(this.dataAttributeClosePopup)
+    ) {
+      return this.closePopup(targetElement)
     }
 
     if (targetElement.closest(this.dataAttributePopup)) {

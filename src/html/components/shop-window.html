@@ -190,7 +190,7 @@
           <div class="filters__item filters__item--categories">
             @@include("./collapse.html", {
               "title": "Категории",
-              "body": '<div class="filters__collapse"></div>',
+              "body": '<div class="filters__collapse"><div id="category-goods" class="popup"><div class="popup__overlay"><div class="popup__content"><div class="filters__item-header"><svg data-close-popup="category-goods"><use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use></svg><span>Все категории товаров</span><svg data-close-popup="category-goods"><use xlink:href="./img/icons/icons.svg#cross"></use></svg></div>@@include("./product-menu.html", {"name": "categories-goods"})</div></div></div><div class="btn btn--text" data-popup="category-goods">Все категории</div></div>',
             })
           </div>
           <div class="filters__item">
@@ -348,56 +348,44 @@
         <div class="shop-window__form-filter-filters filters filters--sp">
           <div class="filters__item">
             @@include("./collapse.html", {
-              "title": "Прайс",
-              "body": '<div class="filters__collapse">@@include("./range-slider.html", { "minName": "rangemin", "maxName": "rangemax", "minValue": "200000", "maxValue": "500000", "min": "0", "max": "1000000", "currencySymbol": "&#8381;", "step": "1000" })</div>',
+              "title": "Платья и сарафаны",
+              "body": '<div class="filters__collapse filters__collapse-wrap">@@include("./checkbox.html", { "name": "0size38", "text": "Вечерние платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Деловые платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Сарафаны", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Экстравагантные дизайнерские платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" })</div>',
             })
           </div>
           <div class="filters__item">
             @@include("./collapse.html", {
-              "title": "Размер0",
-              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "0size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "0size42", "text": "42", "mod": "", "classes": "" })</div>',
+              "title": "Платья и сарафаны2",
+              "body": '<div class="filters__collapse filters__collapse-wrap">@@include("./checkbox.html", { "name": "0size38", "text": "Вечерние платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Деловые платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Сарафаны", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Экстравагантные дизайнерские платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Юбки", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" })</div>',
             })
           </div>
           <div class="filters__item">
             @@include("./collapse.html", {
-              "title": "Размер10",
-              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "10size38", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "10size42", "text": "42", "mod": "", "classes": "" })</div>',
+              "title": "Платья и сарафаны3",
+              "body": '<div class="filters__collapse filters__collapse-wrap">@@include("./checkbox.html", { "name": "0size38", "text": "Вечерние платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Деловые платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Сарафаны", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Экстравагантные дизайнерские платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Юбки", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" })</div>',
             })
           </div>
           <div class="filters__item">
             @@include("./collapse.html", {
-              "title": "Размер",
-              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "size42", "text": "42", "mod": "", "classes": "" })</div>',
+              "title": "Платья и сарафаны4",
+              "body": '<div class="filters__collapse filters__collapse-wrap">@@include("./checkbox.html", { "name": "0size38", "text": "Вечерние платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Деловые платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Сарафаны", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Экстравагантные дизайнерские платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Юбки", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" })</div>',
             })
           </div>
           <div class="filters__item">
             @@include("./collapse.html", {
-              "title": "Специальные предложение",
-              "body": '<div class="filters__collapse">@@include("./checkbox.html", { "name": "specials36", "text": "Test For Free", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials38", "text": "Совместная Покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials40", "text": "Благотворительная покупка", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "specials42", "text": "Акция “2 по цене 1”", "mod": "", "classes": "" })</div>',
+              "title": "Платья и сарафаны5",
+              "body": '<div class="filters__collapse filters__collapse-wrap">@@include("./checkbox.html", { "name": "0size38", "text": "Вечерние платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Деловые платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Сарафаны", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Экстравагантные дизайнерские платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Юбки", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" })</div>',
             })
           </div>
           <div class="filters__item">
             @@include("./collapse.html", {
-              "title": "Размер2",
-              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "2size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "2size42", "text": "42", "mod": "", "classes": "" })</div>',
+              "title": "Платья и сарафаны6",
+              "body": '<div class="filters__collapse filters__collapse-wrap">@@include("./checkbox.html", { "name": "0size38", "text": "Вечерние платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Деловые платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Сарафаны", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Экстравагантные дизайнерские платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Юбки", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" })</div>',
             })
           </div>
           <div class="filters__item">
             @@include("./collapse.html", {
-              "title": "Размер3",
-              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "3size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "3size42", "text": "42", "mod": "", "classes": "" })</div>',
-            })
-          </div>
-          <div class="filters__item">
-            @@include("./collapse.html", {
-              "title": "Размер4",
-              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "4size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "4size42", "text": "42", "mod": "", "classes": "" })</div>',
-            })
-          </div>
-          <div class="filters__item">
-            @@include("./collapse.html", {
-              "title": "Размер5",
-              "body": '<div class="filters__collapse filters__collapse-grid">@@include("./checkbox.html", { "name": "5size36", "text": "36", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size38", "text": "38", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size40", "text": "40", "mod": "", "classes": "" }) @@include("./checkbox.html", { "name": "5size42", "text": "42", "mod": "", "classes": "" })</div>',
+              "title": "Платья и сарафаны7",
+              "body": '<div class="filters__collapse filters__collapse-wrap">@@include("./checkbox.html", { "name": "0size38", "text": "Вечерние платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Деловые платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Сарафаны", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Экстравагантные дизайнерские платья", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" }) @@include("./checkbox.html", { "name": "0size38", "text": "Юбки", "mod": "checkbox--tag", "classes": "btn btn--tag btn--small" })</div>',
             })
           </div>
         </div>
@@ -503,7 +491,7 @@
           <div class="filters__item filters__item--categories">
             @@include("./collapse.html", {
               "title": "Категории",
-              "body": '<div class="filters__collapse"></div>',
+              "body": '<div class="filters__collapse"><div id="category-tff" class="popup"><div class="popup__overlay"><div class="popup__content"><div class="filters__item-header"><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use></svg><span>Все категории товаров</span><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#cross"></use></svg></div>@@include("./product-menu.html", {"name": "categories-tff"})</div></div></div><div class="btn btn--text" data-popup="category-tff">Все категории</div></div>',
             })
           </div>
           <div class="filters__item">
