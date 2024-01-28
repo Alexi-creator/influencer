@@ -17,7 +17,7 @@ import { Masonry } from '../modules/Masonry'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
-import { MoveCategories } from '../modules/MoveCategories'
+import { SyncCategories } from '../modules/SyncCategories'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -258,10 +258,7 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new MoveCategories([
-      { categoriesSelector: '.shop-window__goods', filterWrapperSelector: '.shop-window__form-goods' },
-      { categoriesSelector: '.shop-window__tff', filterWrapperSelector: '.shop-window__form-tff' },
-    ])
+    new SyncCategories()
   } catch (error) {
     console.log(error)
   }
