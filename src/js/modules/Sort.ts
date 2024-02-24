@@ -11,7 +11,7 @@ export class Sort {
 
   private selectorSortingWrapper: string
   private selectorCross: string
-  private selectorClearSort: string
+  private selectorIconBtn: string
 
   private isSelected: boolean
   private isOpen: boolean
@@ -35,7 +35,7 @@ export class Sort {
 
     this.selectorSortingWrapper = '.shop-window__form-sorting'
     this.selectorCross = '.shop-window__form-sorting-cross'
-    this.selectorClearSort = '.shop-window__actions-icon-cross'
+    this.selectorIconBtn = '.shop-window__actions-icon'
     
     
     const container = document.querySelector(this.selectorContainer)
@@ -164,7 +164,7 @@ export class Sort {
     const targetElement = e.target as HTMLElement
 
     // клик по крестику в кнопке сортировки (сброс сортировок)      
-    if (targetElement.closest(this.selectorClearSort) && this.sortingActionBtn.contains(targetElement)) {    
+    if (targetElement.closest(this.selectorIconBtn) && this.sortingActionBtn.contains(targetElement)) {    
       return this.clearSort()
     }
     // открытие / зыкрытие блока с сортировкой
