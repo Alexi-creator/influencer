@@ -72,6 +72,10 @@
       background-color: transparent;
       border-radius: unset;
     }
+
+    & svg {
+      fill: rgb(var(--color-grey));
+    }
   }
 
   &--open {
@@ -80,6 +84,12 @@
 
       @include media($lg) {
         animation: slide-in 0.4s forwards;
+      }
+    }
+
+    #{$root}__open {
+      @include media($lg) {
+        display: none;
       }
     }
   }
@@ -104,6 +114,10 @@
     & .popup__overlay {
       animation: slide-out 0.4s forwards;
     }
+  }
+
+  & .popup__content {
+    border-radius: var(--radius-medium);
   }
 }
 

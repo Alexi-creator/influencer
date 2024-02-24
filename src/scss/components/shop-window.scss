@@ -174,8 +174,6 @@
     }
 
     &-categories, &-filters, &-sorts, &-density {
-      // display: none;
-
       &--active {
         display: inline-flex;
       }
@@ -192,13 +190,18 @@
     }
 
     &-sorts {
-      &.btn--tag-checked {
-        #{$root}__actions-icon {
-          display: none;
+      #{$root}__actions-icon-cross {
+        display: none;
+        fill: rgb(var(--color-black));
+      }
 
-          @include media($md) {
-            display: block;
-          }
+      &.active {
+        #{$root}__actions-icon-cross {
+          display: block;
+        }
+
+        #{$root}__actions-icon-common {
+          display: none;
         }
       }
     }
@@ -237,8 +240,6 @@
     }
 
     &-icon {
-      // display: none;
-
       @include media($md) {
         display: block;
       } 
@@ -346,6 +347,7 @@
 
         #{$root}__form-sorting-cross {
           cursor: pointer;
+          fill: rgb(var(--color-grey))
         }
 
         @include media($lg) {

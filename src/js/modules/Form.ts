@@ -1,6 +1,4 @@
-import { IOptions } from '../utils/request'
-
-import { request } from '../utils'
+import { request, IOptions } from '../utils'
 import { HttpMethods } from '../constants'
 
 /**

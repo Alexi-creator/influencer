@@ -33,7 +33,7 @@
       overflow: hidden;
 
       & img {
-        border-radius: var(--radius-lg);
+        border-radius: var(--radius-medium);
       }
     }
 
@@ -46,6 +46,10 @@
     @include media($lg) {
       max-width: 35.5rem;
       width: 100%;
+    }
+
+    @include media($full) {
+      max-width: 45.5rem;
     }
   }
 

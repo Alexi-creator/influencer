@@ -109,7 +109,7 @@ window.addEventListener('load', () => {
   try {
     new Sort({
       selectorContainer: '.shop-window__form-goods',
-      selectorActionBtn: '.shop-window__actions-goods .shop-window__actions-sorts',
+      selectorActionContainer: '.shop-window__actions-goods',
     })
   } catch (error) {
     console.log(error)
@@ -117,7 +117,7 @@ window.addEventListener('load', () => {
   try {
     new Sort({
       selectorContainer: '.shop-window__form-sp',
-      selectorActionBtn: '.shop-window__actions-sp .shop-window__actions-sorts',
+      selectorActionContainer: '.shop-window__actions-sp',
     })
   } catch (error) {
     console.log(error)
@@ -125,7 +125,7 @@ window.addEventListener('load', () => {
   try {
     new Sort({
       selectorContainer: '.shop-window__form-tff',
-      selectorActionBtn: '.shop-window__actions-tff .shop-window__actions-sorts',
+      selectorActionContainer: '.shop-window__actions-tff',
     })
   } catch (error) {
     console.log(error)
