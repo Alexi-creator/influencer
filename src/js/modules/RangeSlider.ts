@@ -28,6 +28,8 @@ export class RangeSlider {
   selectorMinInput: string
   selectorMaxInput: string
 
+  changeEvent: Event
+
   allSliders: Map<HTMLElement, ISettingsSlider>
 
   constructor() {
@@ -74,6 +76,8 @@ export class RangeSlider {
       })
     })
 
+    this.changeEvent = new Event('change', { bubbles: true })
+
     this.init()
   }
 
@@ -88,8 +92,21 @@ export class RangeSlider {
 
     if (settingsSlider && settingsSlider.inputsElem) {
       const [startInputElem, endInputElem] = settingsSlider.inputsElem
+
+      let changeMin = false
+      let changeMax = false
+      if (startInputElem.value !== startVal.split('.')[0]) {
+        changeMin = true
+      }
+      if (endInputElem.value !== endVal.split('.')[0]) {
+        changeMax = true
+      }
+
       startInputElem.value = startVal.split('.')[0]
       endInputElem.value = endVal.split('.')[0]
+
+      if (changeMin) startInputElem.dispatchEvent(this.changeEvent)
+      if (changeMax) endInputElem.dispatchEvent(this.changeEvent)
     }
   }
 

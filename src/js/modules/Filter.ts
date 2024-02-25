@@ -108,25 +108,33 @@ export class Filter {
   }
 
   private collectionOptions() {
-    if (this.filtersWrapper) {
-      this.filters = Array.from(this.filtersWrapper.querySelectorAll('.filters__item')).reduce((acc, filter) => {
-        const title = filter.querySelector('.collapse__head-title')?.textContent?.trim()
-        const selectedOptions = Array.from(filter.querySelectorAll('input[type="checkbox"]:checked'))
-          .map(item => {
-            return item.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
-          }).sort() || []
+    this.filters = Array.from(this.filtersWrapper.querySelectorAll('.filters__item')).reduce((acc, filter) => {
+      const title = filter.querySelector('.collapse__head-title')?.textContent?.trim()
+      const selectedOptionsCheckbox = Array.from(filter.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(item => {
+          return item.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
+        }).sort() || []
 
-        if (title) acc[title] = {
-          selectedOptions,
-          moreCount: selectedOptions.length - 3,
-        }
+      // для checkbox
+      if (title) acc[title] = {
+        selectedOptions: selectedOptionsCheckbox,
+        moreCount: selectedOptionsCheckbox.length - 3,
+      }
 
-        return acc
-      }, {})
+      // const selectedRangeMin = filter.querySelector('input[data-min]') as HTMLInputElement
+      // const selectedRangeMax = filter.querySelector('input[data-max]') as HTMLInputElement
+      
+      // // для ползунка прайса
+      // if (title && (selectedRangeMin || selectedRangeMax)) acc[title] = {
+      //   selectedOptions: [`от ${selectedRangeMin?.value} до ${selectedRangeMax?.value}`],
+      //   moreCount: 0,
+      // }
 
-      this.displayChips()
-      this.changeCount()
-    }
+      return acc
+    }, {})
+
+    this.displayChips()
+    this.changeCount()
   }
 
   private changeCount() {
@@ -159,6 +167,7 @@ export class Filter {
     
     const title = targetElement.closest('.collapse')?.querySelector('.collapse__head-title')?.textContent?.trim()
     const option = targetElement.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
+    const range = targetElement.classList.contains('range__input')
     
     if (title && option) {
       const options = this.filters[title].selectedOptions
@@ -170,14 +179,27 @@ export class Filter {
       }
   
       this.filters[title].moreCount = this.filters[title].selectedOptions.length - 3
+    }
 
-      if (this.chipsWrapper) {
-        this.chipsWrapper.innerHTML = ''
-        this.displayChips()
-        this.toggleChips()
-        this.changeCount()
+    // для ползунка
+    if (range && title) {
+      const value = targetElement.value
+
+      if ('min' in targetElement.dataset) {
+        const maxValue = targetElement.closest('.range__inputs')?.querySelector<HTMLInputElement>('.range__input-max')?.value
+        this.filters[title].selectedOptions = [`от ${value} до ${maxValue}`]
+      }
+
+      if ('max' in targetElement.dataset) {
+        const minValue = targetElement.closest('.range__inputs')?.querySelector<HTMLInputElement>('.range__input-min')?.value
+        this.filters[title].selectedOptions = [`от ${minValue} до ${value}`]
       }
     }
+
+    this.chipsWrapper.innerHTML = ''
+    this.displayChips()
+    this.toggleChips()
+    this.changeCount()
   }
 
   private displayChips() {
@@ -293,10 +315,7 @@ export class Filter {
 
   private changeHandler(e: Event) {
     const targetElement = e.target as HTMLInputElement
-
-    if (this.filtersWrapper.contains(targetElement)) {
-      this.changeOptions(targetElement)
-    }
+    this.changeOptions(targetElement)
   }
 
   private handlers() {
