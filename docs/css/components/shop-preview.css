@@ -154,7 +154,7 @@
   }
 
   .shop-preview__block-img img {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-medium);
   }
 
   .shop-preview__block-descr {
@@ -188,6 +188,10 @@
 @media (min-width: 120rem) {
   .shop-preview {
     align-items: center;
+  }
+
+  .shop-preview__block-descr {
+    max-width: 45.5rem;
   }
 
   .shop-preview__title {

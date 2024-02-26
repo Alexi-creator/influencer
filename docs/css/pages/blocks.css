@@ -158,6 +158,7 @@ button {
   --color-red: 221, 94, 94;
   --max-width-container: 106rem;
   --transition-base: all 0.2s linear;
+  --transition-base-without-prop: 0.2s linear;
   --z-fixed: 100;
   --z-popup: 1000;
   --z-over: 1010;
@@ -238,6 +239,11 @@ button {
 .btn.btn--color-primary-light {
   background-color: rgb(var(--color-primary-soft));
   color: rgb(var(--color-primary));
+}
+
+.btn.btn--color-primary-light-text-black {
+  background-color: rgb(var(--color-primary-soft));
+  color: rgb(var(--color-black));
 }
 
 .btn.btn--color-grey {
@@ -329,23 +335,26 @@ button {
 .badge {
   display: inline-flex;
   align-items: center;
+  height: 2rem;
+  padding: 0 0.5rem;
   background-color: rgb(var(--color-primary));
   border: 2px solid;
   border-radius: var(--radius-medium);
   border-color: rgb(var(--color-white));
   color: rgb(var(--color-white));
-  padding: 0.35rem 0.5rem;
   font-family: BebasNeue;
   font-size: 1.125rem;
   line-height: 1.125rem;
 }
 
 .badge--big {
-  padding: 0.85rem 1.25rem;
+  padding: 0 1.25rem;
+  height: 3rem;
 }
 
 .badge--round {
-  padding: 0.25rem 0.75rem;
+  height: 1.75rem;
+  padding: 0 0.75rem;
   font-size: 0.875rem;
   border-radius: var(--radius-round);
   line-height: 1.33;
@@ -356,6 +365,8 @@ button {
 }
 
 .badge--font-commissioner {
+  height: 2rem;
+  font-size: 1.125rem;
   font-family: Commissioner;
   font-weight: 600;
 }
@@ -375,10 +386,6 @@ button {
   color: rgb(var(--color-green));
 }
 
-.badge--icon {
-  padding: 0.4rem;
-}
-
 .badge svg {
   width: 1rem;
   height: 1rem;
@@ -392,11 +399,10 @@ button {
 }
 
 .badge__sub {
-  display: flex;
-  align-self: flex-end;
   font-size: 0.625rem;
   line-height: 0.625rem;
   margin-right: 0.12rem;
+  transform: translateY(25%);
 }
 
 .input-text {
@@ -759,8 +765,17 @@ button {
   padding: 0 1.25rem;
   background-color: rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
+  border: solid;
+  border-color: transparent;
+  border-width: 2px;
+  transition: border-color var(--transition-base-without-prop);
 }
 
+.chip:hover {
+  border-color: rgb(var(--color-primary));
+}
+
+.chip__title,
 .chip__more {
   color: rgb(var(--color-grey));
 }
@@ -768,6 +783,7 @@ button {
 .chip__cross {
   margin-left: 0.25rem;
   cursor: pointer;
+  fill: rgb(var(--color-grey));
 }
 
 .noUi-horizontal {
@@ -1265,11 +1281,6 @@ svg {
     margin: 1.25rem auto;
   }
 
-  .badge--round {
-    padding: 0.4rem 1.25rem;
-    font-size: 1.125rem;
-  }
-
   .nav__list {
     gap: 2.5rem;
   }
@@ -1340,6 +1351,17 @@ svg {
 
   .hr {
     margin: 2.5rem auto;
+  }
+
+  .badge {
+    height: 2.75rem;
+    font-size: 1.5rem;
+  }
+
+  .badge--round {
+    height: 2.5rem;
+    padding: 0 1.25rem;
+    font-size: 1.125rem;
   }
 
   .nav {

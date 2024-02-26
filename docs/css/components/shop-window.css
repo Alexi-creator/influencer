@@ -62,10 +62,6 @@
   width: max-content;
 }
 
-.shop-window__actions--active .shop-window__actions-text {
-  display: none;
-}
-
 .shop-window__actions--active .shop-window__actions-density {
   margin-left: none;
 }
@@ -87,15 +83,49 @@
   display: inline-flex;
 }
 
-.shop-window__actions-filters-count {
+.shop-window__actions-filters .shop-window__actions-icon--cross,
+.shop-window__actions-categories .shop-window__actions-icon--cross,
+.shop-window__actions-sorts .shop-window__actions-icon--cross {
   display: none;
+  fill: rgb(var(--color-black));
 }
 
-.shop-window__actions-filters-count--active {
+.shop-window__actions-filters.active.btn,
+.shop-window__actions-categories.active.btn,
+.shop-window__actions-sorts.active.btn {
+  border-color: transparent;
+  background-color: rgb(var(--color-primary-pale));
+}
+
+.shop-window__actions-filters.active.btn .shop-window__actions-icon--cross,
+.shop-window__actions-categories.active.btn .shop-window__actions-icon--cross,
+.shop-window__actions-sorts.active.btn .shop-window__actions-icon--cross {
   display: block;
 }
 
-.shop-window__actions-sorts.btn--tag-checked .shop-window__actions-icon {
+.shop-window__actions-filters.active.btn .shop-window__actions-icon--common,
+.shop-window__actions-categories.active.btn .shop-window__actions-icon--common,
+.shop-window__actions-sorts.active.btn .shop-window__actions-icon--common {
+  display: none;
+}
+
+.shop-window__actions-filters-count,
+.shop-window__actions-categories-count {
+  display: none;
+}
+
+.shop-window__actions-filters.btn--tag:not(.active) .shop-window__actions-filters-count,
+.shop-window__actions-categories.btn--tag:not(.active) .shop-window__actions-filters-count {
+  display: block;
+}
+
+.shop-window__actions-filters.hide-icon.btn .shop-window__actions-icon--common,
+.shop-window__actions-categories.hide-icon.btn .shop-window__actions-icon--common {
+  display: none;
+}
+
+.shop-window__actions-filters.hide-count.btn .shop-window__actions-filters-count,
+.shop-window__actions-categories.hide-count.btn .shop-window__actions-filters-count {
   display: none;
 }
 
@@ -180,6 +210,7 @@
 
 .shop-window__form-sorting-title .shop-window__form-sorting-cross {
   cursor: pointer;
+  fill: rgb(var(--color-grey));
 }
 
 .shop-window__form-sorting .btn {
@@ -346,10 +377,6 @@
   }
 
   .shop-window__actions-text {
-    display: block;
-  }
-
-  .shop-window__actions-sorts.btn--tag-checked .shop-window__actions-icon {
     display: block;
   }
 

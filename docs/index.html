@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20240128195050">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20240226074045">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20240128195050"></script>
+  <script defer src="js/index.min.js?_v=20240226074045"></script>
 </head>
   <body>
     <header class="header">
@@ -272,12 +272,12 @@
       <div class="popup__content">
         <div class="share__block">
           <div class="share__block-head">
+            Поделиться
             <div class="share__close popup__close">
               <svg>
                 <use xlink:href="./img/icons/icons.svg#cross"></use>
               </svg>
             </div>
-            Поделиться
           </div>
           <ul class="share__list">
             <li>
@@ -357,15 +357,21 @@
     <div class="shop-window__actions shop-window__actions-goods">
       <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка G</div>
-        <svg class="shop-window__actions-icon">
+        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
       </div>
       <div class="shop-window__actions-filters shop-window__actions-filters-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Фильтры G</div>
         <div class="shop-window__actions-filters-icon">
-          <svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
             <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
         <div class="shop-window__actions-filters-count"></div>
@@ -383,15 +389,21 @@
     <div class="shop-window__actions shop-window__actions-sp">
       <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка SP</div>
-        <svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
       </div>
       <div class="shop-window__actions-categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Категории SP</div>
         <div class="shop-window__actions-filters-icon">
-          <svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
             <use xlink:href="./img/icons/icons.svg#categories"></use>
+          </svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
         <div class="shop-window__actions-filters-count"></div>
@@ -401,15 +413,21 @@
     <div class="shop-window__actions shop-window__actions-tff">
       <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка TFF</div>
-        <svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
       </div>
       <div class="shop-window__actions-filters shop-window__actions-filters-tff btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Фильтры TFF</div>
         <div class="shop-window__actions-filters-icon">
-          <svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
             <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
         <div class="shop-window__actions-filters-count"></div>
@@ -599,11 +617,9 @@
   <input name="categories-goods" type="radio" value="cloth-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 1<span class="product-menu__count product-menu__count">1200</span></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
   </span>
 </label>
-      <!-- Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -613,11 +629,9 @@
   <input name="categories-goods" type="radio" value="cloth-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
   </span>
 </label>
-          <!-- Одежда level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -626,30 +640,27 @@
   <input name="categories-goods" type="radio" value="cloth-level-3-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -660,11 +671,9 @@
   <input name="categories-goods" type="radio" value="cloth-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
   </span>
 </label>
-          <!-- Одежда level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -673,30 +682,27 @@
   <input name="categories-goods" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -709,11 +715,9 @@
   <input name="categories-goods" type="radio" value="shoes-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 1</span>
   </span>
 </label>
-      <!-- Обувь level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -723,11 +727,9 @@
   <input name="categories-goods" type="radio" value="shoes-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
   </span>
 </label>
-          <!-- Обувь level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -736,30 +738,27 @@
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -770,11 +769,9 @@
   <input name="categories-goods" type="radio" value="shoes-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
   </span>
 </label>
-          <!-- Обувь level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -783,30 +780,27 @@
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -819,11 +813,9 @@
   <input name="categories-goods" type="radio" value="Appliances-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
   </span>
 </label>
-      <!-- Бытовая техника level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -833,11 +825,9 @@
   <input name="categories-goods" type="radio" value="Appliances-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -846,30 +836,27 @@
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
@@ -880,11 +867,9 @@
   <input name="categories-goods" type="radio" value="Appliances-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -893,131 +878,34 @@
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
-
-<!-- <ul class="product-menu">
-  <li class="product-menu__item collapse">
-    <div class="product-menu__title collapse__head">
-      Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Обувь level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Бытовая техника level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul> --></div></div></div><div class="btn btn--text" data-popup="category-goods">Все категории</div></div>
+</div></div></div><div class="btn btn--text" data-popup="category-goods">Все категории</div></div>
   </div>
 </div>
           </div>
@@ -2234,11 +2122,9 @@
   <input name="categories-tff" type="radio" value="cloth-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 1<span class="product-menu__count product-menu__count">1200</span></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
   </span>
 </label>
-      <!-- Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -2248,11 +2134,9 @@
   <input name="categories-tff" type="radio" value="cloth-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
   </span>
 </label>
-          <!-- Одежда level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -2261,30 +2145,27 @@
   <input name="categories-tff" type="radio" value="cloth-level-3-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -2295,11 +2176,9 @@
   <input name="categories-tff" type="radio" value="cloth-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
   </span>
 </label>
-          <!-- Одежда level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -2308,30 +2187,27 @@
   <input name="categories-tff" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -2344,11 +2220,9 @@
   <input name="categories-tff" type="radio" value="shoes-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 1</span>
   </span>
 </label>
-      <!-- Обувь level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -2358,11 +2232,9 @@
   <input name="categories-tff" type="radio" value="shoes-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
   </span>
 </label>
-          <!-- Обувь level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -2371,30 +2243,27 @@
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -2405,11 +2274,9 @@
   <input name="categories-tff" type="radio" value="shoes-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
   </span>
 </label>
-          <!-- Обувь level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -2418,30 +2285,27 @@
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -2454,11 +2318,9 @@
   <input name="categories-tff" type="radio" value="Appliances-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
   </span>
 </label>
-      <!-- Бытовая техника level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -2468,11 +2330,9 @@
   <input name="categories-tff" type="radio" value="Appliances-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -2481,30 +2341,27 @@
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
@@ -2515,11 +2372,9 @@
   <input name="categories-tff" type="radio" value="Appliances-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -2528,131 +2383,34 @@
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
-
-<!-- <ul class="product-menu">
-  <li class="product-menu__item collapse">
-    <div class="product-menu__title collapse__head">
-      Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Обувь level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Бытовая техника level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul> --></div></div></div><div class="btn btn--text" data-popup="category-tff">Все категории</div></div>
+</div></div></div><div class="btn btn--text" data-popup="category-tff">Все категории</div></div>
   </div>
 </div>
           </div>
@@ -3214,11 +2972,9 @@
   <input name="categories-goods" type="radio" value="cloth-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 1<span class="product-menu__count product-menu__count">1200</span></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
   </span>
 </label>
-      <!-- Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -3228,11 +2984,9 @@
   <input name="categories-goods" type="radio" value="cloth-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
   </span>
 </label>
-          <!-- Одежда level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -3241,30 +2995,27 @@
   <input name="categories-goods" type="radio" value="cloth-level-3-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -3275,11 +3026,9 @@
   <input name="categories-goods" type="radio" value="cloth-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
   </span>
 </label>
-          <!-- Одежда level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -3288,30 +3037,27 @@
   <input name="categories-goods" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -3324,11 +3070,9 @@
   <input name="categories-goods" type="radio" value="shoes-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 1</span>
   </span>
 </label>
-      <!-- Обувь level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -3338,11 +3082,9 @@
   <input name="categories-goods" type="radio" value="shoes-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
   </span>
 </label>
-          <!-- Обувь level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -3351,30 +3093,27 @@
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -3385,11 +3124,9 @@
   <input name="categories-goods" type="radio" value="shoes-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
   </span>
 </label>
-          <!-- Обувь level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -3398,30 +3135,27 @@
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -3434,11 +3168,9 @@
   <input name="categories-goods" type="radio" value="Appliances-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
   </span>
 </label>
-      <!-- Бытовая техника level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -3448,11 +3180,9 @@
   <input name="categories-goods" type="radio" value="Appliances-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -3461,30 +3191,27 @@
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
@@ -3495,11 +3222,9 @@
   <input name="categories-goods" type="radio" value="Appliances-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -3508,131 +3233,34 @@
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-goods" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
-
-<!-- <ul class="product-menu">
-  <li class="product-menu__item collapse">
-    <div class="product-menu__title collapse__head">
-      Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Обувь level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Бытовая техника level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul> --></div>
+</div>
           <div class="shop-window__goods-items">
             <a class="product-card " href="#">
   <div class="product-card__img">
@@ -3659,7 +3287,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -3734,7 +3362,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -3809,7 +3437,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -3884,7 +3512,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -3959,7 +3587,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -4034,7 +3662,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -4653,11 +4281,9 @@
   <input name="categories-tff" type="radio" value="cloth-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 1<span class="product-menu__count product-menu__count">1200</span></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
   </span>
 </label>
-      <!-- Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -4667,11 +4293,9 @@
   <input name="categories-tff" type="radio" value="cloth-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
   </span>
 </label>
-          <!-- Одежда level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -4680,30 +4304,27 @@
   <input name="categories-tff" type="radio" value="cloth-level-3-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
   </span>
 </label>
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -4714,11 +4335,9 @@
   <input name="categories-tff" type="radio" value="cloth-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
   </span>
 </label>
-          <!-- Одежда level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -4727,30 +4346,27 @@
   <input name="categories-tff" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="cloth-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Одежда level 3</span>
   </span>
 </label>  
-            <!-- Одежда level 3 -->
           </li>
         </ul>
       </li>
@@ -4763,11 +4379,9 @@
   <input name="categories-tff" type="radio" value="shoes-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 1</span>
   </span>
 </label>
-      <!-- Обувь level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -4777,11 +4391,9 @@
   <input name="categories-tff" type="radio" value="shoes-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
   </span>
 </label>
-          <!-- Обувь level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -4790,30 +4402,27 @@
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -4824,11 +4433,9 @@
   <input name="categories-tff" type="radio" value="shoes-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
   </span>
 </label>
-          <!-- Обувь level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -4837,30 +4444,27 @@
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="shoes-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Обувь level 3</span>
   </span>
 </label>  
-            <!-- Обувь level 3 -->
           </li>
         </ul>
       </li>
@@ -4873,11 +4477,9 @@
   <input name="categories-tff" type="radio" value="Appliances-level-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
   </span>
 </label>
-      <!-- Бытовая техника level 1 -->
-      <!-- <span class="product-menu__count product-menu__count"></span> -->
     </div>
     <ul class="product-menu__submenu collapse__content">
       <!-- Элементы второго уровня -->
@@ -4887,11 +4489,9 @@
   <input name="categories-tff" type="radio" value="Appliances-level-2-1">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-1<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-1 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -4900,30 +4500,27 @@
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
@@ -4934,11 +4531,9 @@
   <input name="categories-tff" type="radio" value="Appliances-level-2-2">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-2<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
   </span>
 </label>
-          <!-- Бытовая техника level 2-2 -->
-          <!-- <span class="product-menu__count product-menu__count"></span> -->
         </div>
         <ul class="product-menu__submenu collapse__content">
           <!-- Элементы третьего уровня -->
@@ -4947,131 +4542,34 @@
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
           <li>
             <label class="radio radio--">
   <input name="categories-tff" type="radio" value="Appliances-level-3">
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3<span class="product-menu__count product-menu__count"></span></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
   </span>
 </label>
-            <!-- Бытовая техника level 3 -->
           </li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
-
-<!-- <ul class="product-menu">
-  <li class="product-menu__item collapse">
-    <div class="product-menu__title collapse__head">
-      Одежда level 1
-      <span class="product-menu__count product-menu__count">1200</span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Одежда level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-          <li>Одежда level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Обувь level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Обувь level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-          <li>Обувь level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="product-menu__title collapse__head">
-      Бытовая техника level 1
-      <span class="product-menu__count product-menu__count"></span>
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-1
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-      <li class="product-menu__item collapse collapse--close">
-        <div class="product-menu__title collapse__head">
-          Бытовая техника level 2-2
-          <span class="product-menu__count product-menu__count"></span>
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-          <li>Бытовая техника level 3</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul> --></div>
+</div>
           <div class="shop-window__tff-items">
             <a class="product-card product-card--tff product-card--application-submitted" href="#">
   <div class="product-card__img">
@@ -5100,7 +4598,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -5177,7 +4675,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -5254,7 +4752,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -5329,7 +4827,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -5404,7 +4902,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">
@@ -5479,7 +4977,7 @@
         <div class="badge ">
   <span class="badge__sub">до</span>-50%
 </div>
-        <div class="badge badge--icon">
+        <div class="badge ">
   <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
 </div>
         <div class="badge ">

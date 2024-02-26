@@ -57,6 +57,10 @@
   border-radius: var(--radius-round);
 }
 
+.share__close svg {
+  fill: rgb(var(--color-grey));
+}
+
 .share--open .share__block {
   height: auto;
 }
@@ -71,6 +75,10 @@
 
 .share--close .popup__overlay {
   animation: slide-out 0.4s forwards;
+}
+
+.share .popup__content {
+  border-radius: var(--radius-medium);
 }
 
 @keyframes slide-in {
@@ -131,5 +139,9 @@
 @media (min-width: 75rem) {
   .share--open .share__block {
     animation: slide-in 0.4s forwards;
+  }
+
+  .share--open .share__open {
+    display: none;
   }
 }
