@@ -49,6 +49,11 @@
     font-size: 1.125rem;
     font-family: Commissioner;
     font-weight: 600;
+
+    @include media($lg) {
+      height: 2rem;
+      font-size: 1.125rem;
+    }
   }
 
   &--color-primary-light {
