@@ -22,7 +22,6 @@ export class Collapse {
       if (parent.classList.contains('collapse--close')) {
         parent.classList.remove('collapse--close')
         parent.classList.add('collapse--open')
-        parent.classList.remove('collapse--open')
       }
       else if (parent?.classList.contains('collapse--open')) {
         parent.classList.remove('collapse--open')

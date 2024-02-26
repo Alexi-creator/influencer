@@ -20,6 +20,8 @@ export class Filter {
   private selectorClearBtn: string
   private selectorSubmitBtn: string
   private selectorBtnCount: string
+  private selectorIconCross: string
+  private selectedCount: number
   
   private isOpen: boolean
 
@@ -49,6 +51,7 @@ export class Filter {
     this.selectorClearBtn = '.shop-window__form-filter-clear'
     this.selectorSubmitBtn = '.shop-window__form-filter-submit'
     this.selectorBtnCount = '.shop-window__actions-filters-count'
+    this.selectorIconCross = '.shop-window__actions-icon--cross'
     this.isOpen = false
 
     const container = document.querySelector(this.selectorContainer)
@@ -85,7 +88,7 @@ export class Filter {
   }
 
   private breakpointChecker(e: MediaQueryListEvent) {
-    if (!this.container.classList.contains('hide')) {      
+    if (!this.container.classList.contains('hide')) {
       if (e.matches && this.isOpen) return document.body.classList.remove('overflow')
       if (!e.matches && this.isOpen) document.body.classList.add('overflow')
     }
@@ -105,29 +108,38 @@ export class Filter {
   }
 
   private collectionOptions() {
-    if (this.filtersWrapper) {
-      this.filters = Array.from(this.filtersWrapper.querySelectorAll('.filters__item')).reduce((acc, filter) => {
-        const title = filter.querySelector('.collapse__head-title')?.textContent?.trim()
-        const selectedOptions = Array.from(filter.querySelectorAll('input[type="checkbox"]:checked'))
-          .map(item => {
-            return item.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
-          }).sort() || []
+    this.filters = Array.from(this.filtersWrapper.querySelectorAll('.filters__item')).reduce((acc, filter) => {
+      const title = filter.querySelector('.collapse__head-title')?.textContent?.trim()
+      const selectedOptionsCheckbox = Array.from(filter.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(item => {
+          return item.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
+        }).sort() || []
 
-        if (title) acc[title] = {
-          selectedOptions,
-          moreCount: selectedOptions.length - 3,
-        }
+      // для checkbox
+      if (title) acc[title] = {
+        selectedOptions: selectedOptionsCheckbox,
+        moreCount: selectedOptionsCheckbox.length - 3,
+      }
 
-        return acc
-      }, {})
+      // const selectedRangeMin = filter.querySelector('input[data-min]') as HTMLInputElement
+      // const selectedRangeMax = filter.querySelector('input[data-max]') as HTMLInputElement
+      
+      // // для ползунка прайса
+      // if (title && (selectedRangeMin || selectedRangeMax)) acc[title] = {
+      //   selectedOptions: [`от ${selectedRangeMin?.value} до ${selectedRangeMax?.value}`],
+      //   moreCount: 0,
+      // }
 
-      this.displayChips()
-      this.changeCount()
-    }
+      return acc
+    }, {})
+
+    this.displayChips()
+    this.changeCount()
   }
 
   private changeCount() {
     const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
+    this.selectedCount = selectedCount
     
     const countBtn = this.submitBtn.querySelector('.btn__suffix') as HTMLElement
     
@@ -142,6 +154,8 @@ export class Filter {
     } else {
       this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
       this.filterActionBtn.classList.add('btn--color-grey')
+
+      this.btnCount.innerHTML = ''
       this.btnCount.classList.remove(`${this.selectorBtnCount.substring(1)}--active`)
 
       countBtn.innerHTML = ''
@@ -153,6 +167,7 @@ export class Filter {
     
     const title = targetElement.closest('.collapse')?.querySelector('.collapse__head-title')?.textContent?.trim()
     const option = targetElement.closest('.checkbox')?.querySelector('.checkbox__label')?.textContent?.trim()
+    const range = targetElement.classList.contains('range__input')
     
     if (title && option) {
       const options = this.filters[title].selectedOptions
@@ -164,14 +179,27 @@ export class Filter {
       }
   
       this.filters[title].moreCount = this.filters[title].selectedOptions.length - 3
+    }
 
-      if (this.chipsWrapper) {
-        this.chipsWrapper.innerHTML = ''
-        this.displayChips()
-        this.toggleChips()
-        this.changeCount()
+    // для ползунка
+    if (range && title) {
+      const value = targetElement.value
+
+      if ('min' in targetElement.dataset) {
+        const maxValue = targetElement.closest('.range__inputs')?.querySelector<HTMLInputElement>('.range__input-max')?.value
+        this.filters[title].selectedOptions = [`от ${value} до ${maxValue}`]
+      }
+
+      if ('max' in targetElement.dataset) {
+        const minValue = targetElement.closest('.range__inputs')?.querySelector<HTMLInputElement>('.range__input-min')?.value
+        this.filters[title].selectedOptions = [`от ${minValue} до ${value}`]
       }
     }
+
+    this.chipsWrapper.innerHTML = ''
+    this.displayChips()
+    this.toggleChips()
+    this.changeCount()
   }
 
   private displayChips() {
@@ -217,21 +245,30 @@ export class Filter {
     }
   }
 
-  private toggleFilter() {
+  private toggleFilter() {    
     if (this.isOpen) {
       this.filterWrapper.classList.remove('active')
+      this.filterActionBtn.classList.remove('active')
+
+      if (this.selectedCount) {
+        this.filterActionBtn.classList.add('hide-icon')
+        this.filterActionBtn.classList.remove('hide-count')
+      } 
+
       this.isOpen = false
       document.body.classList.remove('overflow')
     } else {
       this.filterWrapper.classList.add('active')
+      this.filterActionBtn.classList.add('active')
+
+      if (this.selectedCount) {
+        this.filterActionBtn.classList.remove('hide-icon')
+        this.filterActionBtn.classList.add('hide-count')
+      }
+
       this.isOpen = true      
       window.innerWidth < BreakpointWidth.DESKTOP && document.body.classList.add('overflow')
     }
-  }
-
-  public closeFilters() {
-    this.filterWrapper.classList.remove('active')
-    this.chipsWrapper.classList.remove('active')
   }
 
   private clearAllFilters() {
@@ -245,7 +282,7 @@ export class Filter {
 
     if (this.chipsWrapper) {
       this.chipsWrapper.innerHTML = ''
-      this.chipsWrapper.classList.toggle('active')
+      this.chipsWrapper.classList.remove('active')
     }
 
     this.changeCount()
@@ -253,6 +290,12 @@ export class Filter {
 
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
+
+    // клик по крестику в кнопке фильтра (сброс сортировок)      
+    if (targetElement.closest(this.selectorIconCross) && this.filterActionBtn.contains(targetElement)) {    
+      this.clearAllFilters()
+      return this.toggleFilter()
+    }
 
     // открытие / закрытие блока с фильтрами
     if (this.filterActionBtn.contains(targetElement) || this.filterCross.contains(targetElement)) {
@@ -272,10 +315,7 @@ export class Filter {
 
   private changeHandler(e: Event) {
     const targetElement = e.target as HTMLInputElement
-
-    if (this.filtersWrapper.contains(targetElement)) {
-      this.changeOptions(targetElement)
-    }
+    this.changeOptions(targetElement)
   }
 
   private handlers() {

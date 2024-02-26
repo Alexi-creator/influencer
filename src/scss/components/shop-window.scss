@@ -130,9 +130,9 @@
 
       width: max-content;
 
-      #{$root}__actions-text {
-        display: none;
-      }
+      // #{$root}__actions-text {
+      //   display: none;
+      // }
 
       #{$root}__actions-density {
         margin-left: none;
@@ -174,31 +174,51 @@
     }
 
     &-categories, &-filters, &-sorts, &-density {
-      // display: none;
-
       &--active {
         display: inline-flex;
       }
     }
 
-    &-filters {
-      &-count {
+    &-filters, &-categories, &-sorts {
+      #{$root}__actions-icon--cross {
         display: none;
+        fill: rgb(var(--color-black));
+      }
 
-        &--active {
+      &.active.btn {
+        border-color: transparent;
+        background-color: rgb(var(--color-primary-pale));
+
+        #{$root}__actions-icon--cross {
           display: block;
+        }
+
+        #{$root}__actions-icon--common {
+          display: none;
         }
       }
     }
 
-    &-sorts {
-      &.btn--tag-checked {
-        #{$root}__actions-icon {
-          display: none;
+    &-filters, &-categories {
+      &-count {
+        display: none;
+      }
 
-          @include media($md) {
-            display: block;
-          }
+      &.btn--tag:not(.active) {
+        #{$root}__actions-filters-count {
+          display: block;
+        }
+      }
+      
+      &.hide-icon.btn {
+        #{$root}__actions-icon--common {
+          display: none;
+        }
+      }
+
+      &.hide-count.btn {
+        #{$root}__actions-filters-count {
+          display: none;
         }
       }
     }
@@ -237,8 +257,6 @@
     }
 
     &-icon {
-      // display: none;
-
       @include media($md) {
         display: block;
       } 
@@ -346,6 +364,7 @@
 
         #{$root}__form-sorting-cross {
           cursor: pointer;
+          fill: rgb(var(--color-grey))
         }
 
         @include media($lg) {

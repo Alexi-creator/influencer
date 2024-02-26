@@ -43,6 +43,11 @@
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-primary));
   }
+  
+  &#{$root}--color-primary-light-text-black {
+    background-color: rgb(var(--color-primary-soft));
+    color: rgb(var(--color-black));
+  }
 
   &#{$root}--color-grey {
     color: rgb(var(--color-grey));

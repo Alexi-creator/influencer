@@ -20,7 +20,7 @@ export const observerBrandCallback = (entries: IntersectionObserverEntry[], obse
     if (entry.isIntersecting) {
       // Элемент виден
       removeIsActive()
-    } else if (entry.boundingClientRect.top < 0 && entry.rootBounds) {
+    } else if (entry.boundingClientRect.top <= 124 && entry.rootBounds) {
       // Элемент начал уходить за верх экрана
       addIsActive()
     }
