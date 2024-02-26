@@ -130,9 +130,9 @@
 
       width: max-content;
 
-      #{$root}__actions-text {
-        display: none;
-      }
+      // #{$root}__actions-text {
+      //   display: none;
+      // }
 
       #{$root}__actions-density {
         margin-left: none;
@@ -204,7 +204,7 @@
         display: none;
       }
 
-      &:not(.active) {
+      &.btn--tag:not(.active) {
         #{$root}__actions-filters-count {
           display: block;
         }

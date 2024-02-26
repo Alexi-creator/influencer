@@ -71,7 +71,9 @@ window.addEventListener('load', () => {
     new CustomIntersectionObserver({
       element: targetElement,
       callback: observerBrandCallback,
-      options: {},
+      options: {
+        rootMargin: '-125px 0px 0px',
+      },
     })
   } catch (error) {
     console.log(error)
