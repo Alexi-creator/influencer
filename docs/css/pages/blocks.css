@@ -1364,6 +1364,11 @@ svg {
     font-size: 1.125rem;
   }
 
+  .badge--font-commissioner {
+    height: 2rem;
+    font-size: 1.125rem;
+  }
+
   .nav {
     display: none;
   }
