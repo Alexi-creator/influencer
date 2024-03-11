@@ -1400,7 +1400,7 @@ button {
   height: 0.0625rem;
   margin: 1rem auto 1.25rem;
   border: none;
-  background: rgb(var(--color-black-light));
+  background: rgb(var(--color-grey-light));
 }
 
 .range__min,
@@ -1524,16 +1524,14 @@ button {
   height: 1rem;
 }
 
-.badge use {
-  width: 1rem;
-  height: 1rem;
+.badge svg use {
   stroke: rgb(var(--color-white));
   stroke-width: 2px;
 }
 
 .badge__sub {
-  font-size: 0.625rem;
-  line-height: 0.625rem;
+  font-size: 0.9rem;
+  line-height: 0.4rem;
   margin-right: 0.12rem;
   transform: translateY(25%);
 }
@@ -1549,7 +1547,7 @@ button {
 }
 
 .input-text--color-grey {
-  border-color: rgb(var(--color-grey-soft));
+  border-color: rgb(var(--color-grey-light));
 }
 
 .input-text__input {
@@ -2310,6 +2308,7 @@ button {
   height: 1.25rem;
   margin-left: 0;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .header__nav-logo .header__nav-logo-small {
@@ -3323,10 +3322,6 @@ svg {
   margin-top: 0.5rem;
 }
 
-.shop-window__inner > * {
-  margin-top: 1.25rem;
-}
-
 .shop-window__controls {
   display: flex;
   flex-direction: column;
@@ -3645,6 +3640,10 @@ svg {
   margin: 0 -1.25rem;
 }
 
+.shop-window__tabs-contents {
+  margin-top: 1.25rem;
+}
+
 .range__min,
 .range__max,
 .tabs__tab,
@@ -3714,7 +3713,7 @@ svg {
   background-color: rgb(var(--color-primary-soft));
   padding: 1px;
   border: 2px solid rgb(var(--color-primary-soft));
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
   transition: var(--transition-base);
   cursor: pointer;
 }
@@ -3860,7 +3859,7 @@ svg {
 
 .product-card__info {
   position: absolute;
-  top: -3.5rem;
+  top: -2.5rem;
   right: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -5095,10 +5094,6 @@ svg {
     display: none;
   }
 
-  .shop-window__inner > * {
-    margin-top: 1.5rem;
-  }
-
   .shop-window__inner {
     margin-top: 0;
   }
@@ -5169,6 +5164,10 @@ svg {
   .shop-window__joint-purchases-contents {
     gap: 0.75rem;
     margin: unset;
+  }
+
+  .shop-window__tabs-contents {
+    margin-top: 1.5rem;
   }
 
   .shop-window--horizontally .product-card,
@@ -5423,11 +5422,6 @@ svg {
     margin: 2.5rem auto;
   }
 
-  .badge {
-    height: 2.75rem;
-    font-size: 1.5rem;
-  }
-
   .badge--round {
     height: 2.5rem;
     padding: 0 1.25rem;
@@ -5581,10 +5575,6 @@ svg {
     font-weight: 600;
   }
 
-  .shop-window__inner > * {
-    margin-top: 1.25rem;
-  }
-
   .shop-window__controls {
     display: flex;
     flex-direction: row;
@@ -5687,6 +5677,10 @@ svg {
   .shop-window__joint-purchases-contents {
     grid-template-columns: calc(50% - 0.5rem) calc(50% - 0.5rem);
     gap: 1rem;
+  }
+
+  .shop-window__tabs-contents {
+    margin-top: 2.5rem;
   }
 
   .product-card:hover {
@@ -5892,6 +5886,16 @@ svg {
     padding: 0rem 7rem;
   }
 
+  .badge {
+    height: 2.75rem;
+    font-size: 1.5rem;
+  }
+
+  .badge svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   .header__nav-list {
     margin: 1rem 0 0;
   }
@@ -5946,10 +5950,6 @@ svg {
     padding: 0.5rem 0;
     left: 0;
     right: 0;
-  }
-
-  .shop-window__inner > * {
-    margin-top: 2.5rem;
   }
 
   .shop-window__tabs {
@@ -6015,6 +6015,10 @@ svg {
 
   .shop-window__joint-purchases-actions {
     grid-template-columns: 34rem auto;
+  }
+
+  .product-card__info {
+    top: -3.5rem;
   }
 
   .contact-info {

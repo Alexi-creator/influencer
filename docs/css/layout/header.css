@@ -147,6 +147,7 @@
   height: 1.25rem;
   margin-left: 0;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 .header__nav-logo .header__nav-logo-small {

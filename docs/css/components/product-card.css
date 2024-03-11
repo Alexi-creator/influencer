@@ -17,7 +17,7 @@
   background-color: rgb(var(--color-primary-soft));
   padding: 1px;
   border: 2px solid rgb(var(--color-primary-soft));
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-medium);
   transition: var(--transition-base);
   cursor: pointer;
 }
@@ -163,7 +163,7 @@
 
 .product-card__info {
   position: absolute;
-  top: -3.5rem;
+  top: -2.5rem;
   right: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -352,5 +352,11 @@
 
   .product-card__price {
     font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 120rem) {
+  .product-card__info {
+    top: -3.5rem;
   }
 }
