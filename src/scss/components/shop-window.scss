@@ -16,22 +16,6 @@
   &__inner {
     margin-top: 0.5rem;
 
-    & > * {
-      margin-top: 1.25rem;
-
-      @include media($md) {
-        margin-top: 1.5rem;
-      }
-
-      @include media($lg) {
-        margin-top: 1.25rem;
-      }
-
-      @include media($full) {
-        margin-top: 2.5rem;
-      }
-    }
-
     @include media($md) {
       margin-top: 0;
     }
@@ -610,6 +594,18 @@
         grid-template-columns: calc(50% - 0.5rem) calc(50% - 0.5rem);
         gap: 1rem;
       }
+    }
+  }
+
+  &__tabs-contents {
+    margin-top: 1.25rem;
+
+    @include media($md) {
+      margin-top: 1.5rem;
+    }
+
+    @include media($lg) {
+      margin-top: 2.5rem;
     }
   }
 }
