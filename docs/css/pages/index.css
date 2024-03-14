@@ -3887,8 +3887,8 @@ svg {
 }
 
 .product-card__like {
-  top: 1.75rem;
-  left: 1.75rem;
+  top: 1rem;
+  left: 1rem;
 }
 
 .product-card__like svg use {
@@ -6181,6 +6181,11 @@ svg {
 
   .product-card:hover .product-card__info {
     top: -3.1rem;
+  }
+
+  .product-card__like {
+    top: 1.75rem;
+    left: 1.75rem;
   }
 
   .product-card__info {
