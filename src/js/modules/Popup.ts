@@ -77,12 +77,15 @@ export class Popup {
     }
   }
 
-  private closePopup(actionEl: HTMLElement) {   
+  private closePopup(actionEl: HTMLElement) {
     const popupEl = actionEl.closest(this.selector) || document.getElementById(actionEl?.dataset?.closePopup || '')
 
     document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))
     popupEl?.classList.remove(this.popupOpenClass)
-    document.body.classList.remove(this.overflowClass)
+
+    if (!actionEl.classList.contains('not-overflow')) {
+      document.body.classList.remove(this.overflowClass)
+    }
 
     // TODO переделать не должно быть лишней логики
     const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')

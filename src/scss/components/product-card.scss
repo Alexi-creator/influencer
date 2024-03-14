@@ -260,8 +260,13 @@
   }
 
   &__like {
-    top: 1.75rem;
-    left: 1.75rem;
+    top: 1rem;
+    left: 1rem;
+    
+    @include media($full) {
+      top: 1.75rem;
+      left: 1.75rem;
+    }
 
     & svg use {
       fill: rgb(var(--color-primary));
