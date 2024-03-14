@@ -292,10 +292,10 @@ export class Filter {
     const targetElement = e.target as HTMLElement
 
     // клик по крестику в кнопке фильтра (сброс сортировок)      
-    if (targetElement.closest(this.selectorIconCross) && this.filterActionBtn.contains(targetElement)) {    
-      this.clearAllFilters()
-      return this.toggleFilter()
-    }
+    // if (targetElement.closest(this.selectorIconCross) && this.filterActionBtn.contains(targetElement)) {    
+    //   this.clearAllFilters()
+    //   return this.toggleFilter()
+    // }
 
     // открытие / закрытие блока с фильтрами
     if (this.filterActionBtn.contains(targetElement) || this.filterCross.contains(targetElement)) {
@@ -308,7 +308,7 @@ export class Filter {
     }
 
     // очистка всех фильтров
-    if (this.clearBtn.contains(targetElement)) {
+    if (targetElement.classList.contains('clear-filters') && this.isOpen) {      
       return this.clearAllFilters()
     }
   }

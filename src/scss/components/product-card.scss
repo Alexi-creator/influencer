@@ -31,10 +31,12 @@
         }
         &-second {
           display: block;
+          border-top-left-radius: var(--radius-small);
+          border-top-right-radius: var(--radius-small);
         }
       }
 
-      #{$root}__application-status, #{$root}__status {
+      #{$root}__status {
         display: none;
       }
   
@@ -47,10 +49,26 @@
         background-color: rgb(var(--color-primary-soft));
       }
 
+      &#{$root}--application-approved #{$root}__descr {
+        background-color: rgb(var(--color-green-light));
+      }
+
+      &#{$root}--status-promotion-over, &#{$root}--status-consideration-applications {
+        #{$root}__descr {
+          background-color: rgb(var(--color-grey-pale));
+        }
+      }
+
       &#{$root}--status-consideration-applications {
         #{$root}__date {
           display: block;
         }
+      }
+    }
+
+    @include media($full) {
+      #{$root}__info {
+        top: -3.1rem;
       }
     }
   }
@@ -79,7 +97,15 @@
         }
       }
 
+      &-first {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: var(--radius-medium);
+      }
+
       &-second {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
         @include media($md) {
           display: block;
         }
@@ -132,7 +158,17 @@
 
   &--tff {
     #{$root}__date {
-      display: block;
+      display: flex;
+
+      &-text {
+        @extend %ellipsis;
+      }
+
+      &-number {
+        flex-shrink: 0;
+        margin-left: 0.5rem;
+        font-weight: 600;
+      }
     }
 
     #{$root}__descr {
@@ -159,10 +195,6 @@
       font-weight: 600;
     }
   }
-
-  // &--status-consideration-applications {
-
-  // }
 
   &--application-submitted, &--application-rejected, &--application-approved {
     #{$root}__application-status {
@@ -207,6 +239,8 @@
     &-first, &-second {
       position: relative;
       overflow: hidden;
+      border-top-left-radius: var(--radius-medium);
+      border-top-right-radius: var(--radius-medium);
       flex-shrink: 0;
       padding-top: 150%;
 
@@ -223,11 +257,11 @@
 
   &__like, &__info {
     position: absolute;
-    left: 1rem;
   }
 
   &__like {
-    top: 1rem;
+    top: 1.75rem;
+    left: 1.75rem;
 
     & svg use {
       fill: rgb(var(--color-primary));
@@ -243,13 +277,14 @@
   &__info {
     position: absolute;
     top: -2.5rem;
+    left: 1rem;
     right: 0;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
     @include media($full) {
-      top: -3.5rem;
+      top: -3.1rem;
     }
 
     &::-webkit-scrollbar {
@@ -275,12 +310,18 @@
   &__descr {
     position: relative;
     height: 100%;
-    min-height: 7.6625rem;
+    min-height: 7rem;
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
 
-    @include media($md) {
+    @include media($lg) {
       font-size: 1rem;
+    }
+
+    @include media($full) {
+      min-height: 9rem;
+      padding: 1rem 1.25rem;
+      font-size: 1.125rem;
     }
   }
 
@@ -329,9 +370,8 @@
   }
 
   &__price {
-    @extend %flex-space-between;
-
-    gap: 0.5rem;
+    display: flex;
+    gap: 1rem;
     flex-wrap: wrap;
     font-weight: 600;
 

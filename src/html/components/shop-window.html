@@ -268,7 +268,10 @@
         </div>
         <div class="shop-window__form-filter-actions form__btns">
           <button type="button" class="btn btn--text shop-window__form-filter-clear">
-            Очистить все фильтры
+            <svg class="shop-window__form-filter-actions-clear">
+              <use xlink:href="./img/icons/icons.svg#trash"></use>
+            </svg>
+            <span class="shop-window__form-filter-actions-text" data-popup="clearFilter">Очистить все фильтры</span>
           </button>
           <button type="submit" class="btn shop-window__form-filter-submit">
             Применить
@@ -409,7 +412,10 @@
         </div>
         <div class="shop-window__form-filter-actions form__btns">
           <button type="button" class="btn btn--text shop-window__form-filter-clear">
-            Очистить все фильтры
+            <svg class="shop-window__form-filter-actions-clear">
+              <use xlink:href="./img/icons/icons.svg#trash"></use>
+            </svg>
+            <span class="shop-window__form-filter-actions-text" data-popup="clearFilter">Очистить все фильтры</span>
           </button>
           <button type="submit" class="btn shop-window__form-filter-submit">
             Применить
@@ -569,7 +575,10 @@
         </div>
         <div class="shop-window__form-filter-actions form__btns">
           <button type="button" class="btn btn--text shop-window__form-filter-clear">
-            Очистить все фильтры
+            <svg class="shop-window__form-filter-actions-clear">
+              <use xlink:href="./img/icons/icons.svg#trash"></use>
+            </svg>
+            <span class="shop-window__form-filter-actions-text" data-popup="clearFilter">Очистить все фильтры</span>
           </button>
           <button type="submit" class="btn shop-window__form-filter-submit">
             Применить
@@ -751,5 +760,12 @@
         @@include("./contact-info.html")
       </div>
     </div>
+  </div>
+  <div class="shop-window__popups">
+    @@include("./popup.html", {
+      "id": "clearFilter",
+      "extra-class": "",
+      "body": '@@include("./clear-filter-content-popup.html")',
+    })
   </div>
 </div>

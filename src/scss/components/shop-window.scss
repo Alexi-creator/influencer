@@ -96,6 +96,10 @@
 
     &.active {
       @extend %flex-end;
+
+      &#{$root}__actions-sp {
+        justify-content: flex-start;
+      }
     }
 
     @include media($lg) {
@@ -113,10 +117,6 @@
       @extend %flex-end;
 
       width: max-content;
-
-      // #{$root}__actions-text {
-      //   display: none;
-      // }
 
       #{$root}__actions-density {
         margin-left: none;
@@ -196,7 +196,9 @@
       
       &.hide-icon.btn {
         #{$root}__actions-icon--common {
-          display: none;
+          @include media($md) {
+            display: none;
+          }
         }
       }
 
@@ -428,7 +430,7 @@
         bottom: 0;
         margin-top: 0;
         overflow-y: auto;
-        z-index: var(--z-top);
+        z-index: var(--z-over);
 
         @include media($lg) {
           position: relative;
@@ -463,13 +465,28 @@
 
       &-actions {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        justify-content: space-between;
+        align-items: center;
         gap: 0.5rem;
+
+        &-clear {
+          width: 3rem;
+        }
+
+        &-text {
+          display: none;
+        }
 
         @include media($md) {
           flex-direction: row;
-          justify-content: space-between;
+
+          &-clear {
+            display: none;
+          }
+
+          &-text {
+            display: block;
+          }
         }
 
         padding: 1.25rem 0 0;
@@ -478,6 +495,16 @@
         & .btn--text {
           padding-left: 0;
           padding-right: 0;
+        }
+      }
+
+      &-clear {
+        &.btn {
+          background-color: rgb(var(--color-primary-soft));
+
+          @include media($md) {
+            background-color: transparent;
+          }
         }
       }
     }
