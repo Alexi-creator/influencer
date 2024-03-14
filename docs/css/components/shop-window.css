@@ -53,6 +53,10 @@
   z-index: var(--z-popup);
 }
 
+.shop-window__actions.active.shop-window__actions-sp {
+  justify-content: flex-start;
+}
+
 .shop-window__actions--active {
   width: -moz-max-content;
   width: max-content;
@@ -113,11 +117,6 @@
 .shop-window__actions-filters.btn--tag:not(.active) .shop-window__actions-filters-count,
 .shop-window__actions-categories.btn--tag:not(.active) .shop-window__actions-filters-count {
   display: block;
-}
-
-.shop-window__actions-filters.hide-icon.btn .shop-window__actions-icon--common,
-.shop-window__actions-categories.hide-icon.btn .shop-window__actions-icon--common {
-  display: none;
 }
 
 .shop-window__actions-filters.hide-count.btn .shop-window__actions-filters-count,
@@ -244,7 +243,7 @@
   bottom: 0;
   margin-top: 0;
   overflow-y: auto;
-  z-index: var(--z-top);
+  z-index: var(--z-over);
 }
 
 .shop-window__form-filter-title {
@@ -266,16 +265,28 @@
 
 .shop-window__form-filter-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
   gap: 0.5rem;
   padding: 1.25rem 0 0;
   border-top: 1px solid rgb(var(--color-white));
 }
 
+.shop-window__form-filter-actions-clear {
+  width: 3rem;
+}
+
+.shop-window__form-filter-actions-text {
+  display: none;
+}
+
 .shop-window__form-filter-actions .btn--text {
   padding-left: 0;
   padding-right: 0;
+}
+
+.shop-window__form-filter-clear.btn {
+  background-color: rgb(var(--color-primary-soft));
 }
 
 .shop-window__menu {
@@ -376,6 +387,11 @@
     display: block;
   }
 
+  .shop-window__actions-filters.hide-icon.btn .shop-window__actions-icon--common,
+  .shop-window__actions-categories.hide-icon.btn .shop-window__actions-icon--common {
+    display: none;
+  }
+
   .shop-window__actions-icon {
     display: block;
   }
@@ -390,7 +406,18 @@
 
   .shop-window__form-filter-actions {
     flex-direction: row;
-    justify-content: space-between;
+  }
+
+  .shop-window__form-filter-actions-clear {
+    display: none;
+  }
+
+  .shop-window__form-filter-actions-text {
+    display: block;
+  }
+
+  .shop-window__form-filter-clear.btn {
+    background-color: transparent;
   }
 
   .shop-window__goods-items,

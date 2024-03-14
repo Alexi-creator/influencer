@@ -1,0 +1,25 @@
+.clear-filter-content-popup__actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-filter-content-popup__inner {
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.clear-filter-content-popup__title {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.clear-filter-content-popup__descr {
+  margin-top: 1rem;
+  color: rgb(var(--color-grey));
+}
+
+.clear-filter-content-popup__actions {
+  gap: 2rem;
+  margin-top: 2rem;
+}
