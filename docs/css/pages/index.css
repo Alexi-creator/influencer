@@ -1481,12 +1481,7 @@ button {
   line-height: 1.125rem;
 }
 
-.badge--big {
-  padding: 0 1.25rem;
-  height: 3rem;
-}
-
-.badge--round {
+.badge.badge--round {
   height: 1.75rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
@@ -1494,30 +1489,34 @@ button {
   line-height: 1.33;
 }
 
-.badge--without-border {
+.badge.badge--without-border {
   border-color: transparent;
 }
 
-.badge--font-commissioner {
-  height: 2rem;
+.badge.badge--font-commissioner {
   font-size: 1.125rem;
   font-family: Commissioner;
   font-weight: 600;
 }
 
-.badge--color-primary-light {
+.badge.badge--color-primary-light {
   background-color: rgb(var(--color-primary-pale));
   color: rgb(var(--color-primary));
 }
 
-.badge--color-white {
+.badge.badge--color-white {
   background-color: rgb(var(--color-white));
   color: rgb(var(--color-primary));
 }
 
-.badge--color-green {
+.badge.badge--color-green {
   background-color: rgba(var(--color-green), 0.04);
   color: rgb(var(--color-green));
+}
+
+.badge.badge--big {
+  padding: 0 1.25rem;
+  height: 3rem;
 }
 
 .badge svg {
@@ -2422,6 +2421,7 @@ button {
   color: rgb(var(--color-black));
   padding-left: 1rem;
   padding-right: 1rem;
+  height: 2rem;
 }
 
 .header__nav-profile .header__nav-avatar {
@@ -3833,6 +3833,10 @@ svg {
   display: block;
 }
 
+.product-card--application-rejected {
+  background-color: rgb(var(--color-grey-pale));
+}
+
 .product-card--application-rejected .product-card__application-status .badge {
   color: rgb(var(--color-red));
 }
@@ -3973,6 +3977,7 @@ svg {
 
 .product-card__likes {
   gap: 0.25rem;
+  font-size: 0.875rem;
 }
 
 .product-card__likes svg {
@@ -5301,6 +5306,10 @@ svg {
     margin: 0;
   }
 
+  .shop-window__joint-purchases {
+    gap: 1.5rem;
+  }
+
   .shop-window__joint-purchases-btn svg {
     display: none;
   }
@@ -5570,14 +5579,13 @@ svg {
     margin: 2.5rem auto;
   }
 
-  .badge--round {
+  .badge.badge--round {
     height: 2.5rem;
     padding: 0 1.25rem;
     font-size: 1.125rem;
   }
 
-  .badge--font-commissioner {
-    height: 2rem;
+  .badge.badge--font-commissioner {
     font-size: 1.125rem;
   }
 
@@ -5818,6 +5826,10 @@ svg {
     gap: 1rem;
   }
 
+  .shop-window__joint-purchases {
+    gap: 1.25rem;
+  }
+
   .shop-window__joint-purchases-actions {
     grid-template-columns: 1fr 1fr;
   }
@@ -5865,10 +5877,6 @@ svg {
     background-color: rgb(var(--color-primary-soft));
   }
 
-  .product-card:hover.product-card--application-approved .product-card__descr {
-    background-color: rgb(var(--color-green-light));
-  }
-
   .product-card:hover.product-card--status-promotion-over .product-card__descr,
   .product-card:hover.product-card--status-consideration-applications .product-card__descr {
     background-color: rgb(var(--color-grey-pale));
@@ -5876,6 +5884,14 @@ svg {
 
   .product-card:hover.product-card--status-consideration-applications .product-card__date {
     display: block;
+  }
+
+  .product-card:hover.product-card--application-approved .product-card__descr {
+    background-color: rgb(var(--color-green-light));
+  }
+
+  .product-card:hover.product-card--application-rejected .product-card__descr {
+    background-color: rgb(var(--color-grey-pale));
   }
 
   .shop-window--horizontally .product-card,
@@ -6048,14 +6064,14 @@ svg {
     padding: 0rem 7rem;
   }
 
-  .badge {
-    height: 2.75rem;
-    font-size: 1.5rem;
-  }
-
   .badge svg {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .badge {
+    height: 2.75rem;
+    font-size: 1.5rem;
   }
 
   .header__nav-list {
@@ -6173,6 +6189,10 @@ svg {
   .shop-window__tff-items {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+  }
+
+  .shop-window__joint-purchases {
+    gap: 2.5rem;
   }
 
   .shop-window__joint-purchases-actions {

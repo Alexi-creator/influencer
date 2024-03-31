@@ -112,6 +112,10 @@
   display: block;
 }
 
+.product-card--application-rejected {
+  background-color: rgb(var(--color-grey-pale));
+}
+
 .product-card--application-rejected .product-card__application-status .badge {
   color: rgb(var(--color-red));
 }
@@ -252,6 +256,7 @@
 
 .product-card__likes {
   gap: 0.25rem;
+  font-size: 0.875rem;
 }
 
 .product-card__likes svg {
@@ -345,10 +350,6 @@
     background-color: rgb(var(--color-primary-soft));
   }
 
-  .product-card:hover.product-card--application-approved .product-card__descr {
-    background-color: rgb(var(--color-green-light));
-  }
-
   .product-card:hover.product-card--status-promotion-over .product-card__descr,
   .product-card:hover.product-card--status-consideration-applications .product-card__descr {
     background-color: rgb(var(--color-grey-pale));
@@ -356,6 +357,14 @@
 
   .product-card:hover.product-card--status-consideration-applications .product-card__date {
     display: block;
+  }
+
+  .product-card:hover.product-card--application-approved .product-card__descr {
+    background-color: rgb(var(--color-green-light));
+  }
+
+  .product-card:hover.product-card--application-rejected .product-card__descr {
+    background-color: rgb(var(--color-grey-pale));
   }
 
   .shop-window--horizontally .product-card,

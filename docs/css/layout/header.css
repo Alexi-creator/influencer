@@ -255,6 +255,7 @@
   color: rgb(var(--color-black));
   padding-left: 1rem;
   padding-right: 1rem;
+  height: 2rem;
 }
 
 .header__nav-profile .header__nav-avatar {

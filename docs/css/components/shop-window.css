@@ -427,6 +427,10 @@
     margin: 0;
   }
 
+  .shop-window__joint-purchases {
+    gap: 1.5rem;
+  }
+
   .shop-window__joint-purchases-btn svg {
     display: none;
   }
@@ -545,6 +549,10 @@
     gap: 1rem;
   }
 
+  .shop-window__joint-purchases {
+    gap: 1.25rem;
+  }
+
   .shop-window__joint-purchases-actions {
     grid-template-columns: 1fr 1fr;
   }
@@ -619,6 +627,10 @@
   .shop-window__tff-items {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+  }
+
+  .shop-window__joint-purchases {
+    gap: 2.5rem;
   }
 
   .shop-window__joint-purchases-actions {

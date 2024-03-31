@@ -144,12 +144,7 @@
   line-height: 1.125rem;
 }
 
-.badge--big {
-  padding: 0 1.25rem;
-  height: 3rem;
-}
-
-.badge--round {
+.badge.badge--round {
   height: 1.75rem;
   padding: 0 0.75rem;
   font-size: 0.875rem;
@@ -157,30 +152,34 @@
   line-height: 1.33;
 }
 
-.badge--without-border {
+.badge.badge--without-border {
   border-color: transparent;
 }
 
-.badge--font-commissioner {
-  height: 2rem;
+.badge.badge--font-commissioner {
   font-size: 1.125rem;
   font-family: Commissioner;
   font-weight: 600;
 }
 
-.badge--color-primary-light {
+.badge.badge--color-primary-light {
   background-color: rgb(var(--color-primary-pale));
   color: rgb(var(--color-primary));
 }
 
-.badge--color-white {
+.badge.badge--color-white {
   background-color: rgb(var(--color-white));
   color: rgb(var(--color-primary));
 }
 
-.badge--color-green {
+.badge.badge--color-green {
   background-color: rgba(var(--color-green), 0.04);
   color: rgb(var(--color-green));
+}
+
+.badge.badge--big {
+  padding: 0 1.25rem;
+  height: 3rem;
 }
 
 .badge svg {
@@ -588,26 +587,25 @@
     margin: 2.5rem auto;
   }
 
-  .badge--round {
+  .badge.badge--round {
     height: 2.5rem;
     padding: 0 1.25rem;
     font-size: 1.125rem;
   }
 
-  .badge--font-commissioner {
-    height: 2rem;
+  .badge.badge--font-commissioner {
     font-size: 1.125rem;
   }
 }
 
 @media (min-width: 120rem) {
-  .badge {
-    height: 2.75rem;
-    font-size: 1.5rem;
-  }
-
   .badge svg {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .badge {
+    height: 2.75rem;
+    font-size: 1.5rem;
   }
 }
