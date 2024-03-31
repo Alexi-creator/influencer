@@ -49,10 +49,6 @@
         background-color: rgb(var(--color-primary-soft));
       }
 
-      &#{$root}--application-approved #{$root}__descr {
-        background-color: rgb(var(--color-green-light));
-      }
-
       &#{$root}--status-promotion-over, &#{$root}--status-consideration-applications {
         #{$root}__descr {
           background-color: rgb(var(--color-grey-pale));
@@ -63,6 +59,14 @@
         #{$root}__date {
           display: block;
         }
+      }
+
+      &#{$root}--application-approved #{$root}__descr {
+        background-color: rgb(var(--color-green-light));
+      }
+
+      &#{$root}--application-rejected #{$root}__descr {
+        background-color: rgb(var(--color-grey-pale));
       }
     }
 
@@ -203,6 +207,8 @@
   }
 
   &--application-rejected {
+    background-color: rgb(var(--color-grey-pale));
+
     #{$root}__application-status {
       & .badge {
         color: rgb(var(--color-red));
@@ -361,6 +367,7 @@
 
   &__likes {
     gap: 0.25rem;
+    font-size: 0.875rem;
 
     & svg {
       width: 1rem;

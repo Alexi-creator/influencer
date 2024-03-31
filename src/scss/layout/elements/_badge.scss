@@ -3,6 +3,8 @@
 @import "../../basis/_variables";
 
 .badge {
+  $root: &;
+
   display: inline-flex;
   align-items: center;
   height: 2rem;
@@ -16,17 +18,7 @@
   font-size: 1.125rem;
   line-height: 1.125rem;
 
-  @include media($full) {
-    height: 2.75rem;
-    font-size: 1.5rem;
-  }
-
-  &--big {
-    padding: 0 1.25rem;
-    height: 3rem;
-  }
-
-  &--round {
+  &#{$root}--round {
     height: 1.75rem;
     padding: 0 0.75rem;
     font-size: 0.875rem;
@@ -40,35 +32,38 @@
     }
   }
 
-  &--without-border {
+  &#{$root}--without-border {
     border-color: transparent;
   }
 
-  &--font-commissioner {
-    height: 2rem;
+  &#{$root}--font-commissioner {
     font-size: 1.125rem;
     font-family: Commissioner;
     font-weight: 600;
 
     @include media($lg) {
-      height: 2rem;
       font-size: 1.125rem;
     }
   }
 
-  &--color-primary-light {
+  &#{$root}--color-primary-light {
     background-color: rgb(var(--color-primary-pale));
     color: rgb(var(--color-primary));
   }
 
-  &--color-white{
+  &#{$root}--color-white{
     background-color: rgb(var(--color-white));
     color: rgb(var(--color-primary));
   }
 
-  &--color-green {
+  &#{$root}--color-green {
     background-color: rgba(var(--color-green), 0.04);
     color: rgb(var(--color-green));
+  }
+
+  &#{$root}--big {
+    padding: 0 1.25rem;
+    height: 3rem;
   }
 
   & svg {
@@ -91,5 +86,10 @@
     line-height: 0.4rem;
     margin-right: 0.12rem;
     transform: translateY(25%);
+  }
+
+  @include media($full) {
+    height: 2.75rem;
+    font-size: 1.5rem;
   }
 }
