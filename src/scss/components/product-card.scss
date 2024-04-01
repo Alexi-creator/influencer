@@ -163,15 +163,22 @@
   &--tff {
     #{$root}__date {
       display: flex;
-
-      &-text {
-        @extend %ellipsis;
-      }
+      gap: 0.5rem;
+      flex-wrap: wrap;
 
       &-number {
         flex-shrink: 0;
-        margin-left: 0.5rem;
         font-weight: 600;
+      }
+
+      @include media($md) {
+        flex-wrap: nowrap;
+
+        &-text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
     }
 
@@ -203,6 +210,14 @@
   &--application-submitted, &--application-rejected, &--application-approved {
     #{$root}__application-status {
       display: block;
+
+      & .badge {
+        font-size: 0.875rem;
+
+        @include media($lg) {
+          font-size: 1.125rem;
+        }
+      }
     }
   }
 
@@ -395,6 +410,16 @@
       color: rgb(var(--color-grey));
       text-decoration: line-through;
       text-decoration-thickness: 2px;
+    }
+
+    &-current {
+      display: none;
+    }
+
+    @include media($md) {
+      &-current {
+        display: block;
+      }
     }
 
     @include media($lg) {

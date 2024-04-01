@@ -24,6 +24,7 @@ export class Filter {
   private selectedCount: number
   
   private isOpen: boolean
+  private category: string | undefined
 
   // dom элементы
   private container: HTMLElement
@@ -73,6 +74,8 @@ export class Filter {
     if (clearBtn) this.clearBtn = clearBtn as HTMLElement
     const filterCross = this.container.querySelector(this.selectorFilterCross)
     if (filterCross) this.filterCross = filterCross as HTMLElement
+
+    this.category = this.selectorContainer.split('-').pop()   
 
     if (!this.filterActionBtn || !this.container) return
 
@@ -318,8 +321,18 @@ export class Filter {
     this.changeOptions(targetElement)
   }
 
+  private checkPopup<T extends string>(e: CustomEvent<T>) {
+    if (this.isOpen) {
+      const category = e.detail.split('-').pop()
+      if (category === this.category) {        
+        document.body.classList.add('overflow')
+      }      
+    }
+  }
+
   private handlers() {
     document.addEventListener('click', (e) => this.clickHandler(e))
+    document.addEventListener('closePopup', (e) => this.checkPopup(e as CustomEvent<string>))
     this.filterWrapper.addEventListener('change', (e) => this.changeHandler(e))
   }
 }

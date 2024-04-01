@@ -138,8 +138,20 @@
         }
       }
 
+      & .collapse.collapse--open {
+        & .collapse__content {
+          animation: none;
+        }
+      }
+      
+
+      & .filters__collapse {
+        gap: 0.75rem;
+      }
+
       & .btn {
         padding: 0;
+        height: auto;
       }
 
       @include media($lg) {

@@ -77,13 +77,17 @@ export class Popup {
     }
   }
 
+  private checkOpenedPopups() {
+    const allPopups = [...document.querySelectorAll(this.selector)]
+
+    return allPopups.some(popup => popup.classList.contains('popup--open'))
+  }
+
   private closePopup(actionEl: HTMLElement) {
     const popupEl = actionEl.closest(this.selector) || document.getElementById(actionEl?.dataset?.closePopup || '')
-
-    document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))
     popupEl?.classList.remove(this.popupOpenClass)
 
-    if (!actionEl.classList.contains('not-overflow')) {
+    if (!this.checkOpenedPopups()) {
       document.body.classList.remove(this.overflowClass)
     }
 
@@ -92,6 +96,8 @@ export class Popup {
     if (shopPreviewActionsElem) {
       shopPreviewActionsElem.classList.remove('shop-preview__actions--over')
     }
+
+    document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))
   }
 
   private clickHandler(e: MouseEvent) {
