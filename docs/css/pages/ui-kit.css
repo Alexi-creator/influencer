@@ -1253,6 +1253,7 @@ button {
   --max-width-container: 106rem;
   --transition-base: all 0.2s linear;
   --transition-base-without-prop: 0.2s linear;
+  --z-base: 1;
   --z-fixed: 100;
   --z-popup: 1000;
   --z-over: 1010;
@@ -2617,6 +2618,7 @@ svg {
 .tabs__tab--active {
   color: rgb(var(--color-primary));
   border-color: rgb(var(--color-primary));
+  background-color: rgb(var(--color-primary-soft));
 }
 
 .tabs__tab:hover:first-child,

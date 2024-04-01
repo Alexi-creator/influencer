@@ -40,6 +40,7 @@
 .tabs__tab--active {
   color: rgb(var(--color-primary));
   border-color: rgb(var(--color-primary));
+  background-color: rgb(var(--color-primary-soft));
 }
 
 .tabs__tab:hover:first-child,

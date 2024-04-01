@@ -4,12 +4,6 @@
   align-items: center;
 }
 
-.product-card--tff .product-card__date-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .product-card {
   position: relative;
   display: flex;
@@ -75,11 +69,12 @@
 
 .product-card--tff .product-card__date {
   display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .product-card--tff .product-card__date-number {
   flex-shrink: 0;
-  margin-left: 0.5rem;
   font-weight: 600;
 }
 
@@ -110,6 +105,12 @@
 .product-card--application-rejected .product-card__application-status,
 .product-card--application-approved .product-card__application-status {
   display: block;
+}
+
+.product-card--application-submitted .product-card__application-status .badge,
+.product-card--application-rejected .product-card__application-status .badge,
+.product-card--application-approved .product-card__application-status .badge {
+  font-size: 0.875rem;
 }
 
 .product-card--application-rejected {
@@ -287,6 +288,10 @@
   text-decoration-thickness: 2px;
 }
 
+.product-card__price-current {
+  display: none;
+}
+
 @media (min-width: 48rem) {
   .shop-window--horizontally .product-card,
   .product-card--horizontally {
@@ -312,6 +317,20 @@
   .shop-window--horizontally .product-card .product-card__info,
   .product-card--horizontally .product-card__info {
     max-width: 15.6rem;
+  }
+
+  .product-card--tff .product-card__date {
+    flex-wrap: nowrap;
+  }
+
+  .product-card--tff .product-card__date-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .product-card__price-current {
+    display: block;
   }
 }
 
@@ -385,6 +404,12 @@
   .shop-window--horizontally .product-card .product-card__price,
   .product-card--horizontally .product-card__price {
     justify-content: space-between;
+  }
+
+  .product-card--application-submitted .product-card__application-status .badge,
+  .product-card--application-rejected .product-card__application-status .badge,
+  .product-card--application-approved .product-card__application-status .badge {
+    font-size: 1.125rem;
   }
 
   .product-card__descr {

@@ -74,8 +74,17 @@
   background-color: rgb(var(--color-white));
 }
 
+.filters__item--categories .collapse.collapse--open .collapse__content {
+  animation: none;
+}
+
+.filters__item--categories .filters__collapse {
+  gap: 0.75rem;
+}
+
 .filters__item--categories .btn {
   padding: 0;
+  height: auto;
 }
 
 .filters__collapse {
