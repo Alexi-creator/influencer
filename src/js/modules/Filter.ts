@@ -326,7 +326,10 @@ export class Filter {
       const category = e.detail.split('-').pop()
       if (category === this.category) {        
         document.body.classList.add('overflow')
-      }      
+      }
+      if (category === 'clearFilter' && window.innerWidth < BreakpointWidth.DESKTOP) {
+        document.body.classList.add('overflow')
+      }
     }
   }
 
