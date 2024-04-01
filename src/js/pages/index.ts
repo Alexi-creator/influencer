@@ -72,7 +72,7 @@ window.addEventListener('load', () => {
       element: targetElement,
       callback: observerBrandCallback,
       options: {
-        rootMargin: '-125px 0px 0px',
+        rootMargin: '-140px 0px 0px',
       },
     })
   } catch (error) {
