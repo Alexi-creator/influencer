@@ -1,3 +1,5 @@
+import { BreakpointWidth } from '../constants'
+
 const actionsPreviewSelector = '.shop-preview__actions'
 const actionsShopWindowSelector = '.shop-window__actions'
 
@@ -20,9 +22,12 @@ export const observerBrandCallback = (entries: IntersectionObserverEntry[], obse
     if (entry.isIntersecting) {
       // Элемент виден
       removeIsActive()
-    } else if (entry.boundingClientRect.top <= 124 && entry.rootBounds) {
+    } else if (window.innerWidth >= BreakpointWidth.DESKTOP) {
       // Элемент начал уходить за верх экрана
-      addIsActive()
+      if (entry.boundingClientRect.top <= 139 && entry.rootBounds) addIsActive()
+    } else if (window.innerWidth < BreakpointWidth.DESKTOP) {
+      // Элемент начал уходить за верх экрана
+      if (entry.boundingClientRect.top <= 119 && entry.rootBounds) addIsActive()
     }
   })
 }

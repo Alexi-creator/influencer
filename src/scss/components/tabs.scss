@@ -50,6 +50,7 @@
     &:hover, &--active {
       color: rgb(var(--color-primary));
       border-color: rgb(var(--color-primary));
+      background-color: rgb(var(--color-primary-soft));
 
       &:first-child {
         border-right: 1px solid rgb(var(--color-primary));
