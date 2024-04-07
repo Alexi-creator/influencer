@@ -126,5 +126,7 @@
       </ul>
     </nav>
   </div>
-  @@include("../components/menu-mobile.html")
+  @@include("../components/menu-mobile.html", {
+    activeItem: "@@activeItem",
+  })
 </header>

@@ -1,51 +1,51 @@
 <nav class="nav">
   <ul class="nav__list">
-    <li>
-      <a class="nav__item nav__item-publication" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#camera"></use>
-        </svg>
-        <div class="nav__item-title">Публикация</div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item nav__item-catalog" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#catalog"></use>
-        </svg>
-        <div class="nav__item-title">Каталог</div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item nav__item-feed" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#feed"></use>
-        </svg>
-        <div class="nav__item-title">Лента</div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-        </svg>
-        <div class="nav__item-title">Корзина</div>
-        <div class="nav__item-counter">
-          @@include("../components/counter.html", {
-            "count": "1",
-            "color": "green",
-          })
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item nav__item-profile" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#profile"></use>
-        </svg>
-        <img class="nav__avatar" src="@img/avatar.jpg" alt="avatar">
-        <div class="nav__item-title">Профиль</div>
-      </a>
-    </li>
+    @@loop('./menu-mobile-item.html', [
+      {
+        "href": "#",
+        "icon": "camera",
+        "body": "Публикация",
+        "class": "publication",
+        "isActive": "@@if(activeItem === 'publication') {'active'}",
+        "count": 0,
+        "avatar": "",
+      },
+      {
+        "href": "./catalog.html",
+        "icon": "catalog",
+        "body": "Каталог",
+        "class": "catalog",
+        "isActive": "@@if(activeItem === 'catalog') {'active'}",
+        "count": 0,
+        "avatar": "",
+      },
+      {
+        "href": "#",
+        "icon": "feed",
+        "body": "Лента",
+        "class": "feed",
+        "isActive": "@@if(activeItem === 'feed') {'active'}",
+        "count": 0,
+        "avatar": "",
+      },
+      {
+        "href": "#",
+        "icon": "shopping-bag",
+        "body": "Корзина",
+        "class": "shopping-bag",
+        "isActive": "@@if(activeItem === 'shopping-bag') {'active'}",
+        "count": 1,
+        "avatar": "",
+      },
+      {
+        "href": "#",
+        "icon": "profile",
+        "body": "Профиль",
+        "class": "profile",
+        "isActive": "@@if(activeItem === 'profile') {'active'}",
+        "count": 0,
+        "avatar": "true",
+      },
+    ])
   </ul>
 </nav>
