@@ -5,7 +5,9 @@
     "nameFile": "index",
   })
   <body>
-    @@include("../layout/header.html")
+    @@include("../layout/header.html", {
+      activeItem: "",
+    })
     @@include("../components/nav-pages.html")
     <main class="main">
       <section class="section section--shop-preview">

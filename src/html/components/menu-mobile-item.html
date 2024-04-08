@@ -1,0 +1,19 @@
+<li @@if(isActive) {class=@@isActive}>
+  <a class="nav__item nav__item-@@class" href="@@href">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#@@icon"></use>
+    </svg>
+    @@if(avatar) {
+      <img class="nav__avatar" src="@img/avatar.jpg" alt="avatar">
+    }
+    <div class="nav__item-title">@@body</div>
+    @@if(count > 0) {
+      <div class="nav__item-counter">
+        @@include("../components/counter.html", {
+          "count": "@@count",
+          "color": "green",
+        })
+      </div>
+    }
+  </a>
+</li>

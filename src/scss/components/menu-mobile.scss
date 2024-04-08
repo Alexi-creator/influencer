@@ -33,6 +33,21 @@
     color: rgb(var(--color-grey));
     text-align: center;
 
+    #{$root}__list > li.active & {
+      &-title {
+        color: rgb(var(--color-primary));
+      }
+
+      &-icon {
+        fill: rgb(var(--color-primary));
+        stroke: rgb(var(--color-primary));
+      }
+
+      & use {
+        stroke: rgb(var(--color-primary));
+      }
+    }
+
     &-counter {
       position: absolute;
       top: 0px;
