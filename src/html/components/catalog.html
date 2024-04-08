@@ -1,3 +1,26 @@
 <div class="catalog">
-  catalog
+  <div class="catalog__mobile">
+    <div class="catalog__mobile-title">Категории</div>
+
+    <ul class="catalog__list">
+      <li class="catalog__item">
+        @@include("./collapse.html", {
+          "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Одежда</span></span>',
+          "body": "test2",
+          "isClosed": true,
+          "icon": "arrow",
+        })
+      </li>
+      <li class="catalog__item">
+        @@include("./collapse.html", {
+          "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Красота и здоровье</span></span>',
+          "body": '<ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>',
+          "isClosed": true,
+          "icon": "arrow",
+        })
+      </li>
+    </ul>
+  </div>
 </div>
+
+<!-- <div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div> -->
