@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/blocks.min.css?_v=20240408084939">
-  <title>Test Page blocks</title>
-  <script defer src="js/blocks.min.js?_v=20240408084939"></script>
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240408084939">
+  <title>catalog Page</title>
+  <script defer src="js/catalog.min.js?_v=20240408084939"></script>
 </head>
   <body>
     <header class="header">
@@ -161,7 +161,7 @@
     <div class="nav__item-title">Публикация</div>
     
   </a>
-</li><li >
+</li><li class='active'>
   <a class="nav__item nav__item-catalog" href="./catalog.html">
     <svg class="nav__item-icon">
       <use xlink:href="./img/icons/icons.svg#catalog"></use>
@@ -210,42 +210,69 @@
 </nav>
 
 </header>
-    <main>
-      <section class="section">
+    <nav class="nav-pages">
+  <ul class="nav-pages__list">
+    <li>
+      <a href="">Магазины</a>
+    </li>
+    <li>
+      <a href="">Совместные покупки</a>
+    </li>
+    <li>
+      <a href="">Test for Free</a>
+    </li>
+    <li>
+      <a href="">Блогеры</a>
+    </li>
+    <li>
+      <a href="">Публикации</a>
+    </li>
+  </ul>
+</nav>
+    <main class="main">
+      <section class="section section--catalog">
         <div class="section__inner">
-          <div class="contact-info">
-  <div class="contact-info__connect">
-    <div class="contact-info__connect-item contact-info__mail">
-      <svg class="contact-info__icon">
-        <use xlink:href="./img/icons/icons.svg#mail"></use>
-      </svg>
-      info@lass-fashion.ru
-    </div>
-    <div class="contact-info__connect-item contact-info__phone">
-      <svg class="contact-info__icon">
-        <use xlink:href="./img/icons/icons.svg#phone"></use>
-      </svg>
-      +7 (495) 234-34-34
-    </div>
-    <div class="contact-info__connect-item contact-info__shedule">
-      <svg class="contact-info__icon">
-        <use xlink:href="./img/icons/icons.svg#clock"></use>
-      </svg>
-      ПН-ВС 10:00-20:00
-    </div>
+          <div class="catalog">
+  <div class="catalog__mobile">
+    <div class="catalog__mobile-title">Категории</div>
+
+    <ul class="catalog__list">
+      <li class="catalog__item">
+        <div class="collapse collapse--close">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      <span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Одежда</span></span>
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#arrow"></use>
+    </svg>
   </div>
-  <div class="contact-info__descr">
-    <h3 class="contact-info__descr-title">Юридическая информация:</h3>
-    <p>Полное наименование: Общество с ограниченной ответственностью «Национальный цифровой ресурс «РУКОНТ»
-      Юридический адрес: 129090, г. Москва, Протопоповский пер., д. 19, корп. 12
-      Телефон: +7(495)719-09-21
-    </p>
-    <div>
-      ИНН/КПП: 7702823270 / 770201001
-      <div>ОГРН: 1137746876090</div>
-    </div>
+  <div class="collapse__content">
+    test2
   </div>
 </div>
+      </li>
+      <li class="catalog__item">
+        <div class="collapse collapse--close">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      <span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Красота и здоровье</span></span>
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#arrow"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>
+  </div>
+</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- <div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div> -->
+
         </div>
       </section>
     </main>

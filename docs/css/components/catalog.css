@@ -1,0 +1,157 @@
+.catalog__item-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.catalog__item-title {
+  gap: 0.75rem;
+  font-weight: 400;
+  transition: var(--transition-base);
+}
+
+.catalog__item-title-text {
+  position: relative;
+}
+
+.catalog__item-title-text:after {
+  transition: var(--transition-base);
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(var(--color-primary));
+  opacity: 0;
+}
+
+.catalog__mobile-title {
+  font-weight: 600;
+  font-size: 1.375rem;
+}
+
+.catalog__mobile .collapse {
+  padding: 0.75rem 1.25rem;
+  transition: var(--transition-base);
+}
+
+.catalog__mobile .collapse__head {
+  position: relative;
+}
+
+.catalog__mobile .collapse__head:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: -0.75rem;
+  background-color: rgb(var(--color-black-light));
+}
+
+.catalog__mobile .collapse__head-title {
+  white-space: wrap;
+  overflow: unset;
+  text-overflow: unset;
+}
+
+.catalog__mobile .collapse__head svg use {
+  stroke: rgb(var(--color-grey));
+  stroke-width: 2px;
+}
+
+.catalog__mobile .collapse__head-icon use {
+  stroke: rgb(var(--color-grey));
+  stroke-width: 2px;
+}
+
+.catalog__mobile .collapse__content {
+  transform: none;
+  animation: none;
+}
+
+.catalog__mobile .collapse--open .collapse,
+.catalog__mobile .collapse--open,
+.catalog__mobile .collapse:hover .collapse,
+.catalog__mobile .collapse:hover {
+  background-color: rgb(var(--color-primary-soft));
+}
+
+.catalog__mobile .collapse--open .collapse__head,
+.catalog__mobile .collapse:hover .collapse__head {
+  color: rgb(var(--color-primary));
+}
+
+.catalog__mobile .collapse--open .collapse__head .catalog__item-title svg use,
+.catalog__mobile .collapse:hover .collapse__head .catalog__item-title svg use {
+  stroke: rgb(var(--color-primary));
+}
+
+.catalog__mobile .collapse--open .collapse__head .catalog__item-title-text:after,
+.catalog__mobile .collapse:hover .collapse__head .catalog__item-title-text:after {
+  opacity: 1;
+}
+
+.catalog__mobile .collapse--open .collapse__head-icon use,
+.catalog__mobile .collapse:hover .collapse__head-icon use {
+  stroke: rgb(var(--color-primary));
+}
+
+.catalog__mobile .collapse--open > .collapse__head .collapse__head-icon {
+  transform: rotate(180deg);
+}
+
+.catalog__mobile .catalog__list {
+  margin: 1rem -1.25rem 0;
+}
+
+.catalog__mobile .catalog__list-second .collapse {
+  margin: 0 -1.25rem;
+  padding-left: 1.75rem;
+}
+
+.catalog__mobile .catalog__list-second .collapse .collapse__head,
+.catalog__mobile .catalog__list-second .collapse:hover .collapse__head,
+.catalog__mobile .catalog__list-second .collapse--open .collapse__head {
+  color: rgb(var(--color-black));
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.catalog__mobile .catalog__list-second .collapse .collapse__head:after,
+.catalog__mobile .catalog__list-second .collapse:hover .collapse__head:after,
+.catalog__mobile .catalog__list-second .collapse--open .collapse__head:after {
+  right: 0.75rem;
+}
+
+.catalog__mobile .catalog__list-second .collapse .collapse__head-icon use,
+.catalog__mobile .catalog__list-second .collapse:hover .collapse__head-icon use,
+.catalog__mobile .catalog__list-second .collapse--open .collapse__head-icon use {
+  stroke: rgb(var(--color-grey));
+}
+
+.catalog__mobile .catalog__list-second .collapse .collapse__content,
+.catalog__mobile .catalog__list-second .collapse:hover .collapse__content,
+.catalog__mobile .catalog__list-second .collapse--open .collapse__content {
+  font-size: 1rem;
+}
+
+.catalog__mobile .catalog__list-second .collapse:hover .collapse__head-icon use,
+.catalog__mobile .catalog__list-second .collapse--open .collapse__head-icon use {
+  stroke: rgb(var(--color-black));
+}
+
+.catalog__mobile .catalog__list-third li {
+  margin-left: 1.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgb(var(--color-black-light));
+}
+
+@media (min-width: 48rem) {
+  .catalog__mobile .catalog__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem -1.9375rem 0;
+  }
+}

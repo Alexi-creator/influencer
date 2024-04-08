@@ -863,6 +863,19 @@ button {
   text-align: center;
 }
 
+.nav__list > li.active .nav__item-title {
+  color: rgb(var(--color-primary));
+}
+
+.nav__list > li.active .nav__item-icon {
+  fill: rgb(var(--color-primary));
+  stroke: rgb(var(--color-primary));
+}
+
+.nav__list > li.active .nav__item use {
+  stroke: rgb(var(--color-primary));
+}
+
 .nav__item-counter {
   position: absolute;
   top: 0px;

@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20240401082500">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20240408084939">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20240401082500"></script>
+  <script defer src="js/index.min.js?_v=20240408084939"></script>
 </head>
   <body>
     <header class="header">
@@ -39,15 +39,15 @@
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li class="header__nav-item header__nav-logo">
-          <a class="header__nav-logo-small" href="#">
+          <a class="header__nav-logo-small" href="./index.html">
             <img width="24" height="24" src="img/small-logo.svg" alt="small-logo">
           </a>
-          <a class="header__nav-logo-big" href="#">
+          <a class="header__nav-logo-big" href="./index.html">
             <img width="106" height="24" src="img/logo.svg" alt="logo">
           </a>
         </li>
         <li class="header__nav-item header__nav-catalog">
-          <a class="btn" href="#">
+          <a class="btn" href="./catalog.html">
             <svg>
               <use xlink:href="./img/icons/icons.svg#catalog"></use>
             </svg>
@@ -152,54 +152,63 @@
   </div>
   <nav class="nav">
   <ul class="nav__list">
-    <li>
-      <a class="nav__item nav__item-publication" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#camera"></use>
-        </svg>
-        <div class="nav__item-title">Публикация</div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item nav__item-catalog" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#catalog"></use>
-        </svg>
-        <div class="nav__item-title">Каталог</div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item nav__item-feed" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#feed"></use>
-        </svg>
-        <div class="nav__item-title">Лента</div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-        </svg>
-        <div class="nav__item-title">Корзина</div>
-        <div class="nav__item-counter">
-          <div class="counter counter--green">
+    <li >
+  <a class="nav__item nav__item-publication" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#camera"></use>
+    </svg>
+    
+    <div class="nav__item-title">Публикация</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-catalog" href="./catalog.html">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+    </svg>
+    
+    <div class="nav__item-title">Каталог</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-feed" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#feed"></use>
+    </svg>
+    
+    <div class="nav__item-title">Лента</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-shopping-bag" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+    </svg>
+    
+    <div class="nav__item-title">Корзина</div>
+    
+      <div class="nav__item-counter">
+        <div class="counter counter--green">
   1
 </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="nav__item nav__item-profile" href="#">
-        <svg class="nav__item-icon">
-          <use xlink:href="./img/icons/icons.svg#profile"></use>
-        </svg>
-        <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
-        <div class="nav__item-title">Профиль</div>
-      </a>
-    </li>
+      </div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-profile" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#profile"></use>
+    </svg>
+    
+      <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
+    
+    <div class="nav__item-title">Профиль</div>
+    
+  </a>
+</li>
   </ul>
 </nav>
+
 </header>
     <nav class="nav-pages">
   <ul class="nav-pages__list">
@@ -538,7 +547,7 @@
         <div class="shop-window__form-filter-filters filters">
           <!-- filters__item--categories нужно добавить по дефолту -->
           <div class="filters__item filters__item--categories">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Категории
@@ -910,7 +919,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Прайс
@@ -943,7 +952,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер0
@@ -998,7 +1007,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер10
@@ -1053,7 +1062,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер
@@ -1108,7 +1117,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Специальные предложение
@@ -1163,7 +1172,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер2
@@ -1218,7 +1227,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер3
@@ -1273,7 +1282,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер4
@@ -1328,7 +1337,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер5
@@ -1493,7 +1502,7 @@
         </div>
         <div class="shop-window__form-filter-filters filters filters--sp">
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны
@@ -1548,7 +1557,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны2
@@ -1613,7 +1622,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны3
@@ -1678,7 +1687,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны4
@@ -1743,7 +1752,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны5
@@ -1808,7 +1817,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны6
@@ -1873,7 +1882,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны7
@@ -2049,7 +2058,7 @@
         <div class="shop-window__form-filter-filters filters">
           <!-- filters__item--categories нужно добавить по дефолту -->
           <div class="filters__item filters__item--categories">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Категории
@@ -2421,7 +2430,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Прайс
@@ -2454,7 +2463,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер0
@@ -2509,7 +2518,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер10
@@ -2564,7 +2573,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер
@@ -2619,7 +2628,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Специальные предложение
@@ -2674,7 +2683,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер2
@@ -2729,7 +2738,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер3
@@ -2784,7 +2793,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер4
@@ -2839,7 +2848,7 @@
 </div>
           </div>
           <div class="filters__item">
-            <div class="collapse">
+            <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер5
