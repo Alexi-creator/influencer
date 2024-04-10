@@ -21,7 +21,7 @@
     grid-template-columns: repeat(5, 1fr);
   }
 
-  &__column {
+  & .masonry-column {
     overflow: hidden; 
 
     & > div:not(:last-child) {
