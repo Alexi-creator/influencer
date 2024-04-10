@@ -8,7 +8,7 @@ interface IConstructor {
 }
 
 /**
- * Сетка Masonry
+ * Сетка Masonry простой вариант без учета высоты элементов.
  */
 export class Masonry {
   private selectorContainer: string
@@ -63,7 +63,7 @@ export class Masonry {
 
     for (let i = 0; i < columnsCount; i++) {
       const columnElem = document.createElement('div')
-      columnElem.className = 'filters__column'
+      columnElem.className = 'masonry-column'
       this.containerElem.appendChild(columnElem)
     }
 
