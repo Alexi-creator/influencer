@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240408084939">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240410090907">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240408084939"></script>
+  <script defer src="js/catalog.min.js?_v=20240410090907"></script>
 </head>
   <body>
     <header class="header">
@@ -269,9 +269,290 @@
       </li>
     </ul>
   </div>
+
+  <div class="catalog__desktop tabs">
+    <ul class="catalog__menu tabs__list">
+      <li class="catalog__menu-item tabs__tab tabs__tab--active" data-tab-path="cloth">
+        <span class="catalog__item-title">
+          <svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg>
+          <span class="catalog__item-title-text">Одежда</span>
+        </span>
+      </li>
+      <li class="catalog__menu-item tabs__tab" data-tab-path="electronics">
+        <span class="catalog__item-title">
+          <svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg>
+          <span class="catalog__item-title-text">Электроника</span>
+        </span>
+      </li>
+      <li class="catalog__menu-item tabs__tab" data-tab-path="cloth2">
+        <span class="catalog__item-title">
+          <svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg>
+          <span class="catalog__item-title-text">Одежда2</span>
+        </span>
+      </li>
+      <li class="catalog__menu-item tabs__tab" data-tab-path="electronics2">
+        <span class="catalog__item-title">
+          <svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg>
+          <span class="catalog__item-title-text">Электроника2</span>
+        </span>
+      </li>
+    </ul>
+
+    <div class="catalog__content tabs__contents">
+      <div class="tabs__content tabs__content--active" data-tab-target="cloth">
+        <div class="catalog__desktop-title">Красота и здоровье</div>
+        <div class="catalog__masonry">
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Макияж</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы2</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей2</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы3</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей3</a>
+              </li>
+              <li class="catalog__masonry-list-item hide-elem">
+                <a href="#">Гель-лаки и гелевые системы4</a>
+              </li>
+              <li class="catalog__masonry-list-item hide-elem">
+                <a href="#">Дизайн ногтей4</a>
+              </li>
+              <li class="catalog__masonry-list-item hide-elem">
+                <a href="#">Гель-лаки и гелевые системы5</a>
+              </li>
+              <li class="catalog__masonry-list-item hide-elem">
+                <a href="#">Дизайн ногтей5</a>
+              </li>
+              <div class="btn btn-show btn--text btn--color-grey btn--show">
+                Развернуть
+                <svg><use xlink:href="./img/icons/icons.svg#arrow"></use></svg>
+              </div>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Макияж2</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона2</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Макияж3</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы3</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей3</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона3</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары3</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники3</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs__content" data-tab-target="electronics">
+        <div class="catalog__desktop-title">Electronics</div>
+        <div class="catalog__masonry">
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Electronics</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Electronics2</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона2</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Electronics3</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы3</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей3</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона3</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары3</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники3</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs__content" data-tab-target="cloth2">
+        <div class="catalog__desktop-title">Красота и здоровье2</div>
+        <div class="catalog__masonry">
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Макияж2</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона2</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Макияж3</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона3</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs__content" data-tab-target="electronics2">
+        <div class="catalog__desktop-title">Electronics2</div>
+        <div class="catalog__masonry">
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Electronics2</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Гель-лаки и гелевые системы</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Дизайн ногтей</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__masonry-item">
+            <div class="catalog__masonry-item-title">Оборудование и материалы для тату-салона</div>
+            <ul class="catalog__masonry-list">
+              <li class="catalog__masonry-list-item">
+                <a href="#">Тату-машинки и аксессуары</a>
+              </li>
+              <li class="catalog__masonry-list-item">
+                <a href="#">Держатели и наконечники</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<!-- <div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div> -->
 
         </div>
       </section>

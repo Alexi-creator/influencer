@@ -1382,6 +1382,28 @@ button {
   border: 2px solid rgb(var(--color-primary-light));
 }
 
+.btn.btn--show {
+  height: auto;
+  gap: 0.125rem;
+  align-items: center;
+  padding: 0;
+  font-size: 0.875rem;
+  stroke: rgb(var(--color-grey));
+}
+
+.btn.btn--show svg {
+  transition: --transition-base;
+}
+
+.btn.btn--show svg use {
+  stroke: inherit;
+  stroke-width: 2px;
+}
+
+.btn.btn--show.active svg {
+  transform: rotate(180deg);
+}
+
 .breadcrumbs {
   color: rgb(var(--color-grey));
 }
@@ -1998,6 +2020,14 @@ button {
 
 .noUi-connect {
   background-color: rgb(var(--color-primary-dark));
+}
+
+.hide-elem {
+  display: none;
+}
+
+.show-elem {
+  display: block;
 }
 
 .range__min,

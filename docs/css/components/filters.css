@@ -16,11 +16,11 @@
   gap: 1.25rem;
 }
 
-.filters__column {
+.filters .masonry-column {
   overflow: hidden;
 }
 
-.filters__column > div:not(:last-child) {
+.filters .masonry-column > div:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 
