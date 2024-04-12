@@ -1,10 +1,9 @@
-import { BreakpointWidth } from '../constants/sizeScreen'
-
 type IBreakpointsSettings = Record<number, number>
 
 interface IConstructor {
   selectorContainer: string
   breakpointsSettings: IBreakpointsSettings
+  tagName?: string
 }
 
 /**
@@ -13,19 +12,20 @@ interface IConstructor {
 export class Masonry {
   private selectorContainer: string
   private breakpointsSettings: IBreakpointsSettings
-  private items: Node[]
+  private tagName: string
 
-  private containerElem: HTMLElement
+  private containersElem: HTMLElement[]
+  private masonryAll: Map<HTMLElement, Node[]>
 
-  constructor({ selectorContainer, breakpointsSettings }: IConstructor) {
+  constructor({ selectorContainer, breakpointsSettings, tagName }: IConstructor) {
     this.selectorContainer = selectorContainer
     this.breakpointsSettings = breakpointsSettings
-    this.items = []
+    this.tagName = tagName || 'div'
 
-    const containerElem = document.querySelector(this.selectorContainer)
-    if (containerElem) this.containerElem = containerElem as HTMLElement
+    const containersElem = [...document.querySelectorAll(this.selectorContainer)]
+    if (containersElem.length > 0) this.containersElem = containersElem as HTMLElement[]
 
-    if (!this.containerElem || !Object.keys(breakpointsSettings).length) return
+    if (this.containersElem.length === 0 || !Object.keys(breakpointsSettings).length) return
 
     this.init()
   }
@@ -36,8 +36,12 @@ export class Masonry {
       mediaQueryList.addListener(() => this.breakpointChecker())
     })
 
+    this.masonryAll = new Map()
+    
     // копия всех элементов
-    Array.from(this.containerElem.children).forEach(item => this.items.push(item.cloneNode(true)))
+    this.containersElem.forEach(parent => {
+      this.masonryAll.set(parent, [...parent.children].map(child => child.cloneNode(true)))
+    })
     
     this.build()
   }
@@ -52,29 +56,31 @@ export class Masonry {
       .map(breakpoint => Number(breakpoint))
       .filter(elem => elem <= windowWidth)
     
-    return this.breakpointsSettings[currentSettings?.at(-1) || currentSettings[0] || BreakpointWidth.MOBILE]
+    return this.breakpointsSettings[currentSettings?.at(-1) || currentSettings[0] || Object.keys(this.breakpointsSettings)[0]]
   }
 
   private build() {
     const columnsCount = this.getColumnsCount()
     
-    // очищаем родительский контейнер
-    this.containerElem.innerHTML = ''
+    this.masonryAll.forEach((child, parent) => {
+      parent.innerHTML = ''
 
-    for (let i = 0; i < columnsCount; i++) {
-      const columnElem = document.createElement('div')
-      columnElem.className = 'masonry-column'
-      this.containerElem.appendChild(columnElem)
-    }
+      for (let i = 0; i < columnsCount; i++) {
+        const columnElem = document.createElement(this.tagName)
+        columnElem.className = 'masonry-column'
+        parent.appendChild(columnElem)
+      }
 
-    const columnsElem = this.containerElem.children
-    const childrenCount = columnsElem.length - 1
-    let counter = 0
+      const columnsElem = parent.children
+      const childrenCount = columnsElem.length - 1
 
-    this.items.forEach(item => {
-      columnsElem[counter].appendChild(item)
+      let counter = 0
+
+      child.forEach(item => {
+        columnsElem[counter].appendChild(item)
       
-      counter === childrenCount ? counter = 0 : counter += 1
+        counter === childrenCount ? counter = 0 : counter += 1
+      })
     })
   }
 }
