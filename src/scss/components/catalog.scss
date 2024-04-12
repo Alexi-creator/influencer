@@ -201,6 +201,7 @@
 
     #{$root}__menu {
       width: 14.5rem;
+      flex-shrink: 0;
 
       &-item {
         padding: 0.75rem 0 0.75rem 0.75rem;
