@@ -2021,6 +2021,7 @@ svg {
 
 .catalog__desktop .catalog__menu {
   width: 14.5rem;
+  flex-shrink: 0;
 }
 
 .catalog__desktop .catalog__menu-item {
