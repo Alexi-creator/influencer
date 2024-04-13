@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240412064356">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240413130739">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240412064356"></script>
+  <script defer src="js/catalog.min.js?_v=20240413130739"></script>
 </head>
   <body>
     <header class="header">
@@ -213,19 +213,19 @@
     <nav class="nav-pages">
   <ul class="nav-pages__list">
     <li>
-      <a href="">Магазины</a>
+      <a href="#">Магазины</a>
     </li>
     <li>
-      <a href="">Совместные покупки</a>
+      <a href="#">Совместные покупки</a>
     </li>
     <li>
-      <a href="">Test for Free</a>
+      <a href="#">Test for Free</a>
     </li>
     <li>
-      <a href="">Блогеры</a>
+      <a href="#">Блогеры</a>
     </li>
     <li>
-      <a href="">Публикации</a>
+      <a href="#">Публикации</a>
     </li>
   </ul>
 </nav>
@@ -238,7 +238,7 @@
 
     <div class="catalog__list catalog__masonry">
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="cloth">
           <div class="collapse collapse--close">
   <div class="collapse__head">
     <span class="collapse__head-title">
@@ -256,7 +256,7 @@
       </ul>
       
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="electronics">
           <div class="collapse collapse--close">
   <div class="collapse__head">
     <span class="collapse__head-title">
@@ -274,7 +274,7 @@
       </ul>
       
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="cloth2">
           <div class="collapse collapse--close">
   <div class="collapse__head">
     <span class="collapse__head-title">
@@ -292,7 +292,7 @@
       </ul>
       
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="electronics2">
           <div class="collapse collapse--close">
   <div class="collapse__head">
     <span class="collapse__head-title">
@@ -309,68 +309,6 @@
         </li>
       </ul>
     </div>
-    <!-- <ul class="catalog__list">
-      <li class="catalog__item">
-        <div class="collapse collapse--close">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      <span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Красота и здоровье</span></span>
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#arrow"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    test2
-  </div>
-</div>
-      </li>
-      <li class="catalog__item">
-        <div class="collapse collapse--close">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      <span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Electronics</span></span>
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#arrow"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>
-  </div>
-</div>
-      </li>
-      <li class="catalog__item">
-        <div class="collapse collapse--close">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      <span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Красота и здоровье2</span></span>
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#arrow"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    test2
-  </div>
-</div>
-      </li>
-      <li class="catalog__item">
-        <div class="collapse collapse--close">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      <span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Electronics2</span></span>
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#arrow"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>
-  </div>
-</div>
-      </li>
-    </ul> -->
   </div>
 
   <div class="catalog__desktop tabs">
@@ -438,10 +376,10 @@
               <li class="catalog__masonry-list-item hide-elem">
                 <a href="#">Дизайн ногтей5</a>
               </li>
-              <div class="btn btn-show btn--text btn--color-grey btn--show">
+              <li class="btn btn-show btn--text btn--color-grey btn--show">
                 Развернуть
                 <svg><use xlink:href="./img/icons/icons.svg#arrow"></use></svg>
-              </div>
+              </li>
             </ul>
           </div>
           <div class="catalog__masonry-item">
