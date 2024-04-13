@@ -1,0 +1,72 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
+.useful-links {
+  $root: &;
+
+  display: none;
+  position: fixed;
+  background-color: rgb(var(--color-white));
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 4rem;
+  padding-top: 1rem;
+
+  &.active {
+    display: block;
+  }
+
+  &__title {
+    @extend %flex-space-between;
+
+    font-size: 1.375rem;
+    font-weight: 600;
+
+    & svg {
+      cursor: pointer;
+
+      & use {
+        fill: rgb(var(--color-grey)) !important;
+      }
+    }
+  }
+
+  &__list {
+    margin: 1rem -1.25rem 1rem;
+
+    &-item {
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid rgb(var(--color-black-light));
+
+      & > a {
+        @extend %flex-space-between;
+
+        & svg {
+          transform: rotate(-90deg);
+  
+          & use {
+            stroke: rgb(var(--color-grey));
+          }
+        }
+      }
+    }
+
+    @include media($md) {
+      margin: 1rem -2.5rem 1rem;
+
+      &-item {
+        padding: 0.75rem 2.5rem;
+      }
+    } 
+  }
+
+  @include media($lg) {
+    display: none;
+    
+    &.active {
+      display: none;
+    }
+  }
+}
