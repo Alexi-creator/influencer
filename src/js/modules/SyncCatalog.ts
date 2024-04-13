@@ -7,12 +7,19 @@ export class SyncCatalog {
   private selectorMobile: string
   private selectorDesktop: string
 
+  private catalogSelected: string
+
   private containerMobile: HTMLElement
   private containerDesktop: HTMLElement
+
+  private catalogsMobile: HTMLElement[]
+  private catalogsDesktop: Map<HTMLElement, HTMLElement>
 
   constructor() {
     this.selectorMobile = '.catalog__mobile'
     this.selectorDesktop = '.catalog__desktop'
+
+    this.catalogSelected = ''
 
     const containerMobile = document.querySelector(this.selectorMobile)
     if (containerMobile) this.containerMobile = containerMobile as HTMLElement
@@ -25,35 +32,88 @@ export class SyncCatalog {
   }
 
   private init() {
-    // const mediaQueryList = window.matchMedia(`(min-width:${BreakpointWidth.DESKTOP}px)`)
-    // mediaQueryList.addListener((e) => this.breakpointChecker(e))
+    this.catalogsMobile = [...document.querySelectorAll(`${this.selectorMobile} [data-catalog]`)] as HTMLElement[]
+    this.catalogsDesktop = new Map()
+
+    const catalogsDesktop = [...document.querySelectorAll(`${this.selectorDesktop} .catalog__menu-item`)] as HTMLElement[]
+    catalogsDesktop.forEach(catalog => {
+      const catalogSyncName = catalog.dataset.tabPath
+      const catalogContent = document.querySelector(`.catalog__content [data-tab-target="${catalogSyncName}"]`)
+      this.catalogsDesktop.set(catalog, catalogContent as HTMLElement)      
+    })
 
     this.handlers()
   }
 
-  // private breakpointChecker(e: MediaQueryListEvent) {
-  //   if (e.matches) {
+  private syncFromMobile(catalog: string) {
+    this.catalogsDesktop.forEach((val, key) => {
+      key.classList.remove('tabs__tab--active')
+      val.classList.remove('tabs__content--active')
 
-  //   }
-  // }
-
-  private syncCatalog(targetElement: Element) {
-    const isDesktop = window.innerWidth >= BreakpointWidth.DESKTOP
-
-    console.log('isDesktop', isDesktop)
-    console.log('targetElement', targetElement)
-    
+      if (key.dataset.tabPath === catalog) {
+        key.classList.add('tabs__tab--active')
+        val.classList.add('tabs__content--active')
+      }
+    })
   }
 
-  // private checkBreakpoint(targetElement: HTMLElement) {
-  //   const isDesktop = window.innerWidth >= BreakpointWidth.DESKTOP
+  private syncFromDesktop(catalog: string) {
+    this.catalogsMobile.forEach((item) => {
+      const collapseElem = item.querySelector('.collapse') as HTMLElement
 
-  //   synkCatalog
-  // }
+      collapseElem.classList.remove('collapse--open')
+      collapseElem.classList.add('collapse--close')
+
+      if (item.dataset.catalog === catalog) {
+        collapseElem.classList.add('collapse--open')
+      }     
+    })
+  }
+
+  private searchCatalogMobile(targetElement: HTMLElement) {
+    const parent = targetElement.closest('.catalog__item') as HTMLElement
+
+    if (parent) {
+      const catalog = parent.dataset.catalog
+
+      if (catalog) {
+        if (this.catalogSelected === catalog) return
+
+        this.catalogSelected = catalog
+        this.syncFromMobile(catalog)
+      }
+    }
+  }
+
+  private searchCatalogDesktop(targetElement: HTMLElement) {
+    const parent = targetElement.closest('.tabs__tab') as HTMLElement
+
+    if (parent) {
+      const catalog = parent.dataset.tabPath
+
+      if (catalog) {
+        if (this.catalogSelected === catalog) return
+
+        this.catalogSelected = catalog
+        this.syncFromDesktop(catalog)
+      }
+    }
+  }
+
+  private syncCatalog(targetElement: HTMLElement) {
+    if (this.checkDesktopWidth()) {
+      this.searchCatalogDesktop(targetElement)
+    } else {
+      this.searchCatalogMobile(targetElement)
+    }
+  }
+
+  private checkDesktopWidth(): boolean {
+    return window.innerWidth >= BreakpointWidth.DESKTOP
+  }
 
   private clickHandler(e: Event) {
-    const targetElement = e.target as Element
-    // tabs__tab--active" data-tab-path="cloth"
+    const targetElement = e.target as HTMLElement
 
     this.syncCatalog(targetElement)
   }
