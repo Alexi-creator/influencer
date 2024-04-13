@@ -13,7 +13,7 @@
   right: 0;
   top: 0;
   bottom: 4rem;
-  padding-top: 1rem;
+  padding: 1rem 1.25rem;
 }
 
 .useful-links.active {
@@ -57,6 +57,10 @@
 
   .useful-links__list-item {
     padding: 0.75rem 2.5rem;
+  }
+
+  .useful-links {
+    padding: 1rem 2.5rem;
   }
 }
 
