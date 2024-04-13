@@ -33,7 +33,7 @@ export class Masonry {
   private init() {
     Object.keys(this.breakpointsSettings).forEach(breakpoint => {
       const mediaQueryList = window.matchMedia(`(min-width:${breakpoint}px)`)
-      mediaQueryList.addListener(() => this.breakpointChecker())
+      mediaQueryList.addListener(() => this.build())
     })
 
     this.masonryAll = new Map()
@@ -43,10 +43,6 @@ export class Masonry {
       this.masonryAll.set(parent, [...parent.children].map(child => child.cloneNode(true)))
     })
     
-    this.build()
-  }
-
-  private breakpointChecker() {    
     this.build()
   }
 

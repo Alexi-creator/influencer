@@ -4,7 +4,7 @@
 
     <div class="catalog__list catalog__masonry">
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="cloth">
           @@include("./collapse.html", {
             "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Красота и здоровье</span></span>',
             "body": "test2",
@@ -15,7 +15,7 @@
       </ul>
       
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="electronics">
           @@include("./collapse.html", {
             "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Electronics</span></span>',
             "body": '<ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>',
@@ -26,7 +26,7 @@
       </ul>
       
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="cloth2">
           @@include("./collapse.html", {
             "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Красота и здоровье2</span></span>',
             "body": "test2",
@@ -37,7 +37,7 @@
       </ul>
       
       <ul class="catalog__masonry-item">
-        <li class="catalog__item">
+        <li class="catalog__item" data-catalog="electronics2">
           @@include("./collapse.html", {
             "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Electronics2</span></span>',
             "body": '<ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>',
@@ -47,40 +47,6 @@
         </li>
       </ul>
     </div>
-    <!-- <ul class="catalog__list">
-      <li class="catalog__item">
-        @@include("./collapse.html", {
-          "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Красота и здоровье</span></span>',
-          "body": "test2",
-          "isClosed": true,
-          "icon": "arrow",
-        })
-      </li>
-      <li class="catalog__item">
-        @@include("./collapse.html", {
-          "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Electronics</span></span>',
-          "body": '<ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>',
-          "isClosed": true,
-          "icon": "arrow",
-        })
-      </li>
-      <li class="catalog__item">
-        @@include("./collapse.html", {
-          "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloth"></use></svg><span class="catalog__item-title-text">Красота и здоровье2</span></span>',
-          "body": "test2",
-          "isClosed": true,
-          "icon": "arrow",
-        })
-      </li>
-      <li class="catalog__item">
-        @@include("./collapse.html", {
-          "title": '<span class="catalog__item-title"><svg><use xlink:href="./img/icons/icons.svg#cloud"></use></svg><span class="catalog__item-title-text">Electronics2</span></span>',
-          "body": '<ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>',
-          "isClosed": true,
-          "icon": "arrow",
-        })
-      </li>
-    </ul> -->
   </div>
 
   <div class="catalog__desktop tabs">
@@ -148,10 +114,10 @@
               <li class="catalog__masonry-list-item hide-elem">
                 <a href="#">Дизайн ногтей5</a>
               </li>
-              <div class="btn btn-show btn--text btn--color-grey btn--show">
+              <li class="btn btn-show btn--text btn--color-grey btn--show">
                 Развернуть
                 <svg><use xlink:href="./img/icons/icons.svg#arrow"></use></svg>
-              </div>
+              </li>
             </ul>
           </div>
           <div class="catalog__masonry-item">
