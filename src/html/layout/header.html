@@ -43,6 +43,8 @@
         </li>
         <li class="header__nav-item header__nav-search">
           @@include("../components/input-text.html", {
+            name: "search",
+            type: "text",
             placeholder: "Найдите что-нибудь",
             prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
             suffix: "@@include('../components/select.html', { 'label1': 'Везде', 'label2': 'Везде2', 'label3': 'Везде3 очень длинный текст', 'data-value1': 'val1', 'data-value2': 'val2', 'data-value3': 'val3', 'name': 'select', 'extra-class': 'select--transparent', 'value': 'val2' })",
@@ -97,7 +99,7 @@
             </svg>
           </a>
         </li>
-        <li class="header__nav-item header__nav-profile">
+        <li class="header__nav-item header__nav-profile" data-popup="login">
           <a class="header__nav-sign-in" href="#">
             <svg>
               <use xlink:href="./img/icons/icons.svg#user"></use>
@@ -128,6 +130,12 @@
   </div>
 
   @@include("../components/useful-links.html")
+
+  @@include("../components/popup.html", {
+    "id": "login",
+    "body": '@@include("../components/login.html")',
+    "extra-class": "header__login",
+  })
 
   @@include("../components/menu-mobile.html", {
     activeItem: "@@activeItem",

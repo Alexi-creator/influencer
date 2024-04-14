@@ -28,7 +28,7 @@
       cursor: pointer;
 
       & use {
-        fill: rgb(var(--color-grey)) !important;
+        fill: rgb(var(--color-grey));
       }
     }
   }

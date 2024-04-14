@@ -1,9 +1,9 @@
 <div class="input-text @@extra-class">
-  <div class="input-text__prefix @@extra-class-prefix">
-    @@prefix
-  </div>
-  <input class="input-text__input" type="text" placeholder="@@placeholder">
-  <div class="input-text__suffix @@extra-class-suffix">
-    @@suffix
-  </div>
+  @@if(prefix) {
+    <div class="input-text__prefix @@extra-class-prefix">@@prefix</div>
+  }
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="@@placeholder">
+  @@if(suffix) {
+    <div class="input-text__suffix @@extra-class-suffix">@@prefix</div>
+  }
 </div>

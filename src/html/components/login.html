@@ -1,0 +1,105 @@
+<div class="login">
+  <div class="login__inner">
+    <div class="login__title">
+      Войдите в свой профиль
+      <button class="login__title-cross" type="button">
+        <svg data-close-popup="login">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="login__descr">
+      Чтобы пользоваться лентой новостей
+    </div>
+    <div class="login__options">
+      <button class="login__options-item btn">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#google"></use>
+        </svg>
+        Войти через Google
+        <svg class="login__options-item-arrow">
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </button>
+      <button class="login__options-item btn">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#vk"></use>
+        </svg>
+        Войти через ВКонтакте
+        <svg class="login__options-item-arrow">
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="login__or">
+      <span class="login__or-text">или</span>
+    </div>
+    <form class="login__form login__form-sign-in">
+      @@include("../components/input-text.html", {
+        name: "email",
+        type: "text",
+        placeholder: "Введите свою эл. почту",
+        prefix: "",
+        suffix: "",
+        "extra-class": "input-text--color-grey login__form-item",
+        "extra-class-prefix": "",
+        "extra-class-suffix": "",
+      })
+      @@include("../components/input-text.html", {
+        name: "password",
+        type: "password",
+        placeholder: "Введите пароль",
+        prefix: "",
+        suffix: "",
+        "extra-class": "input-text--color-grey login__form-item",
+        "extra-class-prefix": "",
+        "extra-class-suffix": "",
+      })
+      <button class="login__form-submit btn" type="submit">
+        Войти
+      </button>
+    </form>
+    <div class="login__choice">
+      <div class="login__choice-title">
+        Нет аккаунта?
+      </div>
+      <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+    </div>
+  </div>
+</div>
+
+<!-- <form class="login__form login__form-sign-up">
+  @@include("../components/input-text.html", {
+    name: "email",
+    type: "text",
+    placeholder: "Введите свою эл. почту",
+    prefix: "",
+    suffix: "",
+    "extra-class": "input-text--color-grey login__form-item",
+    "extra-class-prefix": "",
+    "extra-class-suffix": "",
+  })
+  @@include("../components/input-text.html", {
+    name: "password",
+    type: "password",
+    placeholder: "Придумайте пароль",
+    prefix: "",
+    suffix: "",
+    "extra-class": "input-text--color-grey login__form-item",
+    "extra-class-prefix": "",
+    "extra-class-suffix": "",
+  })
+  @@include("../components/input-text.html", {
+    name: "repeat_password",
+    type: "password",
+    placeholder: "Повторите ввод пароля пароль",
+    prefix: "",
+    suffix: "",
+    "extra-class": "input-text--color-grey login__form-item",
+    "extra-class-prefix": "",
+    "extra-class-suffix": "",
+  })
+  <button class="login__form-submit btn" type="submit">
+    Войти
+  </button>
+</form> -->
