@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/blocks.min.css?_v=20240414150504">
+  <link rel="stylesheet" href="css/pages/blocks.min.css?_v=20240414174936">
   <title>Test Page blocks</title>
-  <script defer src="js/blocks.min.js?_v=20240414150504"></script>
+  <script defer src="js/blocks.min.js?_v=20240414174936"></script>
 </head>
   <body>
     <header class="header">
@@ -208,86 +208,134 @@
   <div id="login" class="popup header__login">
   <div class="popup__overlay">
     <div class="popup__content">
-      <div class="login">
+      <div class="login login--sign-in">
   <div class="login__inner">
-    <div class="login__title">
-      Войдите в свой профиль
-      <button class="login__title-cross" type="button">
-        <svg data-close-popup="login">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="login__descr">
-      Чтобы пользоваться лентой новостей
-    </div>
-    <div class="login__options">
-      <button class="login__options-item btn">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#google"></use>
-        </svg>
-        Войти через Google
-        <svg class="login__options-item-arrow">
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </button>
-      <button class="login__options-item btn">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#vk"></use>
-        </svg>
-        Войти через ВКонтакте
-        <svg class="login__options-item-arrow">
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="login__or">
-      <span class="login__or-text">или</span>
-    </div>
-    <form class="login__form login__form-sign-in">
-      <div class="input-text input-text--color-grey login__form-item">
+
+    <!-- Блок логина -->
+    <div class="login__sign-in">
+      <div class="login__title">
+        Войдите в свой профиль
+        <button class="login__title-cross" type="button">
+          <svg data-close-popup="login">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__descr">
+        Чтобы пользоваться лентой новостей
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Войти через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Войти через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-in">
+        <div class="input-text input-text--color-grey login__form-item">
   
   <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
   
 </div>
-      <div class="input-text input-text--color-grey login__form-item">
+        <div class="input-text input-text--color-grey login__form-item">
   
   <input name="password" class="input-text__input" type="password" placeholder="Введите пароль">
   
 </div>
-      <button class="login__form-submit btn" type="submit">
-        Войти
-      </button>
-    </form>
-    <div class="login__choice">
-      <div class="login__choice-title">
-        Нет аккаунта?
+        <button class="login__form-submit btn" type="submit">
+          Войти
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Нет аккаунта?
+        </div>
+        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
       </div>
-      <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
     </div>
-  </div>
-</div>
 
-<!-- <form class="login__form login__form-sign-up">
-  <div class="input-text input-text--color-grey login__form-item">
+    <!-- Блок регистрации -->
+    <div class="login__sign-up">
+      <div class="login__title">
+        Зарегистрируйтесь
+        <button class="login__title-cross" type="button">
+          <svg data-close-popup="login">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__descr">
+        Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Регистрация через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Регистрация через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-up">
+        <div class="input-text input-text--color-grey login__form-item">
   
   <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
   
 </div>
-  <div class="input-text input-text--color-grey login__form-item">
+        <div class="input-text input-text--color-grey login__form-item">
   
   <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль">
   
 </div>
-  <div class="input-text input-text--color-grey login__form-item">
+        <div class="input-text input-text--color-grey login__form-item">
   
   <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль">
   
 </div>
-  <button class="login__form-submit btn" type="submit">
-    Войти
-  </button>
-</form> -->
+        <button class="login__form-submit btn" type="submit">
+          Зарегистрироваться
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Есть аккаунт?
+        </div>
+        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   </div>
 </div>

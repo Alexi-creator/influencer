@@ -122,6 +122,22 @@
   padding: 1rem 1.25rem;
 }
 
+.login.login--sign-in .login__sign-up {
+  display: none;
+}
+
+.login.login--sign-in .login__sign-in {
+  display: block;
+}
+
+.login.login--sign-up .login__sign-up {
+  display: block;
+}
+
+.login.login--sign-up .login__sign-in {
+  display: none;
+}
+
 .login__title {
   gap: 0.75rem;
   font-size: 1.25rem;

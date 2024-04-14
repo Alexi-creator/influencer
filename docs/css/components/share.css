@@ -65,6 +65,10 @@
   height: auto;
 }
 
+.share--open .popup__content {
+  max-height: unset;
+}
+
 .share--close .share__block-head {
   width: 0;
 }
