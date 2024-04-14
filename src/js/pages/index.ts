@@ -161,7 +161,7 @@ window.addEventListener('load', () => {
       '.shop-window__form-goods', 
       API_URLS.shops.test,
       {
-        method: HttpMethods.GET
+        method: HttpMethods.POST
       },
     )
   } catch (error) {
@@ -172,7 +172,7 @@ window.addEventListener('load', () => {
       '.shop-window__form-sp', 
       API_URLS.shops.test,
       {
-        method: HttpMethods.GET
+        method: HttpMethods.POST
       },
     )
   } catch (error) {
@@ -183,7 +183,7 @@ window.addEventListener('load', () => {
       '.shop-window__form-tff', 
       API_URLS.shops.test,
       {
-        method: HttpMethods.GET
+        method: HttpMethods.POST
       },
     )
   } catch (error) {
@@ -196,7 +196,6 @@ window.addEventListener('load', () => {
     const nextBtn = parentElement.querySelector('.swiper-button-next') as HTMLElement 
 
     new ShopWindow(
-      // new Filter('.filter-goods'),
       new CustomSwiper({
         target: swiperElement,
         options: {
@@ -215,13 +214,6 @@ window.addEventListener('load', () => {
           nextElement: nextBtn,
         },
       }),
-      // new Form(
-      //   '.shop-window__form', 
-      //   API_URLS.shops.test,
-      //   {
-      //     method: HttpMethods.GET
-      //   },
-      // ),
     )
   } catch (error) {
     console.log(error)

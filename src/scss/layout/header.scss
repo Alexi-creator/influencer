@@ -3,6 +3,7 @@
 @import "../basis/_extends";
 
 @import "../components/menu-mobile";
+@import "../components/login";
 
 .header {
   $root: &;
@@ -322,6 +323,12 @@
       @include media($lg) {
         display: none;
       }
+    }
+  }
+
+  &__login {
+    & .popup__content {
+      padding: 0;
     }
   }
 }

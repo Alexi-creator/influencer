@@ -42,6 +42,8 @@
       <h2>Input:</h2>
       <div class="ui-kit__block ui-kit__input">
         @@include("../components/input-text.html", {
+          name: "input1",
+          type: "text",
           placeholder: "Простой инпут",
           prefix: "",
           suffix: "",
@@ -52,6 +54,8 @@
       </div>
       <div class="ui-kit__block ui-kit__input">
         @@include("../components/input-text.html", {
+          name: "input2",
+          type: "text",
           placeholder: "Инпут с элементом слева",
           prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
           suffix: "",
@@ -62,6 +66,8 @@
       </div>
       <div class="ui-kit__block ui-kit__input">
         @@include("../components/input-text.html", {
+          name: "input3",
+          type: "text",
           placeholder: "Инпут с элементом слева и справа",
           prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
           suffix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#checkbox\"></use></svg>",
@@ -72,7 +78,9 @@
       </div>
       <div class="ui-kit__block ui-kit__input">
         @@include("../components/input-text.html", {
-          placeholder: "Инпут с серой рамкой",
+          name: "input4",
+          type: "password",
+          placeholder: "Пароль с серой рамкой",
           prefix: "",
           suffix: "",
           "extra-class": "input-text--color-grey",
