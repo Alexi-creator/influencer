@@ -13,6 +13,24 @@
     }
   }
 
+  &#{$root}--sign-in {
+    #{$root}__sign-up {
+      display: none;
+    }
+    #{$root}__sign-in {
+      display: block;
+    }
+  }
+
+  &#{$root}--sign-up {
+    #{$root}__sign-up {
+      display: block;
+    }
+    #{$root}__sign-in {
+      display: none;
+    }
+  }
+
   &__title {
     @extend %flex-space-between;
 

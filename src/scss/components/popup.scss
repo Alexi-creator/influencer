@@ -49,10 +49,12 @@
   &__content {
     max-width: 30rem;
     width: 100%;
+    max-height: 100%;
+    height: max-content;
     padding: 0.75rem 1rem;
     background-color: rgb(var(--color-white));
     border-radius: var(--radius-medium);
-    overflow: hidden;
+    overflow-y: auto;
     cursor: default;
   }
 }
