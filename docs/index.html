@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/index.min.css?_v=20240413144825">
+  <link rel="stylesheet" href="css/pages/index.min.css?_v=20240414150504">
   <title>index Page</title>
-  <script defer src="js/index.min.js?_v=20240413144825"></script>
+  <script defer src="js/index.min.js?_v=20240414150504"></script>
 </head>
   <body>
     <header class="header">
@@ -56,26 +56,13 @@
         </li>
         <li class="header__nav-item header__nav-search">
           <div class="input-text ">
-  <div class="input-text__prefix header__nav-search-icon">
-    <svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>
-  </div>
-  <input class="input-text__input" type="text" placeholder="Найдите что-нибудь">
-  <div class="input-text__suffix header__nav-search-select">
-    <div class="select select--transparent noselect">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value=val1>Везде</li>
-    <li class="select__options-item" data-value=val2>Везде2</li>
-    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
-  </ul>
-  <input name=select type="text" value=val2 hidden>
-</div>
-  </div>
+  
+    <div class="input-text__prefix header__nav-search-icon"><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
+  
+    <div class="input-text__suffix header__nav-search-select"><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
 </div>
         </li>
         <li class="header__nav-item header__nav-basket">
@@ -121,7 +108,7 @@
             </svg>
           </a>
         </li>
-        <li class="header__nav-item header__nav-profile">
+        <li class="header__nav-item header__nav-profile" data-popup="login">
           <a class="header__nav-sign-in" href="#">
             <svg>
               <use xlink:href="./img/icons/icons.svg#user"></use>
@@ -216,6 +203,93 @@
       </a>
     </li>
   </ul>
+</div>
+
+  <div id="login" class="popup header__login">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="login">
+  <div class="login__inner">
+    <div class="login__title">
+      Войдите в свой профиль
+      <button class="login__title-cross" type="button">
+        <svg data-close-popup="login">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="login__descr">
+      Чтобы пользоваться лентой новостей
+    </div>
+    <div class="login__options">
+      <button class="login__options-item btn">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#google"></use>
+        </svg>
+        Войти через Google
+        <svg class="login__options-item-arrow">
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </button>
+      <button class="login__options-item btn">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#vk"></use>
+        </svg>
+        Войти через ВКонтакте
+        <svg class="login__options-item-arrow">
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="login__or">
+      <span class="login__or-text">или</span>
+    </div>
+    <form class="login__form login__form-sign-in">
+      <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
+  
+</div>
+      <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Введите пароль">
+  
+</div>
+      <button class="login__form-submit btn" type="submit">
+        Войти
+      </button>
+    </form>
+    <div class="login__choice">
+      <div class="login__choice-title">
+        Нет аккаунта?
+      </div>
+      <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+    </div>
+  </div>
+</div>
+
+<!-- <form class="login__form login__form-sign-up">
+  <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
+  
+</div>
+  <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль">
+  
+</div>
+  <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль">
+  
+</div>
+  <button class="login__form-submit btn" type="submit">
+    Войти
+  </button>
+</form> -->
+    </div>
+  </div>
 </div>
 
   <nav class="nav">
@@ -3813,13 +3887,11 @@
           <div class="shop-window__joint-purchases-actions">
             <div class="shop-window__joint-purchases-search">
               <div class="input-text input-text--color-grey">
-  <div class="input-text__prefix ">
-    <svg class='shop-window__joint-purchases-search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg>
-  </div>
-  <input class="input-text__input" type="text" placeholder="Введите название товара">
-  <div class="input-text__suffix ">
-    
-  </div>
+  
+    <div class="input-text__prefix "><svg class='shop-window__joint-purchases-search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Введите название товара">
+  
 </div>
             </div>
             <div class="shop-window__joint-purchases-btn">

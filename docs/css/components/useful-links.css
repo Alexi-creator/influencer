@@ -30,7 +30,7 @@
 }
 
 .useful-links__title svg use {
-  fill: rgb(var(--color-grey)) !important;
+  fill: rgb(var(--color-grey));
 }
 
 .useful-links__list {

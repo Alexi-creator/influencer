@@ -1440,7 +1440,9 @@ button {
 .popup__overlay,
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.login__choice,
+.login__title-cross {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1467,13 +1469,14 @@ button {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.login__title,
 .radio__content {
   display: flex;
   justify-content: space-between;
@@ -1646,7 +1649,9 @@ button {
 .popup__overlay,
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.login__choice,
+.login__title-cross {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1673,13 +1678,14 @@ button {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.login__title,
 .radio__content {
   display: flex;
   justify-content: space-between;
@@ -1790,7 +1796,9 @@ button {
 .popup__overlay,
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.login__choice,
+.login__title-cross {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1817,13 +1825,14 @@ button {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.login__title,
 .radio__content {
   display: flex;
   justify-content: space-between;
@@ -1911,7 +1920,9 @@ button {
 .popup__overlay,
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.login__choice,
+.login__title-cross {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1938,13 +1949,14 @@ button {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.login__title,
 .radio__content {
   display: flex;
   justify-content: space-between;
@@ -2028,7 +2040,9 @@ button {
 .popup__overlay,
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.login__choice,
+.login__title-cross {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2055,13 +2069,14 @@ button {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.login__title,
 .radio__content {
   display: flex;
   justify-content: space-between;
@@ -2159,7 +2174,9 @@ button {
 .popup__overlay,
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
-.header__top-info {
+.header__top-info,
+.login__choice,
+.login__title-cross {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2186,13 +2203,14 @@ button {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.login__title,
 .radio__content {
   display: flex;
   justify-content: space-between;
@@ -2295,6 +2313,176 @@ button {
 
 .isAuth .nav__avatar {
   display: block;
+}
+
+.clear-filter-content-popup__actions,
+.range__min,
+.range__max,
+.tabs__tab,
+.product-card__sizes-variants,
+.share__block,
+.share__block-head,
+.share__list,
+.share__close,
+.nav-pages__list,
+.shop-preview__brand,
+.popup__overlay,
+.isAuth .header__nav-profile .header__nav-account,
+.header__top-location,
+.header__top-info,
+.login__choice,
+.login__title-cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-window__actions--active,
+.shop-window__actions.active {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.joint-purchases-card__status,
+.tabs__list,
+.shop-preview__actions {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range__inputs,
+.filters__item--categories .popup--open .filters__item-header,
+.joint-purchases-card__slider .joint-purchases-card__slide-info-price,
+.select__header,
+.collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.login__title,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters__collapse-wrap .checkbox .btn,
+.select__title,
+.shop-window__tabs .tabs__tab,
+.collapse__head-title,
+.shop-preview__brand-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.login__inner {
+  padding: 1rem 1.25rem;
+}
+
+.login__title {
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.login__title-cross {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(var(--color-primary-tag-checked));
+  border-radius: var(--radius-round);
+  cursor: pointer;
+}
+
+.login__title-cross svg use {
+  fill: rgb(var(--color-grey));
+}
+
+.login__descr {
+  margin-top: 0.75rem;
+  color: rgb(var(--color-grey));
+}
+
+.login__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.login__options-item.btn {
+  gap: 0.75rem;
+  color: rgb(var(--color-black));
+  background-color: rgb(var(--color-primary-soft));
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.login__options-item-arrow {
+  margin-left: auto;
+  transform: rotate(-90deg);
+}
+
+.login__options-item-arrow use {
+  stroke: rgb(var(--color-grey));
+}
+
+.login__or {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.login__or:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  top: 55%;
+  background-color: rgb(var(--color-black-light));
+}
+
+.login__or-text {
+  position: relative;
+  padding: 0 1rem;
+  color: rgb(var(--color-black-middle));
+  background-color: rgb(var(--color-white));
+  font-weight: 400;
+  z-index: var(--z-base);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.login__form-item {
+  padding-left: 1.5rem;
+}
+
+.login__form-submit {
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.login__choice {
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+}
+
+.login__choice-btn {
+  color: rgb(var(--color-primary));
+  cursor: pointer;
 }
 
 .header {
@@ -2494,6 +2682,10 @@ button {
   cursor: pointer;
 }
 
+.header__login .popup__content {
+  padding: 0;
+}
+
 .clear-filter-content-popup__actions,
 .range__min,
 .range__max,
@@ -2506,6 +2698,8 @@ button {
 .nav-pages__list,
 .shop-preview__brand,
 .popup__overlay,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account {
@@ -2535,14 +2729,15 @@ button {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
-.radio__content {
+.useful-links__list-item > a,
+.useful-links__title,
+.radio__content,
+.login__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2583,7 +2778,120 @@ button {
   padding: 0.75rem 1rem;
   background-color: rgb(var(--color-white));
   border-radius: var(--radius-medium);
+  overflow: hidden;
   cursor: default;
+}
+
+.clear-filter-content-popup__actions,
+.range__min,
+.range__max,
+.tabs__tab,
+.product-card__sizes-variants,
+.share__block,
+.share__block-head,
+.share__list,
+.share__close,
+.nav-pages__list,
+.shop-preview__brand,
+.login__title-cross,
+.login__choice,
+.header__top-location,
+.header__top-info,
+.isAuth .header__nav-profile .header__nav-account,
+.popup__overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-window__actions--active,
+.shop-window__actions.active {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.joint-purchases-card__status,
+.tabs__list,
+.shop-preview__actions {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range__inputs,
+.filters__item--categories .popup--open .filters__item-header,
+.joint-purchases-card__slider .joint-purchases-card__slide-info-price,
+.select__header,
+.collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.radio__content,
+.login__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters__collapse-wrap .checkbox .btn,
+.select__title,
+.shop-window__tabs .tabs__tab,
+.collapse__head-title,
+.shop-preview__brand-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.useful-links {
+  display: none;
+  position: fixed;
+  background-color: rgb(var(--color-white));
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 4rem;
+  padding: 1rem 1.25rem;
+}
+
+.useful-links.active {
+  display: block;
+}
+
+.useful-links__title {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.useful-links__title svg {
+  cursor: pointer;
+}
+
+.useful-links__title svg use {
+  fill: rgb(var(--color-grey));
+}
+
+.useful-links__list {
+  margin: 1rem -1.25rem 1rem;
+}
+
+.useful-links__list-item {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid rgb(var(--color-black-light));
+}
+
+.useful-links__list-item > a svg {
+  transform: rotate(-90deg);
+}
+
+.useful-links__list-item > a svg use {
+  stroke: rgb(var(--color-grey));
 }
 
 body {
@@ -2643,6 +2951,8 @@ svg {
 .share__close,
 .nav-pages__list,
 .shop-preview__brand,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -2673,14 +2983,15 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
-.radio__content {
+.radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2801,6 +3112,8 @@ svg {
 .share__list,
 .share__close,
 .nav-pages__list,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -2832,14 +3145,15 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
-.radio__content {
+.radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2881,6 +3195,8 @@ svg {
 .share__block-head,
 .share__list,
 .share__close,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -2913,14 +3229,15 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
-.radio__content {
+.radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3039,6 +3356,8 @@ svg {
 .range__max,
 .tabs__tab,
 .product-card__sizes-variants,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -3075,14 +3394,15 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
-.radio__content {
+.radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3184,6 +3504,8 @@ svg {
 .range__max,
 .tabs__tab,
 .product-card__sizes-variants,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -3220,14 +3542,15 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .collapse__head,
-.radio__content {
+.radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3325,6 +3648,8 @@ svg {
 .range__max,
 .tabs__tab,
 .product-card__sizes-variants,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -3361,13 +3686,14 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head {
   display: flex;
   justify-content: space-between;
@@ -3730,6 +4056,8 @@ svg {
 .range__max,
 .tabs__tab,
 .product-card__sizes-variants,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -3766,13 +4094,14 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head {
   display: flex;
   justify-content: space-between;
@@ -4081,6 +4410,8 @@ svg {
 .range__min,
 .range__max,
 .tabs__tab,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -4118,13 +4449,14 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head {
   display: flex;
   justify-content: space-between;
@@ -4206,6 +4538,8 @@ svg {
 .clear-filter-content-popup__actions,
 .range__min,
 .range__max,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -4244,13 +4578,14 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head {
   display: flex;
   justify-content: space-between;
@@ -4311,6 +4646,8 @@ svg {
 .clear-filter-content-popup__actions,
 .range__min,
 .range__max,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -4349,13 +4686,14 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .select__header,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head {
   display: flex;
   justify-content: space-between;
@@ -4441,6 +4779,8 @@ svg {
 .clear-filter-content-popup__actions,
 .range__min,
 .range__max,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -4479,12 +4819,13 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head,
 .select__header {
   display: flex;
@@ -4807,6 +5148,8 @@ svg {
 .clear-filter-content-popup__actions,
 .range__min,
 .range__max,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -4845,11 +5188,12 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head,
 .select__header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price {
@@ -5028,6 +5372,8 @@ svg {
 .clear-filter-content-popup__actions,
 .range__min,
 .range__max,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -5066,10 +5412,11 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .range__inputs,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head,
 .select__header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
@@ -5122,6 +5469,8 @@ svg {
 }
 
 .clear-filter-content-popup__actions,
+.login__title-cross,
+.login__choice,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -5162,9 +5511,10 @@ svg {
   align-items: center;
 }
 
-.useful-links__list-item > a,
-.useful-links__title,
 .radio__content,
+.login__title,
+.useful-links__title,
+.useful-links__list-item > a,
 .collapse__head,
 .select__header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
@@ -5205,115 +5555,6 @@ svg {
   margin-top: 2rem;
 }
 
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay,
-.shop-preview__brand,
-.nav-pages__list,
-.share__block,
-.share__block-head,
-.share__list,
-.share__close,
-.product-card__sizes-variants,
-.tabs__tab,
-.range__min,
-.range__max,
-.clear-filter-content-popup__actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.shop-window__actions.active,
-.shop-window__actions--active {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.shop-preview__actions,
-.tabs__list,
-.joint-purchases-card__status {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.radio__content,
-.collapse__head,
-.select__header,
-.joint-purchases-card__slider .joint-purchases-card__slide-info-price,
-.filters__item--categories .popup--open .filters__item-header,
-.range__inputs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.shop-preview__brand-name,
-.collapse__head-title,
-.shop-window__tabs .tabs__tab,
-.select__title,
-.filters__collapse-wrap .checkbox .btn {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.useful-links {
-  display: none;
-  position: fixed;
-  background-color: rgb(var(--color-white));
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 4rem;
-  padding: 1rem 1.25rem;
-}
-
-.useful-links.active {
-  display: block;
-}
-
-.useful-links__title {
-  font-size: 1.375rem;
-  font-weight: 600;
-}
-
-.useful-links__title svg {
-  cursor: pointer;
-}
-
-.useful-links__title svg use {
-  fill: rgb(var(--color-grey)) !important;
-}
-
-.useful-links__list {
-  margin: 1rem -1.25rem 1rem;
-}
-
-.useful-links__list-item {
-  padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid rgb(var(--color-black-light));
-}
-
-.useful-links__list-item > a svg {
-  transform: rotate(-90deg);
-}
-
-.useful-links__list-item > a svg use {
-  stroke: rgb(var(--color-grey));
-}
-
 @media (min-width: 48rem) {
   .section {
     padding: 0rem 2.5rem;
@@ -5325,6 +5566,31 @@ svg {
 
   .nav__list {
     gap: 2.5rem;
+  }
+
+  .login__inner {
+    padding: 1.5rem 2rem;
+  }
+
+  .login__title {
+    font-size: 1.375rem;
+  }
+
+  .login__options {
+    margin-top: 1.5rem;
+  }
+
+  .login__options-item.btn {
+    font-size: unset;
+  }
+
+  .login__form-submit {
+    margin-top: 0.75rem;
+  }
+
+  .login__choice {
+    margin-top: 1.5rem;
+    font-size: unset;
   }
 
   .header {
@@ -5364,6 +5630,18 @@ svg {
   .header__nav-search-icon > svg {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .useful-links__list {
+    margin: 1rem -2.5rem 1rem;
+  }
+
+  .useful-links__list-item {
+    padding: 0.75rem 2.5rem;
+  }
+
+  .useful-links {
+    padding: 1rem 2.5rem;
   }
 
   .main {
@@ -5714,18 +5992,6 @@ svg {
     background-color: rgb(var(--color-primary-soft));
   }
 
-  .useful-links__list {
-    margin: 1rem -2.5rem 1rem;
-  }
-
-  .useful-links__list-item {
-    padding: 0.75rem 2.5rem;
-  }
-
-  .useful-links {
-    padding: 1rem 2.5rem;
-  }
-
   .joint-purchases-card__title {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
@@ -5877,6 +6143,14 @@ svg {
 
   .popup--onlymobile .popup__content {
     padding: 0;
+  }
+
+  .useful-links {
+    display: none;
+  }
+
+  .useful-links.active {
+    display: none;
   }
 
   .main {
@@ -6213,14 +6487,6 @@ svg {
 
   .filters.shop-window__form-filter-filters .filters__item .collapse {
     background-color: rgb(var(--color-white));
-  }
-
-  .useful-links {
-    display: none;
-  }
-
-  .useful-links.active {
-    display: none;
   }
 
   .joint-purchases-card__title {
