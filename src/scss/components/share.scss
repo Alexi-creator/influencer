@@ -92,6 +92,10 @@
         display: none;
       }
     }
+
+    & .popup__content {
+      max-height: unset;
+    }
   }
 
   &--close {
