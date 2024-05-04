@@ -170,9 +170,31 @@
         padding: 0.5rem 1rem;
       }
 
+      &-icon {
+        &-cross {
+          display: none;
+        }
+      }
+
       & use {
         stroke: rgb(var(--color-white));
         stroke-width: 2px;
+      }
+
+      &.active {
+        #{$root}__nav-catalog-icon {
+          &-catalog {
+            display: none;
+          }
+          &-cross {
+            display: block;
+            
+            & use {
+              fill: rgb(var(--color-white));
+              stroke-width: 1px;
+            }
+          }
+        }
       }
     }
 
