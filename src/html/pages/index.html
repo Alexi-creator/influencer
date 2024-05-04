@@ -5,21 +5,23 @@
     "nameFile": "index",
   })
   <body>
-    @@include("../layout/header.html", {
-      activeItem: "",
-    })
-    @@include("../components/nav-pages.html")
     <main class="main">
-      <section class="section section--shop-preview">
+      <section class="section">
         <div class="section__inner">
-          @@include("../components/shop-preview.html")
-        </div>
-        <hr class="hr">
-      </section>
-
-      <section class="section section--shop-window">
-        <div class="section__inner">
-          @@include("../components/shop-window.html")
+          <h1>Список страниц:</h1>
+          <hr class="hr">
+          <ul>
+            <li>
+              <a href="./shops.html">Магазин</a>
+            </li>
+            <li>
+              <a href="./catalog.html">Каталог</a>
+            </li>
+            <li>
+              <a href="./ui-kit.html">Ui-kit</a>
+            </li>
+          </ul>
+          <hr class="hr">
         </div>
       </section>
       <!-- @@include("../components/popup.html") -->

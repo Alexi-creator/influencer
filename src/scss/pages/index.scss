@@ -1,22 +1,15 @@
-// vendors
-@import "../vendors/swiper-bundle.min";
-@import "../vendors/nouislider.min";
-
 // common styles
 @import "../common";
 
-// components
-@import "../components/shop-preview";
-@import "../components/nav-pages";
-@import "../components/share";
-@import "../components/product-menu";
-@import "../components/collapse";
-@import "../components/shop-window";
-@import "../components/product-card";
-@import "../components/tabs";
-@import "../components/contact-info";
-@import "../components/select";
-@import "../components/joint-purchases-card";
-@import "../components/filters";
-@import "../components/range-slider";
-@import "../components/clear-filter-content-popup";
+ul {
+  & li {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    transition: color 0.2s linear;
+
+    &:hover {
+      color: lightblue;
+    }
+  }
+}

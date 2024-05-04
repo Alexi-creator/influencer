@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" class="isAuth">
+  @@include("../layout/head.html", {
+    "title": "shops Page",
+    "nameFile": "shops",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+    })
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--shop-preview">
+        <div class="section__inner">
+          @@include("../components/shop-preview.html")
+        </div>
+        <hr class="hr">
+      </section>
+
+      <section class="section section--shop-window">
+        <div class="section__inner">
+          @@include("../components/shop-window.html")
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
