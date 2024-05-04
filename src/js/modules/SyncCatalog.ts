@@ -6,12 +6,11 @@ import { BreakpointWidth } from '../constants'
 export class SyncCatalog {
   private selectorMobile: string
   private selectorDesktop: string
-
   private catalogSelected: string
 
   private containerMobile: HTMLElement
   private containerDesktop: HTMLElement
-
+  private mobileCatalogSelected: HTMLElement
   private catalogsMobile: HTMLElement[]
   private catalogsDesktop: Map<HTMLElement, HTMLElement>
 
@@ -58,16 +57,25 @@ export class SyncCatalog {
   }
 
   private syncFromDesktop(catalog: string) {
-    this.catalogsMobile.forEach((item) => {
-      const collapseElem = item.querySelector('.collapse') as HTMLElement
+    const mobileCatalogSync = this.catalogsMobile.find(item => item.dataset.catalog === catalog)
+    if (mobileCatalogSync) {
+      const collapseElem = mobileCatalogSync.querySelector('.collapse') as HTMLElement
+      collapseElem.classList.remove('collapse--close')
+      collapseElem.classList.add('collapse--open')
 
-      collapseElem.classList.remove('collapse--open')
-      collapseElem.classList.add('collapse--close')
+      if (this.mobileCatalogSelected) {
+        this.closeCurrentCollapse(this.mobileCatalogSelected)
+      }
 
-      if (item.dataset.catalog === catalog) {
-        collapseElem.classList.add('collapse--open')
-      }     
-    })
+      this.mobileCatalogSelected = mobileCatalogSync
+    }
+  }
+
+  private closeCurrentCollapse(elem: HTMLElement) {
+    const collapse = elem.querySelector('.collapse') as HTMLElement
+
+    collapse.classList.remove('collapse--open')
+    collapse.classList.add('collapse--close')
   }
 
   private searchCatalogMobile(targetElement: HTMLElement) {
@@ -79,6 +87,11 @@ export class SyncCatalog {
       if (catalog) {
         if (this.catalogSelected === catalog) return
 
+        if (this.mobileCatalogSelected) {
+          this.closeCurrentCollapse(this.mobileCatalogSelected)
+        }
+        
+        this.mobileCatalogSelected = parent
         this.catalogSelected = catalog
         this.syncFromMobile(catalog)
       }
@@ -93,7 +106,7 @@ export class SyncCatalog {
 
       if (catalog) {
         if (this.catalogSelected === catalog) return
-
+        
         this.catalogSelected = catalog
         this.syncFromDesktop(catalog)
       }

@@ -33,12 +33,15 @@
             <img width="106" height="24" src="@img/logo.svg" alt="logo">
           </a>
         </li>
-        <li class="header__nav-item header__nav-catalog">
+        <li class="header__nav-item header__nav-catalog @@catalogExtraClass">
           <a class="btn" href="./catalog.html">
-            <svg>
+            <svg class="header__nav-catalog-icon-catalog">
               <use xlink:href="./img/icons/icons.svg#catalog"></use>
             </svg>
-            Каталог
+            <svg class="header__nav-catalog-icon-cross">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+            <span class="header__nav-catalog-title">Каталог</span>
           </a>
         </li>
         <li class="header__nav-item header__nav-search">
