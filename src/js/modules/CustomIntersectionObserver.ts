@@ -1,8 +1,12 @@
+import { BreakpointWidth } from '../constants'
+
 type CallbackType = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void
 
 interface IOptions {
   root?: HTMLElement | null,
   rootMargin?: string,
+  mobileRootMargin?: string,
+  desktopRootMargin?: string,
   threshold?: number | number[]
 }
 
@@ -23,11 +27,14 @@ interface IDefaultOptions {
  * 
  */
 export class CustomIntersectionObserver {
-  element: HTMLElement
-  callback: CallbackType
-  options: IOptions
+  private element: HTMLElement
+  private callback: CallbackType
+  private options: IOptions
 
-  defaultOptions: IDefaultOptions
+  private defaultOptions: IDefaultOptions
+
+  private observer: IntersectionObserver
+  private matchMedia: MediaQueryList
 
   constructor({ element, callback, options }: IConstructor) {
     if (!element) return
@@ -48,8 +55,36 @@ export class CustomIntersectionObserver {
     this.init()
   }
 
-  private init() {
-    const observer = new IntersectionObserver(this.callback, { ...this.defaultOptions, ...this.options })
-    observer.observe(this.element)
+  private init(): void {
+    if (this.options.mobileRootMargin && this.options.desktopRootMargin) {
+      this.matchMedia = window.matchMedia(`(min-width:${BreakpointWidth.DESKTOP}px)`)
+      this.matchMedia.addListener((e) => this.breakpointChecker(e))
+    }
+
+    const options = this.preparedOptions()
+    this.observer = new IntersectionObserver(this.callback, options)
+    this.observer.observe(this.element)
+  }
+
+  private preparedOptions() {
+    let rootMargin
+    if (this.options.mobileRootMargin && this.options.desktopRootMargin) {
+      rootMargin = window.innerWidth >= BreakpointWidth.DESKTOP ? this.options.desktopRootMargin : this.options.mobileRootMargin
+    }
+
+    return rootMargin ? { ...this.defaultOptions, rootMargin, ...this.options } : { ...this.defaultOptions, ...this.options }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  private breakpointChecker(e: MediaQueryListEvent): void {
+    this.reconnection()
+  }
+
+  private reconnection(): void {
+    this.observer.disconnect()
+    const options = this.preparedOptions()
+
+    this.observer = new IntersectionObserver(this.callback, options)
+    this.observer.observe(this.element)
   }
 }
