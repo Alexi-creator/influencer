@@ -4,11 +4,13 @@
  */
 export class BtnShow {
   selectorBtn: string
+  selectorBtnText: string
   selectorHideElem: string
   selectorShowElem: string
 
   constructor() {
     this.selectorBtn = '.btn-show'
+    this.selectorBtnText = '.btn-show-text'
     this.selectorHideElem = '.hide-elem'
     this.selectorShowElem = '.show-elem'
 
@@ -27,18 +29,30 @@ export class BtnShow {
     })
   }
 
-  private action(targetElement: Element) {
-    targetElement.classList.toggle('active')
+  private action(btnElem: HTMLElement) {
+    btnElem.classList.toggle('active')
 
-    const parent = targetElement.parentElement
-    if (parent) this.toggleElem(parent)
+    const parent = btnElem.parentElement
+    if (parent) {
+      const textElem = btnElem.querySelector(this.selectorBtnText)
+      const currentText = textElem?.textContent
+      const newText = btnElem.dataset.text
+
+      if (currentText && newText && textElem) {
+        textElem.textContent = newText
+        btnElem.dataset.text = currentText
+      }
+
+      this.toggleElem(parent)
+    }
   }
 
   private clickHandler(e: Event) {
-    const targetElement = e.target as Element
+    const targetElement = e.target as HTMLElement
+    const btnElem = targetElement.closest(this.selectorBtn) as HTMLElement
 
-    if (targetElement.closest(this.selectorBtn)) {
-      this.action(targetElement)
+    if (btnElem) {
+      this.action(btnElem)
     }
   }
 
