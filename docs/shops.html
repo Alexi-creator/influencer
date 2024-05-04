@@ -1,0 +1,5331 @@
+<!DOCTYPE html>
+<html lang="ru" class="isAuth">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240504123907">
+  <title>shops Page</title>
+  <script defer src="js/shops.min.js?_v=20240504123907"></script>
+</head>
+  <body>
+    <header class="header">
+  <div class="header__inner">
+    <div class="header__top">
+      <div class="header__top-location">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#location"></use>
+        </svg>
+        Укажите адрес доставки
+      </div>
+      <div class="header__top-info">
+        <a href="#">Инструкции</a>
+        <a href="#">Контакты</a>
+        <div class="select select--transparent header__top-language noselect">
+  <div class="select__header">
+    <div class="select__title">Русский</div>
+    <div class="select__icon">
+      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
+    </div>
+  </div>
+  <ul class="select__options">
+    <li class="select__options-item" data-value=val1>Русский</li>
+    <li class="select__options-item" data-value=val2>Английский</li>
+    <li class="select__options-item" data-value=val3>Казахский</li>
+  </ul>
+  <input name=language type="text" value=val1 hidden>
+</div>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item header__nav-logo">
+          <a class="header__nav-logo-small" href="./index.html">
+            <img width="24" height="24" src="img/small-logo.svg" alt="small-logo">
+          </a>
+          <a class="header__nav-logo-big" href="./index.html">
+            <img width="106" height="24" src="img/logo.svg" alt="logo">
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-catalog ">
+          <a class="btn" href="./catalog.html">
+            <svg class="header__nav-catalog-icon-catalog">
+              <use xlink:href="./img/icons/icons.svg#catalog"></use>
+            </svg>
+            <svg class="header__nav-catalog-icon-cross">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+            <span class="header__nav-catalog-title">Каталог</span>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-search">
+          <div class="input-text ">
+  
+    <div class="input-text__prefix header__nav-search-icon"><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
+  
+    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect">
+  <div class="select__header">
+    <div class="select__title">Везде</div>
+    <div class="select__icon">
+      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
+    </div>
+  </div>
+  <ul class="select__options">
+    <li class="select__options-item" data-value=val1>Везде</li>
+    <li class="select__options-item" data-value=val2>Везде2</li>
+    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
+  </ul>
+  <input name=select type="text" value=val2 hidden>
+</div></div>
+  
+</div>
+        </li>
+        <li class="header__nav-item header__nav-basket">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  9
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-favorite">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  4
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-feed">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#feed"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  1
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-instagram">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#camera"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-profile" data-popup="login">
+          <a class="header__nav-sign-in" href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#user"></use>
+            </svg>
+            Войти в аккаунт
+          </a>
+          <a class="header__nav-account" href="#">
+            <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">
+              Мой рейтинг: 109
+            </div>
+            <div class="header__nav-avatar">
+              <picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture>
+            </div>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-more">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#more"></use>
+          </svg>
+        </li>
+        <li class="header__nav-item header__nav-location">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#map"></use>
+          </svg>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="useful-links">
+  <div class="useful-links__title">
+    Полезные ссылки
+    <svg class="useful-links__title-cross">
+      <use xlink:href="./img/icons/icons.svg#cross"></use>
+    </svg>
+  </div>
+  <ul class="useful-links__list">
+    <li class="useful-links__list-item">
+      <a href="#">
+        Категории
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Магазины
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Совместные покупки
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Test ForFree
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Блогеры
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Публикации
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Служба поддержки
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <div id="login" class="popup header__login">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="login login--sign-in">
+  <div class="login__inner">
+
+    <!-- Блок логина -->
+    <div class="login__sign-in">
+      <div class="login__title">
+        Войдите в свой профиль
+        <button class="login__title-cross" type="button" data-close-popup="login">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__descr">
+        Чтобы пользоваться лентой новостей
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Войти через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Войти через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-in">
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
+  
+</div>
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Введите пароль">
+  
+</div>
+        <button class="login__form-submit btn" type="submit">
+          Войти
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Нет аккаунта?
+        </div>
+        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+      </div>
+    </div>
+
+    <!-- Блок регистрации -->
+    <div class="login__sign-up">
+      <div class="login__title">
+        Зарегистрируйтесь
+        <button class="login__title-cross" type="button" data-close-popup="login">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__descr">
+        Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Регистрация через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Регистрация через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-up">
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
+  
+</div>
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль">
+  
+</div>
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль">
+  
+</div>
+        <button class="login__form-submit btn" type="submit">
+          Зарегистрироваться
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Есть аккаунт?
+        </div>
+        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <nav class="nav">
+  <ul class="nav__list">
+    <li >
+  <a class="nav__item nav__item-publication" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#camera"></use>
+    </svg>
+    
+    <div class="nav__item-title">Публикация</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-catalog" href="./catalog.html">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+    </svg>
+    
+    <div class="nav__item-title">Каталог</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-feed" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#feed"></use>
+    </svg>
+    
+    <div class="nav__item-title">Лента</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-shopping-bag" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+    </svg>
+    
+    <div class="nav__item-title">Корзина</div>
+    
+      <div class="nav__item-counter">
+        <div class="counter counter--green">
+  1
+</div>
+      </div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-profile" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#profile"></use>
+    </svg>
+    
+      <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
+    
+    <div class="nav__item-title">Профиль</div>
+    
+  </a>
+</li>
+  </ul>
+</nav>
+
+</header>
+    <nav class="nav-pages">
+  <ul class="nav-pages__list">
+    <li>
+      <a href="#">Магазины</a>
+    </li>
+    <li>
+      <a href="#">Совместные покупки</a>
+    </li>
+    <li>
+      <a href="#">Test for Free</a>
+    </li>
+    <li>
+      <a href="#">Блогеры</a>
+    </li>
+    <li>
+      <a href="#">Публикации</a>
+    </li>
+  </ul>
+</nav>
+    <main class="main">
+      <section class="section section--shop-preview">
+        <div class="section__inner">
+          <div class="shop-preview">
+  <div class="shop-preview__block-img">
+    <picture><source srcset="img/shop-preview.webp" type="image/webp"><img src="img/shop-preview.jpg" alt="shop-preview" loading="lazy"></picture>
+  </div>
+  <div class="shop-preview__block-descr">
+    <h1 class="shop-preview__title">Интернет магазин женской одежды и аксессуаров Lass</h1>
+    <p class="shop-preview__about">Lass — сеть магазинов женской одежды и аксессуаров. Ассортимент включает в себя блузы, юбки, брюки, платья, джемперы, рубашки, жакеты, нарядную одежду, пуховики, куртки, пальто и аксессуары от известных брендов.</p>
+    <div class="shop-preview__bread-crumbs">
+      <div class="breadcrumbs">
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="#">Категории:  Платья и сарафаны</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#">Блузы и рубашки</a>
+    </li>
+    <li class="breadcrumbs__item">
+      Юбки
+    </li>
+  </ul>
+</div>
+    </div>
+    <div class="shop-preview__followers">112 подписчиков</div>
+    <div class="shop-preview__actions">
+      <button class="shop-preview__btn-top scroll">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#go-up"></use>
+        </svg>
+      </button>
+      <div class="shop-preview__brand">
+        <div class="shop-preview__brand-logo">
+          <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+        </div>
+        <div class="shop-preview__brand-name">
+          Интернет магазин женской одежды и аксессуаров Lass
+        </div>
+      </div>
+      <div class="shop-preview__subscribe">
+        <button class="btn">Подписаться</button>
+        <span class="shop-preview__subscribe-dote"></span>
+        <div class="share">
+  <svg class="share__open" data-popup="share">
+    <use xlink:href="./img/icons/icons.svg#share-link"></use>
+  </svg>
+  <div id="share" class="popup popup--onlymobile" data-media="1200">
+    <div class="popup__overlay">
+      <div class="popup__content">
+        <div class="share__block">
+          <div class="share__block-head">
+            Поделиться
+            <div class="share__close popup__close">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#cross"></use>
+              </svg>
+            </div>
+          </div>
+          <ul class="share__list">
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#copy"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#telegram"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#facebook"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#twitter"></use>
+              </svg>
+            </li>
+            <li>
+              <svg class="share__item-icon">
+                <use xlink:href="./img/icons/icons.svg#watsup"></use>
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        <hr class="hr">
+      </section>
+
+      <section class="section section--shop-window">
+        <div class="section__inner">
+          <div class="shop-window tabs">
+  <div class="shop-window__title">Выберите раздел магазина</div>
+  <div class="shop-window__inner">
+    <div class="shop-window__tabs tabs__head">
+      <div class="swiper shop-window__tabs-swiper">
+        <div class="tabs__list swiper-wrapper">
+          <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="goods">
+            Товары <span class="tabs__tab-count">501</span>
+          </div>
+          <div class="swiper-slide tabs__tab" data-tab-path="sp">
+            Совместные покупки <span class="tabs__tab-count">79</span>
+          </div>
+          <div class="swiper-slide tabs__tab" data-tab-path="tff">
+            Test For Free <span class="tabs__tab-count">13</span>
+          </div>
+          <div class="swiper-slide tabs__tab" data-tab-path="contacts">
+            Контакты
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </div>
+    </div>
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки goods -->
+    <div class="shop-window__actions shop-window__actions-goods">
+      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Сортировка G</div>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-filters shop-window__actions-filters-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Фильтры G</div>
+        <div class="shop-window__actions-filters-icon">
+          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-filters-count"></div>
+      </div>
+      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="shop-window__actions-density-tile">
+          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+        </svg>
+        <svg class="shop-window__actions-density-grid">
+          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+        </svg>
+      </div>
+    </div>
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки sp -->
+    <div class="shop-window__actions shop-window__actions-sp">
+      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Сортировка SP</div>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Категории SP</div>
+        <div class="shop-window__actions-filters-icon">
+          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+            <use xlink:href="./img/icons/icons.svg#categories"></use>
+          </svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-filters-count"></div>
+      </div>
+    </div>
+    <!-- Блок с кнопками сортировки и фильтрации для вкладки tff -->
+    <div class="shop-window__actions shop-window__actions-tff">
+      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Сортировка TFF</div>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </div>
+      <div class="shop-window__actions-filters shop-window__actions-filters-tff btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="shop-window__actions-text">Фильтры TFF</div>
+        <div class="shop-window__actions-filters-icon">
+          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="shop-window__actions-filters-count"></div>
+      </div>
+      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="shop-window__actions-density-tile">
+          <use xlink:href="./img/icons/icons.svg#density-tile"></use>
+        </svg>
+        <svg class="shop-window__actions-density-grid">
+          <use xlink:href="./img/icons/icons.svg#density-grid"></use>
+        </svg>
+      </div>
+    </div>
+    <!-- Форма с фильтрами и сортировками для товаров goods -->
+    <form class="shop-window__form shop-window__form-goods">
+      <div class="shop-window__form-sorting">
+        <div class="shop-window__form-sorting-title">
+          Сортировка
+          <div class="shop-window__form-sorting-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+      </div>
+      <div class="shop-window__form-chips"></div>
+      <div class="shop-window__form-filter">
+        <div class="shop-window__form-filter-title">
+          Фильтры
+          <div class="shop-window__form-filter-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-filters filters">
+          <!-- filters__item--categories нужно добавить по дефолту -->
+          <div class="filters__item filters__item--categories">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Категории
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><div id="category-goods" class="popup"><div class="popup__overlay"><div class="popup__content"><div class="filters__item-header"><svg data-close-popup="category-goods"><use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use></svg><span>Все категории товаров</span><svg data-close-popup="category-goods"><use xlink:href="./img/icons/icons.svg#cross"></use></svg></div><!-- Примерно под такую структуру: -->
+
+<!-- const dataMenu = [
+  {
+    title: 'Одежда Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Платья и сарафаны Level 2',
+        submenu: [
+          {
+            title: 'Вечерние платья Level 3',
+          },
+          {
+            title: 'Деловые платья Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Юбки Level 2',
+        submenu: [
+          {
+            title: 'Юбки Level 3',
+          },
+          {
+            title: 'Юбки Level 3',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Обувь Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+    ],
+  },
+] -->
+
+<ul class="product-menu">
+  <!-- Элемент первого уровня -->
+  <li class="product-menu__item collapse">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div></div></div><div class="btn btn--text" data-popup="category-goods">Все категории</div></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Прайс
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><div class="range">
+  <div class="range__slider" data-step="1000"></div>
+  <div class="range__inputs">
+    <div class="range__min">
+      <div>от</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="200000" data-min="0" placeholder="0">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+    <div class="range__max">
+      <div>до</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="500000" data-max="1000000" placeholder="1000000">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+  </div>
+</div></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер0
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер10
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Специальные предложение
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><label class="checkbox ">
+  <input name="specials36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Test For Free
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Совместная Покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Благотворительная покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Акция “2 по цене 1”
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер2
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="2size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер3
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="3size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер4
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="4size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер5
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="5size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear" data-popup="clearFilter">
+            <svg class="shop-window__form-filter-actions-clear">
+              <use xlink:href="./img/icons/icons.svg#trash"></use>
+            </svg>
+            <span class="shop-window__form-filter-actions-text">Очистить все фильтры</span>
+          </button>
+          <button type="submit" class="btn shop-window__form-filter-submit">
+            Применить
+            <span class="btn__suffix"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- Форма с фильтрами и сортировками для совместных покупок sp -->
+    <form class="shop-window__form shop-window__form-sp">
+      <div class="shop-window__form-sorting">
+        <div class="shop-window__form-sorting-title">
+          Сортировка
+          <div class="shop-window__form-sorting-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+      </div>
+      <div class="shop-window__form-chips"></div>
+      <div class="shop-window__form-filter">
+        <div class="shop-window__form-filter-title">
+          Фильтры
+          <div class="shop-window__form-filter-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-filters filters filters--sp">
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны2
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны3
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны4
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны5
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны6
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны7
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear" data-popup="clearFilter">
+            <svg class="shop-window__form-filter-actions-clear">
+              <use xlink:href="./img/icons/icons.svg#trash"></use>
+            </svg>
+            <span class="shop-window__form-filter-actions-text">Очистить все фильтры</span>
+          </button>
+          <button type="submit" class="btn shop-window__form-filter-submit">
+            Применить
+            <span class="btn__suffix"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- Форма с фильтрами и сортировками для tff -->
+    <form class="shop-window__form shop-window__form-tff">
+      <div class="shop-window__form-sorting">
+        <div class="shop-window__form-sorting-title">
+          Сортировка
+          <div class="shop-window__form-sorting-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-asc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+          <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-desc">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+        </div>
+      </div>
+      <div class="shop-window__form-chips"></div>
+      <div class="shop-window__form-filter">
+        <div class="shop-window__form-filter-title">
+          Фильтры
+          <div class="shop-window__form-filter-cross">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-filters filters">
+          <!-- filters__item--categories нужно добавить по дефолту -->
+          <div class="filters__item filters__item--categories">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Категории
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><div id="category-tff" class="popup"><div class="popup__overlay"><div class="popup__content"><div class="filters__item-header"><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use></svg><span>Все категории товаров</span><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#cross"></use></svg></div><!-- Примерно под такую структуру: -->
+
+<!-- const dataMenu = [
+  {
+    title: 'Одежда Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Платья и сарафаны Level 2',
+        submenu: [
+          {
+            title: 'Вечерние платья Level 3',
+          },
+          {
+            title: 'Деловые платья Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Юбки Level 2',
+        submenu: [
+          {
+            title: 'Юбки Level 3',
+          },
+          {
+            title: 'Юбки Level 3',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Обувь Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+    ],
+  },
+] -->
+
+<ul class="product-menu">
+  <!-- Элемент первого уровня -->
+  <li class="product-menu__item collapse">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div></div></div><div class="btn btn--text" data-popup="category-tff">Все категории</div></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Прайс
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><div class="range">
+  <div class="range__slider" data-step="1000"></div>
+  <div class="range__inputs">
+    <div class="range__min">
+      <div>от</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="200000" data-min="0" placeholder="0">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+    <div class="range__max">
+      <div>до</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="500000" data-max="1000000" placeholder="1000000">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+  </div>
+</div></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер0
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер10
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Специальные предложение
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><label class="checkbox ">
+  <input name="specials36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Test For Free
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Совместная Покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Благотворительная покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Акция “2 по цене 1”
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер2
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="2size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер3
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="3size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер4
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="4size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+          <div class="filters__item">
+            <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер5
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="5size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+          </div>
+        </div>
+        <div class="shop-window__form-filter-actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear" data-popup="clearFilter">
+            <svg class="shop-window__form-filter-actions-clear">
+              <use xlink:href="./img/icons/icons.svg#trash"></use>
+            </svg>
+            <span class="shop-window__form-filter-actions-text">Очистить все фильтры</span>
+          </button>
+          <button type="submit" class="btn shop-window__form-filter-submit">
+            Применить
+            <span class="btn__suffix"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="tabs__contents shop-window__tabs-contents">
+      <!-- Товары -->
+      <div class="tabs__content tabs__content--active" data-tab-target="goods">
+        <div class="shop-window__goods">
+          <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
+
+<!-- const dataMenu = [
+  {
+    title: 'Одежда Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Платья и сарафаны Level 2',
+        submenu: [
+          {
+            title: 'Вечерние платья Level 3',
+          },
+          {
+            title: 'Деловые платья Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Юбки Level 2',
+        submenu: [
+          {
+            title: 'Юбки Level 3',
+          },
+          {
+            title: 'Юбки Level 3',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Обувь Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+    ],
+  },
+] -->
+
+<ul class="product-menu">
+  <!-- Элемент первого уровня -->
+  <li class="product-menu__item collapse">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="cloth-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="shoes-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-goods" type="radio" value="Appliances-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+          <div class="shop-window__goods-items">
+            <a class="product-card " href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Комбинезон из шелковой вискозы с
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>38</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">@@date</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: @@status
+      </div>
+      <div class="product-card__price product-card__price--discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          от 91 250 ₽
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card " href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Плетеная сумка-сэтчел
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">@@date</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: @@status
+      </div>
+      <div class="product-card__price product-card__price">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card " href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Туфли ZOE с острым носом и эластичныим
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">@@date</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: @@status
+      </div>
+      <div class="product-card__price product-card__price">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card " href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">@@date</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: @@status
+      </div>
+      <div class="product-card__price product-card__price">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card " href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">@@date</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: @@status
+      </div>
+      <div class="product-card__price product-card__price">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card " href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">@@date</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: @@status
+      </div>
+      <div class="product-card__price product-card__price">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+          </div>
+        </div>
+      </div>
+      <!-- Совместные покупки -->
+      <div class="tabs__content" data-tab-target="sp">
+        <div class="shop-window__joint-purchases">
+          <div class="shop-window__joint-purchases-actions">
+            <div class="shop-window__joint-purchases-search">
+              <div class="input-text input-text--color-grey">
+  
+    <div class="input-text__prefix "><svg class='shop-window__joint-purchases-search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Введите название товара">
+  
+</div>
+            </div>
+            <div class="shop-window__joint-purchases-btn">
+              <button class="btn btn--color-primary-light">
+                <span class="shop-window__joint-purchases-btn-text">Создать СП</span>
+                <svg><use xlink:href='./img/icons/icons.svg#plus'></use></svg>
+              </button>
+            </div>
+          </div>
+          <div class="shop-window__joint-purchases-contents">
+            <div class="joint-purchases-card joint-purchases-card--processing">
+  <div class="joint-purchases-card__about">
+    <div class="joint-purchases-card__logo">
+      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+    </div>
+    <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
+    <div class="joint-purchases-card__subscribe">
+      Подписаться
+      <span class="joint-purchases-card__subscribe-delimiter"></span>
+      <svg><use xlink:href='./img/icons/icons.svg#share-link'></use></svg>
+    </div>
+    <div class="joint-purchases-card__categories">
+      Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
+    </div>
+  </div>
+  <div class="joint-purchases-card__slider">
+    <div class="swiper swiper-joint-purchases">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="joint-purchases-card__btn-prev swiper-button-prev">
+      <svg>
+        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+      </svg>
+    </div>
+    <div class="joint-purchases-card__btn-next swiper-button-next">
+      <svg>
+        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+      </svg>
+    </div>
+  </div>
+  <div class="joint-purchases-card__info">
+    <div class="joint-purchases-card__discount">
+      <div class="joint-purchases-card__discount-amount">
+        <div class="badge badge--big badge--without-border badge--font-commissioner">
+  Скидка -30%
+</div>
+      </div>
+      <div class="joint-purchases-card__discount-from">
+        при покупке
+        <span>от 136 000 &#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__already">
+      <div class="joint-purchases-card__already-title">Уже купили на:</div>
+      <div class="joint-purchases-card__already-count">
+        <span>79 281</span>
+        <span>/</span>
+        <span>241 093</span>
+        <span>&#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__progress">
+      <div class="progress progress--">
+  <div class="progress__line" style="width:30%"></div>
+</div>
+    </div>
+    <div class="joint-purchases-card__hr hr"></div>
+    <div class="joint-purchases-card__until">
+      Активна до:
+      <div class="joint-purchases-card__until-date">
+        27.01.2020 12:00
+      </div>
+    </div>
+    <div class="joint-purchases-card__status">
+      <div class="joint-purchases-card__status-title">
+        Совм.Покупка:
+      </div>
+      <div class="joint-purchases-card__status-text"></div>
+    </div>
+  </div>
+  <div class="joint-purchases-card__brand">
+    <div class="joint-purchases-card__brand-logo">
+      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+    </div>
+    <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
+  </div>
+</div>
+            <div class="joint-purchases-card joint-purchases-card--ready">
+  <div class="joint-purchases-card__about">
+    <div class="joint-purchases-card__logo">
+      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+    </div>
+    <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
+    <div class="joint-purchases-card__subscribe">
+      Подписаться
+      <span class="joint-purchases-card__subscribe-delimiter"></span>
+      <svg><use xlink:href='./img/icons/icons.svg#share-link'></use></svg>
+    </div>
+    <div class="joint-purchases-card__categories">
+      Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
+    </div>
+  </div>
+  <div class="joint-purchases-card__slider">
+    <div class="swiper swiper-joint-purchases">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="joint-purchases-card__btn-prev swiper-button-prev">
+      <svg>
+        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+      </svg>
+    </div>
+    <div class="joint-purchases-card__btn-next swiper-button-next">
+      <svg>
+        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+      </svg>
+    </div>
+  </div>
+  <div class="joint-purchases-card__info">
+    <div class="joint-purchases-card__discount">
+      <div class="joint-purchases-card__discount-amount">
+        <div class="badge badge--big badge--without-border badge--font-commissioner">
+  Скидка -30%
+</div>
+      </div>
+      <div class="joint-purchases-card__discount-from">
+        при покупке
+        <span>от 136 000 &#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__already">
+      <div class="joint-purchases-card__already-title">Уже купили на:</div>
+      <div class="joint-purchases-card__already-count">
+        <span>79 281</span>
+        <span>/</span>
+        <span>241 093</span>
+        <span>&#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__progress">
+      <div class="progress progress--">
+  <div class="progress__line" style="width:100%"></div>
+</div>
+    </div>
+    <div class="joint-purchases-card__hr hr"></div>
+    <div class="joint-purchases-card__until">
+      Активна до:
+      <div class="joint-purchases-card__until-date">
+        27.01.2020 12:00
+      </div>
+    </div>
+    <div class="joint-purchases-card__status">
+      <div class="joint-purchases-card__status-title">
+        Совм.Покупка:
+      </div>
+      <div class="joint-purchases-card__status-text">Состоялась</div>
+    </div>
+  </div>
+  <div class="joint-purchases-card__brand">
+    <div class="joint-purchases-card__brand-logo">
+      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+    </div>
+    <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
+  </div>
+</div>
+            <div class="joint-purchases-card joint-purchases-card--disabled">
+  <div class="joint-purchases-card__about">
+    <div class="joint-purchases-card__logo">
+      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+    </div>
+    <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
+    <div class="joint-purchases-card__subscribe">
+      Подписаться
+      <span class="joint-purchases-card__subscribe-delimiter"></span>
+      <svg><use xlink:href='./img/icons/icons.svg#share-link'></use></svg>
+    </div>
+    <div class="joint-purchases-card__categories">
+      Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
+    </div>
+  </div>
+  <div class="joint-purchases-card__slider">
+    <div class="swiper swiper-joint-purchases">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="joint-purchases-card__slide">
+            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
+            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
+            <div class="joint-purchases-card__slide-info">
+              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
+              <div class="joint-purchases-card__slide-info-price">
+                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
+                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="joint-purchases-card__btn-prev swiper-button-prev">
+      <svg>
+        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+      </svg>
+    </div>
+    <div class="joint-purchases-card__btn-next swiper-button-next">
+      <svg>
+        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+      </svg>
+    </div>
+  </div>
+  <div class="joint-purchases-card__info">
+    <div class="joint-purchases-card__discount">
+      <div class="joint-purchases-card__discount-amount">
+        <div class="badge badge--big badge--without-border badge--font-commissioner">
+  Скидка -30%
+</div>
+      </div>
+      <div class="joint-purchases-card__discount-from">
+        при покупке
+        <span>от 136 000 &#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__already">
+      <div class="joint-purchases-card__already-title">Уже купили на:</div>
+      <div class="joint-purchases-card__already-count">
+        <span>79 281</span>
+        <span>/</span>
+        <span>241 093</span>
+        <span>&#8381;</span>
+      </div>
+    </div>
+    <div class="joint-purchases-card__progress">
+      <div class="progress progress--">
+  <div class="progress__line" style="width:100%"></div>
+</div>
+    </div>
+    <div class="joint-purchases-card__hr hr"></div>
+    <div class="joint-purchases-card__until">
+      Активна до:
+      <div class="joint-purchases-card__until-date">
+        27.01.2020 12:00
+      </div>
+    </div>
+    <div class="joint-purchases-card__status">
+      <div class="joint-purchases-card__status-title">
+        Совм.Покупка:
+      </div>
+      <div class="joint-purchases-card__status-text">Не состоялась</div>
+    </div>
+  </div>
+  <div class="joint-purchases-card__brand">
+    <div class="joint-purchases-card__brand-logo">
+      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+    </div>
+    <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
+  </div>
+</div>
+          </div>
+        </div>
+      </div>
+      <!-- Test for free -->
+      <div class="tabs__content" data-tab-target="tff">
+        <div class="shop-window__tff">
+          <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
+
+<!-- const dataMenu = [
+  {
+    title: 'Одежда Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Платья и сарафаны Level 2',
+        submenu: [
+          {
+            title: 'Вечерние платья Level 3',
+          },
+          {
+            title: 'Деловые платья Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Юбки Level 2',
+        submenu: [
+          {
+            title: 'Юбки Level 3',
+          },
+          {
+            title: 'Юбки Level 3',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Обувь Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+    ],
+  },
+] -->
+
+<ul class="product-menu">
+  <!-- Элемент первого уровня -->
+  <li class="product-menu__item collapse">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
+  </span>
+</label>
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
+  </span>
+</label>
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-1">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-2">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+          <li>
+            <label class="radio radio--">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-3">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+          <div class="shop-window__tff-items">
+            <a class="product-card product-card--tff product-card--application-submitted" href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      <div class="badge badge--round badge--font-commissioner badge--color-white">
+  Вы подали заявку
+</div>
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Комбинезон из шелковой вискозы с
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>38</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">2дн 19ч 35мин</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: 
+      </div>
+      <div class="product-card__price product-card__price--discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          0 ₽ (бесплатно)
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card product-card--tff product-card--application-rejected" href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      <div class="badge badge--round badge--font-commissioner badge--color-white">
+  Заявка отклонена
+</div>
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Плетеная сумка-сэтчел
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">2дн 19ч 35мин</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: 
+      </div>
+      <div class="product-card__price product-card__price--discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          0 ₽ (бесплатно)
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card product-card--tff product-card--application-approved product-card--status-promotion-over" href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      <div class="badge badge--round badge--font-commissioner badge--color-white">
+  Заявка одобрена
+</div>
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Туфли ZOE с острым носом и эластичныим
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">2дн 19ч 35мин</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: акция завершена
+      </div>
+      <div class="product-card__price product-card__price--discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          0 ₽ (бесплатно)
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card product-card--tff product-card--status-promotion-over" href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">2дн 19ч 35мин</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: акция завершена
+      </div>
+      <div class="product-card__price product-card__price--discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          0 ₽ (бесплатно)
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card product-card--tff product-card--status-consideration-applications" href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>36</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">2дн 19ч 35мин</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: рассмотрение заявок
+      </div>
+      <div class="product-card__price product-card__price--discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          0 ₽ (бесплатно)
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+            <a class="product-card product-card--tff" href="#">
+  <div class="product-card__img">
+    <div class="product-card__img-wrapper">
+      <div class="product-card__img-first">
+        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg" alt="product"></picture>
+      </div>
+      <div class="product-card__img-second">
+        <picture><source srcset="img/product-card2.webp" type="image/webp"><img src="img/product-card2.jpg" alt="product2"></picture>
+      </div>
+    </div>
+    <div class="product-card__like">
+      <svg class="collapse__toggle-icon">
+        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+      </svg>
+    </div>
+    <div class="product-card__application-status">
+      @@application-status
+    </div>
+  </div>
+  <div class="product-card__descr">
+    <div class="product-card__info">
+      <div class="product-card__info-wrap">
+        <div class="badge ">
+  <span class="badge__sub">до</span>-50%
+</div>
+        <div class="badge ">
+  <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+</div>
+        <div class="badge ">
+  СП
+</div>
+        <div class="badge ">
+  TFF
+</div>
+      </div>
+    </div>
+    <div class="product-card__descr-top">
+      <div class="product-card__brand">
+        Yves Saint Lauren
+      </div>
+      <div class="product-card__title">
+        Пуховик из кожи с узором monogram mi
+      </div>
+      <div class="product-card__sizes">
+        Размеры:
+        <ul class="product-card__sizes-variants">
+          <li>38</li><li>40</li>
+        </ul>
+        <span class="product-card__sizes-more">еще 13</span>
+      </div>
+      <div class="product-card__date">
+        <span class="product-card__date-text">До завершения:</span>
+        <span class="product-card__date-number">2дн 19ч 35мин</span>
+      </div>
+      <div class="product-card__likes">
+        <svg class="collapse__toggle-icon">
+          <use xlink:href="./img/icons/icons.svg#favourite"></use>
+        </svg>
+        89
+      </div>
+    </div>
+    <div class="product-card__descr-bottom">
+      <div class="product-card__status">
+        Статус: 
+      </div>
+      <div class="product-card__price product-card__price--discount">
+        <div class="product-card__price-current">
+          27 966 ₽
+        </div>
+        <div class="product-card__price-sale">
+          0 ₽ (бесплатно)
+        </div>   
+      </div>
+    </div>
+  </div>
+</a>
+          </div>
+        </div>
+      </div>
+      <!-- Contacts -->
+      <div class="tabs__content" data-tab-target="contacts">
+        <div class="contact-info">
+  <div class="contact-info__connect">
+    <div class="contact-info__connect-item contact-info__mail">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#mail"></use>
+      </svg>
+      info@lass-fashion.ru
+    </div>
+    <div class="contact-info__connect-item contact-info__phone">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#phone"></use>
+      </svg>
+      +7 (495) 234-34-34
+    </div>
+    <div class="contact-info__connect-item contact-info__shedule">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#clock"></use>
+      </svg>
+      ПН-ВС 10:00-20:00
+    </div>
+  </div>
+  <div class="contact-info__descr">
+    <h3 class="contact-info__descr-title">Юридическая информация:</h3>
+    <p>Полное наименование: Общество с ограниченной ответственностью «Национальный цифровой ресурс «РУКОНТ»
+      Юридический адрес: 129090, г. Москва, Протопоповский пер., д. 19, корп. 12
+      Телефон: +7(495)719-09-21
+    </p>
+    <div>
+      ИНН/КПП: 7702823270 / 770201001
+      <div>ОГРН: 1137746876090</div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="shop-window__popups">
+    <div id="clearFilter" class="popup ">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="clear-filter-content-popup">
+  <div class="clear-filter-content-popup__inner">
+    <div class="clear-filter-content-popup__title">Сбросить фильтры?</div>
+    <div class="clear-filter-content-popup__descr">
+      Все настроенные Вами фильтры будут удалены. Это действие невозможно отменить.
+    </div>
+    <div class="clear-filter-content-popup__actions">
+      <div class="btn btn--text btn--color-grey popup__close">Еще подумаю</div>
+      <div class="btn clear-filters popup__close">Да, сбросить</div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

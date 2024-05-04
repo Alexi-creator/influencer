@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240415061029">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240504123907">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240415061029"></script>
+  <script defer src="js/catalog.min.js?_v=20240504123907"></script>
 </head>
   <body>
     <header class="header">
@@ -46,12 +46,15 @@
             <img width="106" height="24" src="img/logo.svg" alt="logo">
           </a>
         </li>
-        <li class="header__nav-item header__nav-catalog">
+        <li class="header__nav-item header__nav-catalog active">
           <a class="btn" href="./catalog.html">
-            <svg>
+            <svg class="header__nav-catalog-icon-catalog">
               <use xlink:href="./img/icons/icons.svg#catalog"></use>
             </svg>
-            Каталог
+            <svg class="header__nav-catalog-icon-cross">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+            <span class="header__nav-catalog-title">Каталог</span>
           </a>
         </li>
         <li class="header__nav-item header__nav-search">
@@ -579,8 +582,8 @@
               <li class="catalog__masonry-list-item hide-elem">
                 <a href="#">Дизайн ногтей5</a>
               </li>
-              <li class="btn btn-show btn--text btn--color-grey btn--show">
-                Развернуть
+              <li class="btn btn-show btn--text btn--color-grey btn--show" data-text="Свернуть">
+                <span class="btn-show-text">Развернуть</span>
                 <svg><use xlink:href="./img/icons/icons.svg#arrow"></use></svg>
               </li>
             </ul>

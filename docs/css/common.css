@@ -1225,9 +1225,26 @@ button {
   padding: 0.5rem 1rem;
 }
 
+.header__nav-catalog-icon-cross {
+  display: none;
+}
+
 .header__nav-catalog use {
   stroke: rgb(var(--color-white));
   stroke-width: 2px;
+}
+
+.header__nav-catalog.active .header__nav-catalog-icon-catalog {
+  display: none;
+}
+
+.header__nav-catalog.active .header__nav-catalog-icon-cross {
+  display: block;
+}
+
+.header__nav-catalog.active .header__nav-catalog-icon-cross use {
+  fill: rgb(var(--color-white));
+  stroke-width: 1px;
 }
 
 .header__nav-search {
