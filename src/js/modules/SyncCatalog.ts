@@ -6,12 +6,11 @@ import { BreakpointWidth } from '../constants'
 export class SyncCatalog {
   private selectorMobile: string
   private selectorDesktop: string
-
   private catalogSelected: string
 
   private containerMobile: HTMLElement
   private containerDesktop: HTMLElement
-
+  private mobileCatalogSelected: HTMLElement
   private catalogsMobile: HTMLElement[]
   private catalogsDesktop: Map<HTMLElement, HTMLElement>
 
@@ -79,6 +78,14 @@ export class SyncCatalog {
       if (catalog) {
         if (this.catalogSelected === catalog) return
 
+        if (this.mobileCatalogSelected) {
+          const collapse = this.mobileCatalogSelected.querySelector('.collapse') as HTMLElement
+
+          collapse.classList.remove('collapse--open')
+          collapse.classList.add('collapse--close')
+        }
+        
+        this.mobileCatalogSelected = parent
         this.catalogSelected = catalog
         this.syncFromMobile(catalog)
       }
