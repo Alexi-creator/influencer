@@ -209,7 +209,6 @@
 
   &--application-submitted, &--application-rejected, &--application-approved {
     #{$root}__application-status {
-      display: block;
 
       & .badge {
         font-size: 0.875rem;
@@ -244,7 +243,6 @@
   }
 
   &__application-status {
-    display: none;
     position: absolute;
     width: max-content;
     top: 50%;
