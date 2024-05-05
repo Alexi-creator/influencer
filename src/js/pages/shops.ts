@@ -18,6 +18,7 @@ import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { SyncCategories } from '../modules/SyncCategories'
+import { ShopPreview } from '../modules/ShopPreview'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -254,6 +255,11 @@ window.addEventListener('load', () => {
   }
   try {
     new SyncCategories()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new ShopPreview()
   } catch (error) {
     console.log(error)
   }

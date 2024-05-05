@@ -67,10 +67,7 @@ export class Popup {
         popup.classList.add(this.popupOpenClass)
         document.body.classList.add(this.overflowClass)
 
-        const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')
-        if (shopPreviewActionsElem) {
-          shopPreviewActionsElem.classList.add('shop-preview__actions--over')
-        }
+        document.dispatchEvent(new CustomEvent('openPopup', { detail: popup?.id }))
       }
     } else {
       throw new Error(`no attribute value: ${this.dataAttributePopup}`)
@@ -89,12 +86,6 @@ export class Popup {
 
     if (!this.checkOpenedPopups()) {
       document.body.classList.remove(this.overflowClass)
-    }
-
-    // TODO переделать не должно быть лишней логики
-    const shopPreviewActionsElem = document.querySelector('.shop-preview__actions')
-    if (shopPreviewActionsElem) {
-      shopPreviewActionsElem.classList.remove('shop-preview__actions--over')
     }
 
     document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))

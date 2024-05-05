@@ -1,14 +1,12 @@
 export class Share {
-  selector: string
-  els: NodeListOf<Element>
-  error: boolean
+  private selector: string
+  private els: Element[]
 
   constructor() {
     this.selector = '.share'
-    this.els = document.querySelectorAll(this.selector)
-    this.error = this.els.length === 0
+    this.els = [...document.querySelectorAll(this.selector)]
 
-    if (this.error) return
+    if (this.els.length === 0) return
 
     this.init()
   }
@@ -32,9 +30,10 @@ export class Share {
     
     if (targetElement.closest('.share__open')) {
       targetElement.closest(this.selector)?.classList.remove('share--close')
+
       return targetElement.closest(this.selector)?.classList.add('share--open')
     }
-    if (targetElement.closest('.share__close')) {       
+    if (targetElement.closest('.share__close')) {
       targetElement.closest(this.selector)?.classList.remove('share--open')
       targetElement.closest(this.selector)?.classList.add('share--close')
     }
