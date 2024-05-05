@@ -101,12 +101,6 @@
   font-weight: 600;
 }
 
-.product-card--application-submitted .product-card__application-status,
-.product-card--application-rejected .product-card__application-status,
-.product-card--application-approved .product-card__application-status {
-  display: block;
-}
-
 .product-card--application-submitted .product-card__application-status .badge,
 .product-card--application-rejected .product-card__application-status .badge,
 .product-card--application-approved .product-card__application-status .badge {
@@ -130,7 +124,6 @@
 }
 
 .product-card__application-status {
-  display: none;
   position: absolute;
   width: -moz-max-content;
   width: max-content;
@@ -149,8 +142,8 @@
 .product-card__img-second {
   position: relative;
   overflow: hidden;
-  border-top-left-radius: var(--radius-medium);
-  border-top-right-radius: var(--radius-medium);
+  border-top-left-radius: var(--radius-small);
+  border-top-right-radius: var(--radius-small);
   flex-shrink: 0;
   padding-top: 150%;
 }

@@ -162,6 +162,10 @@
   padding-bottom: 0.7rem;
 }
 
+.filters__collapse .popup__content {
+  overflow-y: visible;
+}
+
 .filters.shop-window__form-filter-filters .filters__item {
   margin: 0 -1.25rem;
   border-bottom: 1px solid rgb(var(--color-black-light));
