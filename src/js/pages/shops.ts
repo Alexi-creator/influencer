@@ -18,6 +18,7 @@ import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { SyncCategories } from '../modules/SyncCategories'
+import { ShopPreview } from '../modules/ShopPreview'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -72,7 +73,8 @@ window.addEventListener('load', () => {
       element: targetElement,
       callback: observerBrandCallback,
       options: {
-        rootMargin: '-140px 0px 0px',
+        mobileRootMargin: '-60px 0px 0px',
+        desktopRootMargin: '-160px 0px 0px',
       },
     })
   } catch (error) {
@@ -253,6 +255,11 @@ window.addEventListener('load', () => {
   }
   try {
     new SyncCategories()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new ShopPreview()
   } catch (error) {
     console.log(error)
   }

@@ -24,10 +24,10 @@ export const observerBrandCallback = (entries: IntersectionObserverEntry[], obse
       removeIsActive()
     } else if (window.innerWidth >= BreakpointWidth.DESKTOP) {
       // Элемент начал уходить за верх экрана
-      if (entry.boundingClientRect.top <= 139 && entry.rootBounds) addIsActive()
+      if (entry.boundingClientRect.top <= 159 && entry.rootBounds) addIsActive()
     } else if (window.innerWidth < BreakpointWidth.DESKTOP) {
       // Элемент начал уходить за верх экрана
-      if (entry.boundingClientRect.top <= 119 && entry.rootBounds) addIsActive()
+      if (entry.boundingClientRect.top <= 59 && entry.rootBounds) addIsActive()
     }
   })
 }
