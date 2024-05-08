@@ -1,0 +1,62 @@
+@import "../basis/_extends";
+@import "../basis/_mixins";
+@import "../basis/_variables";
+
+.choose-city {
+  $root: &;
+
+  &__inner {
+    padding: 1rem 1.25rem;
+  }
+
+  &__header {
+    @extend %flex-space-between;
+
+    gap: 0.5rem;
+  }
+
+  &__back {
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-right: auto;
+  }
+
+  &__cross {
+
+
+    &-icon {
+      & use {
+        stroke-width: 1px;
+        fill: rgb(var(--color-grey));
+      }
+    }
+  }
+
+  &__search {
+    margin-top: 1.5rem;
+  }
+
+  &__list {
+    margin-top: 0.75rem;
+
+    &-item {
+      padding: 0.75rem 0;
+    }
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    cursor: pointer;
+  }
+}
+

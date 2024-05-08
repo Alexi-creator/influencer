@@ -1,4 +1,3 @@
-// может и не нужен этот файл, но в планах в файлы js страниц подключать одинаковые модули чтобы не дублировать
 import * as flsFunction from './modules/func.js'
 
 import { HttpMethods } from './constants'
@@ -8,6 +7,7 @@ import { Popup } from './modules/Popup'
 import { UsefulLinks } from './modules/UsefulLinks'
 import { Form } from './modules/Form'
 import { Login } from './modules/Login'
+import { Location } from './modules/Location'
 
 window.addEventListener('load', () => {
   flsFunction.isWebp()
@@ -46,6 +46,11 @@ window.addEventListener('load', () => {
   }
   try {
     new Login()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Location()
   } catch (error) {
     console.log(error)
   }

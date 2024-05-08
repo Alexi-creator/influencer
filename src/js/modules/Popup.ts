@@ -2,9 +2,11 @@ import { BreakpointWidth } from '../constants/sizeScreen'
 
 /*
   Popup (модальное окно). Для работы необходимо в разметке указать для каждого popup уникальный Id
-  А так же нужно добавить data атрибут (data-popup) с этим же значением как id у popup на элемент по которому будет клик
+  А так же нужно добавить data атрибут (data-popup) с этим же значением как id у popup на элемент по которому будет клик для открытия этого попапа
 
   Для открытия popup только на определенных разрешениях, нужно на элемент popup добавить дата атрибут media с размером data-media="1200"
+  Для закрытия popup нужно указать класс '.popup__close' на элементе по которому будет клик (в случае если элемент находится в текущем попапе)
+  Если если элемент по которому будет клик находится не в попапе то добавить атрибут с id popup data-close-popup="id popup"
 */
 export class Popup {
   private selector: string
@@ -93,6 +95,11 @@ export class Popup {
 
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
+
+    if (targetElement.closest(this.dataAttributeClosePopup) && targetElement.closest(this.dataAttributePopup)) {
+      this.closePopup(targetElement)
+      return this.openPopup(targetElement.closest(this.dataAttributePopup) as HTMLElement)
+    }
 
     if (targetElement.classList.contains(this.popupOverlayClass) ||
       targetElement.closest(this.popupCloseSelector) ||
