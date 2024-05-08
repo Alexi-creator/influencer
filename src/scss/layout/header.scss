@@ -4,6 +4,8 @@
 
 @import "../components/menu-mobile";
 @import "../components/login";
+@import "../components/location";
+@import "../components/choose-city";
 
 .header {
   $root: &;
@@ -348,8 +350,14 @@
     }
   }
 
-  &__login {
+  &__login, &__choose-city {
     & .popup__content {
+      padding: 0;
+    }
+  }
+
+  &__location {
+    & .popup__overlay {
       padding: 0;
     }
   }
