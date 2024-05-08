@@ -336,6 +336,8 @@ button {
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.location__actions-city,
+.location__cross,
 .login__choice,
 .login__title-cross {
   display: flex;
@@ -353,6 +355,10 @@ button {
 
 .useful-links__list-item > a,
 .useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
 .login__title,
 .radio__content {
   display: flex;
@@ -506,6 +512,8 @@ button {
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.location__actions-city,
+.location__cross,
 .login__choice,
 .login__title-cross {
   display: flex;
@@ -523,6 +531,10 @@ button {
 
 .useful-links__list-item > a,
 .useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
 .login__title,
 .radio__content {
   display: flex;
@@ -614,6 +626,8 @@ button {
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.location__actions-city,
+.location__cross,
 .login__choice,
 .login__title-cross {
   display: flex;
@@ -631,6 +645,10 @@ button {
 
 .useful-links__list-item > a,
 .useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
 .login__title,
 .radio__content {
   display: flex;
@@ -699,6 +717,8 @@ button {
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.location__actions-city,
+.location__cross,
 .login__choice,
 .login__title-cross {
   display: flex;
@@ -716,6 +736,10 @@ button {
 
 .useful-links__list-item > a,
 .useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
 .login__title,
 .radio__content {
   display: flex;
@@ -780,6 +804,8 @@ button {
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.location__actions-city,
+.location__cross,
 .login__choice,
 .login__title-cross {
   display: flex;
@@ -797,6 +823,10 @@ button {
 
 .useful-links__list-item > a,
 .useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
 .login__title,
 .radio__content {
   display: flex;
@@ -875,6 +905,8 @@ button {
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.location__actions-city,
+.location__cross,
 .login__choice,
 .login__title-cross {
   display: flex;
@@ -892,6 +924,10 @@ button {
 
 .useful-links__list-item > a,
 .useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
 .login__title,
 .radio__content {
   display: flex;
@@ -991,6 +1027,8 @@ button {
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.location__actions-city,
+.location__cross,
 .login__choice,
 .login__title-cross {
   display: flex;
@@ -1008,6 +1046,10 @@ button {
 
 .useful-links__list-item > a,
 .useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
 .login__title,
 .radio__content {
   display: flex;
@@ -1131,6 +1173,233 @@ button {
 
 .login__choice-btn {
   color: rgb(var(--color-primary));
+  cursor: pointer;
+}
+
+.popup__overlay,
+.isAuth .header__nav-profile .header__nav-account,
+.header__top-location,
+.header__top-info,
+.location__actions-city,
+.location__cross,
+.login__title-cross,
+.login__choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.useful-links__list-item > a,
+.useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
+.radio__content,
+.login__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.25rem;
+}
+
+.location__title {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.location__cross {
+  width: 3rem;
+  padding: 0;
+  border-radius: var(--radius-round);
+}
+
+.location__cross-icon use {
+  stroke-width: 1px;
+  fill: rgb(var(--color-grey));
+}
+
+.location__img {
+  margin: 0 -1.25rem 0.25rem -1.25rem;
+}
+
+.location__addresses {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.location__address {
+  font-size: 1rem;
+  padding: 1rem;
+  border: 2px solid rgb(var(--color-grey-light));
+  border-radius: var(--radius-medium);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.location__address-remove use {
+  stroke-width: 1px;
+  fill: rgb(var(--color-grey));
+}
+
+.location__address-address {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.location__address-contacts,
+.location__address-storage-period {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: rgb(var(--color-grey));
+}
+
+.location__address:hover {
+  border-color: rgb(var(--color-grey));
+}
+
+.location__address--selected {
+  border-color: rgb(var(--color-primary));
+  background-color: rgb(var(--color-primary-soft));
+}
+
+.location__address--selected:hover {
+  border-color: rgb(var(--color-primary));
+}
+
+.location__actions {
+  padding: 1rem 1rem;
+  border-radius: var(--radius-medium);
+  background-color: rgb(var(--color-primary-soft));
+}
+
+.location__actions-city {
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.location__actions-change.btn {
+  height: auto;
+  padding: 0;
+  border: none;
+}
+
+.location--setup .location__actions {
+  margin-top: 0.25rem;
+}
+
+.location__descr {
+  color: rgb(var(--color-grey));
+}
+
+.location__button {
+  width: 100%;
+  justify-content: center;
+}
+
+.location__setup {
+  display: none;
+}
+
+.location--setup .location__setup {
+  display: flex;
+}
+
+.location--setup .location__not-setup {
+  display: none;
+}
+
+.popup__overlay,
+.isAuth .header__nav-profile .header__nav-account,
+.header__top-location,
+.header__top-info,
+.login__title-cross,
+.login__choice,
+.location__cross,
+.location__actions-city {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox,
+.checkbox__checkmark,
+.chip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.useful-links__list-item > a,
+.useful-links__title,
+.choose-city__header,
+.radio__content,
+.login__title,
+.location__header,
+.location__address-header,
+.location__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choose-city__inner {
+  padding: 1rem 1.25rem;
+}
+
+.choose-city__header {
+  gap: 0.5rem;
+}
+
+.choose-city__back-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.choose-city__title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.choose-city__cross-icon use {
+  stroke-width: 1px;
+  fill: rgb(var(--color-grey));
+}
+
+.choose-city__search {
+  margin-top: 1.5rem;
+}
+
+.choose-city__list {
+  margin-top: 0.75rem;
+}
+
+.choose-city__list-item {
+  padding: 0.75rem 0;
+}
+
+.choose-city input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: red;
   cursor: pointer;
 }
 
@@ -1348,13 +1617,20 @@ button {
   cursor: pointer;
 }
 
-.header__login .popup__content {
+.header__login .popup__content,
+.header__choose-city .popup__content {
+  padding: 0;
+}
+
+.header__location .popup__overlay {
   padding: 0;
 }
 
 .popup__overlay,
 .login__title-cross,
 .login__choice,
+.location__cross,
+.location__actions-city,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account {
@@ -1374,7 +1650,11 @@ button {
 .useful-links__list-item > a,
 .useful-links__title,
 .radio__content,
-.login__title {
+.login__title,
+.location__header,
+.location__address-header,
+.location__actions,
+.choose-city__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1414,6 +1694,8 @@ button {
 
 .login__title-cross,
 .login__choice,
+.location__cross,
+.location__actions-city,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -1434,7 +1716,11 @@ button {
 .useful-links__list-item > a,
 .useful-links__title,
 .radio__content,
-.login__title {
+.login__title,
+.location__header,
+.location__address-header,
+.location__actions,
+.choose-city__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1533,6 +1819,8 @@ svg {
 
 .login__title-cross,
 .login__choice,
+.location__cross,
+.location__actions-city,
 .header__top-location,
 .header__top-info,
 .isAuth .header__nav-profile .header__nav-account,
@@ -1552,6 +1840,10 @@ svg {
 
 .radio__content,
 .login__title,
+.location__header,
+.location__address-header,
+.location__actions,
+.choose-city__header,
 .useful-links__title,
 .useful-links__list-item > a {
   display: flex;
@@ -1636,6 +1928,27 @@ svg {
   .login__choice {
     margin-top: 1.5rem;
     font-size: unset;
+  }
+
+  .location__inner {
+    gap: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .location__img {
+    margin: 0 -2rem;
+  }
+
+  .location__actions {
+    padding: 1rem 1.5rem;
+  }
+
+  .location--setup .location__actions {
+    margin-top: 0.5rem;
+  }
+
+  .location--setup .location__descr {
+    margin-top: -0.25rem;
   }
 
   .header {

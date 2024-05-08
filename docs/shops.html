@@ -3,15 +3,15 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240505132725">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240508071238">
   <title>shops Page</title>
-  <script defer src="js/shops.min.js?_v=20240505132725"></script>
+  <script defer src="js/shops.min.js?_v=20240508071238"></script>
 </head>
   <body>
     <header class="header">
   <div class="header__inner">
     <div class="header__top">
-      <div class="header__top-location">
+      <div class="header__top-location" data-popup="location">
         <svg>
           <use xlink:href="./img/icons/icons.svg#location"></use>
         </svg>
@@ -145,7 +145,7 @@
             <use xlink:href="./img/icons/icons.svg#more"></use>
           </svg>
         </li>
-        <li class="header__nav-item header__nav-location">
+        <li class="header__nav-item header__nav-location" data-popup="location">
           <svg>
             <use xlink:href="./img/icons/icons.svg#map"></use>
           </svg>
@@ -349,6 +349,136 @@
         <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
       </div>
     </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="location" class="popup header__location">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="location location--setup">
+  <div class="location__inner">
+    <div class="location__header">
+      <div class="location__title">Куда доставить заказ?</div>
+      <button class="location__cross btn btn--color-primary-light" data-close-popup="location">
+        <svg class="location__cross-icon">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="location__img location__not-setup">
+      <picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture>
+    </div>
+    <div class="location__descr location__setup">
+      Выберите адрес, чтобы увидеть условия доставки
+    </div>
+    <div class="location__actions">
+      <div class="location__actions-city">
+        <svg class="location__address-city-icon">
+          <use xlink:href="./img/icons/icons.svg#map"></use>
+        </svg>
+        <span class="location__address-city-name">Москва</span>
+      </div>
+      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">
+        Изменить
+      </button>
+    </div>
+    <div class="location__addresses location__setup">
+      <div class="location__address">
+        <div class="location__address-header">
+          <div class="location__address-option">Отделение Почты России</div>
+          <button class="location__address-remove">
+            <svg class="location__address-remove-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+        <div class="location__address-storage-period">
+          Срок хранения заказа - 
+          <span class="location__address-storage-period-count">15 дней</span>
+        </div>
+      </div>
+      <div class="location__address location__address--selected">
+        <div class="location__address-header">
+          <div class="location__address-option">Доставка по адресу</div>
+          <button class="location__address-remove">
+            <svg class="location__address-remove-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+        <div class="location__address-contacts">
+          Маргарита А., +7 999 123 45 67
+        </div>
+      </div>
+    </div>
+    <div class="location__descr location__not-setup">
+      Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров
+    </div>
+    <button class="location__button location__not-setup btn">
+      Выбрать адрес на карте
+    </button>
+    <button class="location__button location__setup btn">
+      Добавить новый адрес или пункт
+    </button>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+  <div id="choose-city" class="popup header__choose-city">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="choose-city">
+  <div class="choose-city__inner">
+    <div class="choose-city__header">
+      <button class="choose-city__back">
+        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="choose-city__title">Выберите город</div>
+      <button class="choose-city__cross" data-close-popup="choose-city">
+        <svg class="choose-city__cross-icon">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="choose-city__search">
+      <div class="input-text ">
+  
+    <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город">
+  
+</div>
+    </div>
+    <ul class="choose-city__list">
+      <li class="choose-city__list-item">
+        <label class="radio radio--">
+  <input name="city" type="radio" value="Москва">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    Москва
+  </span>
+</label>
+      </li>
+      <li class="choose-city__list-item">
+        <label class="radio radio--">
+  <input name="city" type="radio" value="Санкт-Петербург">
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    Санкт-Петербург
+  </span>
+</label>
+      </li>
+    </ul>
   </div>
 </div>
 
