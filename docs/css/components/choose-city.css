@@ -12,7 +12,13 @@
   gap: 0.5rem;
 }
 
-.choose-city__back-icon {
+.choose-city__back,
+.choose-city__cross {
+  cursor: pointer;
+}
+
+.choose-city__back-icon,
+.choose-city__cross-icon {
   width: 2rem;
   height: 2rem;
 }
@@ -44,6 +50,5 @@
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background-color: red;
   cursor: pointer;
 }

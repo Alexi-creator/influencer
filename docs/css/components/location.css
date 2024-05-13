@@ -56,6 +56,10 @@
   cursor: pointer;
 }
 
+.location__address-remove {
+  cursor: pointer;
+}
+
 .location__address-remove use {
   stroke-width: 1px;
   fill: rgb(var(--color-grey));

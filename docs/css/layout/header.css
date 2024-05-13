@@ -1,10 +1,36 @@
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.map__header-options,
 .location__actions-city,
 .location__cross,
 .login__choice,
-.login__title-cross {
+.login__title-cross,
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
+.login__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.isAuth .header__nav-profile .header__nav-account,
+.header__top-location,
+.header__top-info,
+.map__header-options,
+.location__actions-city,
+.location__cross,
+.login__choice,
+.login__title-cross,
+.nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,12 +47,13 @@
 }
 
 .nav {
+  height: 4rem;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: rgb(var(--color-white));
-  padding: 0.62rem 0.69rem;
+  border-top: 1px solid rgb(var(--color-black-light));
 }
 
 .nav__list {
@@ -111,10 +138,12 @@
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.map__header-options,
 .location__actions-city,
 .location__cross,
 .login__choice,
-.login__title-cross {
+.login__title-cross,
+.nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,8 +281,10 @@
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.map__header-options,
 .location__actions-city,
 .location__cross,
+.nav,
 .login__title-cross,
 .login__choice {
   display: flex;
@@ -311,6 +342,10 @@
   border: 2px solid rgb(var(--color-grey-light));
   border-radius: var(--radius-medium);
   transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.location__address-remove {
   cursor: pointer;
 }
 
@@ -389,6 +424,8 @@
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
 .header__top-info,
+.map__header-options,
+.nav,
 .login__title-cross,
 .login__choice,
 .location__cross,
@@ -416,7 +453,13 @@
   gap: 0.5rem;
 }
 
-.choose-city__back-icon {
+.choose-city__back,
+.choose-city__cross {
+  cursor: pointer;
+}
+
+.choose-city__back-icon,
+.choose-city__cross-icon {
   width: 2rem;
   height: 2rem;
 }
@@ -448,8 +491,112 @@
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background-color: red;
   cursor: pointer;
+}
+
+.isAuth .header__nav-profile .header__nav-account,
+.header__top-location,
+.header__top-info,
+.map__header-options,
+.nav,
+.login__title-cross,
+.login__choice,
+.location__cross,
+.location__actions-city {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__title,
+.location__header,
+.location__address-header,
+.location__actions,
+.choose-city__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map {
+  height: 100%;
+}
+
+.map__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.map__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.map__header-back,
+.map__header-cross {
+  cursor: pointer;
+}
+
+.map__header-back-icon,
+.map__header-cross-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.map__header-title {
+  display: none;
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.map__header-options {
+  gap: 0.5rem;
+}
+
+.map__header-cross.btn {
+  background-color: transparent;
+  padding: 0;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.map__header-cross-icon use {
+  stroke-width: 1px;
+  fill: rgb(var(--color-grey));
+}
+
+.map__yandex {
+  margin: 0.25rem -1.25rem 0;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.map__address-header {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.map__address-descr {
+  font-size: 1.125rem;
+  margin-top: 0.75rem;
+  color: rgb(var(--color-grey));
+}
+
+.map__address-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.25rem;
+  gap: 1rem;
+}
+
+.map__address-actions-input {
+  width: 100%;
 }
 
 .header {
@@ -592,6 +739,10 @@
   flex-shrink: 0;
 }
 
+.header__nav-search-input {
+  height: 2.5rem;
+}
+
 .header__nav-feed {
   display: none;
 }
@@ -667,7 +818,8 @@
 }
 
 .header__login .popup__content,
-.header__choose-city .popup__content {
+.header__choose-city .popup__content,
+.header__map .popup__content {
   padding: 0;
 }
 
@@ -726,6 +878,22 @@
     margin-top: -0.25rem;
   }
 
+  .map__inner {
+    padding: 1.25rem 2rem 1.25rem;
+  }
+
+  .map__header-options {
+    gap: 2rem;
+  }
+
+  .map__yandex {
+    margin: 0.5rem -2rem 0;
+  }
+
+  .map__address-actions {
+    gap: 4rem;
+  }
+
   .header {
     padding: 0.75rem 2.5rem;
   }
@@ -771,6 +939,68 @@
     display: none;
   }
 
+  .map__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1.5rem 2rem;
+    padding: 1.5rem 2rem 1.5rem;
+  }
+
+  .map__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: -moz-max-content;
+    height: max-content;
+  }
+
+  .map__header-back {
+    display: none;
+  }
+
+  .map__header-title {
+    display: block;
+  }
+
+  .map__header-cross.btn {
+    height: 3rem;
+    background-color: rgb(var(--color-primary-soft));
+  }
+
+  .map__header-cross {
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    border-radius: var(--radius-round);
+  }
+
+  .map__yandex {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    margin: -1.5rem -2rem -1.5rem 0;
+  }
+
+  .map__address {
+    grid-column: 1/2;
+    grid-row: 2/-1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map__address-actions {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
   .header {
     padding: 0.5rem 4rem;
     border-bottom: none;
@@ -799,6 +1029,10 @@
 
   .header__nav-search {
     margin: 0 auto;
+  }
+
+  .header__nav-search-input {
+    height: 3rem;
   }
 
   .header__nav-feed {
