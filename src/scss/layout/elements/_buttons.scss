@@ -113,4 +113,19 @@
       }
     }
   }
+
+  &[disabled] {
+    background-color: rgb(var(--color-grey-pale)) !important;
+    color: rgb(var(--color-grey-dark)) !important;
+    border-color: transparent !important;
+    cursor: default;
+
+    // & svg {
+    //   fill: rgb(var(--color-grey-dark)) !important;
+    // }
+
+    &:hover {
+      border-color: transparent !important;
+    }
+  }
 }

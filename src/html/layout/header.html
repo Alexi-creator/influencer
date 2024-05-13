@@ -51,7 +51,7 @@
             placeholder: "Найдите что-нибудь",
             prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
             suffix: "@@include('../components/select.html', { 'label1': 'Везде', 'label2': 'Везде2', 'label3': 'Везде3 очень длинный текст', 'data-value1': 'val1', 'data-value2': 'val2', 'data-value3': 'val3', 'name': 'select', 'extra-class': 'select--transparent', 'value': 'val2' })",
-            "extra-class": "",
+            "extra-class": "header__nav-search-input",
             "extra-class-prefix": "header__nav-search-icon",
             "extra-class-suffix": "header__nav-search-select",
           })
@@ -150,6 +150,12 @@
     "id": "choose-city",
     "body": '@@include("../components/choose-city.html")',
     "extra-class": "header__choose-city",
+  })
+
+  @@include("../components/popup.html", {
+    "id": "map",
+    "body": '@@include("../components/map.html")',
+    "extra-class": "popup--no-overlay header__map",
   })
 
   @@include("../components/menu-mobile.html", {

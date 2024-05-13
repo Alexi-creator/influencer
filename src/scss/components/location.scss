@@ -73,6 +73,8 @@
     }
 
     &-remove {
+      cursor: pointer;
+
       & use {
         stroke-width: 1px;
         fill: rgb(var(--color-grey));

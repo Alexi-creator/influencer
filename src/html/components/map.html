@@ -1,0 +1,52 @@
+<div class="map">
+  <div class="map__inner">
+    <div class="map__header">
+      <button class="map__header-back">
+        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="map__header-title">Способ доставки товаров</div>
+      <div class="map__header-options">
+        @@include("./radio.html", {
+          "name": "choose-delivery",
+          "text": "Самовывоз",
+          "value": "pickup",
+          "extra-class": "radio--active radio--reverse",
+        })
+        @@include("./radio.html", {
+          "name": "choose-delivery",
+          "text": "Курьером",
+          "value": "courier",
+          "extra-class": "radio--active radio--reverse",
+        })
+      </div>
+      <button class="map__header-cross btn btn--color-primary-light">
+        <svg class="map__header-cross-icon" data-close-popup="map">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="map__yandex">
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <div class="map__address">
+      <div class="map__address-header">Куда доставить заказ?</div>
+      <div class="map__address-descr">Выберите пункт выдачи или найдите</div>
+      <div class="map__address-actions">
+        @@include("./input-text.html", {
+          placeholder: "Поиск",
+          prefix: "<svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
+          suffix: "",
+          "extra-class": "input-text--small map__address-actions-input",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+          "type": "search",
+        })
+        <button class="btn" disabled>
+          Продолжить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

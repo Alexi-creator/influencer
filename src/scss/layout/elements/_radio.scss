@@ -1,4 +1,6 @@
 @import "../../basis/extends";
+@import "../../basis/_mixins";
+@import "../../basis/_variables";
 
 .radio {
   $root: &;
@@ -10,21 +12,16 @@
     color: rgb(var(--color-primary));
   }
 
-  &--btn {
-    &#{$root} {
-      justify-content: center;
-    }
-
-    #{$root}__custom {
-      display: none;
-    }
-  }
-
   &__content {
     @extend %flex-space-between;
 
+    gap: 0.25rem;
     flex-direction: row-reverse;
     position: relative;
+
+    @include media($md) {
+      gap: 0.5rem;
+    }
   }
 
   &__custom {
@@ -59,6 +56,30 @@
     &:checked + span .btn {
       background-color: rgb(var(--color-primary-soft));
       border: 2px solid rgb(var(--color-primary));
+    }
+  }
+
+  &--btn {
+    &#{$root} {
+      justify-content: center;
+    }
+
+    #{$root}__custom {
+      display: none;
+    }
+  }
+
+  &--active {
+    & input {
+      &:checked + span {
+        color: rgb(var(--color-primary));
+      }
+    }
+  }
+
+  &--reverse {
+    & #{$root}__content {
+      flex-direction: row;
     }
   }
 }
