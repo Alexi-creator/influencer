@@ -6,6 +6,7 @@
 @import "../components/login";
 @import "../components/location";
 @import "../components/choose-city";
+@import "../components/map";
 
 .header {
   $root: &;
@@ -245,10 +246,18 @@
           height: 1rem;
           flex-shrink: 0;
 
-          @include media ($md) {
+          @include media($md) {
             width: 1.5rem;
             height: 1.5rem;
           }
+        }
+      }
+
+      &-input {
+        height: 2.5rem;
+
+        @include media($lg) {
+          height: 3rem;
         }
       }
     }
@@ -350,7 +359,7 @@
     }
   }
 
-  &__login, &__choose-city {
+  &__login, &__choose-city, &__map {
     & .popup__content {
       padding: 0;
     }

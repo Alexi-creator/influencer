@@ -1,5 +1,4 @@
 @import "../../basis/_variables";
-@import "../../basis/_mixins";
 
 .input-text {
   display: flex;
@@ -9,6 +8,10 @@
   border-radius: 0.1875rem;
   padding: 0.75rem 1.25rem;
   height: 3rem;
+
+  &--small {
+    height: 2.5rem;
+  }
 
   &--color-grey {
     border-color: rgb(var(--color-grey-light));

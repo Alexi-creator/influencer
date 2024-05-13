@@ -29,6 +29,7 @@
             <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
         </button>
+        <button class="btn" disabled>Disabled</button>
       </div>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__buttons">
         <button class="btn btn--color-white">
@@ -79,6 +80,18 @@
       <div class="ui-kit__block ui-kit__input">
         @@include("../components/input-text.html", {
           name: "input4",
+          type: "text",
+          placeholder: "Инпут меньшего размера",
+          prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
+          suffix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#checkbox\"></use></svg>",
+          "extra-class": "input-text--small",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          name: "input5",
           type: "password",
           placeholder: "Пароль с серой рамкой",
           prefix: "",
@@ -195,8 +208,14 @@
         })
         @@include("../components/radio.html", {
           "name": "radio-uikit",
+          "text": "active",
+          "mod": "active",
+          "value": "5",
+        })
+        @@include("../components/radio.html", {
+          "name": "radio-uikit",
           "text": "<span class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></span>",
-          "mod": "btn",
+          "extra-class": "radio--btn",
           "value": "btn",
         })
       </div>

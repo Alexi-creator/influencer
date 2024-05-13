@@ -1,32 +1,58 @@
 export class Location {
-  private selectorLocation: string
+  private addressSelector: string
+  private addressSelectedSelector: string
+  private addressRemoveSelector: string
 
-  private containerElem: HTMLElement
+  private addressElems: HTMLElement[]
 
   constructor() {
-    // this.selectorContainer = '.login'
+    this.addressSelector = '.location__address'
+    this.addressSelectedSelector = `${this.addressSelector}--selected`
+    this.addressRemoveSelector = `${this.addressSelector}-remove`
+    this.addressElems = Array.from(document.querySelectorAll(this.addressSelector))   
 
-    // const containerElem = document.querySelector(this.selectorContainer)
-    // if (containerElem) this.containerElem = containerElem as HTMLElement
-
-    // if (!this.btnSignInElem || !this.btnSignUpElem) {
-    //   console.error(`No items found: ${this.selectorBtnSignIn}, ${this.selectorBtnSignUp}`)
-      
-    //   return
-    // }
-
-    // this.init()
+    this.init()
   }
 
-  private init() {
+  private init(): void {
     this.handlers()
   }
 
-  private clickHandler(e: Event) {
+  private selectedAddress(addressElem: HTMLElement): void {
+    this.addressElems.forEach(address => {
+      address.classList.remove(this.addressSelectedSelector.substring(1))
 
+      if (address === addressElem) {
+        address.classList.add(this.addressSelectedSelector.substring(1))
+      }
+    })
   }
 
-  private handlers() {
+  private removeAddress(addressElem: HTMLElement): void {
+    addressElem.remove()
+
+    // запрос на сервер по удаленному элементу
+    const value = addressElem.dataset.value
+    console.log('value', value)
+    
+  }
+
+  private clickHandler(e: MouseEvent): void {
+    const targetElement = e.target as HTMLElement
+
+    const addressElem = targetElement.closest(this.addressSelector) as HTMLElement
+    const addressRemoveElem = targetElement.closest(this.addressRemoveSelector) as HTMLElement
+
+    if (addressRemoveElem && addressElem) {
+      return this.removeAddress(addressElem)
+    }
+
+    if (addressElem && !addressRemoveElem) {
+      this.selectedAddress(addressElem)
+    }
+  }
+
+  private handlers(): void {
     document.addEventListener('click', (e) => this.clickHandler(e))
   }
 }
