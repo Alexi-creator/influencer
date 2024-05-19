@@ -1,9 +1,15 @@
 import { BreakpointWidth } from '../constants'
 import { SelectedDensity } from '../types/density'
 
+interface IConstructor {
+  selectorContent: string,
+  selectorActionContainer: string,
+}
 export class Density {
-  private selectorShopWindow: string
+  private selectorContent: string
+  private selectorActionContainer: string
   private selectorDensity: string
+
   private selectedDensity: SelectedDensity
 
   private shopWindowElem: HTMLElement
@@ -11,17 +17,18 @@ export class Density {
 
   private matchMedia: MediaQueryList
 
-  constructor() {
-    this.selectorShopWindow = '.shop-window'
+  constructor({ selectorContent, selectorActionContainer }: IConstructor) {
+    this.selectorContent = selectorContent
+    this.selectorActionContainer = selectorActionContainer
     this.selectorDensity = '.shop-window__actions-density'
     this.selectedDensity = SelectedDensity.GRID
 
-    const shopWindowElem = document.querySelector(this.selectorShopWindow)
+    const shopWindowElem = document.querySelector(this.selectorContent)
     if (shopWindowElem) {
       this.shopWindowElem = shopWindowElem as HTMLElement
     }
 
-    const densityElem = document.querySelector(this.selectorDensity)
+    const densityElem = document.querySelector(`${this.selectorActionContainer} ${this.selectorDensity}`)
     if (densityElem) {
       this.densityElem = densityElem as HTMLElement
     }
@@ -60,7 +67,7 @@ export class Density {
     this.shopWindowElem.classList.remove('shop-window--horizontally')
   }
 
-  private toggleDensity() {   
+  private toggleDensity() {
     if (this.selectedDensity === SelectedDensity.TILE) {
       this.selectedDensity = SelectedDensity.GRID
       this.densityElem.classList.remove('shop-window__actions-density--tile')
@@ -72,11 +79,10 @@ export class Density {
     }
   }
 
-  private clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent) {   
     const targetElement = e.target as HTMLElement
-    const parentDensity = targetElement.closest(this.selectorDensity) as HTMLElement
 
-    if (parentDensity) {
+    if (targetElement.closest(this.selectorDensity) && this.densityElem.contains(targetElement)) {
       this.toggleDensity()
     }
   }

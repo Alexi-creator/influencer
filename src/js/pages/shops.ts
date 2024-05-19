@@ -96,17 +96,28 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new Density()
-  } catch (error) {
-    console.log(error)
-  }
-  try {
     new Select()
   } catch (error) {
     console.log(error)
   }
   try {
     new RangeSlider()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Density({
+      selectorContent: '.shop-window__goods',
+      selectorActionContainer: '.shop-window__actions-goods',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Density({
+      selectorContent: '.shop-window__tff',
+      selectorActionContainer: '.shop-window__actions-tff',
+    })
   } catch (error) {
     console.log(error)
   }

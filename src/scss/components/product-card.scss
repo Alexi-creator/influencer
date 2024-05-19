@@ -181,6 +181,16 @@
     #{$root}__descr {
       min-height: 10rem;
     }
+
+    #{$root}__price {
+      &-current {
+        display: none;
+
+        @include media($md) {
+          display: block;
+        }
+      }
+    }
   }
 
   &--status-promotion-over, &--status-consideration-applications {
@@ -404,16 +414,6 @@
       color: rgb(var(--color-grey));
       text-decoration: line-through;
       text-decoration-thickness: 2px;
-    }
-
-    &-current {
-      display: none;
-    }
-
-    @include media($md) {
-      &-current {
-        display: block;
-      }
     }
 
     @include media($lg) {
