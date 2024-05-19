@@ -1,3 +1,5 @@
+import path from "path";
+
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import rename from "gulp-rename"
@@ -6,26 +8,29 @@ import cleanCss from "gulp-clean-css" // сжатие css
 import webpcss from "gulp-webpcss" // вывод webp изображений
 import autoprefixer from "gulp-autoprefixer" // кроссбраузерность
 import groupCssMediaQueries from "gulp-group-css-media-queries" // группировка медиа запросов, если в стилях вызываем несколько раз медиа с одним и той же шириной, то в итоге будет 1 медиа запрос внутри которого весь код, оптимизация!
+import injectScss from "gulp-inject-scss";
 
-// import injectScss from 'gulp-inject-scss';
-
-// const imports = [
-//   "../../src/scss/basis/_mixins.scss",
-//   "../../src/scss/basis/_variables.scss"
-// ];
 const sass = gulpSass(dartSass);
 
+const basisFiles = {
+  variables: "basis/_variables.scss",
+  mixins: "basis/_mixins.scss",
+  extends: "basis/_extends.scss",
+};
+
 export const scss = () => {
-  // если нужно все файлы конвертить в css (н-м для разных страниц) но над этим нужно еще поработать
-  return app.gulp.src(`${app.path.srcFolder}/scss/**/*.scss`, { sourcemaps: app.isDev })
-  // return app.gulp.src(app.path.src.scss, { sourcemaps: app.isDev })
+  return app.gulp.src(`${app.path.src.scss}**/*.scss`, { sourcemaps: app.isDev })
     .pipe(app.plugins.plumber(
       app.plugins.notify.onError({
         title: "SCSS",
         message: "Error: <%= error.message %>",
       })
     ))
-    // .pipe(injectScss(imports))
+    .pipe(injectScss([
+      path.join(app.path.src.scss, basisFiles.variables),
+      path.join(app.path.src.scss, basisFiles.mixins),
+      path.join(app.path.src.scss, basisFiles.extends),
+    ]))
     .pipe(app.plugins.replace(/@img\//g, "../img/"))
     .pipe(sass({
       outputStyle: "expanded"
