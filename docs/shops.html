@@ -3,24 +3,24 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240525132435">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240525181817">
   <title>shops Page</title>
-  <script defer src="js/shops.min.js?_v=20240525132435"></script>
+  <script defer src="js/shops.min.js?_v=20240525181817"></script>
 </head>
   <body>
     <header class="header">
   <div class="header__inner">
     <div class="header__top">
-      <div class="header__top-location" data-popup="location">
+      <button class="header__top-location" data-popup="location">
         <svg>
           <use xlink:href="./img/icons/icons.svg#location"></use>
         </svg>
         Укажите адрес доставки
-      </div>
+      </button>
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="select select--transparent header__top-language noselect">
+        <div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Русский</div>
     <div class="select__icon">
@@ -28,9 +28,9 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1>Русский</li>
-    <li class="select__options-item" data-value=val2>Английский</li>
-    <li class="select__options-item" data-value=val3>Казахский</li>
+    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Русский</li>
+    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Английский</li>
+    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Казахский</li>
   </ul>
   <input name=language type="text" value=val1 hidden>
 </div>
@@ -64,7 +64,7 @@
   
   <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
   
-    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect">
+    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -72,9 +72,9 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1>Везде</li>
-    <li class="select__options-item" data-value=val2>Везде2</li>
-    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
+    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Везде</li>
+    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Везде2</li>
+    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Везде3 очень длинный текст</li>
   </ul>
   <input name=select type="text" value=val2 hidden>
 </div></div>
@@ -387,7 +387,7 @@
       </button>
     </div>
     <ul class="location__addresses location__setup">
-      <li class="location__address" data-value="почта_россии">
+      <li class="location__address" data-value="почта_россии" role="button" tabindex="0">
         <div class="location__address-header">
           <div class="location__address-option">Отделение Почты России</div>
           <button class="location__address-remove">
@@ -402,7 +402,7 @@
           <span class="location__address-storage-period-count">15 дней</span>
         </div>
       </li>
-      <li class="location__address location__address--selected" data-value="адрес 1">
+      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0">
         <div class="location__address-header">
           <div class="location__address-option">Доставка по адресу</div>
           <button class="location__address-remove">
@@ -525,7 +525,14 @@
       </button>
     </div>
     <div class="map__yandex">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+      <iframe
+        id="maps"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor"
+      >
+      </iframe>
     </div>
     <div class="map__address">
       <div class="map__address-header">Куда доставить заказ?</div>
@@ -764,7 +771,7 @@
     </div>
     <!-- Блок с кнопками сортировки и фильтрации для вкладки goods -->
     <div class="shop-window__actions shop-window__actions-goods">
-      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+      <button class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка G</div>
         <svg class="shop-window__actions-icon shop-window__actions-icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
@@ -772,8 +779,8 @@
         <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
           <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
-      </div>
-      <div class="shop-window__actions-filters shop-window__actions-filters-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+      </button>
+      <button class="shop-window__actions-filters shop-window__actions-filters-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Фильтры G</div>
         <div class="shop-window__actions-filters-icon">
           <svg class="shop-window__actions-icon shop-window__actions-icon--common">
@@ -784,19 +791,19 @@
           </svg>
         </div>
         <div class="shop-window__actions-filters-count"></div>
-      </div>
-      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+      </button>
+      <button class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
         <svg class="shop-window__actions-density-tile">
           <use xlink:href="./img/icons/icons.svg#density-tile"></use>
         </svg>
         <svg class="shop-window__actions-density-grid">
           <use xlink:href="./img/icons/icons.svg#density-grid"></use>
         </svg>
-      </div>
+      </button>
     </div>
     <!-- Блок с кнопками сортировки и фильтрации для вкладки sp -->
     <div class="shop-window__actions shop-window__actions-sp">
-      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+      <button class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка SP</div>
         <svg class="shop-window__actions-icon shop-window__actions-icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
@@ -804,8 +811,8 @@
         <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
           <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
-      </div>
-      <div class="shop-window__actions-categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+      </button>
+      <button class="shop-window__actions-categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Категории SP</div>
         <div class="shop-window__actions-filters-icon">
           <svg class="shop-window__actions-icon shop-window__actions-icon--common">
@@ -816,11 +823,11 @@
           </svg>
         </div>
         <div class="shop-window__actions-filters-count"></div>
-      </div>
+      </button>
     </div>
     <!-- Блок с кнопками сортировки и фильтрации для вкладки tff -->
     <div class="shop-window__actions shop-window__actions-tff">
-      <div class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+      <button class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Сортировка TFF</div>
         <svg class="shop-window__actions-icon shop-window__actions-icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
@@ -828,8 +835,8 @@
         <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
           <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
-      </div>
-      <div class="shop-window__actions-filters shop-window__actions-filters-tff btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+      </button>
+      <button class="shop-window__actions-filters shop-window__actions-filters-tff btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="shop-window__actions-text">Фильтры TFF</div>
         <div class="shop-window__actions-filters-icon">
           <svg class="shop-window__actions-icon shop-window__actions-icon--common">
@@ -840,8 +847,8 @@
           </svg>
         </div>
         <div class="shop-window__actions-filters-count"></div>
-      </div>
-      <div class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
+      </button>
+      <button class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
         <svg class="shop-window__actions-density-tile">
           <use xlink:href="./img/icons/icons.svg#density-tile"></use>
         </svg>
@@ -849,7 +856,7 @@
           <use xlink:href="./img/icons/icons.svg#density-grid"></use>
         </svg>
       </div>
-    </div>
+    </button>
     <!-- Форма с фильтрами и сортировками для товаров goods -->
     <form class="shop-window__form shop-window__form-goods">
       <div class="shop-window__form-sorting">

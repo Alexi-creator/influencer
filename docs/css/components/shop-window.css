@@ -393,9 +393,7 @@
   }
 
   .shop-window__actions--active .shop-window__actions-filters.hide-icon.btn .shop-window__actions-filters-count,
-  .shop-window__actions--active .shop-window__actions-filters.active.btn .shop-window__actions-filters-count,
-  .shop-window__actions--active .shop-window__actions-categories.hide-icon.btn .shop-window__actions-filters-count,
-  .shop-window__actions--active .shop-window__actions-categories.active.btn .shop-window__actions-filters-count {
+  .shop-window__actions--active .shop-window__actions-categories.hide-icon.btn .shop-window__actions-filters-count {
     display: block;
   }
 

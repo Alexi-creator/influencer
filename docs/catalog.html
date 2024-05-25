@@ -3,24 +3,24 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240525132435">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240525181817">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240525132435"></script>
+  <script defer src="js/catalog.min.js?_v=20240525181817"></script>
 </head>
   <body>
     <header class="header">
   <div class="header__inner">
     <div class="header__top">
-      <div class="header__top-location" data-popup="location">
+      <button class="header__top-location" data-popup="location">
         <svg>
           <use xlink:href="./img/icons/icons.svg#location"></use>
         </svg>
         Укажите адрес доставки
-      </div>
+      </button>
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="select select--transparent header__top-language noselect">
+        <div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Русский</div>
     <div class="select__icon">
@@ -28,9 +28,9 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1>Русский</li>
-    <li class="select__options-item" data-value=val2>Английский</li>
-    <li class="select__options-item" data-value=val3>Казахский</li>
+    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Русский</li>
+    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Английский</li>
+    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Казахский</li>
   </ul>
   <input name=language type="text" value=val1 hidden>
 </div>
@@ -64,7 +64,7 @@
   
   <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
   
-    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect">
+    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -72,9 +72,9 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1>Везде</li>
-    <li class="select__options-item" data-value=val2>Везде2</li>
-    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
+    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Везде</li>
+    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Везде2</li>
+    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Везде3 очень длинный текст</li>
   </ul>
   <input name=select type="text" value=val2 hidden>
 </div></div>
@@ -387,7 +387,7 @@
       </button>
     </div>
     <ul class="location__addresses location__setup">
-      <li class="location__address" data-value="почта_россии">
+      <li class="location__address" data-value="почта_россии" role="button" tabindex="0">
         <div class="location__address-header">
           <div class="location__address-option">Отделение Почты России</div>
           <button class="location__address-remove">
@@ -402,7 +402,7 @@
           <span class="location__address-storage-period-count">15 дней</span>
         </div>
       </li>
-      <li class="location__address location__address--selected" data-value="адрес 1">
+      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0">
         <div class="location__address-header">
           <div class="location__address-option">Доставка по адресу</div>
           <button class="location__address-remove">
@@ -525,7 +525,14 @@
       </button>
     </div>
     <div class="map__yandex">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+      <iframe
+        id="maps"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor"
+      >
+      </iframe>
     </div>
     <div class="map__address">
       <div class="map__address-header">Куда доставить заказ?</div>

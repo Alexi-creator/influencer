@@ -1,6 +1,13 @@
+.map__yandex::after,
 .map__header-options {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.map__address-actions {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -44,6 +51,11 @@
   gap: 0.5rem;
 }
 
+.map__header-cross {
+  position: relative;
+  z-index: var(--z-base);
+}
+
 .map__header-cross.btn {
   background-color: transparent;
   padding: 0;
@@ -57,9 +69,24 @@
 }
 
 .map__yandex {
+  position: relative;
   margin: 0.25rem -1.25rem 0;
   flex-grow: 1;
   overflow: hidden;
+}
+
+.map__yandex::after {
+  content: "loading...";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(var(--color-grey-soft), 0.7);
+}
+
+.map__yandex--load::after {
+  display: none;
 }
 
 .map__address-header {
