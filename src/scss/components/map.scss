@@ -76,6 +76,9 @@
     }
 
     &-cross {
+      position: relative;
+      z-index: var(--z-base);
+
       &.btn {
         background-color: transparent;
         padding: 0;
@@ -108,9 +111,28 @@
   }
 
   &__yandex {
+    position: relative;
     margin: 0.25rem -1.25rem 0;
     flex-grow: 1;
     overflow: hidden;
+
+    &::after {
+      @extend %flex-center;
+
+      content: "loading...";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(var(--color-grey-soft), 0.7);
+    }
+
+    &--load {
+      &::after {
+        display: none;
+      }
+    }
 
     @include media($md) {
       margin: 0.5rem -2rem 0;
@@ -143,6 +165,8 @@
     }
 
     &-actions {
+      @extend %flex-space-between;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
