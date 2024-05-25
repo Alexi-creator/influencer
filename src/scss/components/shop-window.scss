@@ -58,6 +58,7 @@
     & .tabs__tab {
       @extend %ellipsis;
 
+      display: flex;
       width: max-content;
       margin: 0 auto;
 

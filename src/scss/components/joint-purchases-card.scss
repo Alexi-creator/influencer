@@ -393,6 +393,11 @@
   &__status {
     @extend %flex-align-center;
 
+    @include media($md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     grid-area: status;
     gap: 0.5rem;
     font-size: 1rem;
@@ -435,7 +440,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem;
-    margin: -1rem -0.75rem 0;
+    margin: -0.25rem -0.75rem 0;
 
     #{$root}--processing & {
       background-color: rgb(var(--color-primary-tag-checked));

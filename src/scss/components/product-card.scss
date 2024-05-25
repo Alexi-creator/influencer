@@ -31,10 +31,6 @@
           border-top-right-radius: var(--radius-small);
         }
       }
-
-      #{$root}__status {
-        display: none;
-      }
   
       #{$root}__descr {
         position: absolute;
