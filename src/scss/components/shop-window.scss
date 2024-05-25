@@ -124,15 +124,6 @@
           display: none;
         }
 
-        // #{$root}__actions-sorts.active.btn {
-        //   #{$root}__actions-icon--common {
-        //     display: block;
-        //   }
-        //   #{$root}__actions-icon--cross {
-        //     display: none;
-        //   }
-        // }
-
         #{$root}__actions {
           &-sorts {
             &.active.btn {
@@ -157,8 +148,10 @@
                 @include media($md) {
                   display: none;
                 }
-              }
+              }  
+            }
 
+            &.hide-icon.btn {
               #{$root}__actions-filters-count {
                 display: block;
               }
