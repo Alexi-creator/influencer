@@ -22,30 +22,6 @@
   align-items: center;
 }
 
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .nav {
   height: 4rem;
   position: fixed;
@@ -133,30 +109,6 @@
 
 .isAuth .nav__avatar {
   display: block;
-}
-
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .login__inner {
@@ -278,30 +230,6 @@
   cursor: pointer;
 }
 
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.nav,
-.login__title-cross,
-.login__choice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .location__inner {
   display: flex;
   flex-direction: column;
@@ -421,30 +349,6 @@
   display: none;
 }
 
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.choose-city__header,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .choose-city__inner {
   padding: 1rem 1.25rem;
 }
@@ -492,30 +396,6 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-}
-
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .map {

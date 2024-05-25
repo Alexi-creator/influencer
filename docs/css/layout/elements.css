@@ -1,3 +1,17 @@
+.chip,
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .alert {
   background-color: red;
 }
@@ -148,20 +162,6 @@
   background: rgb(var(--color-grey-light));
 }
 
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -236,8 +236,8 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  border: 0.125rem solid rgb(var(--color-primary-light));
-  border-radius: 0.1875rem;
+  border: 2px solid rgb(var(--color-primary-light));
+  border-radius: var(--radius-medium);
   padding: 0.75rem 1.25rem;
   height: 3rem;
 }
@@ -306,20 +306,6 @@
 .progress__line {
   height: 100%;
   border-radius: var(--radius-medium);
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .swiper-button-prev,
@@ -402,20 +388,6 @@
   background-color: rgb(var(--color-grey));
 }
 
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .radio {
   cursor: pointer;
   transition: var(--transition-base);
@@ -482,20 +454,6 @@
   flex-direction: row;
 }
 
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .checkbox {
   gap: 0.5rem;
   -webkit-user-select: none;
@@ -547,20 +505,6 @@
   color: rgb(var(--color-black));
   background-color: rgb(var(--color-primary-tag-checked));
   border: 2px solid rgb(var(--color-primary));
-}
-
-.chip,
-.checkbox,
-.checkbox__checkmark {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .chip {

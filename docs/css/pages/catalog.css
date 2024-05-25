@@ -1,5 +1,63 @@
 @charset "UTF-8";
 
+.nav-pages__list,
+.tabs__tab,
+.popup__overlay,
+.isAuth .header__nav-profile .header__nav-account,
+.header__top-location,
+.header__top-info,
+.map__header-options,
+.location__actions-city,
+.location__cross,
+.login__choice,
+.login__title-cross,
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catalog__item-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tabs__list {
+  display: flex;
+  align-items: center;
+}
+
+.chip,
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select__header,
+.collapse__head,
+.useful-links__list-item > a,
+.useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
+.login__title,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select__title,
+.collapse__head-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 *,
 *::before,
 *::after {
@@ -54,7 +112,7 @@ button {
   color: inherit;
 }
 
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+/* Удаляем все анимации и переходы для людей, которые предпочитают их не использовать */
 
 @font-face {
   font-family: Commissioner;
@@ -343,64 +401,6 @@ button {
   background: rgb(var(--color-grey-light));
 }
 
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -475,8 +475,8 @@ button {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  border: 0.125rem solid rgb(var(--color-primary-light));
-  border-radius: 0.1875rem;
+  border: 2px solid rgb(var(--color-primary-light));
+  border-radius: var(--radius-medium);
   padding: 0.75rem 1.25rem;
   height: 3rem;
 }
@@ -545,64 +545,6 @@ button {
 .progress__line {
   height: 100%;
   border-radius: var(--radius-medium);
-}
-
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .swiper-button-prev,
@@ -685,64 +627,6 @@ button {
   background-color: rgb(var(--color-grey));
 }
 
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .radio {
   cursor: pointer;
   transition: var(--transition-base);
@@ -809,64 +693,6 @@ button {
   flex-direction: row;
 }
 
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .checkbox {
   gap: 0.5rem;
   -webkit-user-select: none;
@@ -918,64 +744,6 @@ button {
   color: rgb(var(--color-black));
   background-color: rgb(var(--color-primary-tag-checked));
   border: 2px solid rgb(var(--color-primary));
-}
-
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.chip,
-.checkbox,
-.checkbox__checkmark {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .chip {
@@ -1043,122 +811,6 @@ button {
 
 .show-elem {
   display: block;
-}
-
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .nav {
@@ -1248,64 +900,6 @@ button {
 
 .isAuth .nav__avatar {
   display: block;
-}
-
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .login__inner {
@@ -1427,64 +1021,6 @@ button {
   cursor: pointer;
 }
 
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.nav,
-.login__title-cross,
-.login__choice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.radio__content,
-.login__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .location__inner {
   display: flex;
   flex-direction: column;
@@ -1604,64 +1140,6 @@ button {
   display: none;
 }
 
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .choose-city__inner {
   padding: 1rem 1.25rem;
 }
@@ -1709,64 +1187,6 @@ button {
   width: 20px;
   height: 20px;
   cursor: pointer;
-}
-
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .map {
@@ -2078,64 +1498,6 @@ button {
   padding: 0;
 }
 
-.nav-pages__list,
-.tabs__tab,
-.popup__overlay,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .popup__overlay {
   position: fixed;
   top: 0;
@@ -2180,64 +1542,6 @@ button {
   border-radius: var(--radius-medium);
   overflow-y: auto;
   cursor: default;
-}
-
-.nav-pages__list,
-.tabs__tab,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.useful-links__list-item > a,
-.useful-links__title,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .useful-links {
@@ -2331,64 +1635,6 @@ svg {
   cursor: pointer;
 }
 
-.nav-pages__list,
-.tabs__tab,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header,
-.useful-links__title,
-.useful-links__list-item > a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .tabs__tab {
   position: relative;
   gap: 0.25rem;
@@ -2451,64 +1697,6 @@ svg {
   display: block;
 }
 
-.nav-pages__list,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay,
-.tabs__tab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header,
-.useful-links__title,
-.useful-links__list-item > a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .nav-pages {
   display: none;
   background-color: rgb(var(--color-primary-pale));
@@ -2524,64 +1712,6 @@ svg {
 
 .nav-pages__list > li {
   padding: 0.5rem 1rem;
-}
-
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay,
-.tabs__tab,
-.nav-pages__list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.collapse__head,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header,
-.useful-links__title,
-.useful-links__list-item > a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .collapse {
@@ -2661,64 +1791,6 @@ svg {
   }
 }
 
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay,
-.tabs__tab,
-.nav-pages__list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select__header,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header,
-.useful-links__title,
-.useful-links__list-item > a,
-.collapse__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.select__title,
-.collapse__head-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .select {
   position: relative;
   width: 100%;
@@ -2783,64 +1855,6 @@ svg {
 
 .select__options-item.active {
   background-color: rgba(var(--color-primary), 0.1);
-}
-
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay,
-.tabs__tab,
-.nav-pages__list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.catalog__item-title {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.tabs__list {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header,
-.useful-links__title,
-.useful-links__list-item > a,
-.collapse__head,
-.select__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.collapse__head-title,
-.select__title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .catalog__item-title {

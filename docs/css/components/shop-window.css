@@ -38,6 +38,7 @@
 }
 
 .shop-window__tabs .tabs__tab {
+  display: flex;
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
@@ -47,7 +48,7 @@
   display: none;
   gap: 0.5rem;
   position: sticky;
-  top: 81px;
+  top: 4.5rem;
   margin-left: auto;
   margin-top: 1.5rem;
   z-index: var(--z-popup);
@@ -379,7 +380,22 @@
     display: none;
   }
 
-  .shop-window__actions--active .shop-window__actions-sorts .shop-window__actions-text {
+  .shop-window__actions--active .shop-window__actions-text {
+    display: none;
+  }
+
+  .shop-window__actions--active .shop-window__actions-sorts.active.btn .shop-window__actions-icon--common {
+    display: block;
+  }
+
+  .shop-window__actions--active .shop-window__actions-sorts.active.btn .shop-window__actions-icon--cross {
+    display: none;
+  }
+
+  .shop-window__actions--active .shop-window__actions-filters.hide-icon.btn .shop-window__actions-filters-count,
+  .shop-window__actions--active .shop-window__actions-filters.active.btn .shop-window__actions-filters-count,
+  .shop-window__actions--active .shop-window__actions-categories.hide-icon.btn .shop-window__actions-filters-count,
+  .shop-window__actions--active .shop-window__actions-categories.active.btn .shop-window__actions-filters-count {
     display: block;
   }
 
@@ -450,6 +466,22 @@
 
   .shop-window__tabs-contents {
     margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 48rem) and (min-width: 48rem) {
+  .shop-window__actions--active .shop-window__actions-filters.hide-icon.btn .shop-window__actions-icon--common,
+  .shop-window__actions--active .shop-window__actions-filters.active.btn .shop-window__actions-icon--common,
+  .shop-window__actions--active .shop-window__actions-categories.hide-icon.btn .shop-window__actions-icon--common,
+  .shop-window__actions--active .shop-window__actions-categories.active.btn .shop-window__actions-icon--common {
+    display: block;
+  }
+
+  .shop-window__actions--active .shop-window__actions-filters.hide-icon.btn .shop-window__actions-icon--cross,
+  .shop-window__actions--active .shop-window__actions-filters.active.btn .shop-window__actions-icon--cross,
+  .shop-window__actions--active .shop-window__actions-categories.hide-icon.btn .shop-window__actions-icon--cross,
+  .shop-window__actions--active .shop-window__actions-categories.active.btn .shop-window__actions-icon--cross {
+    display: none;
   }
 }
 

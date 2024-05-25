@@ -1,5 +1,41 @@
 @charset "UTF-8";
 
+.popup__overlay,
+.isAuth .header__nav-profile .header__nav-account,
+.header__top-location,
+.header__top-info,
+.map__header-options,
+.location__actions-city,
+.location__cross,
+.login__choice,
+.login__title-cross,
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip,
+.checkbox__checkmark,
+.checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.useful-links__list-item > a,
+.useful-links__title,
+.choose-city__header,
+.location__actions,
+.location__address-header,
+.location__header,
+.login__title,
+.radio__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 *,
 *::before,
 *::after {
@@ -54,7 +90,7 @@ button {
   color: inherit;
 }
 
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+/* Удаляем все анимации и переходы для людей, которые предпочитают их не использовать */
 
 @font-face {
   font-family: Commissioner;
@@ -343,42 +379,6 @@ button {
   background: rgb(var(--color-grey-light));
 }
 
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -453,8 +453,8 @@ button {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  border: 0.125rem solid rgb(var(--color-primary-light));
-  border-radius: 0.1875rem;
+  border: 2px solid rgb(var(--color-primary-light));
+  border-radius: var(--radius-medium);
   padding: 0.75rem 1.25rem;
   height: 3rem;
 }
@@ -523,42 +523,6 @@ button {
 .progress__line {
   height: 100%;
   border-radius: var(--radius-medium);
-}
-
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .swiper-button-prev,
@@ -641,42 +605,6 @@ button {
   background-color: rgb(var(--color-grey));
 }
 
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .radio {
   cursor: pointer;
   transition: var(--transition-base);
@@ -743,42 +671,6 @@ button {
   flex-direction: row;
 }
 
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chip,
-.checkbox__checkmark,
-.checkbox {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .checkbox {
   gap: 0.5rem;
   -webkit-user-select: none;
@@ -830,42 +722,6 @@ button {
   color: rgb(var(--color-black));
   background-color: rgb(var(--color-primary-tag-checked));
   border: 2px solid rgb(var(--color-primary));
-}
-
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chip,
-.checkbox,
-.checkbox__checkmark {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .chip {
@@ -933,78 +789,6 @@ button {
 
 .show-elem {
   display: block;
-}
-
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .nav {
@@ -1094,42 +878,6 @@ button {
 
 .isAuth .nav__avatar {
   display: block;
-}
-
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.login__choice,
-.login__title-cross,
-.nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.login__title,
-.radio__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .login__inner {
@@ -1251,42 +999,6 @@ button {
   cursor: pointer;
 }
 
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.location__actions-city,
-.location__cross,
-.nav,
-.login__title-cross,
-.login__choice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.location__actions,
-.location__address-header,
-.location__header,
-.radio__content,
-.login__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .location__inner {
   display: flex;
   flex-direction: column;
@@ -1406,42 +1118,6 @@ button {
   display: none;
 }
 
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.choose-city__header,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .choose-city__inner {
   padding: 1rem 1.25rem;
 }
@@ -1489,42 +1165,6 @@ button {
   width: 20px;
   height: 20px;
   cursor: pointer;
-}
-
-.popup__overlay,
-.isAuth .header__nav-profile .header__nav-account,
-.header__top-location,
-.header__top-info,
-.map__header-options,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .map {
@@ -1836,42 +1476,6 @@ button {
   padding: 0;
 }
 
-.popup__overlay,
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .popup__overlay {
   position: fixed;
   top: 0;
@@ -1916,42 +1520,6 @@ button {
   border-radius: var(--radius-medium);
   overflow-y: auto;
   cursor: default;
-}
-
-.nav,
-.login__title-cross,
-.login__choice,
-.location__cross,
-.location__actions-city,
-.map__header-options,
-.header__top-location,
-.header__top-info,
-.isAuth .header__nav-profile .header__nav-account,
-.popup__overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark,
-.chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.useful-links__list-item > a,
-.useful-links__title,
-.radio__content,
-.login__title,
-.location__header,
-.location__address-header,
-.location__actions,
-.choose-city__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .useful-links {
