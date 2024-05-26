@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240525181817">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240526171002">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240525181817"></script>
+  <script defer src="js/catalog.min.js?_v=20240526171002"></script>
 </head>
   <body>
     <header class="header">
@@ -462,7 +462,7 @@
     <ul class="choose-city__list">
       <li class="choose-city__list-item">
         <label class="radio radio--active">
-  <input name="city" type="radio" value="Москва">
+  <input name="city" type="radio" value="Москва" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
     Москва
@@ -472,7 +472,7 @@
       </li>
       <li class="choose-city__list-item">
         <label class="radio radio--active">
-  <input name="city" type="radio" value="Санкт-Петербург">
+  <input name="city" type="radio" value="Санкт-Петербург" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
     Санкт-Петербург
@@ -502,7 +502,7 @@
       <div class="map__header-title">Способ доставки товаров</div>
       <div class="map__header-options">
         <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="pickup">
+  <input name="choose-delivery" type="radio" value="pickup" checked>
   <span class="radio__content">
     <span class="radio__custom"></span>
     Самовывоз
@@ -510,7 +510,7 @@
 </label>
 
         <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="courier">
+  <input name="choose-delivery" type="radio" value="courier" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
     Курьером
@@ -536,19 +536,140 @@
     </div>
     <div class="map__address">
       <div class="map__address-header">Куда доставить заказ?</div>
-      <div class="map__address-descr">Выберите пункт выдачи или найдите</div>
+      <div class="map__address-descr">
+        <div class="map__address-descr-pickup">
+          Выберите пункт выдачи или найдите
+        </div>
+        <div class="map__address-descr-courier">
+          Выберите адрес на карте или найдите
+        </div>
+      </div>
       <div class="map__address-actions">
         <div class="input-text input-text--small map__address-actions-input">
   
-    <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+    <div class="input-text__prefix "><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Поиск">
   
 </div>
+        <button class="map__address-actions-define">
+          <svg class="map__address-actions-define-icon">
+            <use xlink:href="./img/icons/icons.svg#compass"></use>
+          </svg>
+          Определить местоположение
+        </button>
         <button class="btn" disabled>
           Продолжить
         </button>
       </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="search-pickup" class="popup popup--no-overlay header__search-pickup">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="search-pickup">
+  <div class="search-pickup__inner">
+    <div class="search-pickup__header">
+      <button class="search-pickup__header-back">
+        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="search-pickup__header-title">
+        Куда доставить заказ?
+      </div>
+      <button class="search-pickup__header-cross btn btn--color-primary-light">
+        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
+    <div class="search-pickup__actions">
+      <div class="input-text input-text--small search-pickup__actions-input">
+  
+    <div class="input-text__prefix "><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес">
+  
+</div>
+      <button class="search-pickup__actions-define">
+        <svg class="search-pickup__header-actions-define-icon">
+          <use xlink:href="./img/icons/icons.svg#compass"></use>
+        </svg>
+        Определить местоположение
+      </button>
+      <button class="btn" disabled>
+        Продолжить
+      </button>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="courier" class="popup popup--no-overlay header__courier">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="courier">
+  <div class="courier__inner">
+    <div class="courier__header">
+      <button class="courier__header-back">
+        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="courier__header-title">
+        Уточнить адрес
+      </div>
+      <button class="courier__header-cross btn btn--color-primary-light">
+        <svg class="courier__header-cross-icon" data-close-popup="courier">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="courier__actions">
+      <div class="courier__actions-inputs">
+        <div class="courier__actions-inputs-full">
+          Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
+        </div>
+        <div class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом">
+  
+</div>
+        <div class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс">
+  
+</div>
+        <div class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд">
+  
+</div>
+        <div class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж">
+  
+</div>
+        <div class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон">
+  
+</div>
+      </div>
+      <button class="btn" disabled>
+        Продолжить
+      </button>
     </div>
   </div>
 </div>

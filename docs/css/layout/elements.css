@@ -240,6 +240,11 @@
   border-radius: var(--radius-medium);
   padding: 0.75rem 1.25rem;
   height: 3rem;
+  outline: none;
+}
+
+.input-text:focus-within {
+  border-color: rgb(var(--color-primary));
 }
 
 .input-text--small {
