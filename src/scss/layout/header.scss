@@ -3,6 +3,8 @@
 @import "../components/location";
 @import "../components/choose-city";
 @import "../components/map";
+@import "../components/search-pickup";
+@import "../components/courier";
 
 .header {
   $root: &;
@@ -355,7 +357,7 @@
     }
   }
 
-  &__login, &__choose-city, &__map {
+  &__login, &__choose-city, &__map, &__search-pickup, &__courier {
     & .popup__content {
       padding: 0;
     }

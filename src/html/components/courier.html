@@ -1,0 +1,69 @@
+<div class="courier">
+  <div class="courier__inner">
+    <div class="courier__header">
+      <button class="courier__header-back">
+        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="courier__header-title">
+        Уточнить адрес
+      </div>
+      <button class="courier__header-cross btn btn--color-primary-light">
+        <svg class="courier__header-cross-icon" data-close-popup="courier">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="courier__actions">
+      <div class="courier__actions-inputs">
+        <div class="courier__actions-inputs-full">
+          Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
+        </div>
+        @@include("./input-text.html", {
+          prefix: "",
+          suffix: "",
+          placeholder: "Дом",
+          "extra-class": "input-text--color-grey",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+        @@include("./input-text.html", {
+          prefix: "",
+          suffix: "",
+          placeholder: "Индекс",
+          "extra-class": "input-text--color-grey",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+        @@include("./input-text.html", {
+          prefix: "",
+          suffix: "",
+          placeholder: "Подъезд",
+          "extra-class": "input-text--color-grey",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+        @@include("./input-text.html", {
+          prefix: "",
+          suffix: "",
+          placeholder: "Этаж",
+          "extra-class": "input-text--color-grey",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+        @@include("./input-text.html", {
+          prefix: "",
+          suffix: "",
+          placeholder: "Домофон",
+          "extra-class": "input-text--color-grey",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+        })
+      </div>
+      <button class="btn" disabled>
+        Продолжить
+      </button>
+    </div>
+  </div>
+</div>

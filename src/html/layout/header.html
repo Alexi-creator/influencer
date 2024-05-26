@@ -158,6 +158,18 @@
     "extra-class": "popup--no-overlay header__map",
   })
 
+  @@include("../components/popup.html", {
+    "id": "search-pickup",
+    "body": '@@include("../components/search-pickup.html")',
+    "extra-class": "popup--no-overlay header__search-pickup",
+  })
+
+  @@include("../components/popup.html", {
+    "id": "courier",
+    "body": '@@include("../components/courier.html")',
+    "extra-class": "popup--no-overlay header__courier",
+  })
+
   @@include("../components/menu-mobile.html", {
     activeItem: "@@activeItem",
   })

@@ -38,7 +38,7 @@ export class SyncCatalog {
     catalogsDesktop.forEach(catalog => {
       const catalogSyncName = catalog.dataset.tabPath
       const catalogContent = document.querySelector(`.catalog__content [data-tab-target="${catalogSyncName}"]`)
-      this.catalogsDesktop.set(catalog, catalogContent as HTMLElement)      
+      this.catalogsDesktop.set(catalog, catalogContent as HTMLElement)  
     })
 
     this.handlers()

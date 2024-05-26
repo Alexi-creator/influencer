@@ -1,0 +1,40 @@
+<div class="search-pickup">
+  <div class="search-pickup__inner">
+    <div class="search-pickup__header">
+      <button class="search-pickup__header-back">
+        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="search-pickup__header-title">
+        Куда доставить заказ?
+      </div>
+      <button class="search-pickup__header-cross btn btn--color-primary-light">
+        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
+    <div class="search-pickup__actions">
+      @@include("./input-text.html", {
+        placeholder: "Введите адрес",
+        prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
+        suffix: "",
+        "extra-class": "input-text--small search-pickup__actions-input",
+        "extra-class-prefix": "",
+        "extra-class-suffix": "",
+        "type": "search",
+      })
+      <button class="search-pickup__actions-define">
+        <svg class="search-pickup__header-actions-define-icon">
+          <use xlink:href="./img/icons/icons.svg#compass"></use>
+        </svg>
+        Определить местоположение
+      </button>
+      <button class="btn" disabled>
+        Продолжить
+      </button>
+    </div>
+  </div>
+</div>
