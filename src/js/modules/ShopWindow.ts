@@ -115,7 +115,7 @@ export class ShopWindow {
     const targetElement = e.target as HTMLInputElement
 
     if (targetElement.closest(this.selectorForm)) {
-      if(targetElement.name === 'sorting') {
+      if (targetElement.name === 'sorting') {
         // this.form.submitForm()
       }
     }

@@ -2,7 +2,16 @@
  * Синхронизация категорий из разных блоков (на десктопе и в фильтрах на меньших размерах)
  */
 export class SyncCategories {
+  private containerSelector: string
+
+  private containerElem: HTMLElement
+
   constructor() {
+    this.containerSelector = '.shop-window'
+
+    const containerElem = document.querySelector(this.containerSelector) as HTMLElement
+    if (containerElem) this.containerElem = containerElem
+
     this.init()
   }
 
@@ -30,6 +39,6 @@ export class SyncCategories {
   }
 
   private handlers() {
-    document.addEventListener('change', (e) => this.changeHandler(e))
+    this.containerElem.addEventListener('change', (e) => this.changeHandler(e))
   }
 }

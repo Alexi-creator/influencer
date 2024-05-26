@@ -13,6 +13,7 @@
           "text": "Самовывоз",
           "value": "pickup",
           "extra-class": "radio--active radio--reverse",
+          "isChecked": "checked",
         })
         @@include("./radio.html", {
           "name": "choose-delivery",
@@ -39,17 +40,30 @@
     </div>
     <div class="map__address">
       <div class="map__address-header">Куда доставить заказ?</div>
-      <div class="map__address-descr">Выберите пункт выдачи или найдите</div>
+      <div class="map__address-descr">
+        <div class="map__address-descr-pickup">
+          Выберите пункт выдачи или найдите
+        </div>
+        <div class="map__address-descr-courier">
+          Выберите адрес на карте или найдите
+        </div>
+      </div>
       <div class="map__address-actions">
         @@include("./input-text.html", {
           placeholder: "Поиск",
-          prefix: "<svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
+          prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
           suffix: "",
           "extra-class": "input-text--small map__address-actions-input",
           "extra-class-prefix": "",
           "extra-class-suffix": "",
           "type": "search",
         })
+        <button class="map__address-actions-define">
+          <svg class="map__address-actions-define-icon">
+            <use xlink:href="./img/icons/icons.svg#compass"></use>
+          </svg>
+          Определить местоположение
+        </button>
         <button class="btn" disabled>
           Продолжить
         </button>

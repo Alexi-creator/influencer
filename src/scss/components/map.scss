@@ -3,6 +3,24 @@
 
   height: 100%;
 
+  &--courier {
+    #{$root}__address-descr-pickup {
+      display: none;
+    }
+    #{$root}__address-descr-courier {
+      display: block;
+    }
+  }
+
+  &--pickup {
+    #{$root}__address-descr-pickup {
+      display: block;
+    }
+    #{$root}__address-descr-courier {
+      display: none;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -22,12 +40,14 @@
       gap: 1.5rem 2rem;
       padding: 1.5rem 2rem 1.5rem;
     }
+
+    @include media($full) {
+      grid-template-columns: 37% 1fr;
+    }
   }
 
   &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @extend %flex-space-between;
 
     gap: 1rem;
 
@@ -119,7 +139,7 @@
     &::after {
       @extend %flex-center;
 
-      content: "loading...";
+      content: "Загружается карта...";
       position: absolute;
       height: 100%;
       width: 100%;
@@ -167,19 +187,31 @@
     &-actions {
       @extend %flex-space-between;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
       margin-top: 1.25rem;
       gap: 1rem;
 
       &-input {
         width: 100%;
+        height: 3rem;
+      }
+
+      &-define {
+        @extend %inline-flex-center;
+
+        gap: 0.25rem;
+        margin-bottom: auto;
+        margin-top: 1.5rem;
+        color: rgb(var(--color-primary));
+        font-weight: 600;
+        cursor: pointer;
       }
 
       @include media($md) {
         gap: 4rem;
+
+        &-input {
+          height: 2.5rem;
+        }
       }
 
       @include media($lg) {
