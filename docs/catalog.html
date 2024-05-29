@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240526171840">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240529100702">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240526171840"></script>
+  <script defer src="js/catalog.min.js?_v=20240529100702"></script>
 </head>
   <body>
     <header class="header">
@@ -592,13 +592,25 @@
     </div>
     <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
     <div class="search-pickup__actions">
-      <div class="input-text input-text--small search-pickup__actions-input">
+      <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
+  <div class="input-text autocomplete__input input-text--small input-text--color-grey">
   
-    <div class="input-text__prefix "><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес">
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Введите адрес">
+  
+    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
 </div>
+  <input type="text" name="search-pickup" value="@@value" hidden>
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    <ul class="autocomplete__options">
+      @@options
+    </ul>
+  </div>
+</div>
+
       <button class="search-pickup__actions-define">
         <svg class="search-pickup__header-actions-define-icon">
           <use xlink:href="./img/icons/icons.svg#compass"></use>
