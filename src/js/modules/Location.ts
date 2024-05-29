@@ -7,6 +7,11 @@ const enum DeliveryEnum {
   pickup = 'pickup',
 }
 
+interface IOptions {
+  label: string
+  value: string
+}
+
 /** Класс для управления локацией, картой */
 export class Location {
   private mapId: string
@@ -119,6 +124,11 @@ export class Location {
   }
   private openPopupCourier(): void {
     this.courierAddressElem.classList.add('popup--open')
+  }
+
+  selectedOption(options: IOptions) {
+    console.log('options', options)
+    
   }
 
   private changeDelivery(value: DeliveryEnum): void {
