@@ -8,9 +8,12 @@ import { UsefulLinks } from './modules/UsefulLinks'
 import { Form } from './modules/Form'
 import { Login } from './modules/Login'
 import { Location } from './modules/Location'
+import { Autocomplete } from './modules/Autocomplete'
 
 window.addEventListener('load', () => {
   flsFunction.isWebp()
+
+  let location: Location | undefined
 
   try {
     new Popup()
@@ -50,7 +53,16 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new Location()
+    location = new Location()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Autocomplete({
+      id: 'search-pickup-autocomplete',
+      url: '../files/stubs/autocomplete.json',
+      callback: location?.selectedOption,
+    })
   } catch (error) {
     console.log(error)
   }

@@ -6,6 +6,7 @@ import { CustomSwiper } from '../modules/CustomSwiper'
 import { Tabs } from '../modules/Tabs'
 import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
+import { Autocomplete } from '../modules/Autocomplete'
 
 window.addEventListener('load', () => {
   try {
@@ -45,6 +46,23 @@ window.addEventListener('load', () => {
   }
   try {
     new Select()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Autocomplete({
+      id: 'ui-autocomplete',
+      callback: ({ label, value }) => console.log('ui kit autocomplete', label, value)
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Autocomplete({
+      id: 'ui-autocomplete-url',
+      url: '../files/stubs/autocomplete.json',
+      callback: ({ label, value }) => console.log('ui kit autocomplete url', label, value)
+    })
   } catch (error) {
     console.log(error)
   }
