@@ -1,4 +1,4 @@
-import { request } from '../utils'
+import { request, debounce } from '../utils'
 
 interface IOptions {
   label: string
@@ -26,6 +26,7 @@ export class Autocomplete {
 
   private options: IOptions[] | [] // Все опции
   private searchOptions: IOptions[] | [] // Опции которые попадают под поиск
+  private selectedOption: IOptions
   private isOpen: boolean
 
   private containerElem: HTMLElement
@@ -33,6 +34,8 @@ export class Autocomplete {
   private inputElem: HTMLInputElement
   private optionsElem: HTMLElement
   private hiddenInputElem: HTMLInputElement
+
+  private debounce: (userInput: string) => void
 
   constructor({ id, url, callback }: IConstructor) {
     this.id = id
@@ -47,7 +50,7 @@ export class Autocomplete {
     this.itemSelector = `${this.containerSelector}__options-item`
 
     const containerElem = document.querySelector(`#${this.id}`) as HTMLElement
-    if (containerElem) this.containerElem = containerElem
+    if (containerElem) this.containerElem = containerElem    
 
     const inputWrapperElem = this.containerElem.querySelector(this.inputWrapperSelector) as HTMLElement
     if (inputWrapperElem) this.inputWrapperElem = inputWrapperElem
@@ -64,6 +67,7 @@ export class Autocomplete {
   private init() {
     this.handlers()
     this.collectedInitialOptions()
+    this.debounce = debounce(this.fetchOptions, 200)
   }
 
   private renderOptions() {
@@ -72,6 +76,7 @@ export class Autocomplete {
     const prepareOptions = this.searchOptions.map(({ label, value }) => {
       return `<li class="autocomplete__options-item" data-value="${value}" tabindex="0">${label}</li>`
     }).join('')
+    console.log('prepareOptions', prepareOptions)
 
     this.optionsElem.innerHTML = prepareOptions
   }
@@ -104,31 +109,50 @@ export class Autocomplete {
 
     if (label) this.inputElem.value = label
     if (value) this.hiddenInputElem.value = value
+    if (value && label) {
+      this.selectedOption = { label, value }
+    }
 
     if (this.callback && label && value) {
       this.callback({ label, value })
+    }
+
+    const options = Array.from(this.optionsElem.children) as HTMLElement[]
+    options.forEach(opt => {
+      opt.classList.remove('active')
+
+      if (opt.dataset.value === value) opt.classList.add('active')
+    })
+
+    this.toggle()
+  }
+
+  private async fetchOptions(userInput: string): Promise<void> {
+    // TODO переделать под реальное API
+    this.containerElem.classList.add('load')
+    const response = await request(`${this.url}?search=${userInput}`, {})
+    this.containerElem.classList.remove('load')
+
+
+    if (response.error) {
+      console.error('Error fetching data:', response.error)
+      return
+    }
+  
+    if (Array.isArray(response.data)) {
+      this.searchOptions = response.data as IOptions[]
+      this.renderOptions()
     }
   }
 
   private async searchMatch(userInput: string): Promise<void> {
     // Если передан url значит опции нужно подгружать
-    if (this.url && userInput) {
-      // TODO переделать под реальное API (добавить в query параметры)
-      // TODO добавить дебоунс
-      this.containerElem.classList.add('load')
-      const response = await request(this.url, {})
-      this.containerElem.classList.remove('load')
-
-      if (response.error) {
-        console.error('Error fetching data:', response.error)
-        return
-      }
-  
-      if (Array.isArray(response.data)) {
-        this.searchOptions = response.data as IOptions[]
-        this.renderOptions()
+    if (this.url) {      
+      if (userInput && userInput.length > 2) {
+        this.debounce(userInput)
       } else {
-        console.error('Unexpected response format:', response)
+        this.searchOptions = []
+        this.renderOptions()
       }
 
       return

@@ -49,12 +49,13 @@ svg {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
   height: 4px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+  border-radius: var(--radius-medium);
 }
 
 ::-webkit-scrollbar-thumb {

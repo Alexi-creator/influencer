@@ -85,7 +85,7 @@ export class Location {
     mediaQueryList.addListener((e) => this.breakpointChecker(e))
 
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(position.coords.latitude, position.coords.longitude) // выводит координаты местоположения пользователя
+      console.log('geolocation', position.coords.latitude, position.coords.longitude) // выводит координаты местоположения пользователя
     }, function(error) {
       console.log(error.message) // выводит сообщение об ошибке
     })
@@ -143,6 +143,19 @@ export class Location {
     this.deliveryType = value
   }
 
+  private loadMap(): void {
+    const srcPath = this.iframeMapElem.dataset.src
+
+    this.iframeMapElem.addEventListener('load', () => {
+      this.mapYandexElem.classList.add(`${this.mapYandexSelector.substring(1)}--load`)
+    })
+
+    if (srcPath) {
+      this.iframeMapElem.src = srcPath
+      this.isLoadMap = true
+    }
+  }
+
   private clickHandler(e: MouseEvent): Promise<void> | void {
     const targetElement = e.target as HTMLElement
 
@@ -150,16 +163,7 @@ export class Location {
     const addressRemoveElem = targetElement.closest(this.addressRemoveSelector) as HTMLElement
 
     if (!this.isLoadMap && targetElement.closest('[data-popup="map"]')) {
-      const srcPath = this.iframeMapElem.dataset.src
-
-      this.iframeMapElem.addEventListener('load', () => {
-        this.mapYandexElem.classList.add(`${this.mapYandexSelector.substring(1)}--load`)
-      })
-
-      if (srcPath) {
-        this.iframeMapElem.src = srcPath
-        this.isLoadMap = true
-      }
+      this.loadMap()
     }
 
     if (addressRemoveElem && addressElem) {
@@ -179,6 +183,8 @@ export class Location {
       if (this.deliveryType === DeliveryEnum.courier) {
         this.openPopupCourier()
       }
+
+      this.searchInputElem.blur()
     }
   }
 

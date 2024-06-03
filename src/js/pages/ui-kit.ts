@@ -7,6 +7,7 @@ import { Tabs } from '../modules/Tabs'
 import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { Autocomplete } from '../modules/Autocomplete'
+import { API_URLS } from '../constants'
 
 window.addEventListener('load', () => {
   try {
@@ -60,7 +61,7 @@ window.addEventListener('load', () => {
   try {
     new Autocomplete({
       id: 'ui-autocomplete-url',
-      url: '../files/stubs/autocomplete.json',
+      url: API_URLS.mock.autocomplete,
       callback: ({ label, value }) => console.log('ui kit autocomplete url', label, value)
     })
   } catch (error) {

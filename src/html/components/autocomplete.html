@@ -11,7 +11,9 @@
   <div class="autocomplete__body">
     <div class="autocomplete__body-title">Результаты поиска</div>
     <ul class="autocomplete__options">
-      @@options
+      @@if(options) {
+        @@options
+      }
     </ul>
   </div>
 </div>
