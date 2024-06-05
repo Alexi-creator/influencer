@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
   try {
     new Form(
       '.login__form-sign-in', 
-      API_URLS.shops.test,
+      API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
       },
@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
   try {
     new Form(
       '.login__form-sign-up', 
-      API_URLS.shops.test,
+      API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
       },
@@ -60,7 +60,7 @@ window.addEventListener('load', () => {
   try {
     new Autocomplete({
       id: 'search-pickup-autocomplete',
-      url: '../files/stubs/autocomplete.json',
+      url: API_URLS.mock.autocomplete,
       callback: location?.selectedOption,
     })
   } catch (error) {

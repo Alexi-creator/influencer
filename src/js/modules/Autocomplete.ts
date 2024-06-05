@@ -1,4 +1,4 @@
-import { request } from '../utils'
+import { request, debounce } from '../utils'
 
 interface IOptions {
   label: string
@@ -26,6 +26,7 @@ export class Autocomplete {
 
   private options: IOptions[] | [] // Все опции
   private searchOptions: IOptions[] | [] // Опции которые попадают под поиск
+  private selectedOption: IOptions | null
   private isOpen: boolean
 
   private containerElem: HTMLElement
@@ -33,6 +34,9 @@ export class Autocomplete {
   private inputElem: HTMLInputElement
   private optionsElem: HTMLElement
   private hiddenInputElem: HTMLInputElement
+
+  private debounce: (userInput: string) => void
+  private fetchController: AbortController | null = null
 
   constructor({ id, url, callback }: IConstructor) {
     this.id = id
@@ -47,7 +51,7 @@ export class Autocomplete {
     this.itemSelector = `${this.containerSelector}__options-item`
 
     const containerElem = document.querySelector(`#${this.id}`) as HTMLElement
-    if (containerElem) this.containerElem = containerElem
+    if (containerElem) this.containerElem = containerElem    
 
     const inputWrapperElem = this.containerElem.querySelector(this.inputWrapperSelector) as HTMLElement
     if (inputWrapperElem) this.inputWrapperElem = inputWrapperElem
@@ -64,6 +68,7 @@ export class Autocomplete {
   private init() {
     this.handlers()
     this.collectedInitialOptions()
+    this.debounce = debounce(this.fetchOptions, 200)
   }
 
   private renderOptions() {
@@ -104,31 +109,55 @@ export class Autocomplete {
 
     if (label) this.inputElem.value = label
     if (value) this.hiddenInputElem.value = value
+    if (value && label) {
+      this.selectedOption = { label, value }
+    }
 
     if (this.callback && label && value) {
       this.callback({ label, value })
+    }
+
+    const options = Array.from(this.optionsElem.children) as HTMLElement[]
+    options.forEach(opt => {
+      opt.classList.remove('active')
+
+      if (opt.dataset.value === value) opt.classList.add('active')
+    })
+
+    this.toggle()
+  }
+
+  private async fetchOptions(userInput: string): Promise<void> {
+    this.fetchController = new AbortController()
+
+    // TODO переделать под реальное API
+    this.containerElem.classList.add('load')
+    const response = await request(`${this.url}?search=${userInput}`, { fetchController: this.fetchController })
+    this.containerElem.classList.remove('load')
+
+    if (response.error && response.error.name !== 'AbortError') {
+      console.error('Error fetching data:', response.error)
+
+      return
+    }
+  
+    if (Array.isArray(response.data)) {
+      this.searchOptions = response.data as IOptions[]
+      this.renderOptions()
     }
   }
 
   private async searchMatch(userInput: string): Promise<void> {
     // Если передан url значит опции нужно подгружать
-    if (this.url && userInput) {
-      // TODO переделать под реальное API (добавить в query параметры)
-      // TODO добавить дебоунс
-      this.containerElem.classList.add('load')
-      const response = await request(this.url, {})
-      this.containerElem.classList.remove('load')
-
-      if (response.error) {
-        console.error('Error fetching data:', response.error)
-        return
+    if (this.url) {
+      if (this.fetchController) {
+        this.fetchController?.abort()
       }
-  
-      if (Array.isArray(response.data)) {
-        this.searchOptions = response.data as IOptions[]
-        this.renderOptions()
+      if (userInput && userInput.length > 2) {
+        this.debounce(userInput)
       } else {
-        console.error('Unexpected response format:', response)
+        this.searchOptions = []
+        this.renderOptions()
       }
 
       return
@@ -163,9 +192,31 @@ export class Autocomplete {
     }
   }
 
+  private setInput(targetElement: HTMLInputElement) {
+    targetElement.value = this.selectedOption?.label ?? ''
+  }
+
+  private blurHandler(e: Event): void {
+    const targetElement = e.target as HTMLInputElement
+
+    if (targetElement.value.length === 0 && this.selectedOption?.label) {
+      this.setInput(targetElement)
+    }    
+  }
+
+  private searchHandler(): void {
+    this.selectedOption = null
+    this.hiddenInputElem.value = ''
+
+    if (this.callback) {
+      this.callback({ label: '', value: '' })
+    }
+  }
+
   private handlers(): void {
     document.addEventListener('click', (e) => this.clickHandler(e))
     document.addEventListener('input', (e) => this.inputHandler(e))
-    // document.addEventListener('blur', (e) => this.blurHandler(e))
+    this.inputElem.addEventListener('blur', (e) => this.blurHandler(e))
+    this.inputElem.addEventListener('search', () => this.searchHandler())
   }
 }

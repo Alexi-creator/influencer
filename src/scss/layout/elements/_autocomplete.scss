@@ -4,8 +4,17 @@
   position: relative;
 
   &.active {
+    #{$root}__input {
+      border-bottom: 0;
+      border-radius: var(--radius-medium) var(--radius-medium) 0 0;
+      border-color: rgb(var(--color-primary));
+    }
+
     #{$root}__body {
       display: block;
+      border: 2px solid rgb(var(--color-primary));
+      border-top: 0;
+      border-radius: 0 0 var(--radius-medium) var(--radius-medium);
     }
   }
 
@@ -22,38 +31,62 @@
   }
 
   &__input {
-
+    padding: 0.75rem 1rem;
   }
 
   &__body {
     display: none;
     position: absolute;
     min-width: 100%;
-    max-height: 30vh;
-    top: calc(100%);
+    padding: 0 1rem 0.5rem 1rem;
+    top: 100%;
     left: 0;
     right: 0;    
-    overflow-y: auto;
     left: 0;
     background-color: rgb(var(--color-white));
     z-index: var(--z-over);
 
     &-title {
-      font-weight: 600;
       margin-top: 0.25rem;
+      padding-top: 0.5rem;
+      font-size: 0.875rem;
+      color: rgb(var(--color-grey));
+      border-top: 1px solid rgb(var(--color-black-light));
     }
   }
 
   &__options {
+    max-height: 30vh;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin: 1rem -1rem 0 -1rem;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track {
+      background-color: rgb(var(--color-black-light));
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(var(--color-grey-scrollbar));
+    }
 
     &-item {
-      padding: 0.4rem 0.5rem;
-      cursor: pointer;
+      position: relative;
+      padding: 0.4rem 0.5rem 0.4rem 1rem;
       transition: var(--transition-base);
+      border-radius: var(--radius-medium);
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        bottom: 0rem;
+        left: 1rem;
+        right: 1rem;
+        background-color: rgb(var(--color-grey-soft));
+      }
 
       &:hover {
         background-color: rgba(var(--color-primary), 0.1);
@@ -63,14 +96,5 @@
         background-color: rgba(var(--color-primary), 0.1);
       }
     }
-  }
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

@@ -4,13 +4,16 @@ export interface IOptions {
   body?: string
   credentials?: 'include' | 'omit' | 'same-origin' | undefined
   method?: HttpMethods
+  fetchController?: AbortController 
 }
 
 /**
  * Управление fetch запросами
  */
 export const request = async (url: string, options: IOptions) => {
-  const defaultOptions: IOptions = { method: HttpMethods.GET, credentials: 'include' }
+  // TODO вернуть когда будет реальное API
+  // const defaultOptions: IOptions = { method: HttpMethods.GET, credentials: 'include' }
+  const defaultOptions: IOptions = { method: HttpMethods.GET }
   const mergedOptions = { ...defaultOptions, ...options }
 
   try {
@@ -18,7 +21,7 @@ export const request = async (url: string, options: IOptions) => {
       credentials: mergedOptions.credentials,
       headers: mergedOptions.method === HttpMethods.GET ? {} : { 'Content-Type': 'application/json' },
       ...mergedOptions,
-      // signal: fetchController.signal,
+      signal: options.fetchController?.signal,
     })
     
     const { status } = response

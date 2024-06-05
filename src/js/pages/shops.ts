@@ -172,7 +172,7 @@ window.addEventListener('load', () => {
   try {
     new Form(
       '.shop-window__form-goods', 
-      API_URLS.shops.test,
+      API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
       },
@@ -183,7 +183,7 @@ window.addEventListener('load', () => {
   try {
     new Form(
       '.shop-window__form-sp', 
-      API_URLS.shops.test,
+      API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
       },
@@ -194,7 +194,7 @@ window.addEventListener('load', () => {
   try {
     new Form(
       '.shop-window__form-tff', 
-      API_URLS.shops.test,
+      API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
       },

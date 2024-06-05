@@ -8,9 +8,10 @@
 @import "./components/useful-links";
 
 body {
+  min-height: 100svh;
   font-family: Commissioner, sans-serif;
-  color: rgb(var(--color-black));
   line-height: 1.333;
+  color: rgb(var(--color-black));
 
   & > * {
     font-size: 1.125rem;
@@ -49,12 +50,13 @@ svg {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
   height: 4px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+  border-radius: var(--radius-medium);
 }
 
 ::-webkit-scrollbar-thumb {
