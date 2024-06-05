@@ -26,7 +26,7 @@ export class Autocomplete {
 
   private options: IOptions[] | [] // Все опции
   private searchOptions: IOptions[] | [] // Опции которые попадают под поиск
-  private selectedOption: IOptions
+  private selectedOption: IOptions | null
   private isOpen: boolean
 
   private containerElem: HTMLElement
@@ -36,6 +36,7 @@ export class Autocomplete {
   private hiddenInputElem: HTMLInputElement
 
   private debounce: (userInput: string) => void
+  private fetchController: AbortController | null = null
 
   constructor({ id, url, callback }: IConstructor) {
     this.id = id
@@ -76,7 +77,6 @@ export class Autocomplete {
     const prepareOptions = this.searchOptions.map(({ label, value }) => {
       return `<li class="autocomplete__options-item" data-value="${value}" tabindex="0">${label}</li>`
     }).join('')
-    console.log('prepareOptions', prepareOptions)
 
     this.optionsElem.innerHTML = prepareOptions
   }
@@ -128,14 +128,16 @@ export class Autocomplete {
   }
 
   private async fetchOptions(userInput: string): Promise<void> {
+    this.fetchController = new AbortController()
+
     // TODO переделать под реальное API
     this.containerElem.classList.add('load')
-    const response = await request(`${this.url}?search=${userInput}`, {})
+    const response = await request(`${this.url}?search=${userInput}`, { fetchController: this.fetchController })
     this.containerElem.classList.remove('load')
 
-
-    if (response.error) {
+    if (response.error && response.error.name !== 'AbortError') {
       console.error('Error fetching data:', response.error)
+
       return
     }
   
@@ -147,7 +149,10 @@ export class Autocomplete {
 
   private async searchMatch(userInput: string): Promise<void> {
     // Если передан url значит опции нужно подгружать
-    if (this.url) {      
+    if (this.url) {
+      if (this.fetchController) {
+        this.fetchController?.abort()
+      }
       if (userInput && userInput.length > 2) {
         this.debounce(userInput)
       } else {
@@ -187,9 +192,31 @@ export class Autocomplete {
     }
   }
 
+  private setInput(targetElement: HTMLInputElement) {
+    targetElement.value = this.selectedOption?.label ?? ''
+  }
+
+  private blurHandler(e: Event): void {
+    const targetElement = e.target as HTMLInputElement
+
+    if (targetElement.value.length === 0 && this.selectedOption?.label) {
+      this.setInput(targetElement)
+    }    
+  }
+
+  private searchHandler(): void {
+    this.selectedOption = null
+    this.hiddenInputElem.value = ''
+
+    if (this.callback) {
+      this.callback({ label: '', value: '' })
+    }
+  }
+
   private handlers(): void {
     document.addEventListener('click', (e) => this.clickHandler(e))
     document.addEventListener('input', (e) => this.inputHandler(e))
-    // document.addEventListener('blur', (e) => this.blurHandler(e))
+    this.inputElem.addEventListener('blur', (e) => this.blurHandler(e))
+    this.inputElem.addEventListener('search', () => this.searchHandler())
   }
 }

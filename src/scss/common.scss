@@ -8,9 +8,10 @@
 @import "./components/useful-links";
 
 body {
+  min-height: 100svh;
   font-family: Commissioner, sans-serif;
-  color: rgb(var(--color-black));
   line-height: 1.333;
+  color: rgb(var(--color-black));
 
   & > * {
     font-size: 1.125rem;
