@@ -17,61 +17,110 @@ export class Location {
   private mapId: string
   private searchPickupId: string
   private courierAddressId: string
+  private templateAddressId: string
 
   private isLoadMap: boolean
   private deliveryType: DeliveryEnum
+
+  private pickupSelected: IOptions | null
+  private courierSelected: IOptions | null
   
   private mapSelector: string
-  private headerSelector: string
+  private courierSelector: string
+  private courierFullAddress: string
+  private mapPickupBtnSelector: string
+  private mapCourierBtnSelector: string
+  private searchPickupSelector: string
   private searchInputSelector: string
+  private searchPickupBtnSelector: string
+  private pickupInputSelector: string
+  private courierInputSelector: string
+  private headerSelector: string
   private mapYandexSelector: string
   private addressSelector: string
   private addressSelectedSelector: string
+  private locationAddressesSelector: string
   private addressRemoveSelector: string
   private radioDeliveryName: string
 
   private addressElems: HTMLElement[]
   private iframeMapElem: HTMLIFrameElement
+  private templateAddressElem: HTMLTemplateElement
   private mapElem: HTMLElement
   private mapYandexElem: HTMLElement
+  private mapPickupBtnElem: HTMLButtonElement
+  private mapCourierBtnElem: HTMLButtonElement
   private searchPickupElem: HTMLElement
+  private searchPickupBtnElem: HTMLButtonElement
+  private searchInputElem: HTMLInputElement
+  private pickupInputElem: HTMLInputElement
+  private courierInputElem: HTMLInputElement
   private courierAddressElem: HTMLElement
   private headerElem: HTMLElement
-  private searchInputElem: HTMLInputElement
+  private locationAddressesElem: HTMLElement
+  private courierFullAddressElem: HTMLElement
 
   constructor() {
     this.mapId = '#maps'
     this.searchPickupId = '#search-pickup'
     this.courierAddressId = '#courier'
+    this.templateAddressId = '#address'
 
     this.isLoadMap = false
     this.deliveryType = DeliveryEnum.pickup
     
     this.headerSelector = '.header'
     this.mapSelector = '.map'
-    this.searchInputSelector = '.map__address-actions-input input'
+    this.courierSelector = '.courier'
+    this.searchPickupSelector = '.search-pickup'
+    this.pickupInputSelector = '.map__autocomplete--pickup input'
+    this.courierInputSelector = '.map__autocomplete--courier input'
+    this.searchInputSelector = `${this.searchPickupSelector} input`
     this.mapYandexSelector = '.map__yandex'
     this.addressSelector = '.location__address'
     this.addressSelectedSelector = `${this.addressSelector}--selected`
     this.addressRemoveSelector = `${this.addressSelector}-remove`
+    this.locationAddressesSelector = '.location__addresses'
     this.radioDeliveryName = 'choose-delivery'
+    this.courierFullAddress = `${this.courierSelector}__actions-inputs-full`
+
+    this.searchPickupBtnSelector = `${this.searchPickupSelector}__btn`
+    this.mapPickupBtnSelector = `${this.mapSelector}__btn--pickup`
+    this.mapCourierBtnSelector = `${this.mapSelector}__btn--courier`
 
     this.addressElems = Array.from(document.querySelectorAll(this.addressSelector))   
 
     const iframeMapElem = document.querySelector(this.mapId) as HTMLIFrameElement
     if (iframeMapElem) this.iframeMapElem = iframeMapElem
+    const templateAddressElem = document.querySelector(this.templateAddressId) as HTMLTemplateElement
+    if (templateAddressElem) this.templateAddressElem = templateAddressElem
     const searchPickupElem = document.querySelector(this.searchPickupId) as HTMLElement
     if (searchPickupElem) this.searchPickupElem = searchPickupElem
+    const searchInputElem = this.searchPickupElem.querySelector(this.searchInputSelector) as HTMLInputElement
+    if (searchInputElem) this.searchInputElem = searchInputElem
+    const searchPickupBtnElem = this.searchPickupElem.querySelector(this.searchPickupBtnSelector) as HTMLButtonElement
+    if (searchPickupBtnElem) this.searchPickupBtnElem = searchPickupBtnElem
     const courierAddressElem = document.querySelector(this.courierAddressId) as HTMLElement
     if (courierAddressElem) this.courierAddressElem = courierAddressElem
     const mapElem = document.querySelector(this.mapSelector) as HTMLElement
     if (mapElem) this.mapElem = mapElem
     const mapYandexElem = document.querySelector(this.mapYandexSelector) as HTMLElement
     if (mapYandexElem) this.mapYandexElem = mapYandexElem
-    const searchInputElem = document.querySelector(this.searchInputSelector) as HTMLInputElement
-    if (searchInputElem) this.searchInputElem = searchInputElem
+    const mapPickupBtnElem = this.mapElem.querySelector(this.mapPickupBtnSelector) as HTMLButtonElement
+    if (mapPickupBtnElem) this.mapPickupBtnElem = mapPickupBtnElem
+    const mapCourierBtnElem = this.mapElem.querySelector(this.mapCourierBtnSelector) as HTMLButtonElement
+    if (mapCourierBtnElem) this.mapCourierBtnElem = mapCourierBtnElem
+    const pickupInputElem = document.querySelector(this.pickupInputSelector) as HTMLInputElement
+    if (pickupInputElem) this.pickupInputElem = pickupInputElem
+    const courierInputElem = document.querySelector(this.courierInputSelector) as HTMLInputElement
+    if (courierInputElem) this.courierInputElem = courierInputElem
     const headerElem = document.querySelector(this.headerSelector) as HTMLElement
     if (headerElem) this.headerElem = headerElem
+    const locationAddressesElem = document.querySelector(this.locationAddressesSelector) as HTMLElement
+    if (locationAddressesElem) this.locationAddressesElem = locationAddressesElem
+
+    const courierFullAddressElem = document.querySelector(this.courierFullAddress) as HTMLElement
+    if (courierFullAddressElem) this.courierFullAddressElem = courierFullAddressElem
     
     this.init()
   }
@@ -108,6 +157,41 @@ export class Location {
     })
   }
 
+  private addAddress(type: DeliveryEnum): void {
+    let isExistAddress: boolean = true
+
+    if (this.pickupSelected) {
+      isExistAddress = this.addressElems.some(address => address.dataset.value === this.pickupSelected?.value)
+    }
+    if (this.courierSelected) {
+      isExistAddress = this.addressElems.some(address => address.dataset.value === this.courierSelected?.value)
+    }
+    
+    if (!isExistAddress) {
+      const clone = this.templateAddressElem.content.cloneNode(true) as DocumentFragment
+
+      const wrapper = clone.querySelector('.location__address') as HTMLElement
+      const method = clone.querySelector('.location__address-option') as HTMLElement
+      const address = clone.querySelector('.location__address-address') as HTMLElement
+  
+      if (wrapper && method && address) {
+        if (type === DeliveryEnum.pickup && this.pickupSelected) {
+          address.textContent = this.pickupSelected.label
+          method.textContent = 'Пункт выдачи'
+          wrapper.dataset.value = this.pickupSelected.value
+        }
+        if (type === DeliveryEnum.courier && this.courierSelected) {
+          address.textContent = this.courierSelected.label
+          method.textContent = 'Доставка по адресу'
+          wrapper.dataset.value = this.courierSelected.value
+        }
+      }
+      
+      this.locationAddressesElem.prepend(clone)
+      this.addressElems = Array.from(document.querySelectorAll(this.addressSelector))
+    }
+  }
+
   private async removeAddress(addressElem: HTMLElement): Promise<void> {
     const value = addressElem.dataset.value
     console.log('remove address', value)
@@ -117,18 +201,54 @@ export class Location {
     // if (res === 200) {
     //   addressElem.remove()
     // }
+
+    addressElem.remove()
+    this.addressElems = Array.from(document.querySelectorAll(this.addressSelector)) 
   }
 
-  private openPopupSearch(): void {
-    this.searchPickupElem.classList.add('popup--open')
-  }
-  private openPopupCourier(): void {
-    this.courierAddressElem.classList.add('popup--open')
+  private openPopup(popup: HTMLElement): void {
+    popup.classList.add('popup--open')
   }
 
-  selectedOption(options: IOptions) {
-    console.log('options', options)
-    
+  public selectedOption = (options: IOptions): void => {
+    console.log('selected option autocomplete', options)
+
+    if (this.deliveryType === DeliveryEnum.pickup) {
+      if (options.value) {
+        this.searchPickupBtnElem.disabled = false
+        this.mapPickupBtnElem.disabled = false
+        this.pickupSelected = options
+
+        if (window.innerWidth < BreakpointWidth.DESKTOP) {
+          this.pickupInputElem.value = options.label
+        } else {
+          this.searchInputElem.value = options.label
+        }
+      } else {
+        this.searchPickupBtnElem.disabled = true
+        this.mapPickupBtnElem.disabled = true
+        this.pickupSelected = { label: '', value: '' }
+
+        if (window.innerWidth < BreakpointWidth.DESKTOP) {
+          this.pickupInputElem.value = ''
+        } else {
+          this.searchInputElem.value = ''
+        }
+      }
+    }
+
+    if (this.deliveryType === DeliveryEnum.courier) {
+      if (options.value) {
+        this.mapCourierBtnElem.disabled = false
+        this.courierSelected = options
+        this.courierFullAddressElem.innerHTML = ''
+        this.courierFullAddressElem.innerHTML = options.label
+      } else {
+        this.mapCourierBtnElem.disabled = true
+        this.courierSelected = { label: '', value: '' }
+        this.courierFullAddressElem.innerHTML = ''
+      }
+    }
   }
 
   private changeDelivery(value: DeliveryEnum): void {
@@ -167,24 +287,28 @@ export class Location {
     }
 
     if (addressRemoveElem && addressElem) {
-      return this.removeAddress(addressElem)
+      this.removeAddress(addressElem)
     }
 
     if (addressElem && !addressRemoveElem) {
       this.selectedAddress(addressElem)
     }
+
+    if (this.mapPickupBtnElem.contains(targetElement)) {
+      this.addAddress(DeliveryEnum.pickup)
+    }
+
+    if (this.mapCourierBtnElem.contains(targetElement) && window.innerWidth < BreakpointWidth.DESKTOP) {
+      this.openPopup(this.courierAddressElem)
+    }
   }
 
   private focusHandler(e: FocusEvent): void {
-    if (e.target === this.searchInputElem && window.innerWidth < BreakpointWidth.DESKTOP ) {
+    if (e.target === this.pickupInputElem && window.innerWidth < BreakpointWidth.DESKTOP ) {
       if (this.deliveryType === DeliveryEnum.pickup) {
-        this.openPopupSearch()
+        this.openPopup(this.searchPickupElem)
+        this.pickupInputElem.blur()
       }
-      if (this.deliveryType === DeliveryEnum.courier) {
-        this.openPopupCourier()
-      }
-
-      this.searchInputElem.blur()
     }
   }
 

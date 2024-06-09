@@ -2,8 +2,12 @@
   $root: &;
 
   &__inner {
-    padding: 1.25rem 1.5rem;
+    padding: 0.25rem;
     text-align: center;
+    
+    @include media($md) {
+      padding: 1.25rem 1.5rem;
+    }
   }
 
   &__title {
@@ -19,7 +23,11 @@
   &__actions {
     @extend %flex-center;
 
-    gap: 2rem;
+    gap: 1.25rem;
     margin-top: 2rem;
+
+    @include media($md) {
+      gap: 2rem;
+    }
   }
 }

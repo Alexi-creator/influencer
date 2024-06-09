@@ -59,6 +59,24 @@ window.addEventListener('load', () => {
   }
   try {
     new Autocomplete({
+      id: 'pickup-autocomplete',
+      url: API_URLS.mock.autocomplete,
+      callback: location?.selectedOption,
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Autocomplete({
+      id: 'courier-autocomplete',
+      url: API_URLS.mock.autocomplete,
+      callback: location?.selectedOption,
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Autocomplete({
       id: 'search-pickup-autocomplete',
       url: API_URLS.mock.autocomplete,
       callback: location?.selectedOption,

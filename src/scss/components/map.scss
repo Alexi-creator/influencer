@@ -10,6 +10,18 @@
     #{$root}__address-descr-courier {
       display: block;
     }
+    #{$root}__autocomplete--pickup {
+      display: none;
+    }
+    #{$root}__autocomplete--courier {
+      display: block;
+    }
+    #{$root}__btn--pickup {
+      display: none;
+    }
+    #{$root}__btn--courier {
+      display: block;
+    }
   }
 
   &--pickup {
@@ -17,6 +29,18 @@
       display: block;
     }
     #{$root}__address-descr-courier {
+      display: none;
+    }
+    #{$root}__autocomplete--pickup {
+      display: block;
+    }
+    #{$root}__autocomplete--courier {
+      display: none;
+    }
+    #{$root}__btn--pickup {
+      display: block;
+    }
+    #{$root}__btn--courier {
       display: none;
     }
   }
@@ -192,7 +216,14 @@
 
       &-input {
         width: 100%;
-        height: 3rem;
+
+        @include media($md) {
+          height: 2.5rem;
+  
+          & .autocomplete__input {
+            height: 2.5rem;
+          }
+        }
       }
 
       &-define {

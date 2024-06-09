@@ -173,4 +173,22 @@
   @@include("../components/menu-mobile.html", {
     activeItem: "@@activeItem",
   })
+
+  <template id="address">
+    <li class="location__address" data-value="" role="button" tabindex="0">
+      <div class="location__address-header">
+        <div class="location__address-option"></div>
+        <button class="location__address-remove">
+          <svg class="location__address-remove-icon">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="location__address-address"></div>
+      <div class="location__address-storage-period">
+
+        <span class="location__address-storage-period-count"></span>
+      </div>
+    </li>
+  </template>
 </header>
