@@ -15,7 +15,7 @@
 }
 
 .clear-filter-content-popup__inner {
-  padding: 1.25rem 1.5rem;
+  padding: 0.25rem;
   text-align: center;
 }
 
@@ -30,6 +30,16 @@
 }
 
 .clear-filter-content-popup__actions {
-  gap: 2rem;
+  gap: 1.25rem;
   margin-top: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .clear-filter-content-popup__inner {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .clear-filter-content-popup__actions {
+    gap: 2rem;
+  }
 }

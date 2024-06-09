@@ -51,10 +51,12 @@
 }
 
 .location__addresses {
+  max-height: 50vh;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 0.25rem;
+  overflow-y: auto;
 }
 
 .location__address {

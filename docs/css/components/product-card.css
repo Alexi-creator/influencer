@@ -96,6 +96,10 @@
   display: none;
 }
 
+.product-card--tff .product-card__application-status .badge {
+  font-size: 0.875rem;
+}
+
 .product-card--status-promotion-over .product-card__descr,
 .product-card--status-consideration-applications .product-card__descr {
   background-color: rgb(var(--color-grey-pale));
@@ -113,12 +117,6 @@
 
 .product-card--status-promotion-over .product-card__status {
   font-weight: 600;
-}
-
-.product-card--application-submitted .product-card__application-status .badge,
-.product-card--application-rejected .product-card__application-status .badge,
-.product-card--application-approved .product-card__application-status .badge {
-  font-size: 0.875rem;
 }
 
 .product-card--application-rejected {
@@ -405,9 +403,7 @@
     justify-content: space-between;
   }
 
-  .product-card--application-submitted .product-card__application-status .badge,
-  .product-card--application-rejected .product-card__application-status .badge,
-  .product-card--application-approved .product-card__application-status .badge {
+  .product-card--tff .product-card__application-status .badge {
     font-size: 1.125rem;
   }
 

@@ -288,6 +288,14 @@
   letter-spacing: -0.2px;
 }
 
+.input-text__input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../img/icons/icons.svg#cross");
+  cursor: pointer;
+}
+
 .progress {
   height: 0.75rem;
   border-radius: var(--radius-small);

@@ -108,4 +108,59 @@
   .search-pickup__actions {
     gap: 1.5rem;
   }
+
+  .search-pickup__actions-input {
+    height: 2.5rem;
+  }
+
+  .search-pickup__actions-input .autocomplete__input {
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .search-pickup__actions-input.active .autocomplete__input {
+    border: 2px solid rgb(var(--color-primary));
+    border-radius: var(--radius-medium);
+  }
+
+  .search-pickup__actions-input.active .autocomplete__body {
+    top: 100px;
+    padding: 0;
+    border: none;
+  }
+
+  .search-pickup__actions-input.active .autocomplete__body-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: unset;
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .search-pickup__actions-input.active .autocomplete__options {
+    max-height: unset;
+    gap: 0.25rem;
+    margin: 1rem -1.25rem 0 -1.25rem;
+  }
+
+  .search-pickup__actions-input.active .autocomplete__options-item {
+    padding: 0.4rem 0.5rem 0.4rem 3.125rem;
+    background-color: rgb(var(--color-primary-soft));
+  }
+
+  .search-pickup__actions-input.active .autocomplete__options-item::after {
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 1.25rem;
+    top: 50%;
+    background-color: transparent;
+    background-image: url("../../img/icons/icons.svg#search");
+    transform: translateY(-50%);
+  }
+
+  .search-pickup__actions-input.active .autocomplete__options-item:hover {
+    background-color: rgb(var(--color-primary-soft));
+  }
 }

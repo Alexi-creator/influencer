@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240605083942">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240609173849">
   <title>shops Page</title>
-  <script defer src="js/shops.min.js?_v=20240605083942"></script>
+  <script defer src="js/shops.min.js?_v=20240609173849"></script>
 </head>
   <body>
     <header class="header">
@@ -58,7 +58,7 @@
           </a>
         </li>
         <li class="header__nav-item header__nav-search">
-          <div class="input-text header__nav-search-input">
+          <label class="input-text header__nav-search-input">
   
     <div class="input-text__prefix header__nav-search-icon"><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
   
@@ -79,7 +79,7 @@
   <input name=select type="text" value=val2 hidden>
 </div></div>
   
-</div>
+</label>
         </li>
         <li class="header__nav-item header__nav-basket">
           <a href="#">
@@ -264,16 +264,16 @@
         <span class="login__or-text">или</span>
       </div>
       <form class="login__form login__form-sign-in">
-        <div class="input-text input-text--color-grey login__form-item">
+        <label class="input-text input-text--color-grey login__form-item">
   
   <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
   
-</div>
-        <div class="input-text input-text--color-grey login__form-item">
+</label>
+        <label class="input-text input-text--color-grey login__form-item">
   
   <input name="password" class="input-text__input" type="password" placeholder="Введите пароль">
   
-</div>
+</label>
         <button class="login__form-submit btn" type="submit">
           Войти
         </button>
@@ -323,21 +323,21 @@
         <span class="login__or-text">или</span>
       </div>
       <form class="login__form login__form-sign-up">
-        <div class="input-text input-text--color-grey login__form-item">
+        <label class="input-text input-text--color-grey login__form-item">
   
   <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
   
-</div>
-        <div class="input-text input-text--color-grey login__form-item">
+</label>
+        <label class="input-text input-text--color-grey login__form-item">
   
   <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль">
   
-</div>
-        <div class="input-text input-text--color-grey login__form-item">
+</label>
+        <label class="input-text input-text--color-grey login__form-item">
   
   <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль">
   
-</div>
+</label>
         <button class="login__form-submit btn" type="submit">
           Зарегистрироваться
         </button>
@@ -451,13 +451,13 @@
       </button>
     </div>
     <div class="choose-city__search">
-      <div class="input-text ">
+      <label class="input-text ">
   
     <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город">
   
-</div>
+</label>
     </div>
     <ul class="choose-city__list">
       <li class="choose-city__list-item">
@@ -545,20 +545,54 @@
         </div>
       </div>
       <div class="map__address-actions">
-        <div class="input-text input-text--small map__address-actions-input">
+        <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
+  <label class="input-text autocomplete__input">
   
-    <div class="input-text__prefix "><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="@@name" class="input-text__input" type="search" placeholder="Поиск">
+  <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи">
   
+    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+  
+</label>
+  <input type="text" name="pickup-autocomplete" value="@@value" hidden>
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    <ul class="autocomplete__options">
+      
+    </ul>
+  </div>
 </div>
+
+        <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
+  <label class="input-text autocomplete__input">
+  
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки">
+  
+    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+  
+</label>
+  <input type="text" name="courier-autocomplete" value="@@value" hidden>
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    <ul class="autocomplete__options">
+      
+    </ul>
+  </div>
+</div>
+
         <button class="map__address-actions-define">
           <svg class="map__address-actions-define-icon">
             <use xlink:href="./img/icons/icons.svg#compass"></use>
           </svg>
           Определить местоположение
         </button>
-        <button class="btn" disabled>
+        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>
+          Продолжить
+        </button>
+        <button class="btn map__btn map__btn--courier" disabled>
           Продолжить
         </button>
       </div>
@@ -593,7 +627,7 @@
     <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
     <div class="search-pickup__actions">
       <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
-  <div class="input-text autocomplete__input input-text--small input-text--color-grey">
+  <label class="input-text autocomplete__input">
   
     <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
@@ -601,7 +635,7 @@
   
     <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
-</div>
+</label>
   <input type="text" name="search-pickup" value="@@value" hidden>
   <div class="autocomplete__body">
     <div class="autocomplete__body-title">Результаты поиска</div>
@@ -617,7 +651,7 @@
         </svg>
         Определить местоположение
       </button>
-      <button class="btn" disabled>
+      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>
         Продолжить
       </button>
     </div>
@@ -653,31 +687,31 @@
         <div class="courier__actions-inputs-full">
           Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
         </div>
-        <div class="input-text input-text--color-grey">
+        <label class="input-text input-text--color-grey">
   
   <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом">
   
-</div>
-        <div class="input-text input-text--color-grey">
+</label>
+        <label class="input-text input-text--color-grey">
   
   <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс">
   
-</div>
-        <div class="input-text input-text--color-grey">
+</label>
+        <label class="input-text input-text--color-grey">
   
   <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд">
   
-</div>
-        <div class="input-text input-text--color-grey">
+</label>
+        <label class="input-text input-text--color-grey">
   
   <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж">
   
-</div>
-        <div class="input-text input-text--color-grey">
+</label>
+        <label class="input-text input-text--color-grey">
   
   <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон">
   
-</div>
+</label>
       </div>
       <button class="btn" disabled>
         Продолжить
@@ -749,6 +783,24 @@
   </ul>
 </nav>
 
+
+  <template id="address">
+    <li class="location__address" data-value="" role="button" tabindex="0">
+      <div class="location__address-header">
+        <div class="location__address-option"></div>
+        <button class="location__address-remove">
+          <svg class="location__address-remove-icon">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="location__address-address"></div>
+      <div class="location__address-storage-period">
+
+        <span class="location__address-storage-period-count"></span>
+      </div>
+    </li>
+  </template>
 </header>
     <nav class="nav-pages">
   <ul class="nav-pages__list">
@@ -4390,13 +4442,13 @@
         <div class="shop-window__joint-purchases">
           <div class="shop-window__joint-purchases-actions">
             <div class="shop-window__joint-purchases-search">
-              <div class="input-text input-text--color-grey">
+              <label class="input-text input-text--color-grey">
   
     <div class="input-text__prefix "><svg class='shop-window__joint-purchases-search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="@@type" placeholder="Введите название товара">
   
-</div>
+</label>
             </div>
             <div class="shop-window__joint-purchases-btn">
               <button class="btn btn--color-primary-light">
@@ -5859,7 +5911,7 @@
     </div>
     <div class="clear-filter-content-popup__actions">
       <div class="btn btn--text btn--color-grey popup__close">Еще подумаю</div>
-      <div class="btn clear-filters popup__close">Да, сбросить</div>
+      <div class="btn clear-filters popup__close">Сбросить</div>
     </div>
   </div>
 </div>

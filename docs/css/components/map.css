@@ -42,11 +42,43 @@
   display: block;
 }
 
+.map--courier .map__autocomplete--pickup {
+  display: none;
+}
+
+.map--courier .map__autocomplete--courier {
+  display: block;
+}
+
+.map--courier .map__btn--pickup {
+  display: none;
+}
+
+.map--courier .map__btn--courier {
+  display: block;
+}
+
 .map--pickup .map__address-descr-pickup {
   display: block;
 }
 
 .map--pickup .map__address-descr-courier {
+  display: none;
+}
+
+.map--pickup .map__autocomplete--pickup {
+  display: block;
+}
+
+.map--pickup .map__autocomplete--courier {
+  display: none;
+}
+
+.map--pickup .map__btn--pickup {
+  display: block;
+}
+
+.map--pickup .map__btn--courier {
   display: none;
 }
 
@@ -139,7 +171,6 @@
 
 .map__address-actions-input {
   width: 100%;
-  height: 3rem;
 }
 
 .map__address-actions-define {
@@ -163,6 +194,14 @@
 
   .map__yandex {
     margin: 0.5rem -2rem 0;
+  }
+
+  .map__address-actions-input {
+    height: 2.5rem;
+  }
+
+  .map__address-actions-input .autocomplete__input {
+    height: 2.5rem;
   }
 
   .map__address-actions {
