@@ -49,13 +49,26 @@
         </div>
       </div>
       <div class="map__address-actions">
-        @@include("./input-text.html", {
-          placeholder: "Поиск",
-          prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
-          suffix: "",
-          "extra-class": "input-text--small map__address-actions-input",
-          "extra-class-prefix": "",
-          "extra-class-suffix": "",
+        @@include("./autocomplete.html", {
+          id: "pickup-autocomplete",
+          name: "pickup-autocomplete",
+          placeholder: "Пункт выдачи",
+          "extra-class": "map__address-actions-input map__autocomplete--pickup",
+          "input-extra-class": "autocomplete__input",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>',
+          options: '',
+          "type": "search",
+        })
+        @@include("./autocomplete.html", {
+          id: "courier-autocomplete",
+          name: "courier-autocomplete",
+          placeholder: "Адрес доставки",
+          "extra-class": "map__address-actions-input map__autocomplete--courier",
+          "input-extra-class": "autocomplete__input",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>',
+          options: '',
           "type": "search",
         })
         <button class="map__address-actions-define">
@@ -64,7 +77,10 @@
           </svg>
           Определить местоположение
         </button>
-        <button class="btn" disabled>
+        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>
+          Продолжить
+        </button>
+        <button class="btn map__btn map__btn--courier" disabled>
           Продолжить
         </button>
       </div>

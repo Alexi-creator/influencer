@@ -187,6 +187,17 @@
         }
       }
     }
+
+    #{$root}__application-status {
+
+      & .badge {
+        font-size: 0.875rem;
+
+        @include media($lg) {
+          font-size: 1.125rem;
+        }
+      }
+    }
   }
 
   &--status-promotion-over, &--status-consideration-applications {
@@ -206,19 +217,6 @@
   &--status-promotion-over {
     #{$root}__status {
       font-weight: 600;
-    }
-  }
-
-  &--application-submitted, &--application-rejected, &--application-approved {
-    #{$root}__application-status {
-
-      & .badge {
-        font-size: 0.875rem;
-
-        @include media($lg) {
-          font-size: 1.125rem;
-        }
-      }
     }
   }
 

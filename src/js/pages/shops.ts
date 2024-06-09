@@ -244,13 +244,13 @@ window.addEventListener('load', () => {
           centeredSlides: false,
           spaceBetween: 12,
           breakpoints: {
-            768: {
+            [BreakpointWidth.TABLET]: {
               slidesPerView: 3.5,
             },
-            1200: {
+            [BreakpointWidth.DESKTOP]: {
               slidesPerView: 2.5,
             },
-            1920: {
+            [BreakpointWidth.FULLHD]: {
               slidesPerView: 4.5,
             },
           },

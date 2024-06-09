@@ -22,7 +22,7 @@
         name: "search-pickup",
         placeholder: "Введите адрес",
         "extra-class": "search-pickup__actions-input",
-        "input-extra-class": "autocomplete__input input-text--small input-text--color-grey",
+        "input-extra-class": "autocomplete__input",
         prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
         suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>',
         options: '',
@@ -33,7 +33,7 @@
         </svg>
         Определить местоположение
       </button>
-      <button class="btn" disabled>
+      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>
         Продолжить
       </button>
     </div>

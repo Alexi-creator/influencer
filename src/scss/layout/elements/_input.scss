@@ -40,6 +40,14 @@
       font-size: 1.125rem;
       letter-spacing: -0.2px;
     }
+
+    &[type="search"]::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background-image: url("../../img/icons/icons.svg#cross");
+      cursor: pointer;
+    }
   }
 
   &__sufix {
