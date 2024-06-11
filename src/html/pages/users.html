@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include("../layout/head.html", {
-"title": "catalog Page",
-"nameFile": "catalog",
+"title": "users Page",
+"nameFile": "users"
 })
 
 <body>
   @@include("../layout/header.html", {
-  activeItem: "catalog",
-  catalogExtraClass: "active",
+  activeItem: "",
+  catalogExtraClass: ""
   })
   @@include("../components/nav-pages.html")
-  <main class="main">
-    <section class="section section--catalog">
+  <main>
+    <section class="section">
       <div class="section__inner">
-        @@include("../components/catalog.html")
+        @@include("../components/user-card-list.html")
       </div>
     </section>
   </main>

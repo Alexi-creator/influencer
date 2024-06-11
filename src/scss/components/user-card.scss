@@ -1,0 +1,13 @@
+.user-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(var(--color-grey-pale-light));
+  max-width: 16rem;
+
+  &__wrapper {
+    padding: 16px 20px rgb(var(--color-grey-soft));
+    @include media($md) {
+      padding: 12px 16px;
+    }
+  }
+}
