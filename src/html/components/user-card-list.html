@@ -1,42 +1,132 @@
 <div class="user-card-list">
-    <div class="user-card-list__title-wrapper">
-        <h3 class="user-card-lisе__title">Блогеры</h3>
-        <p>7034 пользователей</p>
-        <div class="user-card-list__title-wrapper-seacrh">
-            @@include("../components/input-text.html", {
-            name: "search",
-            type: "text",
-            placeholder: "Введите имя блогера",
-            prefix: "<svg class=\"search__icon-search\">
-                <use xlink:href=\"./img/icons/icons.svg#search\"></use>
-            </svg>",
-            suffix: "",
-            "extra-class": "user-list__nav-search-input",
-            "extra-class-prefix": "",
-            "extra-class-suffix": "",
-            })
-            <div>
-                <button class="btn btn--outlined btn--color-grey">
-                    <svg>
-                        <use xlink:href="./img/icons/icons.svg#sorts"></use>
-                    </svg>
-                </button>
-                <button class="btn btn--outlined btn--color-grey">
-                    <svg>
-                        <use xlink:href="./img/icons/icons.svg#filters"></use>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="user-card-list__cards-wrapper">
-        @@include("../components/user-card.html", {
-        "img": "<img src="@img/logo-woman.jpg"></img>",
-        "name":"Елена Брадиславская",
-        "desc":"Ревизорро обуви и одежды. Более 10 лет в сфере блогинга.",
-        "scores-inst":"9801",
-        "scores-users":"140892",
-        "sub":""",
-        })
-    </div>
+  <div class="user-card-list__cards-wrapper">
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-woman.png"></img>',
+      "name":"Елена Брадиславская",
+      "desc":"Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+      "scores-inst":"9801",
+      "scores-users":"140892",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-rocher.png"></img>',
+      "name":"YVES ROCHER",
+      "desc":"Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-cat.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"Вы подписаны",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-vtb.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-vtb.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-cat.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-woman.png"></img>',
+      "name":"Елена Брадиславская",
+      "desc":"Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+      "scores-inst":"9801",
+      "scores-users":"140892",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-rocher.png"></img>',
+      "name":"YVES ROCHER",
+      "desc":"Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"Вы подписаны",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-rocher.png"></img>',
+      "name":"YVES ROCHER",
+      "desc":"Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-woman.png"></img>',
+      "name":"Елена Брадиславская",
+      "desc":"Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+      "scores-inst":"9801",
+      "scores-users":"140892",
+      "sub":"Вы подписаны",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-vtb.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-cat.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-cat.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-vtb.png"></img>',
+      "name":"Кот",
+      "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-rocher.png"></img>',
+      "name":"YVES ROCHER",
+      "desc":"Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+      "scores-inst":"1089",
+      "scores-users":"172",
+      "sub":"",
+    })
+    @@include("../components/user-card.html", {
+      "img": '<img src="@img/logo-woman.png"></img>',
+      "name":"Елена Брадиславская",
+      "desc":"Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+      "scores-inst":"9801",
+      "scores-users":"140892",
+      "sub":"",
+    })
+  </div>
 </div>

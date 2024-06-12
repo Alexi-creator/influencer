@@ -1,12 +1,24 @@
 <a href="#" class="user-card">
-    <div class="user-card__wrapper">@@img
-        <p class="user-card__name">@@name</p>
-        <p class="user-card__desc">@@desc</p>
-        <div class="user-card__scores">
-            <div class="user-card__scores-inst">@@scores-inst</div>
-            <div class="user-card__scores-users">@@scores-users</div>
-        </div>
-        @@if(sub) {
-        <div class="user-card__sub">Вы подписаны</div>}
+  <div class="user-card__wrapper">
+    @@img
+    <p class="user-card__name">@@name</p>
+    <p class="user-card__desc">@@desc</p>
+    <div class="user-card__scores">
+      <div class="user-card__scores-inst">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+        </svg>
+        <span> @@scores-inst </span>
+      </div>
+      <div class="user-card__scores-users">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+        </svg>
+        <span> @@scores-users </span>
+      </div>
     </div>
+    @@if(sub) {
+    <div class="user-card__sub">Вы подписаны</div>
+    }
+  </div>
 </a>

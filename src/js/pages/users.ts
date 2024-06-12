@@ -1,9 +1,9 @@
-import { Select } from "../modules/Select";
+import { Select } from '../modules/Select'
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   try {
-    new Select();
+    new Select()
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
 });

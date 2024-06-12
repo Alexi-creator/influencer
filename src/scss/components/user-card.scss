@@ -1,13 +1,101 @@
 .user-card {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(var(--color-grey-pale-light));
-  max-width: 16rem;
+  $root: &;
+  
+  position: relative;
+  background-color: rgb(var(--color-primary-soft));
+  max-width: 10rem;
+  width: 100%;
+  @include media($md) {
+    max-width: 13.5rem;
+  }
+  @include media($lg) {
+    max-width: 16rem;
+  }
 
   &__wrapper {
-    padding: 16px 20px rgb(var(--color-grey-soft));
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    height: 100%;
     @include media($md) {
-      padding: 12px 16px;
+      padding: 16px 20px;
     }
+    & img {
+      align-self: center;
+      max-width: 8rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: rgb(var(--color-black));
+    letter-spacing: 0.02rem;
+    font-family: "Commissioner";
+    margin-bottom: 0.75rem;
+    flex: 1;
+    @include media($md) {
+      font-size: 1rem;
+      flex: unset;
+    }
+    @include media($lg) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__desc {
+    color: rgb(var(--color-grey));
+    font-family: "Commissioner";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    flex: 1;
+    display: none;
+    @include media($md) {
+      display: block;
+    }
+  }
+  &__scores {
+    display: flex;
+    gap: 0.3rem;
+    font-family: "Commissioner";
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    @include media($md) {
+      gap: 1rem;
+    }
+    &-inst {
+      display: flex;
+      gap: 0.2rem;
+      align-items: center;
+      @include media($md) {
+        gap: 0.5rem;
+      }
+    }
+    &-users {
+      display: flex;
+      gap: 0.2rem;
+      align-items: center;
+      @include media($md) {
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  &__sub {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    background: white;
+    padding: 4px 8px 4px 8px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-family: "Commissioner";
+    color: rgb(var(--color-green));
   }
 }

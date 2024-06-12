@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include("../layout/head.html", {
-"title": "catalog Page",
-"nameFile": "catalog",
-})
-
-<body>
-  @@include("../layout/header.html", {
-  activeItem: "catalog",
-  catalogExtraClass: "active",
+  @@include("../layout/head.html", {
+    "title": "catalog Page",
+    "nameFile": "catalog",
   })
-  @@include("../components/nav-pages.html")
-  <main class="main">
-    <section class="section section--catalog">
-      <div class="section__inner">
-        @@include("../components/catalog.html")
-      </div>
-    </section>
-  </main>
-</body>
-
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "catalog",
+      catalogExtraClass: "active",
+    })
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--catalog">
+        <div class="section__inner">
+          @@include("../components/catalog.html")
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
