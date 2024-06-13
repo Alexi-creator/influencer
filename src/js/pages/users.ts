@@ -6,4 +6,4 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
-});
+})

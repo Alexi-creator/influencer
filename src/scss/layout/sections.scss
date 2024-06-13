@@ -8,10 +8,6 @@
   &__inner {
     margin: 0 auto;
     max-width: var(--max-width-container);
-    &--users {
-      max-width: var(--max-width-container-users);
-      margin: 0 auto;
-    }
   }
 
   @include media($md) {
@@ -37,6 +33,19 @@
 
       @include media($lg) {
         max-width: var(--max-width-container);
+      }
+    }
+  }
+
+  &--users {
+    #{$block}__inner {
+      max-width: var(--max-width-container-users);
+      padding-top: 1.25rem;
+      @include media($md) {
+        padding-top: 2.5rem;
+      }
+      @include media($full) {
+        padding-top: 0rem;
       }
     }
   }

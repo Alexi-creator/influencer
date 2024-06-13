@@ -1,29 +1,22 @@
 .user-card-list {
   $root: &;
 
-  max-width: 75rem;
-  margin: 0 auto;
   margin-top: 2.5rem;
-  &__title-wrapper {
-    display: flex;
-    flex-flow: column;
-    margin-bottom: 1.25rem;
-    margin-top: 1rem;
-  }
   @include media($md) {
     margin-top: 3rem;
   }
 
   &__cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
     @include media($md) {
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
     }
     @include media($lg) {
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
     }
   }
 }
