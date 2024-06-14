@@ -11,13 +11,13 @@
     flex-direction: column;
     padding: 0.75rem 1rem;
     height: 100%;
-    align-items: center;
     @include media($md) {
       padding: 1rem 1.25rem;
     }
   }
 
   &__image-container{
+    align-self: center;
     width: 5rem;
     height: 5rem;
     @include media($md) {
@@ -44,7 +44,7 @@
     line-height: 1.5rem;
     color: rgb(var(--color-black));
     letter-spacing: 0.02rem;
-    margin-bottom: 0.75rem;
+    margin: 0.75rem 0;
     flex: 1;
     @include media($md) {
       font-size: 1rem;
