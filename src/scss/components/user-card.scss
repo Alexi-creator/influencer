@@ -4,14 +4,15 @@
   position: relative;
   background-color: rgb(var(--color-primary-soft));
   width: 100%;
-  border-radius: 0.33rem;
+  border-radius: var(--radius-small);
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     padding: 0.75rem 1rem;
     height: 100%;
-    @include media($md) {
+
+    @include media($lg) {
       padding: 1rem 1.25rem;
     }
   }
@@ -20,10 +21,12 @@
     align-self: center;
     width: 5rem;
     height: 5rem;
+
     @include media($md) {
       width: 7.5rem;
       height: 7.5rem;
     }
+
     @include media($lg) {
       width: 8.625rem;
       height: 8.625rem;
@@ -32,7 +35,7 @@
     width: 100%;
     height: 100%;
     margin-bottom: 0.5rem;
-    border-radius: 50%;
+    border-radius: var(--radius-round);
     object-fit: cover;
     }
   }
@@ -46,10 +49,12 @@
     letter-spacing: 0.02rem;
     margin: 0.75rem 0;
     flex: 1;
+
     @include media($md) {
       font-size: 1rem;
       flex: unset;
     }
+
     @include media($lg) {
       font-size: 1.125rem;
     }
@@ -63,6 +68,7 @@
     margin-bottom: 1.25rem;
     flex: 1;
     display: none;
+
     @include media($md) {
       display: block;
     }
@@ -73,23 +79,17 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
+
     @include media($md) {
       gap: 1rem;
     }
-    &-inst {
+    &-inst, &-users {
       display: flex;
       gap: 0.2rem;
       align-items: center;
-      @include media($md) {
-        gap: 0.5rem;
-      }
-    }
-    &-users {
-      display: flex;
-      gap: 0.2rem;
-      align-items: center;
-      @include media($md) {
-        gap: 0.5rem;
+      & svg {
+        width: 1rem;
+        height: 1rem;
       }
     }
   }
@@ -98,13 +98,8 @@
     position: absolute;
     top: 0.75rem;
     left: 1rem;
-    background: rgb(var(--color-white));
-    padding: 0.25rem 0.5rem 0.4rem 0.5rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 400;
-    color: rgb(var(--color-green));
-    @include media($md){
+
+    @include media($lg){
       top: 1rem;
       left: 1.25rem;
     }
