@@ -1,4 +1,4 @@
-import '../common.ts'
+import '../common'
 
 import { API_URLS, BreakpointWidth, HttpMethods } from '../constants/index'
 
@@ -11,7 +11,6 @@ import { Density } from '../modules/Density'
 import { Sort } from '../modules/Sort'
 import { Filter } from '../modules/Filter'
 import { Form } from '../modules/Form'
-import { Select } from '../modules/Select'
 import { RangeSlider } from '../modules/RangeSlider'
 import { Masonry } from '../modules/Masonry'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
@@ -92,11 +91,6 @@ window.addEventListener('load', () => {
   }
   try {
     new Tabs()
-  } catch (error) {
-    console.log(error)
-  }
-  try {
-    new Select()
   } catch (error) {
     console.log(error)
   }

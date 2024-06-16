@@ -99,9 +99,19 @@
     top: 0.75rem;
     left: 1rem;
 
+    &.badge {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 400;
+    }
+
     @include media($lg){
       top: 1rem;
       left: 1.25rem;
+
+      &.badge {
+        font-size: 1rem;
+      }
     }
   }
 }
