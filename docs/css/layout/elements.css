@@ -220,6 +220,11 @@
   color: rgb(var(--color-green));
 }
 
+.badge.badge--color-white-green {
+  background-color: rgb(var(--color-white));
+  color: rgba(var(--color-green), 1);
+}
+
 .badge.badge--big {
   padding: 0 1.25rem;
   height: 3rem;
@@ -692,6 +697,19 @@
   background-color: rgba(var(--color-primary), 0.1);
 }
 
+.title-txt {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: "BebasNeue";
+  font-weight: 400;
+}
+
+.title-under {
+  color: rgb(var(--color-grey));
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 @media (min-width: 48rem) {
   .hr {
     margin: 1.25rem auto;
@@ -699,6 +717,15 @@
 
   .radio__content {
     gap: 0.5rem;
+  }
+
+  .title-txt {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .title-under {
+    font-size: 1.125rem;
   }
 }
 

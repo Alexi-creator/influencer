@@ -53,8 +53,8 @@
 .range__inputs,
 .filters__item--categories .popup--open .filters__item-header,
 .joint-purchases-card__slider .joint-purchases-card__slide-info-price,
-.select__header,
 .collapse__head,
+.select__header,
 .useful-links__list-item > a,
 .useful-links__title,
 .courier__actions,
@@ -75,10 +75,10 @@
 }
 
 .filters__collapse-wrap .checkbox .btn,
-.select__title,
 .shop-window__tabs .tabs__tab,
 .collapse__head-title,
-.shop-preview__brand-name {
+.shop-preview__brand-name,
+.select__title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1345,6 +1345,7 @@ button {
   --color-green-light: 249, 253, 248;
   --color-red: 221, 94, 94;
   --max-width-container: 106rem;
+  --max-width-container-users: 70rem;
   --transition-base: all 0.2s linear;
   --transition-base-without-prop: 0.2s linear;
   --z-base: 1;
@@ -1375,6 +1376,11 @@ button {
 
 .section--shop-preview .section__inner {
   max-width: 100%;
+}
+
+.section--users .section__inner {
+  max-width: var(--max-width-container-users);
+  padding-top: 1.25rem;
 }
 
 .section--shop-window {
@@ -1577,6 +1583,11 @@ button {
 .badge.badge--color-green {
   background-color: rgba(var(--color-green), 0.04);
   color: rgb(var(--color-green));
+}
+
+.badge.badge--color-white-green {
+  background-color: rgb(var(--color-white));
+  color: rgba(var(--color-green), 1);
 }
 
 .badge.badge--big {
@@ -2049,6 +2060,19 @@ button {
 
 .autocomplete__options-item.active {
   background-color: rgba(var(--color-primary), 0.1);
+}
+
+.title-txt {
+  font-size: 3rem;
+  line-height: 3rem;
+  font-family: "BebasNeue";
+  font-weight: 400;
+}
+
+.title-under {
+  color: rgb(var(--color-grey));
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .nav {
@@ -3045,6 +3069,72 @@ button {
 
 .useful-links__list-item > a svg use {
   stroke: rgb(var(--color-grey));
+}
+
+.select {
+  position: relative;
+  width: 100%;
+  background-color: rgb(var(--color-white));
+  border: 1px solid rgb(var(--color-primary));
+  border-radius: var(--radius-medium);
+  padding: 0.5rem;
+}
+
+.select--transparent {
+  border: none;
+}
+
+.select__header {
+  gap: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.select__icon {
+  transition: var(--transition-base);
+}
+
+.select__icon.active {
+  transform: rotate(180deg);
+}
+
+.select__icon svg use {
+  stroke: rgb(var(--color-black));
+  stroke-width: 2px;
+}
+
+.select__options {
+  display: none;
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 100%;
+  max-height: 30vh;
+  overflow-y: auto;
+  top: 100%;
+  left: 0;
+  background-color: rgb(var(--color-white));
+  border: 1px solid rgb(var(--color-primary));
+  border-radius: var(--radius-medium);
+  z-index: var(--z-popup);
+}
+
+.select.active .select__options {
+  display: block;
+}
+
+.select__options-item {
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.select__options-item:hover {
+  background-color: rgba(var(--color-primary), 0.1);
+}
+
+.select__options-item.active {
+  background-color: rgba(var(--color-primary), 0.1);
 }
 
 body {
@@ -4191,72 +4281,6 @@ svg {
   font-weight: 600;
 }
 
-.select {
-  position: relative;
-  width: 100%;
-  background-color: rgb(var(--color-white));
-  border: 1px solid rgb(var(--color-primary));
-  border-radius: var(--radius-medium);
-  padding: 0.5rem;
-}
-
-.select--transparent {
-  border: none;
-}
-
-.select__header {
-  gap: 0.5rem;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.select__icon {
-  transition: var(--transition-base);
-}
-
-.select__icon.active {
-  transform: rotate(180deg);
-}
-
-.select__icon svg use {
-  stroke: rgb(var(--color-black));
-  stroke-width: 2px;
-}
-
-.select__options {
-  display: none;
-  position: absolute;
-  width: -moz-max-content;
-  width: max-content;
-  min-width: 100%;
-  max-height: 30vh;
-  overflow-y: auto;
-  top: 100%;
-  left: 0;
-  background-color: rgb(var(--color-white));
-  border: 1px solid rgb(var(--color-primary));
-  border-radius: var(--radius-medium);
-  z-index: var(--z-popup);
-}
-
-.select.active .select__options {
-  display: block;
-}
-
-.select__options-item {
-  padding: 0.4rem 0.5rem;
-  cursor: pointer;
-  transition: var(--transition-base);
-}
-
-.select__options-item:hover {
-  background-color: rgba(var(--color-primary), 0.1);
-}
-
-.select__options-item.active {
-  background-color: rgba(var(--color-primary), 0.1);
-}
-
 .joint-purchases-card {
   display: flex;
   flex-direction: column;
@@ -4778,12 +4802,25 @@ svg {
     padding: 0rem 2.5rem;
   }
 
+  .section--users .section__inner {
+    padding-top: 2.5rem;
+  }
+
   .hr {
     margin: 1.25rem auto;
   }
 
   .radio__content {
     gap: 0.5rem;
+  }
+
+  .title-txt {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .title-under {
+    font-size: 1.125rem;
   }
 
   .nav__list {
@@ -5970,6 +6007,10 @@ svg {
 @media (min-width: 120rem) {
   .section {
     padding: 0rem 7rem;
+  }
+
+  .section--users .section__inner {
+    padding-top: 0rem;
   }
 
   .badge svg {

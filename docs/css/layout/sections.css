@@ -26,6 +26,11 @@
   max-width: 100%;
 }
 
+.section--users .section__inner {
+  max-width: var(--max-width-container-users);
+  padding-top: 1.25rem;
+}
+
 .section--shop-window {
   padding-top: 0;
 }
@@ -33,6 +38,10 @@
 @media (min-width: 48rem) {
   .section {
     padding: 0rem 2.5rem;
+  }
+
+  .section--users .section__inner {
+    padding-top: 2.5rem;
   }
 }
 
@@ -49,5 +58,9 @@
 @media (min-width: 120rem) {
   .section {
     padding: 0rem 7rem;
+  }
+
+  .section--users .section__inner {
+    padding-top: 0rem;
   }
 }
