@@ -3,6 +3,7 @@ import '../common'
 import { BreakpointWidth } from '../constants/index'
 
 import { Collapse } from '../modules/Collapse'
+import { Tabs } from '../modules/Tabs'
 import { Masonry } from '../modules/Masonry'
 import { SyncCatalog } from '../modules/SyncCatalog'
 import { BtnShow } from '../modules/BtnShow'
@@ -43,6 +44,11 @@ window.addEventListener('load', () => {
   }
   try {
     new BtnShow()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Tabs()
   } catch (error) {
     console.log(error)
   }

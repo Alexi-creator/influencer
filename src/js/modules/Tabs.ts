@@ -26,7 +26,7 @@ export class Tabs {
 
   private clickHandler(e: MouseEvent) {
     const targetElement = e.target as HTMLElement
-    const parent = targetElement.closest('.tabs__tab') as HTMLElement  
+    const parent = targetElement.closest('.tabs__tab') as HTMLElement    
 
     if (parent) this.changeTab(parent)
   }
