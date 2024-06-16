@@ -163,6 +163,7 @@ export class Location {
     if (this.pickupSelected) {
       isExistAddress = this.addressElems.some(address => address.dataset.value === this.pickupSelected?.value)
     }
+
     if (this.courierSelected) {
       isExistAddress = this.addressElems.some(address => address.dataset.value === this.courierSelected?.value)
     }
@@ -180,6 +181,7 @@ export class Location {
           method.textContent = 'Пункт выдачи'
           wrapper.dataset.value = this.pickupSelected.value
         }
+
         if (type === DeliveryEnum.courier && this.courierSelected) {
           address.textContent = this.courierSelected.label
           method.textContent = 'Доставка по адресу'

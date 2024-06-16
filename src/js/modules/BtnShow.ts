@@ -33,6 +33,7 @@ export class BtnShow {
     btnElem.classList.toggle('active')
 
     const parent = btnElem.parentElement
+
     if (parent) {
       const textElem = btnElem.querySelector(this.selectorBtnText)
       const currentText = textElem?.textContent

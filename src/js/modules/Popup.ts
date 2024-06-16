@@ -98,6 +98,7 @@ export class Popup {
 
     if (targetElement.closest(this.dataAttributeClosePopup) && targetElement.closest(this.dataAttributePopup)) {
       this.closePopup(targetElement)
+
       return this.openPopup(targetElement.closest(this.dataAttributePopup) as HTMLElement)
     }
 

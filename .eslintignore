@@ -1,5 +1,6 @@
 gulp
 dist
+docs
 node_modules
 .eslintrc.cjs
 gulpfile.js

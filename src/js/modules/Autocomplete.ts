@@ -109,6 +109,7 @@ export class Autocomplete {
 
     if (label) this.inputElem.value = label
     if (value) this.hiddenInputElem.value = value
+
     if (value && label) {
       this.selectedOption = { label, value }
     }
@@ -153,6 +154,7 @@ export class Autocomplete {
       if (this.fetchController) {
         this.fetchController?.abort()
       }
+
       if (userInput && userInput.length > 2) {
         this.debounce(userInput)
       } else {

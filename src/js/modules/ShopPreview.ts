@@ -70,6 +70,7 @@ export class ShopPreview {
       if (status === StatusEvent.OPEN) {
         this.actionElem.classList.add('shop-preview__actions--over')
       }
+
       if (status === StatusEvent.CLOSE) {
         this.actionElem.classList.remove('shop-preview__actions--over')
       }

@@ -15,11 +15,13 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new ScrollIntoView()
   } catch (error) {
     console.log(error)
   }
+
   try {
     const swiperElement = document.querySelector('.swiper-uikit') as HTMLElement
     const prevBtn = swiperElement.querySelector('.swiper-button-prev') as HTMLElement
@@ -35,21 +37,25 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new RangeSlider()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Tabs()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Select()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Autocomplete({
       id: 'ui-autocomplete',
@@ -58,6 +64,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Autocomplete({
       id: 'ui-autocomplete-url',

@@ -96,6 +96,7 @@ export class Select {
       if (targetElement?.closest(this.selectorHeader)) {
         this.toggle(select)
       }
+
       if (targetElement?.closest(this.selectorOptions)) {
         this.changeOption(select, targetElement)
       }

@@ -207,6 +207,7 @@ export class Filter {
 
   private displayChips() {
     const filterOptions = Object.entries(this.filters).filter(item => item[1].selectedOptions.length)
+
     if (filterOptions.length) {
       filterOptions.forEach(([title, { moreCount, selectedOptions }]) => {
         const options = selectedOptions.slice(0, 3).join(', ')
@@ -324,9 +325,11 @@ export class Filter {
   private checkPopup<T extends string>(e: CustomEvent<T>) {
     if (this.isOpen) {
       const category = e.detail.split('-').pop()
+
       if (category === this.category) {        
         document.body.classList.add('overflow')
       }
+
       if (category === 'clearFilter' && window.innerWidth < BreakpointWidth.DESKTOP) {
         document.body.classList.add('overflow')
       }
