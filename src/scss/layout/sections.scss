@@ -37,6 +37,19 @@
     }
   }
 
+  &--users {
+    #{$block}__inner {
+      max-width: var(--max-width-container-users);
+      padding-top: 1.25rem;
+      @include media($md) {
+        padding-top: 2.5rem;
+      }
+      @include media($full) {
+        padding-top: 0rem;
+      }
+    }
+  }
+
   &--shop-window {
     padding-top: 0;
   }

@@ -9,6 +9,7 @@ import { Form } from './modules/Form'
 import { Login } from './modules/Login'
 import { Location } from './modules/Location'
 import { Autocomplete } from './modules/Autocomplete'
+import { Select } from './modules/Select'
 
 window.addEventListener('load', () => {
   flsFunction.isWebp()
@@ -81,6 +82,11 @@ window.addEventListener('load', () => {
       url: API_URLS.mock.autocomplete,
       callback: location?.selectedOption,
     })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Select()
   } catch (error) {
     console.log(error)
   }

@@ -83,16 +83,16 @@ export class Select {
     const targetElement = e.target as HTMLElement
     const select = targetElement?.closest(this.selectorSelect) as HTMLElement
 
-    this.allSelects.forEach(selectItem => {
-      if (select !== selectItem) {
-        selectItem.classList.remove('active')
-
-        const iconElement = selectItem.querySelector(this.selectorIcon)
-        iconElement?.classList.remove('active')
-      }
-    })
-
     if (select) {
+      this.allSelects.forEach(selectItem => {
+        if (select !== selectItem) {
+          selectItem.classList.remove('active')
+  
+          const iconElement = selectItem.querySelector(this.selectorIcon)
+          iconElement?.classList.remove('active')
+        }
+      })
+      
       if (targetElement?.closest(this.selectorHeader)) {
         this.toggle(select)
       }

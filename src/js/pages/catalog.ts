@@ -1,10 +1,8 @@
-import '../common.ts'
+import '../common'
 
 import { BreakpointWidth } from '../constants/index'
 
-import { Tabs } from '../modules/Tabs'
 import { Collapse } from '../modules/Collapse'
-import { Select } from '../modules/Select'
 import { Masonry } from '../modules/Masonry'
 import { SyncCatalog } from '../modules/SyncCatalog'
 import { BtnShow } from '../modules/BtnShow'
@@ -30,16 +28,6 @@ window.addEventListener('load', () => {
         [BreakpointWidth.FULLHD]: 4,
       },
     })
-  } catch (error) {
-    console.log(error)
-  }
-  try {
-    new Tabs()
-  } catch (error) {
-    console.log(error)
-  }
-  try {
-    new Select()
   } catch (error) {
     console.log(error)
   }

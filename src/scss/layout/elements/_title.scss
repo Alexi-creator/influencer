@@ -1,0 +1,25 @@
+.title {
+  $root: &;
+
+  &-txt {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-family: "BebasNeue";
+    font-weight: 400;
+  
+    @include media($md) {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+  }
+
+  &-under {
+    color: rgb(var(--color-grey));
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    @include media($md) {
+      font-size: 1.125rem;
+    }
+  }
+}

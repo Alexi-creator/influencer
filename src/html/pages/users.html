@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include("../layout/head.html", {
+    "title": "users Page",
+    "nameFile": "users",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+    }) 
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--users">
+        <div class="section__inner">
+          @@include("../components/title.html", {
+            "title": 'Блогеры', 
+            "amount":'7034',
+            "sub": 'пользователей' 
+          })
+          @@include("../components/user-card-list.html")
+        </div>
+      </section>
+    </main>
+  </body>
+
+</html>
