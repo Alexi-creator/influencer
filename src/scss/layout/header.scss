@@ -233,7 +233,9 @@
           padding: 0;
           
           &__header {
+            position: relative;
             justify-content: flex-end;
+            z-index: calc(var(--z-over) + 2);
           }
         }
       }

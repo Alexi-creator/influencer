@@ -12,9 +12,16 @@
 }
 
 .ui-kit {
+  $root: &;
+
   min-height: 100vh;
   padding: 2rem 1rem;
   background-color: rgb(var(--color-primary-pale));
+
+  a#{$root}__home  {
+    color: cadetblue;
+    font-size: 2rem;
+  }
 
   &__block {
     padding: 1rem;

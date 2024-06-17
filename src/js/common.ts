@@ -66,6 +66,15 @@ window.addEventListener('load', () => {
 
   try {
     new Autocomplete({
+      id: 'search-shops',
+      // url: API_URLS.mock.autocomplete,
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Autocomplete({
       id: 'pickup-autocomplete',
       url: API_URLS.mock.autocomplete,
       callback: location?.selectedOption,

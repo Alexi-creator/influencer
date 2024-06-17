@@ -1,7 +1,6 @@
 import '../common'
 
 import { Collapse } from '../modules/Collapse'
-import { Select } from '../modules/Select'
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { Tabs } from '../modules/Tabs'
 import { RangeSlider } from '../modules/RangeSlider'
@@ -51,7 +50,11 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Select()
+    new Autocomplete({
+      id: 'search',
+      mod: 'search',
+      // callback: ({ label, value }) => console.log('ui kit autocomplete', label, value)
+    })
   } catch (error) {
     console.log(error)
   }

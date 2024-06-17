@@ -8,6 +8,7 @@ interface IOptions {
 interface IConstructor {
   id: string
   url?: string | undefined
+  mod?: 'search' | undefined
   callback?: (arg: IOptions) => void
 }
 
@@ -17,6 +18,7 @@ interface IConstructor {
 export class Autocomplete {
   private id: string
   private url: string | undefined
+  private mod: 'search' | undefined
   private callback: ((arg: IOptions) => void) | undefined
 
   private containerSelector: string
@@ -38,9 +40,10 @@ export class Autocomplete {
   private debounce: (userInput: string) => void
   private fetchController: AbortController | null = null
 
-  constructor({ id, url, callback }: IConstructor) {
+  constructor({ id, url, mod, callback }: IConstructor) {
     this.id = id
     this.url = url
+    this.mod = mod
     this.callback = callback
 
     this.isOpen = false
@@ -83,19 +86,21 @@ export class Autocomplete {
 
   private collectedInitialOptions(): void {
     const allOptionsElem = Array.from(this.containerElem.querySelectorAll(this.itemSelector)) as HTMLElement[]
-    
+
     const preparedOptions = allOptionsElem.reduce<IOptions[]>((acc, opt) => {
-      const label = opt.innerHTML
+      const label = this.mod === 'search' 
+        ? opt.querySelector(`${this.itemSelector}-title`)?.innerHTML 
+        : opt.innerHTML
       const value = opt.dataset.value
-
+    
       if (label && value) {
-        return [...acc, { label, value }]
+        acc.push({ label, value })
       }
-
+    
       return acc
     }, [])
 
-    this.options = preparedOptions
+    this.options = preparedOptions || []
   }
 
   private toggle(): void {
@@ -166,7 +171,7 @@ export class Autocomplete {
     }
 
     const match = new RegExp(userInput, 'i')
-    const matches: IOptions[] = this.options.filter(option => match.test(option.label))
+    const matches: IOptions[] = this.options.filter(option => match.test(option?.label))
 
     this.searchOptions = matches
     this.renderOptions()    

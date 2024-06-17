@@ -45,15 +45,18 @@
           </a>
         </li>
         <li class="header__nav-item header__nav-search">
-          @@include("../components/input-text.html", {
-            name: "search",
-            type: "text",
+          @@include("../components/autocomplete.html", {
+            id: "search-shops",
+            name: "search-shops",
             placeholder: "Найдите что-нибудь",
-            prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
-            suffix: "@@include('../components/select.html', { 'label1': 'Везде', 'label2': 'Везде2', 'label3': 'Везде3 очень длинный текст', 'data-value1': 'val1', 'data-value2': 'val2', 'data-value3': 'val3', 'name': 'select', 'extra-class': 'select--transparent', 'value': 'val2' })",
+            "input-extra-class": "autocomplete__input",
+            prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+            suffix: '@@include("../components/select.html", { "label1": "Везде", "label2": "Везде2", "label3": "Везде3 очень длинный текст", "data-value1": "val1", "data-value2": "val2", "data-value3": "val3", "name": "select", "extra-class": "select--transparent", "value": "val2" })',
             "extra-class": "header__nav-search-input",
             "extra-class-prefix": "header__nav-search-icon",
             "extra-class-suffix": "header__nav-search-select",
+            "tag": '',
+            options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">label1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">label2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">label3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">label4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">label5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">label6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">label7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">label8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">label9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">label10</li>',
           })
         </li>
         <li class="header__nav-item header__nav-basket">
