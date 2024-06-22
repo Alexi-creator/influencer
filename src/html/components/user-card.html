@@ -3,7 +3,10 @@
     <div class="user-card__image-container">
       @@img
     </div>
-    <p class="user-card__name">@@name</p>
+    @@include("./ticker.html", {
+      "text":'@@name',
+      "extra-class":'user-card__name',
+    })
     <p class="user-card__desc">@@desc</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">

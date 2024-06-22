@@ -5,6 +5,7 @@
   background-color: rgb(var(--color-primary-soft));
   width: 100%;
   border-radius: var(--radius-small);
+  overflow: hidden;
 
   &__wrapper {
     display: flex;
