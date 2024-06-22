@@ -111,16 +111,16 @@
       </div>
     </div> -->
     <div class="user-card-list__form-chips"></div>
-    <div class="user-card-list__form-filter">
-      <div class="user-card-list__form-filter-title">
+    <div class="user-card-list__form-filter filters">
+      <div class="filters__title">
         Фильтры
-        <div class="user-card-list__form-filter-cross">
+        <div class="user-card-list__form-filter-cross filters__title-cross">
           <svg>
             <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
       </div>
-      <div class="user-card-list__form-filter-filters filters">
+      <div class="user-card-list__form-filter-filters filters__items">
         <div class="filters__item">
           @@include("./collapse.html", {
             "title": "Прайс",
@@ -194,12 +194,12 @@
           })
         </div>
       </div>
-      <div class="user-card-list__form-filter-actions form__btns">
-        <button type="button" class="btn btn--text user-card-list__form-filter-clear" data-popup="clearFilter">
-          <svg class="user-card-list__form-filter-actions-clear">
+      <div class="user-card-list__form-filter-actions filters__actions form__btns">
+        <button type="button" class="btn btn--text user-card-list__form-filter-clear filters__clear" data-popup="clearFilter">
+          <svg class="user-card-list__form-filter-actions-clear filters__actions-clear">
             <use xlink:href="./img/icons/icons.svg#trash"></use>
           </svg>
-          <span class="user-card-list__form-filter-actions-text">Очистить все фильтры</span>
+          <span class="user-card-list__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
         </button>
         <button type="submit" class="btn user-card-list__form-filter-submit">
           Применить
@@ -208,6 +208,12 @@
       </div>
     </div>
   </form>
+
+  @@include("./popup.html", {
+    "id": "clearFilter",
+    "extra-class": "",
+    "body": '@@include("./clear-filter-content-popup.html")',
+  })
 
   <div class="user-card-list__cards-wrapper">
     @@include("../components/user-card.html", {
