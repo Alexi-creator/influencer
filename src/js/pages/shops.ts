@@ -141,6 +141,7 @@ window.addEventListener('load', () => {
   }
   try {
     new Filter({
+      selectorMain: '.shop-window',
       selectorContainer: '.shop-window__form-goods',
       selectorActionBtn: '.shop-window__actions-filters-goods',
     })
@@ -149,6 +150,7 @@ window.addEventListener('load', () => {
   }
   try {
     new Filter({
+      selectorMain: '.shop-window',
       selectorContainer: '.shop-window__form-sp',
       selectorActionBtn: '.shop-window__actions-categories-sp',
     })
@@ -157,6 +159,7 @@ window.addEventListener('load', () => {
   }
   try {
     new Filter({
+      selectorMain: '.shop-window',
       selectorContainer: '.shop-window__form-tff',
       selectorActionBtn: '.shop-window__actions-filters-tff',
     })
