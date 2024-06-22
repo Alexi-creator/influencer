@@ -3,6 +3,9 @@ import { request, debounce } from '../utils'
 interface IOptions {
   label: string
   value: string
+  href?: string
+  imgLink?: string
+  subtitle?: string
 }
 
 interface IConstructor {
@@ -26,9 +29,9 @@ export class Autocomplete {
   private optionsSelector: string
   private itemSelector: string
 
-  private options: IOptions[] | [] // Все опции
-  private searchOptions: IOptions[] | [] // Опции которые попадают под поиск
-  private selectedOption: IOptions | null
+  private options: IOptions[] | [] = [] // Все опции
+  private searchOptions: IOptions[] | [] = [] // Опции которые попадают под поиск
+  private selectedOption: IOptions | null = null
   private isOpen: boolean
 
   private containerElem: HTMLElement
@@ -76,29 +79,57 @@ export class Autocomplete {
 
   private renderOptions() {
     this.optionsElem.innerHTML = ''
-
-    const prepareOptions = this.searchOptions.map(({ label, value }) => {
-      return `<li class="autocomplete__options-item" data-value="${value}" tabindex="0">${label}</li>`
-    }).join('')
+    let prepareOptions
+    
+    if (this.mod === 'search') {
+      // prepareOptions = this.searchOptions.map(({ label, value, href, imgLink, subtitle }) => {
+      prepareOptions = this.searchOptions.map((opt: IOptions) => {
+        return `<a href="${opt?.href}" class="autocomplete__options-item" data-value="${opt?.value}" tabindex="0">
+        <img class="autocomplete__options-item-img" src="${opt?.imgLink}">
+        <div class="autocomplete__options-item-title">${opt?.label}</div>
+        <div class="autocomplete__options-item-subtitle">${opt?.subtitle}</div>
+      </a>`
+      }).join('')
+    } else {
+      prepareOptions = this.searchOptions.map(({ label, value }) => {
+        return `<li class="autocomplete__options-item" data-value="${value}" tabindex="0">${label}</li>`
+      }).join('')
+    }
 
     this.optionsElem.innerHTML = prepareOptions
   }
 
   private collectedInitialOptions(): void {
-    const allOptionsElem = Array.from(this.containerElem.querySelectorAll(this.itemSelector)) as HTMLElement[]
+    const allOptionsElem = Array.from(this.containerElem.querySelectorAll(this.itemSelector)) as (HTMLElement | HTMLAnchorElement)[]
+    let preparedOptions: IOptions[]
 
-    const preparedOptions = allOptionsElem.reduce<IOptions[]>((acc, opt) => {
-      const label = this.mod === 'search' 
-        ? opt.querySelector(`${this.itemSelector}-title`)?.innerHTML 
-        : opt.innerHTML
-      const value = opt.dataset.value
-    
-      if (label && value) {
-        acc.push({ label, value })
-      }
-    
-      return acc
-    }, [])
+    if (this.mod === 'search') {
+      preparedOptions = allOptionsElem.reduce<IOptions[]>((acc, opt) => {
+        const label = opt.querySelector(`${this.itemSelector}-title`)?.innerHTML 
+        const value = opt.dataset.value
+        const href = opt instanceof HTMLAnchorElement ? opt.href : undefined
+        const img = opt.querySelector(`${this.itemSelector}-img`) as HTMLImageElement
+        const imgLink = img.src
+        const subtitle = opt.querySelector(`${this.itemSelector}-subtitle`)?.innerHTML
+
+        if (label && value && href && imgLink && subtitle) {
+          acc.push({ label, value, href, imgLink, subtitle })
+        }
+      
+        return acc
+      }, [])
+    } else {
+      preparedOptions = allOptionsElem.reduce<IOptions[]>((acc, opt) => {
+        const label = opt.innerHTML
+        const value = opt.dataset.value
+      
+        if (label && value) {
+          acc.push({ label, value })
+        }
+      
+        return acc
+      }, [])
+    }
 
     this.options = preparedOptions || []
   }
@@ -109,8 +140,19 @@ export class Autocomplete {
   }
 
   private selected(targetElement: HTMLElement): void {
-    const value = targetElement.dataset.value
-    const label = targetElement.innerHTML
+    let value
+    let label
+
+    if (this.mod === 'search') {
+      const parent = targetElement.closest(this.itemSelector) as HTMLElement
+      const title =  parent?.querySelector(`${this.itemSelector}-title`) as HTMLElement
+      
+      value = parent?.dataset.value
+      label = title?.innerHTML
+    } else {
+      value = targetElement.dataset.value
+      label = targetElement.innerHTML
+    }
 
     if (label) this.inputElem.value = label
     if (value) this.hiddenInputElem.value = value
@@ -211,7 +253,7 @@ export class Autocomplete {
     }    
   }
 
-  private searchHandler(): void {
+  private clearHandler(): void {
     this.selectedOption = null
     this.hiddenInputElem.value = ''
 
@@ -224,6 +266,6 @@ export class Autocomplete {
     document.addEventListener('click', (e) => this.clickHandler(e))
     document.addEventListener('input', (e) => this.inputHandler(e))
     this.inputElem.addEventListener('blur', (e) => this.blurHandler(e))
-    this.inputElem.addEventListener('search', () => this.searchHandler())
+    this.inputElem.addEventListener('search', () => this.clearHandler())
   }
 }

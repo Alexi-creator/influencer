@@ -254,10 +254,10 @@
       }
 
       &-input {
-        height: 2.5rem;
-
-        @include media($lg) {
-          height: 3rem;
+        & .input-text--small {
+          @include media($full) {
+            height: 3rem;
+          }
         }
       }
     }
