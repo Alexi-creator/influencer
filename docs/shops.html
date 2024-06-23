@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240616111912">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240623145113">
   <title>shops Page</title>
-  <script defer src="js/shops.min.js?_v=20240616111912"></script>
+  <script defer src="js/shops.min.js?_v=20240623145113"></script>
 </head>
   <body>
     <header class="header">
@@ -954,197 +954,206 @@
         </svg>
       </div>
     </div>
+  
     <!-- Блок с кнопками сортировки и фильтрации для вкладки goods -->
-    <div class="shop-window__actions shop-window__actions-goods">
-      <button class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Сортировка G</div>
-        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+    <div class="filter-actions filter-actions--goods shop-window__actions-goods">
+      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Сортировка G</div>
+        <svg class="filter-actions__icon filter-actions__icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
         </svg>
-        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+        <svg class="filter-actions__icon filter-actions__icon--cross">
           <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
       </button>
-      <button class="shop-window__actions-filters shop-window__actions-filters-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Фильтры G</div>
-        <div class="shop-window__actions-filters-icon">
-          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+
+      <button class="filter-actions__filters shop-window__actions-filters-goods btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Фильтры G</div>
+        <div class="filter-actions__icon">
+          <svg class="filter-actions__icon filter-actions__icon--common">
             <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
-          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <svg class="filter-actions__icon filter-actions__icon--cross">
             <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
-        <div class="shop-window__actions-filters-count"></div>
+        <div class="shop-window__actions-filters-count filter-actions__filters-count"></div>
       </button>
-      <button class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
-        <svg class="shop-window__actions-density-tile">
+
+      <button class="filter-actions__density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="filter-actions__density-tile">
           <use xlink:href="./img/icons/icons.svg#density-tile"></use>
         </svg>
-        <svg class="shop-window__actions-density-grid">
+        <svg class="filter-actions__density-grid">
           <use xlink:href="./img/icons/icons.svg#density-grid"></use>
         </svg>
       </button>
     </div>
+  
     <!-- Блок с кнопками сортировки и фильтрации для вкладки sp -->
-    <div class="shop-window__actions shop-window__actions-sp">
-      <button class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Сортировка SP</div>
-        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+    <div class="filter-actions filter-actions--sp shop-window__actions-sp">
+      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Сортировка SP</div>
+        <svg class="filter-actions__icon filter-actions__icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
         </svg>
-        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+        <svg class="filter-actions__icon filter-actions__icon--cross">
           <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
       </button>
-      <button class="shop-window__actions-categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Категории SP</div>
-        <div class="shop-window__actions-filters-icon">
-          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+
+      <button class="filter-actions__categories shop-window__actions-categories-sp btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Категории SP</div>
+        <div class="filter-actions__icon">
+          <svg class="filter-actions__icon filter-actions__icon--common">
             <use xlink:href="./img/icons/icons.svg#categories"></use>
           </svg>
-          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <svg class="filter-actions__icon filter-actions__icon--cross">
             <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
-        <div class="shop-window__actions-filters-count"></div>
+        <div class="shop-window__actions-filters-count filter-actions__filters-count"></div>
       </button>
     </div>
+
     <!-- Блок с кнопками сортировки и фильтрации для вкладки tff -->
-    <div class="shop-window__actions shop-window__actions-tff">
-      <button class="shop-window__actions-sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Сортировка TFF</div>
-        <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+    <div class="filter-actions filter-actions--tff shop-window__actions-tff">
+      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Сортировка TFF</div>
+        <svg class="filter-actions__icon filter-actions__icon--common">
           <use xlink:href="./img/icons/icons.svg#sorts"></use>
         </svg>
-        <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+        <svg class="filter-actions__icon filter-actions__icon--cross">
           <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
       </button>
-      <button class="shop-window__actions-filters shop-window__actions-filters-tff btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="shop-window__actions-text">Фильтры TFF</div>
-        <div class="shop-window__actions-filters-icon">
-          <svg class="shop-window__actions-icon shop-window__actions-icon--common">
+
+      <button class="filter-actions__filters shop-window__actions-filters-tff btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Фильтры TFF</div>
+        <div class="filter-actions__icon">
+          <svg class="filter-actions__icon filter-actions__icon--common">
             <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
-          <svg class="shop-window__actions-icon shop-window__actions-icon--cross">
+          <svg class="filter-actions__icon filter-actions__icon--cross">
             <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
-        <div class="shop-window__actions-filters-count"></div>
+        <div class="shop-window__actions-filters-count filter-actions__filters-count"></div>
       </button>
-      <button class="shop-window__actions-density btn btn--outlined btn--color-grey btn--icon">
-        <svg class="shop-window__actions-density-tile">
+
+      <button class="filter-actions__density btn btn--outlined btn--color-grey btn--icon">
+        <svg class="filter-actions__density-tile">
           <use xlink:href="./img/icons/icons.svg#density-tile"></use>
         </svg>
-        <svg class="shop-window__actions-density-grid">
+        <svg class="filter-actions__density-grid">
           <use xlink:href="./img/icons/icons.svg#density-grid"></use>
         </svg>
-      </div>
-    </button>
+      </button>
+    </div>
+
     <!-- Форма с фильтрами и сортировками для товаров goods -->
-    <form class="shop-window__form shop-window__form-goods">
-      <div class="shop-window__form-sorting">
-        <div class="shop-window__form-sorting-title">
+    <form class="shop-window__form-goods form-filters">
+      <div class="sorting">
+        <div class="sorting__title">
           Сортировка
-          <div class="shop-window__form-sorting-cross">
+          <div class="sorting__cross">
             <svg>
               <use xlink:href="./img/icons/icons.svg#cross"></use>
             </svg>
           </div>
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+        <div class="sorting__btn sorting__btn--popular-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+        <div class="sorting__btn sorting__btn--rate-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+        <div class="sorting__btn sorting__btn--cost-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+        <div class="sorting__btn sorting__btn--name-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+        <div class="sorting__btn sorting__btn--popular-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+        <div class="sorting__btn sorting__btn--rate-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+        <div class="sorting__btn sorting__btn--cost-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+        <div class="sorting__btn sorting__btn--name-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
       </div>
-      <div class="shop-window__form-chips"></div>
-      <div class="shop-window__form-filter">
-        <div class="shop-window__form-filter-title">
+      <div class="shop-window__form-chips form-filters__chips"></div>
+      <div class="shop-window__form-filter filters">
+        <div class="filters__title">
           Фильтры
-          <div class="shop-window__form-filter-cross">
+          <div class="shop-window__form-filter-cross filters__title-cross">
             <svg>
               <use xlink:href="./img/icons/icons.svg#cross"></use>
             </svg>
           </div>
         </div>
-        <div class="shop-window__form-filter-filters filters">
+        <div class="shop-window__form-filter-filters filters__items">
           <!-- filters__item--categories нужно добавить по дефолту -->
           <div class="filters__item filters__item--categories">
             <div class="collapse ">
@@ -2019,12 +2028,12 @@
 </div>
           </div>
         </div>
-        <div class="shop-window__form-filter-actions form__btns">
-          <button type="button" class="btn btn--text shop-window__form-filter-clear" data-popup="clearFilter">
-            <svg class="shop-window__form-filter-actions-clear">
+        <div class="shop-window__form-filter-actions filters__actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
+            <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
               <use xlink:href="./img/icons/icons.svg#trash"></use>
             </svg>
-            <span class="shop-window__form-filter-actions-text">Очистить все фильтры</span>
+            <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
           </button>
           <button type="submit" class="btn shop-window__form-filter-submit">
             Применить
@@ -2034,100 +2043,100 @@
       </div>
     </form>
     <!-- Форма с фильтрами и сортировками для совместных покупок sp -->
-    <form class="shop-window__form shop-window__form-sp">
-      <div class="shop-window__form-sorting">
-        <div class="shop-window__form-sorting-title">
+    <form class="shop-window__form-sp form-filters">
+      <div class="sorting">
+        <div class="sorting__title">
           Сортировка
-          <div class="shop-window__form-sorting-cross">
+          <div class="sorting__cross">
             <svg>
               <use xlink:href="./img/icons/icons.svg#cross"></use>
             </svg>
           </div>
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+        <div class="sorting__btn sorting__btn--popular-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+        <div class="sorting__btn sorting__btn--rate-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+        <div class="sorting__btn sorting__btn--cost-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+        <div class="sorting__btn sorting__btn--name-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+        <div class="sorting__btn sorting__btn--popular-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+        <div class="sorting__btn sorting__btn--rate-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+        <div class="sorting__btn sorting__btn--cost-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+        <div class="sorting__btn sorting__btn--name-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
       </div>
-      <div class="shop-window__form-chips"></div>
-      <div class="shop-window__form-filter">
-        <div class="shop-window__form-filter-title">
+      <div class="shop-window__form-chips form-filters__chips"></div>
+      <div class="shop-window__form-filter filters">
+        <div class="filters__title">
           Фильтры
           <div class="shop-window__form-filter-cross">
             <svg>
@@ -2135,7 +2144,7 @@
             </svg>
           </div>
         </div>
-        <div class="shop-window__form-filter-filters filters filters--sp">
+        <div class="shop-window__form-filter-filters filters__items filters--sp">
           <div class="filters__item">
             <div class="collapse ">
   <div class="collapse__head">
@@ -2582,12 +2591,12 @@
 </div>
           </div>
         </div>
-        <div class="shop-window__form-filter-actions form__btns">
-          <button type="button" class="btn btn--text shop-window__form-filter-clear" data-popup="clearFilter">
-            <svg class="shop-window__form-filter-actions-clear">
+        <div class="shop-window__form-filter-actions filters__actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
+            <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
               <use xlink:href="./img/icons/icons.svg#trash"></use>
             </svg>
-            <span class="shop-window__form-filter-actions-text">Очистить все фильтры</span>
+            <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
           </button>
           <button type="submit" class="btn shop-window__form-filter-submit">
             Применить
@@ -2597,100 +2606,100 @@
       </div>
     </form>
     <!-- Форма с фильтрами и сортировками для tff -->
-    <form class="shop-window__form shop-window__form-tff">
-      <div class="shop-window__form-sorting">
-        <div class="shop-window__form-sorting-title">
+    <form class="shop-window__form-tff form-filters">
+      <div class="sorting">
+        <div class="sorting__title">
           Сортировка
-          <div class="shop-window__form-sorting-cross">
+          <div class="sorting__cross">
             <svg>
               <use xlink:href="./img/icons/icons.svg#cross"></use>
             </svg>
           </div>
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-asc">
+        <div class="sorting__btn sorting__btn--popular-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-asc">
+        <div class="sorting__btn sorting__btn--rate-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-asc">
+        <div class="sorting__btn sorting__btn--cost-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-asc">
+        <div class="sorting__btn sorting__btn--name-asc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--popular-desc">
+        <div class="sorting__btn sorting__btn--popular-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По популярности</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--rate-desc">
+        <div class="sorting__btn sorting__btn--rate-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По рейтингу</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--cost-desc">
+        <div class="sorting__btn sorting__btn--cost-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По стоимости</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
-        <div class="shop-window__form-sorting-btn shop-window__form-sorting-btn--name-desc">
+        <div class="sorting__btn sorting__btn--name-desc">
           <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='shop-window__actions-text'>По названию</span><svg class='shop-window__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
   </span>
 </label>
 
         </div>
       </div>
-      <div class="shop-window__form-chips"></div>
-      <div class="shop-window__form-filter">
-        <div class="shop-window__form-filter-title">
+      <div class="shop-window__form-chips form-filters__chips"></div>
+      <div class="shop-window__form-filter filters">
+        <div class="filters__title">
           Фильтры
           <div class="shop-window__form-filter-cross">
             <svg>
@@ -2698,7 +2707,7 @@
             </svg>
           </div>
         </div>
-        <div class="shop-window__form-filter-filters filters">
+        <div class="shop-window__form-filter-filters filters__items">
           <!-- filters__item--categories нужно добавить по дефолту -->
           <div class="filters__item filters__item--categories">
             <div class="collapse ">
@@ -3573,12 +3582,12 @@
 </div>
           </div>
         </div>
-        <div class="shop-window__form-filter-actions form__btns">
-          <button type="button" class="btn btn--text shop-window__form-filter-clear" data-popup="clearFilter">
-            <svg class="shop-window__form-filter-actions-clear">
+        <div class="shop-window__form-filter-actions filters__actions form__btns">
+          <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
+            <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
               <use xlink:href="./img/icons/icons.svg#trash"></use>
             </svg>
-            <span class="shop-window__form-filter-actions-text">Очистить все фильтры</span>
+            <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
           </button>
           <button type="submit" class="btn shop-window__form-filter-submit">
             Применить

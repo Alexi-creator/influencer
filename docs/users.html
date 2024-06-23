@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/users.min.css?_v=20240616111912">
+  <link rel="stylesheet" href="css/pages/users.min.css?_v=20240623145113">
   <title>users Page</title>
-  <script defer src="js/users.min.js?_v=20240616111912"></script>
+  <script defer src="js/users.min.js?_v=20240623145113"></script>
 </head>
   <body>
     <header class="header">
@@ -832,13 +832,675 @@
 </div>
 
           <div class="user-card-list">
+  <div class="user-card-list__actions">
+    <div id="users-autocomplete" class="autocomplete user-card-list__autocomplete">
+  <label class="input-text autocomplete__input input-text--color-grey">
+  
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Введите имя блогера">
+  
+</label>
+  <input type="text" name="users-autocomplete" value="@@value" hidden>
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    <ul class="autocomplete__options">
+      
+        <li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>
+      
+    </ul>
+  </div>
+</div>
+
+
+    <div class="filter-actions user-card-list__actions-btns active">
+      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Сортировка</div>
+        <svg class="filter-actions__icon filter-actions__icon--common">
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="filter-actions__icon filter-actions__icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+
+      <button class="filter-actions__filters btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Фильтры</div>
+        <div class="filter-actions__icon">
+          <svg class="filter-actions__icon filter-actions__icon--common">
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="filter-actions__icon filter-actions__icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="user-card-list__actions-filters-count filter-actions__filters-count"></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Форма с фильтрами и сортировками -->
+  <form class="user-card-list__form form-filters">
+    <div class="sorting">
+      <div class="sorting__title">
+        Сортировка
+        <div class="sorting__cross">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="sorting__btn sorting__btn--popular-asc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+      <div class="sorting__btn sorting__btn--rate-asc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+      <div class="sorting__btn sorting__btn--cost-asc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+      <div class="sorting__btn sorting__btn--name-asc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+      <div class="sorting__btn sorting__btn--popular-desc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+      <div class="sorting__btn sorting__btn--rate-desc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+      <div class="sorting__btn sorting__btn--cost-desc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+      <div class="sorting__btn sorting__btn--name-desc">
+        <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+      </div>
+    </div>
+    <div class="user-card-list__form-chips form-filters__chips"></div>
+    <div class="user-card-list__form-filter filters">
+      <div class="filters__title">
+        Фильтры
+        <div class="user-card-list__form-filter-cross filters__title-cross">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="user-card-list__form-filter-filters filters__items">
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Прайс
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><div class="range">
+  <div class="range__slider" data-step="1000"></div>
+  <div class="range__inputs">
+    <div class="range__min">
+      <div>от</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="200000" data-min="0" placeholder="0">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+    <div class="range__max">
+      <div>до</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="500000" data-max="1000000" placeholder="1000000">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+  </div>
+</div></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер0
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер10
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Специальные предложение
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><label class="checkbox ">
+  <input name="specials36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Test For Free
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Совместная Покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Благотворительная покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Акция “2 по цене 1”
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер2
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="2size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер3
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="3size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер4
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="4size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+        <div class="filters__item">
+          <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер5
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="5size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+        </div>
+      </div>
+      <div class="user-card-list__form-filter-actions filters__actions form__btns">
+        <button type="button" class="btn btn--text user-card-list__form-filter-clear filters__clear" data-popup="clearFilter">
+          <svg class="user-card-list__form-filter-actions-clear filters__actions-clear">
+            <use xlink:href="./img/icons/icons.svg#trash"></use>
+          </svg>
+          <span class="user-card-list__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
+        </button>
+        <button type="submit" class="btn user-card-list__form-filter-submit">
+          Применить
+          <span class="btn__suffix"></span>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div id="clearFilter" class="popup ">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="clear-filter-content-popup">
+  <div class="clear-filter-content-popup__inner">
+    <div class="clear-filter-content-popup__title">Сбросить фильтры?</div>
+    <div class="clear-filter-content-popup__descr">
+      Все настроенные Вами фильтры будут удалены. Это действие невозможно отменить.
+    </div>
+    <div class="clear-filter-content-popup__actions">
+      <div class="btn btn--text btn--color-grey popup__close">Еще подумаю</div>
+      <div class="btn clear-filters popup__close">Сбросить</div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
   <div class="user-card-list__cards-wrapper">
     <a href="#" class="user-card">
   <div class="user-card__wrapper">
     <div class="user-card__image-container">
       <picture><source srcset="img/shop-preview.webp" type="image/webp"><img src="img/shop-preview.jpg"></picture></img>
     </div>
-    <p class="user-card__name">Елена Брадиславская</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Елена Брадиславская длинное имя
+  </div>
+</div>
     <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -863,7 +1525,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
     </div>
-    <p class="user-card__name">YVES ROCHER</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    YVES ROCHER
+  </div>
+</div>
     <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -888,7 +1554,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -915,7 +1585,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -940,7 +1614,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -965,7 +1643,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -990,7 +1672,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png"></picture></img>
     </div>
-    <p class="user-card__name">Елена Брадиславская</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Елена Брадиславская
+  </div>
+</div>
     <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1015,7 +1701,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
     </div>
-    <p class="user-card__name">YVES ROCHER</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    YVES ROCHER
+  </div>
+</div>
     <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1042,7 +1732,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
     </div>
-    <p class="user-card__name">YVES ROCHER</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    YVES ROCHER
+  </div>
+</div>
     <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1067,7 +1761,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png"></picture></img>
     </div>
-    <p class="user-card__name">Елена Брадиславская</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Елена Брадиславская
+  </div>
+</div>
     <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1094,7 +1792,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1119,7 +1821,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1144,7 +1850,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1169,7 +1879,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
     </div>
-    <p class="user-card__name">Кот</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Кот
+  </div>
+</div>
     <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1194,7 +1908,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
     </div>
-    <p class="user-card__name">YVES ROCHER</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    YVES ROCHER
+  </div>
+</div>
     <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">
@@ -1219,7 +1937,11 @@
     <div class="user-card__image-container">
       <picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png"></picture></img>
     </div>
-    <p class="user-card__name">Елена Брадиславская</p>
+    <div class="ticker user-card__name">
+  <div class="ticker__text">
+    Елена Брадиславская
+  </div>
+</div>
     <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
     <div class="user-card__scores">
       <div class="user-card__scores-inst">

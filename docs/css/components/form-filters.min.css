@@ -1,0 +1,1 @@
+@keyframes spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.form-filters{margin-top:1.25rem}.form-filters.hide{display:none}.form-filters>:not(:first-child){margin-top:1.25rem}.form-filters__chips{display:none}.form-filters__chips.active{display:flex;flex-wrap:wrap;gap:.5rem}

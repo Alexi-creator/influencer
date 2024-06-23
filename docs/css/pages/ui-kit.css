@@ -2054,6 +2054,37 @@ button {
   line-height: 1.5rem;
 }
 
+.ticker {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ticker__text {
+  min-width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.ticker:hover .ticker__text {
+  animation: ticker 2.5s linear;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .nav {
   height: 4rem;
   position: fixed;
@@ -3444,6 +3475,10 @@ svg {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.ui-kit__ticker {
+  max-width: 250px;
 }
 
 h1 {
