@@ -33,8 +33,8 @@ export class Sort {
     this.selectorActionContainer = selectorActionContainer
     this.selectorActionBtn = `${this.selectorActionContainer} .filter-actions__sorts`
 
-    this.selectorSortingWrapper = '.shop-window__form-sorting'
-    this.selectorCross = '.shop-window__form-sorting-cross'
+    this.selectorSortingWrapper = '.sorting'
+    this.selectorCross = '.sorting__cross'
     this.selectorIconCross = '.filter-actions__icon--cross'
     
     const container = document.querySelector(this.selectorContainer)

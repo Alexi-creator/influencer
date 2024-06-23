@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
   try {
     new Sort({
       selectorContainer: '.user-card-list__form',
-      selectorActionContainer: '.user-card-list__actions',
+      selectorActionContainer: '.filter-actions',
     })
   } catch (error) {
     console.log(error)
@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
     new Filter({
       selectorMain: '.user-card-list',
       selectorContainer: '.user-card-list__form',
-      selectorActionBtn: '.user-card-list__actions-filters',
+      selectorActionBtn: '.filter-actions__filters',
     })
   } catch (error) {
     console.log(error)

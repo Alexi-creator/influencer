@@ -6,110 +6,113 @@
       placeholder: "Введите имя блогера",
       prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
       suffix: "",
+      "extra-class": "user-card-list__autocomplete",
       "input-extra-class": "autocomplete__input input-text--color-grey",
       options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>',
     })
 
-    <button class="user-card-list__actions-sorts btn btn--outlined btn--color-grey scroll">
-      <div class="user-card-list__actions-text">Сортировка</div>
-      <svg class="user-card-list__actions-icon user-card-list__actions-icon--common">
-        <use xlink:href="./img/icons/icons.svg#sorts"></use>
-      </svg>
-      <svg class="user-card-list__actions-icon user-card-list__actions-icon--cross">
-        <use xlink:href="./img/icons/icons.svg#cross"></use>
-      </svg>
-    </button>
-
-    <button class="user-card-list__actions-filters user-card-list__actions-filters-goods btn btn--outlined btn--color-grey scroll">
-      <div class="user-card-list__actions-text">Фильтры</div>
-      <div class="user-card-list__actions-filters-icon">
-        <svg class="user-card-list__actions-icon user-card-list__actions-icon--common">
-          <use xlink:href="./img/icons/icons.svg#filters"></use>
+    <div class="filter-actions user-card-list__actions-btns active">
+      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Сортировка</div>
+        <svg class="filter-actions__icon filter-actions__icon--common">
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
         </svg>
-        <svg class="user-card-list__actions-icon user-card-list__actions-icon--cross">
+        <svg class="filter-actions__icon filter-actions__icon--cross">
           <use xlink:href="./img/icons/icons.svg#cross"></use>
         </svg>
-      </div>
-      <div class="user-card-list__actions-filters-count"></div>
-    </button>
+      </button>
+
+      <button class="filter-actions__filters btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+        <div class="filter-actions__text">Фильтры</div>
+        <div class="filter-actions__icon">
+          <svg class="filter-actions__icon filter-actions__icon--common">
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="filter-actions__icon filter-actions__icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="user-card-list__actions-filters-count filter-actions__filters-count"></div>
+      </button>
+    </div>
   </div>
 
   <!-- Форма с фильтрами и сортировками -->
   <form class="user-card-list__form">
-    <!-- <div class="user-card-list__form-sorting">
-      <div class="user-card-list__form-sorting-title">
+    <div class="sorting">
+      <div class="sorting__title">
         Сортировка
-        <div class="user-card-list__form-sorting-cross">
+        <div class="sorting__cross">
           <svg>
             <use xlink:href="./img/icons/icons.svg#cross"></use>
           </svg>
         </div>
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--popular-asc">
+      <div class="sorting__btn sorting__btn--popular-asc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По популярности</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "popular-asc",
         })
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--rate-asc">
+      <div class="sorting__btn sorting__btn--rate-asc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По рейтингу</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "rate-asc",
         })
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--cost-asc">
+      <div class="sorting__btn sorting__btn--cost-asc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По стоимости</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "cost-asc",
         })
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--name-asc">
+      <div class="sorting__btn sorting__btn--name-asc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По названию</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "name-asc",
         })
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--popular-desc">
+      <div class="sorting__btn sorting__btn--popular-desc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По популярности</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "popular-desc",
         })
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--rate-desc">
+      <div class="sorting__btn sorting__btn--rate-desc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По рейтингу</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "rate-desc",
         })
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--cost-desc">
+      <div class="sorting__btn sorting__btn--cost-desc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По стоимости</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "cost-desc",
         })
       </div>
-      <div class="user-card-list__form-sorting-btn user-card-list__form-sorting-btn--name-desc">
+      <div class="sorting__btn sorting__btn--name-desc">
         @@include("./radio.html", {
           "name": "sorting",
-          "text": "<span class='btn btn--color-white'><span class='user-card-list__actions-text'>По названию</span><svg class='user-card-list__actions-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
+          "text": "<span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>",
           "extra-class": "radio--btn",
           "value": "name-desc",
         })
       </div>
-    </div> -->
+    </div>
     <div class="user-card-list__form-chips"></div>
     <div class="user-card-list__form-filter filters">
       <div class="filters__title">
