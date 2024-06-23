@@ -1,4 +1,5 @@
 // vendors
+@import "../vendors/nouislider.min";
 
 // common styles
 @import "../common";
@@ -7,3 +8,10 @@
 @import "../components/nav-pages";
 @import "../components/user-card-list";
 @import "../components/user-card";
+@import "../components/collapse";
+@import "../components/range-slider";
+@import "../components/filter-actions";
+@import "../components/form-filters";
+@import "../components/filters";
+@import "../components/sorting";
+@import "../components/clear-filter-content-popup";
