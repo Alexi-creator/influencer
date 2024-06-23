@@ -2,6 +2,7 @@ import '../common'
 
 import { API_URLS, BreakpointWidth, HttpMethods } from '../constants'
 
+import { Share } from '../modules/Share'
 import { Autocomplete } from '../modules/Autocomplete'
 import { Collapse } from '../modules/Collapse'
 import { Filter } from '../modules/Filter'
@@ -11,6 +12,7 @@ import { Tabs } from '../modules/Tabs'
 import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { Sort } from '../modules/Sort'
+import { NumberFormatter } from '../utils/numberFormatter'
 
 window.addEventListener('load', () => {
   try {
@@ -30,6 +32,11 @@ window.addEventListener('load', () => {
         [BreakpointWidth.FULLHD]: 5,
       },
     })
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new Share()
   } catch (error) {
     console.log(error)
   }
@@ -78,6 +85,12 @@ window.addEventListener('load', () => {
   }
   try {
     new ScrollIntoView()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new NumberFormatter()
   } catch (error) {
     console.log(error)
   }

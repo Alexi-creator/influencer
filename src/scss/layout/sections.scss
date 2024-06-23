@@ -50,6 +50,16 @@
     }
   }
 
+  &--user{
+    #{$block}__inner {
+      overflow: hidden; //временное решение, нужно разобраться c share
+      padding-top: 1rem;
+      @include media($lg){
+        padding-top: 3.5rem;
+      }
+    }
+  }
+
   &--shop-window {
     padding-top: 0;
   }

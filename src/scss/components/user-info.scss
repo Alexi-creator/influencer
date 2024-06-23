@@ -1,0 +1,119 @@
+.user-info {
+  $root: &;
+
+  &__wrapper{
+    display: flex;
+    flex-flow: column;
+    gap: 1.25rem;
+    margin: 0 auto;
+    max-width: 67rem;
+    @include media($md){
+      gap: 1.5rem;
+    }
+    @include media($lg){
+      flex-flow: row; 
+      gap: 2.5rem;
+    }
+  }
+
+  &__image-container {
+    align-self: center;
+    width: 11.25rem;
+    height: 11.25rem;
+    position: relative;
+    > img {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-round);
+      object-fit: cover;
+    }
+  }
+  &__image-text-overlay{
+    position: absolute;
+    bottom: -4px;
+    transform: translate(-50%, 0);
+    left: 50%;
+  
+  }
+  &__image-white-border{
+    position: absolute;
+    top: 4px;
+    width: 95%;
+    transform: translate(-50%, 0);
+    left: 50%;
+  }
+
+  &__desc-wrapper{
+    display: flex;
+    flex-flow: column;
+    gap: 1.25rem;
+    @include media($lg){
+      max-width: 37.5rem;
+    }
+  }
+
+  &__desc-title-inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    @include media($lg){
+      justify-content: unset;
+    }
+    h3{
+      font-size: 1.375rem;
+      font-weight: 600;
+      line-height: 2rem;
+    }
+    img{
+      width: 3.5rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__desc-text{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.54rem;
+  }
+
+  &__desc-sub-inner{
+    display: none;
+    gap: 1rem;
+    @include media($lg){
+      display: flex;
+      gap: 1.25rem;
+    }
+    span{
+      color: rgb(var(--color-primary), 1);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__sub-inner{
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  &__sub{
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: unset;
+    .sub-lg{
+      display: flex;
+      @include media($lg){
+        display: none;
+      }
+    }
+    @include media($md){
+      flex-flow: row;
+    }
+    @include media($lg){
+      max-width: 13rem;
+    }
+  }
+}

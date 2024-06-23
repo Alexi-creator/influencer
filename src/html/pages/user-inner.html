@@ -11,9 +11,16 @@
     }) 
     @@include("../components/nav-pages.html")
     <main class="main">
-      <section class="section section--user-inner">
+      <section class="section section--user">
         <div class="section__inner">
-  
+          @@include("../components/user-info.html", {
+            "img": '<img src="@img/shop-preview.jpg"></img>',
+            "influencer": "influencer",
+            "bloger-name": "Елена Брадиславская",
+            "post_count": "9801",
+            "sub_count": "140892",
+            "desc": "Ревизорро обуви и одежды. Более 10 лет в сфере блогинга. Производство контента не требует большого количества дорогостоящего оборудования, специального образования или технологического мастерства по сравнению с традиционными средствами массовой информации. Для",
+          })
         </div>
       </section>
     </main>
