@@ -1,0 +1,31 @@
+.ticker {
+  $root: &;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  &__text {
+    min-width: 100%;
+    width: max-content;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  &:hover {
+    #{$root}__text {
+      animation: ticker 2.5s linear;
+    }
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0)
+  }
+  80% {
+    transform: translateX(-100%)
+  }
+  100% {
+    transform: translateX(0)
+  }
+}

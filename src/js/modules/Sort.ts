@@ -31,12 +31,11 @@ export class Sort {
   constructor({ selectorContainer, selectorActionContainer }: { selectorContainer: string, selectorActionContainer: string }) {
     this.selectorContainer = selectorContainer
     this.selectorActionContainer = selectorActionContainer
-    this.selectorActionBtn = `${this.selectorActionContainer} .shop-window__actions-sorts`
+    this.selectorActionBtn = `${this.selectorActionContainer} .filter-actions__sorts`
 
-    this.selectorSortingWrapper = '.shop-window__form-sorting'
-    this.selectorCross = '.shop-window__form-sorting-cross'
-    this.selectorIconCross = '.shop-window__actions-icon--cross'
-    
+    this.selectorSortingWrapper = '.sorting'
+    this.selectorCross = '.sorting__cross'
+    this.selectorIconCross = '.filter-actions__icon--cross'
     
     const container = document.querySelector(this.selectorContainer)
     if (container) this.container = container as HTMLElement
@@ -103,7 +102,7 @@ export class Sort {
       this.isOpen = false
       document.body.classList.remove('overflow')
       
-      if (this.selectedContentBtn && window.innerWidth > 768) {
+      if (this.selectedContentBtn && window.innerWidth > BreakpointWidth.TABLET) {
         this.sortingActionBtn.innerHTML = this.selectedContentBtn
       }
     } else {

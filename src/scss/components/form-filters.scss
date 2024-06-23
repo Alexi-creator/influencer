@@ -1,0 +1,23 @@
+.form-filters {
+  $root: &;
+
+  margin-top: 1.25rem;
+
+  &.hide {
+    display: none;
+  }
+
+  & > *:not(:first-child) {
+    margin-top: 1.25rem;
+  }
+
+  &__chips {
+    display: none;
+    
+    &.active {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  }
+}
