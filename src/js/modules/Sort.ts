@@ -102,7 +102,7 @@ export class Sort {
       this.isOpen = false
       document.body.classList.remove('overflow')
       
-      if (this.selectedContentBtn && window.innerWidth > 768) {
+      if (this.selectedContentBtn && window.innerWidth > BreakpointWidth.TABLET) {
         this.sortingActionBtn.innerHTML = this.selectedContentBtn
       }
     } else {
