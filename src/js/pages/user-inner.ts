@@ -15,6 +15,7 @@ import { Sort } from '../modules/Sort'
 import { NumberFormatter } from '../utils/numberFormatter'
 import { UserBoard } from '../modules/user-board'
 import { CustomSwiper } from '../modules/CustomSwiper'
+import { BtnShow } from '../modules/BtnShow'
 
 window.addEventListener('load', () => {
   try {
@@ -160,6 +161,12 @@ window.addEventListener('load', () => {
     })
     })
   } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new BtnShow()
+  } catch (error){
     console.log(error)
   }
 

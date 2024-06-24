@@ -17,9 +17,14 @@
           <img src="@img/influencer_tag.png" alt="influencer">
         }
     </div>
-    <p class="user-info__desc-text">
-      @@desc
-    </p>
+    <div class="user-info__desc-inner">
+      <p class="user-info__desc-text hide-elem">
+        @@desc
+      </p>
+      <button class="btn-show user-info__btn" data-text="Cвернуть">
+        <span class="btn-show-text" data-text="развернуть">Развернуть</span>
+      </button>
+    </div>
     <div class="user-info__desc-sub-inner">
       <div class="user-info__desc-sub">
         <span class="number">@@post_count</span>

@@ -1,7 +1,9 @@
 .hide-elem {
-  display: none;
+  height: 7.5rem;
+  overflow: hidden;
 }
 
 .show-elem {
-  display: block;
+  height: unset;
+  overflow: unset;
 }
