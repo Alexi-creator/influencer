@@ -13,18 +13,13 @@ import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { Sort } from '../modules/Sort'
 import { NumberFormatter } from '../utils/numberFormatter'
+import { UserBoard } from '../modules/user-board'
+import { CustomSwiper } from '../modules/CustomSwiper'
 
 window.addEventListener('load', () => {
   try {
-    new Autocomplete({
-      id: 'users-autocomplete',
-    })
-  } catch (error) {
-    console.log(error)
-  }
-  try {
     new Masonry({
-      selectorContainer: '.user-card-list__form-filter-filters',
+      selectorContainer: '.user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -35,6 +30,15 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    new Autocomplete({
+      id: 'user-inner-autocomplete',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
   try {
     new Share()
   } catch (error) {
@@ -57,7 +61,7 @@ window.addEventListener('load', () => {
   }
   try {
     new Sort({
-      selectorContainer: '.user-card-list__form',
+      selectorContainer: '.user-board__form-posts',
       selectorActionContainer: '.filter-actions',
     })
   } catch (error) {
@@ -65,16 +69,16 @@ window.addEventListener('load', () => {
   }
   try {
     new Filter({
-      selectorMain: '.user-card-list',
-      selectorContainer: '.user-card-list__form',
-      selectorActionBtn: '.filter-actions__filters',
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-posts',
+      selectorActionBtn: '.user-board__actions-filters-posts',
     })
   } catch (error) {
     console.log(error)
   }
   try {
     new Form(
-      '.user-card-list__form', 
+      '.user-board__form', 
       API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
@@ -94,4 +98,70 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
+
+  try {
+    const parentElement = document.querySelector('.user-board__tabs') as HTMLElement
+    const swiperElement = parentElement.querySelector('.user-board__tabs-swiper') as HTMLElement
+    const prevBtn = parentElement.querySelector('.swiper-button-prev') as HTMLElement
+    const nextBtn = parentElement.querySelector('.swiper-button-next') as HTMLElement 
+
+    new UserBoard(
+      new CustomSwiper({
+        target: swiperElement,
+        options: {
+          slidesPerView: 1,
+          centeredSlides: true,
+          spaceBetween: 0,
+          breakpoints: {
+            420: {
+              slidesPerView: 1.5,
+            },
+          },
+        },
+        breakMedia: BreakpointWidth.TABLET,
+        btnsElements: {
+          prevElement: prevBtn,
+          nextElement: nextBtn,
+        },
+      }),
+    )
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    document.querySelectorAll('.joint-purchases-card__slider').forEach(swiper => {
+      const swiperElement = swiper.querySelector('.swiper-joint-purchases') as HTMLElement
+      const prevBtn = swiper.querySelector('.swiper-button-prev') as HTMLElement
+      const nextBtn = swiper.querySelector('.swiper-button-next') as HTMLElement      
+
+      new CustomSwiper({
+        target: swiperElement,
+        options: {
+          slidesPerView: 2,
+          centeredSlides: false,
+          spaceBetween: 12,
+          breakpoints: {
+            [BreakpointWidth.TABLET]: {
+              slidesPerView: 3.5,
+            },
+            [BreakpointWidth.DESKTOP]: {
+              slidesPerView: 2.5,
+            },
+            [BreakpointWidth.FULLHD]: {
+              slidesPerView: 4.5,
+            },
+          },
+        },
+        btnsElements: {
+          prevElement: prevBtn,
+          nextElement: nextBtn,
+        },
+    })
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  
 })
