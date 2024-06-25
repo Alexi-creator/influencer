@@ -7,12 +7,16 @@ export class BtnShow {
   selectorBtnText: string
   selectorHideElem: string
   selectorShowElem: string
+  selectorHideElemByHeight: string
+  selectorShowElemByHeight: string
 
   constructor() {
     this.selectorBtn = '.btn-show'
     this.selectorBtnText = '.btn-show-text'
     this.selectorHideElem = '.hide-elem'
     this.selectorShowElem = '.show-elem'
+    this.selectorHideElemByHeight = '.hide-elem-height'
+    this.selectorShowElemByHeight = '.show-elem-height'
 
     this.init()
   }
@@ -26,6 +30,11 @@ export class BtnShow {
       if (item.classList.contains(this.selectorShowElem.substring(1))) {
         item.classList.remove(this.selectorShowElem.substring(1))
       } else item.classList.add(this.selectorShowElem.substring(1))
+    });
+    [...parent.querySelectorAll(this.selectorHideElemByHeight)].forEach(item => {
+      if (item.classList.contains(this.selectorShowElemByHeight.substring(1))) {
+        item.classList.remove(this.selectorShowElemByHeight.substring(1))
+      } else item.classList.add(this.selectorShowElemByHeight.substring(1))
     })
   }
 
