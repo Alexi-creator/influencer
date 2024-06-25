@@ -1,12 +1,9 @@
-import { ShopTabsEnum, shopTabsArray } from '../constants/index'
+import { UserTabsEnum, userTabsArray } from '../constants/index'
 
 import { Form } from './Form'
 import { CustomSwiper } from './CustomSwiper'
 import { Filter } from './Filter'
 
-/**
- * Управление витриной (табы, товары, tff и тд)
- */
 export class UserBoard {
   private selectorTabsWrapper: string
   private selectorForm: string
@@ -97,7 +94,7 @@ export class UserBoard {
     const activeTab = activeTabElement?.dataset.tabPath as string | undefined
 
     if (activeTab) {
-      const index = shopTabsArray.indexOf(ShopTabsEnum[activeTab])     
+      const index = userTabsArray.indexOf(UserTabsEnum[activeTab])     
 
       this.tabsSlider.initialActionIndex = index === -1 ? 0 : index
       this.tabsSlider.startSlide()

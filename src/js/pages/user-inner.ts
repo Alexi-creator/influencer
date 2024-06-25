@@ -68,11 +68,31 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    new Sort({
+      selectorContainer: '.user-board__form-followers',
+      selectorActionContainer: '.filter-actions',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
   try {
     new Filter({
       selectorMain: '.user-board',
       selectorContainer: '.user-board__form-posts',
       selectorActionBtn: '.user-board__actions-filters-posts',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-followers',
+      selectorActionBtn: '.user-board__actions-filters-followers',
     })
   } catch (error) {
     console.log(error)
@@ -169,6 +189,5 @@ window.addEventListener('load', () => {
   } catch (error){
     console.log(error)
   }
-
   
 })
