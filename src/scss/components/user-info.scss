@@ -109,6 +109,9 @@
     align-items: center;
     gap: 1.5rem;
     max-width: unset;
+    button {
+      letter-spacing: 1px;
+    }
     .sub-lg{
       display: flex;
       @include media($lg){
@@ -139,6 +142,9 @@
       font-size: 1.15rem;
       line-height: 1.5rem;
       font-weight: 600;
+    }
+    :hover{
+      cursor: pointer;
     }
   }
 }
