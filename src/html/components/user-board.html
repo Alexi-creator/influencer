@@ -3,13 +3,13 @@
     <div class="user-board__tabs tabs__head">
       <div class="swiper user-board__tabs-swiper">
         <div class="tabs__list swiper-wrapper">
-          <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="posts">
+          <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="posts-no-select">
             Публикации <span class="tabs__tab-count">35</span>
           </div>
-          <div class="swiper-slide tabs__tab" data-tab-path="followers">
+          <div class="swiper-slide tabs__tab" data-tab-path="followers-no-select">
             Подписчики <span class="tabs__tab-count">4</span>
           </div>
-          <div class="swiper-slide tabs__tab" data-tab-path="subscriptions">
+          <div class="swiper-slide tabs__tab" data-tab-path="subscriptions-with-select">
             Подписки <span class="tabs__tab-count">28</span>
           </div>
           <div class="swiper-slide tabs__tab" data-tab-path="likes">
@@ -28,7 +28,7 @@
         </svg>
       </div>
     </div>
-    <div class="filter-actions filter-actions--posts user-board__actions-posts">
+    <div class="filter-actions filter-actions--posts-no-select user-board__actions-posts--no-select">
       <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
         <div class="filter-actions__text">Сортировка</div>
         <svg class="filter-actions__icon filter-actions__icon--common">
@@ -53,7 +53,7 @@
       </button>
   
     </div>
-    <div class="filter-actions filter-actions--followers user-board__actions-followers">
+    <div class="filter-actions filter-actions--followers-no-select user-board__actions-followers--no-select">
       <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
         <div class="filter-actions__text">Сортировка</div>
         <svg class="filter-actions__icon filter-actions__icon--common">
@@ -77,7 +77,7 @@
       </button>
 
     </div>
-    <div class="filter-actions filter-actions--subscriptions user-board__actions-followers">
+    <div class="filter-actions filter-actions--subscriptions-with-select user-board__actions-followers">
       <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
         <div class="filter-actions__text">Сортировка</div>
         <svg class="filter-actions__icon filter-actions__icon--common">
@@ -450,7 +450,22 @@
     </div>
   </form>
   <div class="tabs__contents user-board__tabs-contents">
-    <div class="tabs__content tabs__content--active" data-tab-target="posts">
+    <!-- <div class="user-board__select">
+      @@include("../components/select.html", {
+        "label1": "Блогеры",
+        "label2": "Магазины",
+        "label3": "TestForFree",
+        "label4": "Совместные Покупки",
+        "data-value1": "followers-with-select",
+        "data-value2": "shops-with-select",
+        "data-value3": "tff-with-select",
+        "data-value4": "sp-with-select",
+        "name": "user-board",
+        "extra-class": "select--border-grey",
+        "value": "_",
+      })
+    </div> -->
+    <div class="tabs__content tabs__content--active" data-tab-target="posts-no-select">
       <div class="user-board__sort-inner">
         <div class="user-board__actions">
           @@include("./autocomplete.html", {
@@ -467,7 +482,35 @@
       </div>
       @@include("./post-card-list.html")
     </div>
-    <div class="tabs__content tabs__content" data-tab-target="followers">
+    <div class="tabs__content tabs__content--active" data-tab-target="posts-with-select">
+      <div class="user-board__sort-inner">
+        <div class="user-board__actions">
+          @@include("./autocomplete.html", {
+            id: "user-inner-autocomplete",
+            name: "user-inner-autocomplete",
+            placeholder: "Введите название или имя автора публикации",
+            prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+            suffix: "",
+            "extra-class": "user-board__autocomplete",
+            "input-extra-class": "autocomplete__input input-text--color-grey",
+            options: '',
+          })
+        </div>
+        <!-- <div class="user-board__select">
+          @@include("../components/select.html", {
+            "label1": "Публикации",
+            "label2": "Товары",
+            "data-value1": "posts-with-select",
+            "data-value2": "goods-with-select",
+            "name": "user-board",
+            "extra-class": "select--border-grey",
+            "value": "posts",
+          })
+        </div> -->
+      </div>
+      @@include("./post-card-list.html")
+    </div>
+    <div class="tabs__content tabs__content" data-tab-target="followers-no-select">
       <div class="user-board__sort-inner">
         <div class="user-board__actions">
           @@include("./autocomplete.html", {
@@ -517,7 +560,72 @@
         })
       </div>
     </div>
-    <div class="tabs__content tabs__content" data-tab-target="subscriptions">
+    <div class="tabs__content tabs__content" data-tab-target="followers-with-select">
+      <div class="user-board__sort-inner">
+        <div class="user-board__actions">
+          @@include("./autocomplete.html", {
+            id: "user-inner-autocomplete",
+            name: "user-inner-autocomplete",
+            placeholder: "Введите имя пользователя",
+            prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+            suffix: "",
+            "extra-class": "user-board__autocomplete",
+            "input-extra-class": "autocomplete__input input-text--color-grey",
+            options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>',
+          })
+        </div>
+      </div>
+      <div class="user-board__select">
+        @@include("../components/select.html", {
+          "label1": "Блогеры",
+          "label2": "Магазины",
+          "label3": "TestForFree",
+          "label4": "Совместные Покупки",
+          "data-value1": "followers-with-select",
+          "data-value2": "shops-with-select",
+          "data-value3": "tff-with-select",
+          "data-value4": "sp-with-select",
+          "name": "user-board",
+          "extra-class": "select--border-grey",
+          "value": "_",
+        })
+      </div>
+      <div class="user-card-list__cards-wrapper">
+        @@include("../components/user-card.html", {
+          "img": '<img src="@img/shop-preview.jpg"></img>',
+          "name":"Елена Брадиславская длинное имя",
+          "desc":"Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+          "scores-inst":"9801",
+          "scores-users":"140892",
+          "sub":"",
+        })
+        @@include("../components/user-card.html", {
+          "img": '<img src="@img/logo-rocher.png"></img>',
+          "name":"YVES ROCHER",
+          "desc":"Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+          "scores-inst":"1089",
+          "scores-users":"172",
+          "sub":"",
+        })
+        @@include("../components/user-card.html", {
+          "img": '<img src="@img/logo-cat.png"></img>',
+          "name":"Кот",
+          "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+          "scores-inst":"1089",
+          "scores-users":"172",
+          "sub":"Вы подписаны",
+        })
+        @@include("../components/user-card.html", {
+          "img": '<img src="@img/logo-vtb.png"></img>',
+          "name":"Кот",
+          "desc":"Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+          "scores-inst":"1089",
+          "scores-users":"172",
+          "sub":"",
+        })
+      </div>
+    </div>
+    <div class="tabs__content tabs__content" data-tab-target="subscriptions-with-select">
       <div class="user-board__sort-inner">
         <div class="user-board__actions">
           @@include("./autocomplete.html", {
@@ -532,6 +640,53 @@
           })
         </div>
       </div>
+      <div class="user-board__select">
+      @@include("../components/select.html", {
+        "label1": "Магазины",
+        "label2": "Блогеры",
+        "label3": "TestForFree",
+        "label4": "Совместные Покупки",
+        "data-value1": "shops-with-select",
+        "data-value2": "followers-with-select",
+        "data-value3": "tff-with-select",
+        "data-value4": "sp-with-select",
+        "name": "user-board",
+        "extra-class": "select--border-grey",
+        "value": "_",
+      })
+    </div>
+      @@include("./shop-card-list.html")
+    </div>
+    <div class="tabs__content tabs__content" data-tab-target="shops-with-select">
+      <div class="user-board__sort-inner">
+        <div class="user-board__actions">
+          @@include("./autocomplete.html", {
+            id: "user-inner-autocomplete",
+            name: "user-inner-autocomplete",
+            placeholder: "Введите название магазина",
+            prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+            suffix: "",
+            "extra-class": "user-board__autocomplete",
+            "input-extra-class": "autocomplete__input input-text--color-grey",
+            options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>',
+          })
+        </div>
+      </div>
+      <div class="user-board__select">
+      @@include("../components/select.html", {
+        "label1": "Магазины",
+        "label2": "Блогеры",
+        "label3": "TestForFree",
+        "label4": "Совместные Покупки",
+        "data-value1": "shops-with-select",
+        "data-value2": "followers-with-select",
+        "data-value3": "tff-with-select",
+        "data-value4": "sp-with-select",
+        "name": "user-board",
+        "extra-class": "select--border-grey",
+        "value": "_",
+      })
+    </div>
       @@include("./shop-card-list.html")
     </div>
     <div class="tabs__content tabs__content" data-tab-target="likes">
