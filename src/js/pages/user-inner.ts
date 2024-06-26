@@ -16,11 +16,27 @@ import { NumberFormatter } from '../utils/numberFormatter'
 import { UserBoard } from '../modules/user-board'
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { BtnShow } from '../modules/BtnShow'
+import { Density } from '../modules/Density'
+import { SyncCategories } from '../modules/SyncCategories'
 
 window.addEventListener('load', () => {
   try {
     new Masonry({
-      selectorContainer: '.user-board__form-filter-filters',
+      selectorContainer: '.user-board__form-posts .user-board__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.user-board__form-followers .user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -60,6 +76,16 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    new Density({
+      selectorContent: '.user-board__goods',
+      selectorActionContainer: '.user-board__actions-goods',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
   try {
     new Sort({
       selectorContainer: '.user-board__form-posts',
@@ -187,6 +213,11 @@ window.addEventListener('load', () => {
   try {
     new BtnShow()
   } catch (error){
+    console.log(error)
+  }
+  try {
+    new SyncCategories()
+  } catch (error) {
     console.log(error)
   }
   

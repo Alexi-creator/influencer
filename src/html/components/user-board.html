@@ -28,6 +28,56 @@
         </svg>
       </div>
     </div>
+    <div class="filter-actions filter-actions--posts user-board__actions-posts">
+      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
+        <div class="filter-actions__text">Сортировка</div>
+        <svg class="filter-actions__icon filter-actions__icon--common">
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="filter-actions__icon filter-actions__icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+  
+      <button class="filter-actions__filters user-board__actions-filters-followers btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
+        <div class="filter-actions__text">Фильтры</div>
+        <div class="filter-actions__icon">
+          <svg class="filter-actions__icon filter-actions__icon--common">
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="filter-actions__icon filter-actions__icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="user-board__actions-filters-count filter-actions__filters-count"></div>
+      </button>
+  
+    </div>
+    <div class="filter-actions filter-actions--followers user-board__actions-followers">
+      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
+        <div class="filter-actions__text">Сортировка</div>
+        <svg class="filter-actions__icon filter-actions__icon--common">
+          <use xlink:href="./img/icons/icons.svg#sorts"></use>
+        </svg>
+        <svg class="filter-actions__icon filter-actions__icon--cross">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+
+      <button class="filter-actions__filters user-board__actions-filters-posts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
+        <div class="filter-actions__text">Фильтры</div>
+        <div class="filter-actions__icon">
+          <svg class="filter-actions__icon filter-actions__icon--common">
+            <use xlink:href="./img/icons/icons.svg#filters"></use>
+          </svg>
+          <svg class="filter-actions__icon filter-actions__icon--cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="user-board__actions-filters-count filter-actions__filters-count"></div>
+      </button>
+
+    </div>
   </div>
   <form class="user-board__form-posts form-filters">
     <div class="sorting">
@@ -390,31 +440,6 @@
             options: '',
           })
         </div>
-        <div class="filter-actions filter-actions--posts user-board__actions-posts">
-          <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
-            <div class="filter-actions__text">Сортировка</div>
-            <svg class="filter-actions__icon filter-actions__icon--common">
-              <use xlink:href="./img/icons/icons.svg#sorts"></use>
-            </svg>
-            <svg class="filter-actions__icon filter-actions__icon--cross">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-  
-          <button class="filter-actions__filters user-board__actions-filters-followers btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
-            <div class="filter-actions__text">Фильтры</div>
-            <div class="filter-actions__icon">
-              <svg class="filter-actions__icon filter-actions__icon--common">
-                <use xlink:href="./img/icons/icons.svg#filters"></use>
-              </svg>
-              <svg class="filter-actions__icon filter-actions__icon--cross">
-                <use xlink:href="./img/icons/icons.svg#cross"></use>
-              </svg>
-            </div>
-            <div class="user-board__actions-filters-count filter-actions__filters-count"></div>
-          </button>
-  
-        </div>
       </div>
       @@include("./post-card-list.html")
     </div>
@@ -431,31 +456,6 @@
             "input-extra-class": "autocomplete__input input-text--color-grey",
             options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>',
           })
-        </div>
-        <div class="filter-actions filter-actions--followers user-board__actions-followers">
-          <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
-            <div class="filter-actions__text">Сортировка</div>
-            <svg class="filter-actions__icon filter-actions__icon--common">
-              <use xlink:href="./img/icons/icons.svg#sorts"></use>
-            </svg>
-            <svg class="filter-actions__icon filter-actions__icon--cross">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-  
-          <button class="filter-actions__filters user-board__actions-filters-posts btn btn--outlined btn--color-grey scroll" data-target="user-board__followers">
-            <div class="filter-actions__text">Фильтры</div>
-            <div class="filter-actions__icon">
-              <svg class="filter-actions__icon filter-actions__icon--common">
-                <use xlink:href="./img/icons/icons.svg#filters"></use>
-              </svg>
-              <svg class="filter-actions__icon filter-actions__icon--cross">
-                <use xlink:href="./img/icons/icons.svg#cross"></use>
-              </svg>
-            </div>
-            <div class="user-board__actions-filters-count filter-actions__filters-count"></div>
-          </button>
-  
         </div>
       </div>
       <div class="user-card-list__cards-wrapper">

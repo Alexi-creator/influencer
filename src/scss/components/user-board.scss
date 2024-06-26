@@ -41,12 +41,15 @@
     display: flex;
     gap: 1.25rem;
     align-items: center;
-    width: 100%;
+    max-width: 65%;
     justify-content: space-between;
-    max-width: unset;
+
+    @include media($md){
+      max-width: 55%;
+      justify-content:flex-end;
+    }
     @include media($lg){
       max-width: 52rem;
-      justify-content:flex-end;
     }
   }
 
@@ -83,6 +86,7 @@
       @include media($md) {
         margin: unset;
       }
+
     }
   
     & .swiper-slide {
@@ -108,7 +112,7 @@
     }
   }
 
-  &__goods, &__tff, &__posts {
+  &__followers, &__tff, &__posts {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -226,15 +230,12 @@
   }
 
   &__tabs-contents {
-    margin-top: 1.25rem;
-
-    @include media($md) {
-      margin-top: 1.5rem;
-    }
+    margin-top: -4.25rem;
 
     @include media($lg) {
-      margin-top: 2.5rem;
+      margin-top: 1.25rem;
     }
+    
   }
 
   &__actions {
