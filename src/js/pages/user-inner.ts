@@ -2,6 +2,7 @@ import '../common'
 
 import { API_URLS, BreakpointWidth, HttpMethods } from '../constants'
 
+
 import { Share } from '../modules/Share'
 import { Autocomplete } from '../modules/Autocomplete'
 import { Collapse } from '../modules/Collapse'
@@ -18,11 +19,14 @@ import { CustomSwiper } from '../modules/CustomSwiper'
 import { BtnShow } from '../modules/BtnShow'
 import { Density } from '../modules/Density'
 import { SyncCategories } from '../modules/SyncCategories'
+import { ShopPreview } from '../modules/ShopPreview'
+import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
+import { observerBrandCallback } from '../modules/observerBrandCallback'
 
 window.addEventListener('load', () => {
   try {
     new Masonry({
-      selectorContainer: '.user-board__form-posts .user-board__form-filter-filters',
+      selectorContainer: '.user-board__form-posts-no-select .user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -36,12 +40,55 @@ window.addEventListener('load', () => {
 
   try {
     new Masonry({
-      selectorContainer: '.user-board__form-followers .user-board__form-filter-filters',
+      selectorContainer: '.user-board__form-followers-no-select .user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
         [BreakpointWidth.DESKTOP]: 3,
         [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.user-board__form-likes .user-board__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.user-board__form-subscriptions .user-board__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    const targetElement = document.querySelector('.user-board__tabs') as HTMLElement
+
+    new CustomIntersectionObserver({
+      element: targetElement,
+      callback: observerBrandCallback,
+      options: {
+        mobileRootMargin: '-60px 0px 0px',
+        desktopRootMargin: '-160px 0px 0px',
       },
     })
   } catch (error) {
@@ -88,7 +135,7 @@ window.addEventListener('load', () => {
 
   try {
     new Sort({
-      selectorContainer: '.user-board__form-posts',
+      selectorContainer: '.user-board__form-followers-no-select',
       selectorActionContainer: '.filter-actions',
     })
   } catch (error) {
@@ -97,7 +144,25 @@ window.addEventListener('load', () => {
 
   try {
     new Sort({
-      selectorContainer: '.user-board__form-followers',
+      selectorContainer: '.user-board__form-posts-no-select',
+      selectorActionContainer: '.filter-actions',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.user-board__form-subscriptions',
+      selectorActionContainer: '.filter-actions',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.user-board__form-likes',
       selectorActionContainer: '.filter-actions',
     })
   } catch (error) {
@@ -107,8 +172,8 @@ window.addEventListener('load', () => {
   try {
     new Filter({
       selectorMain: '.user-board',
-      selectorContainer: '.user-board__form-posts',
-      selectorActionBtn: '.user-board__actions-filters-posts',
+      selectorContainer: '.user-board__form-followers-no-select',
+      selectorActionBtn: '.user-board__actions-filters-followers-no-select',
     })
   } catch (error) {
     console.log(error)
@@ -117,15 +182,36 @@ window.addEventListener('load', () => {
   try {
     new Filter({
       selectorMain: '.user-board',
-      selectorContainer: '.user-board__form-followers',
-      selectorActionBtn: '.user-board__actions-filters-followers',
+      selectorContainer: '.user-board__form-posts-no-select',
+      selectorActionBtn: '.user-board__actions-filters-posts-no-select',
     })
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    new Filter({
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-subscriptions',
+      selectorActionBtn: '.user-board__actions-filters-subscriptions',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-likes',
+      selectorActionBtn: '.user-board__actions-filters-likes',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
   try {
     new Form(
-      '.user-board__form', 
+      '.user-board__form-posts-no-select', 
       API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
@@ -134,8 +220,51 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    new Form(
+      '.user-board__form-followers-no-select', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.user-board__form-subscriptions', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.user-board__form-likes', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
   try {
     new ScrollIntoView()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new ShopPreview()
   } catch (error) {
     console.log(error)
   }
