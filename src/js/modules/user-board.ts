@@ -75,7 +75,7 @@ export class UserBoard {
   // изменение отображение кнопок (фильтры, категории) в зависимости от выбранного таба
   private changeActionsDisplay(activeTab: string) {
     this.actionsElems.forEach(elem => elem.classList.remove('active'))
-
+    
     const activeActionBlock = this.actionsElems.find(elem => elem.classList.contains(`${this.selectorActions.substring(1)}--${activeTab}`))      
     activeActionBlock?.classList.add('active')
   }

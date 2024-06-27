@@ -271,4 +271,16 @@
     margin-top: 1.25rem;
     width: 20%;
   }
+
+  [data-tab-target ='subscriptions'],
+  [data-tab-target ='posts-with-select'],
+  [data-tab-target ='followers-with-select'],
+  [data-tab-target ='shops'],
+  [data-tab-target ='sp'],
+  [data-tab-target ='tff'] {
+    margin-top: 5rem;
+    @include media($lg){
+      margin-top: 0;  
+    }
+  }
 }

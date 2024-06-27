@@ -77,7 +77,7 @@ export class Select {
   private changeOption(select: HTMLElement, targetElement: HTMLElement) {
     const titleElement = select.querySelector(this.selectorTitle)
     const input = select.querySelector('input')
-    
+
     const value = targetElement.dataset.value
     const label = targetElement.innerHTML
 
