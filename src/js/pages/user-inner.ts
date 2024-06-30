@@ -19,7 +19,6 @@ import { CustomSwiper } from '../modules/CustomSwiper'
 import { BtnShow } from '../modules/BtnShow'
 import { Density } from '../modules/Density'
 import { SyncCategories } from '../modules/SyncCategories'
-import { ShopPreview } from '../modules/ShopPreview'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 
@@ -259,12 +258,6 @@ window.addEventListener('load', () => {
 
   try {
     new ScrollIntoView()
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    new ShopPreview()
   } catch (error) {
     console.log(error)
   }
