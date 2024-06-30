@@ -1,12 +1,14 @@
 import '../common'
 
+import { API_URLS } from '../constants'
+
 import { Collapse } from '../modules/Collapse'
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { Tabs } from '../modules/Tabs'
 import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { Autocomplete } from '../modules/Autocomplete'
-import { API_URLS } from '../constants'
+import { Ticker } from '../modules/Ticker'
 
 window.addEventListener('load', () => {
   try {
@@ -74,6 +76,12 @@ window.addEventListener('load', () => {
       url: API_URLS.mock.autocomplete,
       callback: ({ label, value }) => console.log('ui kit autocomplete url', label, value)
     })
+  } catch (error) {
+    console.log(error)
+  }
+  
+  try {
+    new Ticker()
   } catch (error) {
     console.log(error)
   }

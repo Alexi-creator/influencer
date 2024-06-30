@@ -33,11 +33,16 @@ export class ShopWindow {
   constructor(slider: CustomSwiper) {
     this.selectorTabsWrapper = '.shop-window__tabs'
     this.selectorForm = '.shop-window__form'
-    this.selectorSortsBtn = '.shop-window__actions-sorts'
-    this.selectorCategoriesBtn = '.shop-window__actions-categories'
-    this.selectorFilterBtn = '.shop-window__actions-filters'
-    this.selectorDensityBtn = '.shop-window__actions-density'
-    this.selectorActions = '.shop-window__actions'
+    // this.selectorSortsBtn = '.shop-window__actions-sorts'
+    this.selectorSortsBtn = '.filter-actions__sorts'
+    // this.selectorCategoriesBtn = '.shop-window__actions-categories'
+    this.selectorCategoriesBtn = '.filter-actions__categories'
+    // this.selectorFilterBtn = '.shop-window__actions-filters'
+    this.selectorFilterBtn = '.filter-actions__filters'
+    // this.selectorDensityBtn = '.shop-window__actions-density'
+    this.selectorDensityBtn = '.filter-actions__density'
+    // this.selectorActions = '.shop-window__actions'
+    this.selectorActions = '.filter-actions'
 
     const filterBtnElem = document.querySelector(this.selectorFilterBtn)
     if (filterBtnElem) this.filterBtnElem = filterBtnElem as HTMLElement
@@ -74,7 +79,7 @@ export class ShopWindow {
   private changeActionsDisplay(activeTab: string) {
     this.actionsElems.forEach(elem => elem.classList.remove('active'))
 
-    const activeActionBlock = this.actionsElems.find(elem => elem.classList.contains(`${this.selectorActions.substring(1)}-${activeTab}`))      
+    const activeActionBlock = this.actionsElems.find(elem => elem.classList.contains(`${this.selectorActions.substring(1)}--${activeTab}`))      
     activeActionBlock?.classList.add('active')
   }
   

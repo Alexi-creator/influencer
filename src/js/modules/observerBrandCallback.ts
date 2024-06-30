@@ -1,7 +1,7 @@
 import { BreakpointWidth } from '../constants'
 
 const actionsPreviewSelector = '.shop-preview__actions'
-const actionsShopWindowSelector = '.shop-window__actions'
+const actionsShopWindowSelector = '.filter-actions'
 
 const actionsPreviewElem = document.querySelector(actionsPreviewSelector)
 const actionsShopWindowElems = Array.from(document.querySelectorAll(actionsShopWindowSelector)) as HTMLElement[]

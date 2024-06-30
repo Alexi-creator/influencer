@@ -40,19 +40,19 @@ export class Filter {
   // объект с состоянием фильтров (выбранные позиции, кол-во выбранных)
   private filters: Record<string, IFilter>
 
-  constructor({ selectorContainer, selectorActionBtn }: { selectorContainer: string, selectorActionBtn: string }) {
+  constructor({ selectorMain, selectorContainer, selectorActionBtn }: { selectorMain: string, selectorContainer: string, selectorActionBtn: string }) {
     this.selectorContainer = selectorContainer
     this.selectorActionBtn = selectorActionBtn
 
-    this.selectorFilterWrapper = '.shop-window__form-filter',
-    this.selectorFiltersWrapper = '.shop-window__form-filter-filters'
-    this.selectorChips = '.shop-window__form-chips',
-    this.selectorFilterCross = '.shop-window__form-filter-cross'
+    this.selectorFilterWrapper = `${selectorMain}__form-filter`
+    this.selectorFiltersWrapper = `${selectorMain}__form-filter-filters`
+    this.selectorChips = `${selectorMain}__form-chips`
+    this.selectorFilterCross = `${selectorMain}__form-filter-cross`
     this.selectorChipCross = '.chip__cross'
-    this.selectorClearBtn = '.shop-window__form-filter-clear'
-    this.selectorSubmitBtn = '.shop-window__form-filter-submit'
-    this.selectorBtnCount = '.shop-window__actions-filters-count'
-    this.selectorIconCross = '.shop-window__actions-icon--cross'
+    this.selectorClearBtn = `${selectorMain}__form-filter-clear`
+    this.selectorSubmitBtn = `${selectorMain}__form-filter-submit`
+    this.selectorBtnCount = `${selectorMain}__actions-filters-count`
+    this.selectorIconCross = `${selectorMain}__actions-icon--cross`
     this.isOpen = false
 
     const container = document.querySelector(this.selectorContainer)

@@ -1,0 +1,112 @@
+.sorting {
+  $root: &;
+
+  display: none;
+
+  &.active {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1.25rem;
+    background-color: rgb(var(--color-primary-pale));
+    z-index: var(--z-top);
+    overflow-y: auto;
+
+    #{$root}__btn {
+      & .radio__custom, &-text, &-icon {
+        display: block;
+      }
+
+      & .btn {
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      @include media($lg) {
+        & .radio__custom {
+          display: none;
+        }
+
+        & .btn {
+          background-color: rgb(var(--color-white));
+
+          &:hover {
+            border-color: rgb(var(--color-primary));
+          }
+        }
+
+        & .radio input:checked + span {
+          & .btn {
+            border-color: rgb(var(--color-primary));
+          }
+        }
+      }
+    }
+
+    @include media($md) {
+      padding: 2rem 10rem;
+    }
+
+    @include media($lg) {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, max-content);
+      gap: 0.75rem;
+      max-width: max-content;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      border-radius: var(--radius-small);
+      z-index: unset;
+    }
+
+    @include media($full) {
+      grid-template-columns: repeat(8, max-content);
+      gap: 1.25rem;
+      padding: 2.5rem;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.375rem;
+    font-weight: 600;
+
+    #{$root}__cross {
+      cursor: pointer;
+      fill: rgb(var(--color-grey))
+    }
+
+    @include media($lg) {
+      display: none;
+    }
+  }
+
+  & .btn {
+    width: 100%;
+    justify-content: space-between;
+    font-weight: 400;
+    padding: 0.75rem;
+  }
+
+  &__btn {
+    &:not(:last-child) {
+      border-bottom: 1px solid rgb(var(--color-black-light));
+      padding-bottom: 0.5rem;
+    }
+
+    @include media($lg) {
+      &:not(:last-child) {
+        border-bottom: unset;
+        padding-bottom: unset;
+      }
+    }
+  }
+}
