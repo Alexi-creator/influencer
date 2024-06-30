@@ -1,29 +1,27 @@
 .user-info {
   $root: &;
 
-  &__wrapper{
-    display: flex;
-    flex-flow: column;
-    gap: 1.25rem;
+  display: flex;
+  flex-flow: column;
+  gap: 1.25rem;
+  
+  @include media($md){
+    gap: 1.5rem;
+    margin: unset;
+  }
+  @include media($lg){
+    flex-flow: row; 
+    gap: 2.5rem;
+  }
+  @include media($full){
     margin: 0 auto;
-    max-width: 67rem;
-
-    @include media($md){
-      gap: 1.5rem;
-      margin: unset;
-    }
-    @include media($lg){
-      flex-flow: row; 
-      gap: 2.5rem;
-    }
-
-    @include media($full){
-      margin: 0 auto;
-    }
   }
 
   &__image-container {
     align-self: center;
+    @include media ($lg){
+      align-self: unset;
+    }
     width: 11.25rem;
     height: 11.25rem;
     position: relative;
@@ -37,16 +35,8 @@
   &__image-text-overlay{
     position: absolute;
     bottom: -4px;
-    transform: translate(-50%, 0);
-    left: 50%;
-  
-  }
-  &__image-white-border{
-    position: absolute;
-    top: 4px;
-    width: 95%;
-    transform: translate(-50%, 0);
-    left: 50%;
+    transform: translate(2%, 0);
+    width: 96%;
   }
 
   &__desc-wrapper{
@@ -59,10 +49,9 @@
   }
 
   &__desc-title-inner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-center;
     gap: 0.75rem;
+    
     @include media($lg){
       justify-content: unset;
     }
@@ -71,7 +60,7 @@
       font-weight: 600;
       line-height: 2rem;
     }
-    img{
+    svg{
       width: 3.5rem;
       height: 1.25rem;
     }

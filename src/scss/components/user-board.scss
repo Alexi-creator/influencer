@@ -1,8 +1,6 @@
 .user-board {
   $root: &;
 
-  margin-top: 5rem;
-
   &__controls {
     display: flex;
     flex-direction: column;

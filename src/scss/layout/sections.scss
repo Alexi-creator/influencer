@@ -40,23 +40,44 @@
   &--users {
     #{$block}__inner {
       max-width: var(--max-width-container-users);
-      padding-top: 1.25rem;
-      @include media($md) {
-        padding-top: 2.5rem;
-      }
-      @include media($full) {
-        padding-top: 0rem;
-      }
+    }
+    padding-top: 1.25rem;
+    @include media($md) {
+      padding-top: 2.5rem;
+    }
+    @include media($full) {
+      padding-top: 0rem;
     }
   }
 
-  &--user{
+  &--user-info {
     #{$block}__inner {
       overflow: hidden; //временное решение, нужно разобраться c share
+      max-width: var(--max-width-container-user-info);
+    }
+
+    padding-top: 1.25rem;
+    @include media($md){
       padding-top: 1rem;
-      @include media($lg){
-        padding-top: 3.5rem;
-      }
+    }
+
+    @include media($lg){
+      padding-top: 2.5rem;
+    }
+
+    @include media($full){
+      padding-top: 0rem;
+    }
+  }
+
+  &--user-board {
+    margin-top: 2.5rem;
+    
+    @include media($md){
+      margin-top: 4rem;
+    }
+    @include media($lg){
+      margin-top: 5rem;
     }
   }
 

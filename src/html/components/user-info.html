@@ -1,12 +1,9 @@
-<div class="user-info__wrapper">
+<div class="user-info">
   <div class="user-info__image-container">
     @@img
     @@if(influencer){
     <div class="user-info__image-text-overlay">
-      <img src="@img/influencer.png" alt="influencer">
-    </div>
-    <div class="user-info__image-white-border">
-      <img src="@img/ellipse-influencer.png" alt="influencer">
+      <img src="@img/Influencer-frame-full.png" alt="influencer">
     </div>
     }
   </div>
@@ -14,7 +11,9 @@
     <div class="user-info__desc-title-inner">
         <h3>@@bloger-name</h3>
         @@if(influencer){
-          <img src="@img/influencer_tag.png" alt="influencer">
+          <svg>
+            <use xlink:href="/img/icons/icons.svg#influencer-tag"></use>
+          </svg>
         }
     </div>
     <div class="user-info__desc-inner">
