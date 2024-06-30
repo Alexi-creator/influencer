@@ -11,7 +11,7 @@
     text-align: center;
   }
 
-  &:hover {
+  &.active {
     #{$root}__text {
       animation: ticker 2.5s linear;
     }
