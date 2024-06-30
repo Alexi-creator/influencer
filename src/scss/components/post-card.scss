@@ -10,12 +10,6 @@
     position: relative;
   }
 
-  &__image-container {
-    img {
-      object-fit: cover;
-    }
-  }
-
   &__desc-inner {
     position: absolute;
     bottom: 0;

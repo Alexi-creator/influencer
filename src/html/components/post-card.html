@@ -1,36 +1,30 @@
 <a href="#" class="post-card">
   <div class="post-card__wrapper">
-    <div class="post-card__image-container">
-      @@img
-      <div class="post-card__desc-inner">
-        <p class="post-card__desc">@@desc</p>
-        <div class="post-card__range">
-          <div class="post-card__range-img">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#rating"></use>
-            </svg>
-          </div>
-          <div class="post-card__range-inner">
-            <p>@@user-name</p>
-            @@user-logo  
-          </div>
+    @@img  
+    <div class="post-card__desc-inner">
+      <p class="post-card__desc">@@desc</p>
+      <div class="post-card__range">
+        @@include("../components/rating.html")
+        <div class="post-card__range-inner">
+          <p>@@user-name</p>
+          @@user-logo  
         </div>
-        @@if(scores){
-          <div class="post-card__scores">
-            <div class="post-card__discus">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
-              </svg>
-              <span>@@scores-discus</span>
-            </div>
-            <div class="post-card__discus">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
-              </svg>
-              <span>@@scores-likes</span>
-            </div>
-          </div>}
       </div>
+      @@if(scores){
+        <div class="post-card__scores">
+          <div class="post-card__discus">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
+            </svg>
+            <span>@@scores-discus</span>
+          </div>
+          <div class="post-card__discus">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
+            </svg>
+            <span>@@scores-likes</span>
+          </div>
+        </div>}
     </div>
     @@if(liked) {
       <div class="post-card__liked">
