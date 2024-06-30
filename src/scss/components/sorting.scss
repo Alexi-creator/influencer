@@ -66,7 +66,6 @@
 
     @include media($full) {
       grid-template-columns: repeat(8, max-content);
-      grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
       gap: 1.25rem;
       padding: 2.5rem;
     }
@@ -91,6 +90,8 @@
   }
 
   & .btn {
+    width: 100%;
+    justify-content: space-between;
     font-weight: 400;
     padding: 0.75rem;
   }
@@ -105,33 +106,6 @@
       &:not(:last-child) {
         border-bottom: unset;
         padding-bottom: unset;
-      }
-    }
-
-    @include media($full) {
-      &--popular-up {
-        grid-area: popular-asc;
-      }
-      &--popular-down {
-        grid-area: popular-desc;
-      }
-      &--rate-up {
-        grid-area: rate-asc;
-      }
-      &--rate-down {
-        grid-area: rate-desc;
-      }
-      &--cost-up {
-        grid-area: cost-asc;
-      }
-      &--cost-down {
-        grid-area: cost-desc;
-      }
-      &--name-up {
-        grid-area: name-asc;
-      }
-      &--name-down {
-        grid-area: name-desc;
       }
     }
   }
