@@ -1289,7 +1289,7 @@ button {
   text-align: center;
 }
 
-.ticker:hover .ticker__text {
+.ticker.active .ticker__text {
   animation: ticker 2.5s linear;
 }
 
@@ -2468,6 +2468,10 @@ svg {
   margin-top: 1.25rem;
 }
 
+.user-card-list .sorting.active {
+  grid-template-columns: repeat(3, max-content);
+}
+
 .user-card {
   position: relative;
   background-color: rgb(var(--color-primary-soft));
@@ -2502,10 +2506,10 @@ svg {
   text-align: center;
   font-weight: 600;
   font-size: 0.875rem;
-  line-height: 1.5rem;
+  line-height: 1.25rem;
   color: rgb(var(--color-black));
   letter-spacing: 0.02rem;
-  margin: 0.75rem 0;
+  margin: 0.5rem 0;
   flex: 1;
 }
 
@@ -2514,7 +2518,7 @@ svg {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 400;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
   flex: 1;
   display: none;
 }
@@ -2547,6 +2551,7 @@ svg {
 }
 
 .user-card__sub.badge {
+  height: 2rem;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
@@ -3057,6 +3062,8 @@ svg {
 }
 
 .sorting .btn {
+  width: 100%;
+  justify-content: space-between;
   font-weight: 400;
   padding: 0.75rem;
 }
@@ -3293,8 +3300,8 @@ svg {
   }
 
   .user-card__name {
-    font-size: 1rem;
     flex: unset;
+    font-size: 1rem;
   }
 
   .user-card__desc {
@@ -3646,7 +3653,12 @@ svg {
   }
 
   .user-card__name {
+    margin: 0.5rem 0 0.75rem;
     font-size: 1.125rem;
+  }
+
+  .user-card__desc {
+    margin-bottom: 0.75rem;
   }
 
   .user-card__sub {
@@ -3806,6 +3818,10 @@ svg {
     margin-top: 2.5rem;
   }
 
+  .user-card-list__form-filter-filters.filters__items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .filter-actions {
     margin-top: 0;
   }
@@ -3828,84 +3844,8 @@ svg {
 
   .sorting.active {
     grid-template-columns: repeat(8, max-content);
-    grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
     gap: 1.25rem;
     padding: 2.5rem;
-  }
-
-  .sorting__btn--popular-up {
-    grid-area: popular-asc;
-  }
-
-  .sorting__btn--popular-down {
-    grid-area: popular-desc;
-  }
-
-  .sorting__btn--rate-up {
-    grid-area: rate-asc;
-  }
-
-  .sorting__btn--rate-down {
-    grid-area: rate-desc;
-  }
-
-  .sorting__btn--cost-up {
-    grid-area: cost-asc;
-  }
-
-  .sorting__btn--cost-down {
-    grid-area: cost-desc;
-  }
-
-  .sorting__btn--name-up {
-    grid-area: name-asc;
-  }
-
-  .sorting__btn--name-down {
-    grid-area: name-desc;
-  }
-}
-
-@media (min-width: 120rem){
-
-  .sorting__btn--popular-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-
-  .sorting__btn--popular-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-
-  .sorting__btn--rate-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 5;
-  }
-
-  .sorting__btn--rate-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 7;
-  }
-
-  .sorting__btn--cost-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 9;
-  }
-
-  .sorting__btn--cost-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 11;
-  }
-
-  .sorting__btn--name-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 13;
-  }
-
-  .sorting__btn--name-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 15;
   }
 }
 

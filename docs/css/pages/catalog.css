@@ -977,7 +977,7 @@ button {
   text-align: center;
 }
 
-.ticker:hover .ticker__text {
+.ticker.active .ticker__text {
   animation: ticker 2.5s linear;
 }
 

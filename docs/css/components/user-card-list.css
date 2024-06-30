@@ -47,6 +47,10 @@
   margin-top: 1.25rem;
 }
 
+.user-card-list .sorting.active {
+  grid-template-columns: repeat(3, max-content);
+}
+
 @media (min-width: 23.4375rem) {
   .user-card-list__cards-wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -95,5 +99,9 @@
   .user-card-list__cards-wrapper {
     grid-gap: 2rem;
     margin-top: 2.5rem;
+  }
+
+  .user-card-list__form-filter-filters.filters__items {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

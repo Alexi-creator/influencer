@@ -52,6 +52,8 @@
 }
 
 .sorting .btn {
+  width: 100%;
+  justify-content: space-between;
   font-weight: 400;
   padding: 0.75rem;
 }
@@ -110,75 +112,7 @@
 @media (min-width: 120rem) {
   .sorting.active {
     grid-template-columns: repeat(8, max-content);
-    grid-template-areas: "popular-asc popular-desc rate-asc rate-desc cost-asc cost-desc name-asc name-desc";
     gap: 1.25rem;
     padding: 2.5rem;
-  }
-
-  .sorting__btn--popular-up {
-    grid-area: popular-asc;
-  }
-
-  .sorting__btn--popular-down {
-    grid-area: popular-desc;
-  }
-
-  .sorting__btn--rate-up {
-    grid-area: rate-asc;
-  }
-
-  .sorting__btn--rate-down {
-    grid-area: rate-desc;
-  }
-
-  .sorting__btn--cost-up {
-    grid-area: cost-asc;
-  }
-
-  .sorting__btn--cost-down {
-    grid-area: cost-desc;
-  }
-
-  .sorting__btn--name-up {
-    grid-area: name-asc;
-  }
-
-  .sorting__btn--name-down {
-    grid-area: name-desc;
-  }
-}
-
-@media (min-width: 120rem) {
-  .sorting__btn--popular-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .sorting__btn--popular-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .sorting__btn--rate-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 5;
-  }
-  .sorting__btn--rate-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 7;
-  }
-  .sorting__btn--cost-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 9;
-  }
-  .sorting__btn--cost-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 11;
-  }
-  .sorting__btn--name-up {
-    -ms-grid-row: 1;
-    -ms-grid-column: 13;
-  }
-  .sorting__btn--name-down {
-    -ms-grid-row: 1;
-    -ms-grid-column: 15;
   }
 }
