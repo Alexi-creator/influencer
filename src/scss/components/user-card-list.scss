@@ -27,7 +27,7 @@
     z-index: var(--z-fixed);
 
     @include media($lg) {
-      top: 6.5rem;
+      top: 6.125rem;
     }
 
     #{$root}__autocomplete {
