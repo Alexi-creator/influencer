@@ -26,20 +26,6 @@ export class Select {
     this.handlers()
   }
 
-  private changeTabsContent(select: HTMLElement) {
-    const value = select.querySelector('input')?.value
-    const tabContentElement = document.querySelector(`[data-tab-target="${value}"]`)
-  
-    if (tabContentElement) {
-      const tabsParent = tabContentElement.closest('.tabs__contents')
-      const tabs = tabsParent?.querySelectorAll('.tabs__content')
-  
-      tabs?.forEach((tab) => tab.classList.remove('tabs__content--active'))
-      tabContentElement.classList.add('tabs__content--active')
-    }
-  }
-
-
   private initialOption() {
     this.allSelects.forEach(select => {
       const value = select.querySelector('input')?.value
@@ -85,7 +71,9 @@ export class Select {
       titleElement.innerHTML = label
       input.value = value
 
-      this.changeTabsContent(select)
+      const selectChangeEvent = new CustomEvent('select-change', { detail: { value } })
+      select.dispatchEvent(selectChangeEvent)
+
       this.toggle(select)
     }
 

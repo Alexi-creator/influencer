@@ -21,6 +21,7 @@ import { Density } from '../modules/Density'
 import { SyncCategories } from '../modules/SyncCategories'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
+import { TabContentManager } from '../modules/TabContentManager'
 
 window.addEventListener('load', () => {
   try {
@@ -120,6 +121,12 @@ window.addEventListener('load', () => {
   try {
     new RangeSlider()
   } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new TabContentManager()
+  } catch (error){
     console.log(error)
   }
 
