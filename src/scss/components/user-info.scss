@@ -1,0 +1,139 @@
+.user-info {
+  $root: &;
+
+  display: flex;
+  flex-flow: column;
+  gap: 1.25rem;
+  
+  @include media($md){
+    gap: 1.5rem;
+    margin: unset;
+  }
+  @include media($lg){
+    flex-flow: row; 
+    gap: 2.5rem;
+  }
+  @include media($full){
+    margin: 0 auto;
+  }
+
+  &__image-container {
+    align-self: center;
+    @include media ($lg){
+      align-self: unset;
+    }
+    width: 11.25rem;
+    height: 11.25rem;
+    position: relative;
+    > img {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-round);
+      object-fit: cover;
+    }
+  }
+  &__image-text-overlay{
+    position: absolute;
+    bottom: -4px;
+    transform: translate(2%, 0);
+    width: 96%;
+  }
+
+  &__desc-wrapper{
+    display: flex;
+    flex-flow: column;
+    gap: 1.25rem;
+    @include media($lg){
+      max-width: 37.5rem;
+    }
+  }
+
+  &__desc-title-inner{
+    @extend %flex-center;
+    gap: 0.75rem;
+    
+    @include media($lg){
+      justify-content: unset;
+    }
+    h3{
+      font-size: 1.375rem;
+      font-weight: 600;
+      line-height: 2rem;
+    }
+    svg{
+      width: 3.5rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__desc-text{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.54rem;
+  }
+
+  &__desc-sub-inner{
+    display: none;
+    gap: 1rem;
+    @include media($lg){
+      display: flex;
+      gap: 1.25rem;
+    }
+    span{
+      color: rgb(var(--color-primary), 1);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__sub-inner{
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  &__sub{
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: unset;
+    button {
+      letter-spacing: 1px;
+    }
+    .sub-lg{
+      display: flex;
+      @include media($lg){
+        display: none;
+      }
+    }
+    @include media($md){
+      flex-flow: row;
+    }
+    @include media($lg){
+      max-width: 13rem;
+    }
+  }
+
+  &__desc-inner{
+    position: relative;
+  }
+
+  &__btn{
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    z-index: 10;
+    & .btn-show-text{
+      padding: 0 0.5rem;
+      background-color: rgb(var(--color-white));
+      color: rgb(var(--color-grey));
+      font-size: 1.15rem;
+      line-height: 1.5rem;
+      font-weight: 600;
+    }
+    :hover{
+      cursor: pointer;
+    }
+  }
+}

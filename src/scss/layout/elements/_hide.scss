@@ -5,3 +5,13 @@
 .show-elem {
   display: block;
 }
+
+.hide-elem-height {
+  max-height: 7.5rem;
+  overflow: hidden;
+}
+
+.show-elem-height {
+  max-height: unset;
+  overflow: unset;
+}

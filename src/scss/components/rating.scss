@@ -1,0 +1,8 @@
+.rating{
+  @extend %flex-start;
+  gap: 0.5rem;
+  svg{
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}

@@ -11,6 +11,12 @@
   &--transparent {
     border: none;
   }
+
+  &--border-grey {
+    border: 0.125rem solid rgb(var(--color-grey-light));
+  }
+
+  
   
   &__header {
     @extend %flex-space-between;
