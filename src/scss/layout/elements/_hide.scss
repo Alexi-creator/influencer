@@ -7,11 +7,11 @@
 }
 
 .hide-elem-height {
-  height: 7.5rem;
+  max-height: 7.5rem;
   overflow: hidden;
 }
 
 .show-elem-height {
-  height: unset;
+  max-height: unset;
   overflow: unset;
 }
