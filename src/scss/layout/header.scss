@@ -216,30 +216,6 @@
         margin: 0 auto;
       }
 
-      &-select {
-        display: none;
-        max-width: 11.25rem;
-        width: 100%;
-        font-size: 1rem;
-
-        @include media($md) {
-          display: inline-flex;
-          justify-content: flex-end;
-          padding-left: 0.25rem;
-          border-left: 2px solid rgb(var(--color-black-light));
-        }
-
-        & .select {
-          padding: 0;
-          
-          &__header {
-            position: relative;
-            justify-content: flex-end;
-            z-index: calc(var(--z-over) + 2);
-          }
-        }
-      }
-
       &-icon {
         & > svg {
           width: 1rem;

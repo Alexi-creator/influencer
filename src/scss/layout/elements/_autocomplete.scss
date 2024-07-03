@@ -128,18 +128,41 @@
         font-size: 0.875rem;
       }
     }
+  }
 
+  &__select { 
+    display: none;
+    max-width: 11.25rem;
+    width: 100%;
+    font-size: 1rem;
+  
+    @include media($md) {
+      display: inline-flex;
+      justify-content: flex-end;
+      padding-left: 0.25rem;
+      border-left: 2px solid rgb(var(--color-black-light));
+    }
+  
     & .select {
+      padding: 0;
+      
+      &__header {
+        position: relative;
+        justify-content: flex-end;
+        z-index: calc(var(--z-over) + 2);
+      }
+
       &__options {
-        max-width: 11.25rem;
+        max-width: 12.25rem;
         top: -0.6875rem;
-        right: -1rem;
+        // right: -1rem;
+        right: -1.0625rem;
         // top: -10px;
         // right: -15px;
         left: unset;
         padding-top: 50px;
         border-top: none;
-        border-right: none;
+        // border-right: none;
         border-top-left-radius: unset;
         border-top-right-radius: unset;
         border-width: 2px;
