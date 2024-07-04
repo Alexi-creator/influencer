@@ -76,4 +76,18 @@
       margin-top: 2.5rem;
     }
   }
+
+  &__form-filter-filters {
+    &.filters__items {
+      @include media($full) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  & .sorting {
+    &.active {
+      grid-template-columns: repeat(3, max-content);
+    }
+  }
 }
