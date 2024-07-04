@@ -13,13 +13,13 @@ export class TabContentManager {
   }
 
   private registerSelectChangeEvent() {
-    document.addEventListener('select-change', (event: CustomEvent) => {
-      this.handleSelectChange(event.detail.value)
+    document.addEventListener('select-change', (e) => {
+      this.handleSelectChange(e as CustomEvent<string>)
     })
   }
 
-  private handleSelectChange(selectedValue: string) {
-    this.updateTabContent(selectedValue)
+  private handleSelectChange(e: CustomEvent<string>) {
+    this.updateTabContent(e.detail)
   }
 
   private updateTabContent(selectedValue: string) {
