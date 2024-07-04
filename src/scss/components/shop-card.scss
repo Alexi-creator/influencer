@@ -40,6 +40,7 @@
     display: flex;
     flex-flow: column;
     gap: 0.125rem;
+    @extend %ellipsis;
   }
 
   &__title-name {
@@ -47,16 +48,6 @@
     font-size: 1rem;
     line-height: 1.5rem;
     @extend %ellipsis;
-    @include media ($full){
-      font-size: 1.125rem;
-    }
-    max-width: 65%;
-    @include media ($md){
-      max-width: 68%;
-    }
-    @include media ($lg){
-      max-width: 95%;
-    }
   }
 
   &__title-features {
