@@ -9,45 +9,35 @@
   </div>
   <div class="user-info__desc-wrapper">
     <div class="user-info__desc-title-inner">
-        <h3>@@bloger-name</h3>
+      <h3>@@bloger-name</h3>
         @@if(influencer){
           <svg>
             <use xlink:href="/img/icons/icons.svg#influencer-tag"></use>
           </svg>
         }
     </div>
-    <div class="user-info__desc-inner">
-      <p class="user-info__desc-text hide-elem-height">
-        @@desc
-      </p>
-      <button class="btn-show user-info__btn" data-text="Cвернуть">
-        <span class="btn-show-text" data-text="развернуть">Развернуть</span>
-      </button>
-    </div>
-    <div class="user-info__desc-sub-inner">
-      <div class="user-info__desc-sub">
-        <span class="number">@@post_count</span>
-        <span>публикаций</span>
+    <div class="user-info__content">
+      <div class="user-info__desc-inner">
+        <p class="user-info__desc-text hide-elem-height">
+          @@desc
+        </p>
+        <button class="btn-show user-info__btn" data-text="Cвернуть">
+          <span class="btn-show-text" data-text="развернуть">Развернуть</span>
+        </button>
       </div>
-      <div class="user-info__desc-sub">
-        <span class="number">@@sub_count</span>
-        <span>подписчиков</span>
+      <div class="user-info__desc-sub-inner">
+        <div class="user-info__desc-sub">
+          <span class="number">@@post_count</span>
+          <span>публикаций</span>
+        </div>
+        <div class="user-info__desc-sub">
+          <span class="number">@@sub_count</span>
+          <span>подписчиков</span>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="user-info__sub">
-    <div class="user-info__sub-inner">
-      <button class="btn btn--color-primary-light">Подписаться</button>
-        @@include("../components/share.html")
-    </div>
-    <div class="user-info__desc-sub-inner sub-lg">
-      <div class="user-info__desc-sub">
-        <span class="number">@@post_count</span>
-        <span>публикаций</span>
-      </div>
-      <div class="user-info__desc-sub">
-        <span class="number">@@sub_count</span>
-        <span>подписчиков</span>
+      <div class="user-info__desc-sub-share">
+        <button class="btn btn--color-primary-light">Подписаться</button>
+          @@include("../components/share.html")
       </div>
     </div>
   </div>
