@@ -12,10 +12,6 @@
   margin-top: 1.25rem;
 }
 
-.form-filters.hide {
-  display: none;
-}
-
 .form-filters > *:not(:first-child) {
   margin-top: 1.25rem;
 }

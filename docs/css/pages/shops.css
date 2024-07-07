@@ -3680,7 +3680,7 @@ svg {
   margin: 0 -1.25rem;
 }
 
-.shop-window__tabs-contents {
+.shop-window__contents {
   margin-top: 1.25rem;
 }
 
@@ -4482,10 +4482,6 @@ svg {
   margin-top: 1.25rem;
 }
 
-.form-filters.hide {
-  display: none;
-}
-
 .form-filters > *:not(:first-child) {
   margin-top: 1.25rem;
 }
@@ -5123,7 +5119,7 @@ svg {
     margin: unset;
   }
 
-  .shop-window__tabs-contents {
+  .shop-window__contents {
     margin-top: 1.5rem;
   }
 
@@ -5744,7 +5740,7 @@ svg {
     gap: 1rem;
   }
 
-  .shop-window__tabs-contents {
+  .shop-window__contents {
     margin-top: 2.5rem;
   }
 

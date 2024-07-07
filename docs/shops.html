@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240630114408">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240707160637">
   <title>shops Page</title>
-  <script defer src="js/shops.min.js?_v=20240630114408"></script>
+  <script defer src="js/shops.min.js?_v=20240707160637"></script>
 </head>
   <body>
     <header class="header">
@@ -1051,19 +1051,23 @@
       </button>
     </div>
 
-    <!-- Форма с фильтрами и сортировками для товаров goods -->
-    <form class="shop-window__form-goods form-filters">
-      <div class="sorting">
-        <div class="sorting__title">
-          Сортировка
-          <div class="sorting__cross">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="sorting__btn sorting__btn--popular-asc">
-          <label class="radio radio--btn">
+    <!-- Контент табов -->
+    <div class="tabs__contents shop-window__tabs-contents">
+      <!-- Таб товары -->
+      <div class="tabs__content tabs__content--active" data-tab-target="goods">
+        <!-- Форма с фильтрами и сортировками для товаров goods -->
+        <form class="shop-window__form-goods form-filters">
+          <div class="sorting">
+            <div class="sorting__title">
+              Сортировка
+              <div class="sorting__cross">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="sorting__btn sorting__btn--popular-asc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1071,9 +1075,9 @@
   </span>
 </label>
 
-        </div>
-        <div class="sorting__btn sorting__btn--rate-asc">
-          <label class="radio radio--btn">
+            </div>
+            <div class="sorting__btn sorting__btn--rate-asc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1081,9 +1085,9 @@
   </span>
 </label>
 
-        </div>
-        <div class="sorting__btn sorting__btn--cost-asc">
-          <label class="radio radio--btn">
+            </div>
+            <div class="sorting__btn sorting__btn--cost-asc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1091,9 +1095,9 @@
   </span>
 </label>
 
-        </div>
-        <div class="sorting__btn sorting__btn--name-asc">
-          <label class="radio radio--btn">
+            </div>
+            <div class="sorting__btn sorting__btn--name-asc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-asc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1101,9 +1105,9 @@
   </span>
 </label>
 
-        </div>
-        <div class="sorting__btn sorting__btn--popular-desc">
-          <label class="radio radio--btn">
+            </div>
+            <div class="sorting__btn sorting__btn--popular-desc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="popular-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1111,9 +1115,9 @@
   </span>
 </label>
 
-        </div>
-        <div class="sorting__btn sorting__btn--rate-desc">
-          <label class="radio radio--btn">
+            </div>
+            <div class="sorting__btn sorting__btn--rate-desc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="rate-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1121,9 +1125,9 @@
   </span>
 </label>
 
-        </div>
-        <div class="sorting__btn sorting__btn--cost-desc">
-          <label class="radio radio--btn">
+            </div>
+            <div class="sorting__btn sorting__btn--cost-desc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="cost-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1131,9 +1135,9 @@
   </span>
 </label>
 
-        </div>
-        <div class="sorting__btn sorting__btn--name-desc">
-          <label class="radio radio--btn">
+            </div>
+            <div class="sorting__btn sorting__btn--name-desc">
+              <label class="radio radio--btn">
   <input name="sorting" type="radio" value="name-desc" @@isChecked>
   <span class="radio__content">
     <span class="radio__custom"></span>
@@ -1141,22 +1145,24 @@
   </span>
 </label>
 
-        </div>
-      </div>
-      <div class="shop-window__form-chips form-filters__chips"></div>
-      <div class="shop-window__form-filter filters">
-        <div class="filters__title">
-          Фильтры
-          <div class="shop-window__form-filter-cross filters__title-cross">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
+            </div>
           </div>
-        </div>
-        <div class="shop-window__form-filter-filters filters__items">
-          <!-- filters__item--categories нужно добавить по дефолту -->
-          <div class="filters__item filters__item--categories">
-            <div class="collapse ">
+
+          <div class="shop-window__form-chips form-filters__chips"></div>
+
+          <div class="shop-window__form-filter filters">
+            <div class="filters__title">
+              Фильтры
+              <div class="shop-window__form-filter-cross filters__title-cross">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="shop-window__form-filter-filters filters__items">
+              <!-- filters__item--categories нужно добавить по дефолту -->
+              <div class="filters__item filters__item--categories">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Категории
@@ -1553,9 +1559,9 @@
 </div></div></div><div class="btn btn--text" data-popup="category-goods">Все категории</div></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Прайс
@@ -1586,9 +1592,9 @@
 </div></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер0
@@ -1641,9 +1647,9 @@
 </label></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер10
@@ -1696,9 +1702,9 @@
 </label></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер
@@ -1751,9 +1757,9 @@
 </label></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Специальные предложение
@@ -1806,9 +1812,9 @@
 </label></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер2
@@ -1861,9 +1867,9 @@
 </label></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер3
@@ -1916,9 +1922,9 @@
 </label></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер4
@@ -1971,9 +1977,9 @@
 </label></div>
   </div>
 </div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер5
@@ -2026,1581 +2032,25 @@
 </label></div>
   </div>
 </div>
+              </div>
+            </div>
+            <div class="shop-window__form-filter-actions filters__actions form__btns">
+              <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
+                <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
+                  <use xlink:href="./img/icons/icons.svg#trash"></use>
+                </svg>
+                <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
+              </button>
+              <button type="submit" class="btn shop-window__form-filter-submit">
+                Применить
+                <span class="btn__suffix"></span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="shop-window__form-filter-actions filters__actions form__btns">
-          <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
-            <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
-              <use xlink:href="./img/icons/icons.svg#trash"></use>
-            </svg>
-            <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
-          </button>
-          <button type="submit" class="btn shop-window__form-filter-submit">
-            Применить
-            <span class="btn__suffix"></span>
-          </button>
-        </div>
-      </div>
-    </form>
-    <!-- Форма с фильтрами и сортировками для совместных покупок sp -->
-    <form class="shop-window__form-sp form-filters">
-      <div class="sorting">
-        <div class="sorting__title">
-          Сортировка
-          <div class="sorting__cross">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="sorting__btn sorting__btn--popular-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="popular-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
+        </form>
 
-        </div>
-        <div class="sorting__btn sorting__btn--rate-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="rate-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--cost-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="cost-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--name-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="name-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--popular-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="popular-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--rate-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="rate-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--cost-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="cost-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--name-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="name-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-      </div>
-      <div class="shop-window__form-chips form-filters__chips"></div>
-      <div class="shop-window__form-filter filters">
-        <div class="filters__title">
-          Фильтры
-          <div class="shop-window__form-filter-cross">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="shop-window__form-filter-filters filters__items filters--sp">
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Платья и сарафаны
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Вечерние платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Деловые платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Сарафаны
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Экстравагантные дизайнерские платья
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Платья и сарафаны2
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Вечерние платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Деловые платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Сарафаны
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Экстравагантные дизайнерские платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Юбки
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Платья и сарафаны3
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Вечерние платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Деловые платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Сарафаны
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Экстравагантные дизайнерские платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Юбки
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Платья и сарафаны4
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Вечерние платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Деловые платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Сарафаны
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Экстравагантные дизайнерские платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Юбки
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Платья и сарафаны5
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Вечерние платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Деловые платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Сарафаны
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Экстравагантные дизайнерские платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Юбки
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Платья и сарафаны6
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Вечерние платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Деловые платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Сарафаны
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Экстравагантные дизайнерские платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Юбки
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Платья и сарафаны7
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Вечерние платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Деловые платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Сарафаны
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Экстравагантные дизайнерские платья
-  </span>
-</label> <label class="checkbox checkbox--tag">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    Юбки
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-        </div>
-        <div class="shop-window__form-filter-actions filters__actions form__btns">
-          <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
-            <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
-              <use xlink:href="./img/icons/icons.svg#trash"></use>
-            </svg>
-            <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
-          </button>
-          <button type="submit" class="btn shop-window__form-filter-submit">
-            Применить
-            <span class="btn__suffix"></span>
-          </button>
-        </div>
-      </div>
-    </form>
-    <!-- Форма с фильтрами и сортировками для tff -->
-    <form class="shop-window__form-tff form-filters">
-      <div class="sorting">
-        <div class="sorting__title">
-          Сортировка
-          <div class="sorting__cross">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="sorting__btn sorting__btn--popular-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="popular-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--rate-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="rate-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--cost-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="cost-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--name-asc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="name-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--popular-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="popular-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--rate-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="rate-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--cost-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="cost-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-        <div class="sorting__btn sorting__btn--name-desc">
-          <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="name-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-        </div>
-      </div>
-      <div class="shop-window__form-chips form-filters__chips"></div>
-      <div class="shop-window__form-filter filters">
-        <div class="filters__title">
-          Фильтры
-          <div class="shop-window__form-filter-cross">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="shop-window__form-filter-filters filters__items">
-          <!-- filters__item--categories нужно добавить по дефолту -->
-          <div class="filters__item filters__item--categories">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Категории
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse"><div id="category-tff" class="popup"><div class="popup__overlay"><div class="popup__content"><div class="filters__item-header"><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use></svg><span>Все категории товаров</span><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#cross"></use></svg></div><!-- Примерно под такую структуру: -->
-
-<!-- const dataMenu = [
-  {
-    title: 'Одежда Level 1',
-    count: 1200,
-    submenu: [
-      {
-        title: 'Платья и сарафаны Level 2',
-        submenu: [
-          {
-            title: 'Вечерние платья Level 3',
-          },
-          {
-            title: 'Деловые платья Level 3',
-          },
-        ],
-      },
-      {
-        title: 'Юбки Level 2',
-        submenu: [
-          {
-            title: 'Юбки Level 3',
-          },
-          {
-            title: 'Юбки Level 3',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Обувь Level 1',
-    count: 1200,
-    submenu: [
-      {
-        title: 'Обувь Level 2',
-        submenu: [
-          {
-            title: 'Обувь Level 3',
-          },
-          {
-            title: 'Обувь Level 3',
-          },
-        ],
-      },
-      {
-        title: 'Обувь Level 2',
-        submenu: [
-          {
-            title: 'Обувь Level 3',
-          },
-          {
-            title: 'Обувь Level 3',
-          },
-        ],
-      },
-    ],
-  },
-] -->
-
-<ul class="product-menu">
-  <!-- Элемент первого уровня -->
-  <li class="product-menu__item collapse">
-    <div class="collapse__head">
-      <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
-  </span>
-</label>
-
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <!-- Элементы второго уровня -->
-      <li class="product-menu__item collapse collapse--close">
-        <div class="collapse__head">
-          <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-2-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-1</span>
-  </span>
-</label>
-
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-3-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-1</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-3-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-2</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-3-3" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3-3</span>
-  </span>
-</label>
-
-          </li>
-        </ul>
-      </li>
-      <!-- Элементы второго уровня -->
-      <li class="product-menu__item collapse collapse--close">
-        <div class="collapse__head">
-          <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-2-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 2-2</span>
-  </span>
-</label>
-
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-3-2-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3</span>
-  </span>
-</label>
-  
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-3-2-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3</span>
-  </span>
-</label>
-  
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="cloth-level-3-2-3" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Одежда level 3</span>
-  </span>
-</label>
-  
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="collapse__head">
-      <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 1</span>
-  </span>
-</label>
-
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <!-- Элементы второго уровня -->
-      <li class="product-menu__item collapse collapse--close">
-        <div class="collapse__head">
-          <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-2-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-1</span>
-  </span>
-</label>
-
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-3-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-3-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-3-3" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3</span>
-  </span>
-</label>
-
-          </li>
-        </ul>
-      </li>
-      <!-- Элементы второго уровня -->
-      <li class="product-menu__item collapse collapse--close">
-        <div class="collapse__head">
-          <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-2-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 2-2</span>
-  </span>
-</label>
-
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-3-2-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3</span>
-  </span>
-</label>
-  
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-3-2-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3</span>
-  </span>
-</label>
-  
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="shoes-level-3-2-3" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Обувь level 3</span>
-  </span>
-</label>
-  
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-
-  <li class="product-menu__item collapse collapse--close">
-    <div class="collapse__head">
-      <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 1</span>
-  </span>
-</label>
-
-    </div>
-    <ul class="product-menu__submenu collapse__content">
-      <!-- Элементы второго уровня -->
-      <li class="product-menu__item collapse collapse--close">
-        <div class="collapse__head">
-          <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-2-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-1</span>
-  </span>
-</label>
-
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-3-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-3-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-3-3" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3</span>
-  </span>
-</label>
-
-          </li>
-        </ul>
-      </li>
-      <!-- Элементы второго уровня -->
-      <li class="product-menu__item collapse collapse--close">
-        <div class="collapse__head">
-          <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-2-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 2-2</span>
-  </span>
-</label>
-
-        </div>
-        <ul class="product-menu__submenu collapse__content">
-          <!-- Элементы третьего уровня -->
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-3-2-1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-3-2-2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3</span>
-  </span>
-</label>
-
-          </li>
-          <li>
-            <label class="radio @@extra-class">
-  <input name="categories-tff" type="radio" value="Appliances-level-3-2-3" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class="product-menu__title">Бытовая техника level 3</span>
-  </span>
-</label>
-
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-</div></div></div><div class="btn btn--text" data-popup="category-tff">Все категории</div></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Прайс
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse"><div class="range">
-  <div class="range__slider" data-step="1000"></div>
-  <div class="range__inputs">
-    <div class="range__min">
-      <div>от</div>
-      <div class="range__input-wrapper">
-        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="200000" data-min="0" placeholder="0">
-      </div>
-      <div class="range__currency">&#8381;</div>
-    </div>
-    <div class="range__max">
-      <div>до</div>
-      <div class="range__input-wrapper">
-        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="500000" data-max="1000000" placeholder="1000000">
-      </div>
-      <div class="range__currency">&#8381;</div>
-    </div>
-  </div>
-</div></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Размер0
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    36
-  </span>
-</label> <label class="checkbox ">
-  <input name="0size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    38
-  </span>
-</label> <label class="checkbox ">
-  <input name="0size40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    40
-  </span>
-</label> <label class="checkbox ">
-  <input name="0size42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    42
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Размер10
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="10size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    36
-  </span>
-</label> <label class="checkbox ">
-  <input name="10size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    38
-  </span>
-</label> <label class="checkbox ">
-  <input name="10size40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    40
-  </span>
-</label> <label class="checkbox ">
-  <input name="10size42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    42
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Размер
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="size36" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    36
-  </span>
-</label> <label class="checkbox ">
-  <input name="size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    38
-  </span>
-</label> <label class="checkbox ">
-  <input name="size40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    40
-  </span>
-</label> <label class="checkbox ">
-  <input name="size42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    42
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Специальные предложение
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse"><label class="checkbox ">
-  <input name="specials36" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    Test For Free
-  </span>
-</label> <label class="checkbox ">
-  <input name="specials38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    Совместная Покупка
-  </span>
-</label> <label class="checkbox ">
-  <input name="specials40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    Благотворительная покупка
-  </span>
-</label> <label class="checkbox ">
-  <input name="specials42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    Акция “2 по цене 1”
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Размер2
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="2size36" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    36
-  </span>
-</label> <label class="checkbox ">
-  <input name="2size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    38
-  </span>
-</label> <label class="checkbox ">
-  <input name="2size40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    40
-  </span>
-</label> <label class="checkbox ">
-  <input name="2size42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    42
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Размер3
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="3size36" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    36
-  </span>
-</label> <label class="checkbox ">
-  <input name="3size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    38
-  </span>
-</label> <label class="checkbox ">
-  <input name="3size40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    40
-  </span>
-</label> <label class="checkbox ">
-  <input name="3size42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    42
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Размер4
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="4size36" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    36
-  </span>
-</label> <label class="checkbox ">
-  <input name="4size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    38
-  </span>
-</label> <label class="checkbox ">
-  <input name="4size40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    40
-  </span>
-</label> <label class="checkbox ">
-  <input name="4size42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    42
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-          <div class="filters__item">
-            <div class="collapse ">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Размер5
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="5size36" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    36
-  </span>
-</label> <label class="checkbox ">
-  <input name="5size38" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    38
-  </span>
-</label> <label class="checkbox ">
-  <input name="5size40" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    40
-  </span>
-</label> <label class="checkbox ">
-  <input name="5size42" type="checkbox">
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    42
-  </span>
-</label></div>
-  </div>
-</div>
-          </div>
-        </div>
-        <div class="shop-window__form-filter-actions filters__actions form__btns">
-          <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
-            <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
-              <use xlink:href="./img/icons/icons.svg#trash"></use>
-            </svg>
-            <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
-          </button>
-          <button type="submit" class="btn shop-window__form-filter-submit">
-            Применить
-            <span class="btn__suffix"></span>
-          </button>
-        </div>
-      </div>
-    </form>
-    <!-- Контент -->
-    <div class="tabs__contents shop-window__tabs-contents">
-      <!-- Товары -->
-      <div class="tabs__content tabs__content--active" data-tab-target="goods">
-        <div class="shop-window__goods">
+        <!-- Контент товары goods -->
+        <div class="shop-window__contents shop-window__goods">
           <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
 
 <!-- const dataMenu = [
@@ -4446,9 +2896,577 @@
           </div>
         </div>
       </div>
-      <!-- Совместные покупки -->
+
+      <!-- Таб совместные покупки -->
       <div class="tabs__content" data-tab-target="sp">
-        <div class="shop-window__joint-purchases">
+        <!-- Форма с фильтрами и сортировками для совместных покупок sp -->
+        <form class="shop-window__form-sp form-filters">
+          <div class="sorting">
+            <div class="sorting__title">
+              Сортировка
+              <div class="sorting__cross">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="sorting__btn sorting__btn--popular-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--rate-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--cost-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--name-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--popular-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--rate-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--cost-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--name-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+          </div>
+        
+          <div class="shop-window__form-chips form-filters__chips"></div>
+        
+          <div class="shop-window__form-filter filters">
+            <div class="filters__title">
+              Фильтры
+              <div class="shop-window__form-filter-cross">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="shop-window__form-filter-filters filters__items filters--sp">
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны2
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны3
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны4
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны5
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны6
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Платья и сарафаны7
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-wrap"><label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Вечерние платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Деловые платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Сарафаны
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Экстравагантные дизайнерские платья
+  </span>
+</label> <label class="checkbox checkbox--tag">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label btn btn--tag btn--small">
+    Юбки
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+            </div>
+            <div class="shop-window__form-filter-actions filters__actions form__btns">
+              <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
+                <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
+                  <use xlink:href="./img/icons/icons.svg#trash"></use>
+                </svg>
+                <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
+              </button>
+              <button type="submit" class="btn shop-window__form-filter-submit">
+                Применить
+                <span class="btn__suffix"></span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Контент совместные покупки sp -->
+        <div class="shop-window__contents shop-window__joint-purchases">
           <div class="shop-window__joint-purchases-actions">
             <div class="shop-window__joint-purchases-search">
               <label class="input-text input-text--color-grey">
@@ -4938,9 +3956,1005 @@
           </div>
         </div>
       </div>
-      <!-- Test for free -->
+
+      <!-- Таб Test for free -->
       <div class="tabs__content" data-tab-target="tff">
-        <div class="shop-window__tff">
+        <!-- Форма с фильтрами и сортировками для tff -->
+        <form class="shop-window__form-tff form-filters">
+          <div class="sorting">
+            <div class="sorting__title">
+              Сортировка
+              <div class="sorting__cross">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="sorting__btn sorting__btn--popular-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--rate-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--cost-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--name-asc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-asc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--popular-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="popular-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--rate-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="rate-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--cost-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="cost-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+            <div class="sorting__btn sorting__btn--name-desc">
+              <label class="radio radio--btn">
+  <input name="sorting" type="radio" value="name-desc" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
+  </span>
+</label>
+
+            </div>
+          </div>
+        
+          <div class="shop-window__form-chips form-filters__chips"></div>
+        
+          <div class="shop-window__form-filter filters">
+            <div class="filters__title">
+              Фильтры
+              <div class="shop-window__form-filter-cross">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="shop-window__form-filter-filters filters__items">
+              <!-- filters__item--categories нужно добавить по дефолту -->
+              <div class="filters__item filters__item--categories">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Категории
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><div id="category-tff" class="popup"><div class="popup__overlay"><div class="popup__content"><div class="filters__item-header"><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use></svg><span>Все категории товаров</span><svg data-close-popup="category-tff"><use xlink:href="./img/icons/icons.svg#cross"></use></svg></div><!-- Примерно под такую структуру: -->
+
+<!-- const dataMenu = [
+  {
+    title: 'Одежда Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Платья и сарафаны Level 2',
+        submenu: [
+          {
+            title: 'Вечерние платья Level 3',
+          },
+          {
+            title: 'Деловые платья Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Юбки Level 2',
+        submenu: [
+          {
+            title: 'Юбки Level 3',
+          },
+          {
+            title: 'Юбки Level 3',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Обувь Level 1',
+    count: 1200,
+    submenu: [
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+      {
+        title: 'Обувь Level 2',
+        submenu: [
+          {
+            title: 'Обувь Level 3',
+          },
+          {
+            title: 'Обувь Level 3',
+          },
+        ],
+      },
+    ],
+  },
+] -->
+
+<ul class="product-menu">
+  <!-- Элемент первого уровня -->
+  <li class="product-menu__item collapse">
+    <div class="collapse__head">
+      <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 1<span class="product-menu__count">1200</span></span>
+  </span>
+</label>
+
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-2-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-1</span>
+  </span>
+</label>
+
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-3-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-1</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-2</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-3-3" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3-3</span>
+  </span>
+</label>
+
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-2-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 2-2</span>
+  </span>
+</label>
+
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>
+  
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>
+  
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="cloth-level-3-2-3" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Одежда level 3</span>
+  </span>
+</label>
+  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 1</span>
+  </span>
+</label>
+
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-2-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-1</span>
+  </span>
+</label>
+
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-3-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-3-3" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-2-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 2-2</span>
+  </span>
+</label>
+
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+  
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+  
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="shoes-level-3-2-3" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Обувь level 3</span>
+  </span>
+</label>
+  
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li class="product-menu__item collapse collapse--close">
+    <div class="collapse__head">
+      <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 1</span>
+  </span>
+</label>
+
+    </div>
+    <ul class="product-menu__submenu collapse__content">
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-2-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-1</span>
+  </span>
+</label>
+
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-3" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+
+          </li>
+        </ul>
+      </li>
+      <!-- Элементы второго уровня -->
+      <li class="product-menu__item collapse collapse--close">
+        <div class="collapse__head">
+          <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-2-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 2-2</span>
+  </span>
+</label>
+
+        </div>
+        <ul class="product-menu__submenu collapse__content">
+          <!-- Элементы третьего уровня -->
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-1" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-2" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+
+          </li>
+          <li>
+            <label class="radio @@extra-class">
+  <input name="categories-tff" type="radio" value="Appliances-level-3-2-3" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    <span class="product-menu__title">Бытовая техника level 3</span>
+  </span>
+</label>
+
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div></div></div><div class="btn btn--text" data-popup="category-tff">Все категории</div></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Прайс
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><div class="range">
+  <div class="range__slider" data-step="1000"></div>
+  <div class="range__inputs">
+    <div class="range__min">
+      <div>от</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="200000" data-min="0" placeholder="0">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+    <div class="range__max">
+      <div>до</div>
+      <div class="range__input-wrapper">
+        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="500000" data-max="1000000" placeholder="1000000">
+      </div>
+      <div class="range__currency">&#8381;</div>
+    </div>
+  </div>
+</div></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер0
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="0size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер10
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="10size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Специальные предложение
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse"><label class="checkbox ">
+  <input name="specials36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Test For Free
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Совместная Покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Благотворительная покупка
+  </span>
+</label> <label class="checkbox ">
+  <input name="specials42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    Акция “2 по цене 1”
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер2
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="2size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="2size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер3
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="3size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="3size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер4
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="4size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="4size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+              <div class="filters__item">
+                <div class="collapse ">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Размер5
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#collapse"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
+  <input name="5size36" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    36
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size38" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    38
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size40" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    40
+  </span>
+</label> <label class="checkbox ">
+  <input name="5size42" type="checkbox">
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label ">
+    42
+  </span>
+</label></div>
+  </div>
+</div>
+              </div>
+            </div>
+            <div class="shop-window__form-filter-actions filters__actions form__btns">
+              <button type="button" class="btn btn--text shop-window__form-filter-clear filters__clear" data-popup="clearFilter">
+                <svg class="shop-window__form-filter-actions-clear filters__actions-clear">
+                  <use xlink:href="./img/icons/icons.svg#trash"></use>
+                </svg>
+                <span class="shop-window__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
+              </button>
+              <button type="submit" class="btn shop-window__form-filter-submit">
+                Применить
+                <span class="btn__suffix"></span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Контент ttf -->
+        <div class="shop-window__contents shop-window__tff">
           <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
 
 <!-- const dataMenu = [
@@ -5870,9 +5884,11 @@
           </div>
         </div>
       </div>
-      <!-- Contacts -->
+
+      <!-- Таб Contacts -->
       <div class="tabs__content" data-tab-target="contacts">
-        <div class="contact-info">
+        <div class="shop-window__contents">
+          <div class="contact-info">
   <div class="contact-info__connect">
     <div class="contact-info__connect-item contact-info__mail">
       <svg class="contact-info__icon">
@@ -5905,6 +5921,7 @@
     </div>
   </div>
 </div>
+        </div>
       </div>
     </div>
   </div>
