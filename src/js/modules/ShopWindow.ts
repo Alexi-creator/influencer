@@ -1,71 +1,26 @@
 import { ShopTabsEnum, shopTabsArray } from '../constants/index'
 
-import { Form } from './Form'
 import { CustomSwiper } from './CustomSwiper'
-import { Filter } from './Filter'
 
 /**
  * Управление витриной (табы, товары, tff и тд)
  */
 export class ShopWindow {
   private selectorTabsWrapper: string
-  private selectorForm: string
-  private selectorSortsBtn: string
-  private selectorCategoriesBtn: string
-  private selectorFilterBtn: string
-  private selectorDensityBtn: string
-
   private selectorActions: string
 
-  private sortsBtnElem: HTMLElement
-  private filterBtnElem: HTMLElement
-  private categoriesBtnElem: HTMLElement
-  private densityBtnElem: HTMLElement
-
   private actionsElems: HTMLElement[]
-  private formsElems: HTMLElement[]
 
   private tabsSlider: CustomSwiper
-  private form: Form
-  private filter: Filter
   
-  // constructor(filter: Filter, slider: CustomSwiper, form: Form) {
   constructor(slider: CustomSwiper) {
     this.selectorTabsWrapper = '.shop-window__tabs'
-    this.selectorForm = '.shop-window__form'
-    // this.selectorSortsBtn = '.shop-window__actions-sorts'
-    this.selectorSortsBtn = '.filter-actions__sorts'
-    // this.selectorCategoriesBtn = '.shop-window__actions-categories'
-    this.selectorCategoriesBtn = '.filter-actions__categories'
-    // this.selectorFilterBtn = '.shop-window__actions-filters'
-    this.selectorFilterBtn = '.filter-actions__filters'
-    // this.selectorDensityBtn = '.shop-window__actions-density'
-    this.selectorDensityBtn = '.filter-actions__density'
-    // this.selectorActions = '.shop-window__actions'
     this.selectorActions = '.filter-actions'
-
-    const filterBtnElem = document.querySelector(this.selectorFilterBtn)
-    if (filterBtnElem) this.filterBtnElem = filterBtnElem as HTMLElement
-
-    const categoriesBtnElem = document.querySelector(this.selectorCategoriesBtn)
-    if (categoriesBtnElem) this.categoriesBtnElem = categoriesBtnElem as HTMLElement
-
-    const sortsBtnElem = document.querySelector(this.selectorSortsBtn)
-    if (sortsBtnElem) this.sortsBtnElem = sortsBtnElem as HTMLElement
-
-    const densityBtnElem = document.querySelector(this.selectorDensityBtn)
-    if (densityBtnElem) this.densityBtnElem = densityBtnElem as HTMLElement
 
     const actionsElems = Array.from(document.querySelectorAll(this.selectorActions))
     if (actionsElems.length) this.actionsElems = actionsElems as HTMLElement[]
-
-    const formsElems = Array.from(document.querySelectorAll(this.selectorForm))
-    if (actionsElems.length) this.formsElems = formsElems as HTMLElement[]
     
-
     this.tabsSlider = slider
-    // this.form = form
-    // this.filter = filter
 
     this.init()
   }
@@ -76,19 +31,11 @@ export class ShopWindow {
   }
 
   // изменение отображение кнопок (фильтры, категории) в зависимости от выбранного таба
-  private changeActionsDisplay(activeTab: string) {
+  private changeActionsDisplay(activeTab: string) {   
     this.actionsElems.forEach(elem => elem.classList.remove('active'))
 
     const activeActionBlock = this.actionsElems.find(elem => elem.classList.contains(`${this.selectorActions.substring(1)}--${activeTab}`))      
     activeActionBlock?.classList.add('active')
-  }
-  
-  // изменение отображение форм (goods, sp, tff) чипсы и фильтры при переключении табов
-  private changeFormsDisplay(activeTab: string) {
-    this.formsElems.forEach(elem => elem.classList.add('hide'))
-
-    const activeFormBlock = this.formsElems.find(elem => elem.classList.contains(`${this.selectorForm.substring(1)}-${activeTab}`))
-    activeFormBlock?.classList.remove('hide')
   }
 
   private definedActiveTab() {
@@ -103,7 +50,6 @@ export class ShopWindow {
       this.tabsSlider.startSlide()
 
       this.changeActionsDisplay(activeTab)
-      this.changeFormsDisplay(activeTab)
     }
   }
 
@@ -116,18 +62,12 @@ export class ShopWindow {
     }
   }
 
-  private changeHandler(e: Event) {
-    const targetElement = e.target as HTMLInputElement
-
-    if (targetElement.closest(this.selectorForm)) {
-      if (targetElement.name === 'sorting') {
-        // this.form.submitForm()
-      }
-    }
-  }
+  // private changeHandler(e: Event) {
+  //   const targetElement = e.target as HTMLInputElement
+  // }
 
   private handlers() {
     document.addEventListener('click', (e: MouseEvent) => this.clickHandler(e))
-    document.addEventListener('change', (e: Event) => this.changeHandler(e))
+    // document.addEventListener('change', (e: Event) => this.changeHandler(e))
   }
 }
