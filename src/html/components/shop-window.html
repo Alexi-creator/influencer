@@ -1,7 +1,7 @@
 <div class="shop-window tabs">
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
-    <div class="shop-window__tabs tabs__head">
+    <div class="shop-window__tabs tabs-head tabs__head">
       <div class="swiper shop-window__tabs-swiper">
         <div class="tabs__list swiper-wrapper">
           <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="goods">
@@ -317,9 +317,9 @@
         </form>
 
         <!-- Контент товары goods -->
-        <div class="shop-window__contents shop-window__goods">
-          <div class="shop-window__menu">@@include("./product-menu.html", {"name": "categories-goods"})</div>
-          <div class="shop-window__goods-items">
+        <div class="tab-content cards-with-menu cards-with-menu--goods">
+          <div class="cards-with-menu__menu">@@include("./product-menu.html", {"name": "categories-goods"})</div>
+          <div class="cards-with-menu__items">
             @@include("./product-card.html", {
               "extra-class": "",
               "title": "Комбинезон из шелковой вискозы с",
@@ -542,7 +542,7 @@
         </form>
 
         <!-- Контент совместные покупки sp -->
-        <div class="shop-window__contents shop-window__joint-purchases">
+        <div class="tab-content shop-window__joint-purchases">
           <div class="shop-window__joint-purchases-actions">
             <div class="shop-window__joint-purchases-search">
               @@include("./input-text.html", {
@@ -561,7 +561,7 @@
               </button>
             </div>
           </div>
-          <div class="shop-window__joint-purchases-contents">
+          <div class="joint-purchases-list">
             @@include("./joint-purchases-card.html", {
               "extra-class": "joint-purchases-card--processing",
               "status": "",
@@ -770,9 +770,9 @@
         </form>
 
         <!-- Контент ttf -->
-        <div class="shop-window__contents shop-window__tff">
-          <div class="shop-window__menu">@@include("./product-menu.html", {"name": "categories-tff"})</div>
-          <div class="shop-window__tff-items">
+        <div class="tab-content cards-with-menu cards-with-menu--tff">
+          <div class="cards-with-menu__menu">@@include("./product-menu.html", {"name": "categories-tff"})</div>
+          <div class="cards-with-menu__items">
             @@include("./product-card.html", {
               "extra-class": "product-card--tff",
               "title": "Комбинезон из шелковой вискозы с",
@@ -856,7 +856,7 @@
 
       <!-- Таб Contacts -->
       <div class="tabs__content" data-tab-target="contacts">
-        <div class="shop-window__contents">
+        <div class="tab-content">
           @@include("./contact-info.html")
         </div>
       </div>

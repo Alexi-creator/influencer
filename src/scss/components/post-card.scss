@@ -41,11 +41,13 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    
     & img{
       width: 1.5rem;
       height: 1.5rem;
       border-radius: var(--radius-round);;
     }
+
     & p {
       font-size: 0.875rem;
     }
@@ -55,7 +57,8 @@
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
-    svg use {
+
+    & svg use {
       fill: rgb(var(--color-primary));
       stroke: rgb(var(--color-primary));
       stroke-width: 2px;
@@ -65,6 +68,7 @@
   &__scores {
     display: flex;
     gap: 0.5rem;
+
     & svg{
       width: 1rem;
     }
@@ -76,7 +80,4 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-
 }
-
-

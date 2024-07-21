@@ -2,7 +2,6 @@ import '../common'
 
 import { API_URLS, BreakpointWidth, HttpMethods } from '../constants'
 
-
 import { Share } from '../modules/Share'
 import { Autocomplete } from '../modules/Autocomplete'
 import { Collapse } from '../modules/Collapse'
@@ -14,19 +13,19 @@ import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { Sort } from '../modules/Sort'
 import { NumberFormatter } from '../utils/numberFormatter'
-import { UserBoard } from '../modules/user-board'
+import { UserBoard } from '../modules/UserBoard'
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { BtnShow } from '../modules/BtnShow'
 import { Density } from '../modules/Density'
 import { SyncCategories } from '../modules/SyncCategories'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
-import { TabContentManager } from '../modules/TabContentManager'
+import { Ticker } from '../modules/Ticker'
 
 window.addEventListener('load', () => {
   try {
     new Masonry({
-      selectorContainer: '.user-board__form-posts-no-select .user-board__form-filter-filters',
+      selectorContainer: '.user-board__form-posts .user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -40,7 +39,7 @@ window.addEventListener('load', () => {
 
   try {
     new Masonry({
-      selectorContainer: '.user-board__form-followers-no-select .user-board__form-filter-filters',
+      selectorContainer: '.user-board__form-followers .user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -54,7 +53,7 @@ window.addEventListener('load', () => {
 
   try {
     new Masonry({
-      selectorContainer: '.user-board__form-likes .user-board__form-filter-filters',
+      selectorContainer: '.user-board__form-subscriptions-sp .user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -68,7 +67,63 @@ window.addEventListener('load', () => {
 
   try {
     new Masonry({
-      selectorContainer: '.user-board__form-subscriptions .user-board__form-filter-filters',
+      selectorContainer: '.user-board__form-subscriptions-tff .user-board__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.user-board__form-subscriptions-bloggers .user-board__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.user-board__form-subscriptions-shops .user-board__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.user-board__form-likes-goods .user-board__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 5,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.user-board__form-likes-publications .user-board__form-filter-filters',
       breakpointsSettings: {
         [BreakpointWidth.MOBILE]: 1,
         [BreakpointWidth.TABLET]: 2,
@@ -108,16 +163,19 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Collapse()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Tabs()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new RangeSlider()
   } catch (error) {
@@ -125,15 +183,18 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new TabContentManager()
-  } catch (error){
+    new Density({
+      selectorContent: '.cards-with-menu--subscriptions-tff',
+      selectorActionContainer: '.user-board__actions-subscriptions-tff',
+    })
+  } catch (error) {
     console.log(error)
   }
-
+  
   try {
     new Density({
-      selectorContent: '.user-board__goods',
-      selectorActionContainer: '.user-board__actions-goods',
+      selectorContent: '.cards-with-menu--likes-goods',
+      selectorActionContainer: '.user-board__actions-likes-goods',
     })
   } catch (error) {
     console.log(error)
@@ -141,8 +202,8 @@ window.addEventListener('load', () => {
 
   try {
     new Sort({
-      selectorContainer: '.user-board__form-followers-no-select',
-      selectorActionContainer: '.filter-actions',
+      selectorContainer: '.user-board__form-posts',
+      selectorActionContainer: '.user-board__actions-posts',
     })
   } catch (error) {
     console.log(error)
@@ -150,8 +211,8 @@ window.addEventListener('load', () => {
 
   try {
     new Sort({
-      selectorContainer: '.user-board__form-posts-no-select',
-      selectorActionContainer: '.filter-actions',
+      selectorContainer: '.user-board__form-followers',
+      selectorActionContainer: '.user-board__actions-followers',
     })
   } catch (error) {
     console.log(error)
@@ -159,8 +220,8 @@ window.addEventListener('load', () => {
 
   try {
     new Sort({
-      selectorContainer: '.user-board__form-subscriptions',
-      selectorActionContainer: '.filter-actions',
+      selectorContainer: '.user-board__form-subscriptions-sp',
+      selectorActionContainer: '.user-board__actions-subscriptions-sp',
     })
   } catch (error) {
     console.log(error)
@@ -168,8 +229,44 @@ window.addEventListener('load', () => {
 
   try {
     new Sort({
-      selectorContainer: '.user-board__form-likes',
-      selectorActionContainer: '.filter-actions',
+      selectorContainer: '.user-board__form-subscriptions-tff',
+      selectorActionContainer: '.user-board__actions-subscriptions-tff',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.user-board__form-subscriptions-bloggers',
+      selectorActionContainer: '.user-board__actions-subscriptions-bloggers',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.user-board__form-subscriptions-shops',
+      selectorActionContainer: '.user-board__actions-subscriptions-shops',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.user-board__form-likes-goods',
+      selectorActionContainer: '.user-board__actions-likes-goods',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.user-board__form-likes-publications',
+      selectorActionContainer: '.user-board__actions-likes-publications',
     })
   } catch (error) {
     console.log(error)
@@ -178,8 +275,8 @@ window.addEventListener('load', () => {
   try {
     new Filter({
       selectorMain: '.user-board',
-      selectorContainer: '.user-board__form-followers-no-select',
-      selectorActionBtn: '.user-board__actions-filters-followers-no-select',
+      selectorContainer: '.user-board__form-posts',
+      selectorActionBtn: '.user-board__actions-filters-posts',
     })
   } catch (error) {
     console.log(error)
@@ -188,8 +285,8 @@ window.addEventListener('load', () => {
   try {
     new Filter({
       selectorMain: '.user-board',
-      selectorContainer: '.user-board__form-posts-no-select',
-      selectorActionBtn: '.user-board__actions-filters-posts-no-select',
+      selectorContainer: '.user-board__form-followers',
+      selectorActionBtn: '.user-board__actions-filters-followers',
     })
   } catch (error) {
     console.log(error)
@@ -198,8 +295,8 @@ window.addEventListener('load', () => {
   try {
     new Filter({
       selectorMain: '.user-board',
-      selectorContainer: '.user-board__form-subscriptions',
-      selectorActionBtn: '.user-board__actions-filters-subscriptions',
+      selectorContainer: '.user-board__form-subscriptions-sp',
+      selectorActionBtn: '.user-board__actions-filters-subscriptions-sp',
     })
   } catch (error) {
     console.log(error)
@@ -208,8 +305,48 @@ window.addEventListener('load', () => {
   try {
     new Filter({
       selectorMain: '.user-board',
-      selectorContainer: '.user-board__form-likes',
-      selectorActionBtn: '.user-board__actions-filters-likes',
+      selectorContainer: '.user-board__form-subscriptions-tff',
+      selectorActionBtn: '.user-board__actions-filters-subscriptions-tff',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-subscriptions-bloggers',
+      selectorActionBtn: '.user-board__actions-filters-subscriptions-bloggers',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-subscriptions-shops',
+      selectorActionBtn: '.user-board__actions-filters-subscriptions-shops',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-likes-goods',
+      selectorActionBtn: '.user-board__actions-filters-likes-goods',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.user-board',
+      selectorContainer: '.user-board__form-likes-publications',
+      selectorActionBtn: '.user-board__actions-filters-likes-publications',
     })
   } catch (error) {
     console.log(error)
@@ -217,7 +354,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form(
-      '.user-board__form-posts-no-select', 
+      '.user-board__form-posts', 
       API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
@@ -229,7 +366,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form(
-      '.user-board__form-followers-no-select', 
+      '.user-board__form-followers', 
       API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
@@ -241,7 +378,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form(
-      '.user-board__form-subscriptions', 
+      '.user-board__form-subscriptions-sp', 
       API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
@@ -253,7 +390,55 @@ window.addEventListener('load', () => {
 
   try {
     new Form(
-      '.user-board__form-likes', 
+      '.user-board__form-subscriptions-tff', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.user-board__form-subscriptions-bloggers', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.user-board__form-subscriptions-shops', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.user-board__form-likes-goods', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.user-board__form-likes-publications', 
       API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST
@@ -275,7 +460,6 @@ window.addEventListener('load', () => {
     console.log(error)
   }
 
-
   try {
     const parentElement = document.querySelector('.user-board__tabs') as HTMLElement
     const swiperElement = parentElement.querySelector('.user-board__tabs-swiper') as HTMLElement
@@ -283,6 +467,7 @@ window.addEventListener('load', () => {
     const nextBtn = parentElement.querySelector('.swiper-button-next') as HTMLElement 
 
     new UserBoard(
+      '.user-board',
       new CustomSwiper({
         target: swiperElement,
         options: {
@@ -305,8 +490,9 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
-    document.querySelectorAll('.joint-purchases-card__slider').forEach(swiper => {
+    document.querySelectorAll('.user-board__content-subscriptions-sp .joint-purchases-card__slider').forEach(swiper => {
       const swiperElement = swiper.querySelector('.swiper-joint-purchases') as HTMLElement
       const prevBtn = swiper.querySelector('.swiper-button-prev') as HTMLElement
       const nextBtn = swiper.querySelector('.swiper-button-next') as HTMLElement      
@@ -333,7 +519,7 @@ window.addEventListener('load', () => {
           prevElement: prevBtn,
           nextElement: nextBtn,
         },
-    })
+      })
     })
   } catch (error) {
     console.log(error)
@@ -344,10 +530,16 @@ window.addEventListener('load', () => {
   } catch (error){
     console.log(error)
   }
+
   try {
     new SyncCategories()
   } catch (error) {
     console.log(error)
   }
-  
+
+  try {
+    new Ticker()
+  } catch (error) {
+    console.log(error)
+  }
 })

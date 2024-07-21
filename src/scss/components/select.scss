@@ -14,9 +14,11 @@
 
   &--border-grey {
     border-color: rgb(var(--color-grey-light));
-  }
 
-  
+    #{$root}__options {
+      border-color: rgb(var(--color-grey-light));
+    }
+  }
   
   &__header {
     @extend %flex-space-between;
@@ -53,7 +55,7 @@
     top: calc(100%);
     left: 0;
     background-color: rgb(var(--color-white));
-    border: 1px solid rgb(var(--color-primary));
+    border: 0.125rem solid rgb(var(--color-primary));
     border-radius: var(--radius-medium);
     z-index: var(--z-popup);
 

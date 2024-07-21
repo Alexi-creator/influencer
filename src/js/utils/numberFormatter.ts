@@ -4,8 +4,9 @@ export class NumberFormatter {
   constructor() {
     this.numberElements = document.querySelectorAll('.number')
     
-    if(this.numberElements)
-    this.init()
+    if (this.numberElements) {
+      this.init()
+    }
   }
 
   private init() {

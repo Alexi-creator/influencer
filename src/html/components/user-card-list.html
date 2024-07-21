@@ -11,6 +11,7 @@
       options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>',
     })
 
+     <!-- Блок с кнопками сортировки и фильтрации -->
     <div class="filter-actions user-card-list__actions-btns active">
       <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
         <div class="filter-actions__text">Сортировка</div>
@@ -133,12 +134,6 @@
       </div>
     </div>
   </form>
-
-  @@include("./popup.html", {
-    "id": "clearFilter",
-    "extra-class": "",
-    "body": '@@include("./clear-filter-content-popup.html")',
-  })
 
   <div class="user-card-list__cards-wrapper">
     @@include("../components/user-card.html", {
@@ -270,4 +265,10 @@
       "sub":"",
     })
   </div>
+
+  @@include("./popup.html", {
+    "id": "clearFilter",
+    "extra-class": "",
+    "body": '@@include("./clear-filter-content-popup.html")',
+  })
 </div>

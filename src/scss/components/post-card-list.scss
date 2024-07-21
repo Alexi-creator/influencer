@@ -1,41 +1,21 @@
 .post-card-list {
   $root: &;
 
-  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 0.75rem;
 
   @include media($md) {
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include media($lg) {
-    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
   }
 
   @include media($full) {
-    margin-top: 2.5rem;
-  }
-
-  &__cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 0.75rem;
-    margin-top: 1.25rem;
-
-    @include media($md) {
-      grid-template-columns: repeat(2, 1fr);
-      margin-top: 1.5rem;
-    }
-
-    @include media($lg) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    @include media($full) {
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 2rem;
-      margin-top: 2.5rem;
-    }
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
   }
 }
