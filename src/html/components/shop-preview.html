@@ -9,25 +9,9 @@
       @@include("./breadcrumbs.html")
     </div>
     <div class="shop-preview__followers">112 подписчиков</div>
-    <div class="shop-preview__actions">
-      <button class="shop-preview__btn-top scroll">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#go-up"></use>
-        </svg>
-      </button>
-      <div class="shop-preview__brand">
-        <div class="shop-preview__brand-logo">
-          <img src="@img/shop-avatar.png" alt="shop-avatar">
-        </div>
-        <div class="shop-preview__brand-name">
-          Интернет магазин женской одежды и аксессуаров Lass
-        </div>
-      </div>
-      <div class="shop-preview__subscribe">
-        <button class="btn">Подписаться</button>
-        <span class="shop-preview__subscribe-dote"></span>
-        @@include("./share.html")
-      </div>
-    </div>
+    @@include("./preview-toolbar-action.html", {
+      title: "Интернет магазин женской одежды и аксессуаров Lass",
+      img: '@img/shop-avatar.png',
+    })
   </div>
 </div>

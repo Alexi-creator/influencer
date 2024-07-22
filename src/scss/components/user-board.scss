@@ -16,7 +16,6 @@
 
   .filter-actions {
     margin-top: 1.25rem;
-    margin-left: unset;
 
     @include media($lg) {
       width: calc(100% - 43.5rem);
@@ -126,10 +125,9 @@
 
   &__select {
     max-width: 15.875rem;
-  }
+    margin-top: 1.25rem;
 
-  &__contents {
-    &-tab {
+    @include media($full) {
       margin-top: 1rem;
     }
   }
@@ -137,13 +135,6 @@
   &__content {
     &.hide {
       display: none;
-    }
-  }
-
-  &__tff, &__goods {
-    margin-top: 1.25rem;
-    @include media ($lg) {
-    margin-top: 2.5rem;
     }
   }
 }

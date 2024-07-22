@@ -1,6 +1,6 @@
 <div class="user-info">
   <div class="user-info__image-container">
-    @@img
+    <img src="@@img" alt="@@bloger-name">
     @@if(influencer){
     <div class="user-info__image-text-overlay">
       <img src="@img/Influencer-frame-full.png" alt="influencer">
@@ -36,8 +36,11 @@
         </div>
       </div>
       <div class="user-info__desc-sub-share">
-        <button class="btn btn--color-primary-light">Подписаться</button>
-          @@include("../components/share.html")
+        @@include("./preview-toolbar-action.html", {
+          title: '@@bloger-name',
+          img: '@@img',
+          "extra-class-btn": "btn--color-primary-light",
+        })
       </div>
     </div>
   </div>
