@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240707160637">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240722102143">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240707160637"></script>
+  <script defer src="js/catalog.min.js?_v=20240722102143"></script>
 </head>
   <body>
     <header class="header">
@@ -20,7 +20,9 @@
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
+        <!-- <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li> -->
+
+<div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Русский</div>
     <div class="select__icon">
@@ -28,12 +30,11 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Русский</li>
-    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Английский</li>
-    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Казахский</li>
+    <li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>
   </ul>
-  <input name=language type="text" value=val1 hidden>
+  <input name=language type="text" value=ru hidden>
 </div>
+
       </div>
     </div>
     <nav class="header__nav">
@@ -64,7 +65,9 @@
   
   <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
   
-    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect" role="button" tabindex="0">
+    <div class="input-text__suffix header__nav-search-select"><!-- <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li> -->
+
+<div class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -72,12 +75,11 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Везде</li>
-    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Везде2</li>
-    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Везде3 очень длинный текст</li>
+    <li class="select__options-item" data-value="1" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="2" role="button" tabindex="0">Везде 2</li> <li class="select__options-item" data-value="3" role="button" tabindex="0">Везде очень длинный текст</li>
   </ul>
-  <input name=select type="text" value=val2 hidden>
-</div></div>
+  <input name=select-search type="text" value=1 hidden>
+</div>
+</div>
   
 </label>
         </li>

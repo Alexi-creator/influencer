@@ -95,7 +95,7 @@
   display: none;
 }
 
-.filter-actions__density {
+.filter-actions__density--ml-auto {
   margin-left: auto;
 }
 

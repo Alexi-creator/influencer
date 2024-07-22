@@ -26,50 +26,50 @@
   cursor: pointer;
 }
 
-.shop-window--horizontally .product-card,
+.cards-with-menu--horizontally .product-card,
 .product-card--horizontally {
   display: grid;
   grid-template-columns: 8.3rem 1fr;
 }
 
-.shop-window--horizontally .product-card .product-card__img-first,
+.cards-with-menu--horizontally .product-card .product-card__img-first,
 .product-card--horizontally .product-card__img-first {
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--radius-medium);
 }
 
-.shop-window--horizontally .product-card .product-card__img-second,
+.cards-with-menu--horizontally .product-card .product-card__img-second,
 .product-card--horizontally .product-card__img-second {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.shop-window--horizontally .product-card .product-card__title,
+.cards-with-menu--horizontally .product-card .product-card__title,
 .product-card--horizontally .product-card__title {
   -webkit-line-clamp: unset;
 }
 
-.shop-window--horizontally .product-card .product-card__sizes,
-.shop-window--horizontally .product-card .product-card__likes,
+.cards-with-menu--horizontally .product-card .product-card__sizes,
+.cards-with-menu--horizontally .product-card .product-card__likes,
 .product-card--horizontally .product-card__sizes,
 .product-card--horizontally .product-card__likes {
   display: inline-flex;
   align-items: center;
 }
 
-.shop-window--horizontally .product-card .product-card__descr,
+.cards-with-menu--horizontally .product-card .product-card__descr,
 .product-card--horizontally .product-card__descr {
   position: static;
 }
 
-.shop-window--horizontally .product-card .product-card__info,
+.cards-with-menu--horizontally .product-card .product-card__info,
 .product-card--horizontally .product-card__info {
   max-width: 7rem;
   bottom: 0.5rem;
   top: unset;
 }
 
-.shop-window--horizontally .product-card .product-card__application-status,
+.cards-with-menu--horizontally .product-card .product-card__application-status,
 .product-card--horizontally .product-card__application-status {
   top: 0.5rem;
   left: 1rem;
@@ -294,28 +294,28 @@
 }
 
 @media (min-width: 48rem) {
-  .shop-window--horizontally .product-card,
+  .cards-with-menu--horizontally .product-card,
   .product-card--horizontally {
     grid-template-columns: 16.6rem 1fr;
   }
 
-  .shop-window--horizontally .product-card .product-card__img-wrapper,
+  .cards-with-menu--horizontally .product-card .product-card__img-wrapper,
   .product-card--horizontally .product-card__img-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .shop-window--horizontally .product-card .product-card__img-second,
+  .cards-with-menu--horizontally .product-card .product-card__img-second,
   .product-card--horizontally .product-card__img-second {
     display: block;
   }
 
-  .shop-window--horizontally .product-card .product-card__price,
+  .cards-with-menu--horizontally .product-card .product-card__price,
   .product-card--horizontally .product-card__price {
     justify-content: flex-start;
   }
 
-  .shop-window--horizontally .product-card .product-card__info,
+  .cards-with-menu--horizontally .product-card .product-card__info,
   .product-card--horizontally .product-card__info {
     max-width: 15.6rem;
   }
@@ -383,22 +383,22 @@
     background-color: rgb(var(--color-grey-pale));
   }
 
-  .shop-window--horizontally .product-card,
+  .cards-with-menu--horizontally .product-card,
   .product-card--horizontally {
     grid-template-columns: 8.3rem 1fr;
   }
 
-  .shop-window--horizontally .product-card .product-card__img-wrapper,
+  .cards-with-menu--horizontally .product-card .product-card__img-wrapper,
   .product-card--horizontally .product-card__img-wrapper {
     grid-template-columns: 1fr;
   }
 
-  .shop-window--horizontally .product-card .product-card__img-second,
+  .cards-with-menu--horizontally .product-card .product-card__img-second,
   .product-card--horizontally .product-card__img-second {
     display: none;
   }
 
-  .shop-window--horizontally .product-card .product-card__price,
+  .cards-with-menu--horizontally .product-card .product-card__price,
   .product-card--horizontally .product-card__price {
     justify-content: space-between;
   }

@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240707160637">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20240722102143">
   <title>shops Page</title>
-  <script defer src="js/shops.min.js?_v=20240707160637"></script>
+  <script defer src="js/shops.min.js?_v=20240722102143"></script>
 </head>
   <body>
     <header class="header">
@@ -20,7 +20,9 @@
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
+        <!-- <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li> -->
+
+<div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Русский</div>
     <div class="select__icon">
@@ -28,12 +30,11 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Русский</li>
-    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Английский</li>
-    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Казахский</li>
+    <li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>
   </ul>
-  <input name=language type="text" value=val1 hidden>
+  <input name=language type="text" value=ru hidden>
 </div>
+
       </div>
     </div>
     <nav class="header__nav">
@@ -64,7 +65,9 @@
   
   <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
   
-    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect" role="button" tabindex="0">
+    <div class="input-text__suffix header__nav-search-select"><!-- <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li> -->
+
+<div class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -72,12 +75,11 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=val1 role="button" tabindex="0">Везде</li>
-    <li class="select__options-item" data-value=val2 role="button" tabindex="0">Везде2</li>
-    <li class="select__options-item" data-value=val3 role="button" tabindex="0">Везде3 очень длинный текст</li>
+    <li class="select__options-item" data-value="1" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="2" role="button" tabindex="0">Везде 2</li> <li class="select__options-item" data-value="3" role="button" tabindex="0">Везде очень длинный текст</li>
   </ul>
-  <input name=select type="text" value=val2 hidden>
-</div></div>
+  <input name=select-search type="text" value=1 hidden>
+</div>
+</div>
   
 </label>
         </li>
@@ -847,28 +849,28 @@
 </div>
     </div>
     <div class="shop-preview__followers">112 подписчиков</div>
-    <div class="shop-preview__actions">
-      <button class="shop-preview__btn-top scroll">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#go-up"></use>
-        </svg>
-      </button>
-      <div class="shop-preview__brand">
-        <div class="shop-preview__brand-logo">
-          <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
-        </div>
-        <div class="shop-preview__brand-name">
-          Интернет магазин женской одежды и аксессуаров Lass
-        </div>
-      </div>
-      <div class="shop-preview__subscribe">
-        <button class="btn">Подписаться</button>
-        <span class="shop-preview__subscribe-dote"></span>
-        <div class="share">
+    <div class="preview-toolbar-action shop-preview__actions">
+  <button class="preview-toolbar-action__btn-top scroll">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#go-up"></use>
+    </svg>
+  </button>
+  <div class="preview-toolbar-action__brand">
+    <div class="preview-toolbar-action__brand-logo">
+      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
+    </div>
+    <div class="preview-toolbar-action__brand-name">
+      Интернет магазин женской одежды и аксессуаров Lass
+    </div>
+  </div>
+  <div class="preview-toolbar-action__subscribe">
+    <button class="btn shop-preview__actions-btn">Подписаться</button>
+    <span class="preview-toolbar-action__subscribe-dote"></span>
+    <div class="share">
   <svg class="share__open" data-popup="share">
     <use xlink:href="./img/icons/icons.svg#share-link"></use>
   </svg>
-  <div id="share" class="popup popup--onlymobile" data-media="1200">
+  <div id="share" class="popup popup--onlymobile" data-media="">
     <div class="popup__overlay">
       <div class="popup__content">
         <div class="share__block">
@@ -913,8 +915,8 @@
   </div>
 </div>
 
-      </div>
-    </div>
+  </div>
+</div>
   </div>
 </div>
         </div>
@@ -926,7 +928,7 @@
           <div class="shop-window tabs">
   <div class="shop-window__title">Выберите раздел магазина</div>
   <div class="shop-window__inner">
-    <div class="shop-window__tabs tabs__head">
+    <div class="shop-window__tabs tabs-head tabs__head">
       <div class="swiper shop-window__tabs-swiper">
         <div class="tabs__list swiper-wrapper">
           <div class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="goods">
@@ -980,7 +982,7 @@
         <div class="shop-window__actions-filters-count filter-actions__filters-count"></div>
       </button>
 
-      <button class="filter-actions__density btn btn--outlined btn--color-grey btn--icon">
+      <button class="filter-actions__density filter-actions__density--ml-auto btn btn--outlined btn--color-grey btn--icon">
         <svg class="filter-actions__density-tile">
           <use xlink:href="./img/icons/icons.svg#density-tile"></use>
         </svg>
@@ -1041,7 +1043,7 @@
         <div class="shop-window__actions-filters-count filter-actions__filters-count"></div>
       </button>
 
-      <button class="filter-actions__density btn btn--outlined btn--color-grey btn--icon">
+      <button class="filter-actions__density filter-actions__density--ml-auto btn btn--outlined btn--color-grey btn--icon">
         <svg class="filter-actions__density-tile">
           <use xlink:href="./img/icons/icons.svg#density-tile"></use>
         </svg>
@@ -1053,6 +1055,7 @@
 
     <!-- Контент табов -->
     <div class="tabs__contents shop-window__tabs-contents">
+
       <!-- Таб товары -->
       <div class="tabs__content tabs__content--active" data-tab-target="goods">
         <!-- Форма с фильтрами и сортировками для товаров goods -->
@@ -2050,8 +2053,8 @@
         </form>
 
         <!-- Контент товары goods -->
-        <div class="shop-window__contents shop-window__goods">
-          <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
+        <div class="tab-content cards-with-menu cards-with-menu--goods">
+          <div class="cards-with-menu__menu"><!-- Примерно под такую структуру: -->
 
 <!-- const dataMenu = [
   {
@@ -2436,7 +2439,7 @@
   </li>
 </ul>
 </div>
-          <div class="shop-window__goods-items">
+          <div class="cards-with-menu__items">
             <a class="product-card " href="#">
   <div class="product-card__img">
     <div class="product-card__img-wrapper">
@@ -3466,7 +3469,7 @@
         </form>
 
         <!-- Контент совместные покупки sp -->
-        <div class="shop-window__contents shop-window__joint-purchases">
+        <div class="tab-content shop-window__joint-purchases">
           <div class="shop-window__joint-purchases-actions">
             <div class="shop-window__joint-purchases-search">
               <label class="input-text input-text--color-grey">
@@ -3484,7 +3487,7 @@
               </button>
             </div>
           </div>
-          <div class="shop-window__joint-purchases-contents">
+          <div class="joint-purchases-list">
             <div class="joint-purchases-card joint-purchases-card--processing">
   <div class="joint-purchases-card__about">
     <div class="joint-purchases-card__logo">
@@ -4954,8 +4957,8 @@
         </form>
 
         <!-- Контент ttf -->
-        <div class="shop-window__contents shop-window__tff">
-          <div class="shop-window__menu"><!-- Примерно под такую структуру: -->
+        <div class="tab-content cards-with-menu cards-with-menu--tff">
+          <div class="cards-with-menu__menu"><!-- Примерно под такую структуру: -->
 
 <!-- const dataMenu = [
   {
@@ -5340,7 +5343,7 @@
   </li>
 </ul>
 </div>
-          <div class="shop-window__tff-items">
+          <div class="cards-with-menu__items">
             <a class="product-card product-card--tff" href="#">
   <div class="product-card__img">
     <div class="product-card__img-wrapper">
@@ -5887,7 +5890,7 @@
 
       <!-- Таб Contacts -->
       <div class="tabs__content" data-tab-target="contacts">
-        <div class="shop-window__contents">
+        <div class="tab-content">
           <div class="contact-info">
   <div class="contact-info__connect">
     <div class="contact-info__connect-item contact-info__mail">

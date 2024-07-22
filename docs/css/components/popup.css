@@ -61,17 +61,6 @@
 }
 
 @media (min-width: 75rem) {
-  .popup--onlymobile .popup__overlay {
-    position: relative;
-    height: 0;
-    padding: 0;
-    background-color: transparent;
-    -webkit-backdrop-filter: none;
-            backdrop-filter: none;
-    z-index: 1;
-    transform: scale(1);
-  }
-
   .popup--onlymobile .popup__content {
     padding: 0;
   }

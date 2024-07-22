@@ -91,6 +91,11 @@
   color: rgb(var(--color-black));
 }
 
+.btn.btn--color-green {
+  background-color: rgb(var(--color-primary-soft));
+  color: rgb(var(--color-green));
+}
+
 .btn.btn--icon {
   padding: 0.75rem;
 }
@@ -600,6 +605,16 @@
 
 .show-elem {
   display: block;
+}
+
+.hide-elem-height {
+  max-height: 7.5rem;
+  overflow: hidden;
+}
+
+.show-elem-height {
+  max-height: unset;
+  overflow: unset;
 }
 
 .autocomplete {
