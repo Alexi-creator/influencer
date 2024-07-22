@@ -1,11 +1,12 @@
 export class Select {
-  selectorSelect: string
-  selectorHeader: string
-  selectorTitle: string
-  selectorOptions: string
-  selectorItem: string
-  selectorIcon: string
-  allSelects: Element[]
+  private selectorSelect: string
+  private selectorHeader: string
+  private selectorTitle: string
+  private selectorOptions: string
+  private selectorItem: string
+  private selectorIcon: string
+
+  private allSelects: Element[]
 
   constructor() {
     this.selectorSelect = '.select'
@@ -21,12 +22,12 @@ export class Select {
     this.init()
   }
 
-  private init() {
+  private init(): void {
     this.initialOption()
     this.handlers()
   }
 
-  private initialOption() {
+  private initialOption(): void {
     this.allSelects.forEach(select => {
       const value = select.querySelector('input')?.value
       const titleElem = select.querySelector(this.selectorTitle)
@@ -53,17 +54,17 @@ export class Select {
     })
   }
 
-  private toggle(select: HTMLElement) {
+  private toggle(select: HTMLElement): void {
     const iconElement = select.querySelector(this.selectorIcon)
 
     iconElement?.classList.toggle('active')
     select.classList.toggle('active')   
   }
 
-  private changeOption(select: HTMLElement, targetElement: HTMLElement) {
+  private changeOption(select: HTMLElement, targetElement: HTMLElement): void {
     const titleElement = select.querySelector(this.selectorTitle)
     const input = select.querySelector('input')
-    
+
     const value = targetElement.dataset.value
     const label = targetElement.innerHTML
 
@@ -71,15 +72,15 @@ export class Select {
       titleElement.innerHTML = label
       input.value = value
 
+      document.dispatchEvent(new CustomEvent('select-change', { detail: value }))
       this.toggle(select)
     }
 
     select.querySelectorAll(this.selectorItem).forEach(option => option.classList.remove('active'))
     targetElement?.closest(this.selectorItem)?.classList.add('active')
-   
   }
 
-  private clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent): void {
     const targetElement = e.target as HTMLElement
     const select = targetElement?.closest(this.selectorSelect) as HTMLElement
 
@@ -102,7 +103,7 @@ export class Select {
     }
   }
 
-  private handlers() {
+  private handlers(): void {
     document.addEventListener('click', (e: MouseEvent) => this.clickHandler(e))
   }
 }

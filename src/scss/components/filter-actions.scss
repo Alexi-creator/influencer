@@ -157,7 +157,9 @@
   }
 
   &__density {
-    margin-left: auto;
+    &--ml-auto {
+      margin-left: auto;
+    }
 
     @include media($lg) {
       display: none;

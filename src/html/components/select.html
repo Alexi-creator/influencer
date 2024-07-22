@@ -1,14 +1,14 @@
+<!-- <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li> -->
+
 <div class="select @@extra-class noselect" role="button" tabindex="0">
   <div class="select__header">
-    <div class="select__title">@@label1</div>
+    <div class="select__title">@@initial-label</div>
     <div class="select__icon">
       <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li>
-    <li class="select__options-item" data-value=@@data-value2 role="button" tabindex="0">@@label2</li>
-    <li class="select__options-item" data-value=@@data-value3 role="button" tabindex="0">@@label3</li>
+    @@options
   </ul>
-  <input name=@@name type="text" value=@@value hidden>
+  <input name=@@name type="text" value=@@initial-value hidden>
 </div>

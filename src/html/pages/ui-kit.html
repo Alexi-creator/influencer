@@ -136,26 +136,24 @@
       <h2>Select:</h2>
       <div class="ui-kit__block ui-kit__select">
         @@include("../components/select.html", {
-          "label1": "Везде",
-          "label2": "Везде2",
-          "label3": "Везде3 очень длинный текст",
-          "data-value1": "val1",
-          "data-value2": "val2",
-          "data-value3": "val3",
-          "name": "select",
-          "extra-class": "",
-          "value": "val2",
+          "options": '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
+          "name": "user-board-subscriptions",
+          'initial-value': "Везде",
+          'initial-label': "Везде",
         })
         @@include("../components/select.html", {
-          "label1": "Опция1",
-          "label2": "Опция2",
-          "label3": "Опция3 очень длинный текст",
-          "data-value1": "val21",
-          "data-value2": "val22",
-          "data-value3": "val23",
-          "name": "select2",
+          "options": '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
+          "name": "user-board-subscriptions",
+          'initial-value': "Везде",
+          'initial-label': "Везде",
           "extra-class": "select--transparent",
-          "value": "val23",
+        })
+        @@include("../components/select.html", {
+          "options": '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
+          "name": "user-board-subscriptions",
+          'initial-value': "Везде",
+          'initial-label': "Везде",
+          "extra-class": "select--border-grey",
         })
         <div class="select noselect">
           <div class="select__header">

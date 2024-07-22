@@ -12,7 +12,7 @@ export class Density {
 
   private selectedDensity: SelectedDensity
 
-  private shopWindowElem: HTMLElement
+  private contentElem: HTMLElement
   private densityElem: HTMLElement
 
   private matchMedia: MediaQueryList
@@ -23,9 +23,9 @@ export class Density {
     this.selectorDensity = '.filter-actions__density'
     this.selectedDensity = SelectedDensity.GRID
 
-    const shopWindowElem = document.querySelector(this.selectorContent)
-    if (shopWindowElem) {
-      this.shopWindowElem = shopWindowElem as HTMLElement
+    const contentElem = document.querySelector(this.selectorContent)
+    if (contentElem) {
+      this.contentElem = contentElem as HTMLElement
     }
 
     const densityElem = document.querySelector(`${this.selectorActionContainer} ${this.selectorDensity}`)
@@ -33,7 +33,11 @@ export class Density {
       this.densityElem = densityElem as HTMLElement
     }
 
-    if (!this.shopWindowElem || !this.densityElem) return
+    if (!this.contentElem || !this.densityElem) {     
+      console.error('not founded elems Density!')
+
+      return
+    }
 
     this.init()
   }
@@ -56,7 +60,7 @@ export class Density {
 
   //   this.selectedDensity = SelectedDensity.TILE
   //   this.densityElem.classList.add('shop-window__actions-density--tile')
-  //   this.shopWindowElem.classList.add('shop-window--horizontally')
+  //   this.contentElem.classList.add('shop-window--horizontally')
   // }
 
   private selectGrid() {
@@ -64,18 +68,18 @@ export class Density {
 
     this.selectedDensity = SelectedDensity.GRID
     this.densityElem.classList.remove('filter-actions__density--tile')
-    this.shopWindowElem.classList.remove('shop-window--horizontally')
+    this.contentElem.classList.remove('cards-with-menu--horizontally')
   }
 
   private toggleDensity() {
     if (this.selectedDensity === SelectedDensity.TILE) {
       this.selectedDensity = SelectedDensity.GRID
       this.densityElem.classList.remove('filter-actions__density--tile')
-      this.shopWindowElem.classList.remove('shop-window--horizontally')
+      this.contentElem.classList.remove('cards-with-menu--horizontally')
     } else {
       this.selectedDensity = SelectedDensity.TILE
       this.densityElem.classList.add('filter-actions__density--tile')
-      this.shopWindowElem.classList.add('shop-window--horizontally')
+      this.contentElem.classList.add('cards-with-menu--horizontally')
     }
   }
 

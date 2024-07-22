@@ -1,0 +1,23 @@
+<div class="preview-toolbar-action @@extra-class">
+  <button class="preview-toolbar-action__btn-top scroll">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#go-up"></use>
+    </svg>
+  </button>
+  <div class="preview-toolbar-action__brand">
+    <div class="preview-toolbar-action__brand-logo">
+      <img src="@@img" alt="shop-avatar">
+    </div>
+    <div class="preview-toolbar-action__brand-name">
+      @@title
+    </div>
+  </div>
+  <div class="preview-toolbar-action__subscribe">
+    <button class="btn @@extra-class-btn">Подписаться</button>
+    <span class="preview-toolbar-action__subscribe-dote"></span>
+    @@include("./share.html", {
+      'extra-class-popup': '@@extra-class-popup',
+      'data-media': '@@data-media',
+    })
+  </div>
+</div>

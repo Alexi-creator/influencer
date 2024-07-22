@@ -1,6 +1,6 @@
 import { BreakpointWidth } from '../constants'
 
-const actionsPreviewSelector = '.shop-preview__actions'
+const actionsPreviewSelector = '.preview-toolbar-action'
 const actionsShopWindowSelector = '.filter-actions'
 
 const actionsPreviewElem = document.querySelector(actionsPreviewSelector)
