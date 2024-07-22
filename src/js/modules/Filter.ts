@@ -53,7 +53,7 @@ export class Filter {
     this.selectorSubmitBtn = `${selectorMain}__form-filter-submit`
     this.selectorBtnCount = `${selectorMain}__actions-filters-count`
     this.selectorIconCross = `${selectorMain}__actions-icon--cross`
-    this.isOpen = false
+    this.isOpen = false    
 
     const container = document.querySelector(this.selectorContainer)
     if (container) this.container = container as HTMLElement
@@ -75,14 +75,14 @@ export class Filter {
     const filterCross = this.container.querySelector(this.selectorFilterCross)
     if (filterCross) this.filterCross = filterCross as HTMLElement
 
-    this.category = this.selectorContainer.split('-').pop()   
+    this.category = this.selectorContainer.split('-').pop()
 
     if (!this.filterActionBtn || !this.container) return
 
     this.init()
   }
 
-  private init() {
+  private init(): void {
     this.handlers()
     this.collectionOptions()
 
@@ -90,14 +90,14 @@ export class Filter {
     mediaQueryList.addListener((e) => this.breakpointChecker(e))
   }
 
-  private breakpointChecker(e: MediaQueryListEvent) {
+  private breakpointChecker(e: MediaQueryListEvent): void {
     if (!this.container.classList.contains('hide')) {
       if (e.matches && this.isOpen) return document.body.classList.remove('overflow')
       if (!e.matches && this.isOpen) document.body.classList.add('overflow')
     }
   }
 
-  private chipTemplate(title: string, options: string, moreCount: number) {
+  private chipTemplate(title: string, options: string, moreCount: number): string {
     return `
       <div class="chip">
         <span class="chip__title">${title}:</span>
@@ -110,7 +110,7 @@ export class Filter {
     `
   }
 
-  private collectionOptions() {
+  private collectionOptions(): void {
     this.filters = Array.from(this.filtersWrapper.querySelectorAll('.filters__item')).reduce((acc, filter) => {
       const title = filter.querySelector('.collapse__head-title')?.textContent?.trim()
       const selectedOptionsCheckbox = Array.from(filter.querySelectorAll('input[type="checkbox"]:checked'))
@@ -140,23 +140,23 @@ export class Filter {
     this.changeCount()
   }
 
-  private changeCount() {
+  private changeCount(): void {
     const selectedCount = Object.entries(this.filters).reduce((acc, filter) => acc += filter[1].selectedOptions.length, 0)
     this.selectedCount = selectedCount
     
     const countBtn = this.submitBtn.querySelector('.btn__suffix') as HTMLElement
     
     if (selectedCount) {
-      this.filterActionBtn.classList.add('btn--tag', 'btn--tag-checked')
-      this.filterActionBtn.classList.remove('btn--color-grey')
+      this.filterActionBtn.classList.add('btn--tag', 'btn--tag-checked', 'hide-icon')
+      this.filterActionBtn.classList.remove('btn--color-grey', 'hide-count')
 
       this.btnCount.innerHTML = String(selectedCount)
       this.btnCount.classList.add(`${this.selectorBtnCount.substring(1)}--active`)
 
       countBtn.innerHTML = `(${selectedCount})`
     } else {
-      this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked')
-      this.filterActionBtn.classList.add('btn--color-grey')
+      this.filterActionBtn.classList.remove('btn--tag', 'btn--tag-checked', 'hide-icon')
+      this.filterActionBtn.classList.add('btn--color-grey', 'hide-count')
 
       this.btnCount.innerHTML = ''
       this.btnCount.classList.remove(`${this.selectorBtnCount.substring(1)}--active`)
@@ -165,7 +165,7 @@ export class Filter {
     }
   }
 
-  private changeOptions(targetElement: HTMLInputElement) {
+  private changeOptions(targetElement: HTMLInputElement): void {
     const { checked } = targetElement
     
     const title = targetElement.closest('.collapse')?.querySelector('.collapse__head-title')?.textContent?.trim()
@@ -205,7 +205,7 @@ export class Filter {
     this.changeCount()
   }
 
-  private displayChips() {
+  private displayChips(): void {
     const filterOptions = Object.entries(this.filters).filter(item => item[1].selectedOptions.length)
     if (filterOptions.length) {
       filterOptions.forEach(([title, { moreCount, selectedOptions }]) => {
@@ -220,7 +220,7 @@ export class Filter {
     }
   }
 
-  private removeChips(targetElement: HTMLElement) {   
+  private removeChips(targetElement: HTMLElement): void {   
     const chip = targetElement.closest('.chip')
     const title = chip?.querySelector('.chip__title')?.textContent?.trim().replace(':', '')
 
@@ -236,11 +236,11 @@ export class Filter {
     }
 
     chip?.remove()
-    this.toggleChips()
     this.changeCount()
+    this.toggleChips()
   }
 
-  private toggleChips() {
+  private toggleChips(): void {
     if (this.chipsWrapper) {
       if (Array.from(this.chipsWrapper.children || []).length === 0) {
         this.chipsWrapper.classList.remove('active')
@@ -248,7 +248,7 @@ export class Filter {
     }
   }
 
-  private toggleFilter() {    
+  private toggleFilter(): void {    
     if (this.isOpen) {
       this.filterWrapper.classList.remove('active')
       this.filterActionBtn.classList.remove('active')
@@ -274,7 +274,7 @@ export class Filter {
     }
   }
 
-  private clearAllFilters() {
+  private clearAllFilters(): void {
     Object.entries(this.filters).forEach(elem => {
       elem[1].selectedOptions = []
       elem[1].moreCount = -3
@@ -291,7 +291,7 @@ export class Filter {
     this.changeCount()
   }
 
-  private clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent): void {
     const targetElement = e.target as HTMLElement
 
     // клик по крестику в кнопке фильтра (сброс сортировок)      
@@ -316,12 +316,12 @@ export class Filter {
     }
   }
 
-  private changeHandler(e: Event) {
+  private changeHandler(e: Event): void {
     const targetElement = e.target as HTMLInputElement
     this.changeOptions(targetElement)
   }
 
-  private checkPopup<T extends string>(e: CustomEvent<T>) {
+  private checkPopup<T extends string>(e: CustomEvent<T>): void {
     if (this.isOpen) {
       const category = e.detail.split('-').pop()
       if (category === this.category) {        
@@ -333,7 +333,7 @@ export class Filter {
     }
   }
 
-  private handlers() {
+  private handlers(): void {
     document.addEventListener('click', (e) => this.clickHandler(e))
     document.addEventListener('closePopup', (e) => this.checkPopup(e as CustomEvent<string>))
     this.filterWrapper.addEventListener('change', (e) => this.changeHandler(e))

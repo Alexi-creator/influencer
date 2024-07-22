@@ -17,7 +17,7 @@ import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { SyncCategories } from '../modules/SyncCategories'
-import { ShopPreview } from '../modules/ShopPreview'
+import { PreviewToolbarAction } from '../modules/PreviewToolbarAction'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -101,7 +101,7 @@ window.addEventListener('load', () => {
   }
   try {
     new Density({
-      selectorContent: '.shop-window__goods',
+      selectorContent: '.cards-with-menu--goods',
       selectorActionContainer: '.shop-window__actions-goods',
     })
   } catch (error) {
@@ -109,7 +109,7 @@ window.addEventListener('load', () => {
   }
   try {
     new Density({
-      selectorContent: '.shop-window__tff',
+      selectorContent: '.cards-with-menu--tff',
       selectorActionContainer: '.shop-window__actions-tff',
     })
   } catch (error) {
@@ -256,7 +256,7 @@ window.addEventListener('load', () => {
           prevElement: prevBtn,
           nextElement: nextBtn,
         },
-    })
+      })
     })
   } catch (error) {
     console.log(error)
@@ -267,7 +267,7 @@ window.addEventListener('load', () => {
     console.log(error)
   }
   try {
-    new ShopPreview()
+    new PreviewToolbarAction()
   } catch (error) {
     console.log(error)
   }

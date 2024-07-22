@@ -6,9 +6,9 @@ const enum StatusEvent {
 }
 
 /**
- * Управление превью блоком
+ * Управление PreviewToolbarAction
  */
-export class ShopPreview {
+export class PreviewToolbarAction {
   private actionSelector: string
   private popupId: string
 
@@ -16,7 +16,7 @@ export class ShopPreview {
   private popupElem: HTMLElement
   
   constructor() {
-    this.actionSelector = '.shop-preview__actions'
+    this.actionSelector = '.preview-toolbar-action'
     this.popupId = 'share'
 
     const actionElem = document.querySelector(this.actionSelector)
@@ -54,13 +54,13 @@ export class ShopPreview {
   }
 
   private changeActive(): void {
-    if (this.actionElem.classList.contains('shop-preview__actions--active') &&
+    if (this.actionElem.classList.contains(`${this.actionSelector}--active`) &&
       window.innerWidth >= BreakpointWidth.DESKTOP &&
       window.innerWidth < BreakpointWidth.FULLHD) {
-      this.popupElem.dataset.media = String(BreakpointWidth.FULLHD)
-      this.popupElem.classList.remove('popup--onlymobile')
+      // this.popupElem.dataset.media = String(BreakpointWidth.FULLHD)
+      // this.popupElem.classList.remove('popup--onlymobile')
     } else {
-      this.popupElem.dataset.media = String(BreakpointWidth.DESKTOP)
+      // this.popupElem.dataset.media = String(BreakpointWidth.DESKTOP)
       this.popupElem.classList.add('popup--onlymobile')
     }
   }
@@ -68,10 +68,10 @@ export class ShopPreview {
   private eventPopup(e, status: StatusEvent): void {
     if (e.detail === 'share') {
       if (status === StatusEvent.OPEN) {
-        this.actionElem.classList.add('shop-preview__actions--over')
+        this.actionElem.classList.add(`${this.actionSelector.substring(1)}--over`)
       }
       if (status === StatusEvent.CLOSE) {
-        this.actionElem.classList.remove('shop-preview__actions--over')
+        this.actionElem.classList.remove(`${this.actionSelector.substring(1)}--over`)
       }
     }
   }
