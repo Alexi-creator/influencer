@@ -5,13 +5,23 @@ export enum UserTabsEnum {
   likes = 'likes',
 }
 
-// Тип для проверки наличия значения в enum
-type UserTabsType = keyof typeof UserTabsEnum;
+export enum UserSelectsEnum {
+  subscriptionsSp = 'subscriptions-sp',
+  subscriptionsTff = 'subscriptions-tff',
+  subscriptionsBloggers = 'subscriptions-bloggers',
+  subscriptionsShops = 'subscriptions-shops',
+  likesGoods = 'likes-goods',
+  likesPublications = 'likes-publications',
+}
 
 // Массив значений enum
-export const userTabsArray: readonly UserTabsType[] = ['posts', 'followers', 'subscriptions', 'likes']
+export const userTabsArray = Object.values(UserTabsEnum) as string[]
+export const userSelectsArray = Object.values(UserSelectsEnum) as string[]
 
 // Проверка наличия значения в enum
-export function isUserTab(tab: string): tab is UserTabsType {
-  return Object.values(userTabsArray).includes(tab as UserTabsType)
+export function isUserTab(tab: string): tab is UserTabsEnum {
+  return userTabsArray.includes(tab)
+}
+export function isUserSelect(tab: string): tab is UserSelectsEnum {
+  return userSelectsArray.includes(tab)
 }

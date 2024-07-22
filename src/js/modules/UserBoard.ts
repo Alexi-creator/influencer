@@ -1,4 +1,5 @@
 import { UserTabsEnum, userTabsArray } from '../constants/index'
+import { isUserSelect } from '../constants/userTabs'
 
 import { CustomSwiper } from './CustomSwiper'
 
@@ -105,7 +106,9 @@ export class UserBoard {
   // }
 
   private handleSelectChange(e: CustomEvent<string>) {
-    this.changeActionsDisplay(e.detail)
+    if (isUserSelect(e.detail)) {
+      this.changeActionsDisplay(e.detail)
+    }
   }
 
   private handlers() {

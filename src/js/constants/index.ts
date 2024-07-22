@@ -1,5 +1,5 @@
 export { BreakpointWidth } from './sizeScreen'
 export { ShopTabsEnum, shopTabsArray, isShopTab } from './shopTabs'
-export { UserTabsEnum, userTabsArray, isUserTab } from './userTabs'
+export { UserTabsEnum, userTabsArray, userSelectsArray, isUserTab, isUserSelect } from './userTabs'
 export { HttpMethods } from './httpMethods'
 export { API_URLS } from './api'

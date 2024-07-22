@@ -21,6 +21,7 @@ import { SyncCategories } from '../modules/SyncCategories'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { Ticker } from '../modules/Ticker'
+import { PreviewToolbarAction } from '../modules/PreviewToolbarAction'
 
 window.addEventListener('load', () => {
   try {
@@ -539,6 +540,12 @@ window.addEventListener('load', () => {
 
   try {
     new Ticker()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new PreviewToolbarAction()
   } catch (error) {
     console.log(error)
   }

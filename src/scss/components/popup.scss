@@ -20,15 +20,15 @@
   &--onlymobile {
     @include media($lg) {
 
-      & #{$root}__overlay {
-        position: relative;
-        height: 0;
-        padding: 0;
-        background-color: transparent;
-        backdrop-filter: none;
-        z-index: 1;
-        transform: scale(1);
-      }
+      // & #{$root}__overlay {
+      //   position: relative;
+      //   height: 0;
+      //   padding: 0;
+      //   background-color: transparent;
+      //   backdrop-filter: none;
+      //   z-index: 1;
+      //   transform: scale(1);
+      // }
 
       & #{$root}__content {
         padding: 0;
