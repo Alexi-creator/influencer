@@ -1,7 +1,6 @@
 .section {
   $block: &;
 
-  // padding: 1.25rem;
   padding: 0 1.25rem;
   width: 100%;
 
@@ -11,17 +10,14 @@
   }
 
   @include media($md) {
-    // padding: 1.5rem 2.5rem;
     padding: 0rem 2.5rem;
   }
 
   @include media($lg) {
-    // padding: 2.5rem 4rem;
     padding: 0rem 4rem;
   }
 
   @include media($full) {
-    // padding: 5rem 7rem;
     padding: 0rem 7rem;
   }
 
@@ -52,7 +48,6 @@
 
   &--user-info {
     #{$block}__inner {
-      overflow: hidden; //временное решение, нужно разобраться c share
       max-width: var(--max-width-container-user-info);
     }
 

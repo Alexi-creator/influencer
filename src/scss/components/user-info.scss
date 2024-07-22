@@ -55,31 +55,35 @@
     @include media($lg){
       justify-content: unset;
     }
-    h3{
+
+    h3 {
       font-size: 1.375rem;
       font-weight: 600;
       line-height: 2rem;
     }
-    svg{
+
+    svg {
       width: 3.5rem;
       height: 1.25rem;
     }
   }
 
-  &__desc-text{
+  &__desc-text {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.54rem;
   }
 
-  &__content{
+  &__content {
     display: grid;
-    row-gap: 1.25rem; 
-    @include media($md){
+    gap: 1.25rem 1.5rem; 
+    
+    @include media($md) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(3, 1fr);
     }
-    @include media($lg){
+
+    @include media($lg) {
       column-gap: 2.5rem;
     }
   }
@@ -90,17 +94,18 @@
     align-items: center;
     gap: 1rem;
 
-    @include media($md){
-      grid-column:2/4;
+    @include media($md) {
+      grid-column: 2 / -1;
       justify-content: flex-start;
     }
 
-    @include media($lg){
+    @include media($lg) {
       display: flex;
       gap: 1.25rem;
       grid-column:1/3;
     }
-    span{
+
+    span {
       color: rgb(var(--color-primary), 1);
       font-weight: 600;
       font-size: 1rem;
@@ -108,30 +113,28 @@
     }
   }
 
-  &__sub-inner{
+  &__sub-inner {
     display: flex;
     gap: 1.25rem;
   }
 
-  &__desc-sub-share{
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    @include media($md){
-      grid-column:1;
+  &__desc-sub-share {
+    margin: 0 auto;
+
+    @include media($md) {
+      grid-column: 1;
       grid-row: 3;
-      justify-content: flex-start;
+      margin: unset;
     }
 
-    & .share{
+    & .share {
       overflow: unset;
     }
 
-    @include media($lg){
-      align-items: center;
+    @include media($lg) {
       margin-top: -2.5rem;
-      grid-column:4/5;
-      grid-row: 1/3;
+      grid-column: 4 / 5;
+      grid-row: 2 / 3;
       max-width: 15rem;
     }
     button {
@@ -140,8 +143,9 @@
 
   }
 
-  &__desc-inner{
+  &__desc-inner {
     position: relative;
+
     @include media($md){
       grid-column: 1/5;
       grid-row: 1/3;
@@ -151,11 +155,12 @@
     }
   }
 
-  &__btn{
+  &__btn {
     position: absolute;
     bottom: -2px;
     right: 0;
     z-index: 10;
+
     & .btn-show-text{
       padding: 0 0.5rem;
       background-color: rgb(var(--color-white));
@@ -164,7 +169,8 @@
       line-height: 1.5rem;
       font-weight: 600;
     }
-    :hover{
+
+    &:hover{
       cursor: pointer;
     }
   }

@@ -91,4 +91,16 @@
       margin-top: 1.25rem;
     }
   }
+
+  &__actions {
+    margin-top: 1rem;
+
+    @include media($lg) {
+      margin-top: 1.5rem;
+    }
+  
+    @include media($full) {
+      margin-top: 2.5rem;
+    }
+  }
 }

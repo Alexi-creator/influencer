@@ -21,6 +21,16 @@
       width: calc(100% - 43.5rem);
       margin-top: 0;
     }
+
+    &--active {
+      #{$root}__search {
+        width: 3.75rem;
+
+        @include media($md) {
+          width: auto;
+        }
+      }
+    }
   }
 
   &__joint-purchases {

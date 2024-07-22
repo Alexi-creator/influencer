@@ -5,7 +5,6 @@
   align-items: center;
   color: rgb(var(--color-grey));
   border-radius: var(--radius-small);
-  overflow: hidden;
 
   &__open, &__close, &__item-icon {
     cursor: pointer;

@@ -4,19 +4,10 @@
   @extend %flex-align-center;
 
   gap: 1.25rem;
-  margin-top: 1rem;
   z-index: var(--z-popup);
   
   &--over {
     z-index: var(--z-over);
-  }
-  
-  @include media($lg) {
-    margin-top: 1.5rem;
-  }
-  
-  @include media($full) {
-    margin-top: 2.5rem;
   }
   
   #{$root}__btn-top, #{$root}__brand {
