@@ -1,0 +1,74 @@
+<div class="shop-card">
+  <a href="#" class="shop-card__wrapper">
+    <div class="shop-card__title-inner">
+      <div class="shop-card__title-img">
+        @@shop-logo
+      </div>
+      <div class="shop-card__title-txt">
+        <h2 class="shop-card__title-name">
+          @@shop-name
+        </h2>
+        <div class="shop-card__title-features">
+          @@include("./badge.html", {
+            "extra-class": "",
+            "body": '<span class="badge__sub">до</span>-10%',
+          })
+          <div class="shop-card__title-features-item">
+            <svg>
+              <use xlink:href="/img/icons/icons.svg#sp-logo"></use>
+            </svg>
+            <span class="shop-card__title-features-score">134</span>
+          </div>
+          <div class="shop-card__title-features-item">
+            <svg>
+              <use xlink:href="/img/icons/icons.svg#tff-logo"></use>
+            </svg>
+            <span class="shop-card__title-features-score">79</span>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="shop-card__catalog-img">
+      <div class="shop-card__catalog-item">
+        @@item-img-first
+      </div>
+      <div class="shop-card__catalog-item">
+        @@item-img-second
+      </div>
+      <div class="shop-card__catalog-item">
+        @@item-img-third
+      </div>
+      <div class="shop-card__catalog-item">
+        @@item-img-fourth
+      </div>
+      <div class="shop-card__catalog-item">
+        @@item-img-fifth
+      </div>
+      <div class="shop-card__catalog-item">
+        @@item-img-sixth
+      </div>
+      <div class="shop-card__catalog-item">
+        @@item-img-seventh
+      </div>
+    </div>
+    <p class="shop-card__desc">
+        <span class="shop-card__desc-category">Категории:</span>
+        @@desc
+    </p>
+  </a>
+  <div class="shop-card__sub">
+    @@if(subscribe){
+      <button class="btn btn--color-primary-light">Подписаться</button>
+    }
+    @@if(unsubscribe){
+      <button class="shop-card__unsub btn btn--color-green">Вы подписаны</button>
+    }
+    <svg class="shop-card__sub-round">
+      <use xlink:href="/img/icons/icons.svg#round"></use>
+    </svg>
+      @@include("../components/share.html", {
+        'extra-class-popup': 'extra-class-popup',
+        'media': '',
+      })
+  </div>
+</div>

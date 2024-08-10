@@ -6,7 +6,6 @@ import { Autocomplete } from '../modules/Autocomplete'
 import { Collapse } from '../modules/Collapse'
 import { Filter } from '../modules/Filter'
 import { Form } from '../modules/Form'
-import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { Sort } from '../modules/Sort'
 import { Ticker } from '../modules/Ticker'
@@ -22,12 +21,6 @@ window.addEventListener('load', () => {
 
   try {
     new Collapse()
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    new RangeSlider()
   } catch (error) {
     console.log(error)
   }

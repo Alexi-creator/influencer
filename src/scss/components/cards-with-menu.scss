@@ -1,0 +1,46 @@
+.cards-with-menu {
+  $root: &;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @include media($lg) {
+    grid-template-columns: 15rem 1fr;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    margin: 0 -1.25rem;
+
+    #{$root}--horizontally & {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    @include media($md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin: 0;
+    }
+
+    @include media($lg) {
+      gap: 1rem;
+    }
+
+    @include media($full) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include media($lg) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.tabs-head {
+  position: relative;
+  margin: 0 1.5rem;
+
+  @include media($md) {
+    display: inline-block;
+    margin: 0;
+  }
+
+  & .swiper-button-next {
+    transform: translate(50%, -3px);
+  }
+
+  & .swiper-button-prev {
+    transform: translate(-50%, -3px);
+  }
+
+  & .tabs__tab {
+    @extend %ellipsis;
+
+    display: flex;
+    width: max-content;
+    margin: 0 auto;
+
+    @include media($md) {
+      margin: unset;
+    }
+  }
+
+  & .swiper-slide {
+    @include media($md) {
+      flex-shrink: unset;
+      width: unset;
+    }
+  }
+
+  & .swiper-button-prev, .swiper-button-next {
+    @include media($md) {
+      display: none;
+    }
+  }
+}

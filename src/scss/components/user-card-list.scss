@@ -75,6 +75,22 @@
       grid-gap: 2rem;
       margin-top: 2.5rem;
     }
+
+    &--no-margin-top {
+      margin-top: 0;
+
+      @include media($md) {
+        margin-top: 0;
+      }
+  
+      @include media($lg) {
+        margin-top: 0;
+      }
+  
+      @include media($full) {
+        margin-top: 0;
+      }
+    }
   }
 
   &__form-filter-filters {

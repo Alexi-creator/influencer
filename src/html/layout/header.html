@@ -11,15 +11,11 @@
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
         @@include("../components/select.html", {
-          "label1": "Русский",
-          "label2": "Английский",
-          "label3": "Казахский",
-          "data-value1": "val1",
-          "data-value2": "val2",
-          "data-value3": "val3",
           "name": "language",
           "extra-class": "select--transparent header__top-language",
-          "value": "val1",
+          "options": '<li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>',
+          'initial-label': 'Русский',
+          'initial-value': 'ru',
         })
       </div>
     </div>
@@ -50,13 +46,13 @@
             name: "search-shops",
             placeholder: "Найдите что-нибудь",
             "input-extra-class": "autocomplete__input input-text--small",
-            prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
             suffix: '',
-            "extra-class": "header__nav-search-input",
-            "extra-class-prefix": "header__nav-search-icon",
-            "extra-class-suffix": "autocomplete__select",
+            'prefix': '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+            'extra-class': "header__nav-search-input",
+            'extra-class-prefix': "header__nav-search-icon",
+            'extra-class-suffix': "autocomplete__select",
             "tag": '',
-            "select": '@@include("../components/select.html", { "label1": "Везде", "label2": "Везде2", "label3": "Везде3 очень длинный текст", "data-value1": "val1", "data-value2": "val2", "data-value3": "val3", "name": "select", "extra-class": "select--transparent", "value": "val2" })',
+            'select': '@@include("../components/select.html", { "label1": "Везде", "label2": "Везде2", "label3": "Везде3 очень длинный текст", "data-value1": "val1", "data-value2": "val2", "data-value3": "val3", "name": "select", "extra-class": "select--transparent", "value": "val2" })',
             options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">label1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">label2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">label3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">label4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">label5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">label6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">label7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">label8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">label9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">label10</li>',
           })
         </li>
