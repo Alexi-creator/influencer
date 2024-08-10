@@ -130,44 +130,45 @@
     }
   }
 
-  &__select { 
+  &__suffix {
+    max-width: 11.25rem;
+    width: 100%;
+    margin-right: -1.09rem;
+    padding-right: 2px;
+  }
+
+  & .select {
     display: none;
     max-width: 11.25rem;
     width: 100%;
+    padding: 0 1rem 0 0;
     font-size: 1rem;
-  
+    border-radius: 0;
+
     @include media($md) {
       display: inline-flex;
       justify-content: flex-end;
       padding-left: 0.25rem;
       border-left: 2px solid rgb(var(--color-black-light));
     }
-  
-    & .select {
-      padding: 0;
-      
-      &__header {
-        position: relative;
-        justify-content: flex-end;
-        z-index: calc(var(--z-over) + 2);
-      }
 
-      &__options {
-        max-width: 12.25rem;
-        top: -0.6875rem;
-        // right: -1rem;
-        right: -1.0625rem;
-        // top: -10px;
-        // right: -15px;
-        left: unset;
-        padding-top: 50px;
-        border-top: none;
-        // border-right: none;
-        border-top-left-radius: unset;
-        border-top-right-radius: unset;
-        border-width: 2px;
-        z-index: calc(var(--z-over) + 1);
-      }
+    &__header {
+      position: relative;
+      justify-content: flex-end;
+      z-index: calc(var(--z-over) + 2);
+    }
+
+    &__options {
+      width: calc(100% + 4px);
+      top: -0.66rem;
+      left: unset;
+      right: -2px;
+      padding-top: 3.125rem;
+      border-top: none;
+      border-top-left-radius: unset;
+      border-top-right-radius: unset;
+      border-width: 2px;
+      z-index: calc(var(--z-over) + 1);
     }
   }
 }
