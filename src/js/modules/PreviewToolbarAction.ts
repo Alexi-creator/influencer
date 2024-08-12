@@ -40,7 +40,7 @@ export class PreviewToolbarAction {
     })
 
     const observer = new MutationObserver(mutationsList => {
-      for(const mutation of mutationsList) {
+      for (const mutation of mutationsList) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           this.changeActive()
         }

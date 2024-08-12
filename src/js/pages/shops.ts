@@ -18,6 +18,7 @@ import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserve
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { SyncCategories } from '../modules/SyncCategories'
 import { PreviewToolbarAction } from '../modules/PreviewToolbarAction'
+import { MainSearch } from '../modules/MainSearch'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -59,6 +60,12 @@ window.addEventListener('load', () => {
         [BreakpointWidth.FULLHD]: 5,
       },
     })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new MainSearch('.header__nav-search')
   } catch (error) {
     console.log(error)
   }

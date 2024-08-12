@@ -4,7 +4,7 @@
   display: none;
   gap: 0.5rem;
   position: sticky;
-  top: 4.5rem;
+  top: 5rem;
   margin-left: auto;
   margin-top: 1.5rem;
   z-index: var(--z-popup);
@@ -19,7 +19,7 @@
 
   @include media($lg) {
     gap: 0.5rem;
-    top: 6.5rem;
+    top: 7rem;
     float: right;
     margin-top: 0;
   }
