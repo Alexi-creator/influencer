@@ -21,11 +21,13 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new UsefulLinks()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Form(
       '.login__form-sign-in', 
@@ -37,6 +39,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Form(
       '.login__form-sign-up', 
@@ -48,16 +51,28 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Login()
   } catch (error) {
     console.log(error)
   }
+
   try {
     location = new Location()
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    new Autocomplete({
+      id: 'search-shops',
+      // url: API_URLS.mock.autocomplete,
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
   try {
     new Autocomplete({
       id: 'pickup-autocomplete',
@@ -67,6 +82,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Autocomplete({
       id: 'courier-autocomplete',
@@ -76,6 +92,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Autocomplete({
       id: 'search-pickup-autocomplete',
@@ -85,6 +102,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Select()
   } catch (error) {

@@ -83,8 +83,8 @@ export class Select {
   private clickHandler(e: MouseEvent): void {
     const targetElement = e.target as HTMLElement
     const select = targetElement?.closest(this.selectorSelect) as HTMLElement
-
-    if (select) {
+    
+    if (targetElement.tagName !== 'INPUT') {
       this.allSelects.forEach(selectItem => {
         if (select !== selectItem) {
           selectItem.classList.remove('active')
@@ -93,12 +93,15 @@ export class Select {
           iconElement?.classList.remove('active')
         }
       })
-      
-      if (targetElement?.closest(this.selectorHeader)) {
-        this.toggle(select)
-      }
-      if (targetElement?.closest(this.selectorOptions)) {
-        this.changeOption(select, targetElement)
+  
+      if (select) {  
+        if (targetElement?.closest(this.selectorHeader)) {
+          this.toggle(select)
+        }
+  
+        if (targetElement?.closest(this.selectorOptions)) {
+          this.changeOption(select, targetElement)
+        }
       }
     }
   }

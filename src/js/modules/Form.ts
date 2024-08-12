@@ -21,6 +21,7 @@ export class Form {
     this.apiOptions = apiOptions
 
     const form = document.querySelector(this.selectorForm)
+
     if (form) {
       this.form = form as HTMLFormElement
     }
@@ -39,6 +40,7 @@ export class Form {
 
     return Array.from(formData.entries()).reduce((acc, [key, value]) => {
       acc[key] = value
+
       return acc
     }, {})
   }

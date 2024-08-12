@@ -95,9 +95,11 @@ export class RangeSlider {
 
       let changeMin = false
       let changeMax = false
+
       if (startInputElem.value !== startVal.split('.')[0]) {
         changeMin = true
       }
+
       if (endInputElem.value !== endVal.split('.')[0]) {
         changeMax = true
       }
@@ -148,6 +150,7 @@ export class RangeSlider {
               currentInputElem.value = String(max)
               currentSlider?.entitySlider?.set([Number(startValue), max])
             }
+
             if (correctValue < min) {
               currentInputElem.value = String(correctValue)
               currentSlider?.entitySlider?.set([min, Number(endValue)])
@@ -177,6 +180,7 @@ export class RangeSlider {
               const endInput = currentSlider?.inputsElem?.[1] as HTMLInputElement
               endInput.value = String(max)
             }
+
             if (correctValue < min) {
               currentInputElem.value = String(correctValue)
               currentSlider?.entitySlider?.set([min, Number(endValue)])
@@ -192,6 +196,7 @@ export class RangeSlider {
       const entitySlider = noUiSlider.create(slider, { ...val.initOptions })
 
       const settingsSlider = this.allSliders.get(slider)
+
       if (settingsSlider) {
         this.allSliders.set(slider, { ...settingsSlider, entitySlider })
       }
@@ -217,6 +222,7 @@ export class RangeSlider {
       if (minMax === 'max' && (value !== end)) {
         inputElem.value = String(end)
       }
+
       if (minMax === 'min' && (value !== start)) {
         inputElem.value = String(start)
       }
@@ -225,9 +231,11 @@ export class RangeSlider {
 
   private changeHandler(e: Event) {
     const inputElem = e.target as HTMLInputElement
+
     if (inputElem.closest(this.selectorMaxInput)) {
       this.changeMinMaxValue(inputElem, 'max')
     }
+
     if (inputElem.closest(this.selectorMinInput)) {
       this.changeMinMaxValue(inputElem, 'min')
     }

@@ -10,7 +10,8 @@
     "github": "gulp buildGitHubPages --build",
     "deploy": "gulp deployFTP --build",
     "zip": "gulp deployZIP --build",
-    "svgSprive": "gulp svgSprive"
+    "svgSprive": "gulp svgSprive",
+    "eslint": "eslint . --ext .js,.ts"
   },
   "author": "Ilya Pavlov",
   "license": "ISC",

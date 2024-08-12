@@ -2,6 +2,7 @@
   $root: &;
 
   position: relative;
+  background-color: rgb(var(--color-white));
 
   &.active {
     #{$root}__input {
@@ -42,9 +43,8 @@
     top: 100%;
     left: 0;
     right: 0;    
-    left: 0;
     background-color: rgb(var(--color-white));
-    z-index: var(--z-over);
+    // z-index: var(--z-over);
 
     &-title {
       margin-top: 0.25rem;
@@ -95,6 +95,84 @@
       &.active {
         background-color: rgba(var(--color-primary), 0.1);
       }
+    }
+  }
+
+  &--img {
+    #{$root}__options-item {
+      display: grid;
+      grid-template-columns: 2rem 2fr;
+      grid-template-rows: auto auto;
+      column-gap: 0.5rem;
+
+      &-img {
+        height: 3rem;
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+        border-radius: var(--radius-medium);
+      }
+
+      &-title, &-subtitle {
+        @extend %ellipsis;
+
+        grid-column: 2 / -1;
+      }
+
+      &-title {
+        grid-row: 1 / 2;
+      }
+
+      &-subtitle {
+        grid-row: 2 / 3;
+        color: rgb(var(--color-grey));
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  &__suffix {
+    margin-right: -1.09rem;
+    padding-right: 2px;
+
+    @include media($md) {
+      max-width: 11.25rem;
+      width: 100%;
+    }
+  }
+
+  & .select {
+    display: none;
+    padding: 0 1rem 0 0;
+    font-size: 1rem;
+    border-radius: 0;
+
+    @include media($md) {
+      display: inline-flex;
+      justify-content: flex-end;
+      padding-left: 0.25rem;
+      border-left: 2px solid rgb(var(--color-black-light));
+    }
+
+    &__header {
+      position: relative;
+      justify-content: flex-end;
+      z-index: inherit;
+    }
+
+    &__options {
+      width: calc(100% + 4px);
+      top: -0.66rem;
+      left: unset;
+      right: -2px;
+      padding-top: 3.125rem;
+      border-top: none;
+      border-top-left-radius: unset;
+      border-top-right-radius: unset;
+      border-width: 2px;
+    }
+
+    &.active {
+      z-index: calc(var(--z-over) + 1);
     }
   }
 }

@@ -18,6 +18,7 @@ import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserve
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { SyncCategories } from '../modules/SyncCategories'
 import { PreviewToolbarAction } from '../modules/PreviewToolbarAction'
+import { MainSearch } from '../modules/MainSearch'
 
 window.addEventListener('load', () => {
   // Masonry должен вызываться раньше чем Filter
@@ -34,6 +35,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Masonry({
       selectorContainer: '.shop-window__form-sp .shop-window__form-filter-filters',
@@ -47,6 +49,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Masonry({
       selectorContainer: '.shop-window__form-tff .shop-window__form-filter-filters',
@@ -60,11 +63,19 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
+  try {
+    new MainSearch('.header__nav-search')
+  } catch (error) {
+    console.log(error)
+  }
+
   try {
     new Share()
   } catch (error) {
     console.log(error)
   }
+
   try {
     const targetElement = document.querySelector('.shop-window__tabs') as HTMLElement
 
@@ -79,26 +90,31 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new ScrollIntoView()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Collapse()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Tabs()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new RangeSlider()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Density({
       selectorContent: '.cards-with-menu--goods',
@@ -107,6 +123,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Density({
       selectorContent: '.cards-with-menu--tff',
@@ -115,6 +132,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Sort({
       selectorContainer: '.shop-window__form-goods',
@@ -123,6 +141,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Sort({
       selectorContainer: '.shop-window__form-sp',
@@ -131,6 +150,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Sort({
       selectorContainer: '.shop-window__form-tff',
@@ -139,6 +159,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Filter({
       selectorMain: '.shop-window',
@@ -148,6 +169,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Filter({
       selectorMain: '.shop-window',
@@ -157,6 +179,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Filter({
       selectorMain: '.shop-window',
@@ -166,6 +189,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Form(
       '.shop-window__form-goods', 
@@ -177,6 +201,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Form(
       '.shop-window__form-sp', 
@@ -188,6 +213,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Form(
       '.shop-window__form-tff', 
@@ -199,6 +225,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     const parentElement = document.querySelector('.shop-window__tabs') as HTMLElement
     const swiperElement = parentElement.querySelector('.shop-window__tabs-swiper') as HTMLElement
@@ -228,6 +255,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     document.querySelectorAll('.joint-purchases-card__slider').forEach(swiper => {
       const swiperElement = swiper.querySelector('.swiper-joint-purchases') as HTMLElement
@@ -261,11 +289,13 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new SyncCategories()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new PreviewToolbarAction()
   } catch (error) {

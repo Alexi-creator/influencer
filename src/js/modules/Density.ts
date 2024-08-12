@@ -24,11 +24,13 @@ export class Density {
     this.selectedDensity = SelectedDensity.GRID
 
     const contentElem = document.querySelector(this.selectorContent)
+
     if (contentElem) {
       this.contentElem = contentElem as HTMLElement
     }
 
     const densityElem = document.querySelector(`${this.selectorActionContainer} ${this.selectorDensity}`)
+
     if (densityElem) {
       this.densityElem = densityElem as HTMLElement
     }

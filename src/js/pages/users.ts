@@ -18,11 +18,13 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Collapse()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Sort({
       selectorContainer: '.user-card-list__form',
@@ -31,6 +33,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Filter({
       selectorMain: '.user-card-list',
@@ -40,6 +43,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Form(
       '.user-card-list__form', 
@@ -51,11 +55,13 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new ScrollIntoView()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Ticker()
   } catch (error) {

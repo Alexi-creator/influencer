@@ -68,6 +68,7 @@ export class CustomIntersectionObserver {
 
   private preparedOptions() {
     let rootMargin
+
     if (this.options.mobileRootMargin && this.options.desktopRootMargin) {
       rootMargin = window.innerWidth >= BreakpointWidth.DESKTOP ? this.options.desktopRootMargin : this.options.mobileRootMargin
     }
