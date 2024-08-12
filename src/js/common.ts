@@ -10,6 +10,7 @@ import { Login } from './modules/Login'
 import { Location } from './modules/Location'
 import { Autocomplete } from './modules/Autocomplete'
 import { Select } from './modules/Select'
+import { MainSearch } from './modules/MainSearch'
 
 window.addEventListener('load', () => {
   flsFunction.isWebp()
@@ -105,6 +106,12 @@ window.addEventListener('load', () => {
 
   try {
     new Select()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new MainSearch('.header__nav-search')
   } catch (error) {
     console.log(error)
   }
