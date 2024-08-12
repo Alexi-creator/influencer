@@ -20,7 +20,7 @@
 .user-card-list__actions {
   gap: 0.75rem;
   position: sticky;
-  top: 4rem;
+  top: 4.5rem;
   padding: 0.5rem 1.25rem;
   margin: 0 -1.25rem;
   background-color: rgb(var(--color-white));
@@ -83,7 +83,7 @@
   }
 
   .user-card-list__actions {
-    top: 6.5rem;
+    top: 6.125rem;
   }
 
   .user-card-list__actions .user-card-list__autocomplete {

@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/users.min.css?_v=20240723065926">
+  <link rel="stylesheet" href="css/pages/users.min.css?_v=20240812170311">
   <title>users Page</title>
-  <script defer src="js/users.min.js?_v=20240723065926"></script>
+  <script defer src="js/users.min.js?_v=20240812170311"></script>
 </head>
   <body>
     <header class="header">
@@ -20,9 +20,7 @@
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <!-- <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li> -->
-
-<div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
+        <div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Русский</div>
     <div class="select__icon">
@@ -59,15 +57,18 @@
           </a>
         </li>
         <li class="header__nav-item header__nav-search">
-          <label class="input-text header__nav-search-input">
+          <div class="header__nav-search-title">
+            <div class="header__nav-search-title-text">Поиск по сайту</div>
+            <svg class="header__nav-search-title-cross"><use xlink:href="./img/icons/icons.svg#cross"></use></svg>
+          </div>
+          <div id="search-shops" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
+  <label class="input-text autocomplete__input">
   
-    <div class="input-text__prefix header__nav-search-icon"><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
+  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь">
   
-    <div class="input-text__suffix header__nav-search-select"><!-- <li class="select__options-item" data-value=@@data-value1 role="button" tabindex="0">@@label1</li> -->
-
-<div class="select select--transparent noselect" role="button" tabindex="0">
+    <div class="input-text__suffix autocomplete__suffix"><div class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -75,13 +76,35 @@
     </div>
   </div>
   <ul class="select__options">
-    <li class="select__options-item" data-value="1" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="2" role="button" tabindex="0">Везде 2</li> <li class="select__options-item" data-value="3" role="button" tabindex="0">Везде очень длинный текст</li>
+    <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li> <li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>
   </ul>
-  <input name=select-search type="text" value=1 hidden>
+  <input name=select-search type="text" value=value2 hidden>
 </div>
 </div>
   
 </label>
+
+  <input type="text" name="search-shops" value="@@value" hidden>
+
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    
+      <div class="autocomplete__options">
+        
+          <a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
+        
+      </div>
+    
+    
+  </div>
+</div>
+
+          <div class="header__nav-search-filter">
+            <div class="header__nav-search-filter-title">
+              Где будем искать
+            </div>
+          </div>
+          <div class="header__nav-search-mask"></div>
         </li>
         <li class="header__nav-item header__nav-basket">
           <a href="#">
@@ -550,38 +573,48 @@
         <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
   <label class="input-text autocomplete__input">
   
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    <div class="input-text__prefix map__address-actions-input map__autocomplete--pickup-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи">
   
-    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    <div class="input-text__suffix map__address-actions-input map__autocomplete--pickup-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
 </label>
+
   <input type="text" name="pickup-autocomplete" value="@@value" hidden>
+
   <div class="autocomplete__body">
     <div class="autocomplete__body-title">Результаты поиска</div>
-    <ul class="autocomplete__options">
-      
-    </ul>
+    
+    
+      <ul class="autocomplete__options">
+        
+      </ul>
+    
   </div>
 </div>
 
         <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
   <label class="input-text autocomplete__input">
   
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    <div class="input-text__prefix map__address-actions-input map__autocomplete--courier-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки">
   
-    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    <div class="input-text__suffix map__address-actions-input map__autocomplete--courier-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
 </label>
+
   <input type="text" name="courier-autocomplete" value="@@value" hidden>
+
   <div class="autocomplete__body">
     <div class="autocomplete__body-title">Результаты поиска</div>
-    <ul class="autocomplete__options">
-      
-    </ul>
+    
+    
+      <ul class="autocomplete__options">
+        
+      </ul>
+    
   </div>
 </div>
 
@@ -631,19 +664,24 @@
       <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
   <label class="input-text autocomplete__input">
   
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    <div class="input-text__prefix search-pickup__actions-input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес">
   
-    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    <div class="input-text__suffix search-pickup__actions-input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
 </label>
+
   <input type="text" name="search-pickup" value="@@value" hidden>
+
   <div class="autocomplete__body">
     <div class="autocomplete__body-title">Результаты поиска</div>
-    <ul class="autocomplete__options">
-      
-    </ul>
+    
+    
+      <ul class="autocomplete__options">
+        
+      </ul>
+    
   </div>
 </div>
 
@@ -838,19 +876,24 @@
     <div id="users-autocomplete" class="autocomplete user-card-list__autocomplete">
   <label class="input-text autocomplete__input input-text--color-grey">
   
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    <div class="input-text__prefix user-card-list__autocomplete-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Введите имя блогера">
   
 </label>
+
   <input type="text" name="users-autocomplete" value="@@value" hidden>
+
   <div class="autocomplete__body">
     <div class="autocomplete__body-title">Результаты поиска</div>
-    <ul class="autocomplete__options">
-      
-        <li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>
-      
-    </ul>
+    
+    
+      <ul class="autocomplete__options">
+        
+          <li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>
+        
+      </ul>
+    
   </div>
 </div>
 

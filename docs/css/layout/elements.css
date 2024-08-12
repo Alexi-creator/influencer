@@ -12,6 +12,13 @@
   align-items: center;
 }
 
+.autocomplete--img .autocomplete__options-item-title,
+.autocomplete--img .autocomplete__options-item-subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -619,6 +626,7 @@
 
 .autocomplete {
   position: relative;
+  background-color: rgb(var(--color-white));
 }
 
 .autocomplete.active .autocomplete__input {
@@ -656,9 +664,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  left: 0;
   background-color: rgb(var(--color-white));
-  z-index: var(--z-over);
 }
 
 .autocomplete__body-title {
@@ -712,6 +718,70 @@
   background-color: rgba(var(--color-primary), 0.1);
 }
 
+.autocomplete--img .autocomplete__options-item {
+  display: grid;
+  grid-template-columns: 2rem 2fr;
+  grid-template-rows: auto auto;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+
+.autocomplete--img .autocomplete__options-item-img {
+  height: 3rem;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  border-radius: var(--radius-medium);
+}
+
+.autocomplete--img .autocomplete__options-item-title,
+.autocomplete--img .autocomplete__options-item-subtitle {
+  grid-column: 2/-1;
+}
+
+.autocomplete--img .autocomplete__options-item-title {
+  grid-row: 1/2;
+}
+
+.autocomplete--img .autocomplete__options-item-subtitle {
+  grid-row: 2/3;
+  color: rgb(var(--color-grey));
+  font-size: 0.875rem;
+}
+
+.autocomplete__suffix {
+  margin-right: -1.09rem;
+  padding-right: 2px;
+}
+
+.autocomplete .select {
+  display: none;
+  padding: 0 1rem 0 0;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.autocomplete .select__header {
+  position: relative;
+  justify-content: flex-end;
+  z-index: inherit;
+}
+
+.autocomplete .select__options {
+  width: calc(100% + 4px);
+  top: -0.66rem;
+  left: unset;
+  right: -2px;
+  padding-top: 3.125rem;
+  border-top: none;
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+  border-width: 2px;
+}
+
+.autocomplete .select.active {
+  z-index: calc(var(--z-over) + 1);
+}
+
 .title-txt {
   font-size: 3rem;
   line-height: 3rem;
@@ -763,6 +833,18 @@
 
   .radio__content {
     gap: 0.5rem;
+  }
+
+  .autocomplete__suffix {
+    max-width: 11.25rem;
+    width: 100%;
+  }
+
+  .autocomplete .select {
+    display: inline-flex;
+    justify-content: flex-end;
+    padding-left: 0.25rem;
+    border-left: 2px solid rgb(var(--color-black-light));
   }
 
   .title-txt {

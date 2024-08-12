@@ -842,19 +842,44 @@
   flex-grow: 1;
 }
 
-.header__nav-search-select {
+.header__nav-search-title {
   display: none;
-  max-width: 11.25rem;
-  width: 100%;
-  font-size: 1rem;
 }
 
-.header__nav-search-select .select {
-  padding: 0;
+.header__nav-search-title-text {
+  font-size: 1.375rem;
+  font-weight: 600;
 }
 
-.header__nav-search-select .select__header {
-  justify-content: flex-end;
+.header__nav-search-title-cross {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.header__nav-search-title-cross use {
+  fill: rgb(var(--color-grey));
+}
+
+.header__nav-search-filter {
+  display: none;
+}
+
+.header__nav-search-filter-select {
+  border: 1px solid red;
+}
+
+.header__nav-search-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  z-index: calc(var(--z-over) + 2);
 }
 
 .header__nav-search-icon > svg {
@@ -864,7 +889,8 @@
 }
 
 .header__nav-search-input {
-  height: 2.5rem;
+  position: relative;
+  border-radius: var(--radius-medium);
 }
 
 .header__nav-feed {
@@ -1085,11 +1111,12 @@
     margin: 0 auto;
   }
 
-  .header__nav-search-select {
-    display: inline-flex;
-    justify-content: flex-end;
-    padding-left: 0.25rem;
-    border-left: 2px solid rgb(var(--color-black-light));
+  .header__nav-search.active .header__nav-search-mask {
+    display: block;
+  }
+
+  .header__nav-search.active .header__nav-search-input {
+    z-index: calc(var(--z-over) + 3);
   }
 
   .header__nav-search-icon > svg {
@@ -1199,10 +1226,6 @@
     margin: 0 auto;
   }
 
-  .header__nav-search-input {
-    height: 3rem;
-  }
-
   .header__nav-feed {
     display: block;
   }
@@ -1247,6 +1270,10 @@
 
   .header__nav-search {
     margin: 0 auto;
+  }
+
+  .header__nav-search-input .input-text--small {
+    height: 3rem;
   }
 }
 
@@ -1294,5 +1321,95 @@
 
   .search-pickup__actions-input.active .autocomplete__options-item:hover {
     background-color: rgb(var(--color-primary-soft));
+  }
+
+  .header__nav-search.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem 1.25rem;
+    background-color: rgb(var(--color-white));
+    z-index: var(--z-base);
+    overflow-y: auto;
+  }
+
+  .header__nav-search.active .header__nav-search-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__nav-search.active .header__nav-search-filter {
+    display: block;
+    color: rgb(var(--color-grey));
+    margin: 1rem -1.25rem;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid rgb(var(--color-black-light));
+    border-bottom: 1px solid rgb(var(--color-black-light));
+  }
+
+  .header__nav-search.active .header__nav-search-input {
+    margin-top: 1rem;
+  }
+
+  .header__nav-search.active .select {
+    display: block;
+    position: absolute;
+    top: 76px;
+    right: -16px;
+    max-width: 9rem;
+  }
+
+  .header__nav-search.active .select__options {
+    border: 0.125rem solid rgb(var(--color-primary));
+    border-radius: var(--radius-medium);
+  }
+
+  .header__nav-search.active .autocomplete.active .autocomplete__body {
+    border-width: 0;
+  }
+
+  .header__nav-search.active .autocomplete.active .autocomplete__input {
+    border: 2px solid rgb(var(--color-primary-light));
+    border-radius: var(--radius-medium);
+  }
+
+  .header__nav-search.active .autocomplete__body {
+    display: block;
+    top: 7.25rem;
+    margin: 0 -1.25rem;
+  }
+
+  .header__nav-search.active .autocomplete__body-title {
+    border-width: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(var(--color-black));
+  }
+
+  .header__nav-search.active .autocomplete__options {
+    max-height: -moz-max-content;
+    max-height: max-content;
+    gap: 0.25rem;
+  }
+
+  .header__nav-search.active .autocomplete__options-item {
+    background-color: rgba(var(--color-primary), 0.1);
+  }
+
+  .header__nav-search.active .autocomplete__options-item::after {
+    content: url(../../img/icons/icons.svg#search);
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 1.25rem;
+    top: 50%;
+    background-color: transparent;
+    transform: translateY(-50%);
+  }
+
+  .header__nav-search.active .autocomplete__options-item-img {
+    display: none;
   }
 }
