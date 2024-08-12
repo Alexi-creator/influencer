@@ -40,7 +40,7 @@ export class PreviewToolbarAction {
     })
 
     const observer = new MutationObserver(mutationsList => {
-      for(const mutation of mutationsList) {
+      for (const mutation of mutationsList) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           this.changeActive()
         }
@@ -70,6 +70,7 @@ export class PreviewToolbarAction {
       if (status === StatusEvent.OPEN) {
         this.actionElem.classList.add(`${this.actionSelector.substring(1)}--over`)
       }
+
       if (status === StatusEvent.CLOSE) {
         this.actionElem.classList.remove(`${this.actionSelector.substring(1)}--over`)
       }

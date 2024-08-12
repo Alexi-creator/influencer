@@ -80,6 +80,7 @@ export class Sort {
     if (e.matches && this.selectedContentBtn) {
       return this.sortingActionBtn.innerHTML = this.selectedContentBtn
     }
+
     this.sortingActionBtn.innerHTML = this.defaultContentBtn
   }
 
@@ -88,6 +89,7 @@ export class Sort {
       if (breakPoint === BreakpointWidth.DESKTOP) {
         this.toggleOverflowBody(e)
       }
+
       if (breakPoint === BreakpointWidth.TABLET) {
         this.toggleContentBtn(e)
       }
@@ -125,6 +127,7 @@ export class Sort {
 
     if (clonedContentBtn) {
       this.selectedContentBtn = clonedContentBtn
+
       if (window.innerWidth > 768) {
         this.sortingActionBtn.innerHTML = clonedContentBtn
       }
@@ -146,7 +149,8 @@ export class Sort {
       if (this.selectedElem) this.selectedElem.checked = false
       this.isSelected = false
       this.selectedElem = null
-    } 
+    }
+ 
     this.toggleSorting()
   }
 
@@ -166,6 +170,7 @@ export class Sort {
     if (targetElement.closest(this.selectorIconCross) && this.sortingActionBtn.contains(targetElement)) {    
       return this.clearSort()
     }
+
     // открытие / зыкрытие блока с сортировкой
     if (this.sortingActionBtn.contains(targetElement) || this.sortingCross.contains(targetElement)) {      
       return this.toggleSorting()

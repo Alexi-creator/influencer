@@ -58,6 +58,7 @@ export class SyncCatalog {
 
   private syncFromDesktop(catalog: string) {
     const mobileCatalogSync = this.catalogsMobile.find(item => item.dataset.catalog === catalog)
+
     if (mobileCatalogSync) {
       const collapseElem = mobileCatalogSync.querySelector('.collapse') as HTMLElement
       collapseElem.classList.remove('collapse--close')

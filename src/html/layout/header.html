@@ -41,16 +41,29 @@
           </a>
         </li>
         <li class="header__nav-item header__nav-search">
-          @@include("../components/input-text.html", {
-            name: "search",
-            type: "text",
+          <div class="header__nav-search-title">
+            <div class="header__nav-search-title-text">Поиск по сайту</div>
+            <svg class="header__nav-search-title-cross"><use xlink:href="./img/icons/icons.svg#cross"></use></svg>
+          </div>
+          @@include("../components/autocomplete.html", {
+            id: "search-shops",
+            name: "search-shops",
             placeholder: "Найдите что-нибудь",
-            prefix: "<svg><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
-            suffix: "@@include('../components/select.html', { 'options': '<li class=\"select__options-item\" data-value=\"1\" role=\"button\" tabindex=\"0\">Везде</li> <li class=\"select__options-item\" data-value=\"2\" role=\"button\" tabindex=\"0\">Везде 2</li> <li class=\"select__options-item\" data-value=\"3\" role=\"button\" tabindex=\"0\">Везде очень длинный текст</li>', 'name': 'select-search', 'extra-class': 'select--transparent', 'initial-value': '1', 'initial-label': 'Везде' })",
-            "extra-class": "header__nav-search-input",
-            "extra-class-prefix": "header__nav-search-icon",
-            "extra-class-suffix": "header__nav-search-select",
+            "input-extra-class": "autocomplete__input",
+            prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+            'suffix': '@@include("../components/select.html", { options: "<li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li> <li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>", "name": "select-search", "initial-value": "value2", "initial-label": "Везде", "extra-class": "select--transparent" })',
+            "extra-class": "header__nav-search-input autocomplete--img autocomplete--select",
+            "extra-class-prefix": "",
+            "extra-class-suffix": "autocomplete__suffix",
+            "tag": "div",
+            options: '<a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><img class="autocomplete__options-item-img" src="@img/avatar.jpg" /><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><img class="autocomplete__options-item-img" src="@img/sp-slide2.jpg" /><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>',
           })
+          <div class="header__nav-search-filter">
+            <div class="header__nav-search-filter-title">
+              Где будем искать
+            </div>
+          </div>
+          <div class="header__nav-search-mask"></div>
         </li>
         <li class="header__nav-item header__nav-basket">
           <a href="#">

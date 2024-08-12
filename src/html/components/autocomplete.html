@@ -5,16 +5,27 @@
     prefix: '@@prefix',
     suffix: '@@suffix',
     "extra-class": '@@input-extra-class',
-    "extra-class-prefix": "",
-    "extra-class-suffix": "",
+    "extra-class-prefix": '@@extra-class-prefix',
+    "extra-class-suffix": '@@extra-class-suffix',
   })
+
   <input type="text" name="@@name" value="@@value" hidden>
+
   <div class="autocomplete__body">
     <div class="autocomplete__body-title">Результаты поиска</div>
-    <ul class="autocomplete__options">
-      @@if(options) {
-        @@options
-      }
-    </ul>
+    @@if(tag) {
+      <@@tag class="autocomplete__options">
+        @@if(options) {
+          @@options
+        }
+      </@@tag>
+    }
+    @@if(!tag) {
+      <ul class="autocomplete__options">
+        @@if(options) {
+          @@options
+        }
+      </ul>
+    }
   </div>
 </div>

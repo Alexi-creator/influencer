@@ -33,6 +33,7 @@ export class Share {
 
       return targetElement.closest(this.selector)?.classList.add('share--open')
     }
+
     if (targetElement.closest('.share__close')) {
       targetElement.closest(this.selector)?.classList.remove('share--open')
       targetElement.closest(this.selector)?.classList.add('share--close')

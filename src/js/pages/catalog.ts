@@ -8,7 +8,6 @@ import { Masonry } from '../modules/Masonry'
 import { SyncCatalog } from '../modules/SyncCatalog'
 import { BtnShow } from '../modules/BtnShow'
 
-
 window.addEventListener('load', () => {
   try {
     new Masonry({
@@ -21,6 +20,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Masonry({
       selectorContainer: '.catalog__desktop .catalog__masonry',
@@ -32,21 +32,25 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Collapse()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new SyncCatalog()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new BtnShow()
   } catch (error) {
     console.log(error)
   }
+
   try {
     new Tabs()
   } catch (error) {
