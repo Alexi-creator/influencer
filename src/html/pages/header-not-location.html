@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include("../layout/head.html", {
+    "title": "header not authorized",
+    "nameFile": "header-demo",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationExtraClass: "",
+      idPopup: "location",
+      locationClass: "header__top-location--empty",
+      locationAddress: "",
+      icon: "location",
+    })
+  </body>
+</html>

@@ -46,8 +46,34 @@
 
     &-location {
       gap: 0.25rem;
-      color: rgb(var(--color-primary));
       cursor: pointer;
+
+      &--full {
+        #{$root}__top-location-cta {
+          display: none;
+        }
+      }
+
+      &--half {
+        & > svg {
+          color: rgb(var(--color-black));
+        }
+      }
+
+      &--empty {
+        #{$root}__top-location-cta {
+          padding-left: 0;
+        }
+
+        & > svg {
+          color: rgb(var(--color-primary));
+        }
+      }
+
+      &-cta {
+        color: rgb(var(--color-primary));
+        padding-left: 1rem;
+      }
     }
 
     &-info {

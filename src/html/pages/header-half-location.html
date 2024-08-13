@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include("../layout/head.html", {
+    "title": "header half authorized",
+    "nameFile": "header-demo",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationExtraClass: "",
+      idPopup: "map",
+      locationClass: "header__top-location--half",
+      locationAddress: "Москва",
+      icon: "location",
+    })
+  </body>
+</html>

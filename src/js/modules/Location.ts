@@ -36,10 +36,12 @@ export class Location {
   private pickupInputSelector: string
   private courierInputSelector: string
   private headerSelector: string
+  private headerAddressSelector: string
   private mapYandexSelector: string
   private addressSelector: string
   private addressSelectedSelector: string
   private locationAddressesSelector: string
+  private addressCitySelector: string
   private addressRemoveSelector: string
   private radioDeliveryName: string
 
@@ -57,7 +59,9 @@ export class Location {
   private courierInputElem: HTMLInputElement
   private courierAddressElem: HTMLElement
   private headerElem: HTMLElement
+  private headerAddressElem: HTMLElement
   private locationAddressesElem: HTMLElement
+  private addressCityElem: HTMLElement
   private courierFullAddressElem: HTMLElement
 
   constructor() {
@@ -70,6 +74,7 @@ export class Location {
     this.deliveryType = DeliveryEnum.pickup
     
     this.headerSelector = '.header'
+    this.headerAddressSelector = `${this.headerSelector}__top-location-address`
     this.mapSelector = '.map'
     this.courierSelector = '.courier'
     this.searchPickupSelector = '.search-pickup'
@@ -78,6 +83,7 @@ export class Location {
     this.searchInputSelector = `${this.searchPickupSelector} input`
     this.mapYandexSelector = '.map__yandex'
     this.addressSelector = '.location__address'
+    this.addressCitySelector = '.location__address-city-name'
     this.addressSelectedSelector = `${this.addressSelector}--selected`
     this.addressRemoveSelector = `${this.addressSelector}-remove`
     this.locationAddressesSelector = '.location__addresses'
@@ -116,6 +122,10 @@ export class Location {
     if (courierInputElem) this.courierInputElem = courierInputElem
     const headerElem = document.querySelector(this.headerSelector) as HTMLElement
     if (headerElem) this.headerElem = headerElem
+    const addressCityElem = document.querySelector(this.addressCitySelector) as HTMLElement
+    if (addressCityElem) this.addressCityElem = addressCityElem
+    const headerAddressElem = document.querySelector(this.headerAddressSelector) as HTMLElement
+    if (headerAddressElem) this.headerAddressElem = headerAddressElem
     const locationAddressesElem = document.querySelector(this.locationAddressesSelector) as HTMLElement
     if (locationAddressesElem) this.locationAddressesElem = locationAddressesElem
 
@@ -155,6 +165,11 @@ export class Location {
         address.classList.add(this.addressSelectedSelector.substring(1))
       }
     })
+
+    const deliveryMethod = addressElem.dataset.delivery
+    const address = addressElem.querySelector('.location__address-address')?.innerHTML?.split(',')?.slice(1).join(',')
+    
+    this.headerAddressElem.innerHTML = `${deliveryMethod === DeliveryEnum.pickup ? 'Пункт выдачи,' : ''} ${address}`
   }
 
   private addAddress(type: DeliveryEnum): void {
@@ -278,6 +293,10 @@ export class Location {
     }
   }
 
+  private selectedCity(city: string): void {
+    this.addressCityElem.innerHTML = city
+  }
+
   private clickHandler(e: MouseEvent): Promise<void> | void {
     const targetElement = e.target as HTMLElement
 
@@ -318,9 +337,13 @@ export class Location {
     const targetElement = e.target as HTMLInputElement
     const name = targetElement.name
     const value = targetElement.value as DeliveryEnum
-    
+
     if (name === this.radioDeliveryName) {
       this.changeDelivery(value)
+    }
+
+    if (name === 'city') {
+      this.selectedCity(value)
     }
   }
 
