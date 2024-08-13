@@ -3,19 +3,20 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240812172144">
+  <link rel="stylesheet" href="css/pages/catalog.min.css?_v=20240813184548">
   <title>catalog Page</title>
-  <script defer src="js/catalog.min.js?_v=20240812172144"></script>
+  <script defer src="js/catalog.min.js?_v=20240813184548"></script>
 </head>
   <body>
     <header class="header">
   <div class="header__inner">
     <div class="header__top">
-      <button class="header__top-location" data-popup="location">
+      <button class="header__top-location @@locationClass" data-popup="@@idPopup">
         <svg>
-          <use xlink:href="./img/icons/icons.svg#location"></use>
+          <use xlink:href="./img/icons/icons.svg#@@icon"></use>
         </svg>
-        Укажите адрес доставки
+        <span class="header__top-location-address">@@locationAddress</span>
+        <span class="header__top-location-cta">Укажите точный адрес</span>
       </button>
       <div class="header__top-info">
         <a href="#">Инструкции</a>
@@ -384,7 +385,7 @@
   <div id="location" class="popup header__location">
   <div class="popup__overlay">
     <div class="popup__content">
-      <div class="location location--setup">
+      <div class="location @@locationExtraClass">
   <div class="location__inner">
     <div class="location__header">
       <div class="location__title">Куда доставить заказ?</div>
@@ -412,7 +413,7 @@
       </button>
     </div>
     <ul class="location__addresses location__setup">
-      <li class="location__address" data-value="почта_россии" role="button" tabindex="0">
+      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
         <div class="location__address-header">
           <div class="location__address-option">Отделение Почты России</div>
           <button class="location__address-remove">
@@ -427,7 +428,7 @@
           <span class="location__address-storage-period-count">15 дней</span>
         </div>
       </li>
-      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0">
+      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
         <div class="location__address-header">
           <div class="location__address-option">Доставка по адресу</div>
           <button class="location__address-remove">
@@ -436,7 +437,7 @@
             </svg>
           </button>
         </div>
-        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
         <div class="location__address-contacts">
           Маргарита А., +7 999 123 45 67
         </div>
@@ -573,11 +574,11 @@
         <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
   <label class="input-text autocomplete__input">
   
-    <div class="input-text__prefix map__address-actions-input map__autocomplete--pickup-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи">
   
-    <div class="input-text__suffix map__address-actions-input map__autocomplete--pickup-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
 </label>
 
@@ -597,11 +598,11 @@
         <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
   <label class="input-text autocomplete__input">
   
-    <div class="input-text__prefix map__address-actions-input map__autocomplete--courier-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки">
   
-    <div class="input-text__suffix map__address-actions-input map__autocomplete--courier-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
 </label>
 
@@ -825,7 +826,7 @@
 
 
   <template id="address">
-    <li class="location__address" data-value="" role="button" tabindex="0">
+    <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
       <div class="location__address-header">
         <div class="location__address-option"></div>
         <button class="location__address-remove">

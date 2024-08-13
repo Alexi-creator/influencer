@@ -2900,8 +2900,28 @@ button {
 
 .header__top-location {
   gap: 0.25rem;
-  color: rgb(var(--color-primary));
   cursor: pointer;
+}
+
+.header__top-location--full .header__top-location-cta {
+  display: none;
+}
+
+.header__top-location--half > svg {
+  color: rgb(var(--color-black));
+}
+
+.header__top-location--empty .header__top-location-cta {
+  padding-left: 0;
+}
+
+.header__top-location--empty > svg {
+  color: rgb(var(--color-primary));
+}
+
+.header__top-location-cta {
+  color: rgb(var(--color-primary));
+  padding-left: 1rem;
 }
 
 .header__top-info {
