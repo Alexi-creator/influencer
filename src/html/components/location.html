@@ -1,4 +1,4 @@
-<div class="location location--setup">
+<div class="location @@extra-class">
   <div class="location__inner">
     <div class="location__header">
       <div class="location__title">Куда доставить заказ?</div>
@@ -26,7 +26,7 @@
       </button>
     </div>
     <ul class="location__addresses location__setup">
-      <li class="location__address" data-value="почта_россии" role="button" tabindex="0">
+      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
         <div class="location__address-header">
           <div class="location__address-option">Отделение Почты России</div>
           <button class="location__address-remove">
@@ -41,7 +41,7 @@
           <span class="location__address-storage-period-count">15 дней</span>
         </div>
       </li>
-      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0">
+      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
         <div class="location__address-header">
           <div class="location__address-option">Доставка по адресу</div>
           <button class="location__address-remove">
@@ -50,7 +50,7 @@
             </svg>
           </button>
         </div>
-        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
         <div class="location__address-contacts">
           Маргарита А., +7 999 123 45 67
         </div>
