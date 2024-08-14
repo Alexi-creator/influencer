@@ -146,7 +146,8 @@
 
         &--open {
           #{$root}__item-header {
-            @extend %flex-space-between;
+            display: flex;
+            align-items: center;
           }
     
           & .popup__overlay {
@@ -165,6 +166,8 @@
 
           @include media($md) {
             #{$root}__item-header {
+              display: none;
+
               & svg:first-child {
                 display: none;
               }

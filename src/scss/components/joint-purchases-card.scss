@@ -377,12 +377,12 @@
     grid-area: until;
     display: none;
 
+    #{$root}--processing & {
+      display: inline-flex;
+    }
+
     @include media($md) {
       font-size: 1rem;
-
-      #{$root}--processing & {
-        display: block;
-      }
     }
 
     &-date {
@@ -400,7 +400,7 @@
 
     grid-area: status;
     gap: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.125rem;
 
     #{$root}--processing & {
       display: none;
