@@ -1,5 +1,5 @@
 /**
- * Класс реагирующий на активацию главного поиска на странице (autocomplete),
+ * Класс реагирующий на активацию главного поиска на странице (autocomplete в header),
  * показ блюра и адаптивного отображения.
  */
 export class MainSearch {
@@ -7,6 +7,8 @@ export class MainSearch {
   private autocompleteSelector: string
   private maskSelector: string
   private crossSelector: string
+
+  private selectItemSelector: string
 
   private isActive: boolean
 
@@ -20,6 +22,8 @@ export class MainSearch {
     this.autocompleteSelector = `${this.containerSelector}-input`
     this.maskSelector = `${this.containerSelector}-mask`
     this.crossSelector = `${this.containerSelector}-title-cross`
+
+    this.selectItemSelector = '.select__options-item'
 
     this.isActive = false
 
@@ -58,8 +62,15 @@ export class MainSearch {
     document.body.classList.remove('overflow')
   }
 
+  private selectedFilter(selectItem: HTMLElement): void {
+    const value = selectItem.dataset.value
+    console.log('value', value)
+   
+    // TODO влиять выбранным значением на поиск
+  }
+
   private clickHandler(e: Event): void {
-    const targetElement = e.target as HTMLInputElement
+    const targetElement = e.target as HTMLElement
 
     if (this.crossElem.contains(targetElement) || this.maskElem.contains(targetElement)) {
       this.deactivation()
@@ -67,6 +78,11 @@ export class MainSearch {
 
     if (this.autocompleteElem.contains(targetElement)) {
       this.activation()
+    }
+
+    if (targetElement.closest(this.selectItemSelector)) {
+      this.selectedFilter(targetElement)
+      
     }
   }
 
