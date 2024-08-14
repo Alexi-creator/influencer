@@ -262,6 +262,10 @@
   display: none;
 }
 
+.joint-purchases-card--processing .joint-purchases-card__until {
+  display: inline-flex;
+}
+
 .joint-purchases-card__until-date {
   font-weight: 600;
 }
@@ -271,7 +275,7 @@
   -ms-grid-column: 1;
   grid-area: status;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 .joint-purchases-card--processing .joint-purchases-card__status {
@@ -395,10 +399,6 @@
 
   .joint-purchases-card__until {
     font-size: 1rem;
-  }
-
-  .joint-purchases-card--processing .joint-purchases-card__until {
-    display: block;
   }
 
   .joint-purchases-card__status {

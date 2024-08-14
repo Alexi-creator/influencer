@@ -1,9 +1,3 @@
-.filters__item--categories .popup--open .filters__item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .filters__collapse-wrap .checkbox .btn {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -105,6 +99,11 @@
 
 .filters__item--categories .popup .product-menu {
   background-color: rgb(var(--color-white));
+}
+
+.filters__item--categories .popup--open .filters__item-header {
+  display: flex;
+  align-items: center;
 }
 
 .filters__item--categories .popup--open .popup__overlay {
@@ -259,6 +258,10 @@
 
   .filters__item--categories .popup .product-menu {
     background-color: rgb(var(--color-primary-soft));
+  }
+
+  .filters__item--categories .popup--open .filters__item-header {
+    display: none;
   }
 
   .filters__item--categories .popup--open .filters__item-header svg:first-child {
