@@ -44,4 +44,17 @@
       margin-top: 2.5rem;
     }
   }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+
+    @include media($md) {
+      gap: 0.75rem;
+    }
+    @include media($lg) {
+      gap: 1.25rem;
+    }
+  }
 }
