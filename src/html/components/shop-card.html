@@ -1,6 +1,6 @@
 <div class="shop-card">
   <div class="shop-card__inner">
-    <a href="#" class="shop-card__top">
+    <div class="shop-card__top">
       <div class="shop-card__title-inner">
         <div class="shop-card__title-img">
           @@shop-logo
@@ -48,11 +48,12 @@
           @@item-img-seventh
         </div>
       </div>
-      <p class="shop-card__desc">
-          <span class="shop-card__desc-category">Категории:</span>
-          @@desc
-      </p>
-    </a>
+      <div class="shop-card__desc">
+        @@include("./breadcrumbs.html", {
+          title: "Категории:",
+        })
+      </div>
+    </div>
     <div class="shop-card__sub">
       @@if(subscribe){
         <button class="btn btn--color-primary-light">Подписаться</button>
@@ -64,7 +65,8 @@
         <use xlink:href="/img/icons/icons.svg#round"></use>
       </svg>
         @@include("../components/share.html", {
-          'extra-class-popup': 'extra-class-popup',
+          id: '@@shop-name',
+          'extra-class-popup': '',
           'media': '',
         })
     </div>

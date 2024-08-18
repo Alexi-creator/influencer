@@ -1,6 +1,16 @@
 .breadcrumbs {
   color: rgb(var(--color-grey));
 
+  &__title {
+    float: left;
+    margin-right: 0.5rem;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: inline;
+  }
+
   &__item {
     display: inline-block;
 
