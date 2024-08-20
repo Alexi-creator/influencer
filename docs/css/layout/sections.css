@@ -26,12 +26,16 @@
   max-width: 100%;
 }
 
+.section--shops .section__inner {
+  max-width: var(--max-width-container-1120);
+}
+
 .section--users {
   padding-top: 1.25rem;
 }
 
 .section--users .section__inner {
-  max-width: var(--max-width-container-users);
+  max-width: var(--max-width-container-1120);
 }
 
 .section--user-info {
@@ -39,7 +43,7 @@
 }
 
 .section--user-info .section__inner {
-  max-width: var(--max-width-container-user-info);
+  max-width: var(--max-width-container-user-1066);
 }
 
 .section--user-board {

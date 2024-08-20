@@ -166,6 +166,16 @@
   color: rgb(var(--color-grey));
 }
 
+.breadcrumbs__title {
+  float: left;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.breadcrumbs__list {
+  display: inline;
+}
+
 .breadcrumbs__item {
   display: inline-block;
 }
@@ -240,6 +250,19 @@
 .badge.badge--big {
   padding: 0 1.25rem;
   height: 3rem;
+}
+
+.badge.badge--small {
+  padding: 0 0.25rem;
+  height: 1.25rem;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.badge.badge--small .badge__sub {
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  transform: translateY(10%);
 }
 
 .badge svg {

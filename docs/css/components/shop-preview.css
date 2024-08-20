@@ -35,6 +35,14 @@
   margin-top: 0.25rem;
 }
 
+.shop-preview__bread-crumbs .breadcrumbs__title {
+  font-weight: 400;
+}
+
+.shop-preview__bread-crumbs .breadcrumbs__item:last-of-type {
+  display: none;
+}
+
 .shop-preview__followers {
   font-weight: 600;
   margin-top: 1rem;

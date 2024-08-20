@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/user-inner.min.css?_v=20240814143107">
+  <link rel="stylesheet" href="css/pages/user-inner.min.css?_v=20240820161004">
   <title>user Page</title>
-  <script defer src="js/user-inner.min.js?_v=20240814143107"></script>
+  <script defer src="js/user-inner.min.js?_v=20240820161004"></script>
 </head>
   <body>
     <header class="header">
@@ -921,10 +921,10 @@
     <button class="btn btn--color-primary-light">Подписаться</button>
     <span class="preview-toolbar-action__subscribe-dote"></span>
     <div class="share">
-  <svg class="share__open" data-popup="share">
+  <svg class="share__open" data-popup="@@id">
     <use xlink:href="./img/icons/icons.svg#share-link"></use>
   </svg>
-  <div id="share" class="popup popup--onlymobile" data-media="0">
+  <div id="@@id" class="popup popup--onlymobile" data-media="0">
     <div class="popup__overlay">
       <div class="popup__content">
         <div class="share__block">
@@ -7078,77 +7078,87 @@
 
         <!-- Контент для вкладки subscriptions при выбранном селекте shops -->
         <div class="user-board__content-subscriptions-shops user-board__content tab-content">
-          <div class="shop-card-list__cards-wrapper">
+          <div class="shop-card-list @@extra-class">
   <div class="shop-card">
-  <a href="#" class="shop-card__wrapper">
-    <div class="shop-card__title-inner">
-      <div class="shop-card__title-img">
-        <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
-      </div>
-      <div class="shop-card__title-txt">
-        <h2 class="shop-card__title-name">
-          Интернет магазин женской одежды и аксессуаров Lass
-        </h2>
-        <div class="shop-card__title-features">
-          <div class="badge ">
+  <div class="shop-card__inner">
+    <div class="shop-card__top">
+      <div class="shop-card__title-inner">
+        <div class="shop-card__title-img">
+          <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
+        </div>
+        <div class="shop-card__title-txt">
+          <h2 class="shop-card__title-name">
+            Интернет магазин женской одежды и аксессуаров Lass
+          </h2>
+          <div class="shop-card__title-features">
+            <div class="badge badge--small">
   <span class="badge__sub">до</span>-10%
 </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#sp-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">134</span>
+            <div class="badge badge--small">
+  134 СП
+</div>
+            <div class="badge badge--small">
+  79 TFF
+</div>
           </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#tff-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">79</span>
-        </div>
         </div>
       </div>
+      <div class="shop-card__catalog-img">
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+      </div>
+      <div class="shop-card__desc">
+        <div class="breadcrumbs">
+  <span class="breadcrumbs__title">Категории:</span>
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="#">Платья и сарафаны</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#">Блузы и рубашки</a>
+    </li>
+    <li class="breadcrumbs__item">
+      Юбки
+    </li>
+    <li class="breadcrumbs__item">
+      + еще 12
+    </li>
+  </ul>
+</div>
+      </div>
     </div>
-    <div class="shop-card__catalog-img">
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-    </div>
-    <p class="shop-card__desc">
-        <span class="shop-card__desc-category">Категории:</span>
-        Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8
-    </p>
-  </a>
-  <div class="shop-card__sub">
-    
-      <button class="btn btn--color-primary-light">Подписаться</button>
-    
-    
-    <svg class="shop-card__sub-round">
-      <use xlink:href="/img/icons/icons.svg#round"></use>
-    </svg>
-      <div class="share">
-  <svg class="share__open" data-popup="share">
+    <div class="shop-card__sub">
+      
+        <button class="btn btn--color-primary-light">Подписаться</button>
+      
+      
+      <svg class="shop-card__sub-round">
+        <use xlink:href="/img/icons/icons.svg#round"></use>
+      </svg>
+        <div class="share">
+  <svg class="share__open" data-popup="Интернет магазин женской одежды и аксессуаров Lass">
     <use xlink:href="./img/icons/icons.svg#share-link"></use>
   </svg>
-  <div id="share" class="popup extra-class-popup" data-media="">
+  <div id="Интернет магазин женской одежды и аксессуаров Lass" class="popup " data-media="">
     <div class="popup__overlay">
       <div class="popup__content">
         <div class="share__block">
@@ -7193,79 +7203,90 @@
   </div>
 </div>
 
+    </div>
   </div>
 </div>
 
   <div class="shop-card">
-  <a href="#" class="shop-card__wrapper">
-    <div class="shop-card__title-inner">
-      <div class="shop-card__title-img">
-        <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
-      </div>
-      <div class="shop-card__title-txt">
-        <h2 class="shop-card__title-name">
-          Интернет магазин женской одежды и аксессуаров Lass
-        </h2>
-        <div class="shop-card__title-features">
-          <div class="badge ">
+  <div class="shop-card__inner">
+    <div class="shop-card__top">
+      <div class="shop-card__title-inner">
+        <div class="shop-card__title-img">
+          <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
+        </div>
+        <div class="shop-card__title-txt">
+          <h2 class="shop-card__title-name">
+            Интернет магазин женской одежды и аксессуаров Lass2
+          </h2>
+          <div class="shop-card__title-features">
+            <div class="badge badge--small">
   <span class="badge__sub">до</span>-10%
 </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#sp-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">134</span>
+            <div class="badge badge--small">
+  134 СП
+</div>
+            <div class="badge badge--small">
+  79 TFF
+</div>
           </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#tff-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">79</span>
-        </div>
         </div>
       </div>
+      <div class="shop-card__catalog-img">
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+      </div>
+      <div class="shop-card__desc">
+        <div class="breadcrumbs">
+  <span class="breadcrumbs__title">Категории:</span>
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="#">Платья и сарафаны</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#">Блузы и рубашки</a>
+    </li>
+    <li class="breadcrumbs__item">
+      Юбки
+    </li>
+    <li class="breadcrumbs__item">
+      + еще 12
+    </li>
+  </ul>
+</div>
+      </div>
     </div>
-    <div class="shop-card__catalog-img">
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-    </div>
-    <p class="shop-card__desc">
-        <span class="shop-card__desc-category">Категории:</span>
-        Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8
-    </p>
-  </a>
-  <div class="shop-card__sub">
-    
-    
-      <button class="shop-card__unsub btn btn--color-green">Вы подписаны</button>
-    
-    <svg class="shop-card__sub-round">
-      <use xlink:href="/img/icons/icons.svg#round"></use>
-    </svg>
-      <div class="share">
-  <svg class="share__open" data-popup="share">
+    <div class="shop-card__sub">
+      
+      
+        <button class="shop-card__unsub btn btn--color-green">Вы подписаны</button>
+      
+      <svg class="shop-card__sub-round">
+        <use xlink:href="/img/icons/icons.svg#round"></use>
+      </svg>
+        <div class="share">
+  <svg class="share__open" data-popup="Интернет магазин женской одежды и аксессуаров Lass2">
     <use xlink:href="./img/icons/icons.svg#share-link"></use>
   </svg>
-  <div id="share" class="popup extra-class-popup" data-media="">
+  <div id="Интернет магазин женской одежды и аксессуаров Lass2" class="popup " data-media="">
     <div class="popup__overlay">
       <div class="popup__content">
         <div class="share__block">
@@ -7310,79 +7331,90 @@
   </div>
 </div>
 
+    </div>
   </div>
 </div>
 
   <div class="shop-card">
-  <a href="#" class="shop-card__wrapper">
-    <div class="shop-card__title-inner">
-      <div class="shop-card__title-img">
-        <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
-      </div>
-      <div class="shop-card__title-txt">
-        <h2 class="shop-card__title-name">
-          Интернет магазин женской одежды и аксессуаров Lass
-        </h2>
-        <div class="shop-card__title-features">
-          <div class="badge ">
+  <div class="shop-card__inner">
+    <div class="shop-card__top">
+      <div class="shop-card__title-inner">
+        <div class="shop-card__title-img">
+          <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
+        </div>
+        <div class="shop-card__title-txt">
+          <h2 class="shop-card__title-name">
+            Интернет магазин женской одежды и аксессуаров Lass3
+          </h2>
+          <div class="shop-card__title-features">
+            <div class="badge badge--small">
   <span class="badge__sub">до</span>-10%
 </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#sp-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">134</span>
+            <div class="badge badge--small">
+  134 СП
+</div>
+            <div class="badge badge--small">
+  79 TFF
+</div>
           </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#tff-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">79</span>
-        </div>
         </div>
       </div>
+      <div class="shop-card__catalog-img">
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+      </div>
+      <div class="shop-card__desc">
+        <div class="breadcrumbs">
+  <span class="breadcrumbs__title">Категории:</span>
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="#">Платья и сарафаны</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#">Блузы и рубашки</a>
+    </li>
+    <li class="breadcrumbs__item">
+      Юбки
+    </li>
+    <li class="breadcrumbs__item">
+      + еще 12
+    </li>
+  </ul>
+</div>
+      </div>
     </div>
-    <div class="shop-card__catalog-img">
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-    </div>
-    <p class="shop-card__desc">
-        <span class="shop-card__desc-category">Категории:</span>
-        Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8
-    </p>
-  </a>
-  <div class="shop-card__sub">
-    
-    
-      <button class="shop-card__unsub btn btn--color-green">Вы подписаны</button>
-    
-    <svg class="shop-card__sub-round">
-      <use xlink:href="/img/icons/icons.svg#round"></use>
-    </svg>
-      <div class="share">
-  <svg class="share__open" data-popup="share">
+    <div class="shop-card__sub">
+      
+      
+        <button class="shop-card__unsub btn btn--color-green">Вы подписаны</button>
+      
+      <svg class="shop-card__sub-round">
+        <use xlink:href="/img/icons/icons.svg#round"></use>
+      </svg>
+        <div class="share">
+  <svg class="share__open" data-popup="Интернет магазин женской одежды и аксессуаров Lass3">
     <use xlink:href="./img/icons/icons.svg#share-link"></use>
   </svg>
-  <div id="share" class="popup extra-class-popup" data-media="">
+  <div id="Интернет магазин женской одежды и аксессуаров Lass3" class="popup " data-media="">
     <div class="popup__overlay">
       <div class="popup__content">
         <div class="share__block">
@@ -7427,79 +7459,90 @@
   </div>
 </div>
 
+    </div>
   </div>
 </div>
 
   <div class="shop-card">
-  <a href="#" class="shop-card__wrapper">
-    <div class="shop-card__title-inner">
-      <div class="shop-card__title-img">
-        <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
-      </div>
-      <div class="shop-card__title-txt">
-        <h2 class="shop-card__title-name">
-          Интернет магазин женской одежды и аксессуаров Lass
-        </h2>
-        <div class="shop-card__title-features">
-          <div class="badge ">
+  <div class="shop-card__inner">
+    <div class="shop-card__top">
+      <div class="shop-card__title-inner">
+        <div class="shop-card__title-img">
+          <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
+        </div>
+        <div class="shop-card__title-txt">
+          <h2 class="shop-card__title-name">
+            Интернет магазин женской одежды и аксессуаров Lass4
+          </h2>
+          <div class="shop-card__title-features">
+            <div class="badge badge--small">
   <span class="badge__sub">до</span>-10%
 </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#sp-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">134</span>
+            <div class="badge badge--small">
+  134 СП
+</div>
+            <div class="badge badge--small">
+  79 TFF
+</div>
           </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#tff-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">79</span>
-        </div>
         </div>
       </div>
+      <div class="shop-card__catalog-img">
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
+        </div>
+        <div class="shop-card__catalog-item">
+          <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
+        </div>
+      </div>
+      <div class="shop-card__desc">
+        <div class="breadcrumbs">
+  <span class="breadcrumbs__title">Категории:</span>
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="#">Платья и сарафаны</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#">Блузы и рубашки</a>
+    </li>
+    <li class="breadcrumbs__item">
+      Юбки
+    </li>
+    <li class="breadcrumbs__item">
+      + еще 12
+    </li>
+  </ul>
+</div>
+      </div>
     </div>
-    <div class="shop-card__catalog-img">
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-    </div>
-    <p class="shop-card__desc">
-        <span class="shop-card__desc-category">Категории:</span>
-        Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8
-    </p>
-  </a>
-  <div class="shop-card__sub">
-    
-    
-      <button class="shop-card__unsub btn btn--color-green">Вы подписаны</button>
-    
-    <svg class="shop-card__sub-round">
-      <use xlink:href="/img/icons/icons.svg#round"></use>
-    </svg>
-      <div class="share">
-  <svg class="share__open" data-popup="share">
+    <div class="shop-card__sub">
+      
+      
+        <button class="shop-card__unsub btn btn--color-green">Вы подписаны</button>
+      
+      <svg class="shop-card__sub-round">
+        <use xlink:href="/img/icons/icons.svg#round"></use>
+      </svg>
+        <div class="share">
+  <svg class="share__open" data-popup="Интернет магазин женской одежды и аксессуаров Lass4">
     <use xlink:href="./img/icons/icons.svg#share-link"></use>
   </svg>
-  <div id="share" class="popup extra-class-popup" data-media="">
+  <div id="Интернет магазин женской одежды и аксессуаров Lass4" class="popup " data-media="">
     <div class="popup__overlay">
       <div class="popup__content">
         <div class="share__block">
@@ -7544,123 +7587,7 @@
   </div>
 </div>
 
-  </div>
-</div>
-
-  <div class="shop-card">
-  <a href="#" class="shop-card__wrapper">
-    <div class="shop-card__title-inner">
-      <div class="shop-card__title-img">
-        <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
-      </div>
-      <div class="shop-card__title-txt">
-        <h2 class="shop-card__title-name">
-          Интернет магазин женской одежды и аксессуаров Lass
-        </h2>
-        <div class="shop-card__title-features">
-          <div class="badge ">
-  <span class="badge__sub">до</span>-10%
-</div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#sp-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">134</span>
-          </div>
-          <div class="shop-card__title-features-item">
-            <svg>
-              <use xlink:href="/img/icons/icons.svg#tff-logo"></use>
-            </svg>
-            <span class="shop-card__title-features-score">79</span>
-        </div>
-        </div>
-      </div>
     </div>
-    <div class="shop-card__catalog-img">
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-third.webp" type="image/webp"><img src="img/product-third.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fourth.webp" type="image/webp"><img src="img/product-fourth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-fifth.webp" type="image/webp"><img src="img/product-fifth.png"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-card.webp" type="image/webp"><img src="img/product-card.jpg"></picture></img>
-      </div>
-      <div class="shop-card__catalog-item">
-        <picture><source srcset="img/product-first.webp" type="image/webp"><img src="img/product-first.png"></picture></img>
-      </div>
-    </div>
-    <p class="shop-card__desc">
-        <span class="shop-card__desc-category">Категории:</span>
-        Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8
-    </p>
-  </a>
-  <div class="shop-card__sub">
-    
-      <button class="btn btn--color-primary-light">Подписаться</button>
-    
-    
-    <svg class="shop-card__sub-round">
-      <use xlink:href="/img/icons/icons.svg#round"></use>
-    </svg>
-      <div class="share">
-  <svg class="share__open" data-popup="share">
-    <use xlink:href="./img/icons/icons.svg#share-link"></use>
-  </svg>
-  <div id="share" class="popup extra-class-popup" data-media="">
-    <div class="popup__overlay">
-      <div class="popup__content">
-        <div class="share__block">
-          <div class="share__block-head">
-            Поделиться
-            <div class="share__close popup__close">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#cross"></use>
-              </svg>
-            </div>
-          </div>
-          <ul class="share__list">
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#copy"></use>
-              </svg>
-            </li>
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#telegram"></use>
-              </svg>
-            </li>
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#facebook"></use>
-              </svg>
-            </li>
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#twitter"></use>
-              </svg>
-            </li>
-            <li>
-              <svg class="share__item-icon">
-                <use xlink:href="./img/icons/icons.svg#watsup"></use>
-              </svg>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
   </div>
 </div>
 

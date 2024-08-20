@@ -1346,8 +1346,8 @@ button {
   --color-green-light: 249, 253, 248;
   --color-red: 221, 94, 94;
   --max-width-container: 106rem;
-  --max-width-container-users: 70rem;
-  --max-width-container-user-info: 66.625rem;
+  --max-width-container-1120: 70rem;
+  --max-width-container-user-1066: 66.625rem;
   --transition-base: all 0.2s linear;
   --transition-base-without-prop: 0.2s linear;
   --z-base: 1;
@@ -1380,12 +1380,16 @@ button {
   max-width: 100%;
 }
 
+.section--shops .section__inner {
+  max-width: var(--max-width-container-1120);
+}
+
 .section--users {
   padding-top: 1.25rem;
 }
 
 .section--users .section__inner {
-  max-width: var(--max-width-container-users);
+  max-width: var(--max-width-container-1120);
 }
 
 .section--user-info {
@@ -1393,7 +1397,7 @@ button {
 }
 
 .section--user-info .section__inner {
-  max-width: var(--max-width-container-user-info);
+  max-width: var(--max-width-container-user-1066);
 }
 
 .section--user-board {
@@ -1541,6 +1545,16 @@ button {
   color: rgb(var(--color-grey));
 }
 
+.breadcrumbs__title {
+  float: left;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.breadcrumbs__list {
+  display: inline;
+}
+
 .breadcrumbs__item {
   display: inline-block;
 }
@@ -1615,6 +1629,19 @@ button {
 .badge.badge--big {
   padding: 0 1.25rem;
   height: 3rem;
+}
+
+.badge.badge--small {
+  padding: 0 0.25rem;
+  height: 1.25rem;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.badge.badge--small .badge__sub {
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  transform: translateY(10%);
 }
 
 .badge svg {
@@ -3397,6 +3424,14 @@ svg {
   margin-top: 0.25rem;
 }
 
+.shop-preview__bread-crumbs .breadcrumbs__title {
+  font-weight: 400;
+}
+
+.shop-preview__bread-crumbs .breadcrumbs__item:last-of-type {
+  display: none;
+}
+
 .shop-preview__followers {
   font-weight: 600;
   margin-top: 1rem;
@@ -3947,9 +3982,9 @@ svg {
 .product-card__title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
 }
 
 .product-card__sizes,
