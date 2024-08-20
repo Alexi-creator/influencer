@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru" class="isAuth">
+  @@include("../layout/head.html", {
+    "title": "shops list Page",
+    "nameFile": "shops-list",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      idPopup: "location",
+      locationAddress: "",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    })
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--shops">
+        <div class="section__inner">
+          @@include("../components/title.html", {
+            "title": 'Магазины', 
+            "amount":'116',
+            "sub": 'продавцов' 
+          })
+        </div>
+      </section>
+      <section class="section section--shops">
+        <div class="section__inner">
+          @@include("../components/shops-block.html")
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
