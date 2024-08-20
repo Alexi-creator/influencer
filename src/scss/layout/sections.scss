@@ -33,11 +33,19 @@
     }
   }
 
+  &--shops {
+    #{$block}__inner {
+      max-width: var(--max-width-container-1120);
+    }
+  }
+
   &--users {
     #{$block}__inner {
-      max-width: var(--max-width-container-users);
+      max-width: var(--max-width-container-1120);
     }
+
     padding-top: 1.25rem;
+
     @include media($md) {
       padding-top: 2.5rem;
     }
@@ -48,10 +56,11 @@
 
   &--user-info {
     #{$block}__inner {
-      max-width: var(--max-width-container-user-info);
+      max-width: var(--max-width-container-user-1066);
     }
 
     padding-top: 1.25rem;
+
     @include media($md){
       padding-top: 1rem;
     }

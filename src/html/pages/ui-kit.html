@@ -10,6 +10,13 @@
 
       <h1>UI KIT</h1>
 
+      <h2>Breadcrumbs:</h2>
+      <div class="ui-kit__block ui-kit__breadcrumbs">
+        @@include("../components/breadcrumbs.html", {
+          title: "Категории:",
+        })
+      </div>
+
       <h2>Buttons:</h2>
       <div class="ui-kit__block ui-kit__buttons">
         <button class="btn">Standart</button>
@@ -334,6 +341,10 @@
         @@include("../components/badge.html", {
           "extra-class": "badge--big",
           "body": "big",
+        })
+        @@include("../components/badge.html", {
+          "extra-class": "badge--small",
+          "body": "small",
         })
         @@include("../components/badge.html", {
           "extra-class": "badge--round badge--font-commissioner badge--color-white",

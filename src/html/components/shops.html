@@ -1,0 +1,62 @@
+<div class="shops">
+  <div class="shops__preview">
+    <div class="shops__preview-inner">
+
+      <div class="shops__preview-images">
+        <div class="shops__preview-images-wrapper">
+          <img class="shops__preview-images-main" src="@img/shop-preview.jpg" alt="shop-preview" loading="lazy">
+          <div class="shops__preview-images-list">
+            <img class="shops__preview-images-small" src="@img/product-card.jpg" alt="shop-preview" loading="lazy">
+            <img class="shops__preview-images-small" src="@img/product-first.png" alt="shop-preview" loading="lazy">
+            <img class="shops__preview-images-small" src="@img/product-third.png" alt="shop-preview" loading="lazy">
+            <img class="shops__preview-images-small" src="@img/product-fourth.png" alt="shop-preview" loading="lazy">
+            <img class="shops__preview-images-small" src="@img/product-fifth.png" alt="shop-preview" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="shops__preview-description">
+        <div class="shops__preview-description-title">
+          Интернет магазин женской одежды и аксессуаров Lass
+        </div>
+        <div class="shops__preview-description-badges">
+          <div class="badge badge--small">
+            <span class="badge__sub">до</span>-10%
+          </div>
+          <div class="badge badge--small">
+            134 СП
+          </div>
+          <div class="badge badge--small">
+            79 TFF
+          </div>
+        </div>
+        <div class="shops__preview-description-about">
+          Lass — сеть магазинов женской одежды и аксессуаров. Ассортимент включает в себя блузы, юбки, брюки, платья, джемперы, рубашки, жакеты, нарядную одежду, пуховики, куртки, пальто и аксессуары от известных брендов.
+        </div>
+        <div class="shops__preview-description-breadcrumbs">
+          @@include("../components/breadcrumbs.html", {
+            title: "Категории:",
+          })
+        </div>
+        <div class="shops__preview-description-share">
+          <!-- Вынести в отдельный компонент и использовать везде где есть -->
+          <button class="btn btn--color-primary-light">Подписаться</button>
+
+          <svg class="shop-card__sub-round">
+            <use xlink:href="/img/icons/icons.svg#round"></use>
+          </svg>
+
+          @@include("./share.html", {
+            id: 'shops',
+            'extra-class-popup': '',
+            'media': '',
+          })
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include("./shop-card-list.html", {
+    'extra-class': "shops__list",
+  })
+</div>
