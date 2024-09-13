@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pages/blocks.min.css?_v=20240415061029">
+  <title>Test Page blocks</title>
+  <script defer src="js/blocks.min.js?_v=20240415061029"></script>
+</head>
+  <body>
+    <header class="header">
+  <div class="header__inner">
+    <div class="header__top">
+      <div class="header__top-location">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#location"></use>
+        </svg>
+        Укажите адрес доставки
+      </div>
+      <div class="header__top-info">
+        <a href="#">Инструкции</a>
+        <a href="#">Контакты</a>
+        <div class="select select--transparent header__top-language noselect">
+  <div class="select__header">
+    <div class="select__title">Русский</div>
+    <div class="select__icon">
+      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
+    </div>
+  </div>
+  <ul class="select__options">
+    <li class="select__options-item" data-value=val1>Русский</li>
+    <li class="select__options-item" data-value=val2>Английский</li>
+    <li class="select__options-item" data-value=val3>Казахский</li>
+  </ul>
+  <input name=language type="text" value=val1 hidden>
+</div>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item header__nav-logo">
+          <a class="header__nav-logo-small" href="./index.html">
+            <img width="24" height="24" src="img/small-logo.svg" alt="small-logo">
+          </a>
+          <a class="header__nav-logo-big" href="./index.html">
+            <img width="106" height="24" src="img/logo.svg" alt="logo">
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-catalog">
+          <a class="btn" href="./catalog.html">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#catalog"></use>
+            </svg>
+            Каталог
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-search">
+          <div class="input-text ">
+  
+    <div class="input-text__prefix header__nav-search-icon"><svg><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="search" class="input-text__input" type="text" placeholder="Найдите что-нибудь">
+  
+    <div class="input-text__suffix header__nav-search-select"><div class="select select--transparent noselect">
+  <div class="select__header">
+    <div class="select__title">Везде</div>
+    <div class="select__icon">
+      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
+    </div>
+  </div>
+  <ul class="select__options">
+    <li class="select__options-item" data-value=val1>Везде</li>
+    <li class="select__options-item" data-value=val2>Везде2</li>
+    <li class="select__options-item" data-value=val3>Везде3 очень длинный текст</li>
+  </ul>
+  <input name=select type="text" value=val2 hidden>
+</div></div>
+  
+</div>
+        </li>
+        <li class="header__nav-item header__nav-basket">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  9
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-favorite">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  4
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-feed">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#feed"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  1
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-instagram">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#camera"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-profile" data-popup="login">
+          <a class="header__nav-sign-in" href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#user"></use>
+            </svg>
+            Войти в аккаунт
+          </a>
+          <a class="header__nav-account" href="#">
+            <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">
+              Мой рейтинг: 109
+            </div>
+            <div class="header__nav-avatar">
+              <picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture>
+            </div>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-more">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#more"></use>
+          </svg>
+        </li>
+        <li class="header__nav-item header__nav-location">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#map"></use>
+          </svg>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="useful-links">
+  <div class="useful-links__title">
+    Полезные ссылки
+    <svg class="useful-links__title-cross">
+      <use xlink:href="./img/icons/icons.svg#cross"></use>
+    </svg>
+  </div>
+  <ul class="useful-links__list">
+    <li class="useful-links__list-item">
+      <a href="#">
+        Категории
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Магазины
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Совместные покупки
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Test ForFree
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Блогеры
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Публикации
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Служба поддержки
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <div id="login" class="popup header__login">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      <div class="login login--sign-in">
+  <div class="login__inner">
+
+    <!-- Блок логина -->
+    <div class="login__sign-in">
+      <div class="login__title">
+        Войдите в свой профиль
+        <button class="login__title-cross" type="button" data-close-popup="login">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__descr">
+        Чтобы пользоваться лентой новостей
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Войти через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Войти через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-in">
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
+  
+</div>
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Введите пароль">
+  
+</div>
+        <button class="login__form-submit btn" type="submit">
+          Войти
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Нет аккаунта?
+        </div>
+        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+      </div>
+    </div>
+
+    <!-- Блок регистрации -->
+    <div class="login__sign-up">
+      <div class="login__title">
+        Зарегистрируйтесь
+        <button class="login__title-cross" type="button" data-close-popup="login">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__descr">
+        Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Регистрация через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Регистрация через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-up">
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту">
+  
+</div>
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль">
+  
+</div>
+        <div class="input-text input-text--color-grey login__form-item">
+  
+  <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль">
+  
+</div>
+        <button class="login__form-submit btn" type="submit">
+          Зарегистрироваться
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Есть аккаунт?
+        </div>
+        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <nav class="nav">
+  <ul class="nav__list">
+    <li >
+  <a class="nav__item nav__item-publication" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#camera"></use>
+    </svg>
+    
+    <div class="nav__item-title">Публикация</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-catalog" href="./catalog.html">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+    </svg>
+    
+    <div class="nav__item-title">Каталог</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-feed" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#feed"></use>
+    </svg>
+    
+    <div class="nav__item-title">Лента</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-shopping-bag" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+    </svg>
+    
+    <div class="nav__item-title">Корзина</div>
+    
+      <div class="nav__item-counter">
+        <div class="counter counter--green">
+  1
+</div>
+      </div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-profile" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#profile"></use>
+    </svg>
+    
+      <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
+    
+    <div class="nav__item-title">Профиль</div>
+    
+  </a>
+</li>
+  </ul>
+</nav>
+
+</header>
+    <main>
+      <section class="section">
+        <div class="section__inner">
+          <div class="contact-info">
+  <div class="contact-info__connect">
+    <div class="contact-info__connect-item contact-info__mail">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#mail"></use>
+      </svg>
+      info@lass-fashion.ru
+    </div>
+    <div class="contact-info__connect-item contact-info__phone">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#phone"></use>
+      </svg>
+      +7 (495) 234-34-34
+    </div>
+    <div class="contact-info__connect-item contact-info__shedule">
+      <svg class="contact-info__icon">
+        <use xlink:href="./img/icons/icons.svg#clock"></use>
+      </svg>
+      ПН-ВС 10:00-20:00
+    </div>
+  </div>
+  <div class="contact-info__descr">
+    <h3 class="contact-info__descr-title">Юридическая информация:</h3>
+    <p>Полное наименование: Общество с ограниченной ответственностью «Национальный цифровой ресурс «РУКОНТ»
+      Юридический адрес: 129090, г. Москва, Протопоповский пер., д. 19, корп. 12
+      Телефон: +7(495)719-09-21
+    </p>
+    <div>
+      ИНН/КПП: 7702823270 / 770201001
+      <div>ОГРН: 1137746876090</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

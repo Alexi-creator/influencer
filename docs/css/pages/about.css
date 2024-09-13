@@ -163,6 +163,7 @@ button {
   --z-over: 1010;
   --z-top: 9999;
   --radius-small: 0.125rem;
+  --radius-round: 68rem;
 }
 
 .section {

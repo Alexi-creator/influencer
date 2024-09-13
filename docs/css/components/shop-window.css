@@ -1,0 +1,102 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.shop-window__title {
+  color: rgb(var(--color-grey));
+}
+
+.shop-window__inner {
+  margin-top: 0.5rem;
+}
+
+.shop-window__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.shop-window__joint-purchases {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.shop-window__joint-purchases-search-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.shop-window__joint-purchases-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.shop-window__joint-purchases-btn .btn {
+  padding: 0.75rem;
+}
+
+.shop-window__joint-purchases-btn-text {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .shop-window__title {
+    display: none;
+  }
+
+  .shop-window__inner {
+    margin-top: 0;
+  }
+
+  .shop-window__joint-purchases {
+    gap: 1.5rem;
+  }
+
+  .shop-window__joint-purchases-btn svg {
+    display: none;
+  }
+
+  .shop-window__joint-purchases-btn .btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .shop-window__joint-purchases-btn-text {
+    display: block;
+  }
+}
+
+@media (min-width: 75rem) {
+  .shop-window__controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shop-window__joint-purchases {
+    gap: 1.25rem;
+  }
+
+  .shop-window__joint-purchases-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 120rem) {
+  .shop-window__joint-purchases {
+    gap: 2.5rem;
+  }
+
+  .shop-window__joint-purchases-actions {
+    grid-template-columns: 34rem auto;
+  }
+}
