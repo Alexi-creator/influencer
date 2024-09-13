@@ -1,0 +1,17 @@
+.product-modals {
+  $root: &;
+
+  width: 100%;
+
+  &__list {
+    display: inline-flex;
+    flex-flow: column;
+    gap: 10px;
+  }
+
+  &__list-item {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
