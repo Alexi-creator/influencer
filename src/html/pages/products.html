@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include("../layout/head.html", {
+    "title": "products Page",
+    "nameFile": "products",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }) 
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--product">
+        <div class="section__inner">
+          @@include("../components/product-modals.html")
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

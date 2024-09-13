@@ -1,0 +1,22 @@
+<div class="product-modals">
+  <div class="product-modals__list">
+    <button class="product-modals__list-item btn btn--color-primary-light" data-popup="product-modal-discount">
+      Модальное окно скидки на товар
+    </button>
+    <button class="product-modals__list-item btn btn--color-primary-light" data-popup="product-modal-card">
+      Модальное окно карточки товара
+    </button>
+  </div>
+</div>
+
+@@include("../components/popup.html", {
+  "id": "product-modal-discount",
+  "body": '@@include("../components/product-modal-discount.html")',
+  "extra-class": "",
+})
+
+@@include("../components/popup.html", {
+  "id": "product-modal-card",
+  "body": '@@include("../components/product-modal-card.html")',
+  "extra-class": "",
+})
