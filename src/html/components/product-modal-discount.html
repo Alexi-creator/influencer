@@ -1,3 +1,116 @@
-<div>
-  Дисконт
+<div class="product-modal-discount">
+  <div class="location__header">
+    <div class="location__title">Какие скидки на товары я получу от продавца</div>
+    <button class="location__cross btn btn--color-primary-light" data-close-popup="location">
+      <svg class="location__cross-icon">
+        <use xlink:href="./img/icons/icons.svg#cross"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="product-modal-discount__wrapper">
+    <div class="product-modal-discount__inner">
+      <div class="product-modal-discount__info">
+        <div class="product-modal-discount__title">
+          Товар
+        </div>
+        <div class="product-modal-discount__info-inner">
+          <div class="product-modal-discount__info-description">
+            <div class="product-modal-discount__info-img">
+              @@img
+            </div>
+            <div class="product-modal-discount__info-title">
+              <span class="product-modal-discount__info-brand">@@brand</span>
+              <span class="product-modal-discount__info-name">@@product-name</span>
+            </div>
+          </div>
+          <div class="product-modal-discount__info-price">
+            <div class="product-modal-discount__info-price-inner">
+              <span class="product-modal-discount__info-price-item-crossed">
+                <span class="product-modal-discount__info-price-item-crossed number">
+                  @@price-crossed
+                </span>
+                ₽
+              </span>
+              <span class="product-modal-discount__info-price-item-new">
+                <span class="product-modal-discount__info-price-item-new number">
+                  @@price-new
+                </span>
+                ₽
+              </span>
+              <span class="product-modal-discount__info-price-item-amount">
+                за @@number шт.
+            </div>
+            <div class="product-modal-discount__price-discount">
+              С персональной скидкой - @@discount-size%
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-modal-discount__seller">
+        <div class="product-modal-discount__title">
+          Продавец
+        </div>
+        <div class="product-modal-discount__seller-inner">
+          <div class="product-modal-discount__seller-img">
+            @@img-seller
+          </div>
+          <div class="product-modal-discount__seller-name">
+            @@seller-name
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-modal-discount__inner">
+      <div class="product-modal-discount__choice">
+        <div class="product-modal-discount__title">
+          Выберите количество товара
+        </div>
+        <div class="product-modal-discount__choice-select">
+          @@include("../components/select.html", {
+            "name": "amount",
+            "extra-class": "select--border-grey",
+            "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li> <li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li>  <li class="select__options-item" data-value="3" role="button" tabindex="0">3 шт.</li> <li class="select__options-item" data-value="4" role="button" tabindex="0">4 шт.</li> ',
+            'initial-label': '4 шт.',
+            'initial-value': '4 шт.',
+          })
+        </div>
+      </div>
+      <div class="product-modal-discount__choice-math">
+        <div class="product-modal-discount__title">
+          Расчет скидок на каждый товар
+        </div>
+        <table>  
+          <thead>  
+              <tr>  
+                  <th># Товара</th>  
+                  <th>Стоимость</th>  
+                  <th>Скидка</th>  
+              </tr>  
+          </thead>  
+          <tbody>  
+              <tr>  
+                  <td>#1</td>  
+                  <td><span class="number">@@discount-price-N1</span> ₽</td>  
+                  <td>-@@discount-percent-N1%</td>  
+              </tr>  
+              <tr>  
+                <td>#2</td>  
+                <td><span class="number">@@discount-price-N2</span> ₽</td>  
+                <td>-@@discount-percent-N3%</td>  
+              </tr>  
+              <tr>  
+                <td>#3</td>  
+                <td><span class="number">@@discount-price-N3</span> ₽</td>  
+                <td>-@@discount-percent-N3%</td>  
+              </tr>  
+              <tr>  
+                <td>#4</td>  
+                <td><span class="number">@@discount-price-N4</span> ₽</td>  
+                <td>-@@discount-percent-N4%</td>  
+              </tr>  
+          </tbody>  
+      </table>  
+      </div>
+    </div>
+  </div>
 </div>
