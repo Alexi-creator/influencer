@@ -1,3 +1,88 @@
-<div>
-  Карточка товара
+<div class="product-modal-card">
+  <div class="location__header">
+    <div class="location__title">Быстрый просмотр товара</div>
+    <button class="location__cross btn btn--color-primary-light" data-close-popup="location">
+      <svg class="location__cross-icon">
+        <use xlink:href="./img/icons/icons.svg#cross"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="product-modal-card__wrapper">
+    <div class="product-modal-card__inner">
+      <div class="product-modal-card__img-container">  
+        <div class="product-modal-card__grid-img item1">  
+          @@product-img1
+        </div>  
+        <div class="product-modal-card__grid-img item2">  
+          @@product-img2
+        </div>  
+        <div class="product-modal-card__grid-img item3">  
+          @@product-img3
+        </div>  
+        <div class="product-modal-card__grid-img item4">  
+          @@product-img4
+        </div>  
+        <div class="product-modal-card__grid-img item5">  
+          @@product-img5
+        </div>  
+      </div>  
+    </div>
+    <div class="product-modal-card__delivery-description">
+      <div class="product-modal-card__delivery-inner">
+        <div class="product-modal-card__title">
+          Доставка и оплата
+        </div>
+        <div class="product-modal-card__delivery-point">
+          <span class="product-modal-card__delivery-point-city">
+            @@point
+          </span>
+          <button class="btn btn--text">Изменить</button>
+        </div>
+        <div class="product-modal-card__delivery-content">
+          <div class="product-modal-card__delivery-content-item">
+            <div class="product-modal-card__delivery-content-icon">
+              <svg>
+                <use xlink:href="/img/icons/icons.svg#truck"></use>
+              </svg>
+            </div>  
+            <div class="product-modal-card__delivery-content-description">
+              <div class="product-modal-card__delivery-description-point">
+                Курьером / наличные, только Москва от 2 до 7 дней
+              </div>
+              <div class="product-modal-card__delivery-description-price">
+                @@delivery-price ₽
+              </div>
+            </div>
+          </div>
+          <div class="product-modal-card__delivery-content-item">
+            <div class="product-modal-card__delivery-content-icon">
+              <svg>
+                <use xlink:href="/img/icons/icons.svg#credit-card"></use>
+              </svg>
+            </div>  
+            <div class="product-modal-card__delivery-content-description">
+              <div class="product-modal-card__delivery-description-point">
+                Транспортной компанией (ТК) от 7 до 21 дня
+              </div>
+              <div class="product-modal-card__delivery-description-price">
+                Стоимость будет рассчитана после выбора ТК
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-modal-card__description-inner">
+        <div class="product-modal-card__title">
+          Описание товара
+        </div>
+        <div class="product-modal-card__description-content">
+          @@product-description
+        </div>
+      </div>
+    </div>
+    <div class="product-modal-card__inner description">
+      <div>Content</div>
+    </div>
+  </div>
 </div>
+      
