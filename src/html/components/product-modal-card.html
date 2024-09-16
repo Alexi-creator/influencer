@@ -81,8 +81,197 @@
       </div>
     </div>
     <div class="product-modal-card__inner description">
-      <div>Content</div>
+      <div class="product-modal-card__short-description">
+        <div class="product-modal-card__short-description-title">
+          @@product-name
+        </div>
+        <div class="product-modal-card__short-description-description">
+          @@product-short-description
+        </div>
+        <div class="product-modal-card__short-description-score">
+          @@if(star5) {
+          <div class="product-modal-card__short-description-score-stars">
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+          </div>
+          }
+          @@if(star4) {
+          <div class="product-modal-card__short-description-score-stars">
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+          </div>
+          }
+          @@if(star3) {
+            <div class="product-modal-card__short-description-score-stars">
+              <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+              <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+              <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+              <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+              <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+          </div>
+          }
+          @@if(star2) {
+          <div class="product-modal-card__short-description-score-stars">
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+          </div>
+          }
+          @@if(star1) {
+          <div class="product-modal-card__short-description-score-stars">
+            <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+          </div>
+          }
+          @@if(star0) {
+          <div class="product-modal-card__short-description-score-stars">
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+            <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
+          </div>
+          }
+          <div class="product-modal-card__short-description-score-likes">
+            <svg><use xlink:href="./img/icons/icons.svg#heart-likes"></use></svg>
+            @@likes-score
+          </div>
+          <div class="product-modal-card__short-description-score-posts">
+            <button class="btn btn--text btn-card">@@post-score публикаций</button>
+            <span>с этим товаром</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-modal-card__short-description-discount">
+        <div class="product-modal-card__short-description-choice-title">
+          Стоимость со скидкой:
+        </div>
+        <div class="product-modal-card__info-price">
+          <div class="product-modal-card__info-price-inner">
+            <span class="product-modal-card__info-price-item-crossed">
+              <span class="product-modal-card__info-price-item-crossed number">
+                @@price-crossed
+              </span>
+              ₽
+            </span>
+            <span class="product-modal-card__info-price-item-new">
+              <p class="product-modal-card__info-discount-label">
+                <span>
+                - @@discount-score %
+              </span>
+              </p>
+              <span class="product-modal-card__info-price-item-new number">
+                @@price-new
+              </span>
+              ₽
+            </span>
+        </div>
+      </div>
     </div>
+    <div class="product-modal-card__short-description-size">
+      <div class="product-modal-card__short-description-choice-title">
+        Выберите размер:
+      </div>
+      <div class="product-modal-card__short-description-choice-wrapper">
+        <div class="product-modal-card__short-description-choice-select">
+          @@include("../components/select.html", {
+            "name": "amount",
+            "extra-class": "select--border-grey",
+            "options": '<li class="select__options-item" data-value="34 EU / XS" role="button" tabindex="0">34 EU / XS</li> ',
+            'initial-label': '34 EU / XS',
+            'initial-value': '34 EU / XS',
+            'initial-label-extra': ' в наличии 11 шт.',
+          })
+        </div>
+        <button class="btn btn--text btn-card">Таблица размеров</button>
+      </div>
+    </div>
+    <div class="product-modal-card__short-description-size">
+      <div class="product-modal-card__short-description-choice-title">
+        Выберите размер:
+      </div>
+      <div class="product-modal-card__short-description-choice-wrapper">
+        <div class="product-modal-card__short-description-choice-select select-size">
+          @@include("../components/select.html", {
+            "name": "amount",
+            "extra-class": "select--border-grey",
+            "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li> ',
+            'initial-label': '1 шт.',
+            'initial-value': '1 шт.',
+          })
+        </div>
+        <span class="product-modal-card__short-description-choice-number">1 товар со скидкой -10%</span>
+      </div>
+    </div>
+    <div class="product-modal-card__short-description-sp">
+      <div class="product-modal-card__short-description-choice-title number-sp">
+        Совместная Покупка:
+      </div>
+      <div class="product-modal-card__short-description-sp-content">
+        @@product-sp-description
+      </div>
+    </div>
+    <div class="product-modal-card__short-description-sales">
+      <div class="product-modal-card__short-description-sales-price">
+        <span class="product-modal-card__short-description-sales-price-txt">Вы заплатите</span>
+        <span class="product-modal-card__info-price-item-new">
+          <span class="product-modal-card__info-price-item-new number">
+            @@price-new
+          </span>
+          ₽
+        </span>
+        <span class="product-modal-card__short-description-sales-price-txt">за 1 шт. товара</span>
+      </div>
+      <div class="product-modal-card__short-description-sales-price-actions">
+        <button class="btn">Добавить в корзину</button>
+        <button class="btn btn--color-primary-light">Купить сейчас</button>
+        <div class="badge sales-actions">
+          <svg><use xlink:href="./img/icons/icons.svg#heart-out-line"></use></svg>
+        </div>
+      </div>
+      <div class="product-modal-card__short-description-sales-price-create-post">
+        Создать публикацию с этим товаром
+      </div>
+    </div>
+    <div class="product-modal-card__short-description-sp-notification">
+      Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.
+    </div>
+    <div class="product-modal-card__short-description-shop">
+      <div class="product-modal-card__title">
+        Магазин
+      </div>
+      <div class="product-modal-discount__seller-inner card-shop">
+        <div class="product-modal-discount__seller-img">
+          @@img-seller
+        </div>
+        <div class="product-modal-discount__seller-name">
+          @@seller-name
+        </div>
+        <button class="btn btn--color-primary-light">Подписаться</button>
+      </div>
+    </div>
+    <div class="product-modal-card__title">
+      О товаре
+    </div>
+    <ul class="product-modal-card__short-description-shop-product">
+      <li>Материал: 100% кожа ягнёнка</li>
+      <li>Отделка: 90% гусиный пух, 10% утиный пух </li>
+      <li>Подкладка: 53% вискоза, 47% купро</li>
+      <li>Цвет шампанского</li>
+      <li>Стандартная посадка</li>
+      <li>Сделано в Италии</li>
+    </ul>
   </div>
 </div>
       
