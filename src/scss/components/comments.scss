@@ -1,0 +1,12 @@
+.comments {
+  $root: &;
+
+	&__title {
+		font-size: 1.5rem;
+		font-weight: 700;
+
+		&-count {
+			color: rgb(var(--color-grey));
+		}
+	}
+}

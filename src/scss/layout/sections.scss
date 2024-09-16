@@ -88,4 +88,16 @@
   &--shop-window {
     padding-top: 0;
   }
+
+  &--comments {
+    margin-top: 2.5rem;
+
+    @include media($md){
+      margin-top: 4rem;
+    }
+
+    @include media($full){
+      margin-top: 5rem;
+    }
+  }
 }

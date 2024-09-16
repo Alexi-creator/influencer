@@ -70,7 +70,7 @@
     flex-wrap: wrap;
   }
 
-  &__swiper {
+  &__swiper, &__swiper-btns {
     position: relative;
     max-width: 600px;
     margin: 0 auto;

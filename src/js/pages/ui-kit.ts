@@ -24,12 +24,12 @@ window.addEventListener('load', () => {
   }
 
   try {
-    const swiperElement = document.querySelector('.swiper-uikit') as HTMLElement
-    const prevBtn = swiperElement.querySelector('.swiper-button-prev') as HTMLElement
-    const nextBtn = swiperElement.querySelector('.swiper-button-next') as HTMLElement 
+    const swiperElement = document.querySelector('.ui-kit__swiper-btns') as HTMLElement
+    const prevBtn = swiperElement.querySelector('.swiper-button-out-prev') as HTMLElement
+    const nextBtn = swiperElement.querySelector('.swiper-button-out-next') as HTMLElement 
 
     new CustomSwiper({
-      target: '.swiper-uikit',
+      target: '.swiper-uikit-btns',
       btnsElements: {
         prevElement: prevBtn,
         nextElement: nextBtn,

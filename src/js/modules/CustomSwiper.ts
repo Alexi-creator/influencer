@@ -1,6 +1,6 @@
 import Swiper from 'swiper'
-import { Navigation } from 'swiper/modules'
-import { SwiperModule } from 'swiper/types/shared'
+import { Navigation, Pagination } from 'swiper/modules'
+import { SwiperModule } from 'swiper/types'
 
 interface IOptions extends Partial<{
   slidesPerView: number | 'auto'
@@ -11,13 +11,17 @@ interface IOptions extends Partial<{
 }> {}
 
 interface ISwiperOptions {
-  modules?: SwiperModule[];
-  centeredSlides?: boolean;
-  loop?: boolean;
+  modules?: SwiperModule[]
+  centeredSlides?: boolean
+  loop?: boolean
   navigation?: {
     nextEl: string | HTMLElement
     prevEl: string | HTMLElement
-  };
+  }
+  pagination?: {
+    el: string,
+    clickable: boolean,
+  }
 }
 
 interface IConstructor {
@@ -50,13 +54,17 @@ export class CustomSwiper {
     this.initialActionIndex = initialActionIndex || 0 
 
     this.swiperOptions = {
-      modules: [Navigation],
+      modules: [Navigation, Pagination],
       centeredSlides: true,
       loop: false,
       navigation: {
         nextEl: btnsElements?.nextElement || '.swiper-button-next',
         prevEl: btnsElements?.prevElement || '.swiper-button-prev',
 
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
       },
       ...this.options
     }

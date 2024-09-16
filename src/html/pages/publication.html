@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include("../layout/head.html", {
+    "title": "publication Page",
+    "nameFile": "publication",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }) 
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--publication">
+        <div class="section__inner">
+          @@include("../components/publication.html")
+        </div>
+      </section>
+      <section class="section section--comments">
+        <div class="section__inner">
+          @@include("../components/comments.html")
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
