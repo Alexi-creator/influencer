@@ -36,7 +36,7 @@
           <span class="product-modal-card__delivery-point-city">
             @@point
           </span>
-          <button class="btn btn--text">Изменить</button>
+          <button class="btn btn--text btn-card">Изменить</button>
         </div>
         <div class="product-modal-card__delivery-content">
           <div class="product-modal-card__delivery-content-item">
@@ -47,7 +47,10 @@
             </div>  
             <div class="product-modal-card__delivery-content-description">
               <div class="product-modal-card__delivery-description-point">
-                Курьером / наличные, только Москва от 2 до 7 дней
+                Курьером / наличные, только Москва
+              </div>
+              <div class="product-modal-card__delivery-description-point">
+                от 2 до 7 дней
               </div>
               <div class="product-modal-card__delivery-description-price">
                 @@delivery-price ₽
@@ -62,7 +65,10 @@
             </div>  
             <div class="product-modal-card__delivery-content-description">
               <div class="product-modal-card__delivery-description-point">
-                Транспортной компанией (ТК) от 7 до 21 дня
+                Транспортной компанией (ТК) / в другие города и страны
+              </div>
+              <div class="product-modal-card__delivery-description-point">
+                от 7 до 21 дня
               </div>
               <div class="product-modal-card__delivery-description-price">
                 Стоимость будет рассчитана после выбора ТК
@@ -89,6 +95,7 @@
           @@product-short-description
         </div>
         <div class="product-modal-card__short-description-score">
+          <div class="product-modal-card__short-description-score-stars-inner">
           @@if(star5) {
           <div class="product-modal-card__short-description-score-stars">
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
@@ -147,6 +154,7 @@
             <svg><use xlink:href="./img/icons/icons.svg#heart-likes"></use></svg>
             @@likes-score
           </div>
+          </div>
           <div class="product-modal-card__short-description-score-posts">
             <button class="btn btn--text btn-card">@@post-score публикаций</button>
             <span>с этим товаром</span>
@@ -179,39 +187,41 @@
         </div>
       </div>
     </div>
-    <div class="product-modal-card__short-description-size">
-      <div class="product-modal-card__short-description-choice-title">
-        Выберите размер:
-      </div>
-      <div class="product-modal-card__short-description-choice-wrapper">
-        <div class="product-modal-card__short-description-choice-select">
-          @@include("../components/select.html", {
-            "name": "amount",
-            "extra-class": "select--border-grey",
-            "options": '<li class="select__options-item" data-value="34 EU / XS" role="button" tabindex="0">34 EU / XS</li> ',
-            'initial-label': '34 EU / XS',
-            'initial-value': '34 EU / XS',
-            'initial-label-extra': ' в наличии 11 шт.',
-          })
+    <div class="product-modal-card__short-description-size-inner">
+      <div class="product-modal-card__short-description-size">
+        <div class="product-modal-card__short-description-choice-title">
+          Выберите размер:
         </div>
-        <button class="btn btn--text btn-card">Таблица размеров</button>
-      </div>
-    </div>
-    <div class="product-modal-card__short-description-size">
-      <div class="product-modal-card__short-description-choice-title">
-        Выберите размер:
-      </div>
-      <div class="product-modal-card__short-description-choice-wrapper">
-        <div class="product-modal-card__short-description-choice-select select-size">
-          @@include("../components/select.html", {
-            "name": "amount",
-            "extra-class": "select--border-grey",
-            "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li> ',
-            'initial-label': '1 шт.',
-            'initial-value': '1 шт.',
-          })
+        <div class="product-modal-card__short-description-choice-wrapper">
+          <div class="product-modal-card__short-description-choice-select">
+            @@include("../components/select.html", {
+              "name": "amount",
+              "extra-class": "select--border-grey",
+              "options": '<li class="select__options-item" data-value="34 EU / XS" role="button" tabindex="0">34 EU / XS</li> ',
+              'initial-label': '34 EU / XS',
+              'initial-value': '34 EU / XS',
+              'initial-label-extra': ' в наличии 11 шт.',
+            })
+          </div>
+          <button class="btn btn--text btn-card">Таблица размеров</button>
         </div>
-        <span class="product-modal-card__short-description-choice-number">1 товар со скидкой -10%</span>
+      </div>
+      <div class="product-modal-card__short-description-size">
+        <div class="product-modal-card__short-description-choice-title">
+          Выберите размер:
+        </div>
+        <div class="product-modal-card__short-description-choice-wrapper size-select-wrapper">
+          <div class="product-modal-card__short-description-choice-select select-size">
+            @@include("../components/select.html", {
+              "name": "amount",
+              "extra-class": "select--border-grey",
+              "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li> ',
+              'initial-label': '1 шт.',
+              'initial-value': '1 шт.',
+            })
+          </div>
+          <span class="product-modal-card__short-description-choice-number">1 товар со скидкой -10%</span>
+        </div>
       </div>
     </div>
     <div class="product-modal-card__short-description-sp">
@@ -252,25 +262,45 @@
         Магазин
       </div>
       <div class="product-modal-discount__seller-inner card-shop">
-        <div class="product-modal-discount__seller-img">
-          @@img-seller
-        </div>
-        <div class="product-modal-discount__seller-name">
-          @@seller-name
-        </div>
-        <button class="btn btn--color-primary-light">Подписаться</button>
+        <div class="product-modal-discount__seller-inner card-shop-name">
+          <div class="product-modal-discount__seller-img">
+            @@img-seller
+          </div>
+          <div class="product-modal-discount__seller-name">
+            @@seller-name
+          </div>
+      </div>
+        <button class="btn btn--color-primary-light btn-card">Подписаться</button>
       </div>
     </div>
     <div class="product-modal-card__title">
       О товаре
     </div>
     <ul class="product-modal-card__short-description-shop-product">
-      <li>Материал: 100% кожа ягнёнка</li>
-      <li>Отделка: 90% гусиный пух, 10% утиный пух </li>
-      <li>Подкладка: 53% вискоза, 47% купро</li>
-      <li>Цвет шампанского</li>
-      <li>Стандартная посадка</li>
-      <li>Сделано в Италии</li>
+      <li>
+        <span class="dot"></span>
+        Материал: 100% кожа ягнёнка
+      </li>
+      <li>
+        <span class="dot"></span>
+        Отделка: 90% гусиный пух, 10% утиный пух
+      </li>
+      <li>
+        <span class="dot"></span>
+        Подкладка: 53% вискоза, 47% купро
+      </li>
+      <li>
+        <span class="dot"></span>
+        Цвет шампанского
+      </li>
+      <li>
+        <span class="dot"></span>
+        Стандартная посадка
+      </li>
+      <li>
+        <span class="dot"></span>
+        Сделано в Италии
+      </li>
     </ul>
   </div>
 </div>

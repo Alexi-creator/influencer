@@ -45,6 +45,11 @@
   flex-flow: column;
 }
 
+%inline-flex-row {
+  display: inline-flex;
+  flex-flow: row;
+}
+
 %flex-row {
   display: flex;
   flex-flow: row;
