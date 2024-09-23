@@ -43,7 +43,7 @@
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-primary));
   }
-  
+
   &#{$root}--color-primary-light-text-black {
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-black));
@@ -132,5 +132,10 @@
     &:hover {
       border-color: transparent !important;
     }
+  }
+
+  &#{$root}--discount-size {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
   }
 }
