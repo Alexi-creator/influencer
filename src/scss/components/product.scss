@@ -1,23 +1,10 @@
-.product-modal-card {
+.product {
   $root: &;
-
-  .popup__content {
-    max-width: unset;
-    padding: 1rem 1.25rem;
-
-    @include media($lg) {
-      padding: 1.5rem 2rem;
-    }
-
-    @include media($full) {
-      padding: 1.5rem 2.5rem;
-    }
-  }
 
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
+    grid-template-rows: repeat(2, auto);
     width: 100%;
 
     padding-top: 1rem;
@@ -25,7 +12,6 @@
 
     @include media($lg) {
       grid-template-columns: 24% 24% 23% 23%;
-      grid-template-rows: repeat(6, auto);
       column-gap: 2rem;
     }
 
@@ -363,10 +349,11 @@
     line-height: 1.5rem
   }
 
-  .card-shop-name {
+  &__seller-inner-content {
     @extend %flex-row;
     gap: 0.5rem;
     padding: 0;
+    max-width: 19rem;
   }
 
   &__short-description-sales {
@@ -465,14 +452,36 @@
     gap: 1.25rem;
   }
 
-  .card-shop {
+  &__seller-inner {
+    @extend %flex-row;
+    background-color: rgb(var(--color-primary-soft));
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-small);
     flex-wrap: wrap;
-    max-width: 34rem;
     gap: unset;
+    max-width: 34rem;
     justify-content: space-between;
 
     @include media($md) {
       gap: 1rem;
+    }
+  }
+
+  // &__seller-img {
+  //   img {
+  //     max-width: unset;
+  //     width: 2.5rem;
+  //     height: 2.5rem;
+  //     object-fit: cover;
+  //   }
+  // }
+
+  &__seller-img {
+    img {
+      max-width: unset;
+      width: 2.5rem;
+      height: 2.5rem;
+      object-fit: cover;
     }
   }
 

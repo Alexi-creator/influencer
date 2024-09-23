@@ -1,71 +1,63 @@
-<div class="product-modal-discount">
-  <div class="location__header">
-    <div class="location__title">Какие скидки на товары я получу от продавца</div>
-    <button class="location__cross btn btn--color-primary-light" data-close-popup="location">
-      <svg class="location__cross-icon">
-        <use xlink:href="./img/icons/icons.svg#cross"></use>
-      </svg>
-    </button>
-  </div>
-  <div class="product-modal-discount__wrapper">
-    <div class="product-modal-discount__inner">
-      <div class="product-modal-discount__info">
-        <div class="product-modal-discount__title">
+<div class="discount">
+  <div class="discount__wrapper">
+    <div class="discount__inner">
+      <div class="discount__info">
+        <div class="discount__title">
           Товар
         </div>
-        <div class="product-modal-discount__info-inner">
-          <div class="product-modal-discount__info-description">
-            <div class="product-modal-discount__info-img">
+        <div class="discount__info-inner">
+          <div class="discount__info-description">
+            <div class="discount__info-img">
               @@img
             </div>
-            <div class="product-modal-discount__info-title">
-              <span class="product-modal-discount__info-brand">@@brand</span>
-              <span class="product-modal-discount__info-name">@@product-name</span>
+            <div class="discount__info-title">
+              <span class="discount__info-brand">@@brand</span>
+              <span class="discount__info-name">@@product-name</span>
             </div>
           </div>
-          <div class="product-modal-discount__info-price">
-            <div class="product-modal-discount__info-price-inner">
-              <span class="product-modal-discount__info-price-item-crossed">
-                <span class="product-modal-discount__info-price-item-crossed number">
+          <div class="discount__info-price">
+            <div class="discount__info-price-inner">
+              <span class="discount__info-price-item-crossed">
+                <span class="discount__info-price-item-crossed number">
                   @@price-crossed
                 </span>
                 ₽
               </span>
-              <span class="product-modal-discount__info-price-item-new">
-                <span class="product-modal-discount__info-price-item-new number">
+              <span class="discount__info-price-item-new">
+                <span class="discount__info-price-item-new number">
                   @@price-new
                 </span>
                 ₽
               </span>
-              <span class="product-modal-discount__info-price-item-amount">
+              <span class="discount__info-price-item-amount">
                 за @@number шт.
             </div>
-            <div class="product-modal-discount__price-discount">
+            <div class="discount__price-discount">
               С персональной скидкой - @@discount-size%
             </div>
           </div>
         </div>
       </div>
-      <div class="product-modal-discount__seller">
-        <div class="product-modal-discount__title">
+      <div class="discount__seller">
+        <div class="discount__title">
           Продавец
         </div>
-        <div class="product-modal-discount__seller-inner">
-          <div class="product-modal-discount__seller-img">
+        <div class="discount__seller-inner">
+          <div class="discount__seller-img">
             @@img-seller
           </div>
-          <div class="product-modal-discount__seller-name">
+          <div class="discount__seller-name">
             @@seller-name
           </div>
         </div>
       </div>
     </div>
-    <div class="product-modal-discount__inner">
-      <div class="product-modal-discount__choice">
-        <div class="product-modal-discount__title">
+    <div class="discount__inner">
+      <div class="discount__choice">
+        <div class="discount__title">
           Выберите количество товара
         </div>
-        <div class="product-modal-discount__choice-select">
+        <div class="discount__choice-select">
           @@include("../components/select.html", {
             "name": "amount",
             "extra-class": "select--border-grey",
@@ -75,8 +67,8 @@
           })
         </div>
       </div>
-      <div class="product-modal-discount__choice-math">
-        <div class="product-modal-discount__title">
+      <div class="discount__choice-math">
+        <div class="discount__title">
           Расчет скидок на каждый товар
         </div>
         <table>  

@@ -1,103 +1,95 @@
-<div class="product-modal-card">
-  <div class="location__header">
-    <div class="location__title">Быстрый просмотр товара</div>
-    <button class="location__cross btn btn--color-primary-light" data-close-popup="location">
-      <svg class="location__cross-icon">
-        <use xlink:href="./img/icons/icons.svg#cross"></use>
-      </svg>
-    </button>
-  </div>
-  <div class="product-modal-card__wrapper">
-    <div class="product-modal-card__inner">
-      <div class="product-modal-card__img-container">  
-        <div class="product-modal-card__grid-img item1">  
+<div class="product">
+  <div class="product__wrapper">
+    <div class="product__inner">
+      <div class="product__img-container">  
+        <div class="product__grid-img item1">  
           @@product-img1
         </div>  
-        <div class="product-modal-card__grid-img item2">  
+        <div class="product__grid-img item2">  
           @@product-img2
         </div>  
-        <div class="product-modal-card__grid-img item3">  
+        <div class="product__grid-img item3">  
           @@product-img3
         </div>  
-        <div class="product-modal-card__grid-img item4">  
+        <div class="product__grid-img item4">  
           @@product-img4
         </div>  
-        <div class="product-modal-card__grid-img item5">  
+        <div class="product__grid-img item5">  
           @@product-img5
         </div>  
       </div>  
     </div>
-    <div class="product-modal-card__delivery-description">
-      <div class="product-modal-card__delivery-inner">
-        <div class="product-modal-card__title">
+    <div class="product__delivery-description">
+      <div class="product__delivery-inner">
+        <div class="product__title">
           Доставка и оплата
         </div>
-        <div class="product-modal-card__delivery-point">
-          <span class="product-modal-card__delivery-point-city">
+        <div class="product__delivery-point">
+          <span class="product__delivery-point-city">
             @@point
           </span>
           <button class="btn btn--text btn-card">Изменить</button>
         </div>
-        <div class="product-modal-card__delivery-content">
-          <div class="product-modal-card__delivery-content-item">
-            <div class="product-modal-card__delivery-content-icon">
+        <div class="product__delivery-content">
+          <div class="product__delivery-content-item">
+            <div class="product__delivery-content-icon">
               <svg>
                 <use xlink:href="/img/icons/icons.svg#truck"></use>
               </svg>
             </div>  
-            <div class="product-modal-card__delivery-content-description">
-              <div class="product-modal-card__delivery-description-point">
+            <div class="product__delivery-content-description">
+              <div class="product__delivery-description-point">
                 Курьером / наличные, только Москва
               </div>
-              <div class="product-modal-card__delivery-description-point">
+              <div class="product__delivery-description-point">
                 от 2 до 7 дней
               </div>
-              <div class="product-modal-card__delivery-description-price">
+              <div class="product__delivery-description-price">
                 @@delivery-price ₽
               </div>
             </div>
           </div>
-          <div class="product-modal-card__delivery-content-item">
-            <div class="product-modal-card__delivery-content-icon">
+          <div class="product__delivery-content-item">
+            <div class="product__delivery-content-icon">
               <svg>
                 <use xlink:href="/img/icons/icons.svg#credit-card"></use>
               </svg>
             </div>  
-            <div class="product-modal-card__delivery-content-description">
-              <div class="product-modal-card__delivery-description-point">
+            <div class="product__delivery-content-description">
+              <div class="product__delivery-description-point">
                 Транспортной компанией (ТК) / в другие города и страны
               </div>
-              <div class="product-modal-card__delivery-description-point">
+              <div class="product__delivery-description-point">
                 от 7 до 21 дня
               </div>
-              <div class="product-modal-card__delivery-description-price">
+              <div class="product__delivery-description-price">
                 Стоимость будет рассчитана после выбора ТК
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="product-modal-card__description-inner">
-        <div class="product-modal-card__title">
+      <div class="product__description-inner">
+        <div class="product__title">
           Описание товара
         </div>
-        <div class="product-modal-card__description-content">
+        <div class="product__description-content">
           @@product-description
         </div>
       </div>
     </div>
-    <div class="product-modal-card__inner description">
-      <div class="product-modal-card__short-description">
-        <div class="product-modal-card__short-description-title">
+    <div class="product__inner description">
+      <div class="product__short-description">
+        <div class="product__short-description-title">
           @@product-name
         </div>
-        <div class="product-modal-card__short-description-description">
+        <div class="product__short-description-description">
           @@product-short-description
         </div>
-        <div class="product-modal-card__short-description-score">
-          <div class="product-modal-card__short-description-score-stars-inner">
+        <div class="product__short-description-score">
+          <div class="product__short-description-score-stars-inner">
           @@if(star5) {
-          <div class="product-modal-card__short-description-score-stars">
+          <div class="product__short-description-score-stars">
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
@@ -106,7 +98,7 @@
           </div>
           }
           @@if(star4) {
-          <div class="product-modal-card__short-description-score-stars">
+          <div class="product__short-description-score-stars">
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
@@ -115,7 +107,7 @@
           </div>
           }
           @@if(star3) {
-            <div class="product-modal-card__short-description-score-stars">
+            <div class="product__short-description-score-stars">
               <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
               <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
               <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
@@ -124,7 +116,7 @@
           </div>
           }
           @@if(star2) {
-          <div class="product-modal-card__short-description-score-stars">
+          <div class="product__short-description-score-stars">
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
@@ -133,7 +125,7 @@
           </div>
           }
           @@if(star1) {
-          <div class="product-modal-card__short-description-score-stars">
+          <div class="product__short-description-score-stars">
             <svg><use xlink:href="./img/icons/icons.svg#star-filled"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
@@ -142,7 +134,7 @@
           </div>
           }
           @@if(star0) {
-          <div class="product-modal-card__short-description-score-stars">
+          <div class="product__short-description-score-stars">
             <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
             <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
@@ -150,36 +142,36 @@
             <svg><use xlink:href="./img/icons/icons.svg#star-empty"></use></svg>
           </div>
           }
-          <div class="product-modal-card__short-description-score-likes">
+          <div class="product__short-description-score-likes">
             <svg><use xlink:href="./img/icons/icons.svg#heart-likes"></use></svg>
             @@likes-score
           </div>
           </div>
-          <div class="product-modal-card__short-description-score-posts">
+          <div class="product__short-description-score-posts">
             <button class="btn btn--text btn-card">@@post-score публикаций</button>
             <span>с этим товаром</span>
           </div>
         </div>
       </div>
-      <div class="product-modal-card__short-description-discount">
-        <div class="product-modal-card__short-description-choice-title">
+      <div class="product__short-description-discount">
+        <div class="product__short-description-choice-title">
           Стоимость со скидкой:
         </div>
-        <div class="product-modal-card__info-price">
-          <div class="product-modal-card__info-price-inner">
-            <span class="product-modal-card__info-price-item-crossed">
-              <span class="product-modal-card__info-price-item-crossed number">
+        <div class="product__info-price">
+          <div class="product__info-price-inner">
+            <span class="product__info-price-item-crossed">
+              <span class="product__info-price-item-crossed number">
                 @@price-crossed
               </span>
               ₽
             </span>
-            <span class="product-modal-card__info-price-item-new">
-              <p class="product-modal-card__info-discount-label">
+            <span class="product__info-price-item-new">
+              <p class="product__info-discount-label">
                 <span>
                 - @@discount-score %
               </span>
               </p>
-              <span class="product-modal-card__info-price-item-new number">
+              <span class="product__info-price-item-new number">
                 @@price-new
               </span>
               ₽
@@ -187,13 +179,13 @@
         </div>
       </div>
     </div>
-    <div class="product-modal-card__short-description-size-inner">
-      <div class="product-modal-card__short-description-size">
-        <div class="product-modal-card__short-description-choice-title">
+    <div class="product__short-description-size-inner">
+      <div class="product__short-description-size">
+        <div class="product__short-description-choice-title">
           Выберите размер:
         </div>
-        <div class="product-modal-card__short-description-choice-wrapper">
-          <div class="product-modal-card__short-description-choice-select">
+        <div class="product__short-description-choice-wrapper">
+          <div class="product__short-description-choice-select">
             @@include("../components/select.html", {
               "name": "amount",
               "extra-class": "select--border-grey",
@@ -206,12 +198,12 @@
           <button class="btn btn--text btn-card">Таблица размеров</button>
         </div>
       </div>
-      <div class="product-modal-card__short-description-size">
-        <div class="product-modal-card__short-description-choice-title">
+      <div class="product__short-description-size">
+        <div class="product__short-description-choice-title">
           Выберите размер:
         </div>
-        <div class="product-modal-card__short-description-choice-wrapper size-select-wrapper">
-          <div class="product-modal-card__short-description-choice-select select-size">
+        <div class="product__short-description-choice-wrapper size-select-wrapper">
+          <div class="product__short-description-choice-select select-size">
             @@include("../components/select.html", {
               "name": "amount",
               "extra-class": "select--border-grey",
@@ -220,63 +212,63 @@
               'initial-value': '1 шт.',
             })
           </div>
-          <span class="product-modal-card__short-description-choice-number">1 товар со скидкой -10%</span>
+          <span class="product__short-description-choice-number">1 товар со скидкой -10%</span>
         </div>
       </div>
     </div>
-    <div class="product-modal-card__short-description-sp">
-      <div class="product-modal-card__short-description-choice-title number-sp">
+    <div class="product__short-description-sp">
+      <div class="product__short-description-choice-title number-sp">
         Совместная Покупка:
       </div>
-      <div class="product-modal-card__short-description-sp-content">
+      <div class="product__short-description-sp-content">
         @@product-sp-description
       </div>
     </div>
-    <div class="product-modal-card__short-description-sales">
-      <div class="product-modal-card__short-description-sales-price">
-        <span class="product-modal-card__short-description-sales-price-txt">Вы заплатите</span>
-        <span class="product-modal-card__info-price-item-new">
-          <span class="product-modal-card__info-price-item-new number">
+    <div class="product__short-description-sales">
+      <div class="product__short-description-sales-price">
+        <span class="product__short-description-sales-price-txt">Вы заплатите</span>
+        <span class="product__info-price-item-new">
+          <span class="product__info-price-item-new number">
             @@price-new
           </span>
           ₽
         </span>
-        <span class="product-modal-card__short-description-sales-price-txt">за 1 шт. товара</span>
+        <span class="product__short-description-sales-price-txt">за 1 шт. товара</span>
       </div>
-      <div class="product-modal-card__short-description-sales-price-actions">
+      <div class="product__short-description-sales-price-actions">
         <button class="btn">Добавить в корзину</button>
         <button class="btn btn--color-primary-light">Купить сейчас</button>
         <div class="badge sales-actions">
           <svg><use xlink:href="./img/icons/icons.svg#heart-out-line"></use></svg>
         </div>
       </div>
-      <div class="product-modal-card__short-description-sales-price-create-post">
+      <div class="product__short-description-sales-price-create-post">
         Создать публикацию с этим товаром
       </div>
     </div>
-    <div class="product-modal-card__short-description-sp-notification">
+    <div class="product__short-description-sp-notification">
       Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.
     </div>
-    <div class="product-modal-card__short-description-shop">
-      <div class="product-modal-card__title">
+    <div class="product__short-description-shop">
+      <div class="product__title">
         Магазин
       </div>
-      <div class="product-modal-discount__seller-inner card-shop">
-        <div class="product-modal-discount__seller-inner card-shop-name">
-          <div class="product-modal-discount__seller-img">
+      <div class="product__seller-inner">
+        <div class="product__seller-inner-content">
+          <div class="product__seller-img">
             @@img-seller
           </div>
-          <div class="product-modal-discount__seller-name">
+          <div class="product__seller-name">
             @@seller-name
           </div>
-      </div>
-        <button class="btn btn--color-primary-light btn-card">Подписаться</button>
+        </div>
+          <button class="btn btn--color-primary-light btn-card">Подписаться</button>
       </div>
     </div>
-    <div class="product-modal-card__title">
+    <div class="product__title">
       О товаре
     </div>
-    <ul class="product-modal-card__short-description-shop-product">
+    <ul class="product__short-description-shop-product">
       <li>
         <span class="dot"></span>
         Материал: 100% кожа ягнёнка
