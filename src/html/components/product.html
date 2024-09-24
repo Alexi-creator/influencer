@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="product__inner description">
+    <div class="product__inner-description">
       <div class="product__short-description">
         <div class="product__short-description-title">
           @@product-name
@@ -129,7 +129,7 @@
         <div class="product__short-description-choice-title">
           Выберите размер:
         </div>
-        <div class="product__short-description-choice-wrapper">
+        <div class="product__short-description-choice-wrapper-size">
           <div class="product__short-description-choice-select">
             @@include("../components/select.html", {
               "name": "amount",
@@ -147,8 +147,8 @@
         <div class="product__short-description-choice-title">
           Выберите количество:
         </div>
-        <div class="product__short-description-choice-wrapper size-select-wrapper">
-          <div class="product__short-description-choice-select select-size">
+        <div class="product__short-description-choice-wrapper">
+          <div class="product__short-description-choice-select">
             @@include("../components/select.html", {
               "name": "amount",
               "extra-class": "select--border-grey",
@@ -162,7 +162,7 @@
       </div>
     </div>
     <div class="product__short-description-sp">
-      <div class="product__short-description-choice-title number-sp">
+      <div class="product__short-description-choice-title-sp">
         Совместная Покупка:
       </div>
       <div class="product__short-description-sp-content">
