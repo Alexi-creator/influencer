@@ -16,7 +16,7 @@
     }
 
     @include media($full) {
-      grid-template-columns: 28% 28% 19% 19%;
+      grid-template-columns: 24% 24% 22% 22%;
       column-gap: 2.75rem;
     }
   }
@@ -56,7 +56,7 @@
   &__img-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, auto);
     grid-column-gap: 1.125rem;
     grid-row-gap: 1.25rem;
     width: 100%;
@@ -74,7 +74,7 @@
     }
   }
 
-  .item1 {
+  &__item1 {
 
     display: none;
 
@@ -90,7 +90,7 @@
     }
   }
 
-  .item2 {
+  &__item2 {
     display: none;
 
     @include media($lg) {
@@ -105,7 +105,7 @@
     }
   }
 
-  .item3 {
+  &__item3 {
     display: none;
 
     @include media($lg) {
@@ -120,7 +120,7 @@
     }
   }
 
-  .item4 {
+  &__item4 {
     display: none;
 
     @include media($lg) {
@@ -135,7 +135,7 @@
     }
   }
 
-  .item5 {
+  &__item5 {
     grid-row: 1/10;
     grid-column: 1/7;
 
@@ -147,18 +147,6 @@
     @include media($full) {
       grid-row: 3/4;
       grid-column: 5/7;
-    }
-  }
-
-  .description {
-    grid-row: 2/2;
-    grid-column: 1/6;
-    @extend %flex-column;
-    gap: 1.5rem;
-
-    @include media($lg) {
-      grid-row: 1/2;
-      grid-column: 3/5;
     }
   }
 
@@ -216,6 +204,10 @@
     font-size: 1.125rem;
     line-height: 1.5rem;
 
+    @include media($md) {
+      font-size: 0.875rem;
+    }
+
     svg {
       width: 1rem;
       height: 1rem;
@@ -247,7 +239,16 @@
 
   &__short-description-choice-title {
     font-size: 1.125rem;
-    line-height: 1.5rem
+    line-height: 1.5rem;
+  }
+
+  &__short-description-choice-title-amount {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+
+    @include media($full) {
+      font-size: 1rem;
+    }
   }
 
   &__info-price-inner {
@@ -305,6 +306,10 @@
     @extend %flex-column;
     gap: 0.5rem;
     flex: 1;
+
+    @include media($lg) {
+      gap: 0.75rem;
+    }
   }
 
   &__short-description-choice-select {
@@ -338,6 +343,12 @@
   &__short-description-choice-wrapper-size {
     @extend %flex-column;
     gap: 0.5rem;
+
+    @include media($full) {
+      flex-flow: row;
+      align-items: center;
+      gap: 1rem;
+    }
 
     a {
       font-weight: 600;
@@ -452,7 +463,7 @@
     }
   }
 
-  .sales-actions {
+  &__sales-actions {
     position: relative;
     width: 3rem;
     height: 3rem;
@@ -480,6 +491,7 @@
 
     @include media($full) {
       padding-bottom: 2.5rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -487,6 +499,10 @@
   &__short-description-shop {
     @extend %flex-column;
     gap: 0.5rem;
+
+    @include media($md) {
+      gap: 0.75rem;
+    }
   }
 
   &__seller-inner {
@@ -502,13 +518,17 @@
     @include media($md) {
       gap: 1rem;
     }
+
+    @include media($full) {
+      margin-bottom: -0.25rem;
+    }
   }
 
   &__seller-img {
     img {
       max-width: unset;
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3rem;
+      height: 3rem;
       object-fit: cover;
     }
   }
@@ -526,7 +546,7 @@
     }
   }
 
-  .dot {
+  &__table-dot {
     content: '';
     position: absolute;
     top: 0.75rem;
@@ -599,6 +619,10 @@
   &__delivery-point-city {
     font-size: 1.125rem;
     line-height: 1.5rem;
+
+    @include media($full) {
+      font-size: 1rem;
+    }
   }
 
   &__delivery-content {
@@ -625,6 +649,10 @@
     @extend %flex-row;
     gap: 0.5rem;
     align-items: self-start;
+
+    @include media($full) {
+      gap: 0.625rem;
+    }
   }
 
   &__delivery-content-icon {
