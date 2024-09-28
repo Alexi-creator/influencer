@@ -161,14 +161,6 @@
         </div>
       </div>
     </div>
-    <div class="product__short-description-sp">
-      <div class="product__short-description-choice-title-sp">
-        Совместная Покупка:
-      </div>
-      <div class="product__short-description-sp-content">
-        @@product-sp-description
-      </div>
-    </div>
     <div class="product__short-description-sales">
       <div class="product__short-description-sales-price">
         <span class="product__short-description-sales-price-txt">Вы заплатите</span>
@@ -191,11 +183,33 @@
         Создать публикацию с этим товаром
       </div>
     </div>
-    <div class="product__short-description-sp-notification">
-      Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.
+    <div class="product__short-description-sp-discount">
+      <div class="product__short-description-sp-discount-title">
+        Больше скидка:
+      </div>
+      <div class="product__short-description-sp-discount-inner">
+        <div class="product__short-description-sp-discount-content">
+          <div class="badge badge--without-border badge--discount">
+            - @@discount-extra %
+          </div>
+          <div class="product__short-description-sp-discount-sum">
+            <span class="number">
+              @@discount-extra-sum
+            </span>            
+             ₽
+          </div>
+        </div>
+        <div class="product__short-description-sp-discount-links">
+          <span>
+            в @@sp-discount-links-found Совместных Покупках
+          </span>
+            <a href="#">Перейти</a>
+        </div>
+
+      </div>
     </div>
     <div class="product__short-description-shop">
-      <div class="product__title">
+      <div class="product__title-shop">
         Магазин
       </div>
       <div class="product__seller-inner">

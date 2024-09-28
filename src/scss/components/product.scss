@@ -11,12 +11,12 @@
     grid-row-gap: 1.5rem;
 
     @include media($lg) {
-      grid-template-columns: 20% 20% 25% 25%;
+      grid-template-columns: 25% 25.2% auto auto;
       column-gap: 2rem;
     }
 
     @include media($full) {
-      grid-template-columns: 24% 24% 22% 22%;
+      grid-template-columns: 31% 31.6% auto auto;
       column-gap: 2.75rem;
     }
   }
@@ -30,10 +30,6 @@
     @include media($lg) {
       grid-row: 1/4;
       grid-column: 1/3;
-    }
-
-    @include media($full) {
-      grid-row: 1/2;
     }
   }
 
@@ -49,7 +45,7 @@
     }
 
     @include media($full) {
-      grid-row: 1/2;
+      grid-row: 1/1;
     }
   }
 
@@ -57,20 +53,29 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, auto);
-    grid-column-gap: 1.125rem;
+    grid-column-gap: 1.25rem;
     grid-row-gap: 1.25rem;
     width: 100%;
 
     @include media($full) {
       grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 1.75rem;
+      grid-row-gap: 1.75rem;
     }
   }
 
   &__grid-img {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+
     img {
-      max-width: unset;
-      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -215,10 +220,14 @@
   }
 
   &__short-description-score-posts {
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1.5rem;
     @extend %flex-row;
     gap: 0.2rem;
+
+    @include media($md) {
+      font-size: 1rem;
+    }
 
     a {
       font-weight: 600;
@@ -238,13 +247,23 @@
   }
 
   &__short-description-choice-title {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+
+    @include media($md) {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
   }
 
   &__short-description-choice-title-amount {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+
+    @include media($md) {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
 
     @include media($full) {
       font-size: 1rem;
@@ -483,18 +502,71 @@
     color: rgb(var(--color-grey));
   }
 
-  &__short-description-sp-notification {
-    font-size: 1rem;
-    color: rgb(var(--color-grey));
+  &__short-description-sp-discount {
+    @extend %flex-column;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgb(var(--color-black-light));
+  }
 
-    @include media($full) {
-      padding-bottom: 2.5rem;
+  &__short-description-sp-discount-title {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    margin-bottom: 0.875rem;
+
+    @include media($md) {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      margin-bottom: 0.625rem;
+    }
+
+    @include media($lg) {
       margin-bottom: 1rem;
     }
   }
 
+  &__short-description-sp-discount-inner {
+    @extend %flex-column;
+    gap: 0.25rem;
+
+    @include media($md) {
+      flex-flow: row;
+    }
+  }
+
+  &__short-description-sp-discount-content {
+    @extend %flex-row;
+    gap: 0.25rem
+  }
+
+  &__short-description-sp-discount-sum {
+    @extend %flex-row;
+    gap: 0.2rem;
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 2rem;
+    color: rgb(var(--color-primary));
+  }
+
+  &__short-description-sp-discount-links {
+    @extend %flex-row;
+    gap: 0.5rem;
+
+    span {
+      color: rgb(var(--color-grey));
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      text-wrap: nowrap;
+    }
+
+    a {
+      font-weight: 600;
+      color: rgb(var(--color-primary));
+      margin-right: 0.25rem;
+      letter-spacing: 0.05rem;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+  }
 
   &__short-description-shop {
     @extend %flex-column;
@@ -502,6 +574,16 @@
 
     @include media($md) {
       gap: 0.75rem;
+    }
+  }
+
+  &__title-shop {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+
+    @include media($md) {
+      font-size: 1.125rem;
     }
   }
 
@@ -567,11 +649,6 @@
     @include media ($lg) {
       grid-row: 2/3;
       grid-column: 3/5;
-    }
-
-    @include media ($full) {
-      gap: 2.5rem;
-      grid-column: 1/3;
     }
   }
 
