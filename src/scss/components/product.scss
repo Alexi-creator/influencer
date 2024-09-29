@@ -172,7 +172,7 @@
     font-size: 1.5rem;
     line-height: 1.75rem;
 
-    @include media($lg) {
+    @include media($md) {
       font-size: 2rem;
       line-height: 2.25rem;
     }
@@ -295,17 +295,12 @@
   &__info-price-item-new {
     color: rgb(var(--color-primary));
     font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.75rem;
+    font-size: 2rem;
+    line-height: 2.25rem;
     align-items: center;
     gap: 0.5rem;
     display: flex;
     align-self: center;
-
-    @include media($md) {
-      font-size: 2rem;
-      line-height: 2.25rem;
-    }
   }
 
   &__short-description-size-inner {
@@ -506,6 +501,11 @@
     @extend %flex-column;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgb(var(--color-black-light));
+
+    @include media($full) {
+      margin-bottom: 1rem;
+      padding-bottom: 2.5rem;
+    }
   }
 
   &__short-description-sp-discount-title {
@@ -520,7 +520,7 @@
     }
 
     @include media($lg) {
-      margin-bottom: 1rem;
+      margin-bottom: 1.125rem;
     }
   }
 
@@ -574,6 +574,10 @@
 
     @include media($md) {
       gap: 0.75rem;
+    }
+
+    @include media($full) {
+      margin-bottom: -0.25rem;
     }
   }
 
@@ -650,6 +654,10 @@
       grid-row: 2/3;
       grid-column: 3/5;
     }
+
+    @include media ($full) {
+      gap: 1.25rem;
+    }
   }
 
   &__description-shop {
@@ -658,6 +666,10 @@
 
     @include media ($md) {
       gap: 0.75rem;
+    }
+
+    @include media($full) {
+      margin-bottom: -0.25rem;
     }
   }
 
@@ -673,6 +685,10 @@
 
     @include media($md) {
       gap: 0.75rem;
+    }
+
+    @include media($full) {
+      margin-bottom: -0.25rem;
     }
   }
 
@@ -715,11 +731,6 @@
       flex-flow: column;
       gap: 0.75rem;
     }
-
-    @include media($full) {
-      flex-flow: row;
-      gap: 1.25rem;
-    }
   }
 
   &__delivery-content-item {
@@ -761,6 +772,10 @@
   &__description-content {
     font-size: 1.125rem;
     line-height: 1.5rem;
+
+    @include media($full) {
+      font-size: 1rem;
+    }
   }
 
   &__description-inner {
