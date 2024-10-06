@@ -145,39 +145,45 @@
   @@include("../components/useful-links.html")
 
   @@include("../components/popup.html", {
-    "id": "login",
-    "body": '@@include("../components/login.html")',
     "extra-class": "header__login",
+    "id": "login",
+    "title": "Войдите в свой профиль",
+    "body": '@@include("../components/login.html")',
   })
 
   @@include("../components/popup.html", {
-    "id": "location",
-    "body": '@@include("../components/location.html", { "extra-class": "@@locationExtraClass" })',
     "extra-class": "header__location",
+    "id": "location",
+    "title": "Куда доставить заказ?",
+    "body": '@@include("../components/location.html", { "extra-class": "@@locationExtraClass" })',
   })
 
   @@include("../components/popup.html", {
-    "id": "choose-city",
-    "body": '@@include("../components/choose-city.html")',
     "extra-class": "header__choose-city",
+    "id": "choose-city",
+    "title": "",
+    "body": '@@include("../components/choose-city.html")',
   })
 
   @@include("../components/popup.html", {
-    "id": "map",
-    "body": '@@include("../components/map.html")',
     "extra-class": "popup--no-overlay header__map",
+    "id": "map",
+    "title": "",
+    "body": '@@include("../components/map.html")',
   })
 
   @@include("../components/popup.html", {
-    "id": "search-pickup",
-    "body": '@@include("../components/search-pickup.html")',
     "extra-class": "popup--no-overlay header__search-pickup",
+    "id": "search-pickup",
+    "title": "",
+    "body": '@@include("../components/search-pickup.html")',
   })
 
   @@include("../components/popup.html", {
-    "id": "courier",
-    "body": '@@include("../components/courier.html")',
     "extra-class": "popup--no-overlay header__courier",
+    "id": "courier",
+    "title": "",
+    "body": '@@include("../components/courier.html")',
   })
 
   @@include("../components/menu-mobile.html", {

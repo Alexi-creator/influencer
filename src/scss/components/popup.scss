@@ -62,14 +62,57 @@
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
     max-width: 30rem;
     width: 100%;
     max-height: 100%;
     height: max-content;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem 1rem;
     background-color: rgb(var(--color-white));
     border-radius: var(--radius-medium);
     overflow-y: auto;
+    overflow-x: hidden;
     cursor: default;
+
+    @include media($md) {
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+    }
+
+    @include media($lg) {
+      gap: 1.5rem;
+    }
+  }
+
+  &__header {
+    @extend %flex-space-between;
+
+    gap: 1rem;
+
+    &-title {
+      font-weight: 600;
+
+      @include media($md) {
+        font-size: 1.375rem;
+      }
+    }
+
+    &-btn-close {
+      @extend %flex-center;
+
+      width: 3rem;
+      padding: 0;
+      border-radius: var(--radius-round);
+
+      &-icon {
+        & use {
+          stroke-width: 1px;
+          fill: rgb(var(--color-grey));
+        }
+      }
+    }
   }
 }

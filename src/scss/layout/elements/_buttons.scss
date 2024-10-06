@@ -138,4 +138,16 @@
     font-size: 1.125rem;
     line-height: 1.5rem;
   }
+
+  &#{$root}--dashed {
+    height: auto;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 0.25rem;
+    padding: 0;
+    font-size: 1rem;
+    color: rgb(var(--color-primary));
+    font-weight: 400;
+    background-color: transparent;
+  }
 }

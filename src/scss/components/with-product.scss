@@ -1,0 +1,72 @@
+.with-product {
+  $root: &;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1rem;
+    grid-template-areas: 
+      "title"
+      "content"
+      "action-btn"
+      "load-btn";
+    justify-items: center;
+
+    @include media($md) {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      grid-template-areas: 
+        "title title"
+        "content content"
+        "action-btn load-btn";
+      align-items: center;
+    }
+
+    @include media($lg) {
+      gap: 2rem;
+      grid-template-areas: 
+        "title action-btn"
+        "content content"
+        "load-btn load-btn";
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    justify-self: start;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    @include media($md) {
+      font-size: 2rem;
+    }
+  }
+
+  &__action-btn {
+    grid-area: action-btn;
+
+    @include media($md) {
+      margin-left: auto;
+    }
+  }
+
+  &__content {
+    grid-area: content;
+    width: 100%;
+
+  }
+
+  &__load-btn {
+    grid-area: load-btn;
+    margin-top: -0.5rem;
+
+    @include media($md) {
+      margin-right: auto;
+    }
+
+    @include media($lg) {
+      margin-right: unset;
+    }
+  }
+}

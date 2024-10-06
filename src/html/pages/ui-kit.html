@@ -16,6 +16,12 @@
           title: "Категории:",
         })
       </div>
+      <div class="ui-kit__block ui-kit__breadcrumbs">
+        @@include("../components/breadcrumbs.html", {
+          extraClass: "breadcrumbs--primary",
+          title: "",
+        })
+      </div>
 
       <h2>Buttons:</h2>
       <div class="ui-kit__block ui-kit__buttons">
@@ -39,6 +45,7 @@
           </svg>
         </button>
         <button class="btn" disabled>Disabled</button>
+        <button class="btn btn--dashed">Dashed</button>
       </div>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__buttons">
         <button class="btn btn--color-white">
@@ -308,17 +315,26 @@
 
       <h2>Popup (Modals):</h2>
       @@include("../components/popup.html", {
-        "id": "1",
-        "body": "<div>popup 1</div>",
         "extra-class": "",
+        "id": "1",
+        "title": "",
+        "body": "<div>popup 1</div>",
       })
       @@include("../components/popup.html", {
-        "id": "2",
-        "body": "<div>popup 2</div>",
         "extra-class": "",
+        "id": "2",
+        "title": "",
+        "body": "<div>popup 2</div>",
+      })
+      @@include("../components/popup.html", {
+        "extra-class": "",
+        "id": "title",
+        "title": "Popup c title и с кнопкой закрытия ->",
+        "body": "<div>Контент модалки</div>",
       })
       <div class="btn" data-popup="1">open popup 1</div>
       <div class="btn" data-popup="2">open popup 2</div>
+      <div class="btn" data-popup="title">Popup c title</div>
 
       <h2>Badges:</h2>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__badges">

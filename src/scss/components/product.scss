@@ -3,11 +3,9 @@
 
   &__wrapper {
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
-    width: 100%;
-
-    padding-top: 1rem;
     grid-row-gap: 1.5rem;
 
     @include media($lg) {
@@ -68,6 +66,8 @@
     width: 100%;
     padding-top: 100%;
     position: relative;
+    border-radius: var(--radius-medium);
+    overflow: hidden;
 
     img {
       position: absolute;

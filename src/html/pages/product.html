@@ -15,9 +15,17 @@
     }) 
     @@include("../components/nav-pages.html")
     <main class="main">
+      <section class="section section--breadcrumbs">
+        <div class="section__inner">
+          @@include("../components/breadcrumbs.html", {
+            extraClass: "breadcrumbs--primary",
+            title: "",
+          })
+        </div>
+      </section>
+
       <section class="section section--product">
         <div class="section__inner">
-                
           @@include("../components/product.html", {
             "product-img1": '<img src="@img/product-img1.png"></img>',
             "product-img2": '<img src="@img/product-img2.png"></img>',
@@ -40,31 +48,42 @@
             "discount-extra": "50",
             "discount-extra-sum": "459000",
             "sp-discount-links-found": "79",
-
          })
-        
-          @@include("../components/discount.html", {
-            "img": '<img src="/img/icons/icons.svg#item-product"></img>',
-            "brand": "Louis Vouitton",
-            "product-name": "Пуховик из кожи с узором Monogram Micro",
-            "price-crossed": "182500",
-            "price-new": "459000",
-            "number": "1",
-            "discount-size": "10",
-            "img-seller": '<img src="/img/icons/icons.svg#shop-logo"></img>',
-            "seller-name": "Интернет магазин одежды и аксессуаров Lass",
-            "discount-price-N1": "459000",
-            "discount-percent-N1": "10",
-            "discount-price-N2": "408000",
-            "discount-percent-N2": "20",
-            "discount-price-N3": "408000",
-            "discount-percent-N3": "20",
-            "discount-price-N4": "357000",
-            "discount-percent-N4": "40",
-         })    
-
         </div>
       </section>
+
+      <section class="section section--with-product">
+        <div class="section__inner">
+          @@include("../components/with-product.html", {
+            extraClass: "",
+            title: "Совместные Покупки с этим товаром",
+            'btn-header-text': "Создать СП",
+            'body': '<div class="joint-purchases-list">@@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"}) @@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"})</div>',
+            'btn-load-text': "Подгрузить все СП",
+          })
+        </div>
+      </section>
+
+      <section class="section section--with-product">
+        <div class="section__inner">
+          @@include("../components/with-product.html", {
+            extraClass: "",
+            title: "Публикации с этим товаром",
+            'btn-header-text': "Создать Публикацию",
+            'body': '@@include("./post-card-list.html")',
+            'btn-load-text': "Подгрузить все публикации",
+          })
+        </div>
+      </section>
+
+      <div data-popup="discount">discount</div>
+
+      @@include("../components/popup.html", {
+        "extra-class": "popup--discount",
+        "id": "discount",
+        "title": "Какие скидки на товары я получу от продавца",
+        "body": '@@include("../components/discount.html", {"img": "<img src=\\"/img/icons/icons.svg#item-product\\" />", "brand": "Louis Vouitton", "product-name": "Пуховик из кожи с узором Monogram Micro", "price-crossed": "182500", "price-new": "459000", "number": "1", "discount-size": "10", "img-seller": "<img src=\\"/img/icons/icons.svg#shop-logo\\" />", "seller-name": "Интернет магазин одежды и аксессуаров Lass", "discount-price-N1": "459000", "discount-percent-N1": "10", "discount-price-N2": "408000", "discount-percent-N2": "20", "discount-price-N3": "408000", "discount-percent-N3": "20", "discount-price-N4": "357000", "discount-percent-N4": "40"})',
+      })
     </main>
   </body>
 </html>
