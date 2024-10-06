@@ -132,12 +132,11 @@
         <div class="product__short-description-choice-wrapper-size">
           <div class="product__short-description-choice-select">
             @@include("../components/select.html", {
-              "name": "amount",
               "extra-class": "select--border-grey",
-              "options": '<li class="select__options-item" data-value="34 EU / XS" role="button" tabindex="0">34 EU / XS</li> ',
-              'initial-label': '34 EU / XS',
-              'initial-value': '34 EU / XS',
-              'initial-label-extra': ' в наличии 11 шт.',
+              "name": "size",
+              "options": '<li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span class="select__options-item-descr">в наличии 11 шт.</span></li> <li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li>',
+              'initial-value': '34',
+              'initial-label': '34 EU / XS<span class="select__options-item-descr">в наличии 11 шт.</span>',
             })
           </div>
           <a>Таблица размеров</a>
@@ -154,7 +153,7 @@
               "extra-class": "select--border-grey",
               "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li> ',
               'initial-label': '1 шт.',
-              'initial-value': '1 шт.',
+              'initial-value': '1',
             })
           </div>
           <span class="product__short-description-choice-number"><span>1 товар</span> со скидкой -10%</span>

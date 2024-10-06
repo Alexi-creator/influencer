@@ -42,6 +42,7 @@ export class UserBoard {
   }
 
   // изменение отображение кнопок (фильтры, категории) в зависимости от выбранного таба
+  // private changeActionsDisplay(actionName: string) {
   private changeActionsDisplay(actionName: string) {
     const contentTabElem = document.querySelector(`[data-tab-target=${this.currentTabName}]`)
     const inputElem = contentTabElem?.querySelector(`${this.mainSelector}__select input`) as HTMLInputElement
@@ -105,15 +106,14 @@ export class UserBoard {
   //   }
   // }
 
-  private handleSelectChange(e: CustomEvent<string>) {
-    if (isUserSelect(e.detail)) {
-      this.changeActionsDisplay(e.detail)
+  private handleSelectChange(e: CustomEvent<{ selectName: string, value: string }>) {
+    if (isUserSelect(e.detail.value)) {
+      this.changeActionsDisplay(e.detail.value)
     }
   }
 
   private handlers() {
     document.addEventListener('click', (e: MouseEvent) => this.clickHandler(e))
-    document.addEventListener('select-change', (e) => this.handleSelectChange(e as CustomEvent<string>))
-    // document.addEventListener('change', (e: Event) => this.changeHandler(e))
+    document.addEventListener('select-change', (e) => this.handleSelectChange(e as CustomEvent<{ selectName: string, value: string }>))
   }
 }

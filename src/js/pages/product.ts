@@ -4,10 +4,17 @@ import { BreakpointWidth } from '../constants'
 import { NumberFormatter } from '../utils/numberFormatter'
 
 import { CustomSwiper } from '../modules/CustomSwiper'
+import { Product } from '../modules/Product'
 
 window.addEventListener('load', () => {
   try {
     new NumberFormatter()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Product()
   } catch (error) {
     console.log(error)
   }
