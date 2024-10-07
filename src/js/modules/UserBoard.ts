@@ -36,14 +36,14 @@ export class UserBoard {
     this.init()
   }
 
-  private init() {
+  private init(): void {
     this.handlers()
     this.definedActiveTab()
   }
 
   // изменение отображение кнопок (фильтры, категории) в зависимости от выбранного таба
   // private changeActionsDisplay(actionName: string) {
-  private changeActionsDisplay(actionName: string) {
+  private changeActionsDisplay(actionName: string): void {
     const contentTabElem = document.querySelector(`[data-tab-target=${this.currentTabName}]`)
     const inputElem = contentTabElem?.querySelector(`${this.mainSelector}__select input`) as HTMLInputElement
     const inputValue = inputElem?.value
@@ -72,7 +72,7 @@ export class UserBoard {
     activeContentBlock?.classList.remove('hide')
   }
 
-  private definedActiveTab() {
+  private definedActiveTab(): void {
     const tabsWrapper = document.querySelector(this.selectorTabsWrapper)
     const activeTabElement = tabsWrapper?.querySelector('.tabs__tab--active') as HTMLElement | null
     const activeTab = activeTabElement?.dataset.tabPath as string | undefined
@@ -88,7 +88,7 @@ export class UserBoard {
     }
   }
 
-  private clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent): void {
     const targetElement = e.target as HTMLElement
 
     if (targetElement.closest('.tabs__tab') && targetElement.closest(this.selectorTabsWrapper)) {
@@ -106,13 +106,13 @@ export class UserBoard {
   //   }
   // }
 
-  private handleSelectChange(e: CustomEvent<{ selectName: string, value: string }>) {
+  private handleSelectChange(e: CustomEvent<{ selectName: string, value: string }>): void {
     if (isUserSelect(e.detail.value)) {
       this.changeActionsDisplay(e.detail.value)
     }
   }
 
-  private handlers() {
+  private handlers(): void {
     document.addEventListener('click', (e: MouseEvent) => this.clickHandler(e))
     document.addEventListener('select-change', (e) => this.handleSelectChange(e as CustomEvent<{ selectName: string, value: string }>))
   }

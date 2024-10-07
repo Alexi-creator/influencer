@@ -14,7 +14,10 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Product()
+    new Product({
+      selectSizeId: 'size',
+      selectAmountId: 'amount',
+    })
   } catch (error) {
     console.log(error)
   }

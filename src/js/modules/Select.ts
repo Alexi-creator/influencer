@@ -32,26 +32,27 @@ export class Select {
       const value = select.querySelector('input')?.value
       const titleElem = select.querySelector(this.selectorTitle)
       const titleElemText = titleElem?.textContent
-
-      if (titleElemText) return
-
+      
       let label: string | undefined
       let selectedOption: Element | null
 
       if (value) {
-        const optionElement = select.querySelector(`[data-value="${value}"]`)
-        
-        label = optionElement?.innerHTML
-        selectedOption = optionElement
+        selectedOption = select.querySelector(`[data-value="${value}"]`)
       } else {
-        const optionElement = select.querySelector(this.selectorItem)
-        label = optionElement?.innerHTML
-        selectedOption = optionElement
+        selectedOption = select.querySelector(this.selectorItem)
+      }
+
+      selectedOption?.classList.add('active')
+
+      if (titleElemText) return
+
+      if (value) {
+        label = selectedOption?.innerHTML
+      } else {
+        label = selectedOption?.innerHTML
       }
 
       if (titleElem && label) titleElem.innerHTML = label
-
-      selectedOption?.classList.add('active')
     })
   }
 

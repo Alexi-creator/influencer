@@ -150,4 +150,18 @@
     font-weight: 400;
     background-color: transparent;
   }
+
+  &#{$root}--none {
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    color: rgb(var(--color-primary));
+    border-color: transparent;
+  }
+
+  &#{$root}--green {
+    background-color: rgb(var(--color-green));
+    color: rgb(var(--color-white));
+    border-color: transparent;
+  }
 }

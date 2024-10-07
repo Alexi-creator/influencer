@@ -102,7 +102,7 @@
       </div>
       <div class="product__short-description-discount">
         <div class="product__short-description-choice-title">
-          Стоимость со скидкой:
+          Стоимость с Вашей скидкой:
         </div>
         <div class="product__info-price">
           <div class="product__info-price-inner">
@@ -134,12 +134,12 @@
             @@include("../components/select.html", {
               "extra-class": "select--border-grey",
               "name": "size",
-              "options": '<li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span class="select__options-item-descr">в наличии 11 шт.</span></li> <li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li>',
+              "options": '<li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></li> <li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span data-count="4" class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li>',
               'initial-value': '34',
-              'initial-label': '34 EU / XS<span class="select__options-item-descr">в наличии 11 шт.</span>',
+              'initial-label': '34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span>',
             })
           </div>
-          <a>Таблица размеров</a>
+          <a href="#">Таблица размеров</a>
         </div>
       </div>
       <div class="product__short-description-size">
@@ -149,14 +149,15 @@
         <div class="product__short-description-choice-wrapper">
           <div class="product__short-description-choice-select">
             @@include("../components/select.html", {
-              "name": "amount",
               "extra-class": "select--border-grey",
-              "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li> ',
+              "name": "amount",
+              "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li>  <li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li> ',
               'initial-label': '1 шт.',
               'initial-value': '1',
             })
           </div>
-          <span class="product__short-description-choice-number"><span>1 товар</span> со скидкой -10%</span>
+          <span class="product__short-description-choice-number product__viseable--one"><span>1 товар</span> со скидкой -10%</span>
+          <span class="product__short-description-choice-number product__viseable--more hide">Какие скидки на товар? <button class="btn btn--none" data-popup="discount">Узнать</button></span>
         </div>
       </div>
     </div>
@@ -172,11 +173,23 @@
         <span class="product__short-description-sales-price-txt">за 1 шт. товара</span>
       </div>
       <div class="product__short-description-sales-price-actions">
-        <button class="btn">Добавить в корзину</button>
-        <button class="btn btn--color-primary-light">Купить сейчас</button>
-        <div class="badge product__sales-actions">
-          <svg><use xlink:href="./img/icons/icons.svg#heart-out-line"></use></svg>
+        <button class="product__short-description-sales-add btn">Добавить в корзину</button>
+        <a href="#" class="product__short-description-sales-cart hide btn btn--green">В корзине <span>перейти</span></a>
+        <div class="product__short-description-sales-change-count hide">
+          <button href="#" class="product__short-description-sales-increment hide btn btn--color-primary-light">
+            <svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>
+          </button>
+          <div class="product__short-description-sales-count-wrap">
+            <span class="product__short-description-sales-count">4</span>шт.
+          </div>
+          <button href="#" class="product__short-description-sales-decrement hide btn btn--color-primary-light">
+            <svg><use xlink:href="./img/icons/icons.svg#minus"></use></svg>
+          </button>
         </div>
+        <a href="#" class="product__short-description-sales-buy btn btn--color-primary-light">Купить сейчас</a>
+        <button class="product__short-description-sales-actions btn btn--color-primary-light">
+          <svg><use xlink:href="./img/icons/icons.svg#heart-out-line"></use></svg>
+        </button>
       </div>
       <div class="product__short-description-sales-price-create-post">
         <a href="#">Создать публикацию с этим товаром</a>

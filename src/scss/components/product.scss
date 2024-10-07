@@ -199,12 +199,12 @@
   }
 
   &__short-description-score-stars-inner {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 1.25rem;
   }
 
   &__short-description-score-likes {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.25rem;
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -222,7 +222,7 @@
   &__short-description-score-posts {
     font-size: 1.125rem;
     line-height: 1.5rem;
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.2rem;
 
     @include media($md) {
@@ -271,7 +271,7 @@
   }
 
   &__info-price-inner {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 1rem;
 
     @include media($md) {
@@ -332,7 +332,7 @@
   }
 
   &__short-description-choice-wrapper {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.5rem;
 
     @include media($lg) {
@@ -403,7 +403,7 @@
   }
 
   &__seller-inner-content {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.5rem;
     padding: 0;
     max-width: 19rem;
@@ -417,10 +417,63 @@
     @include media($md) {
       gap: 0.75rem;
     }
+
+    &-add, &-cart {
+      &.hide {
+        display: none;
+      }
+    }
+
+    &-cart {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      padding: 0.25rem 1.5rem;
+
+      & span {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 400
+      }
+    }
+
+    &-change-count {
+      @extend %inline-flex-center;
+
+      gap: 0.25rem;
+
+      &.hide {
+        display: none;
+      }
+    }
+
+    &-count-wrap {
+      @extend %inline-flex-center;
+
+      flex-direction: column;
+      width: 3rem;
+      font-size: 0.875rem;
+      line-height: 0.875rem;
+    }
+
+    &-increment, &-decrement, &-actions {
+      width: 3rem;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-buy {
+      &.hide {
+        display: none;
+      }
+    }
   }
 
   &__short-description-sales-price {
     @extend %flex-column;
+
     border-radius: var(--radius-medium);
     padding: 0.75rem 1.5rem;
     background-color: rgb(var(--color-grey-soft));
@@ -452,42 +505,39 @@
   }
 
   &__short-description-sales-price-actions {
-    @extend %flex-row;
+    @extend %flex-align-center;
     flex-wrap: wrap;
     gap: 0.5rem;
 
-    > :nth-child(3) {
-      order: 2;
-    }
-
-    > :nth-child(2) {
-      order: 3;
-    }
-
     @include media($md) {
       gap: 0.75rem;
+    }
 
-      > :nth-child(3) {
-        order: 3;
+    & > * {
+      flex: 1 1 auto;
+    }
+
+    & #{$root}__short-description-sales {
+      &-buy {
+        order: 100;
+        flex: none;
+
+        @include media($md) {
+          order: unset;
+        }
       }
-
-      > :nth-child(2) {
-        order: 2;
+      
+      &-action {
+        @include media($md) {
+          order: 100;
+        }
       }
     }
-  }
 
-  &__sales-actions {
-    position: relative;
-    width: 3rem;
-    height: 3rem;
-    background-color: rgb(var(--color-primary-soft));
-
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%)
+    &.active {
+      & > * {
+        flex: none;
+      }
     }
   }
 
@@ -534,12 +584,12 @@
   }
 
   &__short-description-sp-discount-content {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.25rem
   }
 
   &__short-description-sp-discount-sum {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.2rem;
     font-weight: 600;
     font-size: 1.375rem;
@@ -548,7 +598,7 @@
   }
 
   &__short-description-sp-discount-links {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.5rem;
 
     span {
@@ -592,7 +642,7 @@
   }
 
   &__seller-inner {
-    @extend %flex-row;
+    @extend %flex-align-center;
     background-color: rgb(var(--color-primary-soft));
     padding: 0.75rem 1rem;
     border-radius: var(--radius-small);
@@ -693,7 +743,7 @@
   }
 
   &__delivery-point {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.5rem;
 
     @include media($md) {
@@ -734,7 +784,7 @@
   }
 
   &__delivery-content-item {
-    @extend %flex-row;
+    @extend %flex-align-center;
     gap: 0.5rem;
     align-items: self-start;
 
@@ -784,6 +834,12 @@
 
     @include media($md) {
       gap: 0.75rem;
+    }
+  }
+
+  &__viseable--one, &__viseable--more {
+    &.hide {
+      display: none;
     }
   }
 }
