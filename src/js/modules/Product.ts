@@ -4,15 +4,19 @@ interface IConstructor {
 }
 
 /**
- * Product работа на странице продукта (пересчет цены при изменении количества товара).
+ * Product отображение блока выбора количества товара, пересчет цены за ед товара при выбранном количестве.
  */
 export class Product {
   private selectSizeId: string
   private selectAmountId: string
 
+  private countBuy: number
+
   private sizeCount: Map<string, string>
   private selectSizeValue: string
   private selectAmountValue: string
+
+  private discountMap: Map<number, string>
 
   private selectSizeElem: HTMLElement
   private selectAmountElem: HTMLElement
@@ -26,6 +30,13 @@ export class Product {
   private buyElem: Element
   private linkCartElem: Element
   private countBlockElem: Element
+
+  private incrementElem: Element
+  private decrementElem: Element
+  private countElem: Element
+
+  private bodyDiscountTableElem: Element
+  private price: Element
 
   constructor({ selectSizeId = '', selectAmountId = '' }: IConstructor) {
     this.selectSizeId = selectSizeId
@@ -41,6 +52,8 @@ export class Product {
     this.sizeCount = new Map()
     this.selectSizeValue = this.selectSizeElem.querySelector('input')?.value as string
     this.selectAmountValue = this.selectAmountElem.querySelector('input')?.value as string
+
+    this.countBuy = 1
 
     const amountSelectTitleElem = this.selectAmountElem.querySelector('.select__title')
     if (amountSelectTitleElem) this.amountSelectTitleElem = amountSelectTitleElem
@@ -63,6 +76,18 @@ export class Product {
     const countBlockElem = document.querySelector('.product__short-description-sales-change-count')
     if (countBlockElem) this.countBlockElem = countBlockElem
 
+    const incrementElem = document.querySelector('.product__short-description-sales-increment')
+    if (incrementElem) this.incrementElem = incrementElem
+    const decrementElem = document.querySelector('.product__short-description-sales-decrement')
+    if (decrementElem) this.decrementElem = decrementElem
+    const countElem = document.querySelector('.product__short-description-sales-count')
+    if (countElem) this.countElem = countElem
+
+    const bodyDiscountTableElem = document.getElementById('bodyDiscountTable')
+    if (bodyDiscountTableElem) this.bodyDiscountTableElem = bodyDiscountTableElem
+    const price = document.querySelector('.product__info-price-item-new-count')
+    if (price) this.price = price
+    
     this.init()
   }
 
@@ -70,6 +95,7 @@ export class Product {
     this.handlers()
     this.initOptions()
     this.createOptions()
+    this.mapDiscountPrice()
   }
 
   private initOptions(): void {
@@ -103,7 +129,18 @@ export class Product {
     }
   }
 
-  private changeViseable(): void {
+  private mapDiscountPrice(): void {
+    const numbers = this.bodyDiscountTableElem.querySelectorAll('.number')
+    const result = new Map()
+
+    numbers.forEach((price, index) => {
+      result.set(index + 1, price.textContent?.trim())
+    })
+
+    this.discountMap = result
+  }
+
+  private changeViseablePrice(): void {
     if (Number(this.selectAmountValue) === 1) {
       this.viseableMoreElem.classList.add('hide')
       this.viseableOneElem.classList.remove('hide')
@@ -113,19 +150,50 @@ export class Product {
     }
   }
 
-  private calculate(): void {
-    
+  private counter(mode: 'increment' | 'decrement'): void {
+    if (mode === 'increment') {
+      if (this.countBuy < Number(this.sizeCount.get(this.selectSizeValue))) {
+        this.countBuy += 1
+        this.countElem.innerHTML = String(this.countBuy)
+      }
+    }
+
+    if (mode === 'decrement') {
+      if (this.countBuy > 1) {
+        this.countBuy -= 1
+        this.countElem.innerHTML = String(this.countBuy)
+      }
+    }
+  }
+
+  private changeViseableCount(): void {
+    this.actionsElem.classList.add('active')
+    this.addCartElem.classList.add('hide')
+    this.buyElem.classList.add('hide')
+    this.linkCartElem.classList.remove('hide')
+    this.countBlockElem.classList.remove('hide')
   }
 
   private clickHandler(e: MouseEvent): void {
     const targetElement = e.target as HTMLElement
 
     if (this.addCartElem.contains(targetElement)) {
-      this.actionsElem.classList.add('active')
-      this.addCartElem.classList.add('hide')
-      this.buyElem.classList.add('hide')
-      this.linkCartElem.classList.remove('hide')
-      this.countBlockElem.classList.remove('hide')
+      this.changeViseableCount()
+
+      return
+    }
+
+    if (this.incrementElem.contains(targetElement)) {
+      this.counter('increment')
+      
+
+      return
+    }
+
+    if (this.decrementElem.contains(targetElement)) {
+      this.counter('decrement')
+
+      return
     }
   }
 
@@ -135,14 +203,29 @@ export class Product {
     if (selectName === this.selectSizeId) {
       this.selectSizeValue = value
       this.selectAmountValue = '1'
-      this.changeViseable()
+      this.countElem.innerHTML = '1'
+      this.countBuy = 1
+      this.changeViseablePrice()
       this.createOptions()
+
+      const newPrice = this.discountMap.get(1)
+      
+      if (newPrice) {
+        this.price.innerHTML = newPrice
+      }
     }
 
     if (selectName === this.selectAmountId) {
       this.selectAmountValue = value
-      this.calculate()
-      this.changeViseable()
+      this.changeViseablePrice()
+
+      const valueNumber = Number(value)
+      const discountIndex = Math.min(valueNumber, this.discountMap.size)
+      const newPrice = this.discountMap.get(discountIndex)
+      
+      if (newPrice) {
+        this.price.innerHTML = newPrice
+      }
     }
   }
 
