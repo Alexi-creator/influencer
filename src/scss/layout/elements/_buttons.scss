@@ -43,7 +43,7 @@
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-primary));
   }
-  
+
   &#{$root}--color-primary-light-text-black {
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-black));
@@ -132,5 +132,36 @@
     &:hover {
       border-color: transparent !important;
     }
+  }
+
+  &#{$root}--discount-size {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  &#{$root}--dashed {
+    height: auto;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 0.25rem;
+    padding: 0;
+    font-size: 1rem;
+    color: rgb(var(--color-primary));
+    font-weight: 400;
+    background-color: transparent;
+  }
+
+  &#{$root}--none {
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    color: rgb(var(--color-primary));
+    border-color: transparent;
+  }
+
+  &#{$root}--green {
+    background-color: rgb(var(--color-green));
+    color: rgb(var(--color-white));
+    border-color: transparent;
   }
 }
