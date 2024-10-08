@@ -19,7 +19,7 @@
       border-color: rgb(var(--color-grey-light));
     }
   }
-  
+
   &__header {
     @extend %flex-space-between;
 
@@ -81,6 +81,15 @@
 
       &.active {
         background-color: rgba(var(--color-primary), 0.1);
+      }
+
+      &-descr {
+        margin-left: 1.25rem;
+        color: rgb(var(--color-grey));
+
+        &--red {
+          color: rgb(var(--color-red));
+        }
       }
     }
   }

@@ -22,6 +22,7 @@ export const userSelectsArray = Object.values(UserSelectsEnum) as string[]
 export function isUserTab(tab: string): tab is UserTabsEnum {
   return userTabsArray.includes(tab)
 }
+
 export function isUserSelect(tab: string): tab is UserSelectsEnum {
   return userSelectsArray.includes(tab)
 }

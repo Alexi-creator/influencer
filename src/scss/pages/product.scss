@@ -1,0 +1,74 @@
+// vendors
+@import "../vendors/swiper-bundle.min";
+
+// common styles
+@import "../common";
+
+// components
+@import "../components/nav-pages";
+@import "../components/rating";
+@import "../components/product";
+@import "../components/with-product";
+@import "../components/joint-purchases-list";
+@import "../components/joint-purchases-card";
+@import "../components/post-card-list";
+@import "../components/post-card";
+@import "../components/discount";
+
+.main {
+  padding: 1.25rem 0 6.5rem 0;
+
+  @include media($md) {
+    padding: 4rem 0 7.5rem 0;
+  }
+
+  @include media($lg) {
+    padding: 4rem 0 5rem 0;
+  }
+
+  @include media($full) {
+    padding: 2.5rem 0 7.5rem 0;
+  }
+}
+
+.section {
+  &--breadcrumbs {
+    display: none;
+
+    @include media($full) {
+      display: block;
+    }
+  }
+
+  &--product {
+    @include media($full) {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &--with-product {
+    margin-top: 2.5rem;
+
+    @include media($md) {
+      margin-top: 4rem;
+    }
+
+    @include media($lg) {
+      margin-top: 5rem;
+    }
+
+    @include media($full) {
+      margin-top: 7.5rem;
+    }
+  }
+}
+
+.popup {
+  $popup: &;
+
+  &--discount {
+    #{$popup}__content {
+      max-width: 52rem;
+    }
+  }
+}
