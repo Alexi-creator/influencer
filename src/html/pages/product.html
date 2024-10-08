@@ -58,7 +58,8 @@
             extraClass: "",
             title: "Совместные Покупки с этим товаром",
             'btn-header-text': "Создать СП",
-            'body': '<div class="joint-purchases-list">@@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"}) @@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"})</div>',
+            'body': '<div id="spList" class="joint-purchases-list">@@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"}) @@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"})</div>',
+            'btnId': 'spBtnLoad',
             'btn-load-text': "Подгрузить все СП",
           })
         </div>
@@ -70,7 +71,8 @@
             extraClass: "",
             title: "Публикации с этим товаром",
             'btn-header-text': "Создать Публикацию",
-            'body': '@@include("./post-card-list.html")',
+            'body': '@@include("./post-card-list.html", { "listId": "publicationList" })',
+            'btnId': 'publicationBtnLoad',
             'btn-load-text': "Подгрузить все публикации",
           })
         </div>

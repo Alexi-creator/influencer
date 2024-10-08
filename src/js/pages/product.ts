@@ -5,6 +5,7 @@ import { NumberFormatter } from '../utils/numberFormatter'
 
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { Product } from '../modules/Product'
+import { LoaderItems } from '../modules/LoaderItems'
 
 window.addEventListener('load', () => {
   try {
@@ -17,6 +18,26 @@ window.addEventListener('load', () => {
     new Product({
       selectSizeId: 'size',
       selectAmountId: 'amount',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new LoaderItems({
+      resourceUrl: '/test',
+      wrapperId: 'spList',
+      btnId: 'spBtnLoad',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new LoaderItems({
+      resourceUrl: '/test2',
+      wrapperId: 'publicationList',
+      btnId: 'publicationBtnLoad',
     })
   } catch (error) {
     console.log(error)
