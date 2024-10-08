@@ -3,6 +3,7 @@
 .range__min,
 .range__max,
 .tabs__tab,
+.popup__header-btn-close,
 .popup__overlay,
 .isAuth .header__nav-profile .header__nav-account,
 .header__top-location,
@@ -10,9 +11,7 @@
 .map__yandex::after,
 .map__header-options,
 .location__actions-city,
-.location__cross,
 .login__choice,
-.login__title-cross,
 .nav {
   display: flex;
   justify-content: center;
@@ -39,6 +38,7 @@
 .select__header,
 .useful-links__list-item > a,
 .useful-links__title,
+.popup__header,
 .courier__actions,
 .courier__header,
 .search-pickup__actions,
@@ -48,8 +48,6 @@
 .choose-city__header,
 .location__actions,
 .location__address-header,
-.location__header,
-.login__title,
 .radio__content {
   display: flex;
   justify-content: space-between;
@@ -1336,12 +1334,9 @@ button {
   --z-over: 1010;
   --z-top: 9999;
   --radius-small: 0.125rem;
-<<<<<<< HEAD
   --radius-medium: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-big: 6.25rem;
-=======
->>>>>>> develop
   --radius-round: 68rem;
 }
 
@@ -1524,6 +1519,37 @@ button {
   border-color: transparent !important;
 }
 
+.btn.btn--discount-size {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.btn.btn--dashed {
+  height: auto;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 0.25rem;
+  padding: 0;
+  font-size: 1rem;
+  color: rgb(var(--color-primary));
+  font-weight: 400;
+  background-color: transparent;
+}
+
+.btn.btn--none {
+  height: auto;
+  padding: 0;
+  background-color: transparent;
+  color: rgb(var(--color-primary));
+  border-color: transparent;
+}
+
+.btn.btn--green {
+  background-color: rgb(var(--color-green));
+  color: rgb(var(--color-white));
+  border-color: transparent;
+}
+
 .breadcrumbs {
   color: rgb(var(--color-grey));
 }
@@ -1547,6 +1573,26 @@ button {
   margin-left: 0.4375rem;
 }
 
+.breadcrumbs--primary {
+  color: rgb(var(--color-primary));
+}
+
+.breadcrumbs--primary .breadcrumbs__item {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.breadcrumbs--primary .breadcrumbs__item a::after {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 1.25rem;
+  background-image: url("../../img/icons/icons.svg#arrow-right");
+  vertical-align: middle;
+  cursor: default;
+}
+
 .hr {
   width: 100%;
   max-width: var(--max-width-container);
@@ -1559,7 +1605,6 @@ button {
 .badge {
   display: inline-flex;
   align-items: center;
-<<<<<<< HEAD
   height: 2rem;
   padding: 0 0.5rem;
   background-color: rgb(var(--color-primary));
@@ -1568,37 +1613,6 @@ button {
   border-color: rgb(var(--color-white));
   color: rgb(var(--color-white));
   font-family: BebasNeue;
-=======
-}
-
-.collapse__head,
-.radio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.search {
-  display: flex;
-  align-items: center;
-  border: 0.125rem solid rgb(var(--color-primary-light));
-  border-radius: 0.1875rem;
-  padding: 0.75rem 1.25rem;
-  height: 3rem;
-}
-
-.search__icon-search {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-}
-
-.search__input {
-  width: 100%;
-  height: 1.5rem;
-  margin-left: 0.5rem;
-  border: none;
->>>>>>> develop
   font-size: 1.125rem;
   line-height: 1.125rem;
 }
@@ -1674,6 +1688,14 @@ button {
   line-height: 0.4rem;
   margin-right: 0.12rem;
   transform: translateY(25%);
+}
+
+.badge.badge--discount {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  height: 2.125rem;
+  min-width: 3.6rem;
+  padding: 0 0.375rem;
 }
 
 .input-text {
@@ -1908,20 +1930,12 @@ button {
   display: none;
 }
 
-<<<<<<< HEAD
 .radio--active input:checked + span {
   color: rgb(var(--color-primary));
 }
 
 .radio--reverse .radio__content {
   flex-direction: row;
-=======
-.collapse__head,
-.radio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
->>>>>>> develop
 }
 
 .checkbox {
@@ -1971,7 +1985,6 @@ button {
   display: none;
 }
 
-<<<<<<< HEAD
 .checkbox--tag input:checked + .checkbox__checkmark + .checkbox__label {
   color: rgb(var(--color-black));
   background-color: rgb(var(--color-primary-tag-checked));
@@ -2108,72 +2121,6 @@ button {
 
 .autocomplete__options {
   max-height: 30vh;
-=======
-.collapse__head,
-.radio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.radio {
-  flex-direction: row-reverse;
-  position: relative;
-  cursor: pointer;
-  transition: var(--transition-base);
-}
-
-.radio:hover {
-  color: rgb(var(--color-primary));
-}
-
-.radio__custom {
-  position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 2px solid rgb(var(--color-primary));
-  border-radius: var(--radius-round);
-  background-color: rgb(var(--color-white));
-}
-
-.radio__custom::after {
-  display: none;
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0.625rem;
-  height: 0.625rem;
-  border-radius: var(--radius-round);
-  background-color: rgb(var(--color-primary));
-}
-
-.radio input {
-  display: none;
-}
-
-.radio input:checked + div::after {
-  display: block;
-}
-
-.header__top-location,
-.header__top-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox,
-.checkbox__checkmark {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.collapse__head,
-.radio {
->>>>>>> develop
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -2412,10 +2359,6 @@ button {
   display: block;
 }
 
-.login__inner {
-  padding: 1rem 1.25rem;
-}
-
 .login.login--sign-in .login__sign-up {
   display: none;
 }
@@ -2430,24 +2373,6 @@ button {
 
 .login.login--sign-up .login__sign-in {
   display: none;
-}
-
-.login__title {
-  gap: 0.75rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.login__title-cross {
-  width: 3rem;
-  height: 3rem;
-  background-color: rgb(var(--color-primary-tag-checked));
-  border-radius: var(--radius-round);
-  cursor: pointer;
-}
-
-.login__title-cross svg use {
-  fill: rgb(var(--color-grey));
 }
 
 .login__descr {
@@ -2535,23 +2460,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0.25rem;
-}
-
-.location__title {
-  font-size: 1.375rem;
-  font-weight: 600;
-}
-
-.location__cross {
-  width: 3rem;
-  padding: 0;
-  border-radius: var(--radius-round);
-}
-
-.location__cross-icon use {
-  stroke-width: 1px;
-  fill: rgb(var(--color-grey));
 }
 
 .location__img {
@@ -3262,8 +3170,6 @@ button {
   cursor: pointer;
 }
 
-.header__login .popup__content,
-.header__choose-city .popup__content,
 .header__map .popup__content,
 .header__search-pickup .popup__content,
 .header__courier .popup__content {
@@ -3308,16 +3214,39 @@ button {
 }
 
 .popup__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   max-width: 30rem;
   width: 100%;
   max-height: 100%;
   height: -moz-max-content;
   height: max-content;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem 1rem;
   background-color: rgb(var(--color-white));
   border-radius: var(--radius-medium);
   overflow-y: auto;
+  overflow-x: hidden;
   cursor: default;
+}
+
+.popup__header {
+  gap: 1rem;
+}
+
+.popup__header-title {
+  font-weight: 600;
+}
+
+.popup__header-btn-close {
+  width: 3rem;
+  padding: 0;
+  border-radius: var(--radius-round);
+}
+
+.popup__header-btn-close-icon use {
+  stroke-width: 1px;
+  fill: rgb(var(--color-grey));
 }
 
 .useful-links {
@@ -3437,6 +3366,15 @@ button {
 
 .select__options-item.active {
   background-color: rgba(var(--color-primary), 0.1);
+}
+
+.select__options-item-descr {
+  margin-left: 1.25rem;
+  color: rgb(var(--color-grey));
+}
+
+.select__options-item-descr--red {
+  color: rgb(var(--color-red));
 }
 
 body {
@@ -3564,7 +3502,6 @@ svg {
   }
 }
 
-<<<<<<< HEAD
 .tabs__tab {
   position: relative;
   gap: 0.25rem;
@@ -3664,8 +3601,6 @@ svg {
   background-color: rgb(var(--color-primary-pale));
 }
 
-=======
->>>>>>> develop
 .ui-kit {
   min-height: 100vh;
   padding: 2rem 1rem;
@@ -3781,17 +3716,6 @@ svg {
   max-width: 250px;
 }
 
-.ui-kit__block-radio {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.7rem;
-  max-width: 400px;
-  width: 100%;
-  padding: 1rem;
-  background-color: rgb(var(--color-white));
-  border-radius: var(--radius-small);
-}
-
 h1 {
   text-align: center;
   margin-bottom: 2rem;
@@ -3851,14 +3775,6 @@ h2 {
     gap: 2.5rem;
   }
 
-  .login__inner {
-    padding: 1.5rem 2rem;
-  }
-
-  .login__title {
-    font-size: 1.375rem;
-  }
-
   .login__options {
     margin-top: 1.5rem;
   }
@@ -3878,7 +3794,6 @@ h2 {
 
   .location__inner {
     gap: 1.5rem;
-    padding: 0.75rem 1rem;
   }
 
   .location__img {
@@ -3989,6 +3904,15 @@ h2 {
   .header__nav-search-icon > svg {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .popup__content {
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .popup__header-title {
+    font-size: 1.375rem;
   }
 
   .useful-links__list {
@@ -4165,6 +4089,10 @@ h2 {
 
   .popup--no-overlay .popup__overlay {
     bottom: 0;
+  }
+
+  .popup__content {
+    gap: 1.5rem;
   }
 
   .useful-links {

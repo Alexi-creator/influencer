@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/header-demo.min.css?_v=20240820161004">
+  <link rel="stylesheet" href="css/pages/header-demo.min.css?_v=20241008074434">
   <title>header not authorized</title>
-  <script defer src="js/header-demo.min.js?_v=20240820161004"></script>
+  <script defer src="js/header-demo.min.js?_v=20241008074434"></script>
 </head>
   <body>
     <header class="header">
@@ -21,7 +21,7 @@
       <div class="header__top-info">
         <a href="#">Инструкции</a>
         <a href="#">Контакты</a>
-        <div class="select select--transparent header__top-language noselect" role="button" tabindex="0">
+        <div id="language" class="select select--transparent header__top-language noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Русский</div>
     <div class="select__icon">
@@ -31,7 +31,7 @@
   <ul class="select__options">
     <li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>
   </ul>
-  <input name=language type="text" value=ru hidden>
+  <input name=language type="text" value="ru" hidden>
 </div>
 
       </div>
@@ -69,7 +69,7 @@
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь">
   
-    <div class="input-text__suffix autocomplete__suffix"><div class="select select--transparent noselect" role="button" tabindex="0">
+    <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -79,7 +79,7 @@
   <ul class="select__options">
     <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li> <li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>
   </ul>
-  <input name=select-search type="text" value=value2 hidden>
+  <input name=select-search type="text" value="value2" hidden>
 </div>
 </div>
   
@@ -250,19 +250,21 @@
   <div id="login" class="popup header__login">
   <div class="popup__overlay">
     <div class="popup__content">
+      
+        <div class="popup__header">
+          <div class="popup__header-title">Войдите в свой профиль</div>
+          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
+            <svg class="popup__header-btn-close-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      
       <div class="login login--sign-in">
   <div class="login__inner">
 
     <!-- Блок логина -->
     <div class="login__sign-in">
-      <div class="login__title">
-        Войдите в свой профиль
-        <button class="login__title-cross" type="button" data-close-popup="login">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </button>
-      </div>
       <div class="login__descr">
         Чтобы пользоваться лентой новостей
       </div>
@@ -385,16 +387,18 @@
   <div id="location" class="popup header__location">
   <div class="popup__overlay">
     <div class="popup__content">
+      
+        <div class="popup__header">
+          <div class="popup__header-title">Куда доставить заказ?</div>
+          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
+            <svg class="popup__header-btn-close-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      
       <div class="location location--setup">
   <div class="location__inner">
-    <div class="location__header">
-      <div class="location__title">Куда доставить заказ?</div>
-      <button class="location__cross btn btn--color-primary-light" data-close-popup="location">
-        <svg class="location__cross-icon">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
     <div class="location__img location__not-setup">
       <picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture>
     </div>
@@ -461,6 +465,7 @@
   <div id="choose-city" class="popup header__choose-city">
   <div class="popup__overlay">
     <div class="popup__content">
+      
       <div class="choose-city">
   <div class="choose-city__inner">
     <div class="choose-city__header">
@@ -517,6 +522,7 @@
   <div id="map" class="popup popup--no-overlay header__map">
   <div class="popup__overlay">
     <div class="popup__content">
+      
       <div class="map">
   <div class="map__inner">
     <div class="map__header">
@@ -643,6 +649,7 @@
   <div id="search-pickup" class="popup popup--no-overlay header__search-pickup">
   <div class="popup__overlay">
     <div class="popup__content">
+      
       <div class="search-pickup">
   <div class="search-pickup__inner">
     <div class="search-pickup__header">
@@ -706,6 +713,7 @@
   <div id="courier" class="popup popup--no-overlay header__courier">
   <div class="popup__overlay">
     <div class="popup__content">
+      
       <div class="courier">
   <div class="courier__inner">
     <div class="courier__header">

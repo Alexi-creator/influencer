@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20240820161004">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20241008074434">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20240820161004"></script>
+  <script defer src="js/ui-kit.min.js?_v=20241008074434"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -15,8 +15,29 @@
 
       <h2>Breadcrumbs:</h2>
       <div class="ui-kit__block ui-kit__breadcrumbs">
-        <div class="breadcrumbs">
-  <span class="breadcrumbs__title">Категории:</span>
+        <div class="breadcrumbs @@extraClass">
+  
+    <span class="breadcrumbs__title">Категории:</span>
+  
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="#">Платья и сарафаны</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#">Блузы и рубашки</a>
+    </li>
+    <li class="breadcrumbs__item">
+      Юбки
+    </li>
+    <li class="breadcrumbs__item">
+      + еще 12
+    </li>
+  </ul>
+</div>
+      </div>
+      <div class="ui-kit__block ui-kit__breadcrumbs">
+        <div class="breadcrumbs breadcrumbs--primary">
+  
   <ul class="breadcrumbs__list">
     <li class="breadcrumbs__item">
       <a href="#">Платья и сарафаны</a>
@@ -44,11 +65,14 @@
           <span class="btn__suffix">(7)</span>
         </button>
         <button class="btn btn--text">Text</button>
+        <button class="btn btn--none">Text padding height 0</button>
+        <button class="btn btn--color-green">Color green</button>
         <button class="btn btn--text btn--color-grey">Text grey</button>
         <button class="btn btn--small">Small</button>
         <button class="btn btn--outlined">Outlined</button>
         <button class="btn btn--tag">Tag</button>
         <button class="btn btn--tag btn--tag-checked">Tag checked</button>
+        <button class="btn btn--green">Green</button>
         <button class="btn btn--outlined btn--color-grey">
           Outlined grey with icons
           <svg>
@@ -56,6 +80,7 @@
           </svg>
         </button>
         <button class="btn" disabled>Disabled</button>
+        <button class="btn btn--dashed">Dashed</button>
       </div>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__buttons">
         <button class="btn btn--color-white">
@@ -122,7 +147,7 @@
   
   <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь">
   
-    <div class="input-text__suffix autocomplete__suffix"><div class="select select--transparent noselect" role="button" tabindex="0">
+    <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -132,7 +157,7 @@
   <ul class="select__options">
     <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li>
   </ul>
-  <input name=select-search type="text" value=value1 hidden>
+  <input name=select-search type="text" value="value1" hidden>
 </div>
 </div>
   
@@ -220,7 +245,7 @@
 
       <h2>Select:</h2>
       <div class="ui-kit__block ui-kit__select">
-        <div class="select @@extra-class noselect" role="button" tabindex="0">
+        <div id="user-board-subscriptions" class="select @@extra-class noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -230,10 +255,10 @@
   <ul class="select__options">
     <li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>
   </ul>
-  <input name=user-board-subscriptions type="text" value=Везде hidden>
+  <input name=user-board-subscriptions type="text" value="Везде" hidden>
 </div>
 
-        <div class="select select--transparent noselect" role="button" tabindex="0">
+        <div id="user-board-subscriptions" class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -243,10 +268,10 @@
   <ul class="select__options">
     <li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>
   </ul>
-  <input name=user-board-subscriptions type="text" value=Везде hidden>
+  <input name=user-board-subscriptions type="text" value="Везде" hidden>
 </div>
 
-        <div class="select select--border-grey noselect" role="button" tabindex="0">
+        <div id="user-board-subscriptions" class="select select--border-grey noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -256,7 +281,7 @@
   <ul class="select__options">
     <li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>
   </ul>
-  <input name=user-board-subscriptions type="text" value=Везде hidden>
+  <input name=user-board-subscriptions type="text" value="Везде" hidden>
 </div>
 
         <div class="select noselect">
@@ -294,7 +319,6 @@
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
     </svg>
   </span>
-
   <span class="checkbox__label ">
     text
   </span>
@@ -404,36 +428,6 @@
 
       <h2>Collapse:</h2>
       <div class="collapse ">
-=======
-  <span>Text</span>
-</label>
-
-      <h2>Radio:</h2>
-      <div class="ui-kit__block-radio">
-        <label class="radio">
-  <input name="radio" type="radio">
-  <div class="radio__custom"></div>
-  text
-</label>
-        <label class="radio">
-  <input name="radio" type="radio">
-  <div class="radio__custom"></div>
-  text
-</label>
-        <label class="radio">
-  <input name="radio" type="radio">
-  <div class="radio__custom"></div>
-  text
-</label>
-        <label class="radio">
-  <input name="radio" type="radio">
-  <div class="radio__custom"></div>
-  text
-</label>
-      </div>
-
-      <h2>Collapse:</h2>
-      <div class="collapse">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Title
@@ -451,6 +445,7 @@
       <div id="1" class="popup ">
   <div class="popup__overlay">
     <div class="popup__content">
+      
       <div>popup 1</div>
     </div>
   </div>
@@ -458,12 +453,31 @@
       <div id="2" class="popup ">
   <div class="popup__overlay">
     <div class="popup__content">
+      
       <div>popup 2</div>
+    </div>
+  </div>
+</div>
+      <div id="title" class="popup ">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      
+        <div class="popup__header">
+          <div class="popup__header-title">Popup c title и с кнопкой закрытия -></div>
+          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="title">
+            <svg class="popup__header-btn-close-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      
+      <div>Контент модалки</div>
     </div>
   </div>
 </div>
       <div class="btn" data-popup="1">open popup 1</div>
       <div class="btn" data-popup="2">open popup 2</div>
+      <div class="btn" data-popup="title">Popup c title</div>
 
       <h2>Badges:</h2>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__badges">

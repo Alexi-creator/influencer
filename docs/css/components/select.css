@@ -93,3 +93,12 @@
 .select__options-item.active {
   background-color: rgba(var(--color-primary), 0.1);
 }
+
+.select__options-item-descr {
+  margin-left: 1.25rem;
+  color: rgb(var(--color-grey));
+}
+
+.select__options-item-descr--red {
+  color: rgb(var(--color-red));
+}
