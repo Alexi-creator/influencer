@@ -1,0 +1,55 @@
+.range__min,
+.range__max {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.range__inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.range {
+  width: 100%;
+  padding-top: 1.37rem;
+  font-size: 1rem;
+}
+
+.range__inputs {
+  gap: 0.75rem;
+  margin-top: 2.62rem;
+}
+
+.range__min,
+.range__max {
+  gap: 0.25rem;
+}
+
+.range__input-wrapper {
+  max-width: 8rem;
+}
+
+.range__input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  color: rgb(var(--color-grey-light));
+  text-align: center;
+}
+
+.range__input:placeholder {
+  font-size: 1rem;
+  color: rgb(var(--color-grey-light));
+}

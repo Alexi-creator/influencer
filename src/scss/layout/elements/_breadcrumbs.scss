@@ -1,4 +1,6 @@
 .breadcrumbs {
+  $root: &;
+
   color: rgb(var(--color-grey));
 
   &__title {
@@ -18,5 +20,25 @@
       content: '/';
       margin-left: 0.4375rem;
     } 
+  }
+
+  &--primary {
+    color: rgb(var(--color-primary));
+
+    #{$root}__item {
+      font-size: 1rem;
+      font-weight: 600;
+
+      & a::after {
+        content: "";
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 1.25rem;
+        background-image: url("../../img/icons/icons.svg#arrow-right");
+        vertical-align: middle;
+        cursor: default;
+      }
+    }
   }
 }

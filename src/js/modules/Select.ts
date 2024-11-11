@@ -32,25 +32,27 @@ export class Select {
       const value = select.querySelector('input')?.value
       const titleElem = select.querySelector(this.selectorTitle)
       const titleElemText = titleElem?.textContent
-
-      if (titleElemText) return
-
+      
       let label: string | undefined
       let selectedOption: Element | null
 
       if (value) {
-        const optionElement = select.querySelector(`[data-value=${value}]`)
-        label = optionElement?.innerHTML
-        selectedOption = optionElement
+        selectedOption = select.querySelector(`[data-value="${value}"]`)
       } else {
-        const optionElement = select.querySelector(this.selectorItem)
-        label = optionElement?.innerHTML
-        selectedOption = optionElement
+        selectedOption = select.querySelector(this.selectorItem)
+      }
+
+      selectedOption?.classList.add('active')
+
+      if (titleElemText) return
+
+      if (value) {
+        label = selectedOption?.innerHTML
+      } else {
+        label = selectedOption?.innerHTML
       }
 
       if (titleElem && label) titleElem.innerHTML = label
-
-      selectedOption?.classList.add('active')
     })
   }
 
@@ -61,23 +63,23 @@ export class Select {
     select.classList.toggle('active')   
   }
 
-  private changeOption(select: HTMLElement, targetElement: HTMLElement): void {
+  private changeOption(select: HTMLElement, optionElem: HTMLElement): void {
     const titleElement = select.querySelector(this.selectorTitle)
     const input = select.querySelector('input')
 
-    const value = targetElement.dataset.value
-    const label = targetElement.innerHTML
+    const value = optionElem.dataset.value
+    const label = optionElem.innerHTML
 
     if (titleElement && input && value) {
       titleElement.innerHTML = label
       input.value = value
 
-      document.dispatchEvent(new CustomEvent('select-change', { detail: value }))
+      document.dispatchEvent(new CustomEvent('select-change', { detail: { selectName: input.name, value } }))
       this.toggle(select)
     }
 
     select.querySelectorAll(this.selectorItem).forEach(option => option.classList.remove('active'))
-    targetElement?.closest(this.selectorItem)?.classList.add('active')
+    optionElem?.closest(this.selectorItem)?.classList.add('active')
   }
 
   private clickHandler(e: MouseEvent): void {
@@ -100,7 +102,9 @@ export class Select {
         }
   
         if (targetElement?.closest(this.selectorOptions)) {
-          this.changeOption(select, targetElement)
+          const optionElem = targetElement?.closest(this.selectorItem) as HTMLElement
+          
+          this.changeOption(select, optionElem)
         }
       }
     }

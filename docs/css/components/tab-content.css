@@ -1,0 +1,25 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tab-content {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 48rem) {
+  .tab-content {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .tab-content {
+    margin-top: 2.5rem;
+  }
+}

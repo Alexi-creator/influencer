@@ -64,7 +64,7 @@ export class MainSearch {
 
   private selectedFilter(selectItem: HTMLElement): void {
     const value = selectItem.dataset.value
-    console.log('value', value)
+    console.log('value selectedFilter', value)
    
     // TODO влиять выбранным значением на поиск
   }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include("../layout/head.html", {
+    "title": "product Page",
+    "nameFile": "product",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }) 
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--breadcrumbs">
+        <div class="section__inner">
+          @@include("../components/breadcrumbs.html", {
+            extraClass: "breadcrumbs--primary",
+            title: "",
+          })
+        </div>
+      </section>
+
+      <section class="section section--product">
+        <div class="section__inner">
+          @@include("../components/product.html", {
+            "product-img1": '<img src="@img/product-img1.png"></img>',
+            "product-img2": '<img src="@img/product-img2.png"></img>',
+            "product-img3": '<img src="@img/product-img3.png"></img>',
+            "product-img4": '<img src="@img/product-img4.png"></img>',
+            "product-img5": '<img src="@img/product-img5.png"></img>',
+            "point": "в Москву",
+            "delivery-price": "300",
+            "product-description": "Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.",
+            "product-name": "Louis Vouitton",
+            "product-short-description": "Пуховик из кожи с узором monogram micro",
+            "likes-score": "89",
+            "post-score": "108",
+            "price-crossed": "510000",
+            "price-new": "459000",
+            "discount-score": "10",
+            "product-sp-description": "Покупаем пока есть скидка, девочки",
+            "img-seller": '<img src="@img/shop-avatar.png"></img>',
+            "seller-name": "Интернет магазин одежды и аксессуаров Lass",
+            "discount-extra": "50",
+            "discount-extra-sum": "459000",
+            "sp-discount-links-found": "79",
+         })
+        </div>
+      </section>
+
+      <section class="section section--with-product">
+        <div class="section__inner">
+          @@include("../components/with-product.html", {
+            extraClass: "",
+            title: "Совместные Покупки с этим товаром",
+            'btn-header-text': "Создать СП",
+            'body': '<div id="spList" class="joint-purchases-list">@@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"}) @@include("./joint-purchases-card.html", {"extra-class": "joint-purchases-card--processing", "status": "", "width": "30%"})</div>',
+            'btnId': 'spBtnLoad',
+            'btn-load-text': "Подгрузить все СП",
+          })
+        </div>
+      </section>
+
+      <section class="section section--with-product">
+        <div class="section__inner">
+          @@include("../components/with-product.html", {
+            extraClass: "",
+            title: "Публикации с этим товаром",
+            'btn-header-text': "Создать Публикацию",
+            'body': '@@include("./post-card-list.html", { "listId": "publicationList" })',
+            'btnId': 'publicationBtnLoad',
+            'btn-load-text': "Подгрузить все публикации",
+          })
+        </div>
+      </section>
+
+      @@include("../components/popup.html", {
+        "extra-class": "popup--discount",
+        "id": "discount",
+        "title": "Какие скидки на товары я получу от продавца",
+        "body": '@@include("../components/discount.html", {"img": "<img src=\\"@img/product-img3.png\\" />", "brand": "Louis Vouitton", "product-name": "Пуховик из кожи с узором Monogram Micro", "price-crossed": "182500", "price-new": "459000", "number": "1", "discount-size": "10", "img-seller": "<img src=\\"@img/shop-avatar.png\\" />", "seller-name": "Интернет магазин одежды и аксессуаров Lass", "discount-price-N1": "459000", "discount-percent-N1": "10", "discount-price-N2": "408000", "discount-percent-N2": "20", "discount-price-N3": "408000", "discount-percent-N3": "20", "discount-price-N4": "357000", "discount-percent-N4": "40"})',
+      })
+    </main>
+  </body>
+</html>
