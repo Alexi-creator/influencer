@@ -10,34 +10,98 @@
 	<div class="publication__title">Светлый образ на холодную весну</div>
 
 	<div class="publication__actions">
-		<svg class="publication__actions-share">
-			<use xlink:href="./img/icons/icons.svg#share"></use>
-		</svg>
-		<svg class="publication__actions-favourite">
-			<use xlink:href="./img/icons/icons.svg#heart"></use>
-		</svg>
+		<button>
+			<svg class="publication__actions-share">
+				<use xlink:href="./img/icons/icons.svg#share"></use>
+			</svg>
+		</button>
+		<button>
+			<svg class="publication__actions-favourite">
+				<use xlink:href="./img/icons/icons.svg#heart"></use>
+			</svg>
+		</button>
 		<div class="publication__actions-views">6072 просмотров</div>
 	</div>
 
-	<div class="publication__swiper">
-		<div class="swiper swiper-publication">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
-				<div class="swiper-slide"><img src="@img/post-card-img-black.png"></img></div>
-				<div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
+	<div class="publication__set">
+		<div class="publication__set-items">
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+		</div>
+		<div class="publication__swiper">
+			<div class="swiper swiper-publication">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
+					<div class="swiper-slide"><img src="@img/post-card-img-black.png"></img></div>
+					<div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
+				</div>
 			</div>
+			<button class="swiper-button-prev">
+				<svg>
+					<use xlink:href="./img/icons/icons.svg#arrow"></use>
+				</svg>
+			</button>
+			<button class="swiper-button-next">
+				<svg>
+					<use xlink:href="./img/icons/icons.svg#arrow"></use>
+				</svg>
+			</button>
+			<div class="swiper-pagination"></div>
 		</div>
-		<div class="swiper-button-prev">
-			<svg>
-				<use xlink:href="./img/icons/icons.svg#arrow"></use>
-			</svg>
+		<div class="publication__set-items">
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
+			@@include("../components/publication-item.html", {
+				img: "item-publication.jpg",
+				title: "Костюм классический UNIQ",
+				price: "10000",
+				currency: " ₽",
+			})
 		</div>
-		<div class="swiper-button-next">
-			<svg>
-				<use xlink:href="./img/icons/icons.svg#arrow"></use>
-			</svg>
-		</div>
-		<div class="swiper-pagination"></div>
 	</div>
 
 	<div class="publication__goods">
@@ -51,9 +115,28 @@
 			<div class="publication__goods-item">
 				<img src="@img/publication.jpg">
 			</div>
+			<div class="publication__goods-item">
+				<img src="@img/publication.jpg">
+			</div>
+			<div class="publication__goods-item">
+				<img src="@img/post-card-img-black.png">
+			</div>
+			<div class="publication__goods-item">
+				<img src="@img/publication.jpg">
+			</div>
+			<div class="publication__goods-item">
+				<img src="@img/publication.jpg">
+			</div>
+			<div class="publication__goods-item">
+				<img src="@img/post-card-img-black.png">
+			</div>
+			<div class="publication__goods-item">
+				<img src="@img/publication.jpg">
+				<span class="publication__goods-item-more">+7</span>
+			</div>
 		</div>
 		<div class="publication__goods-count">9 товаров</div>
-		<a class="publication__goods-link" href="#">Посмотреть</a>
+		<button class="btn btn--none publication__goods-btn-popup" data-popup="publication-items">Посмотреть</button>
 	</div>
 
 	<div class="publication__descr">

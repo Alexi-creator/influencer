@@ -13,7 +13,9 @@
       icon: "location",
       locationClass: "header__top-location--empty",
     }) 
+
     @@include("../components/nav-pages.html")
+
     <main class="main">
       <section class="section section--publication">
         <div class="section__inner">
@@ -26,5 +28,13 @@
         </div>
       </section>
     </main>
+
+    @@include("../components/popup.html", {
+      "extra-class": "publication-items-popup",
+      "id": "publication-items",
+      "title": "Товары в этой публикации",
+      "body": '@@include("./publication-items-popup-content.html")',
+    })
+
   </body>
 </html>
