@@ -9,4 +9,33 @@
 			color: rgb(var(--color-grey));
 		}
 	}
+
+	&__form {
+		margin-top: 1.5rem;
+	}
+
+	&__avatar {
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: var(--radius-round);
+		overflow: hidden;
+
+		&-default {
+			width: inherit;
+			height: inherit;
+		}
+
+		&-img {
+			display: none;
+		}
+		
+		.isAuth & #{$root}__avatar-default {
+			display: none;
+		}
+
+		.isAuth & #{$root}__avatar-img {
+			display: block;
+		}
+
+	}
 }
