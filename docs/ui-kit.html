@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20241008075953">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20241208142747">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20241008075953"></script>
+  <script defer src="js/ui-kit.min.js?_v=20241208142747"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -95,7 +95,7 @@
       <div class="ui-kit__block ui-kit__input">
         <label class="input-text ">
   
-  <input name="input1" class="input-text__input" type="text" placeholder="Простой инпут">
+  <input name="input1" class="input-text__input" type="text" placeholder="Простой инпут" @@atr>
   
 </label>
       </div>
@@ -104,7 +104,7 @@
   
     <div class="input-text__prefix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="input2" class="input-text__input" type="text" placeholder="Инпут с элементом слева">
+  <input name="input2" class="input-text__input" type="text" placeholder="Инпут с элементом слева" @@atr>
   
 </label>
       </div>
@@ -113,7 +113,7 @@
   
     <div class="input-text__prefix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="input3" class="input-text__input" type="text" placeholder="Инпут с элементом слева и справа">
+  <input name="input3" class="input-text__input" type="text" placeholder="Инпут с элементом слева и справа" @@atr>
   
     <div class="input-text__suffix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
   
@@ -124,7 +124,7 @@
   
     <div class="input-text__prefix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="input4" class="input-text__input" type="text" placeholder="Инпут меньшего размера">
+  <input name="input4" class="input-text__input" type="text" placeholder="Инпут меньшего размера" @@atr>
   
     <div class="input-text__suffix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
   
@@ -133,7 +133,14 @@
       <div class="ui-kit__block ui-kit__input">
         <label class="input-text input-text--color-grey">
   
-  <input name="input5" class="input-text__input" type="password" placeholder="Пароль с серой рамкой">
+  <input name="input5" class="input-text__input" type="password" placeholder="Пароль с серой рамкой" @@atr>
+  
+</label>
+      </div>
+      <div class="ui-kit__block ui-kit__input">
+        <label class="input-text input-text--color-grey input-text--disabled">
+  
+  <input name="input6" class="input-text__input" type="text" placeholder="Задизейбленный инпут" disabled>
   
 </label>
       </div>
@@ -145,7 +152,7 @@
   
     <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь">
+  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
   
     <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
@@ -187,7 +194,7 @@
   
     <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete">
+  <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete" @@atr>
   
 </label>
 
@@ -213,7 +220,7 @@
   
     <div class="input-text__prefix autocomplete__input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
   
-  <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete-url">
+  <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete-url" @@atr>
   
     <div class="input-text__suffix autocomplete__input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
   
@@ -520,8 +527,10 @@
       </div>
 
       <h2>Swiper:</h2>
-      <div class="ui-kit__block ui-kit__swiper">
-        <div class="swiper swiper-uikit">
+      <div class="ui-kit__block ui-kit__swiper-btns">
+        swiper кнопки отдельно от блока <br/>
+        если swiper 1 на странице, то при инициализации, можно кнопки не передавать
+        <div class="swiper swiper-uikit-btns">
           <div class="swiper-wrapper">
             <div class="swiper-slide">Slide 1</div>
             <div class="swiper-slide">Slide 2</div>
@@ -529,12 +538,12 @@
             ...
           </div>
         </div>
-        <div class="swiper-button-prev">
+        <div class="swiper-button-prev swiper-button-out-prev">
           <svg>
             <use xlink:href="./img/icons/icons.svg#arrow"></use>
           </svg>
         </div>
-        <div class="swiper-button-next">
+        <div class="swiper-button-next swiper-button-out-next">
           <svg>
             <use xlink:href="./img/icons/icons.svg#arrow"></use>
           </svg>
