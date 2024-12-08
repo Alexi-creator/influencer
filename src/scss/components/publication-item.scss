@@ -1,0 +1,28 @@
+.publication-item {
+  $root: &;
+
+  @extend %flex-center;
+
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
+
+  &__img {
+    width: 4.375rem;
+    height: 6.25rem;
+    border-radius: var(--radius-small);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__descr {
+    font-size: 1rem;
+  }
+
+  &__price {
+    margin-top: 0.25rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+}

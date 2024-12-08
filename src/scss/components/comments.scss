@@ -1,0 +1,287 @@
+%avatar {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: var(--radius-round);
+	overflow: hidden;
+}
+
+.comments {
+  $root: &;
+
+	&__title {
+		font-size: 1.5rem;
+		font-weight: 700;
+
+		&-count {
+			color: rgb(var(--color-grey));
+		}
+	}
+
+	&__comment {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 1rem;
+		align-items: center;
+		margin-top: 1.5rem;
+
+		@include media($md) {
+			grid-template-columns: max-content 1fr max-content;
+			margin-top: 2.5rem;
+		}
+
+		&-avatar {
+			@extend %avatar;
+	
+			&-default {
+				width: inherit;
+				height: inherit;
+			}
+	
+			&-img {
+				display: none;
+			}
+			
+			.isAuth &-default {
+				display: none;
+			}
+	
+			.isAuth &-img {
+				display: block;
+			}
+		}
+	
+		&-input {
+			&--auth {
+				display: none;
+			}
+	
+			.isAuth &--no-auth {
+				display: none;
+			}
+	
+			.isAuth &--auth {
+				display: block;
+			}
+		}
+
+		&-submit {
+			grid-column: 1 / -1;
+			margin-left: auto;
+
+			@include media($md) {
+				grid-column: 3 / -1;
+			}
+
+			&--auth {
+				display: none;
+			}
+
+			.isAuth &--auth {
+				display: block;
+			}
+
+			.isAuth &--no-auth {
+				display: none;
+			}
+		}
+	}
+
+	&__list {
+		@extend %flex-column;
+
+		gap: 1.5rem;
+		max-width: 52rem;
+		margin: 1.5rem auto 0;
+
+		@include media($md) {
+			margin: 2rem auto 0;
+		}
+	}
+
+	&__item {
+		&-wrapper {
+			display: grid;
+			grid-template-columns: max-content 1fr;
+			gap: 0.75rem 1rem;
+			margin-top: 0.75rem;
+
+			@include media($md) {
+				grid-template-columns: max-content 1fr max-content;
+			}
+		}
+
+		&-time {
+			grid-column: 1 / -1;
+			grid-row: 1 / 2;
+
+			color: rgb(var(--color-grey));
+			font-size: 1rem;
+
+			@include media($md) {
+				grid-column: 3 / -1;
+			}
+		}
+
+		&-avatar {
+			@extend %avatar;
+
+			grid-column: 1 / 2;
+			grid-row: 2 / 3;
+
+			@include media($md) {
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+			}
+		}
+
+		&-title, &-text, &-actions {
+			grid-column: 2 / -1;
+
+			@include media($md) {
+				grid-column: 2 / 4;
+			}
+		}
+
+		&-title {
+			@extend %flex-column;
+
+			justify-content: center;
+			grid-row: 2 / 3;
+
+			@include media($md) {
+				grid-row: 1 / 2;
+			}
+
+			&-name {
+				font-weight: 600;
+			}
+
+			&-descr {
+				font-size: 1rem;
+				line-height: 1rem;
+				color: rgb(var(--color-primary));
+			}
+		}
+
+		&-text {
+			grid-row: 3 / 4;
+			font-size: 1rem;
+
+			@include media($md) {
+				grid-row: 2 / 3;
+			}
+
+			a {
+				color: rgb(var(--color-primary));
+				text-decoration: underline;
+				text-decoration-style: dashed;
+				text-underline-offset: 0.25rem;
+			}
+		}
+
+		&-actions {
+			@extend %flex-start;
+
+			grid-row: 4 / 5;
+
+			@include media($md) {
+				grid-row: 3 / 4;
+			}
+
+			&-like {
+				cursor: pointer;
+
+				& svg {
+					& use {
+						fill: transparent;
+    				stroke: rgb(var(--color-primary));
+    				stroke-width: 2px;
+					}
+				}
+
+				&--favorite {
+					& svg {
+						& use {
+							fill: rgb(var(--color-primary));
+						}
+					}
+				}
+			}
+
+			&-count {
+				margin-left: 0.125rem;
+			}
+
+			&-btn {
+				margin-left: 0.75rem;
+			}
+		}
+
+		&-line {
+			grid-column: 1 / 2;
+			grid-row: 3 / 5;
+			height: 100%;
+			width: 2px;
+			background-color: rgb(var(--color-black-light));
+			border-radius: var(--radius-round);
+			margin: 0 auto;
+
+			@include media($md) {
+				grid-row: 2 / 4;
+			}
+		}
+
+		&-answer {
+			&-wrapper {
+				margin: 1.5rem 0 0 1.25rem;
+
+				&:empty {
+					margin: 0;
+				}
+				
+				@include media($md) {
+					margin: 2rem 0 0 3.5rem;
+				}
+			}
+
+			&-new {
+				display: grid;
+				grid-template-columns: max-content 1fr;
+				gap: 1rem;
+		
+				@include media($md) {
+					grid-template-columns: max-content 1fr max-content;
+				}
+
+				&-logo {
+					@extend %avatar;
+
+					grid-column: 1 / 2;
+					grid-row: 1 / 2;
+				}
+
+				&-input-wrapper {
+					grid-column: 2 / 3;
+					grid-row: 1 / 2;
+					width: 100%;
+
+					& textarea {
+						min-height: 3rem;
+						max-height: 8rem;
+					}
+				}
+
+				&-btn {
+					grid-column: 2 / 3;
+					grid-row: 2 / 3;
+					margin-left: auto;
+
+					@include media($md) {
+						grid-column: 3 / 4;
+						grid-row: 1 / 2;
+					}
+				}
+			}
+		}
+	}
+}

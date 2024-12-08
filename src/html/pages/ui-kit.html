@@ -120,6 +120,19 @@
           "extra-class-suffix": "",
         })
       </div>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          name: "input6",
+          type: "text",
+          placeholder: "Задизейбленный инпут",
+          prefix: "",
+          suffix: "",
+          "extra-class": "input-text--color-grey input-text--disabled",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+          "atr": "disabled",
+        })
+      </div>
 
       <h2>Search:</h2>
       <div class="ui-kit__block ui-kit__search">
@@ -391,8 +404,10 @@
       </div>
 
       <h2>Swiper:</h2>
-      <div class="ui-kit__block ui-kit__swiper">
-        <div class="swiper swiper-uikit">
+      <div class="ui-kit__block ui-kit__swiper-btns">
+        swiper кнопки отдельно от блока <br/>
+        если swiper 1 на странице, то при инициализации, можно кнопки не передавать
+        <div class="swiper swiper-uikit-btns">
           <div class="swiper-wrapper">
             <div class="swiper-slide">Slide 1</div>
             <div class="swiper-slide">Slide 2</div>
@@ -400,12 +415,12 @@
             ...
           </div>
         </div>
-        <div class="swiper-button-prev">
+        <div class="swiper-button-prev swiper-button-out-prev">
           <svg>
             <use xlink:href="./img/icons/icons.svg#arrow"></use>
           </svg>
         </div>
-        <div class="swiper-button-next">
+        <div class="swiper-button-next swiper-button-out-next">
           <svg>
             <use xlink:href="./img/icons/icons.svg#arrow"></use>
           </svg>
