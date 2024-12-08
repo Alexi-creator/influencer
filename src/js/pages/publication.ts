@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form(
-      '.', 
+      '.comments__comment', 
       API_URLS.mock.autocomplete,
       {
         method: HttpMethods.POST

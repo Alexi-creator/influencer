@@ -57,9 +57,14 @@ export class Comments {
   private insertAnswerBlock(targetElement: HTMLElement): void {
     const parentElem = targetElement.closest(this.commentSelector)
     const answerElem = parentElem?.querySelector(this.answerWrapperSelector)
-    const hasNewAnswerElem = answerElem?.querySelector(`:scope > ${this.answerNewSelector}`)
 
-    if (hasNewAnswerElem) return
+    const newAnswerElem = answerElem?.querySelector(`:scope > ${this.answerNewSelector}`)
+
+    if (newAnswerElem) {
+      newAnswerElem.remove()
+
+      return
+    }
 
     const newNode = this.createAnswerNode()
 
