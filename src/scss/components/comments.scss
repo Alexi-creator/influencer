@@ -1,3 +1,10 @@
+%avatar {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: var(--radius-round);
+	overflow: hidden;
+}
+
 .comments {
   $root: &;
 
@@ -10,32 +17,222 @@
 		}
 	}
 
-	&__form {
+	&__comment {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 1rem;
+		align-items: center;
+		margin-top: 1.5rem;
+
+		@include media($md) {
+			grid-template-columns: max-content 1fr max-content;
+		}
+
+		&-avatar {
+			@extend %avatar;
+	
+			&-default {
+				width: inherit;
+				height: inherit;
+			}
+	
+			&-img {
+				display: none;
+			}
+			
+			.isAuth &-default {
+				display: none;
+			}
+	
+			.isAuth &-img {
+				display: block;
+			}
+		}
+	
+		&-input {
+			&--auth {
+				display: none;
+			}
+	
+			.isAuth &--no-auth {
+				display: none;
+			}
+	
+			.isAuth &--auth {
+				display: block;
+			}
+		}
+
+		&-submit {
+			grid-column: 1 / -1;
+			margin-left: auto;
+
+			@include media($md) {
+				grid-column: 3 / -1;
+			}
+
+			&--auth {
+				display: none;
+			}
+
+			.isAuth &--auth {
+				display: block;
+			}
+
+			.isAuth &--no-auth {
+				display: none;
+			}
+		}
+	}
+
+	&__list {
+		@extend %flex-column;
+
+		gap: 1.5rem;
 		margin-top: 1.5rem;
 	}
 
-	&__avatar {
-		width: 2.5rem;
-		height: 2.5rem;
-		border-radius: var(--radius-round);
-		overflow: hidden;
-
-		&-default {
-			width: inherit;
-			height: inherit;
+	&__item {
+		&-time {
+			color: rgb(var(--color-grey));
+			font-size: 1rem;
 		}
 
-		&-img {
-			display: none;
+		&-wrapper {
+			display: grid;
+			grid-template-columns: max-content 1fr;
+			gap: 0.75rem 1rem;
+			margin-top: 0.75rem;
 		}
+
+		&-avatar {
+			@extend %avatar;
+
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+		}
+
+		&-title, &-text, &-actions {
+			grid-column: 2 / -1;
+		}
+
+		&-title {
+			@extend %flex-column;
+
+			justify-content: center;
+			grid-row: 1 / 2;
+
+			&-name {
+				font-weight: 600;
+			}
+
+			&-descr {
+				font-size: 1rem;
+				line-height: 1rem;
+				color: rgb(var(--color-primary));
+			}
+		}
+
+		&-text {
+			grid-row: 2 / 3;
+			font-size: 1rem;
+
+			a {
+				color: rgb(var(--color-primary));
+				text-decoration: underline;
+				text-decoration-style: dashed;
+				text-underline-offset: 0.25rem;
+			}
+		}
+
+		&-actions {
+			@extend %flex-start;
+
+			grid-row: 3 / 4;
+
+			&-like {
+				cursor: pointer;
+
+				& svg {
+					& use {
+						fill: transparent;
+    				stroke: rgb(var(--color-primary));
+    				stroke-width: 2px;
+					}
+				}
+
+				&--favorite {
+					& svg {
+						& use {
+							fill: rgb(var(--color-primary));
+						}
+					}
+				}
+			}
+
+			&-count {
+				margin-left: 0.125rem;
+			}
+
+			&-btn {
+				margin-left: 0.75rem;
+			}
+		}
+
+		&-line {
+			grid-column: 1 / 2;
+			grid-row: 2 / 4;
+			height: 100%;
+			width: 2px;
+			background-color: rgb(var(--color-black-light));
+			border-radius: var(--radius-round);
+			margin: 0 auto;
+		}
+
+		&-answer {
+			&-wrapper {
+				margin-top: 1.5rem;
+				margin-left: 1.25rem;
+			}
+
+			&-new {
+				display: grid;
+				grid-template-columns: max-content 1fr;
+				gap: 1rem;
 		
-		.isAuth & #{$root}__avatar-default {
-			display: none;
-		}
+				@include media($md) {
+					grid-template-columns: max-content 1fr max-content;
+				}
 
-		.isAuth & #{$root}__avatar-img {
-			display: block;
-		}
+				&-logo {
+					@extend %avatar;
 
+					grid-column: 1 / 2;
+					grid-row: 1 / 2;
+				}
+
+				&-input-wrapper {
+					grid-column: 2 / 3;
+					grid-row: 1 / 2;
+					width: 100%;
+
+					& textarea {
+						min-height: 3rem;
+						max-height: 8rem;
+					}
+				}
+
+				&-btn {
+					grid-column: 2 / 3;
+					grid-row: 2 / 3;
+					margin-left: auto;
+
+					@include media($md) {
+						grid-column: 3 / 4;
+						grid-row: 1 / 2;
+					}
+				}
+			}
+		}
 	}
 }

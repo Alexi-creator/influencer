@@ -42,8 +42,13 @@ select {
   font: inherit;
 }
 
-input {
+input, textarea {
   border: none;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
 }
 
 button {

@@ -219,7 +219,7 @@ export class Autocomplete {
     this.renderOptions()    
   }
 
-  private clickHandler(e: Event) : void{
+  private clickHandler(e: Event): void {
     const targetElement = e.target as HTMLElement
     
     if (this.inputWrapperElem.contains(targetElement) || (!this.containerElem.contains(targetElement) && this.isOpen)) {

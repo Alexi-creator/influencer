@@ -22,6 +22,14 @@
     border-color: rgb(var(--color-grey-light));
   }
 
+  &--disabled {
+    background-color: rgb(var(--color-grey-soft));
+
+    #{$root}__input {
+      background-color: rgb(var(--color-grey-soft));
+    }
+  }
+
   &__prefix {
 
   }

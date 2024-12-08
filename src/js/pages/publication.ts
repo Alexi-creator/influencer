@@ -6,6 +6,7 @@ import { NumberFormatter } from '../utils/numberFormatter'
 
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { Form } from '../modules/Form'
+import { Comments } from '../modules/Comments'
 
 window.addEventListener('load', () => {
   try {
@@ -18,6 +19,12 @@ window.addEventListener('load', () => {
     new CustomSwiper({
       target: '.swiper-publication',
     })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Comments('test')
   } catch (error) {
     console.log(error)
   }
