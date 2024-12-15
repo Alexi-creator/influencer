@@ -1,0 +1,43 @@
+// vendors
+@import "../vendors/swiper-bundle.min";
+
+// common styles
+@import "../common";
+
+// components
+@import "../components/nav-pages";
+@import "../components/steps";
+
+.section { 
+  @include media($lg) {
+    padding: 0rem 2.5rem;
+  }
+  
+  &__inner {
+    max-width: var(--max-width-container-1120);
+  }
+
+  &--add-publication-steps {
+    margin-top: 2rem;
+  }
+
+  &--add-publication {
+    margin-top: 1.25rem;
+  }
+}
+
+.main {
+  padding: 1.5rem 0 5.5rem 0;
+
+  @include media($md) {
+    padding: 2.5rem 0 6.5rem 0;
+  }
+
+  @include media($lg) {
+    padding: 2.5rem 0;
+  }
+
+  @include media($full) {
+    padding: 5rem 0;
+  }
+}

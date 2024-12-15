@@ -1,0 +1,157 @@
+.steps {
+  $root: &;
+
+	&__inner {
+		position: relative;
+	}
+
+	&__items {
+		display: flex;
+		padding: 0.5rem 0;
+	}
+
+	&__item {
+		flex: 1 1 0;
+		
+		position: relative;
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		align-items: center;
+		align-content: baseline;
+
+		&:last-child {
+			flex: 0 0 auto;
+			grid-template-columns: 1fr;
+
+			#{$root}__item-wrapper, #{$root}__item-name {
+				grid-column: 1 / -1;
+			}
+
+			#{$root}__item-wrapper {
+				margin-left: auto;
+			}
+
+			#{$root}__item-line {
+				display: none;
+			}
+		}
+
+		&--passed {
+			#{$root}__item-wrapper {
+				border: 2px solid rgb(var(--color-primary-dark));
+			}
+
+			#{$root}__item-step {
+				color: rgb(var(--color-primary-dark));
+			}
+
+			#{$root}__item-circle {
+				display: none;
+			}
+
+			#{$root}__item-line {
+				background-color: rgb(var(--color-primary-dark));
+			}
+		}
+
+		&--current {
+			flex: 2 1 0;
+
+			@include media($md) {
+				flex: 1 1 0;
+			}
+
+			#{$root}__item-wrapper {
+				border: 2px solid rgb(var(--color-primary));
+			}
+
+			#{$root}__item-circle {
+				display: none;
+			}
+
+			#{$root}__item-step {
+				color: rgb(var(--color-primary));
+			}
+
+			#{$root}__item-line {
+				background-color: rgb(var(--color-primary));
+			}
+
+			#{$root}__item-name {
+				display: block;
+			}
+
+			& + #{$root}__item {
+				&::before {
+					content: "";
+					position: absolute;
+					left: -1rem;
+					top: 0;
+					height: 3rem;
+					width: 1rem;
+					background-color: rgb(var(--color-white));
+					z-index: 2;
+				}
+			}
+		}
+
+		&-wrapper {
+			grid-column: 1 / 2;
+			flex-shrink: 0;
+			position: relative;
+			display: flex;
+			width: 3rem;
+			height: 3rem;
+			background-color: rgb(var(--color-white));
+			border-radius: var(--radius-round);
+			z-index: var(--z-base);
+		}
+
+		&-circle {
+			height: 100%;
+			width: 100%;
+		}
+
+		&-line {
+			position: relative;
+			grid-column: 2 / 3;
+			height: 2px;
+			width: 100%;
+			border-top-right-radius: 2px;
+			border-bottom-right-radius: 2px;
+			z-index: var(--z-base);
+		}
+
+		&-name {
+			display: none;
+			width: 100%;
+			margin-top: 0.5rem;
+			grid-column: 1 / -1;
+			grid-row: 2 / 3;
+			color: rgb(var(--color-primary));
+		}
+
+		&-step {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-weight: 600;
+			color: rgb(var(--color-grey-dark));
+		}
+	}
+
+	&__divider {
+		display: flex;
+
+		position: absolute;
+		height: 2px;
+		inset: 0;
+		top: calc(2rem - 1px);
+
+		& svg {
+			height: 2px;
+			width: 100%;
+		}
+	}
+}
