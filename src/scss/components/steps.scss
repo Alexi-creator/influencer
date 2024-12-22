@@ -52,6 +52,10 @@
 			#{$root}__item-line {
 				background-color: rgb(var(--color-primary-dark));
 			}
+
+			#{$root}__item-name {
+				color: rgb(var(--color-primary-dark));
+			}
 		}
 
 		&--current {
@@ -79,6 +83,7 @@
 
 			#{$root}__item-name {
 				display: block;
+				color: rgb(var(--color-primary));
 			}
 
 			& + #{$root}__item {
@@ -128,7 +133,11 @@
 			margin-top: 0.5rem;
 			grid-column: 1 / -1;
 			grid-row: 2 / 3;
-			color: rgb(var(--color-primary));
+			color: rgb(var(--color-grey-dark));
+
+			@include media($md) {
+				display: block;
+			}
 		}
 
 		&-step {
