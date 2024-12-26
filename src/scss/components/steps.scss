@@ -1,3 +1,14 @@
+%white-padding {
+	content: "";
+	position: absolute;
+	left: -1rem;
+	top: 0;
+	height: 3rem;
+	width: 1rem;
+	background-color: rgb(var(--color-white));
+	z-index: 2;
+}
+
 .steps {
   $root: &;
 
@@ -23,12 +34,23 @@
 			flex: 0 0 auto;
 			grid-template-columns: 1fr;
 
+			& svg {
+				& use {
+					stroke: rgb(var(--color-grey-dark));
+					stroke-width: 2px;
+				}
+			}
+
 			#{$root}__item-wrapper, #{$root}__item-name {
 				grid-column: 1 / -1;
 			}
 
 			#{$root}__item-wrapper {
 				margin-left: auto;
+
+				&::before {
+					@extend %white-padding;
+				}
 			}
 
 			#{$root}__item-line {
@@ -88,14 +110,7 @@
 
 			& + #{$root}__item {
 				&::before {
-					content: "";
-					position: absolute;
-					left: -1rem;
-					top: 0;
-					height: 3rem;
-					width: 1rem;
-					background-color: rgb(var(--color-white));
-					z-index: 2;
+					@extend %white-padding;
 				}
 			}
 		}

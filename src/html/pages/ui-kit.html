@@ -479,6 +479,13 @@
         @@include("../components/tabs.html")
       </div>
 
+      <h2>Tabs с раздельными табами:</h2>
+      <div class="ui-kit__block ui-kit__tabs">
+        @@include("../components/tabs.html", {
+          'extra-class': "tabs--split",
+        })
+      </div>
+
       <h2>Chips:</h2>
       <div class="ui-kit__block ui-kit__chips">
         @@include("../components/chip.html", {

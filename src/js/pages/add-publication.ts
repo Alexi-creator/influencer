@@ -1,13 +1,282 @@
 import '../common'
+import { API_URLS, BreakpointWidth, HttpMethods } from '../constants'
 
+import { AddPublication } from '../modules/AddPublication'
+import { Autocomplete } from '../modules/Autocomplete'
+import { Collapse } from '../modules/Collapse'
+import { CustomSwiper } from '../modules/CustomSwiper'
+import { Filter } from '../modules/Filter'
+import { Form } from '../modules/Form'
+import { Masonry } from '../modules/Masonry'
+import { Sort } from '../modules/Sort'
 import { Steps } from '../modules/Steps'
+import { Tabs } from '../modules/Tabs'
 
 window.addEventListener('load', () => {
-  let selectedStep
+  // Masonry должен вызываться раньше чем Filter
+  try {
+    new Masonry({
+      selectorContainer: '.add-publication__form-sp .add-publication__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 4,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.add-publication__form-all .add-publication__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 4,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.add-publication__form-bought .add-publication__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 4,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Masonry({
+      selectorContainer: '.add-publication__form-user .add-publication__form-filter-filters',
+      breakpointsSettings: {
+        [BreakpointWidth.MOBILE]: 1,
+        [BreakpointWidth.TABLET]: 2,
+        [BreakpointWidth.DESKTOP]: 3,
+        [BreakpointWidth.FULLHD]: 4,
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  let changeStep
 
   try {
     const steps = new Steps()
-    selectedStep = steps.selected
+    changeStep = steps.selected
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new AddPublication(changeStep)
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Collapse()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Autocomplete({
+      id: 'search-sp',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Autocomplete({
+      id: 'search-all',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Autocomplete({
+      id: 'search-bought',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Autocomplete({
+      id: 'search-user',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.add-publication__content-form-sp', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.add-publication__content-form-all', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.add-publication__content-form-bought', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form(
+      '.add-publication__content-form-user', 
+      API_URLS.mock.autocomplete,
+      {
+        method: HttpMethods.POST
+      },
+    )
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.add-publication__form-sp',
+      selectorActionContainer: '.add-publication__actions-sp',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.add-publication__form-all',
+      selectorActionContainer: '.add-publication__actions-all',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.add-publication__form-bought',
+      selectorActionContainer: '.add-publication__actions-bought',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Sort({
+      selectorContainer: '.add-publication__form-user',
+      selectorActionContainer: '.add-publication__actions-user',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.add-publication',
+      selectorContainer: '.add-publication__form-sp',
+      selectorActionBtn: '.add-publication__actions-categories-sp',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.add-publication',
+      selectorContainer: '.add-publication__form-all',
+      selectorActionBtn: '.add-publication__actions-categories-all',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.add-publication',
+      selectorContainer: '.add-publication__form-bought',
+      selectorActionBtn: '.add-publication__actions-categories-bought',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Filter({
+      selectorMain: '.add-publication',
+      selectorContainer: '.add-publication__form-user',
+      selectorActionBtn: '.add-publication__actions-categories-user',
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Tabs()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    const parentElement = document.querySelector('.add-publication__tabs') as HTMLElement
+    const swiperElement = parentElement.querySelector('.add-publication__swiper') as HTMLElement
+    const prevBtn = parentElement.querySelector('.swiper-button-prev') as HTMLElement
+    const nextBtn = parentElement.querySelector('.swiper-button-next') as HTMLElement 
+
+    new CustomSwiper({
+      target: swiperElement,
+      options: {
+        slidesPerView: 1.5,
+        centeredSlides: true,
+        spaceBetween: 0,
+        breakpoints: {
+          // 420: {
+          //   slidesPerView: 1.5,
+          // },
+        },
+      },
+      breakMedia: BreakpointWidth.TABLET,
+      btnsElements: {
+        prevElement: prevBtn,
+        nextElement: nextBtn,
+      },
+    })
   } catch (error) {
     console.log(error)
   }

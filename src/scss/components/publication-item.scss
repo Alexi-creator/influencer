@@ -8,6 +8,18 @@
   background-color: rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
 
+  &#{$root}--dark {
+    background-color: rgb(var(--color-primary-tag-checked));
+  }
+
+  &#{$root}--green {
+    background-color: rgba(var(--color-green-dark), 0.04);
+  }
+
+  &#{$root}--grey {
+    background-color: rgb(var(--color-grey-soft));
+  }
+
   &__img {
     width: 4.375rem;
     height: 6.25rem;
@@ -16,7 +28,7 @@
     flex-shrink: 0;
   }
 
-  &__descr {
+  &__content {
     font-size: 1rem;
   }
 
@@ -24,5 +36,9 @@
     margin-top: 0.25rem;
     font-size: 1.125rem;
     font-weight: 600;
+  }
+
+  &__descr {
+    margin-top: 0.5rem;
   }
 }

@@ -20,7 +20,7 @@ export class Steps {
     this.passedSelector = `${this.mainSelector}__item--passed`
 
     const mainElem = document.querySelector(this.mainSelector) as HTMLElement
-    if (!mainElem) console.error(`${this.mainSelector} has not founded!`)
+    if (!mainElem) console.error(`this selector: ${this.mainSelector} has not been founded!`)
 
     this.stepsMap = new Map()
     this.currentNumberStep = 0
@@ -47,10 +47,15 @@ export class Steps {
 
   public selected(nameStep: StepsEnum): void {
     this.currentNameStep = nameStep
+    const stepsArr = Array.from(this.stepsMap)
 
-    Array.from(this.stepsMap).forEach(([name, elem], index) => {
+    this.currentNumberStep = stepsArr.findIndex(elem => elem[0] === nameStep)
+
+    stepsArr.forEach(([name, elem], index) => {
       if (name === nameStep) {
         elem.classList.add(this.currentSelector.substring(1))
+      } else {
+        elem.classList.remove(this.currentSelector.substring(1))
       }
       
       if (this.currentNumberStep > index) {

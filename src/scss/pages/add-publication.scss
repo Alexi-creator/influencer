@@ -6,7 +6,35 @@
 
 // components
 @import "../components/nav-pages";
+@import "../components/publication-item";
+@import "../components/tabs";
+@import "../components/tabs-head";
+@import "../components/collapse";
+
+@import "../components/filter-actions";
+@import "../components/form-filters";
+@import "../components/filters";
+@import "../components/sorting";
+@import "../components/clear-filter-content-popup";
+
 @import "../components/steps";
+@import "../components/add-publication";
+
+.main {
+  padding: 1.5rem 0 5.5rem 0;
+
+  @include media($md) {
+    padding: 2.5rem 0 6.5rem 0;
+  }
+
+  @include media($lg) {
+    padding: 2.5rem 0;
+  }
+
+  @include media($full) {
+    padding: 5rem 0;
+  }
+}
 
 .section { 
   @include media($lg) {
@@ -23,21 +51,19 @@
 
   &--add-publication {
     margin-top: 1.25rem;
-  }
-}
+    padding: 0;
 
-.main {
-  padding: 1.5rem 0 5.5rem 0;
+    @include media($md) {
+      margin-top: 2rem;
+      padding: 0rem 1.25rem;
+    }
 
-  @include media($md) {
-    padding: 2.5rem 0 6.5rem 0;
-  }
+    @include media($lg) {
+      padding: 0rem 2.5rem;
+    }
 
-  @include media($lg) {
-    padding: 2.5rem 0;
-  }
-
-  @include media($full) {
-    padding: 5rem 0;
+    @include media($full) {
+      margin-top: 2.5rem;
+    }
   }
 }

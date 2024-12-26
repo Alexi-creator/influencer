@@ -1,6 +1,30 @@
 .tabs {
   $root: &;
 
+  &--split {
+    #{$root}__list {
+      gap: 0.5rem;
+    }
+
+    #{$root}__tab {
+      &:first-child, &:last-child, &:not(:first-child):not(:last-child) {
+        border-width: 0.125rem;
+        border-radius: var(--radius-medium);
+        border-color: transparent;
+        background-color: rgb(var(--color-grey-soft));
+      }
+
+      &:hover, &--active {
+        &:first-child, &:last-child, &:not(:first-child):not(:last-child) {
+          border-width: 0.125rem;
+          border-radius: var(--radius-medium);
+          border-color: rgb(var(--color-primary));
+          background-color: rgb(var(--color-primary-soft));
+        }
+      }
+    }
+  }
+
   &__list {
     @extend %flex-align-center;
   }
