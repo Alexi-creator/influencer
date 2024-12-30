@@ -7,10 +7,10 @@
         <div class="add-publication__tabs-wrapper tabs-head tabs__head">
           <div class="swiper add-publication__swiper">
             <div class="tabs__list swiper-wrapper">
-              <button class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="sp">
+              <button class="swiper-slide tabs__tab" data-tab-path="sp">
                Товары из СП
               </button>
-              <button class="swiper-slide tabs__tab" data-tab-path="all">
+              <button class="swiper-slide tabs__tab tabs__tab--active" data-tab-path="all">
                 Все товары
               </button>
               <button class="swiper-slide tabs__tab" data-tab-path="bought">
@@ -38,7 +38,7 @@
         <h4 class="add-publication__contents-title">Выберите товары</h4>
 
         <!-- Блок с контентом вкладки "Товары из СП" -->
-        <div class="add-publication__content add-publication__actions-sp tabs__content tabs__content--active" data-tab-target="sp">
+        <div class="add-publication__content add-publication__actions-sp tabs__content" data-tab-target="sp">
           <div class="add-publication__content-filters filter-actions filter-actions--sp">
             <div class="add-publication__content-filters-input">
               @@include("./autocomplete.html", {
@@ -251,9 +251,7 @@
             </div>
 
             <ul class="add-publication__content-results-list">
-              <li>
 
-              </li>
             </ul>
 
             <p class="add-publication__content-empty-text">
@@ -264,7 +262,7 @@
         </div>
 
         <!-- Блок с контентом вкладки "Все товары" -->
-        <div class="add-publication__content add-publication__content--has-items add-publication__actions-all tabs__content" data-tab-target="all">
+        <div class="add-publication__content add-publication__content--has-items add-publication__actions-all tabs__content tabs__content--active" data-tab-target="all">
           <div class="add-publication__content-filters filter-actions filter-actions--all">
             <div class="add-publication__content-filters-input">
               @@include("./autocomplete.html", {
@@ -477,7 +475,7 @@
             </div>
 
             <ul class="add-publication__content-results-list">
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-all-1">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--dark",
                   img: "item-publication.jpg",
@@ -486,8 +484,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-all-2">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--green",
                   img: "item-publication.jpg",
@@ -496,8 +499,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-bought">Этот товар вы купили <svg><use xlink:href="./img/icons/icons.svg#check"></use></svg></span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-all-3">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--dark",
                   img: "item-publication.jpg",
@@ -506,8 +514,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-all-4">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--grey",
                   img: "item-publication.jpg",
@@ -516,6 +529,11 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Товар с другого сайта</span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
             </ul>
 
@@ -740,7 +758,7 @@
             </div>
 
             <ul class="add-publication__content-results-list">
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-bought-1">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--dark",
                   img: "item-publication.jpg",
@@ -749,8 +767,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-bought-2">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--green",
                   img: "item-publication.jpg",
@@ -759,8 +782,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-bought">Этот товар вы купили <svg><use xlink:href="./img/icons/icons.svg#check"></use></svg></span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-bought-3">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--dark",
                   img: "item-publication.jpg",
@@ -769,8 +797,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-bought-4">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--dark",
                   img: "item-publication.jpg",
@@ -779,8 +812,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-bought-5">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--dark",
                   img: "item-publication.jpg",
@@ -789,8 +827,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-bought-6">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--dark",
                   img: "item-publication.jpg",
@@ -799,8 +842,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-bought-7">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--grey",
                   img: "item-publication.jpg",
@@ -809,6 +857,11 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Товар с другого сайта</span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
             </ul>
 
@@ -1033,7 +1086,7 @@
             </div>
 
             <ul class="add-publication__content-results-list">
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-user-1">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--green",
                   img: "item-publication.jpg",
@@ -1042,8 +1095,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-bought">Этот товар вы купили <svg><use xlink:href="./img/icons/icons.svg#check"></use></svg></span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-user-2">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--green",
                   img: "item-publication.jpg",
@@ -1052,8 +1110,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-bought">Этот товар вы купили <svg><use xlink:href="./img/icons/icons.svg#check"></use></svg></span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-user-3">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--green",
                   img: "item-publication.jpg",
@@ -1062,8 +1125,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-bought">Этот товар вы купили <svg><use xlink:href="./img/icons/icons.svg#check"></use></svg></span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-user-4">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--green",
                   img: "item-publication.jpg",
@@ -1072,8 +1140,13 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-bought">Этот товар вы купили <svg><use xlink:href="./img/icons/icons.svg#check"></use></svg></span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
-              <li class="add-publication__content-results-list-item">
+              <li class="add-publication__content-results-list-item" data-id="item-user-5">
                 @@include("./publication-item.html", {
                   'extra-class': "publication-item--green",
                   img: "item-publication.jpg",
@@ -1082,6 +1155,11 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-bought">Этот товар вы купили <svg><use xlink:href="./img/icons/icons.svg#check"></use></svg></span>',
                 })
+                <button class="add-publication__content-results-list-item-clear btn">
+                  <svg>
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
               </li>
             </ul>
 
@@ -1092,6 +1170,14 @@
           </div>
         </div>
       </div>
+
+      @@include("./popup.html", {
+        "extra-class": "add-publication__selected",
+        "id": "selected-goods",
+        "title": "",
+        "body": '@@include("./add-publication-selected.html")',
+        "media": 'data-media="1200"',
+      })
     </div>
 
     <!-- Блок второго шага (Наполнение) -->
@@ -1111,6 +1197,18 @@
     <div class="add-publication__actions">
       <button class="add-publication__actions-site btn btn--text btn--color-grey">Добавить товар с другого сайта</button>
       <button class="add-publication__actions-prev btn">Назад</button>
+      <button class="add-publication__actions-preview btn btn--outlined">
+        <div class="add-publication__actions-preview-wrapper">
+          <div class="add-publication__actions-preview-choose">Вы выбрали</div>
+          <div class="add-publication__actions-preview-goods">
+            <span class="add-publication__actions-preview-goods-gallery gallery-card">
+
+            </span>
+            <span class="add-publication__actions-preview-goods-count"></span> товара
+          </div>
+        </div>
+        <div class="add-publication__actions-preview-action" data-text="Cвернуть">Посмотреть</div>
+      </button>
       <button class="add-publication__actions-next btn btn--disabled" disabled>Далее</button>
       <button class="add-publication__actions-publication btn">Опубликовать</button>
     </div>

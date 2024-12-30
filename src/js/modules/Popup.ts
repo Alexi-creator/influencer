@@ -48,7 +48,7 @@ export class Popup {
     openPopups.forEach(popup => {
       const popupMedia = popup.dataset.media
 
-      if (Number(currentMedia) >= Number(popupMedia)) {
+      if (popupMedia && Number(currentMedia) >= Number(popupMedia)) {
         this.closePopup(popup)
       }
     })

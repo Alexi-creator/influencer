@@ -10,6 +10,7 @@
 @import "../components/tabs";
 @import "../components/tabs-head";
 @import "../components/collapse";
+@import "../components/gallery-card";
 
 @import "../components/filter-actions";
 @import "../components/form-filters";
@@ -24,15 +25,15 @@
   padding: 1.5rem 0 5.5rem 0;
 
   @include media($md) {
-    padding: 2.5rem 0 6.5rem 0;
+    padding: 2.5rem 0 5.25rem 0;
   }
 
   @include media($lg) {
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 1.25rem 0;
   }
 
   @include media($full) {
-    padding: 5rem 0;
+    padding: 5rem 0 3.25rem 0;
   }
 }
 

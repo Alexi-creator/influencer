@@ -45,7 +45,7 @@ export class Steps {
     this.selected(this.currentNameStep)
   }
 
-  public selected(nameStep: StepsEnum): void {
+  public selected = (nameStep: StepsEnum): void => {
     this.currentNameStep = nameStep
     const stepsArr = Array.from(this.stepsMap)
 
