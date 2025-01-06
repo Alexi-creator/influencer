@@ -35,8 +35,11 @@
         width: 1.5rem;
         height: 1.5rem;
         margin: 0 1.25rem;
-        background-image: url("../../img/icons/icons.svg#arrow-right");
         vertical-align: middle;
+        background-image: url("../../img/icons/icons.svg#arrow-right");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         cursor: default;
       }
     }

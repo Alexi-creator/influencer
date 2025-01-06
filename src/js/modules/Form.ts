@@ -62,11 +62,11 @@ export class Form {
     return await request(url, this.apiOptions)
   }
 
-  private validateForm() {
+  private validateForm(): void {
 
   }
 
-  private resetForm() {
+  private resetForm(): void {
 
   }
 
@@ -81,7 +81,7 @@ export class Form {
   //   console.log(targetElement)
   // }
 
-  private handlers() {
+  private handlers(): void {
     // document.addEventListener('click', (e: MouseEvent) => this.clickHandler(e))
     // document.addEventListener('change', (e: Event) => this.changeHandler(e))
     this.form.addEventListener('submit', (e: Event) => {

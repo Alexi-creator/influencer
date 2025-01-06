@@ -11,6 +11,7 @@
 @import "../components/tabs-head";
 @import "../components/collapse";
 @import "../components/gallery-card";
+@import "../components/rating";
 
 @import "../components/filter-actions";
 @import "../components/form-filters";
@@ -52,7 +53,6 @@
 
   &--add-publication {
     margin-top: 1.25rem;
-    padding: 0;
 
     @include media($md) {
       margin-top: 2rem;

@@ -23,6 +23,48 @@
     border-color: rgb(var(--color-grey-light));
   }
 
+  &--upload {
+    position: relative;
+    height: 6rem;
+    width: 6rem;
+    gap: 0;
+    padding: 0;
+    background-color: rgb(var(--color-primary-soft));
+    border-color: rgb(var(--color-primary));
+
+    #{$root}__prefix {
+      margin: 0 auto;
+
+      & svg {
+        color: rgb(var(--color-primary));
+      }
+    }
+
+    & > input {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &#{$root}--disabled {
+      background-color: rgb(var(--color-grey-soft));
+      border-color: rgb(var(--color-grey-dark));
+
+      #{$root}__prefix {
+        & svg {
+          color: rgb(var(--color-grey-600));
+        }
+      }
+
+      & > input {
+        cursor: default;
+      }
+    }
+  }
+
   &--disabled {
     background-color: rgb(var(--color-grey-soft));
 

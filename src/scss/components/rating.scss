@@ -1,8 +1,32 @@
-.rating{
-  @extend %flex-start;
+.rating {
+  $root: &;
+
+  @extend %inline-flex-row;
+
   gap: 0.25rem;
-  svg{
+
+  & svg {
     width: 1rem;
     height: 1rem;
+    color: rgb(var(--color-grey-light));
+    transition: color 0.3s ease;
+  }
+
+  &[data-rating="1"] svg:nth-child(-n + 1),
+  &[data-rating="2"] svg:nth-child(-n + 2),
+  &[data-rating="3"] svg:nth-child(-n + 3),
+  &[data-rating="4"] svg:nth-child(-n + 4),
+  &[data-rating="5"] svg:nth-child(-n + 5) {
+    color: rgb(var(--color-primary));
+  }
+
+  &--select {
+    & svg {
+      cursor: pointer;
+
+      &.active {
+        color: rgb(var(--color-primary));
+      }
+    }
   }
 }

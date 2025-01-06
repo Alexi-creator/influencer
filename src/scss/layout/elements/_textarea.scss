@@ -10,6 +10,14 @@
     border-color: rgb(var(--color-primary));
   }
 
+  &--grey {
+    border-color: rgb(var(--color-grey-light));
+
+    &::placeholder {
+      color: rgb(var(--color-grey-light));
+    }
+  }
+
   &--disabled {
     background-color: rgb(var(--color-grey-soft));
   }

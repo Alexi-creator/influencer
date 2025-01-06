@@ -11,7 +11,7 @@ export class Steps {
   private currentNameStep: StepsEnum
   private currentNumberStep: number
 
-  private stepsMap: Map<StepsEnum, HTMLElement>
+  public stepsMap: Map<StepsEnum, HTMLElement>
 
   constructor() {
     this.mainSelector = '.steps'

@@ -8,6 +8,7 @@ import { CustomSwiper } from '../modules/CustomSwiper'
 import { Filter } from '../modules/Filter'
 import { Form } from '../modules/Form'
 import { Masonry } from '../modules/Masonry'
+import { Rating } from '../modules/Rating'
 import { Sort } from '../modules/Sort'
 import { Steps } from '../modules/Steps'
 import { Tabs } from '../modules/Tabs'
@@ -70,17 +71,19 @@ window.addEventListener('load', () => {
     console.log(error)
   }
 
+  let stepsMap
   let changeStep
 
   try {
     const steps = new Steps()
+    stepsMap = steps.stepsMap
     changeStep = steps.selected
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new AddPublication(changeStep)
+    new AddPublication(stepsMap, changeStep)
   } catch (error) {
     console.log(error)
   }
@@ -249,6 +252,12 @@ window.addEventListener('load', () => {
 
   try {
     new Tabs()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Rating()
   } catch (error) {
     console.log(error)
   }

@@ -21,6 +21,20 @@
     }
   }
 
+  &--arrow {
+    #{$root}__head-icon {
+      & use {
+        stroke: rgb(var(--color-grey));
+      }
+    }
+
+    &#{$root}--close {
+      #{$root}__head-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   &__head {
     @extend %flex-space-between;
 
@@ -40,6 +54,7 @@
 
     &-icon {
       flex-shrink: 0;
+      transition: transform 0.2s ease;
 
       & use {
         fill: rgb(var(--color-black-middle));

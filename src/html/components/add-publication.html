@@ -2,7 +2,7 @@
   <div class="add-publication__inner">
 
     <!-- Блок первого шага (Выбор товара) -->
-    <div class="add-publication__step-content active add-publication__choose-goods">
+    <div class="add-publication__step-content add-publication__choose-goods active">
       <div class="add-publication__tabs tabs tabs--split">
         <div class="add-publication__tabs-wrapper tabs-head tabs__head">
           <div class="swiper add-publication__swiper">
@@ -484,6 +484,14 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Магазин</span> UNIQ',
                 })
+                <div class="add-publication__content-results-list-item-rating">
+                  <div class="add-publication__content-results-list-item-rating-text">Вы оценили этот товар</div>
+                  <div class="add-publication__content-results-list-item-rating-rate">
+                    @@include("./rating.html", {
+                      "value": 4,
+                    })
+                  </div>
+                </div>
                 <button class="add-publication__content-results-list-item-clear btn">
                   <svg>
                     <use xlink:href="./img/icons/icons.svg#cross"></use>
@@ -529,6 +537,15 @@
                   currency: " ₽",
                   descr: '<span class="add-publication__content-results-list-item-subtitle">Товар с другого сайта</span>',
                 })
+                <div class="add-publication__content-results-list-item-rating">
+                  <div class="add-publication__content-results-list-item-rating-text">Оцените купленный товар</div>
+                  <div class="add-publication__content-results-list-item-rating-rate">
+                    @@include("./rating.html", {
+                      'extra-class': "rating--select",
+                      "name": 'item-all-4',
+                    })
+                  </div>
+                </div>
                 <button class="add-publication__content-results-list-item-clear btn">
                   <svg>
                     <use xlink:href="./img/icons/icons.svg#cross"></use>
@@ -1181,22 +1198,116 @@
     </div>
 
     <!-- Блок второго шага (Наполнение) -->
-    <div class="add-publication__step-content add-publication__filling">
-      2 шаг наполнение
-    </div>
+    <form class="add-publication__step-content add-publication__filling ">
+      <div class="add-publication__filling-selected collapse collapse--arrow">
+        <div class="collapse__head">
+          <span class="collapse__head-title add-publication__filling-selected-title">
+            Выбранные товары (<span class="add-publication__filling-selected-count"></span>)
+            <span class="add-publication__filling-selected-toggle" data-text="Развернуть">Свернуть</span>
+          </span>
+          <svg class="collapse__head-icon">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+        <ul class="add-publication__filling-selected-content collapse__content"></ul>
+      </div>
+
+      <div class="add-publication__filling-field-title">Придумайте заголовок</div>
+      <div class="add-publication__filling-field-wrapper">
+        @@include("./input-text.html", {
+          name: "title-goods",
+          type: "text",
+          placeholder: "Заголовок образа",
+          prefix: "",
+          suffix: "",
+          "extra-class": "input-text--color-grey",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+          "atr": 'required',
+        })
+      </div>
+
+      <div class="add-publication__filling-field-title">Что стоит отметить в образе?</div>
+      <div class="add-publication__filling-field-wrapper">
+        <textarea
+          class="add-publication__filling-field-description textarea textarea--grey"
+          name="description"
+          placeholder="Например, расскажите о концепции образа или сочетании цветов"
+          required
+        ></textarea>
+      </div>
+
+      <div class="add-publication__filling-field-media">
+        <div class="add-publication__filling-field-media-img-wrapper">
+          <div class="add-publication__filling-field-title">Добавьте фотографии</div>
+          <div class="add-publication__filling-field-wrapper add-publication__filling-field-upload">
+            @@include("./input-text.html", {
+              name: "add-picture",
+              type: "file",
+              placeholder: "",
+              prefix: '<svg><use xlink:href=\"./img/icons/icons.svg#plus\"></use></svg>',
+              suffix: "",
+              "extra-class": "input-text--color-grey input-text--upload add-publication__filling-field-upload-input",
+              "extra-class-prefix": "",
+              "extra-class-suffix": "",
+              "atr": 'required multiple',
+            })
+
+            <p class="add-publication__filling-field-upload-descr">
+              До 8 изображений в формате PNG или JPG. Можно просто перетащить их в это окно
+            </p>
+
+            <div class="add-publication__filling-field-upload-files"></div>
+            <p class="add-publication__filling-field-upload-info">
+              Вы можете изменить порядок показа фотографий перетаскиванием. Чтобы посмотреть на фото в увеличенном масштабе, просто клинкине на нее
+            </p>
+            <button class="add-publication__filling-field-upload-settings btn btn--none">Настроить область показа миниатюр</button>
+          </div>
+        </div>
+  
+        <div class="add-publication__filling-field-media-video-wrapper">
+          <div class="add-publication__filling-field-title">Есть видео? Вставьте ссылку</div>
+          <div class="add-publication__filling-field-wrapper">
+            @@include("./input-text.html", {
+              name: "media-link",
+              type: "text",
+              placeholder: "Вставьте ссылку на нужное видео в это поле",
+              prefix: "",
+              suffix: "",
+              "extra-class": "input-text--color-grey",
+              "extra-class-prefix": "",
+              "extra-class-suffix": "",
+              "atr": 'required',
+            })
+          </div>
+        </div>
+      </div>
+
+      <div class="add-publication__filling-field-title">Прикрепите теги</div>
+      <div class="add-publication__filling-field-wrapper">
+        <textarea
+          class="add-publication__filling-field-tags textarea textarea--grey"
+          name="tags"
+          placeholder="Поле тегов"
+          required
+        ></textarea>
+      </div>
+    </form>
+
     <!-- Блок второго шага (Предпросмотр) -->
     <div class="add-publication__step-content add-publication__preview">
       3 шаг Предпросмотр
     </div>
+
     <!-- Блок второго шага (Образ создан) -->
     <div class="add-publication__step-content add-publication__image-created">
       4 шаг Образ создан
     </div>
 
     <!-- Блок с кнопками управления шагами (назад вперед, ...) -->
-    <div class="add-publication__actions">
-      <button class="add-publication__actions-site btn btn--text btn--color-grey">Добавить товар с другого сайта</button>
-      <button class="add-publication__actions-prev btn">Назад</button>
+    <div class="add-publication__actions add-publication__actions--first-step">
+      <button class="add-publication__actions-site btn btn--text btn--color-grey active">Добавить товар с другого сайта</button>
+      <button class="add-publication__actions-prev btn btn--color-primary-light">Назад</button>
       <button class="add-publication__actions-preview btn btn--outlined">
         <div class="add-publication__actions-preview-wrapper">
           <div class="add-publication__actions-preview-choose">Вы выбрали</div>

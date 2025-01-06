@@ -3,10 +3,18 @@
 */
 
 export class Collapse {
-  selector: string
+  private mainSelector: string
+  private headSelector: string
+  private openSelector: string
+  private closeSelector: string
+  private modArrowSelector: string
 
   constructor() {
-    this.selector = '.collapse'
+    this.mainSelector = '.collapse'
+    this.headSelector = `${this.mainSelector}__head`
+    this.openSelector = `${this.mainSelector}--open`
+    this.closeSelector = `${this.mainSelector}--close`
+    this.modArrowSelector = `${this.mainSelector}--arrow`
 
     this.init()
   }
@@ -16,22 +24,27 @@ export class Collapse {
   }
 
   private toggleCollapse(targetElement: HTMLElement): void {
-    const parent = targetElement.closest(this.selector) as HTMLElement
-    const svgIcon = parent.querySelector('.collapse__head-icon use')
+    const parent = targetElement.closest(this.mainSelector) as HTMLElement
+    const isModArrow = parent.classList.contains(this.modArrowSelector.substring(1))
 
     if (parent) {
-      if (parent.classList.contains('collapse--close')) {
-        parent.classList.remove('collapse--close')
-        parent.classList.add('collapse--open')
-        svgIcon?.setAttribute('xlink:href', './img/icons/icons.svg#collapse')
+      const svgIcon = parent.querySelector(`${this.headSelector}-icon use`)
+
+      if (parent.classList.contains(this.closeSelector.substring(1))) {
+        parent.classList.remove(this.closeSelector.substring(1))
+        parent.classList.add(this.openSelector.substring(1))
+
+        if (!isModArrow) svgIcon?.setAttribute('xlink:href', './img/icons/icons.svg#collapse')
       }
-      else if (parent?.classList.contains('collapse--open')) {
-        parent.classList.remove('collapse--open')
-        parent.classList.add('collapse--close')
-        svgIcon?.setAttribute('xlink:href', './img/icons/icons.svg#reveal')
+      else if (parent?.classList.contains(this.openSelector.substring(1))) {
+        parent.classList.remove(this.openSelector.substring(1))
+        parent.classList.add(this.closeSelector.substring(1))
+
+        if (!isModArrow) svgIcon?.setAttribute('xlink:href', './img/icons/icons.svg#reveal')
       } else {
-        parent.classList.add('collapse--close')
-        svgIcon?.setAttribute('xlink:href', './img/icons/icons.svg#reveal')
+        parent.classList.add(this.closeSelector.substring(1))
+
+        if (!isModArrow)  svgIcon?.setAttribute('xlink:href', './img/icons/icons.svg#reveal')
       }
     }    
   }
@@ -39,7 +52,7 @@ export class Collapse {
   private clickHandler(e: MouseEvent): void {
     const targetElement = e.target as HTMLElement
 
-    if (targetElement.closest('.collapse__head') && targetElement.tagName !== 'INPUT') {
+    if (targetElement.closest(this.headSelector) && targetElement.tagName !== 'INPUT') {
       this.toggleCollapse(targetElement)
     }
   }
