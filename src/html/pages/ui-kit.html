@@ -165,7 +165,17 @@
       </div>
 
       <h2>TextArea:</h2>
-      <textarea class="textarea"></textarea>
+      @@include("../components/textarea.html", {
+        name: "textarea",
+        placeholder: "Введите текст",
+      })
+
+      <h2>TextArea с серой рамкой:</h2>
+      @@include("../components/textarea.html", {
+        name: "textarea-grey",
+        placeholder: "Введите текст",
+        "extra-class": "textarea__input--grey",
+      })
 
       <h2>Search:</h2>
       <div class="ui-kit__block ui-kit__search">

@@ -51,13 +51,13 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Form(
-      '.shops-block__form', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.shops-block__form', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }

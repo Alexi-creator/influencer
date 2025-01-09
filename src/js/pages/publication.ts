@@ -30,13 +30,13 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Form(
-      '.comments__comment', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.comments__comment', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }

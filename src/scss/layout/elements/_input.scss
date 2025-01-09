@@ -1,18 +1,24 @@
 .input-text {
   $root: &;
 
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  background-color: rgb(var(--color-white));
-  border: 2px solid rgb(var(--color-primary-light));
-  border-radius: var(--radius-medium);
-  padding: 0.75rem 1.25rem;
-  height: 3rem;
-  outline: none;
+  &__label {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(var(--color-white));
+    border: 2px solid rgb(var(--color-primary-light));
+    border-radius: var(--radius-medium);
+    outline: none;
 
-  &:focus-within {
-    border-color: rgb(var(--color-primary));
+    &:focus-within {
+      border-color: rgb(var(--color-primary));
+    }
+
+    &.error {
+      border-color: rgb(var(--color-red));
+    }
   }
 
   &--small {
@@ -47,6 +53,13 @@
       width: 100%;
       opacity: 0;
       cursor: pointer;
+
+      &::-webkit-file-upload-button, &::file-selector-button {
+        color: transparent;
+        background-color: rgb(var(--color-grey-white));
+        border-color: transparent;
+        cursor: pointer;
+      }
     }
 
     &#{$root}--disabled {
@@ -63,6 +76,46 @@
         cursor: default;
       }
     }
+
+    #{$root}__suffix {
+      display: none;
+    }
+
+    &.active {
+      @extend %flex-center;
+
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      backdrop-filter: blur(6px);
+      border-color: transparent;
+      border-radius: 0;
+      z-index: var(--z-over);
+      cursor: pointer;
+
+      #{$root}__prefix {
+        display: none;
+      }
+
+      & > input {
+        height: 75%;
+        width: calc(100% - 5rem);
+        inset: initial;
+        color: rgb(var(--color-grey-white));
+        background-color: rgb(var(--color-grey-white));
+        border-radius: var(--radius-medium);
+        opacity: 1;
+      }
+
+      #{$root}__suffix {
+        display: block;
+        max-width: 46rem;
+        z-index: calc(var(--z-over) + 1);
+        pointer-events: none;
+      }
+    }
   }
 
   &--disabled {
@@ -75,6 +128,10 @@
 
   &__prefix {
 
+  }
+
+  &__suffix {
+    
   }
 
   &__input {
@@ -106,7 +163,12 @@
     }
   }
 
-  &__sufix {
-    
+  &__error {
+    display: none;
+    color: rgb(var(--color-red));
+
+    &.active {
+      display: block;
+    }
   }
 }

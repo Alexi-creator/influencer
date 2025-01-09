@@ -1,4 +1,7 @@
-import { StepsEnum } from '../constants/steps'
+import { BreakpointWidth } from '../constants'
+import { StepsEnum } from '../constants'
+
+import { IStateForm } from './Form'
 
 /**
  * Addpublication, отвечает за процесс добавления публикации.
@@ -356,6 +359,9 @@ export class AddPublication {
 
   private addImages(targetElement: HTMLInputElement): void {
     const files = targetElement.files || []
+
+    // Устанавливаем максимальный размер файла (в байтах)
+    const maxFileSize = 5 * 1024 * 1024 // 5 MB
     
     for (const file of files) {
       if (file.type.startsWith('image/')) {
@@ -382,13 +388,37 @@ export class AddPublication {
 
               if (this.addedImgCount === 8) {
                 this.uploadInputElem.classList.add('input-text--disabled')
+                targetElement.disabled = true
               }
             }
           }
         }
 
-        reader.readAsDataURL(file)
+        if (file.size < maxFileSize) {
+          reader.readAsDataURL(file)
+        }
       }
+    }
+
+    this.uploadInputElem.classList.remove('active')
+    document.body.classList.remove('overflow')
+  }
+
+  public checkValidFillingForm = (stateForm: IStateForm): void => {
+    if (stateForm.isValid) {
+      this.nextBtnElem.disabled = false
+    } else this.nextBtnElem.disabled = true
+  }
+
+  private toggleUpload(e: Event) {
+    if (window.innerWidth >= BreakpointWidth.DESKTOP) {
+      e.preventDefault()
+
+      this.uploadInputElem.classList.toggle('active')
+      document.body.classList.toggle('overflow')
+    } else {
+      this.uploadInputElem.classList.remove('active')
+      document.body.classList.remove('overflow')
     }
   }
 
@@ -429,7 +459,11 @@ export class AddPublication {
     }
 
     if (this.prevBtnElem.contains(targetElement)) {
-      this.changeStep('prev')
+      return this.changeStep('prev')
+    }
+
+    if (this.uploadInputElem.contains(targetElement)) {
+      this.toggleUpload(e)
     }
   }
 

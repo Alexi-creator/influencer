@@ -82,8 +82,11 @@ window.addEventListener('load', () => {
     console.log(error)
   }
 
+  let onValidation
+
   try {
-    new AddPublication(stepsMap, changeStep)
+    const publication = new AddPublication(stepsMap, changeStep)
+    onValidation = publication.checkValidFillingForm
   } catch (error) {
     console.log(error)
   }
@@ -127,49 +130,49 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Form(
-      '.add-publication__content-form-sp', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.add-publication__content-form-sp', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.add-publication__content-form-all', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.add-publication__content-form-all', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.add-publication__content-form-bought', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.add-publication__content-form-bought', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.add-publication__content-form-user', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.add-publication__content-form-user', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
@@ -285,6 +288,66 @@ window.addEventListener('load', () => {
         prevElement: prevBtn,
         nextElement: nextBtn,
       },
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form({
+      selectorForm: '.add-publication__filling-form',
+      validateSchema: {
+        'title-goods': {
+          type: 'string',
+          required: true,
+          allowEmpty: false,
+          minLength: 6,
+          messages: {
+            type: 'неверный тип данных',
+            required: 'Обязательное поле для заполнения',
+            allowEmpty: 'Поле не должно быть пустым',
+            minLength: 'Поле не должно быть меньше 6 символов',
+          },
+        },
+        'description': {
+          type: 'string',
+          required: true,
+          maxLength: 300,
+          messages: {
+            type: 'неверный тип данных',
+            required: 'Обязательное поле для заполнения',
+            maxLength: 'Не более 300 символов',
+          },
+        },
+        'add-picture': {
+          type: 'object',
+          required: true,
+          messages: {
+            type: 'неверный тип данных',
+            required: 'Обязательное поле для заполнения',
+          },
+        },
+        'media-link': {
+          type: 'string',
+          required: false,
+          maxLength: 75,
+          messages: {
+            type: 'неверный тип данных',
+            maxLength: 'Не более 75 символов',
+          },
+        },
+        'tags': {
+          type: 'string',
+          required: true,
+          maxLength: 150,
+          messages: {
+            type: 'неверный тип данных',
+            required: 'Обязательное поле для заполнения',
+            maxLength: 'Не более 150 символов',
+          },
+        },
+      },
+      onValidation,
     })
   } catch (error) {
     console.log(error)

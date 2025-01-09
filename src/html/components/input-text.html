@@ -1,9 +1,12 @@
-<label class="input-text @@extra-class">
-  @@if(prefix) {
-    <div class="input-text__prefix @@extra-class-prefix">@@prefix</div>
-  }
-  <input name="@@name" class="input-text__input" type="@@type" placeholder="@@placeholder" @@atr>
-  @@if(suffix) {
-    <div class="input-text__suffix @@extra-class-suffix">@@suffix</div>
-  }
-</label>
+<div class="input-text">
+  <label class="input-text__label @@extra-class" data-id="parent-@@name">
+    @@if(prefix) {
+      <div class="input-text__prefix @@extra-class-prefix">@@prefix</div>
+    }
+    <input name="@@name" class="input-text__input" type="@@type" placeholder="@@placeholder" @@atr>
+    @@if(suffix) {
+      <div class="input-text__suffix @@extra-class-suffix">@@suffix</div>
+    }
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>

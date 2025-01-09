@@ -260,8 +260,6 @@
   &__selected {
     &.popup {
       & .popup__content {
-        max-width: 95vw;
-
         @include media($lg) {
           padding: 0.75rem;
         }
@@ -489,6 +487,21 @@
           align-items: unset;
         }
 
+        &-popup {
+          & svg {
+            height: 3.75rem;
+            width: 3.75rem;
+            margin: 0 auto;
+          }
+
+          &-text {
+            margin-top: 1.125rem;
+            color: rgb(var(--color-grey));
+            font-size: 1rem;
+            text-align: center;
+          }
+        }
+
         &-input {
 
         }
@@ -531,6 +544,7 @@
             height: 4rem;
             width: 4rem;
             border-radius: var(--radius-medium);
+            object-fit: cover;
             overflow: hidden;
           }
         }

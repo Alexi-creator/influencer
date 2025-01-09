@@ -45,13 +45,13 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Form(
-      '.user-card-list__form', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-card-list__form', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }

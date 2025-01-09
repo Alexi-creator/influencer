@@ -30,25 +30,25 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Form(
-      '.login__form-sign-in', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.login__form-sign-in', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.login__form-sign-up', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.login__form-sign-up', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }

@@ -1189,7 +1189,7 @@
       </div>
 
       @@include("./popup.html", {
-        "extra-class": "add-publication__selected",
+        "extra-class": "add-publication__selected popup--no-overlay",
         "id": "selected-goods",
         "title": "",
         "body": '@@include("./add-publication-selected.html")',
@@ -1198,7 +1198,7 @@
     </div>
 
     <!-- Блок второго шага (Наполнение) -->
-    <form class="add-publication__step-content add-publication__filling ">
+    <div class="add-publication__step-content add-publication__filling ">
       <div class="add-publication__filling-selected collapse collapse--arrow">
         <div class="collapse__head">
           <span class="collapse__head-title add-publication__filling-selected-title">
@@ -1212,87 +1212,85 @@
         <ul class="add-publication__filling-selected-content collapse__content"></ul>
       </div>
 
-      <div class="add-publication__filling-field-title">Придумайте заголовок</div>
-      <div class="add-publication__filling-field-wrapper">
-        @@include("./input-text.html", {
-          name: "title-goods",
-          type: "text",
-          placeholder: "Заголовок образа",
-          prefix: "",
-          suffix: "",
-          "extra-class": "input-text--color-grey",
-          "extra-class-prefix": "",
-          "extra-class-suffix": "",
-          "atr": 'required',
-        })
-      </div>
+      <form class="add-publication__filling-form">
+        <div class="add-publication__filling-field-title">Придумайте заголовок</div>
+        <div class="add-publication__filling-field-wrapper">
+          @@include("./input-text.html", {
+            name: "title-goods",
+            type: "text",
+            placeholder: "Заголовок образа",
+            prefix: "",
+            suffix: "",
+            "extra-class": "input-text--color-grey",
+            "extra-class-prefix": "",
+            "extra-class-suffix": "",
+          })
+        </div>
+  
+        <div class="add-publication__filling-field-title">Что стоит отметить в образе?</div>
+        <div class="add-publication__filling-field-wrapper">
+          @@include("./textarea.html", {
+            name: "description",
+            placeholder: "Например, расскажите о концепции образа или сочетании цветов",
+            "extra-class": "add-publication__filling-field-description textarea__input--grey",
+          })
+        </div>
 
-      <div class="add-publication__filling-field-title">Что стоит отметить в образе?</div>
-      <div class="add-publication__filling-field-wrapper">
-        <textarea
-          class="add-publication__filling-field-description textarea textarea--grey"
-          name="description"
-          placeholder="Например, расскажите о концепции образа или сочетании цветов"
-          required
-        ></textarea>
-      </div>
-
-      <div class="add-publication__filling-field-media">
-        <div class="add-publication__filling-field-media-img-wrapper">
-          <div class="add-publication__filling-field-title">Добавьте фотографии</div>
-          <div class="add-publication__filling-field-wrapper add-publication__filling-field-upload">
-            @@include("./input-text.html", {
-              name: "add-picture",
-              type: "file",
-              placeholder: "",
-              prefix: '<svg><use xlink:href=\"./img/icons/icons.svg#plus\"></use></svg>',
-              suffix: "",
-              "extra-class": "input-text--color-grey input-text--upload add-publication__filling-field-upload-input",
-              "extra-class-prefix": "",
-              "extra-class-suffix": "",
-              "atr": 'required multiple',
-            })
-
-            <p class="add-publication__filling-field-upload-descr">
-              До 8 изображений в формате PNG или JPG. Можно просто перетащить их в это окно
-            </p>
-
-            <div class="add-publication__filling-field-upload-files"></div>
-            <p class="add-publication__filling-field-upload-info">
-              Вы можете изменить порядок показа фотографий перетаскиванием. Чтобы посмотреть на фото в увеличенном масштабе, просто клинкине на нее
-            </p>
-            <button class="add-publication__filling-field-upload-settings btn btn--none">Настроить область показа миниатюр</button>
+        <div class="add-publication__filling-field-media">
+          <div class="add-publication__filling-field-media-img-wrapper">
+            <div class="add-publication__filling-field-title">Добавьте фотографии</div>
+            <div class="add-publication__filling-field-wrapper add-publication__filling-field-upload">
+              @@include("./input-text.html", {
+                name: "add-picture",
+                type: "file",
+                placeholder: "",
+                prefix: '<svg><use xlink:href=\"./img/icons/icons.svg#plus\"></use></svg>',
+                suffix: '<div class="add-publication__filling-field-upload-popup"><svg><use xlink:href=\"./img/icons/icons.svg#upload-img\"></use></svg><div class="add-publication__filling-field-upload-popup-text">Перетащите в это окно изображения в формате PNG или JPG, которые хотите добавить к публикации. Общее количество изображений не должно превышать 8 шт., а размер каждого не должен быть больше 5 МБ.</div></div>',
+                "extra-class": "input-text--color-grey input-text--upload add-publication__filling-field-upload-input",
+                "extra-class-prefix": "",
+                "extra-class-suffix": "",
+                "atr": 'multiple',
+              })
+  
+              <p class="add-publication__filling-field-upload-descr">
+                До 8 изображений в формате PNG или JPG. Можно просто перетащить их в это окно
+              </p>
+  
+              <div class="add-publication__filling-field-upload-files"></div>
+              <p class="add-publication__filling-field-upload-info">
+                Вы можете изменить порядок показа фотографий перетаскиванием. Чтобы посмотреть на фото в увеличенном масштабе, просто клинкине на нее
+              </p>
+              <button class="add-publication__filling-field-upload-settings btn btn--none">Настроить область показа миниатюр</button>
+            </div>
+          </div>
+    
+          <div class="add-publication__filling-field-media-video-wrapper">
+            <div class="add-publication__filling-field-title">Есть видео? Вставьте ссылку</div>
+            <div class="add-publication__filling-field-wrapper">
+              @@include("./input-text.html", {
+                name: "media-link",
+                type: "text",
+                placeholder: "Вставьте ссылку на нужное видео в это поле",
+                prefix: "",
+                suffix: "",
+                "extra-class": "input-text--color-grey",
+                "extra-class-prefix": "",
+                "extra-class-suffix": "",
+              })
+            </div>
           </div>
         </div>
   
-        <div class="add-publication__filling-field-media-video-wrapper">
-          <div class="add-publication__filling-field-title">Есть видео? Вставьте ссылку</div>
-          <div class="add-publication__filling-field-wrapper">
-            @@include("./input-text.html", {
-              name: "media-link",
-              type: "text",
-              placeholder: "Вставьте ссылку на нужное видео в это поле",
-              prefix: "",
-              suffix: "",
-              "extra-class": "input-text--color-grey",
-              "extra-class-prefix": "",
-              "extra-class-suffix": "",
-              "atr": 'required',
-            })
-          </div>
+        <div class="add-publication__filling-field-title">Прикрепите теги</div>
+        <div class="add-publication__filling-field-wrapper">
+          @@include("./textarea.html", {
+            name: "tags",
+            placeholder: "Поле тегов",
+            "extra-class": "add-publication__filling-field-tags textarea__input--grey",
+          })
         </div>
-      </div>
-
-      <div class="add-publication__filling-field-title">Прикрепите теги</div>
-      <div class="add-publication__filling-field-wrapper">
-        <textarea
-          class="add-publication__filling-field-tags textarea textarea--grey"
-          name="tags"
-          placeholder="Поле тегов"
-          required
-        ></textarea>
-      </div>
-    </form>
+      </form>
+    </div>
 
     <!-- Блок второго шага (Предпросмотр) -->
     <div class="add-publication__step-content add-publication__preview">
