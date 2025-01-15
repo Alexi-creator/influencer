@@ -1,0 +1,34 @@
+.cart {
+  $root: &;
+
+  &__wrapper {
+    margin-top: 1.5rem;
+
+    @include media($md) {
+      margin-top: 2rem;
+    }
+
+    @include media($full) {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__header {}
+
+  &__header-title {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: rgb(var(--color-grey));
+  }
+
+  &__header-content {
+    margin: 1.5rem 0;
+    @extend %flex-space-between;
+  }
+
+  &__header-description {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}

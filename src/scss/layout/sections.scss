@@ -39,7 +39,8 @@
     }
   }
 
-  &--users {
+  &--users,
+  &--carts {
     #{$block}__inner {
       max-width: var(--max-width-container-1120);
     }
@@ -49,6 +50,7 @@
     @include media($md) {
       padding-top: 2.5rem;
     }
+
     @include media($full) {
       padding-top: 0rem;
     }
@@ -61,26 +63,27 @@
 
     padding-top: 1.25rem;
 
-    @include media($md){
+    @include media($md) {
       padding-top: 1rem;
     }
 
-    @include media($lg){
+    @include media($lg) {
       padding-top: 2.5rem;
     }
 
-    @include media($full){
+    @include media($full) {
       padding-top: 0rem;
     }
   }
 
   &--user-board {
     margin-top: 2.5rem;
-    
-    @include media($md){
+
+    @include media($md) {
       margin-top: 4rem;
     }
-    @include media($lg){
+
+    @include media($lg) {
       margin-top: 5rem;
     }
   }
@@ -92,11 +95,11 @@
   &--comments {
     margin-top: 2.5rem;
 
-    @include media($md){
+    @include media($md) {
       margin-top: 4rem;
     }
 
-    @include media($full){
+    @include media($full) {
       margin-top: 5rem;
     }
   }
