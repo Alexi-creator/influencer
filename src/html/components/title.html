@@ -1,6 +1,6 @@
 <div class="title">
   <h1 class="title-txt">@@title</h1>
-  @@if(underDescription){
+  @@if(isSubscription){
     <p class="title-under">@@amount @@sub</p>
   }
   @@if(isCartStoreAndSP){
@@ -14,11 +14,19 @@
     </p>
   }
   @@if(isCartStore){
-    <span class="title-under">@@storeAmount</span>
-    <span class="title-under">@@SPAmount</span>
+    <p class="title-under">
+      <span> из</span>
+      <span class="title-under-bold">@@storeAmount магазина</span>
+      <span> на сумму </span>
+      <span class="title-under-bold number"> @@cartSum</span><span class="title-under-bold"> ₽</span>
+    </p>
   }
   @@if(isCartSP){
-    <span class="title-under">@@storeAmount</span>
-    <span class="title-under">@@SPAmount</span>
+    <p class="title-under">
+      <span> из</span>
+      <span class="title-under-bold">@@SPAmount СП</span>
+      <span> на сумму </span>
+      <span class="title-under-bold number"> @@cartSum</span><span class="title-under-bold"> ₽</span>
+    </p>
   }
 </div>
