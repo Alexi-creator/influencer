@@ -51,7 +51,34 @@
         </div>
       </div>
       <div class="cart-control__bottom-control">
-        
+        @@if(canCreateSP){
+          <div class="cart-control__bottom-control-up">
+            <button class="btn btn--color-primary-light">Создать новую SP</button>
+          </div>
+        }
+        @@if(canUpdateStore){
+          <div class="cart-control__bottom-control-up">
+            <button class="btn btn--color-primary-light">Обновить скидку</button>
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#info"></use>
+            </svg>
+          </div>
+        }
+        <div class="cart-control__bottom-control-order">
+          <div class="cart-control__bottom-control-btn-del">
+            <button class="btn btn--text btn--color-grey">Удалить эту корзину</button>
+          </div>
+          @@if(isAvailable){
+            <div class="cart-control__bottom-control-btn-order">
+              <button class="btn">Оформить заказ</button>
+            </div>
+          }
+          @@if(isDisable){
+            <div class="cart-control__bottom-control-btn-order">
+              <button class="btn" disabled>Оформить заказ</button>
+            </div>
+          }
+        </div>
       </div>
     </div>
   }
