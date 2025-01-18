@@ -1,0 +1,18 @@
+.cart-control {
+  $root: &;
+
+  &__top {
+    @extend %flex-space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  &__top-choose-all-txt {
+    margin-left: 0.5rem;
+  }
+
+  &__top-choose-all-inActive {
+    .cart-control__top-choose-all-txt {
+      color: rgb(var(--color-grey));
+    }
+  }
+}

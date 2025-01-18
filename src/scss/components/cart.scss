@@ -51,7 +51,7 @@
   &__header-content-title {
     font-size: 1.125rem;
     line-height: 1.5rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.75rem;
   }
 
   &__header-content-feature {
@@ -95,5 +95,46 @@
         letter-spacing: 0;
       }
     }
+  }
+
+  &__header-content-event {
+    letter-spacing: 0.02rem;
+    font-weight: 600;
+  }
+
+  &__seller-inner {
+    @extend %flex-align-center;
+    background-color: rgb(var(--color-primary-soft));
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-small);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-width: 34rem;
+    justify-content: space-between;
+
+    @include media($md) {
+      gap: 1rem;
+      padding: 1.25rem;
+    }
+
+    @include media($full) {
+      margin-bottom: -0.25rem;
+    }
+  }
+
+  &__seller-img {
+    img {
+      max-width: unset;
+      width: 3rem;
+      height: 3rem;
+      object-fit: cover;
+    }
+  }
+
+  &__seller-inner-content {
+    @extend %flex-align-center;
+    gap: 0.5rem;
+    padding: 0;
+    max-width: 19rem;
   }
 }

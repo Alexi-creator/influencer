@@ -24,12 +24,12 @@
                       <div class="progress__line" style="width:@@isActiveSP_%%"></div>
                     </div>
                   }
-                  @@if(isFinishedSP){
+                  @@if(isHappenedSP){
                     <div class="progress progress--green">
                       <div class="progress__line" style="width:100%"></div>
                     </div>
                   }
-                  @@if(isInactiveSP){
+                  @@if(isNotHappenedSP){
                     <div class="progress progress--grey">
                       <div class="progress__line" style="width:@@isInactiveSP_%%"></div>
                     </div>
@@ -38,21 +38,33 @@
                 <div>
                   @@if(isActiveSP){
                     <div>Активна до:</div>
-                    <span style="font-weight: 600; letter-spacing: 0.02rem;">@@date</span>
-                    <span style="font-weight: 600; letter-spacing: 0.02rem">@@time</span>
+                    <div class="cart__header-content-event">@@date @@time</div>
                   }
-                  @@if(isFinishedSP){
-
+                  @@if(isHappenedSP){
+                    <div>Совм. Покупка:</div>
+                    <div class="cart__header-content-event" style="color: rgb(var(--color-green));">Состоялась</div>
                   }
-                  @@if(isInactiveSP){
-
+                  @@if(isNotHappenedSP){
+                    <div>Совм. Покупка:</div>
+                    <div class="cart__header-content-event">Не состоялась</div>
                   }
                 </div>
               </div>
-            </div> 
+            </div>  
           </div>
           <div class="cart__header-inner">
             <div class="cart__header-content-title">Магазин</div> 
+            <div class="cart__seller-inner">
+              <div class="cart__seller-inner-content">
+                <div class="cart__seller-img">
+                  <img src="img/shop-avatar.png">
+                </div>
+                <div class="cart__seller-name">
+                  Интернет магазин одежды и аксессуаров Lass
+                </div>
+              </div>
+                <button class="btn btn--color-primary-light btn--show btn--discount-size">Подписаться</button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,33 @@
+<div class="cart-control">
+  @@if(isTopControl){
+    <div class="cart-control__top">
+      <div class="cart-control__top-type">@@type</div>
+      @@if(isActiveChooseAll){
+        <div class="cart-control__top-choose-all">
+          <label class="checkbox checkbox--radius-medium">
+            <input name="checkbox" type="checkbox">
+            <span class="checkbox__checkmark">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+              </svg>
+            </span>
+          </label>
+          <span class="cart-control__top-choose-all-txt">Выбрать все</span>
+        </div>
+      }
+      @@if(isInActiveChooseAll){
+        <div class="cart-control__top-choose-all-inActive">
+          <label class="checkbox checkbox--radius-medium checkbox--disabled">
+            <input name="checkbox" type="checkbox" disabled="disabled">
+            <span class="checkbox__checkmark">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+              </svg>
+            </span>
+          </label>
+          <span class="cart-control__top-choose-all-txt">Выбрать все</span>
+        </div>
+      }
+    </div>
+  }
+</div>
