@@ -30,4 +30,29 @@
       }
     </div>
   }
+  @@if(isBottomControl){
+    <div class="cart-control__bottom">
+      <div class="cart-control__bottom-results">
+        <div class="cart-control__bottom-results-total">
+          Итого
+        </div>
+        <div class="cart-control__bottom-results-group">
+          <div class="cart-control__bottom-results-group-position">
+            @@position позиции
+          </div>
+          <div class="cart-control__bottom-results-group-amount">
+            @@amount шт.товаров
+          </div>
+          <div class="cart-control__bottom-results-group-sum">
+            <span class="cart-control__bottom-results-group-sum-oldSum number">@@oldSum</span>
+            <span class="cart-control__bottom-results-group-sum-newSum number">@@newSum</span>
+            <span class="cart-control__bottom-results-group-sum-newSum">₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart-control__bottom-control">
+        
+      </div>
+    </div>
+  }
 </div>

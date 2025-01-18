@@ -72,7 +72,6 @@
 
 	&--disabled {
 		#{$root}__checkmark {
-			border-radius: var(--radius-medium);
 			border: 2px solid rgb(var(--color-grey-dark));
 		}
 

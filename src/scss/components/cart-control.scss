@@ -15,4 +15,30 @@
       color: rgb(var(--color-grey));
     }
   }
+
+  &__bottom-results {
+    @extend %flex-start;
+    gap: 3.875rem;
+  }
+
+  &__bottom-results-total {
+    flex: 0;
+  }
+
+  &__bottom-results-group {
+    font-weight: 600;
+    @extend %flex-space-between;
+    flex: 1;
+    letter-spacing: 0.02rem;
+  }
+
+  &__bottom-results-group-sum-oldSum {
+    text-decoration: line-through;
+    color: rgb(var(--color-grey));
+    margin-right: 0.625rem;
+  }
+
+  &__bottom-results-group-sum-newSum {
+    color: rgb(var(--color-primary));
+  }
 }
