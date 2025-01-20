@@ -1,0 +1,26 @@
+.cart-item {
+  $root: &;
+
+  &__delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__navigate-price {
+    font-weight: 600;
+    @extend %flex-space-between;
+    flex: 1;
+    letter-spacing: 0.02rem;
+  }
+
+  &__navigate-price-oldSum {
+    text-decoration: line-through;
+    color: rgb(var(--color-grey));
+    margin-right: 0.625rem;
+  }
+
+  &__navigate-price-newSum {
+    color: rgb(var(--color-primary));
+  }
+}

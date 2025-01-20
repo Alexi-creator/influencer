@@ -44,6 +44,26 @@
             "time":'12:00',
           })
           @@include("../components/cart-control.html", {
+            "isTopControl":'isTopControl',
+            "type": 'Товар',
+            "isActiveChooseAll": 'isInActiveChooseAll',
+            "isInActiveChooseAll":'',
+            "isBottomControl": '',
+            "position": '4',
+            "amount": '21',
+            "oldSum": '182500',
+            "newSum": '93779',
+            "canCreateSP": '',
+            "canUpdateStore": 'canUpdateStore',
+            "isAvailable": 'isAvailable',
+            "isDisable": ''
+          })
+          @@include("../components/cart-item.html", {
+            "availableChoose": 'availableChoose',
+            "unavailable": '',
+            "store":''
+          })
+          @@include("../components/cart-control.html", {
             "isTopControl":'',
             "type": 'Товар',
             "isActiveChooseAll": 'isInActiveChooseAll',
@@ -54,7 +74,7 @@
             "oldSum": '182500',
             "newSum": '93779',
             "canCreateSP": '',
-            "canUpdateStore": 'canUpdateStore',
+            "canUpdateStore": '',
             "isAvailable": 'isAvailable',
             "isDisable": ''
           })

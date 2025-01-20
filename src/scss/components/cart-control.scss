@@ -28,7 +28,7 @@
     gap: 1rem;
 
     @include media($md) {
-      justify-content: space-between;
+      justify-content: flex-end;
       flex-flow: row
     }
   }
@@ -36,6 +36,7 @@
   &__bottom-control-up {
     @extend %flex-start;
     gap: 0.75rem;
+    flex: 1;
   }
 
   &__bottom-control-order {
@@ -46,6 +47,7 @@
     @include media($md) {
       flex-flow: row;
       gap: 1.25rem;
+      justify-self: flex-end;
     }
 
   }
