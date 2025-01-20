@@ -1,16 +1,77 @@
 .cart-item {
   $root: &;
 
+  &__wrapper {
+    position: relative;
+    padding: 0.75rem;
+    @extend %flex-column;
+
+
+    @include media($md) {
+      padding: 1.25rem 1.5rem;
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
   &__delete {
     position: absolute;
-    right: 0;
-    top: 0;
+    bottom: 0.75rem;
+    left: 0.75rem;
+
+    @include media($md) {
+      bottom: unset;
+      left: unset;
+      top: 1.25rem;
+      right: 1.5rem;
+    }
+  }
+
+  &__inner-product-card {
+    @extend %flex-column;
+
+    @include media($md) {
+      flex-flow: row
+    }
+  }
+
+  &__product-card {
+    @extend %flex-start;
+  }
+
+  &__product-card-decription {
+    @extend %flex-column;
+  }
+
+  &__control {
+    @extend %flex-start;
+
+    @include media($lg) {
+      flex-flow: column
+    }
+  }
+
+  &__inner {
+    @extend %flex-column;
+
+    @include media($md) {
+      flex-flow: row;
+      justify-content: space-between
+    }
+  }
+
+  &__discount-upper {
+    @extend %flex-start;
+    gap: 0.315rem;
+  }
+
+  &__discount-upper-title {
+    font-weight: 600;
+    color: rgb(var(--color-primary));
   }
 
   &__navigate-price {
     font-weight: 600;
-    @extend %flex-space-between;
-    flex: 1;
     letter-spacing: 0.02rem;
   }
 

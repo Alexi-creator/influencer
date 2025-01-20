@@ -30,7 +30,7 @@
             "isCartSP": ''
           })
           @@include("../components/cart.html", {
-            "isSP": 'isSP',
+            "isSP": 'SP',
             "number": '1',
             "catchPhrase": 'Покупаем пока есть скидка, девочки',
             "sold-sum":'79281',
@@ -61,7 +61,13 @@
           @@include("../components/cart-item.html", {
             "availableChoose": 'availableChoose',
             "unavailable": '',
-            "store":''
+            "store":'',
+            "1pieceDiscount": '',
+            "2pieceDiscount": '',
+            "3pieceDiscount":'',
+            "oldSum":'102500',
+            "newSum": '93779',
+            "SP": 'SP'
           })
           @@include("../components/cart-control.html", {
             "isTopControl":'',

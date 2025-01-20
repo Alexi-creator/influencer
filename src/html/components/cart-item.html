@@ -1,9 +1,9 @@
 <div class="cart-item">
   <div class="cart-item__wrapper">
     <div class="cart-item__delete">
-      <button class="btn btn--text btn--color-grey">Удалить</button>
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
     </div>
-    <div class="cart-item__inner">
+    <div class="cart-item__inner-product-card">
       <div class="cart-item__product-card">
         <div class="cart-item__product-card-pic">
 
@@ -30,10 +30,18 @@
       <div class="cart-item__discount">
         <div class="cart-item__discount-upper">
           <div class="cart-item__discount-upper-title">
-          
+            @@if(store){
+              <span>Ваша скидка:</span>
+            }
+            
+            @@if(SP){
+              <span>Скидка в СП:</span>
+            }
           </div>
           <div class="cart-item__discount-upper-size">
-          
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
           </div>
         </div>
         @@if(store){

@@ -1,57 +1,58 @@
 <div class="cart">
   <div class="cart__wrapper">
-    @@if(isSP){
       <div class="cart__header">
         <div class="cart__header-title">
           Корзина #@@number (СП)
         </div>
         <div class="cart__header-content">
-          <div class="cart__header-inner">
-            <div class="cart__header-content-title">Совместная покупка</div> 
-            <div class="cart__header-content-feature">
-              <div class="cart__header-content-catchPhrase">@@catchPhrase</div> 
-              <div class="cart__header-content-feature-inner">
-                <div class="cart__header-content-feature-purchases">
-                  <div>
-                    <span>Уже купили на:</span>
-                    <span class="number">@@sold-sum</span>
-                    <span> / </span>
-                    <span class="number">@@all-sum</span>
-                    <span class="currency"> ₽</span>
+          @@if(isSP){
+            <div class="cart__header-inner">
+              <div class="cart__header-content-title">Совместная покупка</div> 
+              <div class="cart__header-content-feature">
+                <div class="cart__header-content-catchPhrase">@@catchPhrase</div> 
+                <div class="cart__header-content-feature-inner">
+                  <div class="cart__header-content-feature-purchases">
+                    <div>
+                      <span>Уже купили на:</span>
+                      <span class="number">@@sold-sum</span>
+                      <span> / </span>
+                      <span class="number">@@all-sum</span>
+                      <span class="currency"> ₽</span>
+                    </div>
+                    @@if(isActiveSP){
+                      <div class="progress progress--primary">
+                        <div class="progress__line" style="width:@@isActiveSP_%%"></div>
+                      </div>
+                    }
+                    @@if(isHappenedSP){
+                      <div class="progress progress--green">
+                        <div class="progress__line" style="width:100%"></div>
+                      </div>
+                    }
+                    @@if(isNotHappenedSP){
+                      <div class="progress progress--grey">
+                        <div class="progress__line" style="width:@@isInactiveSP_%%"></div>
+                      </div>
+                    }
                   </div>
-                  @@if(isActiveSP){
-                    <div class="progress progress--primary">
-                      <div class="progress__line" style="width:@@isActiveSP_%%"></div>
-                    </div>
-                  }
-                  @@if(isHappenedSP){
-                    <div class="progress progress--green">
-                      <div class="progress__line" style="width:100%"></div>
-                    </div>
-                  }
-                  @@if(isNotHappenedSP){
-                    <div class="progress progress--grey">
-                      <div class="progress__line" style="width:@@isInactiveSP_%%"></div>
-                    </div>
-                  }
+                  <div>
+                    @@if(isActiveSP){
+                      <div>Активна до:</div>
+                      <div class="cart__header-content-event">@@date @@time</div>
+                    }
+                    @@if(isHappenedSP){
+                      <div>Совм. Покупка:</div>
+                      <div class="cart__header-content-event" style="color: rgb(var(--color-green));">Состоялась</div>
+                    }
+                    @@if(isNotHappenedSP){
+                      <div>Совм. Покупка:</div>
+                      <div class="cart__header-content-event" style="color: rgb(var(--color-red));">Не состоялась</div>
+                    }
+                  </div>
                 </div>
-                <div>
-                  @@if(isActiveSP){
-                    <div>Активна до:</div>
-                    <div class="cart__header-content-event">@@date @@time</div>
-                  }
-                  @@if(isHappenedSP){
-                    <div>Совм. Покупка:</div>
-                    <div class="cart__header-content-event" style="color: rgb(var(--color-green));">Состоялась</div>
-                  }
-                  @@if(isNotHappenedSP){
-                    <div>Совм. Покупка:</div>
-                    <div class="cart__header-content-event" style="color: rgb(var(--color-red));">Не состоялась</div>
-                  }
-                </div>
-              </div>
-            </div>  
-          </div>
+              </div>  
+            </div>
+          }
           <div class="cart__header-inner">
             <div class="cart__header-content-title">Магазин</div> 
             <div class="cart__seller-inner">
@@ -68,7 +69,6 @@
           </div>
         </div>
       </div>
-    }
   </div>
 </div>
   

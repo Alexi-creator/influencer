@@ -19,6 +19,13 @@
   &__bottom {
     @extend %flex-column;
     gap: 1.25rem;
+    margin-top: 1.25rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(var(--color-black-light));
+
+    @include media($md) {
+      padding-bottom: 2rem;
+    }
   }
 
   &__bottom-control {
