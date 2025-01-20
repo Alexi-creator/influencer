@@ -295,7 +295,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form({
-      selectorForm: '.add-publication__filling-form',
+      selectorForm: '.add-publication__filling',
       validateSchema: {
         'title-goods': {
           type: 'string',

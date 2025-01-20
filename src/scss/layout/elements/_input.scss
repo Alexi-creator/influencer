@@ -16,6 +16,10 @@
       border-color: rgb(var(--color-primary));
     }
 
+    &.success {
+      border-color: rgb(var(--color-primary));
+    }
+
     &.error {
       border-color: rgb(var(--color-red));
     }
@@ -102,6 +106,7 @@
       & > input {
         height: 75%;
         width: calc(100% - 5rem);
+        max-width: 70rem;
         inset: initial;
         color: rgb(var(--color-grey-white));
         background-color: rgb(var(--color-grey-white));
@@ -112,6 +117,7 @@
       #{$root}__suffix {
         display: block;
         max-width: 46rem;
+        max-height: calc(75svh / 2);
         z-index: calc(var(--z-over) + 1);
         pointer-events: none;
       }

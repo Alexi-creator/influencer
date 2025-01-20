@@ -567,6 +567,46 @@
         max-height: 6rem;
       }
     }
+
+    &-cropper {
+      & .popup {
+        &__overlay {
+          // padding: 5rem 2.5rem;
+        }
+
+        &__content {
+          padding: 1rem 1.125rem 2.5rem;
+
+          @include media($md) {
+            padding: 2.5rem;
+          }
+
+          @include media($lg) {
+            max-width: 70rem;
+            padding: 2.5rem 9rem;
+          }
+        }
+
+        &__header {
+          @include media($lg) {
+            justify-content: center;
+          }
+        }
+
+        &__header-title {
+          @include media($md) {
+            font-size: 2rem;
+            font-weight: 700;
+          }
+        }
+
+        &__header-btn-close {
+          @include media($lg) {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   &__actions {

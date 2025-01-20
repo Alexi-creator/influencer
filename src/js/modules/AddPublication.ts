@@ -3,6 +3,8 @@ import { StepsEnum } from '../constants'
 
 import { IStateForm } from './Form'
 
+import Cropper from 'cropperjs'
+
 /**
  * Addpublication, отвечает за процесс добавления публикации.
  */
@@ -50,6 +52,14 @@ export class AddPublication {
   private uploadInfoSelector: string
   private uploadSettingsSelector: string
 
+  private selectedCollapseSelector: string
+  private selectedToggleSelector: string
+  private cropperPopupSelector: string
+  private cropperImagesSelector: string
+  private cropperImgSelector: string
+  private cropperSelectedWrapperSelector: string
+  private cropperBtnSelector: string
+
   private mainElem: HTMLElement
   private stepsArrElem: HTMLElement[]
   private contentsElem: HTMLElement
@@ -75,6 +85,15 @@ export class AddPublication {
   private uploadDescrElem: HTMLElement
   private uploadInfoElem: HTMLElement
   private uploadSettingsElem: HTMLElement
+
+  private selectedToggleElem: HTMLElement
+  private cropperPopupElem: HTMLElement
+  private cropperImagesElem: HTMLElement
+  private cropperSelectedWrapperElem: HTMLElement
+  private cropperBtnElem: HTMLElement
+
+  private currentCropper: Cropper | null
+  private currentCroppedImgId: string
 
   constructor(stepsMap: Map<StepsEnum, HTMLElement>, onChangeStep: (step: StepsEnum) => void) {
     this.stepsMap = stepsMap
@@ -115,6 +134,16 @@ export class AddPublication {
     this.uploadDescrSelector = `${this.mainSelector}__filling-field-upload-descr`
     this.uploadInfoSelector = `${this.mainSelector}__filling-field-upload-info`
     this.uploadSettingsSelector = `${this.mainSelector}__filling-field-upload-settings`
+    
+    this.selectedCollapseSelector = `${this.mainSelector}__filling-selected collapse__head`
+    this.selectedToggleSelector = `${this.mainSelector}__filling-selected-toggle`
+    this.cropperPopupSelector = `${this.mainSelector}__filling-cropper`
+
+    this.cropperImagesSelector = '.cropper-publication__images'
+    this.cropperImgSelector = '.cropper-publication__img'
+    this.cropperSelectedWrapperSelector = '.cropper-publication__selected-wrapper'
+    this.cropperBtnSelector = '.cropper-publication__btn'
+    
 
     this.galleryItemSelector = '.gallery-card__item'
     this.galleryItemMoreSelector = `${this.galleryItemSelector}-more`
@@ -162,6 +191,18 @@ export class AddPublication {
     const uploadSettingsElem = this.mainElem.querySelector(this.uploadSettingsSelector) as HTMLElement
     if (uploadSettingsElem) this.uploadSettingsElem = uploadSettingsElem
 
+    const cropperPopupElem = this.mainElem.querySelector(this.cropperPopupSelector) as HTMLElement
+    if (cropperPopupElem) this.cropperPopupElem = cropperPopupElem
+    const selectedToggleElem = this.mainElem.querySelector(this.selectedToggleSelector) as HTMLElement
+    if (selectedToggleElem) this.selectedToggleElem = selectedToggleElem
+
+    const cropperImagesElem = this.mainElem.querySelector(this.cropperImagesSelector) as HTMLElement
+    if (cropperImagesElem) this.cropperImagesElem = cropperImagesElem
+    const cropperSelectedWrapperElem = this.mainElem.querySelector(this.cropperSelectedWrapperSelector) as HTMLElement
+    if (cropperSelectedWrapperElem) this.cropperSelectedWrapperElem = cropperSelectedWrapperElem
+    const cropperBtnElem = this.mainElem.querySelector(this.cropperBtnSelector) as HTMLElement
+    if (cropperBtnElem) this.cropperBtnElem = cropperBtnElem
+
     const goodsGalleryElem = this.mainElem.querySelector(this.goodsGallerySelector) as HTMLElement
     if (goodsGalleryElem) this.goodsGalleryElem = goodsGalleryElem
     const selectedCountElem = this.mainElem.querySelector(this.selectedCountSelector) as HTMLElement
@@ -174,6 +215,15 @@ export class AddPublication {
 
   private init(): void {
     this.handlers()
+
+    const mediaQueryDESKTOP = window.matchMedia(`(min-width:${BreakpointWidth.DESKTOP}px)`)
+    mediaQueryDESKTOP.addListener((e) => this.breakpointChecker(e))
+  }
+
+  private breakpointChecker(e: MediaQueryListEvent): void {
+    if (e.matches) {
+      this.cropperPopupElem.classList.remove('popup--no-overlay')
+    } else this.cropperPopupElem.classList.add('popup--no-overlay')
   }
 
   private removeItemMore(): void {
@@ -357,6 +407,16 @@ export class AddPublication {
     }
   }
 
+  private createImgNode(name: string, className: string, src: string): Node {
+    const imgNode = document.createElement('img')
+    imgNode.src = src
+    imgNode.alt = `preview-${name}`
+    imgNode.className = className
+    imgNode.dataset.id = `preview-${name}`
+
+    return imgNode
+  }
+
   private addImages(targetElement: HTMLInputElement): void {
     const files = targetElement.files || []
 
@@ -372,11 +432,7 @@ export class AddPublication {
             const src = event.target?.result
             
             if (src && typeof src === 'string') {
-              const imgNode = document.createElement('img')
-              imgNode.src = src
-              imgNode.alt = `preview-${file.name}`
-              imgNode.className = this.uploadFileImgsSelector.substring(1)
-              imgNode.dataset.id = `preview-${file.name}`
+              const imgNode = this.createImgNode(file.name, this.uploadFileImgsSelector.substring(1), src)
   
               this.uploadFilesElem.appendChild(imgNode)
               this.addedImgCount += 1
@@ -385,6 +441,11 @@ export class AddPublication {
               this.uploadInfoElem.classList.add('active')
               this.uploadSettingsElem.classList.add('active')
               this.uploadDescrElem.classList.add('hide')
+
+              const previewImgNode = this.createImgNode(file.name, this.cropperImgSelector.substring(1), src)
+              this.cropperImagesElem.appendChild(previewImgNode)
+              const areaImgNode = this.createImgNode(file.name, 'cropper-publication__selected-img', src)
+              this.cropperSelectedWrapperElem.appendChild(areaImgNode)
 
               if (this.addedImgCount === 8) {
                 this.uploadInputElem.classList.add('input-text--disabled')
@@ -410,7 +471,7 @@ export class AddPublication {
     } else this.nextBtnElem.disabled = true
   }
 
-  private toggleUpload(e: Event) {
+  private toggleUpload(e: Event): void {
     if (window.innerWidth >= BreakpointWidth.DESKTOP) {
       e.preventDefault()
 
@@ -422,11 +483,61 @@ export class AddPublication {
     }
   }
 
+  private toggleCollapseText(): void {
+    const currentText = this.selectedToggleElem.textContent?.trim()
+    const newText = this.selectedToggleElem.dataset.text
+
+    if (currentText && newText) {
+      this.selectedToggleElem.textContent = newText
+      this.selectedToggleElem.dataset.text = currentText
+    }
+  }
+
   private changeHandler(e: Event): void {
     const targetElement = e.target as HTMLInputElement
     
     if (targetElement.closest(this.mainSelector)) {
       return this.addImages(targetElement)
+    }
+  }
+
+  private crop(): void {
+    const croppedImg = this.currentCropper?.getCroppedCanvas().toDataURL('image/png')
+    const previewImg = this.uploadFilesElem.querySelector(`[data-id="${this.currentCroppedImgId}"]`) as HTMLImageElement
+
+    if (previewImg && croppedImg) {
+      previewImg.src = croppedImg
+    }
+  }
+
+  private selectCropImg(e: Event): void {
+    const targetElement = e.target as HTMLInputElement
+    const id = targetElement.dataset.id
+    
+    if (id) {
+      Array.from(this.cropperImagesElem.children).forEach(child => {
+        child.classList.remove('active')
+      })
+      targetElement.classList.add('active')
+
+      if (this.currentCropper) {
+        this.currentCropper.destroy()
+      }
+
+      const children = Array.from(this.cropperSelectedWrapperElem.children) as HTMLImageElement[]
+      children.forEach((child: HTMLImageElement) => {
+        if (child.dataset.id === id) {
+          child.classList.add('active')
+
+          const cropper = new Cropper(child, {
+            zoomable: false,
+          })
+          this.currentCropper = cropper
+          this.currentCroppedImgId = id
+        } else {
+          child.classList.remove('active')
+        }
+      })
     }
   }
 
@@ -463,7 +574,23 @@ export class AddPublication {
     }
 
     if (this.uploadInputElem.contains(targetElement)) {
-      this.toggleUpload(e)
+      return this.toggleUpload(e)
+    }
+
+    if (this.uploadSettingsElem.contains(targetElement) && window.innerWidth >= BreakpointWidth.DESKTOP) {
+      return this.cropperPopupElem.classList.remove('popup--no-overlay')
+    }
+
+    if (targetElement.closest(this.selectedCollapseSelector)) {
+      return this.toggleCollapseText()
+    }
+
+    if (targetElement.closest(this.cropperImgSelector)) {
+      return this.selectCropImg(e)
+    }
+
+    if (this.cropperBtnElem.contains(targetElement)) {
+      return this.crop()
     }
   }
 

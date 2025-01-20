@@ -1,5 +1,6 @@
 // vendors
 @import "../vendors/swiper-bundle.min";
+@import "../vendors/cropper.min";
 
 // common styles
 @import "../common";
@@ -21,6 +22,7 @@
 
 @import "../components/steps";
 @import "../components/add-publication";
+@import "../components/cropper-publication";
 
 .main {
   padding: 1.5rem 0 5.5rem 0;

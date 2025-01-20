@@ -105,7 +105,7 @@ export class Form extends FormValidator {
 
     return Array.from(formData.entries()).reduce((acc, [key, value]) => {
       if (this.validateSchema) {
-        if (this.validateSchema[key].type === 'object') {
+        if (this.validateSchema[key]?.type === 'object') {
           const fileInput = this.formElem.querySelector(`[name=${key}]`) as HTMLInputElement
           acc[key] = fileInput.files
 
@@ -144,7 +144,10 @@ export class Form extends FormValidator {
     const errorElem = this.formElem.querySelector(`[data-id="error-${name}"]`) as HTMLElement
 
     
-    if (parentElem) parentElem.classList.add('error')
+    if (parentElem) {
+      parentElem.classList.remove('success')
+      parentElem.classList.add('error')
+    }
 
     if (errorElem && error) {
       errorElem.classList.add('active')
@@ -155,9 +158,11 @@ export class Form extends FormValidator {
   private clearError(name: string) {
     const parentElem = this.formElem.querySelector(`[data-id="parent-${name}"]`) as HTMLElement
     const errorElem = this.formElem.querySelector(`[data-id="error-${name}"]`) as HTMLElement
-
     
-    if (parentElem) parentElem.classList.remove('error')
+    if (parentElem) {
+      parentElem.classList.remove('error')
+      parentElem.classList.add('success')
+    }
 
     if (errorElem) {
       errorElem.classList.remove('active')
