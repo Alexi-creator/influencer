@@ -1,6 +1,21 @@
 .cart-item {
   $root: &;
 
+  background-color: rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
+
+  &--disabled {
+    background-color: rgb(var(--color-grey-soft));
+  }
+
+  &--picked {
+    border: 1px solid rgb(var(--color-black-light));
+  }
+
+  &--disabled-picked {
+    border: 1px solid rgb(var(--color-red));
+  }
+
   &__wrapper {
     position: relative;
     padding: 0.75rem;
@@ -31,24 +46,57 @@
     @extend %flex-column;
 
     @include media($md) {
-      flex-flow: row
+      flex-flow: row;
     }
   }
 
   &__product-card {
     @extend %flex-start;
+    gap: 0.75rem;
+
+    @include media($md) {
+      gap: 1.25rem;
+    }
   }
 
   &__product-card-decription {
     @extend %flex-column;
+    align-self: flex-start;
+    gap: 0.75rem;
+    max-width: 17.68rem;
+  }
+
+  &__product-card-decription-title {
+    color: rgb(var(--color-grey));
+  }
+
+  &--disabled-size {
+    color: rgb(var(--color-red));
   }
 
   &__control {
     @extend %flex-start;
+    flex-direction: row-reverse;
+    gap: 0.75rem;
 
     @include media($lg) {
-      flex-flow: column
+      flex-flow: column;
     }
+  }
+
+  &__control-amount {
+    @extend %flex-start;
+  }
+
+  &__control-amount-input {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid rgb(var(--color-black-light));
+    border-radius: var(--radius-medium);
+    max-width: 6rem;
+  }
+
+  &__control-items-disabled {
+    color: rgb(var(--color-black-light));
   }
 
   &__inner {
@@ -56,8 +104,25 @@
 
     @include media($md) {
       flex-flow: row;
-      justify-content: space-between
+      justify-content: space-between;
+      flex: 1;
+      margin-top: 2.5rem;
     }
+  }
+
+  &__navigate {
+    @extend %flex-column;
+    flex-direction: column-reverse;
+    gap: 1rem;
+
+    @include media($md) {
+      flex-direction: column;
+      gap: 0.875rem;
+    }
+  }
+
+  &__navigate-choose {
+    text-align: right
   }
 
   &__discount-upper {

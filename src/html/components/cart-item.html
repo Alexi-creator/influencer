@@ -1,4 +1,4 @@
-<div class="cart-item">
+<div class="cart-item @@if(disabled){cart-item--disabled} @@if(disabledPicked){cart-item--disabled-picked}">
   <div class="cart-item__wrapper">
     <div class="cart-item__delete">
       <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
@@ -6,23 +6,40 @@
     <div class="cart-item__inner-product-card">
       <div class="cart-item__product-card">
         <div class="cart-item__product-card-pic">
-
+          @@cart-card-pic
         </div>
         <div class="cart-item__product-card-decription">
           <div class="cart-item__product-card-decription-title">
-
+            @@cart-card-brand
           </div>
           <div class="cart-item__product-card-decription-txt">
-            
+            @@cart-card-brand-description
           </div>
         </div>
       </div>
       <div class="cart-item__control">
-        <div class="cart-item__control-size">
-
+        <div class="cart-item__control-size @@if(disabled){cart-item--disabled-size}">
+          @@sizes
         </div>
         <div class="cart-item__control-amount">
-
+          @@if(disabled){
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#minus_disabled"></use>
+            </svg>            
+            <input disabled class="cart-item__control-amount-input cart-item__control-items-disabled" name="control-items" type="text" value="@@amounts">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#plus_disabled"></use>
+            </svg>            
+          }
+          @@if(enabledControl){
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#minus_black"></use>
+            </svg>            
+            <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="@@amounts">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#plus_black"></use>
+            </svg>         
+          }   
         </div>
       </div>
     </div>
