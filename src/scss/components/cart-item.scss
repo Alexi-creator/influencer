@@ -3,9 +3,18 @@
 
   background-color: rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
+  border: 1px solid rgb(var(--color-primary-soft));
+
+  &:hover and &--disabled {
+    border-color: rgb(var(--color-black-light));
+  }
 
   &--disabled {
     background-color: rgb(var(--color-grey-soft));
+
+    &:hover {
+      border-color: red;
+    }
   }
 
   &--picked {
@@ -26,6 +35,7 @@
       padding: 1.25rem 1.5rem;
       flex-flow: row;
       justify-content: space-between;
+      gap: 1.75rem;
     }
   }
 
@@ -44,9 +54,11 @@
 
   &__inner-product-card {
     @extend %flex-column;
+    gap: 0.75rem;
 
-    @include media($md) {
+    @include media($lg) {
       flex-flow: row;
+      gap: unset
     }
   }
 
@@ -78,9 +90,11 @@
     @extend %flex-start;
     flex-direction: row-reverse;
     gap: 0.75rem;
+    justify-content: left;
 
     @include media($lg) {
       flex-flow: column;
+      justify-content: unset;
     }
   }
 
@@ -88,25 +102,43 @@
     @extend %flex-start;
   }
 
+  &__control-size {
+    align-self: center;
+
+    @include media($lg) {
+      align-self: flex-start;
+    }
+  }
+
   &__control-amount-input {
     padding: 0.75rem 1.5rem;
-    border: 2px solid rgb(var(--color-black-light));
+    border: 2px solid rgb(var(--color-grey-dark));
     border-radius: var(--radius-medium);
     max-width: 6rem;
   }
 
   &__control-items-disabled {
-    color: rgb(var(--color-black-light));
+    color: rgb(var(--color-grey-dark));
   }
 
   &__inner {
     @extend %flex-column;
+    gap: 0.375rem;
+    margin-top: 0.875rem;
 
     @include media($md) {
+      flex-flow: column;
+      flex: 1;
+      align-items: end;
+      align-self: center;
+      margin-top: 1rem;
+    }
+
+    @include media($lg) {
       flex-flow: row;
       justify-content: space-between;
-      flex: 1;
-      margin-top: 2.5rem;
+      align-self: flex-end;
+      margin-top: unset;
     }
   }
 
@@ -116,13 +148,40 @@
     gap: 1rem;
 
     @include media($md) {
+      flex-direction: column-reverse;
+      gap: 1.5rem;
+      align-self: end;
+    }
+
+    @include media($lg) {
       flex-direction: column;
       gap: 0.875rem;
+    }
+
+  }
+
+  &__discount {
+    position: absolute;
+
+    @include media($md) {
+      align-self: flex-end;
+      position: relative;
+    }
+
+    @include media($lg) {
+      align-self: flex-start;
     }
   }
 
   &__navigate-choose {
-    text-align: right
+    text-align: right;
+    @extend %flex-start;
+    gap: 0.625rem;
+    margin-left: auto;
+
+    @include media($md) {
+      margin-left: unset;
+    }
   }
 
   &__discount-upper {
@@ -136,6 +195,8 @@
   }
 
   &__navigate-price {
+    margin-left: auto;
+
     font-weight: 600;
     letter-spacing: 0.02rem;
   }
@@ -148,5 +209,10 @@
 
   &__navigate-price-newSum {
     color: rgb(var(--color-primary));
+  }
+
+  &__discount-store {
+    @extend %flex-column;
+    font-size: 0.875rem;
   }
 }

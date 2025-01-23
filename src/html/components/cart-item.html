@@ -48,25 +48,25 @@
         <div class="cart-item__discount-upper">
           <div class="cart-item__discount-upper-title">
             @@if(store){
-              <span>Ваша скидка:</span>
+              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
             }
             
             @@if(SP){
-              <span>Скидка в СП:</span>
+              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка в СП:</span>
             }
           </div>
           <div class="cart-item__discount-upper-size">
-            <div class="badge badge--discount-cart">
-              -23%
-            </div>
+              <div class="badge badge--discount-cart" @@if(disabled){style="background-color: rgb(var(--color-grey-dark));border:unset"}>
+                -23%
+              </div>
           </div>
         </div>
         @@if(store){
           <div class="cart-item__discount-details">
             <div class="cart-item__discount-store">
-              <span>1 шт.</span><span>@@1pieceDiscount</span>
-              <span>2-3 шт.</span><span>@@3piecesDiscount</span>
-              <span>4 шт. и более</span><span>@@4piecesDiscount</span>
+              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>1 шт. @@1pieceDiscount</span>
+              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>2-3 шт. @@3piecesDiscount</span>
+              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>4 шт. и более@@4piecesDiscount</span>
             </div>
           </div>
         }
@@ -86,7 +86,7 @@
           }
           @@if(unavailable){
             <svg>
-              <use xlink:href="./img/icons/icons.svg#info"></use>
+              <use xlink:href="./img/icons/icons.svg#info_red"></use>
             </svg> 
             <span style="color: rgb(var(--color-red));">Товар недоступен</span>
           }
