@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="cart-item__control">
-        <div class="cart-item__control-size @@if(disabled){cart-item--disabled-size}">
+        <div class="cart-item__control-size @@if(disabledSize){cart-item--disabled-size}">
           @@sizes
         </div>
         <div class="cart-item__control-amount">
@@ -43,8 +43,8 @@
         </div>
       </div>
     </div>
-    <div class="cart-item__inner">
-      <div class="cart-item__discount">
+    <div class="cart-item__inner @@if(store){cart-item__inner-store}">
+      <div class="cart-item__discount @@if(SP){cart-item__discount--SP}">
         <div class="cart-item__discount-upper">
           <div class="cart-item__discount-upper-title">
             @@if(store){
@@ -61,15 +61,6 @@
               </div>
           </div>
         </div>
-        @@if(store){
-          <div class="cart-item__discount-details">
-            <div class="cart-item__discount-store">
-              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>1 шт. @@1pieceDiscount</span>
-              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>2-3 шт. @@3piecesDiscount</span>
-              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>4 шт. и более@@4piecesDiscount</span>
-            </div>
-          </div>
-        }
       </div>
       <div class="cart-item__navigate">
         <div class="cart-item__navigate-choose">
@@ -97,6 +88,15 @@
           <span class="cart-item__navigate-price-newSum">₽</span>
         </div>
       </div>
+      @@if(store){
+        <div class="cart-item__discount-details">
+          <div class="cart-item__discount-store">
+            <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>1 шт. @@1pieceDiscount</span>
+            <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>2-3 шт. @@3piecesDiscount</span>
+            <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>4 шт. и более@@4piecesDiscount</span>
+          </div>
+        </div>
+      }
     </div>
   </div>
 </div>
