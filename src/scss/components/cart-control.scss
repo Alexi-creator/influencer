@@ -33,6 +33,7 @@
     align-items: center;
     flex-direction: column-reverse;
     gap: 1rem;
+    text-align: center;
 
     @include media($md) {
       justify-content: flex-end;
@@ -83,11 +84,21 @@
 
   &__bottom-results-group-sum-oldSum {
     text-decoration: line-through;
-    color: rgb(var(--color-grey));
     margin-right: 0.625rem;
+    display: none;
+
+    @include media($md) {
+      display: inline;
+      color: rgb(var(--color-grey));
+    }
   }
 
   &__bottom-results-group-sum-newSum {
-    color: rgb(var(--color-primary));
+
+
+    @include media($md) {
+      color: rgb(var(--color-primary));
+    }
+
   }
 }

@@ -237,11 +237,59 @@
     color: rgb(var(--color-primary));
   }
 
+  &__discount-upper-title-store--md {
+    display: none;
+
+    @include media($md) {
+      display: inline;
+    }
+  }
+
+  &__discount-upper-title-store--mobile {
+    display: inline;
+
+    @include media($md) {
+      display: none;
+    }
+  }
+
+  &__discount-upper-title-SP--mobile {
+    display: inline;
+
+    @include media($md) {
+      display: none;
+    }
+  }
+
+  &__discount-upper-title-SP--md {
+    display: none;
+
+    @include media($md) {
+      display: inline;
+    }
+
+    @include media($lg) {
+      display: none;
+    }
+  }
+
+  &__discount-upper-title-SP--lg {
+    display: none;
+
+    @include media($lg) {
+      display: inline;
+    }
+  }
+
   &__navigate-price {
     margin-left: auto;
-
+    margin-top: 0.4rem;
     font-weight: 600;
     letter-spacing: 0.02rem;
+
+    @include media($md) {
+      margin-top: unset;
+    }
   }
 
   &__navigate-price-oldSum {

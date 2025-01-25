@@ -48,11 +48,14 @@
         <div class="cart-item__discount-upper">
           <div class="cart-item__discount-upper-title">
             @@if(store){
-              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
+              <span class="cart-item__discount-upper-title-store--md" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
+              <span class="cart-item__discount-upper-title-store--mobile" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка:</span>
             }
             
             @@if(SP){
-              <span @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка в СП:</span>
+              <span class="cart-item__discount-upper-title-SP--mobile" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка:</span>
+              <span class="cart-item__discount-upper-title-SP--md" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
+              <span class="cart-item__discount-upper-title-SP--lg" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка в СП:</span>
             }
           </div>
           <div class="cart-item__discount-upper-size">
