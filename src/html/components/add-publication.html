@@ -1,7 +1,7 @@
 <div class="add-publication">
   <div class="add-publication__inner">
 
-    <!-- Блок первого шага (Выбор товара) -->
+    <!-- Блок 1 шага (Выбор товара) -->
     <div class="add-publication__step-content add-publication__choose-goods active">
       <div class="add-publication__tabs tabs tabs--split">
         <div class="add-publication__tabs-wrapper tabs-head tabs__head">
@@ -1197,7 +1197,7 @@
       })
     </div>
 
-    <!-- Блок второго шага (Наполнение) -->
+    <!-- Блок 2 шага (Наполнение) -->
     <form class="add-publication__step-content add-publication__filling ">
       <div class="add-publication__filling-selected collapse collapse--arrow">
         <div class="collapse__head">
@@ -1297,12 +1297,217 @@
       })
     </div>
 
-    <!-- Блок второго шага (Предпросмотр) -->
+    <!-- Блок 3 шага (Предпросмотр) -->
     <div class="add-publication__step-content add-publication__preview">
-      3 шаг Предпросмотр
+      <div class="add-publication__preview-title">
+        Так будет выглядеть ваша публикация. Если вы все же решили что-то изменить - нажмите на кнопку “Назад”.
+        <div>А если все нравится - “Опубликовать”.</div>
+      </div>
+
+      <div class="add-publication__preview-content">
+        <div class="publication">
+          <div class="publication__author">
+            <div class="publication__author-avatar">
+              <img src="@img/logo-user-sm.jpg"></img>
+            </div>
+            <div class="publication__author-name">Олеся Смирнова</div>
+            <div class="publication__author-created">17 минут назад</div>
+          </div>
+        
+          <div class="publication__title"></div>
+        
+          <div class="publication__actions">
+            <button>
+              <svg class="publication__actions-share">
+                <use xlink:href="./img/icons/icons.svg#share"></use>
+              </svg>
+            </button>
+            <button>
+              <svg class="publication__actions-favourite">
+                <use xlink:href="./img/icons/icons.svg#heart"></use>
+              </svg>
+            </button>
+            <div class="publication__actions-views">6072 просмотров</div>
+          </div>
+        
+          <div class="publication__set">
+            <div class="publication__set-items">
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+            </div>
+            <div class="publication__swiper">
+              <div class="swiper swiper-publication">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
+                  <div class="swiper-slide"><img src="@img/post-card-img-black.png"></img></div>
+                  <div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
+                </div>
+              </div>
+              <button class="swiper-button-prev">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                </svg>
+              </button>
+              <button class="swiper-button-next">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                </svg>
+              </button>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="publication__set-items">
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+              @@include("../components/publication-item.html", {
+                img: "item-publication.jpg",
+                title: "Костюм классический UNIQ",
+                price: "10000",
+                currency: " ₽",
+                descr: "",
+              })
+            </div>
+          </div>
+        
+          <div class="publication__goods">
+            <div class="gallery-card">
+              <div class="gallery-card__item">
+                <img src="@img/publication.jpg">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/post-card-img-black.png">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/publication.jpg">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/publication.jpg">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/post-card-img-black.png">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/publication.jpg">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/publication.jpg">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/post-card-img-black.png">
+              </div>
+              <div class="gallery-card__item">
+                <img src="@img/publication.jpg">
+                <span class="gallery-card__item-more">+7</span>
+              </div>
+            </div>
+            <div class="publication__goods-count">9 товаров</div>
+            <button class="btn btn--none publication__goods-btn-popup" data-popup="publication-items">Посмотреть</button>
+          </div>
+        
+          <div class="publication__descr">
+            Безупречный белый позволителен дамам любого возраста и рода занятий,
+            делая внешность неотразимой и такой безукоризненной.
+            Облачаясь в белый цвет с ног до головы этой весной, отдавайте
+            предпочтение белым платьям на весну, брючным костюмам, рубашкам и
+            блузкам в белом цвете, а также и верхней одежде в белом цвете на весну.
+            Именно белый цвет в модных образах весны 2021 будет на пике популярности
+            для многих барышень.
+          </div>
+        
+          <div class="publication__price">
+            Общая стоимость образа: 97 062 ₽
+          </div>
+        
+          <div class="publication__likes">
+            <svg class="publication__likes-icon">
+              <use xlink:href="./img/icons/icons.svg#thumbs-up"></use>
+            </svg>
+        
+            <div class="publication__likes-text">
+              16 Отметок “Нравится”
+            </div>
+          </div>
+        
+          <ul class="publication__hashtags">
+            <li><a href="#">#весна22</a></li>
+            <li><a href="#">#холод</a></li>
+            <li><a href="#">#лучшийобраз</a></li>
+            <li><a href="#">#костюмы</a></li>
+            <li><a href="#">#недешево</a></li>
+          </ul>
+        
+          <div class="publication__subscribe">
+            <div class="publication__subscribe-top">
+              <div class="publication__subscribe-line"></div>
+              <div class="publication__subscribe-avatar">
+                <img src="@img/logo-user-sm.jpg"></img>
+              </div>
+              <div class="publication__subscribe-line"></div>
+            </div>
+            <div class="publication__subscribe-name">Олеся Смирнова</div>
+            <div class="publication__subscribe-activity">
+              Персональный стилист / Актриса / Блогер
+            </div>
+            <div class="publication__subscribe-btn">
+              <button class="btn" disabled>Подписаться</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Блок второго шага (Образ создан) -->
+    <!-- Блок 4 шага (Образ создан) -->
     <div class="add-publication__step-content add-publication__image-created">
       4 шаг Образ создан
     </div>

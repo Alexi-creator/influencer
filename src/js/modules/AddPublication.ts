@@ -363,7 +363,7 @@ export class AddPublication {
     this.toggleBtnText()
   }
 
-  private closePopupEvent (e): void {
+  private closePopupEvent(e): void {
     const popupId = e.detail
 
     if (popupId === 'selected-goods') {
@@ -372,7 +372,14 @@ export class AddPublication {
     }
   }
 
-  private changeStep (variant: 'next' | 'prev'): void {
+  private handleStep() {
+    if (this.currentStep === StepsEnum.preview) {
+      console.log('test')
+      
+    }
+  }
+
+  private changeStep(variant: 'next' | 'prev'): void {
     const currentStepNumber = this.stepsArrElem.findIndex(elem => elem.classList.contains(`${this.mainSelector.substring(1)}__${this.currentStep}`))
 
     const stepOffset = variant === 'next' ? 1 : -1
@@ -383,6 +390,7 @@ export class AddPublication {
 
     this.currentStep = this.stepsMapArr[newStepNumber]?.[0]
     this.onChangeStep(this.currentStep)
+    this.handleStep()
 
     if (variant === 'next') {
       this.nextBtnElem.disabled = true

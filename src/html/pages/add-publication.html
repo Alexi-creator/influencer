@@ -47,6 +47,13 @@
     })
 
     @@include("../components/popup.html", {
+      "extra-class": "publication-items-popup",
+      "id": "publication-items",
+      "title": "Товары в этой публикации",
+      "body": '@@include("./publication-items-popup-content.html")',
+    })
+
+    @@include("../components/popup.html", {
       "extra-class": "",
       "id": "clearFilter",
       "title": "",

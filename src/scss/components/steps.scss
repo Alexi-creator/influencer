@@ -113,6 +113,33 @@
 					@extend %white-padding;
 				}
 			}
+
+			& + #{$root}__item:last-child {
+				@include media($md) {
+					grid-template-columns: 1fr 1fr;
+
+					&::before {
+						display: none;
+					}
+	
+					#{$root}__item-wrapper {
+						grid-column: 2 / -1;
+						grid-row: 1 / 2;
+					}
+	
+					#{$root}__item-line {
+						grid-column: 1 / 2;
+						grid-row: 1 / 2;
+						display: block;
+						background-color: rgb(var(--color-primary));
+					}
+	
+					#{$root}__item-name {
+						grid-column: 1 / -1;
+						grid-row: 2 / 3;
+					}
+				}
+			}
 		}
 
 		&-wrapper {

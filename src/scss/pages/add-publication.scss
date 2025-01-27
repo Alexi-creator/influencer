@@ -23,6 +23,7 @@
 @import "../components/steps";
 @import "../components/add-publication";
 @import "../components/cropper-publication";
+@import "../components/publication";
 
 .main {
   padding: 1.5rem 0 5.5rem 0;
@@ -58,10 +59,6 @@
 
     @include media($md) {
       margin-top: 2rem;
-      padding: 0rem 1.25rem;
-    }
-
-    @include media($lg) {
       padding: 0rem 2.5rem;
     }
 

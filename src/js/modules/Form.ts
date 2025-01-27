@@ -100,7 +100,7 @@ export class Form extends FormValidator {
     this.stateForm.values = { ...formData }
   }
 
-  public getFormData() {
+  public getFormData = () => {
     const formData = new FormData(this.formElem)
 
     return Array.from(formData.entries()).reduce((acc, [key, value]) => {

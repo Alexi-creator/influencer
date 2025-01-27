@@ -367,10 +367,6 @@
 
   &__choose-goods {
     margin: 0 -1.25rem;
-
-    @include media($md) {
-      margin: 0;
-    }
   }
 
   &__filling {
@@ -570,10 +566,6 @@
 
     &-cropper {
       & .popup {
-        &__overlay {
-          // padding: 5rem 2.5rem;
-        }
-
         &__content {
           padding: 1rem 1.125rem 2.5rem;
 
@@ -769,6 +761,27 @@
       @include media($lg) {
         margin-left: auto;
       }
+    }
+  }
+
+  &__preview-content {
+    margin: 1.5rem -1.25rem 0;
+    padding: 1rem 0.75rem 1rem;
+    border: 0.5rem rgb(var(--color-primary-tag-checked)) solid;
+    border-radius: 0.25rem;
+
+    @include media($md) {
+      margin: 2rem -2.5rem 0;
+      padding: 2.5rem;
+    }
+
+    @include media($lg) {
+      padding: 6rem 2.5rem;
+    }
+
+    @include media($full) {
+      margin: 2rem -18rem 0;
+      padding: 6rem 9rem;
     }
   }
 }
