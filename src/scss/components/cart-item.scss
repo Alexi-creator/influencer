@@ -5,7 +5,7 @@
 
   background-color: rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
-  border: 1px solid rgb(var(--color-primary-soft));
+  border: 2px solid rgb(var(--color-primary-soft));
 
   &:hover {
     border-color: rgb(var(--color-black-light));
@@ -73,6 +73,13 @@
     }
   }
 
+  &__product-card-pic {
+    img {
+      max-width: 4.375rem;
+      border-radius: var(--radius-medium);
+    }
+  }
+
   &__product-card-decription {
     @extend %flex-column;
     align-self: flex-start;
@@ -120,6 +127,7 @@
 
   &__control-amount {
     @extend %flex-start;
+    gap: 0.25rem;
   }
 
   &__control-size {
@@ -202,7 +210,7 @@
     }
   }
 
-  &__discount--SP {
+  &__discount--sp {
     @include media($md) {
       margin-top: 1.5rem;
     }
@@ -253,7 +261,7 @@
     }
   }
 
-  &__discount-upper-title-SP--mobile {
+  &__discount-upper-title-sp--mobile {
     display: inline;
 
     @include media($md) {
@@ -261,7 +269,7 @@
     }
   }
 
-  &__discount-upper-title-SP--md {
+  &__discount-upper-title-sp--md {
     display: none;
 
     @include media($md) {
@@ -273,7 +281,7 @@
     }
   }
 
-  &__discount-upper-title-SP--lg {
+  &__discount-upper-title-sp--lg {
     display: none;
 
     @include media($lg) {
@@ -292,13 +300,13 @@
     }
   }
 
-  &__navigate-price-oldSum {
+  &__navigate-price-old-sum {
     text-decoration: line-through;
     color: rgb(var(--color-grey));
     margin-right: 0.625rem;
   }
 
-  &__navigate-price-newSum {
+  &__navigate-price-new-sum {
     color: rgb(var(--color-primary));
   }
 

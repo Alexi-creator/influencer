@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="cart-item__inner @@if(store){cart-item__inner-store}">
-      <div class="cart-item__discount @@if(SP){cart-item__discount--SP}">
+      <div class="cart-item__discount @@if(SP){cart-item__discount--sp}">
         <div class="cart-item__discount-upper">
           <div class="cart-item__discount-upper-title">
             @@if(store){
@@ -53,9 +53,9 @@
             }
             
             @@if(SP){
-              <span class="cart-item__discount-upper-title-SP--mobile" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка:</span>
-              <span class="cart-item__discount-upper-title-SP--md" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
-              <span class="cart-item__discount-upper-title-SP--lg" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка в СП:</span>
+              <span class="cart-item__discount-upper-title-sp--mobile" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка:</span>
+              <span class="cart-item__discount-upper-title-sp--md" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
+              <span class="cart-item__discount-upper-title-sp--lg" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка в СП:</span>
             }
           </div>
           <div class="cart-item__discount-upper-size">
@@ -68,15 +68,12 @@
       <div class="cart-item__navigate">
         <div class="cart-item__navigate-choose">
           @@if(availableChoose){
-            <label class="checkbox checkbox--radius-medium">
-              <input name="checkbox" type="checkbox">
-              <span class="checkbox__checkmark">
-                <svg>
-                  <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-                </svg>
-              </span>
-            </label>
-            <span class="cart-control__top-choose-all-txt">Выбрать</span>
+            @@include("../components/checkbox.html", {
+              "name": "checkbox",
+              "text": "Выбрать",
+              "mod": "checkbox--radius-medium",
+              "classes": "cart-control__top-choose-all-txt"
+            })
           }
           @@if(unavailable){
             <svg>
@@ -86,9 +83,9 @@
           }
         </div>
         <div class="cart-item__navigate-price">
-          <span class="cart-item__navigate-price-oldSum number">@@oldSum</span>
-          <span class="cart-item__navigate-price-newSum number">@@newSum</span>
-          <span class="cart-item__navigate-price-newSum">₽</span>
+          <span class="cart-item__navigate-price-old-sum number">@@oldSum</span>
+          <span class="cart-item__navigate-price-new-sum number">@@newSum</span>
+          <span class="cart-item__navigate-price-new-sum">₽</span>
         </div>
       </div>
       @@if(store){
