@@ -10,8 +10,7 @@
 .map__header-options,
 .location__actions-city,
 .login__choice,
-.nav,
-.swiper-pagination {
+.nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -954,14 +953,8 @@ select {
   font: inherit;
 }
 
-input,
-textarea {
+input {
   border: none;
-}
-
-textarea {
-  width: 100%;
-  resize: vertical;
 }
 
 button {
@@ -1134,10 +1127,6 @@ button {
 
 .section--shop-window {
   padding-top: 0;
-}
-
-.section--comments {
-  margin-top: 2.5rem;
 }
 
 .alert {
@@ -1475,14 +1464,6 @@ button {
   border-color: rgb(var(--color-grey-light));
 }
 
-.input-text--disabled {
-  background-color: rgb(var(--color-grey-soft));
-}
-
-.input-text--disabled .input-text__input {
-  background-color: rgb(var(--color-grey-soft));
-}
-
 .input-text__input {
   width: 100%;
   height: 1.5rem;
@@ -1517,21 +1498,6 @@ button {
 
 .input-text__input[type=search]::-webkit-search-decoration {
   display: none;
-}
-
-.textarea {
-  border: 2px solid rgb(var(--color-primary-light));
-  border-radius: var(--radius-medium);
-  padding: 0.75rem 1.25rem;
-  outline: none;
-}
-
-.textarea:focus-within {
-  border-color: rgb(var(--color-primary));
-}
-
-.textarea--disabled {
-  background-color: rgb(var(--color-grey-soft));
 }
 
 .progress {
@@ -1622,22 +1588,6 @@ button {
 
 .swiper-button-next svg {
   transform: rotate(-90deg);
-}
-
-.swiper-pagination {
-  margin-bottom: 1.5rem;
-}
-
-.swiper-pagination-bullet {
-  background-color: rgb(var(--color-grey));
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  position: relative;
-  background-color: rgb(var(--color-white));
-  border: 3px solid rgb(var(--color-primary));
-  box-sizing: content-box;
 }
 
 .counter {
@@ -4355,16 +4305,8 @@ svg {
     margin-top: 4rem;
   }
 
-  .section--comments {
-    margin-top: 4rem;
-  }
-
   .hr {
     margin: 1.25rem auto;
-  }
-
-  .swiper-pagination {
-    margin-bottom: 2.5rem;
   }
 
   .radio__content {
@@ -5386,10 +5328,6 @@ svg {
 
   .section--user-info {
     padding-top: 0rem;
-  }
-
-  .section--comments {
-    margin-top: 5rem;
   }
 
   .badge svg {

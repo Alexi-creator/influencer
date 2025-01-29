@@ -54,10 +54,6 @@
   padding-top: 0;
 }
 
-.section--comments {
-  margin-top: 2.5rem;
-}
-
 @media (min-width: 48rem) {
   .section {
     padding: 0rem 2.5rem;
@@ -72,10 +68,6 @@
   }
 
   .section--user-board {
-    margin-top: 4rem;
-  }
-
-  .section--comments {
     margin-top: 4rem;
   }
 }
@@ -109,9 +101,5 @@
 
   .section--user-info {
     padding-top: 0rem;
-  }
-
-  .section--comments {
-    margin-top: 5rem;
   }
 }
