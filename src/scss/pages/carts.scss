@@ -8,6 +8,14 @@
 @import "../components/nav-pages";
 @import "../components/collapse";
 @import "../components/catalog";
-@import "../components/cart.scss";
+@import "../components/cart-top.scss";
 @import "../components/cart-control.scss";
 @import "../components/cart-item.scss";
+
+.section {
+  .cart {
+    &__controls {}
+
+    &__items {}
+  }
+}
