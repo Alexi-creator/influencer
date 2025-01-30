@@ -1,8 +1,5 @@
 <div class="cart-item @@if(disabled){cart-item--disabled} @@if(disabledPicked){cart-item--disabled-picked}">
   <div class="cart-item__wrapper">
-    <div class="cart-item__delete">
-      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
-    </div>
     <div class="cart-item__inner-product-card">
       <div class="cart-item__product-card">
         <div class="cart-item__product-card-pic">
@@ -42,9 +39,7 @@
           }   
         </div>
       </div>
-    </div>
-    <div class="cart-item__inner @@if(store){cart-item__inner-store}">
-      <div class="cart-item__discount @@if(SP){cart-item__discount--sp}">
+      <div class="cart-item__discount @@if(SP){cart-item__discount--sp} @@if(store){cart-item__discount--store}">
         <div class="cart-item__discount-upper">
           <div class="cart-item__discount-upper-title">
             @@if(store){
@@ -65,28 +60,29 @@
           </div>
         </div>
       </div>
-      <div class="cart-item__navigate">
-        <div class="cart-item__navigate-choose">
-          @@if(availableChoose){
-            @@include("../components/checkbox.html", {
-              "name": "checkbox",
-              "text": "Выбрать",
-              "mod": "checkbox--radius-medium",
-              "classes": "cart-control__top-choose-all-txt"
-            })
-          }
-          @@if(unavailable){
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#info_red"></use>
-            </svg> 
-            <span style="color: rgb(var(--color-red));">Товар недоступен</span>
-          }
-        </div>
-        <div class="cart-item__navigate-price">
-          <span class="cart-item__navigate-price-old-sum number">@@oldSum</span>
-          <span class="cart-item__navigate-price-new-sum number">@@newSum</span>
-          <span class="cart-item__navigate-price-new-sum">₽</span>
-        </div>
+      <div class="cart-item__navigate-choose @@if(store){cart-item__navigate-choose--store}">
+        @@if(availableChoose){
+          @@include("../components/checkbox.html", {
+            "name": "checkbox",
+            "text": "Выбрать",
+            "mod": "checkbox--radius-medium",
+            "classes": "cart-control__top-choose-all-txt"
+          })
+        }
+        @@if(unavailable){
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#info_red"></use>
+          </svg> 
+          <span style="color: rgb(var(--color-red));">Товар недоступен</span>
+        }
+      </div>
+      <div class="cart-item__navigate-price @@if(store){cart-item__navigate-price--store}">
+        <span class="cart-item__navigate-price-old-sum number">@@oldSum</span>
+        <span class="cart-item__navigate-price-new-sum number">@@newSum</span>
+        <span class="cart-item__navigate-price-new-sum">₽</span>
+      </div>
+      <div class="cart-item__delete @@if(store){cart-item__delete--store}">
+        <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
       </div>
       @@if(store){
         <div class="cart-item__discount-details">
