@@ -118,10 +118,14 @@ export class AddPublication {
   private publicationPriceCountSelector: string
   private publicationSetItemsLeftSelector: string
   private publicationSetItemsRightSelector: string
+  private publicationGoodsCountNumberSelector: string
+  private publicationPreviewGalleryCardSelector: string
 
   private publicationItemSelector: string
   private publicationItemPriceSelector: string
   private publicationItemDescrSelector: string
+
+  private publicationItemsPopupContentSelector: string
 
   private swiperAddPublicationSelector: string
   private swiperWrapperSelector: string
@@ -132,6 +136,10 @@ export class AddPublication {
   private publicationPriceCountElem: HTMLElement
   private publicationSetItemsLeftElem: HTMLElement
   private publicationSetItemsRightElem: HTMLElement
+  private publicationGoodsCountNumberElem: HTMLElement
+  private publicationPreviewGalleryCardElem: HTMLElement
+
+  private publicationItemsPopupContentElem: HTMLElement
 
   private previewSwiper: CustomSwiper
   private swiperWrapperElem: HTMLElement
@@ -200,10 +208,14 @@ export class AddPublication {
     this.publicationPriceCountSelector = `${this.publicationSelector}__price-count`
     this.publicationSetItemsLeftSelector = `${this.publicationSelector}__set-items-left`
     this.publicationSetItemsRightSelector = `${this.publicationSelector}__set-items-right`
+    this.publicationGoodsCountNumberSelector = `${this.publicationSelector}__goods-count-number`
+    this.publicationPreviewGalleryCardSelector = `${this.publicationSelector}__goods .gallery-card`
 
     this.publicationItemSelector = '.publication-item'
     this.publicationItemPriceSelector = `${this.publicationItemSelector}__price-number`
     this.publicationItemDescrSelector = `${this.publicationItemSelector}__descr`
+
+    this.publicationItemsPopupContentSelector = '.publication-items-popup-content'
 
     this.swiperAddPublicationSelector = '.swiper-add-publication'
     this.swiperWrapperSelector = `${this.swiperAddPublicationSelector} .swiper-wrapper`
@@ -287,6 +299,13 @@ export class AddPublication {
     if (publicationSetItemsLeftElem) this.publicationSetItemsLeftElem = publicationSetItemsLeftElem
     const publicationSetItemsRightElem = this.mainElem.querySelector(this.publicationSetItemsRightSelector) as HTMLElement
     if (publicationSetItemsRightElem) this.publicationSetItemsRightElem = publicationSetItemsRightElem
+    const publicationGoodsCountNumberElem = this.mainElem.querySelector(this.publicationGoodsCountNumberSelector) as HTMLElement
+    if (publicationGoodsCountNumberElem) this.publicationGoodsCountNumberElem = publicationGoodsCountNumberElem
+    const publicationPreviewGalleryCardElem = this.mainElem.querySelector(this.publicationPreviewGalleryCardSelector) as HTMLElement
+    if (publicationPreviewGalleryCardElem) this.publicationPreviewGalleryCardElem = publicationPreviewGalleryCardElem
+
+    const publicationItemsPopupContentElem = document.body.querySelector(this.publicationItemsPopupContentSelector) as HTMLElement
+    if (publicationItemsPopupContentElem) this.publicationItemsPopupContentElem = publicationItemsPopupContentElem
 
     const swiperWrapperElem = this.mainElem.querySelector(this.swiperWrapperSelector) as HTMLElement
     if (swiperWrapperElem) this.swiperWrapperElem = swiperWrapperElem
@@ -504,28 +523,41 @@ export class AddPublication {
       } else {
         this.publicationSetItemsRightElem.appendChild(clonedElem)
       }
+
+      const clonedForPopupElem = elem.cloneNode(true) as Element
+      const cloneDescrElem = clonedForPopupElem.querySelector(this.publicationItemDescrSelector)
+      
+      if (cloneDescrElem) cloneDescrElem.remove()
+      this.publicationItemsPopupContentElem.appendChild(clonedForPopupElem)
     })
+
+    const galleryItems = Array.from(this.goodsGalleryElem.children)
+    galleryItems.forEach(item => {
+      this.publicationPreviewGalleryCardElem.appendChild(item.cloneNode(true))
+    })
+    this.publicationGoodsCountNumberElem.textContent = String(selectedGoods.length)
   }
 
   private createSlide(src: string): Node {
-    const slide = document.createElement('div')
-    slide.classList.add('swiper-slide')
+    const slideNode = document.createElement('div')
+    slideNode.classList.add('swiper-slide')
 
-    const img = document.createElement('img')
-    img.src = src
+    const imgNode = document.createElement('img')
+    imgNode.src = src
 
-    slide.appendChild(img)
+    slideNode.appendChild(imgNode)
 
-    return slide
+    return slideNode
   }
 
   private removeSelectedGoodsAndImg(): void {
     this.previewSwiper.destroy()
     this.swiperWrapperElem.innerHTML = ''
+
     this.publicationSetItemsLeftElem.innerHTML = ''
     this.publicationSetItemsRightElem.innerHTML = ''
-
-
+    this.publicationItemsPopupContentElem.innerHTML = ''
+    this.publicationPreviewGalleryCardElem.innerHTML = ''
   }
 
   private addSwiper() {
@@ -585,8 +617,6 @@ export class AddPublication {
 
         return acc
       }, {}) as IFillingFormData
-
-      console.log('preparedData', preparedData)
 
       this.fillPreview(preparedData)
     }
