@@ -83,10 +83,12 @@ window.addEventListener('load', () => {
   }
 
   let onValidation
+  let onSubmit
 
   try {
-    const publication = new AddPublication(stepsMap, changeStep)
-    onValidation = publication.checkValidFillingForm
+    const { checkValidFillingForm, handleSubmit } = new AddPublication(stepsMap, changeStep)
+    onValidation = checkValidFillingForm
+    onSubmit = handleSubmit
   } catch (error) {
     console.log(error)
   }
@@ -296,6 +298,10 @@ window.addEventListener('load', () => {
   try {
     new Form({
       selectorForm: '.add-publication__filling',
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
+        method: HttpMethods.POST,
+      },
       validateSchema: {
         'title-goods': {
           type: 'string',
@@ -348,6 +354,7 @@ window.addEventListener('load', () => {
         },
       },
       onValidation,
+      onSubmit,
     })
   } catch (error) {
     console.log(error)

@@ -23,6 +23,7 @@ interface IConstructor {
   apiOptions?: IOptions
   validateSchema?: Record<string, IValidateSchema>
   onValidation?: () => void
+  onSubmit?: () => void
 }
 
 export interface IStateForm {
@@ -47,20 +48,23 @@ export class Form extends FormValidator {
   private apiOptions?: IOptions
   private validateSchema?: Record<string, IValidateSchema>
   private onValidation?: (stateForm: IStateForm) => void
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  private onSubmit?: (response: {}, data: {}) => void
 
   private formElem: HTMLFormElement
 
   private stateForm: IStateForm
   private requiredFields: string[]
   
-  constructor({ selectorForm, url, apiOptions, validateSchema, onValidation }: IConstructor) {
+  constructor({ selectorForm, url, apiOptions, validateSchema, onValidation, onSubmit }: IConstructor) {
     super()
   
     this.selectorForm = selectorForm
     this.url = url
-    this.apiOptions = apiOptions
+    this.apiOptions = apiOptions || {}
     this.validateSchema = validateSchema
     this.onValidation = onValidation
+    this.onSubmit = onSubmit
 
     this.stateForm = {
       values: {},
@@ -90,12 +94,12 @@ export class Form extends FormValidator {
     this.init()
   }
 
-  private init() {
+  private init(): void {
     this.handlers()
     this.setInitialValues()
   }
 
-  public setInitialValues() {
+  public setInitialValues(): void {
     const formData = this.getFormData()
     this.stateForm.values = { ...formData }
   }
@@ -119,7 +123,7 @@ export class Form extends FormValidator {
     }, {})
   }
 
-  public async submitForm() {
+  public async submitForm(): Promise<void> {    
     if (this.url && this.apiOptions) {
       const data = this.getFormData()
       this.validateForm(data, this.validateSchema || {})
@@ -135,11 +139,12 @@ export class Form extends FormValidator {
         this.apiOptions = { ...this.apiOptions, body: JSON.stringify(data) }
       }
   
-      return await request(url, this.apiOptions)
+      const response = await request(url, this.apiOptions)
+      this.onSubmit?.(response, data)
     }
   }
 
-  private addError(name: string, error: string) {
+  private addError(name: string, error: string): void {
     const parentElem = this.formElem.querySelector(`[data-id="parent-${name}"]`) as HTMLElement
     const errorElem = this.formElem.querySelector(`[data-id="error-${name}"]`) as HTMLElement
 
@@ -155,7 +160,7 @@ export class Form extends FormValidator {
     } 
   }
 
-  private clearError(name: string) {
+  private clearError(name: string): void {
     const parentElem = this.formElem.querySelector(`[data-id="parent-${name}"]`) as HTMLElement
     const errorElem = this.formElem.querySelector(`[data-id="error-${name}"]`) as HTMLElement
     
@@ -180,7 +185,7 @@ export class Form extends FormValidator {
     
   // }
 
-  private checkValid() {
+  private checkValid(): void {
     const hasError = Object.keys(this.stateForm.errors).length > 0
 
     if (hasError) {
@@ -200,7 +205,7 @@ export class Form extends FormValidator {
     }
   }
 
-  private changeHandler(e: Event) {
+  private changeHandler(e: Event): void {
     const targetElement = e.target as HTMLInputElement
     const name = targetElement.name
     const value = targetElement.value

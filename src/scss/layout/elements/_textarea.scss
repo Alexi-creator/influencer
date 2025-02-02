@@ -11,6 +11,10 @@
       border-color: rgb(var(--color-primary));
     }
 
+    &.success {
+      border-color: rgb(var(--color-primary));
+    }
+
     &.error {
       border-color: rgb(var(--color-red));
     }

@@ -749,7 +749,7 @@
       }
     }
 
-    &-prev, &-publication {
+    &-prev, &-publication, &-next {
       display: none;
 
       &.active {
@@ -783,5 +783,32 @@
       margin: 2rem -18rem 0;
       padding: 6rem 9rem;
     }
+  }
+
+  &__created-popup {
+    & .popup__overlay {
+      @include media($md) {
+        padding: 0 2.5rem
+      }
+    }
+
+    & .popup__content {
+      @extend %flex-center;
+
+      height: 100%;
+      max-width: var(--max-width-container-1120);
+      background-image: url("../../img/created-bg.jpg");
+      background-size: cover;
+      background-position: 50%;
+      background-repeat: no-repeat;
+
+      @include media($md) {
+        height: 74.16%;
+      }
+    }
+  }
+
+  & .publication__swiper {
+    height: auto;
   }
 }

@@ -31,7 +31,7 @@ export class Popup {
     this.init()
   }
 
-  private init() {
+  private init(): void {
     this.handlers()
 
     const breakpoints = [BreakpointWidth.TABLET, BreakpointWidth.DESKTOP]
@@ -41,7 +41,7 @@ export class Popup {
     })
   }
 
-  private breakpointChecker(e: MediaQueryListEvent) {
+  private breakpointChecker(e: MediaQueryListEvent): void {
     const currentMedia = e.media.replace(/\D/g, '')
     const openPopups: HTMLElement[] = Array.from(document.querySelectorAll(`${this.selector}--open`))
 
@@ -54,7 +54,7 @@ export class Popup {
     })
   }
 
-  private openPopup(actionEl: HTMLElement) {
+  private openPopup(actionEl: HTMLElement): void {
     const popup = document.getElementById(actionEl.dataset.popup || '')
 
     if (popup) {
@@ -76,13 +76,13 @@ export class Popup {
     }
   }
 
-  private checkOpenedPopups() {
+  private checkOpenedPopups(): boolean {
     const allPopups = [...document.querySelectorAll(this.selector)]
 
     return allPopups.some(popup => popup.classList.contains('popup--open'))
   }
 
-  private closePopup(actionEl: HTMLElement) {
+  private closePopup(actionEl: HTMLElement): void {
     const popupEl = actionEl.closest(this.selector) || document.getElementById(actionEl?.dataset?.closePopup || '')
     popupEl?.classList.remove(this.popupOpenClass)
 
@@ -93,7 +93,7 @@ export class Popup {
     document.dispatchEvent(new CustomEvent('closePopup', { detail: popupEl?.id }))
   }
 
-  private clickHandler(e: MouseEvent) {
+  private clickHandler(e: MouseEvent): void {
     const targetElement = e.target as HTMLElement
 
     if (targetElement.closest(this.dataAttributeClosePopup) && targetElement.closest(this.dataAttributePopup)) {
@@ -114,7 +114,7 @@ export class Popup {
     } 
   }
 
-  private handlers() {
+  private handlers(): void {
     document.addEventListener('click', (e) => this.clickHandler(e))
   }
 }

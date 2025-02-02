@@ -1,0 +1,49 @@
+.created-publication {
+  $root: &;
+
+  max-width: 30.375rem;
+
+  &__icon, &__title, &__descr, &__links {
+    text-align: center;
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-top: 0.5rem;
+    color: rgb(var(--color-green));
+    font-size: 1.375rem;
+    font-weight: 600;
+  }
+
+  &__descr {
+    margin-top: 1rem;
+    color: rgb(var(--color-grey));
+
+    @include media($md) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__links {
+    @extend %flex-column;
+
+    gap: 0.75rem;
+    margin-top: 2rem;
+
+    & > a {
+      color: rgb(var(--color-primary));
+      font-weight: 600;
+    }
+
+    @include media($md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

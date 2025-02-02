@@ -51,6 +51,7 @@ export class CustomSwiper {
   constructor({ target, options, breakMedia, initialActionIndex, btnsElements }: IConstructor) {
     this.target = target
     this.options = options
+    this.breakMedia = breakMedia
     this.initialActionIndex = initialActionIndex || 0 
 
     this.swiperOptions = {
@@ -71,7 +72,7 @@ export class CustomSwiper {
 
     if (!this.target) return
     
-    if (breakMedia) {
+    if (this.breakMedia) {
       this.matchMedia = window.matchMedia(`(min-width:${breakMedia}px)`)
       this.matchMedia.addListener((e) => this.breakpointChecker(e))
     }
@@ -83,10 +84,14 @@ export class CustomSwiper {
     this.startSlide()
   }
 
+  public destroy(): void {
+    this.swiper?.destroy()
+  }
+
   public startSlide(): void {
     if (this.matchMedia?.matches) return
   
-    this.swiper?.destroy()
+    this.destroy()
     this.swiper = new Swiper(this.target, this.swiperOptions)   
     
     if (this.initialActionIndex) {

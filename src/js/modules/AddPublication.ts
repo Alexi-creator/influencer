@@ -1,9 +1,17 @@
-import { BreakpointWidth } from '../constants'
-import { StepsEnum } from '../constants'
+import { StepsEnum, httpStatus, BreakpointWidth } from '../constants'
+import { CustomSwiper } from './CustomSwiper'
 
 import { IStateForm } from './Form'
 
 import Cropper from 'cropperjs'
+
+interface IFillingFormData {
+  'title-goods': string
+  'tags': string
+  'media-link': string
+  'description': string
+  'add-picture': File[]
+}
 
 /**
  * Addpublication, отвечает за процесс добавления публикации.
@@ -41,6 +49,7 @@ export class AddPublication {
   private nextBtnSelector: string
   private publicationBtnSelector: string
 
+  private fillingFormSelector: string
   private selectedContentSelector: string
   private selectedCollapseCountSelector: string
 
@@ -51,6 +60,9 @@ export class AddPublication {
   private uploadDescrSelector: string
   private uploadInfoSelector: string
   private uploadSettingsSelector: string
+
+  private fillingFormSubmitSelector: string
+  private createdPopupSelector: string
 
   private selectedCollapseSelector: string
   private selectedToggleSelector: string
@@ -76,6 +88,7 @@ export class AddPublication {
   private nextBtnElem: HTMLButtonElement
   private publicationBtnElem: HTMLElement
 
+  private fillingFormElem: HTMLFormElement
   private selectedContentElem: HTMLElement
   private selectedCollapseCountElem: HTMLElement
 
@@ -86,19 +99,48 @@ export class AddPublication {
   private uploadInfoElem: HTMLElement
   private uploadSettingsElem: HTMLElement
 
+  private fillingFormSubmitElem: HTMLElement
+  private createdPopupElem: HTMLElement
+
   private selectedToggleElem: HTMLElement
   private cropperPopupElem: HTMLElement
   private cropperImagesElem: HTMLElement
   private cropperSelectedWrapperElem: HTMLElement
   private cropperBtnElem: HTMLElement
-
+  
   private currentCropper: Cropper | null
   private currentCroppedImgId: string
+  
+  private publicationSelector: string
+  private publicationTitleSelector: string
+  private publicationDescrSelector: string
+  private publicationHashtagsSelector: string
+  private publicationPriceCountSelector: string
+  private publicationSetItemsLeftSelector: string
+  private publicationSetItemsRightSelector: string
+
+  private publicationItemSelector: string
+  private publicationItemPriceSelector: string
+  private publicationItemDescrSelector: string
+
+  private swiperAddPublicationSelector: string
+  private swiperWrapperSelector: string
+
+  private publicationTitleElem: HTMLElement
+  private publicationDescrElem: HTMLElement
+  private publicationHashtagsElem: HTMLElement
+  private publicationPriceCountElem: HTMLElement
+  private publicationSetItemsLeftElem: HTMLElement
+  private publicationSetItemsRightElem: HTMLElement
+
+  private previewSwiper: CustomSwiper
+  private swiperWrapperElem: HTMLElement
 
   constructor(stepsMap: Map<StepsEnum, HTMLElement>, onChangeStep: (step: StepsEnum) => void) {
     this.stepsMap = stepsMap
-    this.stepsMapArr = Array.from(this.stepsMap)
     this.onChangeStep = onChangeStep
+
+    this.stepsMapArr = Array.from(this.stepsMap)
     this.selectedCount = 0
     this.addedImgCount = 0
     this.currentStep = StepsEnum.choose
@@ -124,6 +166,7 @@ export class AddPublication {
     this.nextBtnSelector = `${this.mainSelector}__actions-next`
     this.publicationBtnSelector = `${this.mainSelector}__actions-publication`
 
+    this.fillingFormSelector = `${this.mainSelector}__filling`
     this.selectedContentSelector = `${this.mainSelector}__filling-selected-content`
     this.selectedCollapseCountSelector = `${this.mainSelector}__filling-selected-count`
 
@@ -139,14 +182,31 @@ export class AddPublication {
     this.selectedToggleSelector = `${this.mainSelector}__filling-selected-toggle`
     this.cropperPopupSelector = `${this.mainSelector}__filling-cropper`
 
+    this.fillingFormSubmitSelector = `${this.mainSelector}__filling-submit`
+    this.createdPopupSelector = `${this.mainSelector}__created-popup`
+    
     this.cropperImagesSelector = '.cropper-publication__images'
     this.cropperImgSelector = '.cropper-publication__img'
     this.cropperSelectedWrapperSelector = '.cropper-publication__selected-wrapper'
     this.cropperBtnSelector = '.cropper-publication__btn'
     
-
     this.galleryItemSelector = '.gallery-card__item'
     this.galleryItemMoreSelector = `${this.galleryItemSelector}-more`
+
+    this.publicationSelector = '.publication'
+    this.publicationTitleSelector = `${this.publicationSelector}__title`
+    this.publicationDescrSelector = `${this.publicationSelector}__descr`
+    this.publicationHashtagsSelector = `${this.publicationSelector}__hashtags`
+    this.publicationPriceCountSelector = `${this.publicationSelector}__price-count`
+    this.publicationSetItemsLeftSelector = `${this.publicationSelector}__set-items-left`
+    this.publicationSetItemsRightSelector = `${this.publicationSelector}__set-items-right`
+
+    this.publicationItemSelector = '.publication-item'
+    this.publicationItemPriceSelector = `${this.publicationItemSelector}__price-number`
+    this.publicationItemDescrSelector = `${this.publicationItemSelector}__descr`
+
+    this.swiperAddPublicationSelector = '.swiper-add-publication'
+    this.swiperWrapperSelector = `${this.swiperAddPublicationSelector} .swiper-wrapper`
 
     const mainElem = document.querySelector(this.mainSelector) as HTMLElement
     if (mainElem) this.mainElem = mainElem
@@ -173,6 +233,8 @@ export class AddPublication {
     const publicationBtnElem = this.mainElem.querySelector(this.publicationBtnSelector) as HTMLElement
     if (publicationBtnElem) this.publicationBtnElem = publicationBtnElem
 
+    const fillingFormElem = this.mainElem.querySelector(this.fillingFormSelector) as HTMLFormElement
+    if (fillingFormElem) this.fillingFormElem = fillingFormElem
     const selectedContentElem = this.mainElem.querySelector(this.selectedContentSelector) as HTMLElement
     if (selectedContentElem) this.selectedContentElem = selectedContentElem
     const selectedCollapseCountElem = this.mainElem.querySelector(this.selectedCollapseCountSelector) as HTMLElement
@@ -191,6 +253,11 @@ export class AddPublication {
     const uploadSettingsElem = this.mainElem.querySelector(this.uploadSettingsSelector) as HTMLElement
     if (uploadSettingsElem) this.uploadSettingsElem = uploadSettingsElem
 
+    const fillingFormSubmitElem = this.mainElem.querySelector(this.fillingFormSubmitSelector) as HTMLButtonElement
+    if (fillingFormSubmitElem) this.fillingFormSubmitElem = fillingFormSubmitElem
+    const createdPopupElem = this.mainElem.querySelector(this.createdPopupSelector) as HTMLButtonElement
+    if (createdPopupElem) this.createdPopupElem = createdPopupElem
+
     const cropperPopupElem = this.mainElem.querySelector(this.cropperPopupSelector) as HTMLElement
     if (cropperPopupElem) this.cropperPopupElem = cropperPopupElem
     const selectedToggleElem = this.mainElem.querySelector(this.selectedToggleSelector) as HTMLElement
@@ -207,6 +274,22 @@ export class AddPublication {
     if (goodsGalleryElem) this.goodsGalleryElem = goodsGalleryElem
     const selectedCountElem = this.mainElem.querySelector(this.selectedCountSelector) as HTMLElement
     if (selectedCountElem) this.selectedCountElem = selectedCountElem
+
+    const publicationTitleElem = this.mainElem.querySelector(this.publicationTitleSelector) as HTMLElement
+    if (publicationTitleElem) this.publicationTitleElem = publicationTitleElem
+    const publicationDescrElem = this.mainElem.querySelector(this.publicationDescrSelector) as HTMLElement
+    if (publicationDescrElem) this.publicationDescrElem = publicationDescrElem
+    const publicationHashtagsElem = this.mainElem.querySelector(this.publicationHashtagsSelector) as HTMLElement
+    if (publicationHashtagsElem) this.publicationHashtagsElem = publicationHashtagsElem
+    const publicationPriceCountElem = this.mainElem.querySelector(this.publicationPriceCountSelector) as HTMLElement
+    if (publicationPriceCountElem) this.publicationPriceCountElem = publicationPriceCountElem
+    const publicationSetItemsLeftElem = this.mainElem.querySelector(this.publicationSetItemsLeftSelector) as HTMLElement
+    if (publicationSetItemsLeftElem) this.publicationSetItemsLeftElem = publicationSetItemsLeftElem
+    const publicationSetItemsRightElem = this.mainElem.querySelector(this.publicationSetItemsRightSelector) as HTMLElement
+    if (publicationSetItemsRightElem) this.publicationSetItemsRightElem = publicationSetItemsRightElem
+
+    const swiperWrapperElem = this.mainElem.querySelector(this.swiperWrapperSelector) as HTMLElement
+    if (swiperWrapperElem) this.swiperWrapperElem = swiperWrapperElem
 
     this.stepsArrElem = Array.from(this.mainElem.querySelectorAll(this.stepContentSelector))
 
@@ -372,10 +455,140 @@ export class AddPublication {
     }
   }
 
+  private insertTags(tags: string): void {
+    const splitTags = tags.split(' ')
+    splitTags.forEach((tag: string) => {
+      const preparedTag = tag.startsWith('#') ? tag : `#${tag}`
+
+      const itemNode = document.createElement('li')
+      const linkNode = document.createElement('a')
+
+      linkNode.href = preparedTag
+      linkNode.textContent = preparedTag
+
+      itemNode.appendChild(linkNode)
+
+      this.publicationHashtagsElem.appendChild(itemNode)
+    })
+  }
+
+  private collectTotalPrice(): string {
+    const goods: Element[] = [...this.selectedContentElem.querySelectorAll(this.itemGoodsSelector)]
+
+    const totalPrice = goods.reduce((acc, elem) => {
+      const priceElem = elem.querySelector(this.publicationItemPriceSelector)
+      const price = Number(priceElem?.textContent?.trim()?.replace(' ', ''))
+
+      if (price) {
+        return acc + price
+      }
+
+      return acc
+    }, 0)
+
+    const fotmattedPrice = new Intl.NumberFormat('ru-RU').format(totalPrice)
+    
+    return String(fotmattedPrice)
+  }
+
+  private addSelectedGoods(): void {
+    const selectedGoods: Element[] = [...this.selectedContentElem.querySelectorAll(this.publicationItemSelector)]
+    selectedGoods.forEach((elem, index) => {
+      const clonedElem = elem.cloneNode(true) as Element
+      const descrElem = clonedElem.querySelector(this.publicationItemDescrSelector)
+      
+      if (descrElem) descrElem.remove()
+
+      if (index % 2 === 0) {
+        this.publicationSetItemsLeftElem.appendChild(clonedElem)
+      } else {
+        this.publicationSetItemsRightElem.appendChild(clonedElem)
+      }
+    })
+  }
+
+  private createSlide(src: string): Node {
+    const slide = document.createElement('div')
+    slide.classList.add('swiper-slide')
+
+    const img = document.createElement('img')
+    img.src = src
+
+    slide.appendChild(img)
+
+    return slide
+  }
+
+  private removeSelectedGoodsAndImg(): void {
+    this.previewSwiper.destroy()
+    this.swiperWrapperElem.innerHTML = ''
+    this.publicationSetItemsLeftElem.innerHTML = ''
+    this.publicationSetItemsRightElem.innerHTML = ''
+
+
+  }
+
+  private addSwiper() {
+    const images = [...this.uploadFilesElem.children] as HTMLImageElement[]
+
+    if (images) {
+      images.forEach(({ src }) => {
+        const slideNode = this.createSlide(src)
+        this.swiperWrapperElem.appendChild(slideNode)
+      })
+    }
+
+    try {
+      this.previewSwiper = new CustomSwiper({
+        target: this.swiperAddPublicationSelector,
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  private fillPreview(data: IFillingFormData): void {
+    this.publicationTitleElem.textContent = data['title-goods']
+    this.publicationDescrElem.textContent = data.description
+    this.insertTags(data.tags)
+
+    this.publicationPriceCountElem.textContent = this.collectTotalPrice()
+    this.addSelectedGoods()
+    this.addSwiper()
+  }
+
+  public handleSubmit = (response): void => {
+    if (response && response.status === httpStatus.Created) {
+      this.publicationBtnElem.classList.remove('active')
+      this.prevBtnElem.classList.remove('active')
+
+      this.onChangeStep(StepsEnum.created)
+      this.createdPopupElem.classList.add('popup--open')
+      document.body.classList.add('overflow')
+      
+      // TODO добавить ссылку в попап (посмотреть публикацию)
+    }
+  }
+
+  private publication(): void {
+    // TODO проверить что уходят изображения которые именно обрезали
+
+    this.fillingFormSubmitElem.click()
+  }
+  
   private handleStep() {
     if (this.currentStep === StepsEnum.preview) {
-      console.log('test')
-      
+      const formData = new FormData(this.fillingFormElem)
+
+      const preparedData = Array.from(formData.entries()).reduce((acc, [key, value]) => {
+        acc[key] = value
+
+        return acc
+      }, {}) as IFillingFormData
+
+      console.log('preparedData', preparedData)
+
+      this.fillPreview(preparedData)
     }
   }
 
@@ -401,16 +614,27 @@ export class AddPublication {
         this.previewBtnElem.classList.remove('active')
         this.actionsWrapperElem.classList.remove(`${this.actionsWrapperSelector.substring(1)}--first-step`)
       }
+
+      if (newStepNumber === 2) {
+        this.nextBtnElem.classList.remove('active')
+        this.publicationBtnElem.classList.add('active')
+      }
     }
 
     if (variant === 'prev') {
       this.nextBtnElem.disabled = false
+      this.nextBtnElem.classList.add('active')
+      this.publicationBtnElem.classList.remove('active')
 
       if (newStepNumber === 0) {
         this.prevBtnElem.classList.remove('active')
         this.siteBtnElem.classList.add('active')
         this.previewBtnElem.classList.add('active')
         this.actionsWrapperElem.classList.add(`${this.actionsWrapperSelector.substring(1)}--first-step`)
+      }
+
+      if (newStepNumber === 1) {
+        this.removeSelectedGoodsAndImg()
       }
     }
   }
@@ -579,6 +803,10 @@ export class AddPublication {
 
     if (this.prevBtnElem.contains(targetElement)) {
       return this.changeStep('prev')
+    }
+
+    if (this.publicationBtnElem.contains(targetElement)) {
+      return this.publication()
     }
 
     if (this.uploadInputElem.contains(targetElement)) {

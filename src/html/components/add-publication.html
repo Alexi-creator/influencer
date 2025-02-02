@@ -1295,7 +1295,9 @@
         "title": "Выберите область показа фото",
         "body": '@@include("./cropper-publication.html")',
       })
-    </div>
+
+      <button class="add-publication__filling-submit" type="submit" hidden></button>
+    </form>
 
     <!-- Блок 3 шага (Предпросмотр) -->
     <div class="add-publication__step-content add-publication__preview">
@@ -1311,7 +1313,6 @@
               <img src="@img/logo-user-sm.jpg"></img>
             </div>
             <div class="publication__author-name">Олеся Смирнова</div>
-            <div class="publication__author-created">17 минут назад</div>
           </div>
         
           <div class="publication__title"></div>
@@ -1327,54 +1328,13 @@
                 <use xlink:href="./img/icons/icons.svg#heart"></use>
               </svg>
             </button>
-            <div class="publication__actions-views">6072 просмотров</div>
           </div>
         
           <div class="publication__set">
-            <div class="publication__set-items">
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-            </div>
+            <div class="publication__set-items publication__set-items-left"></div>
             <div class="publication__swiper">
-              <div class="swiper swiper-publication">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
-                  <div class="swiper-slide"><img src="@img/post-card-img-black.png"></img></div>
-                  <div class="swiper-slide"><img src="@img/publication.jpg"></img></div>
-                </div>
+              <div class="swiper swiper-add-publication">
+                <div class="swiper-wrapper"></div>
               </div>
               <button class="swiper-button-prev">
                 <svg>
@@ -1388,36 +1348,7 @@
               </button>
               <div class="swiper-pagination"></div>
             </div>
-            <div class="publication__set-items">
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-              @@include("../components/publication-item.html", {
-                img: "item-publication.jpg",
-                title: "Костюм классический UNIQ",
-                price: "10000",
-                currency: " ₽",
-                descr: "",
-              })
-            </div>
+            <div class="publication__set-items publication__set-items-right"></div>
           </div>
         
           <div class="publication__goods">
@@ -1455,37 +1386,13 @@
             <button class="btn btn--none publication__goods-btn-popup" data-popup="publication-items">Посмотреть</button>
           </div>
         
-          <div class="publication__descr">
-            Безупречный белый позволителен дамам любого возраста и рода занятий,
-            делая внешность неотразимой и такой безукоризненной.
-            Облачаясь в белый цвет с ног до головы этой весной, отдавайте
-            предпочтение белым платьям на весну, брючным костюмам, рубашкам и
-            блузкам в белом цвете, а также и верхней одежде в белом цвете на весну.
-            Именно белый цвет в модных образах весны 2021 будет на пике популярности
-            для многих барышень.
-          </div>
+          <div class="publication__descr"></div>
         
           <div class="publication__price">
-            Общая стоимость образа: 97 062 ₽
+            Общая стоимость образа: <span class="publication__price-count"></span> ₽
           </div>
         
-          <div class="publication__likes">
-            <svg class="publication__likes-icon">
-              <use xlink:href="./img/icons/icons.svg#thumbs-up"></use>
-            </svg>
-        
-            <div class="publication__likes-text">
-              16 Отметок “Нравится”
-            </div>
-          </div>
-        
-          <ul class="publication__hashtags">
-            <li><a href="#">#весна22</a></li>
-            <li><a href="#">#холод</a></li>
-            <li><a href="#">#лучшийобраз</a></li>
-            <li><a href="#">#костюмы</a></li>
-            <li><a href="#">#недешево</a></li>
-          </ul>
+          <ul class="publication__hashtags"></ul>
         
           <div class="publication__subscribe">
             <div class="publication__subscribe-top">
@@ -1507,10 +1414,12 @@
       </div>
     </div>
 
-    <!-- Блок 4 шага (Образ создан) -->
-    <div class="add-publication__step-content add-publication__image-created">
-      4 шаг Образ создан
-    </div>
+    @@include("./popup.html", {
+      "extra-class": "add-publication__created-popup",
+      "id": "popup-created",
+      "title": "",
+      "body": '@@include("./created-publication.html")',
+    })
 
     <!-- Блок с кнопками управления шагами (назад вперед, ...) -->
     <div class="add-publication__actions add-publication__actions--first-step">
@@ -1528,7 +1437,7 @@
         </div>
         <div class="add-publication__actions-preview-action" data-text="Cвернуть">Посмотреть</div>
       </button>
-      <button class="add-publication__actions-next btn btn--disabled" disabled>Далее</button>
+      <button class="add-publication__actions-next active btn btn--disabled" disabled>Далее</button>
       <button class="add-publication__actions-publication btn">Опубликовать</button>
     </div>
   </div>

@@ -56,6 +56,37 @@
 			#{$root}__item-line {
 				display: none;
 			}
+
+			&#{$root}__item--current {
+				grid-template-columns: 1fr max-content;
+
+				& svg use {
+					stroke: rgb(var(--color-green));
+				}
+
+				#{$root}__item-wrapper {
+					grid-column: 2 / 3;
+					grid-row: 1 / 2;
+					border-color: rgb(var(--color-green));
+
+					&::before {
+						display: none;
+					}
+				}
+
+				#{$root}__item-line {
+					display: block;
+					grid-column: 1 / 2;
+					grid-row: 1 / 2;
+					background-color: rgb(var(--color-primary-dark));
+				}
+
+				#{$root}__item-name {
+					color: rgb(var(--color-green));
+					grid-column: 1 / -1;
+					grid-row: 2 / 3;
+				}
+			}
 		}
 
 		&--passed {
