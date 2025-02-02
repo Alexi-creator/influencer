@@ -25,9 +25,10 @@
 
   &.load {
     #{$root}__load {
+      @include spinner();
+
       display: block;
       position: relative;
-      animation: spinner 1s linear infinite;
     }
   }
 

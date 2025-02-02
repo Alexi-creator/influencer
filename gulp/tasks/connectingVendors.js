@@ -2,6 +2,7 @@ export const vendorCSS = () => {
   const modules = [
     `node_modules/swiper/swiper-bundle.min.css`,
     `node_modules/nouislider/dist/nouislider.min.css`,
+    `node_modules/cropperjs/dist/cropper.min.css`,
   ];
 
   return app.gulp.src(modules)

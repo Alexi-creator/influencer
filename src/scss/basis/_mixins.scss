@@ -9,3 +9,7 @@
     @content;
   }
 }
+
+@mixin spinner($period: 1s, $type: linear, $time: infinite) {
+  animation: spinner $period $type $time;
+}
