@@ -1195,6 +1195,13 @@
         "body": '@@include("./add-publication-selected.html")',
         "media": 'data-media="1200"',
       })
+
+      @@include("./popup.html", {
+        "extra-class": "add-publication__from-site image-from-site",
+        "id": "popup-from-site",
+        "title": "",
+        "body": 'from site',
+      })
     </div>
 
     <!-- Блок 2 шага (Наполнение) -->
@@ -1397,7 +1404,7 @@
 
     <!-- Блок с кнопками управления шагами (назад вперед, ...) -->
     <div class="add-publication__actions add-publication__actions--first-step">
-      <button class="add-publication__actions-site btn btn--text btn--color-grey active">Добавить товар с другого сайта</button>
+      <button class="add-publication__actions-site btn btn--text btn--color-grey active" data-popup="popup-from-site">Добавить товар с другого сайта</button>
       <button class="add-publication__actions-prev btn btn--color-primary-light">Назад</button>
       <button class="add-publication__actions-preview btn btn--outlined">
         <div class="add-publication__actions-preview-wrapper">
