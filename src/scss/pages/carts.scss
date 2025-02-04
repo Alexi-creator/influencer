@@ -8,11 +8,9 @@
 @import "../components/nav-pages";
 @import "../components/collapse";
 @import "../components/catalog";
-@import "../components/cart-list";
-@import "../components/cart-top.scss";
-@import "../components/cart-control.scss";
+
+@import "../components/cart.scss";
 @import "../components/cart-item.scss";
-@import "../components/cart-list.scss";
 
 .main {
   padding: 2.5rem 0 6.5rem;
@@ -39,5 +37,15 @@
 }
 
 .cart-list {
+  @extend %flex-column;
 
+  gap: 1.5rem;
+  
+  @include media($md) {
+    gap: 2rem;
+  }
+
+  @include media($full) {
+    gap: 2.5rem;
+  }
 }

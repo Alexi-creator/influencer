@@ -1,74 +1,71 @@
-<div class="cart-top">
-  <div class="cart-top__wrapper">
-      <div class="cart-top__header">
-        <div class="cart-top__header-title">
-          Корзина #@@number (СП)
-        </div>
-        <div class="cart-top__header-content">
-          @@if(isSP){
-            <div class="cart-top__header-inner">
-              <div class="cart-top__header-content-title">Совместная покупка</div> 
-              <div class="cart-top__header-content-feature">
-                <div class="cart-top__header-content-catch-phrase">@@catchPhrase</div> 
-                <div class="cart-top__header-content-feature-inner">
-                  <div class="cart-top__header-content-feature-purchases">
-                    <div>
-                      <span>Уже купили на:</span>
-                      <span class="number">@@sold-sum</span>
-                      <span> / </span>
-                      <span class="number">@@all-sum</span>
-                      <span class="currency"> ₽</span>
-                    </div>
-                    @@if(isActiveSP){
-                      <div class="progress progress--primary">
-                        <div class="progress__line" style="width:@@isActiveSP_%%"></div>
-                      </div>
-                    }
-                    @@if(isHappenedSP){
-                      <div class="progress progress--green">
-                        <div class="progress__line" style="width:100%"></div>
-                      </div>
-                    }
-                    @@if(isNotHappenedSP){
-                      <div class="progress progress--grey">
-                        <div class="progress__line" style="width:@@isInactiveSP_%%"></div>
-                      </div>
-                    }
+<div class="cart__top">
+  <div class="cart__top-inner">
+    <div class="cart__top-title">
+      Корзина #@@number (СП)
+    </div>
+    <div class="cart__top-content">
+      @@if(isSP){
+        <div class="cart__top-wrapper">
+          <div class="cart__top-content-title">Совместная покупка</div> 
+          <div class="cart__top-content-feature">
+            <div class="cart__top-content-catch-phrase">@@catchPhrase</div> 
+            <div class="cart__top-content-feature-inner">
+              <div class="cart__top-content-feature-purchases">
+                <div>
+                  <span>Уже купили на:</span>
+                  <span class="number">@@sold-sum</span>
+                  <span> / </span>
+                  <span class="number">@@all-sum</span>
+                  <span class="currency"> ₽</span>
+                </div>
+                @@if(isActiveSP){
+                  <div class="progress progress--primary">
+                    <div class="progress__line" style="width:@@isActiveSP_%%"></div>
                   </div>
-                  <div>
-                    @@if(isActiveSP){
-                      <div>Активна до:</div>
-                      <div class="cart-top__header-content-event">@@date @@time</div>
-                    }
-                    @@if(isHappenedSP){
-                      <div>Совм. Покупка:</div>
-                      <div class="cart-top__header-content-event" style="color: rgb(var(--color-green));">Состоялась</div>
-                    }
-                    @@if(isNotHappenedSP){
-                      <div>Совм. Покупка:</div>
-                      <div class="cart-top__header-content-event" style="color: rgb(var(--color-red));">Не состоялась</div>
-                    }
+                }
+                @@if(isHappenedSP){
+                  <div class="progress progress--green">
+                    <div class="progress__line" style="width:100%"></div>
                   </div>
-                </div>
-              </div>  
-            </div>
-          }
-          <div class="cart-top__header-inner">
-            <div class="cart-top__header-content-title">Магазин</div> 
-            <div class="cart-top__seller-inner">
-              <div class="cart-top__seller-inner-content">
-                <div class="cart-top__seller-img">
-                  <img src="img/shop-avatar.png">
-                </div>
-                <div class="cart-top__seller-name">
-                  Интернет магазин одежды и аксессуаров Lass
-                </div>
+                }
+                @@if(isNotHappenedSP){
+                  <div class="progress progress--grey">
+                    <div class="progress__line" style="width:@@isInactiveSP_%%"></div>
+                  </div>
+                }
               </div>
-                <button class="btn btn--color-primary-light btn--none cart-top__seller-btn">Подписаться</button>
+              <div>
+                @@if(isActiveSP){
+                  <div>Активна до:</div>
+                  <div class="cart__top-content-event">@@date @@time</div>
+                }
+                @@if(isHappenedSP){
+                  <div>Совм. Покупка:</div>
+                  <div class="cart__top-content-event" style="color: rgb(var(--color-green));">Состоялась</div>
+                }
+                @@if(isNotHappenedSP){
+                  <div>Совм. Покупка:</div>
+                  <div class="cart__top-content-event" style="color: rgb(var(--color-red));">Не состоялась</div>
+                }
+              </div>
+            </div>
+          </div>  
+        </div>
+      }
+      <div class="cart__top-wrapper">
+        <div class="cart__top-content-title">Магазин</div> 
+        <div class="cart__top-seller-inner">
+          <div class="cart__top-seller-inner-content">
+            <div class="cart__top-seller-img">
+              <img src="img/shop-avatar.png">
+            </div>
+            <div class="cart__top-seller-name">
+              Интернет магазин одежды и аксессуаров Lass
             </div>
           </div>
+            <button class="btn btn--color-primary-light btn--none cart__top-seller-btn">Подписаться</button>
         </div>
       </div>
+    </div>
   </div>
 </div>
-  

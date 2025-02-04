@@ -1,24 +1,24 @@
-<div class="cart-control">
+<div class="cart__control">
   @@if(isTopControl){
-    <div class="cart-control__top">
-      <div class="cart-control__top-type">@@type</div>
+    <div class="cart__control-top">
+      <div class="cart__control-top-type">@@type</div>
       @@if(isActiveChooseAll){
-        <div class="cart-control__top-choose-all">
+        <div class="cart__control-top-choose-all">
           @@include("../components/checkbox.html", {
             "name": "checkbox",
             "text": "Выбрать все",
             "mod": "checkbox--radius-medium",
-            "classes": "cart-control__top-choose-all-txt"
+            "classes": "cart__control__top-choose-all-txt"
           })
         </div>
       }
       @@if(isInActiveChooseAll){
-        <div class="cart-control__top-choose-all-inActive">
+        <div class="cart__control-top-choose-all-inActive">
           @@include("../components/checkbox.html", {
             "name": "checkbox",
             "text": "Выбрать все",
             "mod": "checkbox--disabled checkbox--radius-medium",
-            "classes": "cart-control__top-choose-all-txt",
+            "classes": "cart__control__top-choose-all-txt",
             "disabled": 'disabled'
           })
         </div>
@@ -26,50 +26,50 @@
     </div>
   }
   @@if(isBottomControl){
-    <div class="cart-control__bottom @@if(isLast){cart-control__bottom--is-last}">
-      <div class="cart-control__bottom-results">
-        <div class="cart-control__bottom-results-total">
+    <div class="cart__control-bottom @@if(isLast){cart__control-bottom--is-last}">
+      <div class="cart__control-bottom-results">
+        <div class="cart__control-bottom-results-total">
           Итого
         </div>
-        <div class="cart-control__bottom-results-group">
-          <div class="cart-control__bottom-results-group-position">
+        <div class="cart__control-bottom-results-group">
+          <div class="cart__control-bottom-results-group-position">
             @@position позиции
           </div>
-          <div class="cart-control__bottom-results-group-amount">
+          <div class="cart__control-bottom-results-group-amount">
             @@amount шт. товаров
           </div>
-          <div class="cart-control__bottom-results-group-sum">
-            <span class="cart-control__bottom-results-group-sum-oldSum number">@@oldSum</span>
-            <span class="cart-control__bottom-results-group-sum-newSum number">@@newSum</span>
-            <span class="cart-control__bottom-results-group-sum-newSum">₽</span>
+          <div class="cart__control-bottom-results-group-sum">
+            <span class="cart__control-bottom-results-group-sum-oldSum number">@@oldSum</span>
+            <span class="cart__control-bottom-results-group-sum-newSum number">@@newSum</span>
+            <span class="cart__control-bottom-results-group-sum-newSum">₽</span>
           </div>
         </div>
       </div>
-      <div class="cart-control__bottom-control">
+      <div class="cart__control-bottom-control">
         @@if(canCreateSP){
-          <div class="cart-control__bottom-control-up">
+          <div class="cart__control-bottom-control-up">
             <button class="btn btn--color-primary-light">Создать новую SP</button>
           </div>
         }
         @@if(canUpdateStore){
-          <div class="cart-control__bottom-control-up">
+          <div class="cart__control-bottom-control-up">
             <button class="btn btn--color-primary-light">Обновить скидку</button>
             <svg>
               <use xlink:href="./img/icons/icons.svg#info"></use>
             </svg>
           </div>
         }
-        <div class="cart-control__bottom-control-order">
-          <div class="cart-control__bottom-control-btn-del">
+        <div class="cart__control-bottom-control-order">
+          <div class="cart__control-bottom-control-btn-del">
             <button class="btn btn--text btn--color-grey">Удалить эту корзину</button>
           </div>
           @@if(isAvailable){
-            <div class="cart-control__bottom-control-btn-order">
+            <div class="cart__control-bottom-control-btn-order">
               <button class="btn">Оформить заказ</button>
             </div>
           }
           @@if(isDisable){
-            <div class="cart-control__bottom-control-btn-order">
+            <div class="cart__control-bottom-control-btn-order">
               <button class="btn" disabled>Оформить заказ</button>
             </div>
           }

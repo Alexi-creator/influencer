@@ -2,10 +2,9 @@
   $block: &;
 
   margin: 0.5rem 0;
-
   background-color: rgb(var(--color-primary-soft));
-  border-radius: var(--radius-small);
   border: 2px solid rgb(var(--color-primary-soft));
+  border-radius: var(--radius-small);
 
   &:hover {
     border-color: rgb(var(--color-black-light));
@@ -72,6 +71,7 @@
 
   &__product-card {
     @extend %flex-start;
+
     gap: 0.75rem;
     grid-row: 1 / 2;
     grid-column: 1 / 4;
@@ -90,7 +90,7 @@
   }
 
   &__product-card-pic {
-    img {
+    & img {
       max-width: 4.375rem;
       border-radius: var(--radius-medium);
       min-width: 4.375rem
@@ -99,6 +99,7 @@
 
   &__product-card-description {
     @extend %flex-column;
+
     gap: 0.75rem;
     max-width: 17.68rem;
   }
@@ -113,6 +114,7 @@
 
   &__control {
     @extend %flex-start;
+
     flex-direction: row-reverse;
     gap: 0.75rem;
     justify-content: left;
@@ -134,11 +136,9 @@
     }
   }
 
-
-
   &__discount-details {
-
     @extend %flex-start;
+
     grid-row: 3 / 3;
     grid-column: 1 / 4;
 
@@ -156,6 +156,7 @@
 
   &__control-amount {
     @extend %flex-start;
+
     gap: 0.25rem;
   }
 
@@ -180,9 +181,10 @@
 
   &__inner {
     @extend %flex-column;
+
     gap: 0.375rem;
-    margin-top: 0.875rem;
     position: relative;
+    margin-top: 0.875rem;
 
     @include media($md) {
       flex-flow: column;
@@ -209,6 +211,7 @@
 
   &__navigate {
     @extend %flex-column;
+
     flex-direction: column-reverse;
     gap: 1rem;
 
@@ -246,7 +249,6 @@
   }
 
   &__discount--store {
-
     grid-row: 4 / 4;
     grid-column: 1 / 1;
 
@@ -263,9 +265,9 @@
   }
 
   &__navigate-choose {
-    min-width: 12rem;
-
     @extend %flex-end;
+
+    min-width: 12rem;
 
     &--store {
       @media (max-width:$md) {
@@ -291,7 +293,7 @@
       grid-column: 9 / 9;
     }
 
-    span {
+    & span {
       @include media($md) {
         max-width: 6.125rem;
         text-align: left;
@@ -306,6 +308,7 @@
 
   &__discount-upper {
     @extend %flex-start;
+
     gap: 0.315rem;
 
     @include media($md) {
@@ -367,6 +370,14 @@
   }
 
   &__navigate-price {
+    @extend %flex-center;
+
+    grid-row: 3 / 3;
+    grid-column: 1 / 4;
+
+    margin-left: auto;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
 
     &--store {
       @media (max-width:$md) {
@@ -374,14 +385,6 @@
         grid-column: 2 / 4;
       }
     }
-
-    margin-left: auto;
-    font-weight: 600;
-    letter-spacing: 0.02rem;
-    @extend %flex-center;
-
-    grid-row: 3 / 3;
-    grid-column: 1 / 4;
 
     @include media($md) {
       grid-row: 3 / 3;
@@ -406,6 +409,7 @@
 
   &__discount-store {
     @extend %flex-column;
+
     font-size: 0.875rem;
   }
 }
