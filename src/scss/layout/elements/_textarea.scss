@@ -1,5 +1,5 @@
 .textarea {
-  $root: &;
+  $block: &;
 
   border: 2px solid rgb(var(--color-primary-light));
   border-radius: var(--radius-medium);

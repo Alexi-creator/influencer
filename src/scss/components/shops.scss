@@ -1,5 +1,5 @@
 .shops {
-  $root: &;
+  $block: &;
 
   &__preview {
     background-color: rgb(var(--color-primary-soft));

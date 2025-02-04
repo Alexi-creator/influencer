@@ -1,7 +1,11 @@
+import '../common'
+
 import { NumberFormatter } from '../utils/numberFormatter'
 
-try {
-  new NumberFormatter()
-} catch (error) {
-  console.log(error)
-}
+window.addEventListener('load', () => {
+  try {
+    new NumberFormatter()
+  } catch (error) {
+    console.log(error)
+  }
+})

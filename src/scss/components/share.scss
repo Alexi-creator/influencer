@@ -1,5 +1,5 @@
 .share {
-  $root: &;
+  $block: &;
 
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@
   }
 
   &--open {
-    & #{$root}__block {
+    & #{$block}__block {
       height: auto;
 
       @include media($lg) {
@@ -83,7 +83,7 @@
       }
     }
 
-    #{$root}__open {
+    #{$block}__open {
       @include media($lg) {
         display: none;
       }
@@ -96,7 +96,7 @@
 
   &--close {
 
-    & #{$root}__block {
+    & #{$block}__block {
 
       @include media($md) {
         animation: slide-out 0.4s forwards;
@@ -107,7 +107,7 @@
       }
     }
 
-    & #{$root}__list {
+    & #{$block}__list {
       width: 0;
     }
 

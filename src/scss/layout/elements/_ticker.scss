@@ -1,5 +1,5 @@
 .ticker {
-  $root: &;
+  $block: &;
 
   overflow: hidden;
   cursor: pointer;
@@ -12,7 +12,7 @@
   }
 
   &.active {
-    #{$root}__text {
+    #{$block}__text {
       animation: ticker 2.5s linear;
     }
   }

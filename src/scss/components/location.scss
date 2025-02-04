@@ -1,5 +1,5 @@
 .location {
-  $root: &;
+  $block: &;
 
   &__inner {
     display: flex;
@@ -104,7 +104,7 @@
       }
     }
 
-    #{$root}--setup & {
+    #{$block}--setup & {
       margin-top: 0.25rem;
 
       @include media($md) {
@@ -116,7 +116,7 @@
   &__descr {
     color: rgb(var(--color-grey));
 
-    #{$root}--setup & {
+    #{$block}--setup & {
       @include media($md) {
         margin-top: -0.25rem;
       }
@@ -133,10 +133,10 @@
   }
 
   &--setup {
-    #{$root}__setup {
+    #{$block}__setup {
       display: flex;
     }
-    #{$root}__not-setup {
+    #{$block}__not-setup {
       display: none;
     }
   }

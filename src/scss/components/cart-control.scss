@@ -1,5 +1,5 @@
 .cart-control {
-  $root: &;
+  $block: &;
 
   &__top {
     @extend %flex-space-between;

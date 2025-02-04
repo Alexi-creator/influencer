@@ -1,46 +1,46 @@
 .map {
-  $root: &;
+  $block: &;
 
   height: 100%;
 
   &--courier {
-    #{$root}__address-descr-pickup {
+    #{$block}__address-descr-pickup {
       display: none;
     }
-    #{$root}__address-descr-courier {
+    #{$block}__address-descr-courier {
       display: block;
     }
-    #{$root}__autocomplete--pickup {
+    #{$block}__autocomplete--pickup {
       display: none;
     }
-    #{$root}__autocomplete--courier {
+    #{$block}__autocomplete--courier {
       display: block;
     }
-    #{$root}__btn--pickup {
+    #{$block}__btn--pickup {
       display: none;
     }
-    #{$root}__btn--courier {
+    #{$block}__btn--courier {
       display: block;
     }
   }
 
   &--pickup {
-    #{$root}__address-descr-pickup {
+    #{$block}__address-descr-pickup {
       display: block;
     }
-    #{$root}__address-descr-courier {
+    #{$block}__address-descr-courier {
       display: none;
     }
-    #{$root}__autocomplete--pickup {
+    #{$block}__autocomplete--pickup {
       display: block;
     }
-    #{$root}__autocomplete--courier {
+    #{$block}__autocomplete--courier {
       display: none;
     }
-    #{$root}__btn--pickup {
+    #{$block}__btn--pickup {
       display: block;
     }
-    #{$root}__btn--courier {
+    #{$block}__btn--courier {
       display: none;
     }
   }

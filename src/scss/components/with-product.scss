@@ -1,5 +1,5 @@
 .with-product {
-  $root: &;
+  $block: &;
 
   &__inner {
     display: grid;

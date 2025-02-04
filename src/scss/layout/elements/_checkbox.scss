@@ -1,5 +1,5 @@
 .checkbox {
-	$root: &;
+	$block: &;
 
 	@extend %inline-flex-center;
 
@@ -15,12 +15,12 @@
 	& input {
 		display: none;
 
-		&:checked+#{$root}__checkmark {
+		&:checked+#{$block}__checkmark {
 			& svg {
 				opacity: 1;
 			}
 
-			&+#{$root}__label {
+			&+#{$block}__label {
 				color: rgb(var(--color-primary));
 			}
 		}
@@ -49,13 +49,13 @@
 			}
 		}
 
-		#{$root}__checkmark {
+		#{$block}__checkmark {
 			display: none;
 		}
 
 		& input {
-			&:checked+#{$root}__checkmark {
-				&+#{$root}__label {
+			&:checked+#{$block}__checkmark {
+				&+#{$block}__label {
 					color: rgb(var(--color-black));
 					background-color: rgb(var(--color-primary-tag-checked));
 					border: 2px solid rgb(var(--color-primary));
@@ -65,18 +65,18 @@
 	}
 
 	&--radius-medium {
-		#{$root}__checkmark {
+		#{$block}__checkmark {
 			border-radius: var(--radius-medium);
 		}
 	}
 
 	&--disabled {
-		#{$root}__checkmark {
+		#{$block}__checkmark {
 			border: 2px solid rgb(var(--color-grey-dark));
 		}
 
 		& input:disabled {
-			&:disabled+#{$root}__checkmark {
+			&:disabled+#{$block}__checkmark {
 				cursor: not-allowed;
 			}
 		}

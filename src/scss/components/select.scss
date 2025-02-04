@@ -1,5 +1,5 @@
 .select {
-  $root: &;
+  $block: &;
 
   position: relative;
   width: 100%;
@@ -15,7 +15,7 @@
   &--border-grey {
     border-color: rgb(var(--color-grey-light));
 
-    #{$root}__options {
+    #{$block}__options {
       border-color: rgb(var(--color-grey-light));
     }
   }
@@ -59,14 +59,14 @@
     border-radius: var(--radius-medium);
     z-index: var(--z-popup);
 
-    #{$root}.active & {
+    #{$block}.active & {
       display: block;
       // display: flex;
       // flex-direction: column;
       // gap: 0.25rem;
     }
 
-    // #{$root}--transparent & {
+    // #{$block}--transparent & {
     //   border: none;
     // }
 

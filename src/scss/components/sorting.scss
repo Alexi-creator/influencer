@@ -1,5 +1,5 @@
 .sorting {
-  $root: &;
+  $block: &;
 
   display: none;
 
@@ -17,7 +17,7 @@
     z-index: var(--z-top);
     overflow-y: auto;
 
-    #{$root}__btn {
+    #{$block}__btn {
       & .radio__custom, &-text, &-icon {
         display: block;
       }
@@ -79,7 +79,7 @@
     font-size: 1.375rem;
     font-weight: 600;
 
-    #{$root}__cross {
+    #{$block}__cross {
       cursor: pointer;
       fill: rgb(var(--color-grey))
     }

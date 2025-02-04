@@ -1,5 +1,5 @@
 .product {
-  $root: &;
+  $block: &;
 
   &__wrapper {
     display: grid;
@@ -521,7 +521,7 @@
       flex: 1 1 auto;
     }
 
-    & #{$root}__short-description-sales {
+    & #{$block}__short-description-sales {
       &-buy {
         order: 100;
         flex: none;

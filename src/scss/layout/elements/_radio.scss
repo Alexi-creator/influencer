@@ -1,5 +1,5 @@
 .radio {
-  $root: &;
+  $block: &;
 
   cursor: pointer;
   transition: var(--transition-base);
@@ -56,11 +56,11 @@
   }
 
   &--btn {
-    &#{$root} {
+    &#{$block} {
       justify-content: center;
     }
 
-    #{$root}__custom {
+    #{$block}__custom {
       display: none;
     }
   }
@@ -74,7 +74,7 @@
   }
 
   &--reverse {
-    & #{$root}__content {
+    & #{$block}__content {
       flex-direction: row;
     }
   }

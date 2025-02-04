@@ -38,4 +38,38 @@
 @import "../components/product-card";
 @import "../components/rating";
 
+.section {
+  $block: &;
 
+  &--user-info {
+    #{$block}__inner {
+      max-width: var(--max-width-container-user-1066);
+    }
+
+    padding-top: 1.25rem;
+
+    @include media($md) {
+      padding-top: 1rem;
+    }
+
+    @include media($lg) {
+      padding-top: 2.5rem;
+    }
+
+    @include media($full) {
+      padding-top: 0rem;
+    }
+  }
+
+  &--user-board {
+    margin-top: 2.5rem;
+
+    @include media($md) {
+      margin-top: 4rem;
+    }
+
+    @include media($lg) {
+      margin-top: 5rem;
+    }
+  }
+}

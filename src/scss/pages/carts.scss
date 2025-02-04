@@ -13,3 +13,31 @@
 @import "../components/cart-control.scss";
 @import "../components/cart-item.scss";
 @import "../components/cart-list.scss";
+
+.main {
+  padding: 2.5rem 0 6.5rem;
+
+  @include media($md) {
+    padding: 2.5rem 0 8rem;
+  }
+
+  @include media($lg) {
+    padding: 4rem 0 5rem;
+  }
+
+  @include media($full) {
+    padding: 5rem 0 7.5rem;
+  }
+}
+
+.section {
+  $block: &;
+
+  &__inner {
+    max-width: var(--max-width-container-1120);
+  }
+}
+
+.cart-list {
+
+}

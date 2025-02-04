@@ -1,17 +1,17 @@
 .autocomplete {
-  $root: &;
+  $block: &;
 
   position: relative;
   background-color: rgb(var(--color-white));
 
   &.active {
-    #{$root}__input {
+    #{$block}__input {
       border-bottom: 0;
       border-radius: var(--radius-medium) var(--radius-medium) 0 0;
       border-color: rgb(var(--color-primary));
     }
 
-    #{$root}__body {
+    #{$block}__body {
       display: block;
       border: 2px solid rgb(var(--color-primary));
       border-top: 0;
@@ -24,7 +24,7 @@
   }
 
   &.load {
-    #{$root}__load {
+    #{$block}__load {
       display: block;
       position: relative;
       animation: spinner 1s linear infinite;
@@ -98,7 +98,7 @@
   }
 
   &--img {
-    #{$root}__options-item {
+    #{$block}__options-item {
       display: grid;
       grid-template-columns: 2rem 2fr;
       grid-template-rows: auto auto;

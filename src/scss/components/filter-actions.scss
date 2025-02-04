@@ -1,5 +1,5 @@
 .filter-actions {
-  $root: &;
+  $block: &;
 
   display: none;
   gap: 0.5rem;
@@ -12,7 +12,7 @@
   &.active {
     @extend %flex-end;
 
-    &#{$root}--sp {
+    &#{$block}--sp {
       justify-content: flex-start;
     }
   }
@@ -33,36 +33,36 @@
 
     width: max-content;
 
-    #{$root}__density {
+    #{$block}__density {
       margin-left: none;
     }
 
     @include media($md) {
-      #{$root}__text {
+      #{$block}__text {
         display: none;
       }
 
-      #{$root}__sorts {
+      #{$block}__sorts {
         &.active.btn {
-          #{$root}__icon--common {
+          #{$block}__icon--common {
             display: block;
           }
 
-          #{$root}__icon--cross {
+          #{$block}__icon--cross {
             display: none;
           }
         }
       }
 
-      #{&root}__filters, #{$root}__categories {
+      #{&root}__filters, #{$block}__categories {
         &.hide-icon.btn, &.active.btn {
-          #{$root}__icon--common {
+          #{$block}__icon--common {
             @include media($md) {
               display: block;
             }
           }
 
-          #{$root}__icon--cross {
+          #{$block}__icon--cross {
             @include media($md) {
               display: none;
             }
@@ -70,7 +70,7 @@
         }
 
         &.hide-icon.btn {
-          #{$root}__filters-count {
+          #{$block}__filters-count {
             display: block;
           }
         }
@@ -84,7 +84,7 @@
     @include media($full) {
       margin-top: 0;
 
-      #{$root}__text {
+      #{$block}__text {
         display: block;
       }
     }
@@ -111,7 +111,7 @@
   }
 
   &__filters, &__categories, &__sorts {
-    & #{$root}__icon--cross {
+    & #{$block}__icon--cross {
       display: none;
       fill: rgb(var(--color-black));
     }
@@ -120,11 +120,11 @@
       border-color: transparent;
       background-color: rgb(var(--color-primary-pale));
 
-      #{$root}__icon--cross {
+      #{$block}__icon--cross {
         display: block;
       }
 
-      #{$root}__icon--common {
+      #{$block}__icon--common {
         display: none;
       }
     }
@@ -136,13 +136,13 @@
     }
 
     &.btn--tag:not(.active) {
-      #{$root}__filters-count {
+      #{$block}__filters-count {
         display: block;
       }
     }
       
     &.hide-icon.btn {
-      #{$root}__icon--common {
+      #{$block}__icon--common {
         @include media($md) {
           display: none;
         }
@@ -150,7 +150,7 @@
     }
 
     &.hide-count.btn {
-      #{$root}__filters-count {
+      #{$block}__filters-count {
         display: none;
       }
     }
@@ -173,11 +173,11 @@
       }
     }
 
-    &--tile#{$root}__density {
-      & #{$root}__density-tile {
+    &--tile#{$block}__density {
+      & #{$block}__density-tile {
         display: none;
       }
-      & #{$root}__density-grid {
+      & #{$block}__density-grid {
         display: block;
       }
       &.btn {

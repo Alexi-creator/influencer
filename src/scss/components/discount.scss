@@ -1,5 +1,5 @@
 .discount {
-  $root: &;
+  $block: &;
 
   &__wrapper {
     @extend %flex-column;
