@@ -459,6 +459,13 @@
     }
 
     &-increment,
+    &-decrement {
+      & svg {
+        color: rgb(var(--color-primary));
+      }
+    }
+
+    &-increment,
     &-decrement,
     &-actions {
       width: 3rem;

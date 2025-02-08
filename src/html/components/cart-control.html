@@ -26,7 +26,7 @@
     </div>
   }
   @@if(isBottomControl){
-    <div class="cart__control-bottom @@if(isLast){cart__control-bottom--is-last}">
+    <div class="cart__control-bottom">
       <div class="cart__control-bottom-results">
         <div class="cart__control-bottom-results-total">
           Итого
@@ -61,7 +61,7 @@
         }
         <div class="cart__control-bottom-control-order">
           <div class="cart__control-bottom-control-btn-del">
-            <button class="btn btn--text btn--color-grey">Удалить эту корзину</button>
+            <button class="btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
           </div>
           @@if(isAvailable){
             <div class="cart__control-bottom-control-btn-order">

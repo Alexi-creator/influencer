@@ -1,98 +1,104 @@
-<div class="cart-item @@if(disabled){cart-item--disabled} @@if(disabledPicked){cart-item--disabled-picked}">
+<div class="cart-item @@if(disabled){cart-item--disabled}">
   <div class="cart-item__wrapper">
-    <div class="cart-item__inner-product-card">
-      <div class="cart-item__product-card">
-        <div class="cart-item__product-card-pic">
-          @@cart-card-pic
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        @@cart-card-pic
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          @@cart-card-brand
         </div>
-        <div class="cart-item__product-card-description">
-          <div class="cart-item__product-card-decription-title">
-            @@cart-card-brand
-          </div>
-          <div class="cart-item__product-card-description-txt">
-            @@cart-card-brand-description
-          </div>
+        <div class="cart-item__product-card-description-txt">
+          @@cart-card-brand-description
         </div>
       </div>
-      <div class="cart-item__control">
-        <div class="cart-item__control-size @@if(disabledSize){cart-item--disabled-size}">
-          @@sizes
-        </div>
-        <div class="cart-item__control-amount">
-          @@if(disabled){
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size @@if(disabledSize){cart-item--disabled-size}">
+        @@sizes
+      </div>
+      <div class="cart-item__control-amount">
+        @@if(disabled){
+          <button>
             <svg>
-              <use xlink:href="./img/icons/icons.svg#minus_disabled"></use>
-            </svg>            
-            <input disabled class="cart-item__control-amount-input cart-item__control-items-disabled" name="control-items" type="text" value="@@amounts">
+              <use xlink:href="./img/icons/icons.svg#minus"></use>
+            </svg>  
+          </button>
+          <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="@@amounts">
+          <button>
             <svg>
-              <use xlink:href="./img/icons/icons.svg#plus_disabled"></use>
-            </svg>            
+              <use xlink:href="./img/icons/icons.svg#plus"></use>
+            </svg>   
+          </button>
+        }
+        @@if(enabledControl){
+          <button>
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#minus"></use>
+            </svg>   
+          </button>
+          <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="@@amounts">
+          <button>
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#plus"></use>
+            </svg> 
+          </button>
+        }   
+      </div>
+    </div>
+    <div class="cart-item__discount @@if(SP){cart-item__discount--sp} @@if(store){cart-item__discount--store}">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          @@if(store){
+            <span class="cart-item__discount-upper-title-store--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-store--mobile">Скидка:</span>
           }
-          @@if(enabledControl){
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#minus_black"></use>
-            </svg>            
-            <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="@@amounts">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#plus_black"></use>
-            </svg>         
-          }   
+          
+          @@if(SP){
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          }
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
         </div>
       </div>
-      <div class="cart-item__discount @@if(SP){cart-item__discount--sp} @@if(store){cart-item__discount--store}">
-        <div class="cart-item__discount-upper">
-          <div class="cart-item__discount-upper-title">
-            @@if(store){
-              <span class="cart-item__discount-upper-title-store--md" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
-              <span class="cart-item__discount-upper-title-store--mobile" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка:</span>
-            }
-            
-            @@if(SP){
-              <span class="cart-item__discount-upper-title-sp--mobile" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка:</span>
-              <span class="cart-item__discount-upper-title-sp--md" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Ваша скидка:</span>
-              <span class="cart-item__discount-upper-title-sp--lg" @@if(disabled){style="color: rgb(var(--color-grey-dark));border:unset"}>Скидка в СП:</span>
-            }
-          </div>
-          <div class="cart-item__discount-upper-size">
-              <div class="badge badge--discount-cart" @@if(disabled){style="background-color: rgb(var(--color-grey-dark));border:unset"}>
-                -23%
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="cart-item__navigate-choose @@if(store){cart-item__navigate-choose--store}">
-        @@if(availableChoose){
-          @@include("../components/checkbox.html", {
-            "name": "checkbox",
-            "text": "Выбрать",
-            "mod": "checkbox--radius-medium",
-            "classes": "cart-control__top-choose-all-txt"
-          })
-        }
-        @@if(unavailable){
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#info_red"></use>
-          </svg> 
-          <span style="color: rgb(var(--color-red));">Товар недоступен</span>
-        }
-      </div>
-      <div class="cart-item__navigate-price @@if(store){cart-item__navigate-price--store}">
-        <span class="cart-item__navigate-price-old-sum number">@@oldSum</span>
-        <span class="cart-item__navigate-price-new-sum number">@@newSum</span>
-        <span class="cart-item__navigate-price-new-sum">₽</span>
-      </div>
-      <div class="cart-item__delete @@if(store){cart-item__delete--store}">
-        <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
-      </div>
-      @@if(store){
-        <div class="cart-item__discount-details">
-          <div class="cart-item__discount-store">
-            <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>1 шт. @@1pieceDiscount</span>
-            <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>2-3 шт. @@3piecesDiscount</span>
-            <span @@if(disabled){style="color: rgb(var(--color-grey-dark));"}>4 шт. и более@@4piecesDiscount</span>
-          </div>
-        </div>
+    </div>
+    <div class="cart-item__navigate-choose @@if(store){cart-item__navigate-choose--store}">
+      @@if(availableChoose){
+        @@include("../components/checkbox.html", {
+          "name": "checkbox",
+          "text": "Выбрать",
+          "mod": "checkbox--radius-medium",
+          "classes": "cart-control__top-choose-all-txt"
+        })
+      }
+      @@if(unavailable){
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg> 
+        <span>Товар недоступен</span>
       }
     </div>
+    <div class="cart-item__navigate-price @@if(store){cart-item__navigate-price--store}">
+      <span class="cart-item__navigate-price-old-sum number">@@oldSum</span>
+      <span class="cart-item__navigate-price-new-sum number">@@newSum</span>
+      <span class="cart-item__navigate-price-new-sum">₽</span>
+    </div>
+    <div class="cart-item__delete @@if(store){cart-item__delete--store}">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    @@if(store){
+      <div class="cart-item__discount-details">
+        <div class="cart-item__discount-store">
+          <span>1 шт. @@1pieceDiscount</span>
+          <span>2-3 шт. @@3piecesDiscount</span>
+          <span>4 шт. и более@@4piecesDiscount</span>
+        </div>
+      </div>
+    }
   </div>
 </div>
