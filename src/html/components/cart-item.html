@@ -1,4 +1,8 @@
-<div class="cart-item @@if(disabled){cart-item--disabled}">
+<div class="cart-item @@if(disabled){cart-item--disabled}"
+  data-id="@@id"
+  data-old-price="@@oldSum"
+  data-new-price="@@newSum"
+>
   <div class="cart-item__wrapper">
     <div class="cart-item__product-card">
       <div class="cart-item__product-card-pic">
@@ -18,32 +22,17 @@
         @@sizes
       </div>
       <div class="cart-item__control-amount">
-        @@if(disabled){
-          <button>
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#minus"></use>
-            </svg>  
-          </button>
-          <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="@@amounts">
-          <button>
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#plus"></use>
-            </svg>   
-          </button>
-        }
-        @@if(enabledControl){
-          <button>
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#minus"></use>
-            </svg>   
-          </button>
-          <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="@@amounts">
-          <button>
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#plus"></use>
-            </svg> 
-          </button>
-        }   
+        <button @@if(disabled){disabled} class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="@@amounts">
+        <button @@if(disabled){disabled} class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
       </div>
     </div>
     <div class="cart-item__discount @@if(SP){cart-item__discount--sp} @@if(store){cart-item__discount--store}">
@@ -84,9 +73,12 @@
       }
     </div>
     <div class="cart-item__navigate-price @@if(store){cart-item__navigate-price--store}">
-      <span class="cart-item__navigate-price-old-sum number">@@oldSum</span>
-      <span class="cart-item__navigate-price-new-sum number">@@newSum</span>
-      <span class="cart-item__navigate-price-new-sum">₽</span>
+      <span class="cart-item__navigate-price-old-sum">
+        @@totalOldSum ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        @@totalNewSum ₽
+      </span>
     </div>
     <div class="cart-item__delete @@if(store){cart-item__delete--store}">
       <button class="btn btn--text btn--color-grey btn--none">Удалить</button>

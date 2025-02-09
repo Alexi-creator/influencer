@@ -5,7 +5,7 @@
       @@if(isActiveChooseAll){
         <div class="cart__control-top-choose-all">
           @@include("../components/checkbox.html", {
-            "name": "checkbox",
+            "name": "allCheckbox",
             "text": "Выбрать все",
             "mod": "checkbox--radius-medium",
             "classes": "cart__control__top-choose-all-txt"
@@ -36,12 +36,11 @@
             @@position позиции
           </div>
           <div class="cart__control-bottom-results-group-amount">
-            @@amount шт. товаров
+            <span class="cart__control-bottom-results-group-amount-number">@@amount</span> шт. товаров
           </div>
           <div class="cart__control-bottom-results-group-sum">
-            <span class="cart__control-bottom-results-group-sum-oldSum number">@@oldSum</span>
-            <span class="cart__control-bottom-results-group-sum-newSum number">@@newSum</span>
-            <span class="cart__control-bottom-results-group-sum-newSum">₽</span>
+            <span class="cart__control-bottom-results-group-sum-old">0 ₽</span>
+            <span class="cart__control-bottom-results-group-sum-new">0 ₽</span>
           </div>
         </div>
       </div>
@@ -60,19 +59,8 @@
           </div>
         }
         <div class="cart__control-bottom-control-order">
-          <div class="cart__control-bottom-control-btn-del">
-            <button class="btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
-          </div>
-          @@if(isAvailable){
-            <div class="cart__control-bottom-control-btn-order">
-              <button class="btn">Оформить заказ</button>
-            </div>
-          }
-          @@if(isDisable){
-            <div class="cart__control-bottom-control-btn-order">
-              <button class="btn" disabled>Оформить заказ</button>
-            </div>
-          }
+          <button class="cart__control-bottom-control-btn-del btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
+          <button class="cart__control-bottom-control-btn-order btn" disabled>Оформить заказ</button>
         </div>
       </div>
     </div>

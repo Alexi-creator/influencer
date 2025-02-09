@@ -223,7 +223,7 @@
       letter-spacing: 0.02rem;
     }
   
-    &-bottom-results-group-sum-oldSum {
+    &-bottom-results-group-sum-old {
       display: none;
       margin-right: 0.625rem;
       text-decoration: line-through;
@@ -234,7 +234,7 @@
       }
     }
   
-    &-bottom-results-group-sum-newSum {
+    &-bottom-results-group-sum-new {
       @include media($md) {
         color: rgb(var(--color-primary));
       }
