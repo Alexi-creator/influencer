@@ -1,12 +1,12 @@
 .collapse {
-  $root: &;
+  $block: &;
 
   padding: 1rem 1.25rem;
   background-color: rgb(var(--color-white));
   border-radius: var(--radius-small);
 
   &--close {
-    & > #{$root}__content {
+    & > #{$block}__content {
       margin-top: 0;
       max-height: 0;
       animation: hide 0.2s backwards;
@@ -14,7 +14,7 @@
   }
 
   &--open {
-    & > #{$root}__content {
+    & > #{$block}__content {
       max-height: none;
       margin-top: 1.25rem;
       animation: show 0.2s forwards;
@@ -43,7 +43,7 @@
     cursor: pointer;
 
     &:hover {
-      & #{$root}__head-icon use {
+      & #{$block}__head-icon use {
         fill: rgb(var(--color-black));
       }
     }

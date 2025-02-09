@@ -1,5 +1,5 @@
 .badge {
-  $root: &;
+  $block: &;
 
   display: inline-flex;
   align-items: center;
@@ -14,7 +14,7 @@
   font-size: 1.125rem;
   line-height: 1.125rem;
 
-  &#{$root}--round {
+  &#{$block}--round {
     height: 1.75rem;
     padding: 0 0.75rem;
     font-size: 0.875rem;
@@ -28,11 +28,11 @@
     }
   }
 
-  &#{$root}--without-border {
+  &#{$block}--without-border {
     border-color: transparent;
   }
 
-  &#{$root}--font-commissioner {
+  &#{$block}--font-commissioner {
     font-size: 1.125rem;
     font-family: Commissioner;
     font-weight: 600;
@@ -42,38 +42,38 @@
     }
   }
 
-  &#{$root}--color-primary-light {
+  &#{$block}--color-primary-light {
     background-color: rgb(var(--color-primary-pale));
     color: rgb(var(--color-primary));
   }
 
-  &#{$root}--color-white {
+  &#{$block}--color-white {
     background-color: rgb(var(--color-white));
     color: rgb(var(--color-primary));
   }
 
-  &#{$root}--color-green {
+  &#{$block}--color-green {
     background-color: rgba(var(--color-green), 0.04);
     color: rgb(var(--color-green));
   }
 
-  &#{$root}--color-white-green {
+  &#{$block}--color-white-green {
     background-color: rgb(var(--color-white));
     color: rgba(var(--color-green), 1);
   }
 
-  &#{$root}--big {
+  &#{$block}--big {
     padding: 0 1.25rem;
     height: 3rem;
   }
 
-  &#{$root}--small {
+  &#{$block}--small {
     padding: 0 0.25rem;
     height: 1.25rem;
     font-size: 1rem;
     line-height: 1rem;
 
-    #{$root}__sub {
+    #{$block}__sub {
       font-size: 0.625rem;
       line-height: 0.875rem;
       transform: translateY(10%);
@@ -107,11 +107,19 @@
     font-size: 1.5rem;
   }
 
-  &#{$root}--discount {
+  &#{$block}--discount {
     font-size: 1.25rem;
     line-height: 1.25rem;
     height: 2.125rem;
     min-width: 3.6rem;
     padding: 0 0.375rem;
+  }
+
+  &#{$block}--discount-cart {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    height: 2.125rem;
+    padding: 0.56rem 0.375rem 0.315rem 0.375rem;
   }
 }

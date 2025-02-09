@@ -1,5 +1,5 @@
 .popup {
-  $root: &;
+  $block: &;
 
   &__overlay {
     @extend %flex-center;
@@ -20,7 +20,7 @@
   &--onlymobile {
     @include media($lg) {
 
-      // & #{$root}__overlay {
+      // & #{$block}__overlay {
       //   position: relative;
       //   height: 0;
       //   padding: 0;
@@ -30,20 +30,20 @@
       //   transform: scale(1);
       // }
 
-      & #{$root}__content {
+      & #{$block}__content {
         padding: 0;
       }
     }
   }
 
   &--open {
-    & #{$root}__overlay {
+    & #{$block}__overlay {
       transform: scale(1);
     }
   }
 
   &--no-overlay {
-    #{$root}__overlay {
+    #{$block}__overlay {
       display: block;
       padding: 0;
       backdrop-filter: unset;
@@ -55,7 +55,7 @@
       }
     }
 
-    #{$root}__content {
+    #{$block}__content {
       max-width: 100%;
       height: 100%;
     }

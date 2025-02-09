@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
   @@include("../layout/head.html", {
     "title": "Ui Kit",
     "nameFile": "ui-kit",
@@ -610,6 +610,13 @@
       <div class="ui-kit__block ui-kit__scroll">
         <button class="btn scroll">Скролл до верха</button>
         <button class="btn scroll" data-target="ui-kit__radio">Скролл до назначенного элемента</button>
+      </div>
+
+      <h2>Tooltip:</h2>
+      <div class="ui-kit__block">
+        <svg style="color: red" data-tooltip="Тултип Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eius obcaecati at laboriosam veniam impedit laudantium velit atque nemo ducimus sint inventore, dolore qui hic doloremque voluptatum perferendis labore quasi!">
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg>
       </div>
 
     </main>

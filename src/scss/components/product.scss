@@ -1,5 +1,5 @@
 .product {
-  $root: &;
+  $block: &;
 
   &__wrapper {
     display: grid;
@@ -418,7 +418,8 @@
       gap: 0.75rem;
     }
 
-    &-add, &-cart {
+    &-add,
+    &-cart {
       &.hide {
         display: none;
       }
@@ -457,7 +458,16 @@
       line-height: 0.875rem;
     }
 
-    &-increment, &-decrement, &-actions {
+    &-increment,
+    &-decrement {
+      & svg {
+        color: rgb(var(--color-primary));
+      }
+    }
+
+    &-increment,
+    &-decrement,
+    &-actions {
       width: 3rem;
       padding: 0;
       align-items: center;
@@ -514,11 +524,11 @@
       gap: 0.75rem;
     }
 
-    & > * {
+    &>* {
       flex: 1 1 auto;
     }
 
-    & #{$root}__short-description-sales {
+    & #{$block}__short-description-sales {
       &-buy {
         order: 100;
         flex: none;
@@ -527,7 +537,7 @@
           order: unset;
         }
       }
-      
+
       &-action {
         @include media($md) {
           order: 100;
@@ -536,7 +546,7 @@
     }
 
     &.active {
-      & > * {
+      &>* {
         flex: none;
       }
     }
@@ -760,6 +770,12 @@
     }
   }
 
+  &__delivery-btn,
+  &__seller-btn {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
   &__delivery-point-city {
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -838,7 +854,8 @@
     }
   }
 
-  &__viseable--one, &__viseable--more {
+  &__viseable--one,
+  &__viseable--more {
     &.hide {
       display: none;
     }

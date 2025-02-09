@@ -1,5 +1,5 @@
 .product-card {
-  $root: &;
+  $block: &;
 
   position: relative;
   display: flex;
@@ -16,12 +16,12 @@
       padding: 0;
       border: 2px solid rgb(var(--color-primary-light));
   
-      #{$root}__sizes, #{$root}__likes {
+      #{$block}__sizes, #{$block}__likes {
         display: inline-flex;
         align-items: center;
       }
   
-      #{$root}__img {
+      #{$block}__img {
         &-first {
           display: none;
         }
@@ -32,7 +32,7 @@
         }
       }
   
-      #{$root}__descr {
+      #{$block}__descr {
         position: absolute;
         height: auto;
         bottom: 0;
@@ -41,29 +41,29 @@
         background-color: rgb(var(--color-primary-soft));
       }
 
-      &#{$root}--status-promotion-over, &#{$root}--status-consideration-applications {
-        #{$root}__descr {
+      &#{$block}--status-promotion-over, &#{$block}--status-consideration-applications {
+        #{$block}__descr {
           background-color: rgb(var(--color-grey-pale));
         }
       }
 
-      &#{$root}--status-consideration-applications {
-        #{$root}__date {
+      &#{$block}--status-consideration-applications {
+        #{$block}__date {
           display: block;
         }
       }
 
-      &#{$root}--application-approved #{$root}__descr {
+      &#{$block}--application-approved #{$block}__descr {
         background-color: rgb(var(--color-green-light));
       }
 
-      &#{$root}--application-rejected #{$root}__descr {
+      &#{$block}--application-rejected #{$block}__descr {
         background-color: rgb(var(--color-grey-pale));
       }
     }
 
     @include media($full) {
-      #{$root}__info {
+      #{$block}__info {
         top: -3.1rem;
       }
     }
@@ -81,7 +81,7 @@
       grid-template-columns: 8.3rem 1fr;
     }
 
-    #{$root}__img {
+    #{$block}__img {
       &-wrapper {
         @include media($md) {
           display: grid;
@@ -112,16 +112,16 @@
       }
     }
 
-    #{$root}__title {
+    #{$block}__title {
       -webkit-line-clamp: unset;
     }
 
-    #{$root}__sizes, #{$root}__likes {
+    #{$block}__sizes, #{$block}__likes {
       display: inline-flex;
       align-items: center;
     }
 
-    #{$root}__price {
+    #{$block}__price {
       @include media($md) {
         justify-content: flex-start;
       }
@@ -130,11 +130,11 @@
       }
     }
 
-    #{$root}__descr {
+    #{$block}__descr {
       position: static;
     }
 
-    #{$root}__info {
+    #{$block}__info {
       max-width: 7rem;
       bottom: 0.5rem;
       top: unset;
@@ -144,7 +144,7 @@
       }
     }
 
-    #{$root}__application-status {
+    #{$block}__application-status {
       top: 0.5rem;
       left: 1rem;
       margin: 0;
@@ -153,7 +153,7 @@
   }
 
   &--tff {
-    #{$root}__date {
+    #{$block}__date {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
@@ -174,11 +174,11 @@
       }
     }
 
-    #{$root}__descr {
+    #{$block}__descr {
       min-height: 10rem;
     }
 
-    #{$root}__price {
+    #{$block}__price {
       &-current {
         display: none;
 
@@ -188,7 +188,7 @@
       }
     }
 
-    #{$root}__application-status {
+    #{$block}__application-status {
 
       & .badge {
         font-size: 0.875rem;
@@ -201,21 +201,21 @@
   }
 
   &--status-promotion-over, &--status-consideration-applications {
-    #{$root}__descr {
+    #{$block}__descr {
       background-color: rgb(var(--color-grey-pale));
     }
 
-    #{$root}__status {
+    #{$block}__status {
       display: block;
     }
 
-    #{$root}__date {
+    #{$block}__date {
       display: none;
     }
   }
 
   &--status-promotion-over {
-    #{$root}__status {
+    #{$block}__status {
       font-weight: 600;
     }
   }
@@ -223,7 +223,7 @@
   &--application-rejected {
     background-color: rgb(var(--color-grey-pale));
 
-    #{$root}__application-status {
+    #{$block}__application-status {
       & .badge {
         color: rgb(var(--color-red));
       }
@@ -231,13 +231,13 @@
   }
 
   &--application-approved {
-    #{$root}__application-status {
+    #{$block}__application-status {
       & .badge {
         color: rgb(var(--color-green));
       }
     }
 
-    #{$root}__descr {
+    #{$block}__descr {
       background-color: rgb(var(--color-green-light));
     }
   }
@@ -400,11 +400,11 @@
     flex-wrap: wrap;
     font-weight: 600;
 
-    #{$root} &-sale {
+    #{$block} &-sale {
       color: rgb(var(--color-primary));
     }
 
-    #{$root} &--discount &-current {
+    #{$block} &--discount &-current {
       color: rgb(var(--color-grey));
       text-decoration: line-through;
       text-decoration-thickness: 2px;

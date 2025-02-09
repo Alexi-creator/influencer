@@ -1,5 +1,5 @@
 .publication-item {
-  $root: &;
+  $block: &;
 
   @extend %flex-center;
 

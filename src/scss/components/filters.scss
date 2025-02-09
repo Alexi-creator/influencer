@@ -1,5 +1,5 @@
 .filters {
-  $root: &;
+  $block: &;
 
   display: none;
   padding: 1rem 1.25rem;
@@ -107,7 +107,7 @@
       & .popup {
         width: 100%;
 
-        #{$root}__item-header {
+        #{$block}__item-header {
           display: none;
           margin-bottom: 1rem;
           font-size: 1.375rem;
@@ -145,7 +145,7 @@
         }
 
         &--open {
-          #{$root}__item-header {
+          #{$block}__item-header {
             display: flex;
             align-items: center;
           }
@@ -165,7 +165,7 @@
           }
 
           @include media($md) {
-            #{$root}__item-header {
+            #{$block}__item-header {
               display: none;
 
               & svg:first-child {

@@ -1,5 +1,5 @@
 .input-text {
-  $root: &;
+  $block: &;
 
   &__label {
     height: 3rem;
@@ -127,7 +127,7 @@
   &--disabled {
     background-color: rgb(var(--color-grey-soft));
 
-    #{$root}__input {
+    #{$block}__input {
       background-color: rgb(var(--color-grey-soft));
     }
   }

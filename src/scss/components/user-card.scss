@@ -1,5 +1,5 @@
 .user-card {
-  $root: &;
+  $block: &;
   
   position: relative;
   background-color: rgb(var(--color-primary-soft));

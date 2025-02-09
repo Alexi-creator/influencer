@@ -1,5 +1,5 @@
 .shops-block {
-  $root: &;
+  $block: &;
 
   &__actions {
     @extend %flex-align-center;
@@ -16,7 +16,7 @@
       top: 6.125rem;
     }
 
-    #{$root}__autocomplete {
+    #{$block}__autocomplete {
       flex: 1;
       max-width: 34rem;
 
@@ -25,7 +25,7 @@
       }
     }
 
-    #{$root} &-btns {
+    #{$block} &-btns {
       gap: 0.75rem;
 
       &.active {

@@ -1,5 +1,5 @@
 .tabs {
-  $root: &;
+  $block: &;
 
   &--split {
     #{$root}__list {
@@ -99,7 +99,7 @@
   &__content {
     display: none;
 
-    &#{$root}__content--active {
+    &#{$block}__content--active {
       display: block;
     }
   }

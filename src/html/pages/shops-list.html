@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="isAuth">
+<html lang="ru-RU" class="isAuth">
   @@include("../layout/head.html", {
     "title": "shops list Page",
     "nameFile": "shops-list",
@@ -19,8 +19,15 @@
         <div class="section__inner">
           @@include("../components/title.html", {
             "title": 'Магазины', 
+            "isSubscription": "isSubscription",
             "amount":'116',
-            "sub": 'продавцов' 
+            "sub": 'продавцов',
+            "isCartStoreAndSP": '',
+            "storeAmount": '',
+            "SPAmount": '',
+            "cartSum": '',
+            "isCartStore": '',
+            "isCartSP": ''
           })
         </div>
       </section>

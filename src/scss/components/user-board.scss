@@ -1,5 +1,5 @@
 .user-board {
-  $root: &;
+  $block: &;
 
   &__controls {
     display: flex;
@@ -23,7 +23,7 @@
     }
 
     &--active {
-      #{$root}__search {
+      #{$block}__search {
         width: 3.75rem;
 
         @include media($md) {
@@ -124,7 +124,7 @@
       max-width: 29rem;
     }
 
-    #{$root} &-btns {
+    #{$block} &-btns {
       gap: 0.75rem;
 
       &.active {

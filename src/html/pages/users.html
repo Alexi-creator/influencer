@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
   @@include("../layout/head.html", {
     "title": "users Page",
     "nameFile": "users",
@@ -19,8 +19,12 @@
         <div class="section__inner">
           @@include("../components/title.html", {
             "title": 'Блогеры', 
+            "isSubscription":'isSubscription',
             "amount":'7034',
-            "sub": 'пользователей' 
+            "sub": 'пользователей',
+            "isCartStoreAndSP": '',
+            "isCartStore": '',
+            "isCartSP": ''
           })
           @@include("../components/user-card-list.html")
         </div>

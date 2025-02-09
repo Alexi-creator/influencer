@@ -28,3 +28,23 @@
 @import "../components/filters";
 @import "../components/sorting";
 @import "../components/clear-filter-content-popup";
+
+.section {
+  $block: &;
+
+  &--shop-preview {
+    padding-bottom: 0;
+
+    #{$block}__inner {
+      max-width: 100%;
+
+      @include media($lg) {
+        max-width: var(--max-width-container);
+      }
+    }
+  }
+
+  &--shop-window {
+    padding-top: 0;
+  }
+}

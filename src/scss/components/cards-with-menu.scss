@@ -1,5 +1,5 @@
 .cards-with-menu {
-  $root: &;
+  $block: &;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -15,7 +15,7 @@
     gap: 1px;
     margin: 0 -1.25rem;
 
-    #{$root}--horizontally & {
+    #{$block}--horizontally & {
       grid-template-columns: 1fr;
       gap: 0.5rem;
     }
