@@ -1,4 +1,4 @@
-import tippy from 'tippy.js'
+import tippy from 'tippy.js' // https://atomiks.github.io/tippyjs/v6/all-props/
 
 /**
  * Управление тултипами
