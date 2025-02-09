@@ -14,15 +14,17 @@ export class Carts {
  private chooseAllSelector: string
  private oldSumNumberSelector: string
  private newSumNumberSelector: string
+ private deleteCartBtn: string
+ private orderCartBtn: string
 
  private cartItemSelector: string
  private cartInputSelector: string
  private minusBtnSelector: string
  private plusBtnSelector: string
- private disabledCartSelector: string
  private chooseSelector: string
  private itemOldPriceSelector: string
  private itemNewPriceSelector: string
+ private deleteItemBtnSelector: string
 
  private totalCartsPriceSelector: string
 
@@ -39,15 +41,17 @@ export class Carts {
     this.chooseAllSelector = `${this.mainSelector}__control-top-choose-all`
     this.oldSumNumberSelector = `${this.mainSelector}__control-bottom-results-group-sum-old`
     this.newSumNumberSelector = `${this.mainSelector}__control-bottom-results-group-sum-new`
+    this.deleteCartBtn = `${this.mainSelector}__control-bottom-control-btn-del`
+    this.orderCartBtn = `${this.mainSelector}__control-bottom-control-btn-order`
 
     this.cartItemSelector = '.cart-item'
     this.minusBtnSelector = `${this.cartItemSelector}__control-minus`
     this.plusBtnSelector = `${this.cartItemSelector}__control-plus`
     this.cartInputSelector = `${this.cartItemSelector}__control-amount-input`
-    this.disabledCartSelector = `${this.cartItemSelector}--disabled`
     this.chooseSelector = `${this.cartItemSelector}__navigate-choose`
     this.itemOldPriceSelector = `${this.cartItemSelector}__navigate-price-old-sum`
     this.itemNewPriceSelector = `${this.cartItemSelector}__navigate-price-new-sum`
+    this.deleteItemBtnSelector = `${this.cartItemSelector}__delete`
 
     this.totalCartsPriceSelector = '.carts-sum-class'
 
@@ -203,6 +207,33 @@ export class Carts {
     this.calculateTotalCartPrice(cartElem)
   }
 
+  private removeItem(targetElement: HTMLElement): void {
+    const cartElem = targetElement.closest(this.mainSelector) as HTMLElement
+    const cartItemElem = targetElement.closest(this.cartItemSelector) as HTMLElement
+
+    if (cartItemElem) {
+      cartItemElem.remove()
+      this.calculateTotalCartPrice(cartElem)
+    }
+  }
+
+  private removeCart(targetElement: HTMLElement): void {
+    const cartElem = targetElement.closest(this.mainSelector) as HTMLElement
+
+    if (cartElem) {
+      cartElem.remove()
+      this.calculateTotalPrice()
+    }
+  }
+
+  private orderCart(targetElement: HTMLElement): void {
+    const cartElem = targetElement.closest(this.mainSelector) as HTMLElement
+
+    if (cartElem) {
+      // TODO доделать логику оформления когда будет известна механика
+    }
+  }
+
   private clickHandler(e: Event): void {
     const targetElement = e.target as HTMLElement
 
@@ -212,6 +243,18 @@ export class Carts {
 
     if (targetElement.closest(this.plusBtnSelector)) {
       this.changeCountItem(targetElement, ActionEnum.increment)
+    }
+
+    if (targetElement.closest(this.deleteItemBtnSelector)) {
+      this.removeItem(targetElement)
+    }
+
+    if (targetElement.closest(this.deleteCartBtn)) {
+      this.removeCart(targetElement)
+    }
+
+    if (targetElement.closest(this.orderCartBtn)) {
+      this.orderCart(targetElement)
     }
   }
 
