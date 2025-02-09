@@ -10,16 +10,6 @@
 @import "../components/publication";
 @import "../components/comments";
 
-.section { 
-  @include media($lg) {
-    padding: 0rem 2.5rem;
-  }
-  
-  &__inner {
-    max-width: var(--max-width-container-1120);
-  }
-}
-
 .main {
   padding: 2.5rem 0 6.5rem 0;
 
@@ -35,3 +25,27 @@
     padding: 5rem 0 5rem 0;
   }
 }
+
+.section { 
+  @include media($lg) {
+    padding: 0rem 2.5rem;
+  }
+  
+  &__inner {
+    max-width: var(--max-width-container-1120);
+  }
+
+  &--comments {
+    margin-top: 2.5rem;
+
+    @include media($md) {
+      margin-top: 4rem;
+    }
+
+    @include media($full) {
+      margin-top: 5rem;
+    }
+  }
+}
+
+

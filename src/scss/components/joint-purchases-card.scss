@@ -1,5 +1,5 @@
 .joint-purchases-card {
-  $root: &;
+  $block: &;
 
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@
     position: relative;
     margin: 0 1.5rem;
 
-    #{$root}__slide {
+    #{$block}__slide {
       position: relative;
       padding-top: 143%;
       overflow: hidden;
@@ -129,10 +129,10 @@
       }
 
       &:hover {
-        #{$root}__slide-img-more {
+        #{$block}__slide-img-more {
           opacity: 1;
         }
-        #{$root}__slide-info {
+        #{$block}__slide-info {
           opacity: 1;
         }
       }
@@ -183,7 +183,7 @@
       background-color: rgb(var(--color-grey));
     }
 
-    #{$root}--disabled & {
+    #{$block}--disabled & {
       color: rgb(var(--color-grey-dark));
     }
   }
@@ -230,7 +230,7 @@
       ;
     }
 
-    #{$root}--processing & {
+    #{$block}--processing & {
       grid-template-areas: 
       "discount"
       "already"
@@ -282,7 +282,7 @@
         padding: 0.85rem 1.25rem;
       }
 
-      #{$root}--processing & {
+      #{$block}--processing & {
         color: rgb(var(--color-primary));
 
         @include media($md) {
@@ -290,7 +290,7 @@
         }
       }
 
-      #{$root}--ready & {
+      #{$block}--ready & {
         color: rgb(var(--color-green));
 
         @include media($md) {
@@ -298,7 +298,7 @@
         }
       }
 
-      #{$root}--disabled & {
+      #{$block}--disabled & {
         color: rgb(var(--color-grey-dark));
       }
     }
@@ -347,7 +347,7 @@
     margin-top: -0.25rem;
 
     & .progress {
-      #{$root}--processing & {
+      #{$block}--processing & {
         background-color: rgb(var(--color-primary-tag-checked));
 
         &__line {
@@ -355,7 +355,7 @@
         }
       }
 
-      #{$root}--ready & {
+      #{$block}--ready & {
         background-color: rgba(var(--color-green), 0.04);
 
         &__line {
@@ -363,7 +363,7 @@
         }
       }
 
-      #{$root}--disabled & {
+      #{$block}--disabled & {
         background-color: rgb(var(--color-grey-soft));
 
         &__line {
@@ -377,7 +377,7 @@
     grid-area: until;
     display: none;
 
-    #{$root}--processing & {
+    #{$block}--processing & {
       display: inline-flex;
     }
 
@@ -402,17 +402,17 @@
     gap: 0.5rem;
     font-size: 1.125rem;
 
-    #{$root}--processing & {
+    #{$block}--processing & {
       display: none;
     }
 
-    #{$root}--ready & {
+    #{$block}--ready & {
       &-text {
         color: rgb(var(--color-green));
       }
     }
 
-    #{$root}--disabled & {
+    #{$block}--disabled & {
       &-text {
         color: rgb(var(--color-red));
       }
@@ -442,15 +442,15 @@
     padding: 0.75rem;
     margin: -0.25rem -0.75rem 0;
 
-    #{$root}--processing & {
+    #{$block}--processing & {
       background-color: rgb(var(--color-primary-tag-checked));
     }
 
-    #{$root}--ready & {
+    #{$block}--ready & {
       background-color: rgba(var(--color-green), 0.04);
     }
 
-    #{$root}--processing & {
+    #{$block}--processing & {
       background-color: rgb(var(--color-primary-tag-checked));
     }
 

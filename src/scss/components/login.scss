@@ -1,24 +1,24 @@
 .login {
-  $root: &;
+  $block: &;
 
   &__inner {
 
   }
 
-  &#{$root}--sign-in {
-    #{$root}__sign-up {
+  &#{$block}--sign-in {
+    #{$block}__sign-up {
       display: none;
     }
-    #{$root}__sign-in {
+    #{$block}__sign-in {
       display: block;
     }
   }
 
-  &#{$root}--sign-up {
-    #{$root}__sign-up {
+  &#{$block}--sign-up {
+    #{$block}__sign-up {
       display: block;
     }
-    #{$root}__sign-in {
+    #{$block}__sign-in {
       display: none;
     }
   }

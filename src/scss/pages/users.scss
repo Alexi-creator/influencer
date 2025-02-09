@@ -15,3 +15,23 @@
 @import "../components/filters";
 @import "../components/sorting";
 @import "../components/clear-filter-content-popup";
+
+.section {
+  $block: &;
+
+  &--users {
+    #{$block}__inner {
+      max-width: var(--max-width-container-1120);
+    }
+
+    padding-top: 1.25rem;
+
+    @include media($md) {
+      padding-top: 2.5rem;
+    }
+
+    @include media($full) {
+      padding-top: 0rem;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru-RU" class="isAuth">
+  @@include("../layout/head.html", {
+    "title": "carts Page",
+    "nameFile": "carts",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }) 
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--carts">
+        <div class="section__inner">
+          @@include("../components/title.html", {
+            "title": 'Корзины', 
+            "isSubscription": '',
+            "amount": '',
+            "sub": '',
+            "isCartStoreAndSP": 'isCartStoreAndSP',
+            "storeAmount": '1',
+            "SPAmount": '3',
+            "cartSum": '1 749 997',
+            "isCartStore": '',
+            "isCartSP": '',
+            "cartsSumClass": 'carts-sum-class'
+          })
+          @@include("../components/cart-list.html")
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

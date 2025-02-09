@@ -1,9 +1,8 @@
 .btn {
-  $root: &;
+  $block: &;
 
   height: 3rem;
   display: inline-flex;
-  // gap: 0.25rem;
   gap: 0.5rem;
   padding: 0.65rem 1.5rem;
   border: 2px solid;
@@ -16,45 +15,53 @@
   user-select: none;
   cursor: pointer;
 
-  &#{$root}--text {
+  &#{$block}--text {
     padding: 0.5rem 0.75rem;
     background-color: transparent;
     color: rgb(var(--color-primary));
     border-color: transparent;
 
-    &#{$root}--color-grey {
+    &#{$block}--color-grey {
       color: rgb(var(--color-grey));
       border-color: transparent;
     }
   }
 
-  &#{$root}--outlined {
+  &#{$block}--none {
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    color: rgb(var(--color-primary));
+    border-color: transparent;
+  }
+
+  &#{$block}--outlined {
     background-color: rgb(var(--color-white));
     color: rgb(var(--color-primary));
     border: 2px solid rgb(var(--color-primary));
 
-    &#{$root}--color-grey {
+    &#{$block}--color-grey {
       border-color: rgb(var(--color-black-light));
       color: unset;
     }
   }
 
-  &#{$root}--color-primary-light {
+  &#{$block}--color-primary-light {
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-primary));
   }
 
-  &#{$root}--color-primary-light-text-black {
+  &#{$block}--color-primary-light-text-black {
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-black));
   }
 
-  &#{$root}--color-grey {
+  &#{$block}--color-grey {
     color: rgb(var(--color-grey));
     border-color: rgb(var(--color-grey));
   }
 
-  &#{$root}--color-white {
+  &#{$block}--color-white {
     color: rgb(var(--color-black));
     background-color: rgb(var(--color-white));
 
@@ -64,21 +71,21 @@
     }
   }
 
-  &#{$root}--color-green {
+  &#{$block}--color-green {
     background-color: rgb(var(--color-primary-soft));
     color: rgb(var(--color-green));
   }
 
-  &#{$root}--icon {
+  &#{$block}--icon {
     padding: 0.75rem;
   }
 
-  &#{$root}--small {
+  &#{$block}--small {
     height: 2.5rem;
     padding: 0.4rem 0.75rem;
   }
 
-  &#{$root}--tag {
+  &#{$block}--tag {
     background-color: rgb(var(--color-white));
     color: rgb(var(--color-black));
     font-weight: 400;
@@ -95,7 +102,7 @@
     }
   }
 
-  &#{$root}--show {
+  &#{$block}--show {
     height: auto;
     gap: 0.125rem;
     align-items: center;
@@ -125,21 +132,12 @@
     border-color: transparent !important;
     cursor: default;
 
-    // & svg {
-    //   fill: rgb(var(--color-grey-dark)) !important;
-    // }
-
     &:hover {
       border-color: transparent !important;
     }
   }
 
-  &#{$root}--discount-size {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-  }
-
-  &#{$root}--dashed {
+  &#{$block}--dashed {
     height: auto;
     text-decoration: underline;
     text-decoration-style: dashed;
@@ -151,15 +149,7 @@
     background-color: transparent;
   }
 
-  &#{$root}--none {
-    height: auto;
-    padding: 0;
-    background-color: transparent;
-    color: rgb(var(--color-primary));
-    border-color: transparent;
-  }
-
-  &#{$root}--green {
+  &#{$block}--green {
     background-color: rgb(var(--color-green));
     color: rgb(var(--color-white));
     border-color: transparent;

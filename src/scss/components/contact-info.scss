@@ -1,5 +1,5 @@
 .contact-info {
-  $root: &;
+  $block: &;
 
   display: flex;
   flex-direction: column;
@@ -42,13 +42,13 @@
       padding: 2.5rem;
     }
 
-    #{$root} &-item {
+    #{$block} &-item {
       display: flex;
       gap: 0.625rem;
       font-weight: 600;
     }
 
-    #{$root}__icon use {
+    #{$block}__icon use {
       stroke: rgb(var(--color-black));
       stroke-width: 2px;
     }

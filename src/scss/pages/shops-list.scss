@@ -15,3 +15,13 @@
 @import "../components/filters";
 @import "../components/sorting";
 @import "../components/clear-filter-content-popup";
+
+.section {
+  $block: &;
+
+  &--shops {
+    #{$block}__inner {
+      max-width: var(--max-width-container-1120);
+    }
+  }
+}

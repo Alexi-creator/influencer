@@ -7,7 +7,7 @@
 @import "../components/courier";
 
 .header {
-  $root: &;
+  $block: &;
 
   position: sticky;
   top: 0;
@@ -49,7 +49,7 @@
       cursor: pointer;
 
       &--full {
-        #{$root}__top-location-cta {
+        #{$block}__top-location-cta {
           display: none;
         }
       }
@@ -61,7 +61,7 @@
       }
 
       &--empty {
-        #{$root}__top-location-cta {
+        #{$block}__top-location-cta {
           padding-left: 0;
         }
 
@@ -158,7 +158,7 @@
         margin-left: 0;
       }
 
-      #{$root}__nav-logo-small {
+      #{$block}__nav-logo-small {
         flex-shrink: 0;
 
         @include media($md) {
@@ -166,7 +166,7 @@
         }
       }
 
-      #{$root}__nav-logo-big {
+      #{$block}__nav-logo-big {
         display: none;
 
         @include media($md) {
@@ -209,7 +209,7 @@
       }
 
       &.active {
-        #{$root}__nav-catalog-icon {
+        #{$block}__nav-catalog-icon {
           &-catalog {
             display: none;
           }
@@ -293,13 +293,13 @@
           z-index: var(--z-base);
           overflow-y: auto;
   
-          #{$root}__nav-search-title {
+          #{$block}__nav-search-title {
             display: flex;
             align-items: center;
             justify-content: space-between;
           }
 
-          #{$root}__nav-search-filter {
+          #{$block}__nav-search-filter {
             display: block;
             color: rgb(var(--color-grey));
             margin: 1rem -1.25rem;
@@ -308,7 +308,7 @@
             border-bottom: 1px solid rgb(var(--color-black-light));
           }
 
-          #{$root}__nav-search-input {
+          #{$block}__nav-search-input {
             margin-top: 1rem;
           }
 
@@ -376,11 +376,11 @@
         }
 
         @include media($md) {
-          #{$root}__nav-search-mask {
+          #{$block}__nav-search-mask {
             display: block;
           }
 
-          #{$root}__nav-search-input {
+          #{$block}__nav-search-input {
             z-index: calc(var(--z-over) + 3);
           }
         }
@@ -468,10 +468,10 @@
         }
       }
 
-      #{$root}__nav-account {
+      #{$block}__nav-account {
         display: none;
 
-        #{$root}__nav-rating {
+        #{$block}__nav-rating {
           color: rgb(var(--color-black));
           padding-left: 1rem;
           padding-right: 1rem;
@@ -479,7 +479,7 @@
         }
       }
 
-      #{$root}__nav-avatar {
+      #{$block}__nav-avatar {
         width: 2.5rem;
         height: 2.5rem;
         overflow: hidden;
@@ -487,11 +487,11 @@
       }
 
       .isAuth & {
-        #{$root}__nav-sign-in {
+        #{$block}__nav-sign-in {
           display: none;
         }
 
-        #{$root}__nav-account {
+        #{$block}__nav-account {
           @extend %flex-center;
           
           gap: 1rem;

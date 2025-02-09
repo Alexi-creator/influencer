@@ -1,0 +1,68 @@
+<div class="cart__control">
+  @@if(isTopControl){
+    <div class="cart__control-top">
+      <div class="cart__control-top-type">@@type</div>
+      @@if(isActiveChooseAll){
+        <div class="cart__control-top-choose-all">
+          @@include("../components/checkbox.html", {
+            "name": "allCheckbox",
+            "text": "Выбрать все",
+            "mod": "checkbox--radius-medium",
+            "classes": "cart__control__top-choose-all-txt"
+          })
+        </div>
+      }
+      @@if(isInActiveChooseAll){
+        <div class="cart__control-top-choose-all-inActive">
+          @@include("../components/checkbox.html", {
+            "name": "checkbox",
+            "text": "Выбрать все",
+            "mod": "checkbox--disabled checkbox--radius-medium",
+            "classes": "cart__control__top-choose-all-txt",
+            "disabled": 'disabled'
+          })
+        </div>
+      }
+    </div>
+  }
+  @@if(isBottomControl){
+    <div class="cart__control-bottom">
+      <div class="cart__control-bottom-results">
+        <div class="cart__control-bottom-results-total">
+          Итого
+        </div>
+        <div class="cart__control-bottom-results-group">
+          <div class="cart__control-bottom-results-group-position">
+            @@position позиции
+          </div>
+          <div class="cart__control-bottom-results-group-amount">
+            <span class="cart__control-bottom-results-group-amount-number">@@amount</span> шт. товаров
+          </div>
+          <div class="cart__control-bottom-results-group-sum">
+            <span class="cart__control-bottom-results-group-sum-old">0 ₽</span>
+            <span class="cart__control-bottom-results-group-sum-new">0 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart__control-bottom-control">
+        @@if(canCreateSP){
+          <div class="cart__control-bottom-control-up">
+            <button class="btn btn--color-primary-light">Создать новую SP</button>
+          </div>
+        }
+        @@if(canUpdateStore){
+          <div class="cart__control-bottom-control-up">
+            <button class="btn btn--color-primary-light">Обновить скидку</button>
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#info"></use>
+            </svg>
+          </div>
+        }
+        <div class="cart__control-bottom-control-order">
+          <button class="cart__control-bottom-control-btn-del btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
+          <button class="cart__control-bottom-control-btn-order btn" disabled>Оформить заказ</button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

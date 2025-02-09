@@ -1,5 +1,5 @@
 .progress {
-  $root: &;
+  $block: &;
 
   height: 0.75rem;
   border-radius: var(--radius-small);
@@ -8,7 +8,7 @@
   &--primary {
     background-color: rgb(var(--color-primary-tag-checked));
 
-    #{$root}__line {
+    #{$block}__line {
       background-color: rgb(var(--color-primary-dark));
     }
   }
@@ -16,7 +16,7 @@
   &--green {
     background-color: rgba(var(--color-green), 0.04);
 
-    #{$root}__line {
+    #{$block}__line {
       background-color: rgb(var(--color-green));
     }
   }
@@ -25,7 +25,7 @@
   &--grey {
     background-color: rgb(var(--color-grey-soft));
 
-    #{$root}__line {
+    #{$block}__line {
       background-color: rgb(var(--color-grey-dark));
     }
   }

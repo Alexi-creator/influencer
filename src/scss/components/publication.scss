@@ -1,5 +1,5 @@
 .publication {
-  $root: &;
+  $block: &;
 
 	&__author {
 		@extend %flex-start;
@@ -125,7 +125,7 @@
 			align-items: center;
 			width: max-content;
 
-			#{$root}__goods-item {
+			#{$block}__goods-item {
 				position: relative;
 				display: none;
 				width: 2.5rem;
@@ -240,14 +240,14 @@
 
 			gap: 1.25rem;
 
-			#{$root}__subscribe-line {
+			#{$block}__subscribe-line {
 				height: 2px;
 				flex-grow: 1;
 				border-radius: var(--radius-small);
 				background-color: rgb(var(--color-grey-light));
 			}
 
-			#{$root}__subscribe-avatar {
+			#{$block}__subscribe-avatar {
 				position: relative;
 				width: 5rem;
 				height: 5rem;

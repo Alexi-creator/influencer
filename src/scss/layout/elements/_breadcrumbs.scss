@@ -1,5 +1,5 @@
 .breadcrumbs {
-  $root: &;
+  $block: &;
 
   color: rgb(var(--color-grey));
 
@@ -25,7 +25,7 @@
   &--primary {
     color: rgb(var(--color-primary));
 
-    #{$root}__item {
+    #{$block}__item {
       font-size: 1rem;
       font-weight: 600;
 

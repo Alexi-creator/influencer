@@ -1,5 +1,5 @@
 .preview-toolbar-action {
-  $root: &;
+  $block: &;
 
   @extend %flex-align-center;
 
@@ -10,7 +10,7 @@
     z-index: var(--z-over);
   }
   
-  #{$root}__btn-top, #{$root}__brand {
+  #{$block}__btn-top, #{$block}__brand {
     display: none;
   }
   
@@ -24,18 +24,18 @@
     max-width: var(--max-width-container);
     background-color: rgb(var(--color-white));
 
-    #{$root}__btn-top, #{$root}__brand {
+    #{$block}__btn-top, #{$block}__brand {
       display: flex;
     }
 
-    #{$root}__subscribe {
+    #{$block}__subscribe {
       display: none;
     }
 
     @include media($md) {
       padding: 0.5rem 2.5rem;
 
-      #{$root}__subscribe {
+      #{$block}__subscribe {
         display: inline-flex;
 
         & .btn {
@@ -60,7 +60,7 @@
       margin-top: 0;
       padding: 0.5rem 4rem;
 
-      #{$root}__brand-name {
+      #{$block}__brand-name {
         display: block;
       }
     }

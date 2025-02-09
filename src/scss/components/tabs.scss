@@ -1,5 +1,5 @@
 .tabs {
-  $root: &;
+  $block: &;
 
   &__list {
     @extend %flex-align-center;
@@ -75,7 +75,7 @@
   &__content {
     display: none;
 
-    &#{$root}__content--active {
+    &#{$block}__content--active {
       display: block;
     }
   }
