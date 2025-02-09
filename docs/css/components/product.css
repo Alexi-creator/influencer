@@ -322,6 +322,11 @@
   line-height: 0.875rem;
 }
 
+.product__short-description-sales-increment svg,
+.product__short-description-sales-decrement svg {
+  color: rgb(var(--color-primary));
+}
+
 .product__short-description-sales-increment,
 .product__short-description-sales-decrement,
 .product__short-description-sales-actions {
@@ -497,6 +502,12 @@
 
 .product__delivery-point {
   gap: 0.5rem;
+}
+
+.product__delivery-btn,
+.product__seller-btn {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 .product__delivery-point-city {

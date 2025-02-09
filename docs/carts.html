@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+<html lang="ru-RU" class="isAuth">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pages/carts.min.css?_v=20250209134851">
+  <title>carts Page</title>
+  <script defer src="js/carts.min.js?_v=20250209134851"></script>
+</head>
+  <body>
+    <header class="header">
+  <div class="header__inner">
+    <div class="header__top">
+      <button class="header__top-location header__top-location--empty" data-popup="location">
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#location"></use>
+        </svg>
+        <span class="header__top-location-address"></span>
+        <span class="header__top-location-cta">Укажите точный адрес</span>
+      </button>
+      <div class="header__top-info">
+        <a href="#">Инструкции</a>
+        <a href="#">Контакты</a>
+        <div id="language" class="select select--transparent header__top-language noselect" role="button" tabindex="0">
+  <div class="select__header">
+    <div class="select__title">Русский</div>
+    <div class="select__icon">
+      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
+    </div>
+  </div>
+  <ul class="select__options">
+    <li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>
+  </ul>
+  <input name=language type="text" value="ru" hidden>
+</div>
+
+      </div>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item header__nav-logo">
+          <a class="header__nav-logo-small" href="./index.html">
+            <img width="24" height="24" src="img/small-logo.svg" alt="small-logo">
+          </a>
+          <a class="header__nav-logo-big" href="./index.html">
+            <img width="106" height="24" src="img/logo.svg" alt="logo">
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-catalog ">
+          <a class="btn" href="./catalog.html">
+            <svg class="header__nav-catalog-icon-catalog">
+              <use xlink:href="./img/icons/icons.svg#catalog"></use>
+            </svg>
+            <svg class="header__nav-catalog-icon-cross">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+            <span class="header__nav-catalog-title">Каталог</span>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-search">
+          <div class="header__nav-search-title">
+            <div class="header__nav-search-title-text">Поиск по сайту</div>
+            <svg class="header__nav-search-title-cross"><use xlink:href="./img/icons/icons.svg#cross"></use></svg>
+          </div>
+          <div id="search-shops" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
+  <label class="input-text autocomplete__input">
+  
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
+  
+    <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
+  <div class="select__header">
+    <div class="select__title">Везде</div>
+    <div class="select__icon">
+      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
+    </div>
+  </div>
+  <ul class="select__options">
+    <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li> <li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>
+  </ul>
+  <input name=select-search type="text" value="value2" hidden>
+</div>
+</div>
+  
+</label>
+
+  <input type="text" name="search-shops" value="@@value" hidden>
+
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    
+      <div class="autocomplete__options">
+        
+          <a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
+        
+      </div>
+    
+    
+  </div>
+</div>
+
+          <div class="header__nav-search-filter">
+            <div class="header__nav-search-filter-title">
+              Где будем искать
+            </div>
+          </div>
+          <div class="header__nav-search-mask"></div>
+        </li>
+        <li class="header__nav-item header__nav-basket">
+          <a href="/carts.html">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  9
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-favorite">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#heart"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  4
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-feed">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#feed"></use>
+            </svg>
+          </a>
+          <div class="header__nav-item-counter">
+            <div class="counter counter--green">
+  1
+</div>
+          </div>
+        </li>
+        <li class="header__nav-item header__nav-instagram">
+          <a href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#camera"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-profile" data-popup="login">
+          <a class="header__nav-sign-in" href="#">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#user"></use>
+            </svg>
+            Войти в аккаунт
+          </a>
+          <a class="header__nav-account" href="#">
+            <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">
+              Мой рейтинг: 109
+            </div>
+            <div class="header__nav-avatar">
+              <picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture>
+            </div>
+          </a>
+        </li>
+        <li class="header__nav-item header__nav-more">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#more"></use>
+          </svg>
+        </li>
+        <li class="header__nav-item header__nav-location" data-popup="location">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#map"></use>
+          </svg>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="useful-links">
+  <div class="useful-links__title">
+    Полезные ссылки
+    <svg class="useful-links__title-cross">
+      <use xlink:href="./img/icons/icons.svg#cross"></use>
+    </svg>
+  </div>
+  <ul class="useful-links__list">
+    <li class="useful-links__list-item">
+      <a href="#">
+        Категории
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Магазины
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Совместные покупки
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Test ForFree
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Блогеры
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Публикации
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="useful-links__list-item">
+      <a href="#">
+        Служба поддержки
+        <svg>
+          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  <div id="login" class="popup header__login">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      
+        <div class="popup__header">
+          <div class="popup__header-title">Войдите в свой профиль</div>
+          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
+            <svg class="popup__header-btn-close-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      
+      <div class="login login--sign-in">
+  <div class="login__inner">
+
+    <!-- Блок логина -->
+    <div class="login__sign-in">
+      <div class="login__descr">
+        Чтобы пользоваться лентой новостей
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Войти через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Войти через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-in">
+        <label class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
+  
+</label>
+        <label class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Введите пароль" @@atr>
+  
+</label>
+        <button class="login__form-submit btn" type="submit">
+          Войти
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Нет аккаунта?
+        </div>
+        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+      </div>
+    </div>
+
+    <!-- Блок регистрации -->
+    <div class="login__sign-up">
+      <div class="login__title">
+        Зарегистрируйтесь
+        <button class="login__title-cross" type="button" data-close-popup="login">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__descr">
+        Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
+      </div>
+      <div class="login__options">
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#google"></use>
+          </svg>
+          Регистрация через Google
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="login__options-item btn">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#vk"></use>
+          </svg>
+          Регистрация через ВКонтакте
+          <svg class="login__options-item-arrow">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="login__or">
+        <span class="login__or-text">или</span>
+      </div>
+      <form class="login__form login__form-sign-up">
+        <label class="input-text input-text--color-grey login__form-item">
+  
+  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
+  
+</label>
+        <label class="input-text input-text--color-grey login__form-item">
+  
+  <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль" @@atr>
+  
+</label>
+        <label class="input-text input-text--color-grey login__form-item">
+  
+  <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль" @@atr>
+  
+</label>
+        <button class="login__form-submit btn" type="submit">
+          Зарегистрироваться
+        </button>
+      </form>
+      <div class="login__choice">
+        <div class="login__choice-title">
+          Есть аккаунт?
+        </div>
+        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="location" class="popup header__location">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      
+        <div class="popup__header">
+          <div class="popup__header-title">Куда доставить заказ?</div>
+          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
+            <svg class="popup__header-btn-close-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+      
+      <div class="location @@locationExtraClass">
+  <div class="location__inner">
+    <div class="location__img location__not-setup">
+      <picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture>
+    </div>
+    <div class="location__descr location__setup">
+      Выберите адрес, чтобы увидеть условия доставки
+    </div>
+    <div class="location__actions">
+      <div class="location__actions-city">
+        <svg class="location__address-city-icon">
+          <use xlink:href="./img/icons/icons.svg#map"></use>
+        </svg>
+        <span class="location__address-city-name">Москва</span>
+      </div>
+      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">
+        Изменить
+      </button>
+    </div>
+    <ul class="location__addresses location__setup">
+      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
+        <div class="location__address-header">
+          <div class="location__address-option">Отделение Почты России</div>
+          <button class="location__address-remove">
+            <svg class="location__address-remove-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+        <div class="location__address-storage-period">
+          Срок хранения заказа - 
+          <span class="location__address-storage-period-count">15 дней</span>
+        </div>
+      </li>
+      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
+        <div class="location__address-header">
+          <div class="location__address-option">Доставка по адресу</div>
+          <button class="location__address-remove">
+            <svg class="location__address-remove-icon">
+              <use xlink:href="./img/icons/icons.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
+        <div class="location__address-contacts">
+          Маргарита А., +7 999 123 45 67
+        </div>
+      </li>
+    </ul>
+    <div class="location__descr location__not-setup">
+      Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров
+    </div>
+    <button class="location__button location__not-setup btn" data-popup="map" data-close-popup="location">
+      Выбрать адрес на карте
+    </button>
+    <button class="location__button location__setup btn" data-popup="map" data-close-popup="location">
+      Добавить новый адрес или пункт
+    </button>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+  <div id="choose-city" class="popup header__choose-city">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      
+      <div class="choose-city">
+  <div class="choose-city__inner">
+    <div class="choose-city__header">
+      <button class="choose-city__back">
+        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="choose-city__title">Выберите город</div>
+      <button class="choose-city__cross" data-close-popup="choose-city">
+        <svg class="choose-city__cross-icon">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="choose-city__search">
+      <label class="input-text ">
+  
+    <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город" @@atr>
+  
+</label>
+    </div>
+    <ul class="choose-city__list">
+      <li class="choose-city__list-item">
+        <label class="radio radio--active">
+  <input name="city" type="radio" value="Москва" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    Москва
+  </span>
+</label>
+
+      </li>
+      <li class="choose-city__list-item">
+        <label class="radio radio--active">
+  <input name="city" type="radio" value="Санкт-Петербург" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    Санкт-Петербург
+  </span>
+</label>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="map" class="popup popup--no-overlay header__map">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      
+      <div class="map">
+  <div class="map__inner">
+    <div class="map__header">
+      <button class="map__header-back">
+        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="map__header-title">Способ доставки товаров</div>
+      <div class="map__header-options">
+        <label class="radio radio--active radio--reverse">
+  <input name="choose-delivery" type="radio" value="pickup" checked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    Самовывоз
+  </span>
+</label>
+
+        <label class="radio radio--active radio--reverse">
+  <input name="choose-delivery" type="radio" value="courier" @@isChecked>
+  <span class="radio__content">
+    <span class="radio__custom"></span>
+    Курьером
+  </span>
+</label>
+
+      </div>
+      <button class="map__header-cross btn btn--color-primary-light">
+        <svg class="map__header-cross-icon" data-close-popup="map">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="map__yandex">
+      <iframe
+        id="maps"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor"
+      >
+      </iframe>
+    </div>
+    <div class="map__address">
+      <div class="map__address-header">Куда доставить заказ?</div>
+      <div class="map__address-descr">
+        <div class="map__address-descr-pickup">
+          Выберите пункт выдачи или найдите
+        </div>
+        <div class="map__address-descr-courier">
+          Выберите адрес на карте или найдите
+        </div>
+      </div>
+      <div class="map__address-actions">
+        <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
+  <label class="input-text autocomplete__input">
+  
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи" @@atr>
+  
+    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+  
+</label>
+
+  <input type="text" name="pickup-autocomplete" value="@@value" hidden>
+
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    
+    
+      <ul class="autocomplete__options">
+        
+      </ul>
+    
+  </div>
+</div>
+
+        <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
+  <label class="input-text autocomplete__input">
+  
+    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки" @@atr>
+  
+    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+  
+</label>
+
+  <input type="text" name="courier-autocomplete" value="@@value" hidden>
+
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    
+    
+      <ul class="autocomplete__options">
+        
+      </ul>
+    
+  </div>
+</div>
+
+        <button class="map__address-actions-define">
+          <svg class="map__address-actions-define-icon">
+            <use xlink:href="./img/icons/icons.svg#compass"></use>
+          </svg>
+          Определить местоположение
+        </button>
+        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>
+          Продолжить
+        </button>
+        <button class="btn map__btn map__btn--courier" disabled>
+          Продолжить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="search-pickup" class="popup popup--no-overlay header__search-pickup">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      
+      <div class="search-pickup">
+  <div class="search-pickup__inner">
+    <div class="search-pickup__header">
+      <button class="search-pickup__header-back">
+        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="search-pickup__header-title">
+        Куда доставить заказ?
+      </div>
+      <button class="search-pickup__header-cross btn btn--color-primary-light">
+        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
+    <div class="search-pickup__actions">
+      <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
+  <label class="input-text autocomplete__input">
+  
+    <div class="input-text__prefix search-pickup__actions-input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+  
+  <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес" @@atr>
+  
+    <div class="input-text__suffix search-pickup__actions-input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+  
+</label>
+
+  <input type="text" name="search-pickup" value="@@value" hidden>
+
+  <div class="autocomplete__body">
+    <div class="autocomplete__body-title">Результаты поиска</div>
+    
+    
+      <ul class="autocomplete__options">
+        
+      </ul>
+    
+  </div>
+</div>
+
+      <button class="search-pickup__actions-define">
+        <svg class="search-pickup__header-actions-define-icon">
+          <use xlink:href="./img/icons/icons.svg#compass"></use>
+        </svg>
+        Определить местоположение
+      </button>
+      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>
+        Продолжить
+      </button>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <div id="courier" class="popup popup--no-overlay header__courier">
+  <div class="popup__overlay">
+    <div class="popup__content">
+      
+      <div class="courier">
+  <div class="courier__inner">
+    <div class="courier__header">
+      <button class="courier__header-back">
+        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
+          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+        </svg>
+      </button>
+      <div class="courier__header-title">
+        Уточнить адрес
+      </div>
+      <button class="courier__header-cross btn btn--color-primary-light">
+        <svg class="courier__header-cross-icon" data-close-popup="courier">
+          <use xlink:href="./img/icons/icons.svg#cross"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="courier__actions">
+      <div class="courier__actions-inputs">
+        <div class="courier__actions-inputs-full">
+          Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
+        </div>
+        <label class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом" @@atr>
+  
+</label>
+        <label class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс" @@atr>
+  
+</label>
+        <label class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд" @@atr>
+  
+</label>
+        <label class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж" @@atr>
+  
+</label>
+        <label class="input-text input-text--color-grey">
+  
+  <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон" @@atr>
+  
+</label>
+      </div>
+      <button class="btn" disabled>
+        Продолжить
+      </button>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+  <nav class="nav">
+  <ul class="nav__list">
+    <li >
+  <a class="nav__item nav__item-publication" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#camera"></use>
+    </svg>
+    
+    <div class="nav__item-title">Публикация</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-catalog" href="./catalog.html">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+    </svg>
+    
+    <div class="nav__item-title">Каталог</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-feed" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#feed"></use>
+    </svg>
+    
+    <div class="nav__item-title">Лента</div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-shopping-bag" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+    </svg>
+    
+    <div class="nav__item-title">Корзина</div>
+    
+      <div class="nav__item-counter">
+        <div class="counter counter--green">
+  1
+</div>
+      </div>
+    
+  </a>
+</li><li >
+  <a class="nav__item nav__item-profile" href="#">
+    <svg class="nav__item-icon">
+      <use xlink:href="./img/icons/icons.svg#profile"></use>
+    </svg>
+    
+      <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
+    
+    <div class="nav__item-title">Профиль</div>
+    
+  </a>
+</li>
+  </ul>
+</nav>
+
+
+  <template id="address">
+    <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
+      <div class="location__address-header">
+        <div class="location__address-option"></div>
+        <button class="location__address-remove">
+          <svg class="location__address-remove-icon">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="location__address-address"></div>
+      <div class="location__address-storage-period">
+
+        <span class="location__address-storage-period-count"></span>
+      </div>
+    </li>
+  </template>
+</header> 
+    <nav class="nav-pages">
+  <ul class="nav-pages__list">
+    <li>
+      <a href="#">Магазины</a>
+    </li>
+    <li>
+      <a href="#">Совместные покупки</a>
+    </li>
+    <li>
+      <a href="#">Test for Free</a>
+    </li>
+    <li>
+      <a href="#">Блогеры</a>
+    </li>
+    <li>
+      <a href="#">Публикации</a>
+    </li>
+  </ul>
+</nav>
+    <main class="main">
+      <section class="section section--carts">
+        <div class="section__inner">
+          <div class="title">
+  <h1 class="title-txt">Корзины</h1>
+  
+  
+    <p class="title-under">
+      <span> из</span>
+      <span class="title-under-bold">1 магазина</span>
+      <span> и </span>
+      <span class="title-under-bold">3 СП</span>
+      <span> на сумму </span>
+      <span class="title-under-bold carts-sum-class"> 1 749 997</span><span class="title-under-bold"> ₽</span>
+    </p>
+  
+  
+  
+</div>
+
+          <div class="cart-list">
+  <div class="cart">
+    <div class="cart__top">
+  <div class="cart__top-inner">
+    <div class="cart__top-title">
+      Корзина #1 (СП)
+    </div>
+    <div class="cart__top-content">
+      
+        <div class="cart__top-wrapper">
+          <div class="cart__top-content-title">Совместная покупка</div> 
+          <div class="cart__top-content-feature">
+            <div class="cart__top-content-catch-phrase">Покупаем пока есть скидка, девочки</div> 
+            <div class="cart__top-content-feature-inner">
+              <div class="cart__top-content-feature-purchases">
+                <div>
+                  <span>Уже купили на:</span>
+                  <span class="number">79281</span>
+                  <span> / </span>
+                  <span class="number">241093</span>
+                  <span class="currency"> ₽</span>
+                </div>
+                
+                  <div class="progress progress--primary">
+                    <div class="progress__line" style="width:35%"></div>
+                  </div>
+                
+                
+                
+              </div>
+              <div>
+                
+                  <div>Активна до:</div>
+                  <div class="cart__top-content-event">27.01.2020 12:00</div>
+                
+                
+                
+              </div>
+            </div>
+          </div>  
+        </div>
+      
+      <div class="cart__top-wrapper">
+        <div class="cart__top-content-title">Магазин</div> 
+        <div class="cart__top-seller-inner">
+          <div class="cart__top-seller-inner-content">
+            <div class="cart__top-seller-img">
+              <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture>
+            </div>
+            <div class="cart__top-seller-name">
+              Интернет магазин одежды и аксессуаров Lass
+            </div>
+          </div>
+            <button class="btn btn--color-primary-light btn--none cart__top-seller-btn">Подписаться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="cart__control">
+  
+    <div class="cart__control-top">
+      <div class="cart__control-top-type">Товары</div>
+      
+        <div class="cart__control-top-choose-all">
+          <label class="checkbox checkbox--radius-medium">
+  <input name="allCheckbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart__control__top-choose-all-txt">
+    Выбрать все
+  </span>
+</label>
+        </div>
+      
+      
+    </div>
+  
+  
+</div>
+
+    <div class="cart__items">
+      <div class="cart-item "
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Тянущееся платье с длинными рукавами
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button  class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button  class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount cart-item__discount--sp ">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+          
+          
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose ">
+      
+        <label class="checkbox checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart-control__top-choose-all-txt">
+    Выбрать
+  </span>
+</label>
+      
+      
+    </div>
+    <div class="cart-item__navigate-price ">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete ">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+  </div>
+</div>
+      <div class="cart-item "
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Louis Vuitton
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Пуховик из кожи с узором Monogram Micro
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button  class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button  class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount cart-item__discount--sp ">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+          
+          
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose ">
+      
+        <label class="checkbox checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart-control__top-choose-all-txt">
+    Выбрать
+  </span>
+</label>
+      
+      
+    </div>
+    <div class="cart-item__navigate-price ">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete ">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+  </div>
+</div>
+      <div class="cart-item "
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Тянущееся платье с длинными рукавами
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button  class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button  class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount cart-item__discount--sp ">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+          
+          
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose ">
+      
+        <label class="checkbox checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart-control__top-choose-all-txt">
+    Выбрать
+  </span>
+</label>
+      
+      
+    </div>
+    <div class="cart-item__navigate-price ">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete ">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+  </div>
+</div>
+      <div class="cart-item cart-item--disabled"
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Блейзер Hourglass из шерсти с узором "гусиная лапка"
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size cart-item--disabled-size">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button disabled class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button disabled class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount cart-item__discount--sp ">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+          
+          
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose ">
+      
+      
+        <svg data-tooltip="Товара выбранного вами размера не осталось в наличии. Вы можете удалить его из корзины или <a href='#' class='cart-item__tooltip btn btn--primary btn--none'>Выбрать другой размер</a>">
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg> 
+        <span>Товар недоступен</span>
+      
+    </div>
+    <div class="cart-item__navigate-price ">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete ">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+  </div>
+</div>
+      <div class="cart-item cart-item--disabled"
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Блейзер Hourglass из шерсти с узором "гусиная лапка"
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button disabled class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button disabled class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount cart-item__discount--sp ">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+          
+          
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose ">
+      
+      
+        <svg data-tooltip="Товара выбранного вами размера не осталось в наличии. Вы можете удалить его из корзины или <a href='#' class='cart-item__tooltip btn btn--primary btn--none'>Выбрать другой размер</a>">
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg> 
+        <span>Товар недоступен</span>
+      
+    </div>
+    <div class="cart-item__navigate-price ">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete ">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+  </div>
+</div>
+    </div>
+    <div class="cart__control">
+  
+  
+    <div class="cart__control-bottom">
+      <div class="cart__control-bottom-results">
+        <div class="cart__control-bottom-results-total">
+          Итого
+        </div>
+        <div class="cart__control-bottom-results-group">
+          <div class="cart__control-bottom-results-group-position">
+            5 позиции
+          </div>
+          <div class="cart__control-bottom-results-group-amount">
+            <span class="cart__control-bottom-results-group-amount-number">6</span> шт. товаров
+          </div>
+          <div class="cart__control-bottom-results-group-sum">
+            <span class="cart__control-bottom-results-group-sum-old">0 ₽</span>
+            <span class="cart__control-bottom-results-group-sum-new">0 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart__control-bottom-control">
+        
+        
+        <div class="cart__control-bottom-control-order">
+          <button class="cart__control-bottom-control-btn-del btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
+          <button class="cart__control-bottom-control-btn-order btn" disabled>Оформить заказ</button>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  </div>
+
+  <div class="cart">
+    <div class="cart__top">
+  <div class="cart__top-inner">
+    <div class="cart__top-title">
+      Корзина #2 (СП)
+    </div>
+    <div class="cart__top-content">
+      
+        <div class="cart__top-wrapper">
+          <div class="cart__top-content-title">Совместная покупка</div> 
+          <div class="cart__top-content-feature">
+            <div class="cart__top-content-catch-phrase">Покупаем пока есть скидка, девочки</div> 
+            <div class="cart__top-content-feature-inner">
+              <div class="cart__top-content-feature-purchases">
+                <div>
+                  <span>Уже купили на:</span>
+                  <span class="number">79281</span>
+                  <span> / </span>
+                  <span class="number">241093</span>
+                  <span class="currency"> ₽</span>
+                </div>
+                
+                
+                
+                  <div class="progress progress--grey">
+                    <div class="progress__line" style="width:35%"></div>
+                  </div>
+                
+              </div>
+              <div>
+                
+                
+                
+                  <div>Совм. Покупка:</div>
+                  <div class="cart__top-content-event cart__top-content-event--is-not-happened">Не состоялась</div>
+                
+              </div>
+            </div>
+          </div>  
+        </div>
+      
+      <div class="cart__top-wrapper">
+        <div class="cart__top-content-title">Магазин</div> 
+        <div class="cart__top-seller-inner">
+          <div class="cart__top-seller-inner-content">
+            <div class="cart__top-seller-img">
+              <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture>
+            </div>
+            <div class="cart__top-seller-name">
+              Интернет магазин одежды и аксессуаров Lass
+            </div>
+          </div>
+            <button class="btn btn--color-primary-light btn--none cart__top-seller-btn">Подписаться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="cart__control">
+  
+    <div class="cart__control-top">
+      <div class="cart__control-top-type">Товары</div>
+      
+      
+        <div class="cart__control-top-choose-all-inActive">
+          <label class="checkbox checkbox--disabled checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart__control__top-choose-all-txt">
+    Выбрать все
+  </span>
+</label>
+        </div>
+      
+    </div>
+  
+  
+</div>
+
+    <div class="cart__items">
+      <div class="cart-item cart-item--disabled"
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Тянущееся платье с длинными рукавами
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button disabled class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button disabled class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount cart-item__discount--sp ">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+          
+          
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose ">
+      
+      
+        <svg data-tooltip="Товара выбранного вами размера не осталось в наличии. Вы можете удалить его из корзины или <a href='#' class='cart-item__tooltip btn btn--primary btn--none'>Выбрать другой размер</a>">
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg> 
+        <span>Товар недоступен</span>
+      
+    </div>
+    <div class="cart-item__navigate-price ">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete ">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+  </div>
+</div>
+    </div>
+    <div class="cart__control">
+  
+  
+    <div class="cart__control-bottom">
+      <div class="cart__control-bottom-results">
+        <div class="cart__control-bottom-results-total">
+          Итого
+        </div>
+        <div class="cart__control-bottom-results-group">
+          <div class="cart__control-bottom-results-group-position">
+            1 позиции
+          </div>
+          <div class="cart__control-bottom-results-group-amount">
+            <span class="cart__control-bottom-results-group-amount-number">2</span> шт. товаров
+          </div>
+          <div class="cart__control-bottom-results-group-sum">
+            <span class="cart__control-bottom-results-group-sum-old">0 ₽</span>
+            <span class="cart__control-bottom-results-group-sum-new">0 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart__control-bottom-control">
+        
+          <div class="cart__control-bottom-control-up">
+            <button class="btn btn--color-primary-light">Создать новую SP</button>
+          </div>
+        
+        
+        <div class="cart__control-bottom-control-order">
+          <button class="cart__control-bottom-control-btn-del btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
+          <button class="cart__control-bottom-control-btn-order btn" disabled>Оформить заказ</button>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  </div>
+
+  <div class="cart">
+    <div class="cart__top">
+  <div class="cart__top-inner">
+    <div class="cart__top-title">
+      Корзина #3 (СП)
+    </div>
+    <div class="cart__top-content">
+      
+        <div class="cart__top-wrapper">
+          <div class="cart__top-content-title">Совместная покупка</div> 
+          <div class="cart__top-content-feature">
+            <div class="cart__top-content-catch-phrase">Покупаем пока есть скидка, девочки</div> 
+            <div class="cart__top-content-feature-inner">
+              <div class="cart__top-content-feature-purchases">
+                <div>
+                  <span>Уже купили на:</span>
+                  <span class="number">79281</span>
+                  <span> / </span>
+                  <span class="number">241093</span>
+                  <span class="currency"> ₽</span>
+                </div>
+                
+                
+                  <div class="progress progress--green">
+                    <div class="progress__line" style="width:100%"></div>
+                  </div>
+                
+                
+              </div>
+              <div>
+                
+                
+                  <div>Совм. Покупка:</div>
+                  <div class="cart__top-content-event cart__top-content-event--is-happened">Состоялась</div>
+                
+                
+              </div>
+            </div>
+          </div>  
+        </div>
+      
+      <div class="cart__top-wrapper">
+        <div class="cart__top-content-title">Магазин</div> 
+        <div class="cart__top-seller-inner">
+          <div class="cart__top-seller-inner-content">
+            <div class="cart__top-seller-img">
+              <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture>
+            </div>
+            <div class="cart__top-seller-name">
+              Интернет магазин одежды и аксессуаров Lass
+            </div>
+          </div>
+            <button class="btn btn--color-primary-light btn--none cart__top-seller-btn">Подписаться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="cart__control">
+  
+    <div class="cart__control-top">
+      <div class="cart__control-top-type">Товары</div>
+      
+      
+        <div class="cart__control-top-choose-all-inActive">
+          <label class="checkbox checkbox--disabled checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart__control__top-choose-all-txt">
+    Выбрать все
+  </span>
+</label>
+        </div>
+      
+    </div>
+  
+  
+</div>
+
+    <div class="cart__items">
+      <div class="cart-item cart-item--disabled"
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Тянущееся платье с длинными рукавами
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button disabled class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button disabled class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount cart-item__discount--sp ">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+          
+          
+            <span class="cart-item__discount-upper-title-sp--mobile">Скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-sp--lg">Скидка в СП:</span>
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose ">
+      
+      
+        <svg data-tooltip="Товара выбранного вами размера не осталось в наличии. Вы можете удалить его из корзины или <a href='#' class='cart-item__tooltip btn btn--primary btn--none'>Выбрать другой размер</a>">
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg> 
+        <span>Товар недоступен</span>
+      
+    </div>
+    <div class="cart-item__navigate-price ">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete ">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+  </div>
+</div>
+    </div>
+    <div class="cart__control">
+  
+  
+    <div class="cart__control-bottom">
+      <div class="cart__control-bottom-results">
+        <div class="cart__control-bottom-results-total">
+          Итого
+        </div>
+        <div class="cart__control-bottom-results-group">
+          <div class="cart__control-bottom-results-group-position">
+            1 позиции
+          </div>
+          <div class="cart__control-bottom-results-group-amount">
+            <span class="cart__control-bottom-results-group-amount-number">2</span> шт. товаров
+          </div>
+          <div class="cart__control-bottom-results-group-sum">
+            <span class="cart__control-bottom-results-group-sum-old">0 ₽</span>
+            <span class="cart__control-bottom-results-group-sum-new">0 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart__control-bottom-control">
+        
+          <div class="cart__control-bottom-control-up">
+            <button class="btn btn--color-primary-light">Создать новую SP</button>
+          </div>
+        
+        
+        <div class="cart__control-bottom-control-order">
+          <button class="cart__control-bottom-control-btn-del btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
+          <button class="cart__control-bottom-control-btn-order btn" disabled>Оформить заказ</button>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  </div>
+
+  <div class="cart">
+    <div class="cart__top">
+  <div class="cart__top-inner">
+    <div class="cart__top-title">
+      Корзина #4 (СП)
+    </div>
+    <div class="cart__top-content">
+      
+      <div class="cart__top-wrapper">
+        <div class="cart__top-content-title">Магазин</div> 
+        <div class="cart__top-seller-inner">
+          <div class="cart__top-seller-inner-content">
+            <div class="cart__top-seller-img">
+              <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture>
+            </div>
+            <div class="cart__top-seller-name">
+              Интернет магазин одежды и аксессуаров Lass
+            </div>
+          </div>
+            <button class="btn btn--color-primary-light btn--none cart__top-seller-btn">Подписаться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="cart__control">
+  
+    <div class="cart__control-top">
+      <div class="cart__control-top-type">Товары</div>
+      
+        <div class="cart__control-top-choose-all">
+          <label class="checkbox checkbox--radius-medium">
+  <input name="allCheckbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart__control__top-choose-all-txt">
+    Выбрать все
+  </span>
+</label>
+        </div>
+      
+      
+    </div>
+  
+  
+</div>
+
+    <div class="cart__items">
+      <div class="cart-item "
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Тянущееся платье с длинными рукавами
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button  class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button  class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount  cart-item__discount--store">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+            <span class="cart-item__discount-upper-title-store--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-store--mobile">Скидка:</span>
+          
+          
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose cart-item__navigate-choose--store">
+      
+        <label class="checkbox checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart-control__top-choose-all-txt">
+    Выбрать
+  </span>
+</label>
+      
+      
+    </div>
+    <div class="cart-item__navigate-price cart-item__navigate-price--store">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete cart-item__delete--store">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+      <div class="cart-item__discount-details">
+        <div class="cart-item__discount-store">
+          <span>1 шт. /  459 000 ₽  /  -10%</span>
+          <span>2-3 шт. /  408 000 ₽  /  -20%</span>
+          <span>4 шт. и более/  357 000 ₽  /  -40%</span>
+        </div>
+      </div>
+    
+  </div>
+</div>
+      <div class="cart-item "
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Louis Vuitton
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Пуховик из кожи с узором Monogram Micro
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button  class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button  class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount  cart-item__discount--store">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+            <span class="cart-item__discount-upper-title-store--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-store--mobile">Скидка:</span>
+          
+          
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose cart-item__navigate-choose--store">
+      
+        <label class="checkbox checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart-control__top-choose-all-txt">
+    Выбрать
+  </span>
+</label>
+      
+      
+    </div>
+    <div class="cart-item__navigate-price cart-item__navigate-price--store">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete cart-item__delete--store">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+      <div class="cart-item__discount-details">
+        <div class="cart-item__discount-store">
+          <span>1 шт. /  459 000 ₽  /  -10%</span>
+          <span>2-3 шт. /  408 000 ₽  /  -20%</span>
+          <span>4 шт. и более/  357 000 ₽  /  -40%</span>
+        </div>
+      </div>
+    
+  </div>
+</div>
+      <div class="cart-item "
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Тянущееся платье с длинными рукавами
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button  class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button  class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount  cart-item__discount--store">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+            <span class="cart-item__discount-upper-title-store--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-store--mobile">Скидка:</span>
+          
+          
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose cart-item__navigate-choose--store">
+      
+        <label class="checkbox checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart-control__top-choose-all-txt">
+    Выбрать
+  </span>
+</label>
+      
+      
+    </div>
+    <div class="cart-item__navigate-price cart-item__navigate-price--store">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete cart-item__delete--store">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+      <div class="cart-item__discount-details">
+        <div class="cart-item__discount-store">
+          <span>1 шт. /  459 000 ₽  /  -10%</span>
+          <span>2-3 шт. /  408 000 ₽  /  -20%</span>
+          <span>4 шт. и более/  357 000 ₽  /  -40%</span>
+        </div>
+      </div>
+    
+  </div>
+</div>
+      <div class="cart-item "
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Блейзер Hourglass из шерсти с узором "гусиная лапка"
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button  class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button  class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount  cart-item__discount--store">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+            <span class="cart-item__discount-upper-title-store--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-store--mobile">Скидка:</span>
+          
+          
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose cart-item__navigate-choose--store">
+      
+        <label class="checkbox checkbox--radius-medium">
+  <input name="checkbox" type="checkbox" @@disabled>
+  <span class="checkbox__checkmark">
+    <svg>
+      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+    </svg>
+  </span>
+  <span class="checkbox__label cart-control__top-choose-all-txt">
+    Выбрать
+  </span>
+</label>
+      
+      
+    </div>
+    <div class="cart-item__navigate-price cart-item__navigate-price--store">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete cart-item__delete--store">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+      <div class="cart-item__discount-details">
+        <div class="cart-item__discount-store">
+          <span>1 шт. /  459 000 ₽  /  -10%</span>
+          <span>2-3 шт. /  408 000 ₽  /  -20%</span>
+          <span>4 шт. и более/  357 000 ₽  /  -40%</span>
+        </div>
+      </div>
+    
+  </div>
+</div>
+      <div class="cart-item cart-item--disabled"
+  data-id="1"
+  data-old-price="102500"
+  data-new-price="93779"
+>
+  <div class="cart-item__wrapper">
+    <div class="cart-item__product-card">
+      <div class="cart-item__product-card-pic">
+        <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg"></picture></img>
+      </div>
+      <div class="cart-item__product-card-description">
+        <div class="cart-item__product-card-decription-title">
+          Balenciaga
+        </div>
+        <div class="cart-item__product-card-description-txt">
+          Блейзер Hourglass из шерсти с узором "гусиная лапка"
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__control">
+      <div class="cart-item__control-size ">
+        34 EU / XS
+      </div>
+      <div class="cart-item__control-amount">
+        <button disabled class="cart-item__control-minus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#minus"></use>
+          </svg>  
+        </button>
+        <input disabled class="cart-item__control-amount-input" name="control-items" type="text" value="2 шт.">
+        <button disabled class="cart-item__control-plus">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#plus"></use>
+          </svg>   
+        </button>
+      </div>
+    </div>
+    <div class="cart-item__discount  cart-item__discount--store">
+      <div class="cart-item__discount-upper">
+        <div class="cart-item__discount-upper-title">
+          
+            <span class="cart-item__discount-upper-title-store--md">Ваша скидка:</span>
+            <span class="cart-item__discount-upper-title-store--mobile">Скидка:</span>
+          
+          
+          
+        </div>
+        <div class="cart-item__discount-upper-size">
+            <div class="badge badge--discount-cart">
+              -23%
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="cart-item__navigate-choose cart-item__navigate-choose--store">
+      
+      
+        <svg data-tooltip="Товара выбранного вами размера не осталось в наличии. Вы можете удалить его из корзины или <a href='#' class='cart-item__tooltip btn btn--primary btn--none'>Выбрать другой размер</a>">
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg> 
+        <span>Товар недоступен</span>
+      
+    </div>
+    <div class="cart-item__navigate-price cart-item__navigate-price--store">
+      <span class="cart-item__navigate-price-old-sum">
+        205 000 ₽
+      </span>
+      <span class="cart-item__navigate-price-new-sum">
+        187 558 ₽
+      </span>
+    </div>
+    <div class="cart-item__delete cart-item__delete--store">
+      <button class="btn btn--text btn--color-grey btn--none">Удалить</button>
+    </div>
+    
+      <div class="cart-item__discount-details">
+        <div class="cart-item__discount-store">
+          <span>1 шт. /  459 000 ₽  /  -10%</span>
+          <span>2-3 шт. /  408 000 ₽  /  -20%</span>
+          <span>4 шт. и более/  357 000 ₽  /  -40%</span>
+        </div>
+      </div>
+    
+  </div>
+</div>
+    </div>
+    <div class="cart__control">
+  
+  
+    <div class="cart__control-bottom">
+      <div class="cart__control-bottom-results">
+        <div class="cart__control-bottom-results-total">
+          Итого
+        </div>
+        <div class="cart__control-bottom-results-group">
+          <div class="cart__control-bottom-results-group-position">
+            4 позиции
+          </div>
+          <div class="cart__control-bottom-results-group-amount">
+            <span class="cart__control-bottom-results-group-amount-number">21</span> шт. товаров
+          </div>
+          <div class="cart__control-bottom-results-group-sum">
+            <span class="cart__control-bottom-results-group-sum-old">0 ₽</span>
+            <span class="cart__control-bottom-results-group-sum-new">0 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="cart__control-bottom-control">
+        
+        
+          <div class="cart__control-bottom-control-up">
+            <button class="btn btn--color-primary-light">Обновить скидку</button>
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#info"></use>
+            </svg>
+          </div>
+        
+        <div class="cart__control-bottom-control-order">
+          <button class="cart__control-bottom-control-btn-del btn btn--none btn--text btn--color-grey">Удалить эту корзину</button>
+          <button class="cart__control-bottom-control-btn-order btn" disabled>Оформить заказ</button>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+  </div>
+</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

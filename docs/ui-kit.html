@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20241208142747">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20250209134851">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20241208142747"></script>
+  <script defer src="js/ui-kit.min.js?_v=20250209134851"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -320,7 +320,7 @@
       <h2>Checkbox:</h2>
       <div class="ui-kit__block ui-kit__checkbox">
         <label class="checkbox ">
-  <input name="checkbox" type="checkbox">
+  <input name="checkbox" type="checkbox" @@disabled>
   <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
@@ -331,7 +331,7 @@
   </span>
 </label>
         <label class="checkbox ">
-  <input name="checkbox" type="checkbox">
+  <input name="checkbox" type="checkbox" @@disabled>
   <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
@@ -342,7 +342,7 @@
   </span>
 </label>
         <label class="checkbox checkbox--tag">
-  <input name="checkbox" type="checkbox">
+  <input name="checkbox" type="checkbox" @@disabled>
   <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
@@ -353,7 +353,7 @@
   </span>
 </label>
         <label class="checkbox checkbox--tag">
-  <input name="checkbox" type="checkbox">
+  <input name="checkbox" type="checkbox" @@disabled>
   <span class="checkbox__checkmark">
     <svg>
       <use xlink:href="./img/icons/icons.svg#checkbox"></use>
@@ -672,6 +672,13 @@
       <div class="ui-kit__block ui-kit__scroll">
         <button class="btn scroll">Скролл до верха</button>
         <button class="btn scroll" data-target="ui-kit__radio">Скролл до назначенного элемента</button>
+      </div>
+
+      <h2>Tooltip:</h2>
+      <div class="ui-kit__block">
+        <svg style="color: red" data-tooltip="Тултип Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eius obcaecati at laboriosam veniam impedit laudantium velit atque nemo ducimus sint inventore, dolore qui hic doloremque voluptatum perferendis labore quasi!">
+          <use xlink:href="./img/icons/icons.svg#info"></use>
+        </svg>
       </div>
 
     </main>
