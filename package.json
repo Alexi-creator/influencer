@@ -1,7 +1,7 @@
 {
   "name": "influencer",
   "version": "1.0.0",
-  "description": "@ilya_pavlov90",
+  "description": "marketplace @ilya_pavlov90",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
@@ -20,6 +20,7 @@
     "@typescript-eslint/eslint-plugin": "6.6.0",
     "@typescript-eslint/parser": "6.6.0",
     "browser-sync": "2.29.3",
+    "cropperjs": "1.6.2",
     "del": "6.0.0",
     "eslint": "8.49.0",
     "gulp": "4.0.2",

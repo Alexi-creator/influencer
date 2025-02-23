@@ -49,6 +49,14 @@
         </button>
         <button class="btn" disabled>Disabled</button>
         <button class="btn btn--dashed">Dashed</button>
+        <button class="btn btn--loading active">
+          Loading active
+          <svg><use xlink:href="./img/icons/icons.svg#loading"></use></svg>
+        </button>
+        <button class="btn btn--loading" disabled>
+          Loading disabled
+          <svg><use xlink:href="./img/icons/icons.svg#loading"></use></svg>
+        </button>
       </div>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__buttons">
         <button class="btn btn--color-white">
@@ -77,7 +85,7 @@
           name: "input2",
           type: "text",
           placeholder: "Инпут с элементом слева",
-          prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
+          prefix: "<svg><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
           suffix: "",
           "extra-class": "",
           "extra-class-prefix": "",
@@ -89,8 +97,8 @@
           name: "input3",
           type: "text",
           placeholder: "Инпут с элементом слева и справа",
-          prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
-          suffix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#checkbox\"></use></svg>",
+          prefix: "<svg><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
+          suffix: "<svg><use xlink:href=\"./img/icons/icons.svg#checkbox\"></use></svg>",
           "extra-class": "",
           "extra-class-prefix": "",
           "extra-class-suffix": "",
@@ -101,8 +109,8 @@
           name: "input4",
           type: "text",
           placeholder: "Инпут меньшего размера",
-          prefix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
-          suffix: "<svg class=\"search__icon-search\"><use xlink:href=\"./img/icons/icons.svg#checkbox\"></use></svg>",
+          prefix: "<svg><use xlink:href=\"./img/icons/icons.svg#search\"></use></svg>",
+          suffix: "<svg><use xlink:href=\"./img/icons/icons.svg#checkbox\"></use></svg>",
           "extra-class": "input-text--small",
           "extra-class-prefix": "",
           "extra-class-suffix": "",
@@ -133,6 +141,49 @@
           "atr": "disabled",
         })
       </div>
+
+      <h4>Input type file upload</h4>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          name: "input7",
+          type: "file",
+          placeholder: "",
+          prefix: '<svg><use xlink:href=\"./img/icons/icons.svg#plus\"></use></svg>',
+          suffix: "",
+          "extra-class": "input-text--upload",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+          "atr": "",
+        })
+      </div>
+
+      <h4>Input type file upload (disabled)</h4>
+      <div class="ui-kit__block ui-kit__input">
+        @@include("../components/input-text.html", {
+          name: "input8",
+          type: "file",
+          placeholder: "",
+          prefix: '<svg><use xlink:href=\"./img/icons/icons.svg#plus\"></use></svg>',
+          suffix: "",
+          "extra-class": "input-text--upload input-text--disabled",
+          "extra-class-prefix": "",
+          "extra-class-suffix": "",
+          "atr": "disabled",
+        })
+      </div>
+
+      <h2>TextArea:</h2>
+      @@include("../components/textarea.html", {
+        name: "textarea",
+        placeholder: "Введите текст",
+      })
+
+      <h2>TextArea с серой рамкой:</h2>
+      @@include("../components/textarea.html", {
+        name: "textarea-grey",
+        placeholder: "Введите текст",
+        "extra-class": "textarea__input--grey",
+      })
 
       <h2>Search:</h2>
       <div class="ui-kit__block ui-kit__search">
@@ -176,6 +227,40 @@
           "tag": '',
           options: '',
         })
+      </div>
+
+      <h2>Gallery-card:</h2>
+      <div class="ui-kit__block ui-kit__gallery-card">
+        <div class="gallery-card">
+          <div class="gallery-card__item">
+            <img src="@img/publication.jpg">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/post-card-img-black.png">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/publication.jpg">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/publication.jpg">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/post-card-img-black.png">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/publication.jpg">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/publication.jpg">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/post-card-img-black.png">
+          </div>
+          <div class="gallery-card__item">
+            <img src="@img/publication.jpg">
+            <span class="gallery-card__item-more">+7</span>
+          </div>
+        </div>
       </div>
 
       <h2>Бегущая строка:</h2>
@@ -321,11 +406,35 @@
         })
       </div>
 
+      <h2>Rating:</h2>
+      <div class="ui-kit__block">
+        @@include("../components/rating.html", {
+          "value": 3,
+        })
+      </div>
+
+      <h2>Rating hover (active select):</h2>
+      <div class="ui-kit__block">
+        @@include("../components/rating.html", {
+          'extra-class': "rating--select",
+          "name": 'rating',
+        })
+      </div>
+
       <h2>Collapse:</h2>
       @@include("../components/collapse.html", {
         "title": "Title",
         "isClosed": false,
         "icon": "collapse",
+        "body": "<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>",
+      })
+
+      <h2>Collapse arrow icon:</h2>
+      @@include("../components/collapse.html", {
+        "extra-class": 'collapse--arrow',
+        "title": "Title",
+        "isClosed": false,
+        "icon": "arrow",
         "body": "<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>",
       })
 
@@ -477,6 +586,13 @@
       <h2>Tabs:</h2>
       <div class="ui-kit__block ui-kit__tabs">
         @@include("../components/tabs.html")
+      </div>
+
+      <h2>Tabs с раздельными табами:</h2>
+      <div class="ui-kit__block ui-kit__tabs">
+        @@include("../components/tabs.html", {
+          'extra-class': "tabs--split",
+        })
       </div>
 
       <h2>Chips:</h2>

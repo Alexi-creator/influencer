@@ -2,11 +2,14 @@
   <div class="publication-item__img">
     <img src="@img/@@img" alt="publication-item">
   </div>
-  <div class="publication-item__descr">
+  <div class="publication-item__content">
     <div class="publication-item__title">@@title</div>
     <div class="publication-item__price">
       <span class="publication-item__price-number number">@@price</span>
       <span class="publication-item__price-currency">@@currency</span>
     </div>
+    @@if(descr) {
+      <div class="publication-item__descr">@@descr</div>
+    }
   </div>
 </div>

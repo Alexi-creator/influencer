@@ -1,5 +1,6 @@
 @import "./basis/_reset";
 @import "./basis/_fonts";
+@import "./basis/_animations";
 @import "./basis/_css-property";
 @import "./layout/sections";
 @import "./layout/elements";
@@ -52,7 +53,7 @@ svg {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
   height: 4px;
 }
 

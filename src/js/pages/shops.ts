@@ -184,37 +184,37 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Form(
-      '.shop-window__form-goods', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.shop-window__form-goods', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.shop-window__form-sp', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.shop-window__form-sp', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.shop-window__form-tff', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.shop-window__form-tff', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }

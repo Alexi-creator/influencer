@@ -1,0 +1,27 @@
+.cropper {
+  &-view-box {
+    outline: none;
+  }
+
+  &-dashed {
+    &.dashed-v, &.dashed-h {
+      border: none;
+    }
+  }
+
+  &-center {
+    display: none;
+  }
+
+  &-line, &-point {
+    background-color: unset;
+  }
+
+  &-point.point {
+    &-e, &-n, &-w, &-s, &-ne, &-nw, &-sw, &-se {
+      height: 0.5rem;
+      width: 0.5rem;
+      background-color: rgb(var(--color-grey));
+    }
+  }
+}

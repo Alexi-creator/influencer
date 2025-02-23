@@ -9,6 +9,7 @@ import { RangeSlider } from '../modules/RangeSlider'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { Autocomplete } from '../modules/Autocomplete'
 import { Ticker } from '../modules/Ticker'
+import { Rating } from '../modules/Rating'
 import { Tooltip } from '../modules/Tooltip'
 
 window.addEventListener('load', () => {
@@ -54,6 +55,12 @@ window.addEventListener('load', () => {
 
   try {
     new Tabs()
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Rating()
   } catch (error) {
     console.log(error)
   }

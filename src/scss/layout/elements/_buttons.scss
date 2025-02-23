@@ -135,6 +135,12 @@
     &:hover {
       border-color: transparent !important;
     }
+
+    &#{$block}--loading {
+      & svg {
+        display: none;
+      }
+    }
   }
 
   &#{$block}--dashed {
@@ -147,6 +153,20 @@
     color: rgb(var(--color-primary));
     font-weight: 400;
     background-color: transparent;
+  }
+
+  &#{$block}--loading {
+    & svg {
+      @include spinner();
+
+      display: none;
+    }
+
+    &.active {
+      & svg {
+        display: block;
+      }
+    }
   }
 
   &#{$block}--green {

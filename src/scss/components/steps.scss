@@ -1,0 +1,239 @@
+%white-padding {
+	content: "";
+	position: absolute;
+	left: -1rem;
+	top: 0;
+	height: 3rem;
+	width: 1rem;
+	background-color: rgb(var(--color-white));
+	z-index: 2;
+}
+
+.steps {
+  $block: &;
+
+	&__inner {
+		position: relative;
+	}
+
+	&__items {
+		display: flex;
+		padding: 0.5rem 0;
+	}
+
+	&__item {
+		flex: 1 1 0;
+		
+		position: relative;
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		align-items: center;
+		align-content: baseline;
+
+		&:last-child {
+			flex: 0 0 auto;
+			grid-template-columns: 1fr;
+
+			& svg {
+				& use {
+					stroke: rgb(var(--color-grey-dark));
+					stroke-width: 2px;
+				}
+			}
+
+			#{$block}__item-wrapper, #{$block}__item-name {
+				grid-column: 1 / -1;
+			}
+
+			#{$block}__item-wrapper {
+				margin-left: auto;
+
+				&::before {
+					@extend %white-padding;
+				}
+			}
+
+			#{$block}__item-line {
+				display: none;
+			}
+
+			&#{$block}__item--current {
+				grid-template-columns: 1fr max-content;
+
+				& svg use {
+					stroke: rgb(var(--color-green));
+				}
+
+				#{$block}__item-wrapper {
+					grid-column: 2 / 3;
+					grid-row: 1 / 2;
+					border-color: rgb(var(--color-green));
+
+					&::before {
+						display: none;
+					}
+				}
+
+				#{$block}__item-line {
+					display: block;
+					grid-column: 1 / 2;
+					grid-row: 1 / 2;
+					background-color: rgb(var(--color-primary-dark));
+				}
+
+				#{$block}__item-name {
+					color: rgb(var(--color-green));
+					grid-column: 1 / -1;
+					grid-row: 2 / 3;
+				}
+			}
+		}
+
+		&--passed {
+			#{$block}__item-wrapper {
+				border: 2px solid rgb(var(--color-primary-dark));
+			}
+
+			#{$block}__item-step {
+				color: rgb(var(--color-primary-dark));
+			}
+
+			#{$block}__item-circle {
+				display: none;
+			}
+
+			#{$block}__item-line {
+				background-color: rgb(var(--color-primary-dark));
+			}
+
+			#{$block}__item-name {
+				color: rgb(var(--color-primary-dark));
+			}
+		}
+
+		&--current {
+			flex: 2 1 0;
+
+			@include media($md) {
+				flex: 1 1 0;
+			}
+
+			#{$block}__item-wrapper {
+				border: 2px solid rgb(var(--color-primary));
+			}
+
+			#{$block}__item-circle {
+				display: none;
+			}
+
+			#{$block}__item-step {
+				color: rgb(var(--color-primary));
+			}
+
+			#{$block}__item-line {
+				background-color: rgb(var(--color-primary));
+			}
+
+			#{$block}__item-name {
+				display: block;
+				color: rgb(var(--color-primary));
+			}
+
+			& + #{$block}__item {
+				&::before {
+					@extend %white-padding;
+				}
+			}
+
+			& + #{$block}__item:last-child {
+				@include media($md) {
+					grid-template-columns: 1fr 1fr;
+
+					&::before {
+						display: none;
+					}
+	
+					#{$block}__item-wrapper {
+						grid-column: 2 / -1;
+						grid-row: 1 / 2;
+					}
+	
+					#{$block}__item-line {
+						grid-column: 1 / 2;
+						grid-row: 1 / 2;
+						display: block;
+						background-color: rgb(var(--color-primary));
+					}
+	
+					#{$block}__item-name {
+						grid-column: 1 / -1;
+						grid-row: 2 / 3;
+					}
+				}
+			}
+		}
+
+		&-wrapper {
+			grid-column: 1 / 2;
+			flex-shrink: 0;
+			position: relative;
+			display: flex;
+			width: 3rem;
+			height: 3rem;
+			background-color: rgb(var(--color-white));
+			border-radius: var(--radius-round);
+			z-index: var(--z-base);
+		}
+
+		&-circle {
+			height: 100%;
+			width: 100%;
+		}
+
+		&-line {
+			position: relative;
+			grid-column: 2 / 3;
+			height: 2px;
+			width: 100%;
+			border-top-right-radius: 2px;
+			border-bottom-right-radius: 2px;
+			z-index: var(--z-base);
+		}
+
+		&-name {
+			display: none;
+			width: 100%;
+			margin-top: 0.5rem;
+			grid-column: 1 / -1;
+			grid-row: 2 / 3;
+			color: rgb(var(--color-grey-dark));
+
+			@include media($md) {
+				display: block;
+			}
+		}
+
+		&-step {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-weight: 600;
+			color: rgb(var(--color-grey-dark));
+		}
+	}
+
+	&__divider {
+		display: flex;
+
+		position: absolute;
+		height: 2px;
+		inset: 0;
+		top: calc(2rem - 1px);
+
+		& svg {
+			height: 2px;
+			width: 100%;
+		}
+	}
+}

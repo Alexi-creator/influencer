@@ -1,17 +1,30 @@
 .input-text {
   $block: &;
 
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  border: 2px solid rgb(var(--color-primary-light));
-  border-radius: var(--radius-medium);
-  padding: 0.75rem 1.25rem;
-  height: 3rem;
-  outline: none;
+  position: relative;
 
-  &:focus-within {
-    border-color: rgb(var(--color-primary));
+  &__label {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(var(--color-white));
+    border: 2px solid rgb(var(--color-primary-light));
+    border-radius: var(--radius-medium);
+    outline: none;
+
+    &:focus-within {
+      border-color: rgb(var(--color-primary));
+    }
+
+    &.success {
+      border-color: rgb(var(--color-primary));
+    }
+
+    &.error {
+      border-color: rgb(var(--color-red));
+    }
   }
 
   &--small {
@@ -20,6 +33,102 @@
 
   &--color-grey {
     border-color: rgb(var(--color-grey-light));
+  }
+
+  &--upload {
+    position: relative;
+    height: 6rem;
+    width: 6rem;
+    gap: 0;
+    padding: 0;
+    background-color: rgb(var(--color-primary-soft));
+    border-color: rgb(var(--color-primary));
+
+    &-small {
+      height: 3rem;
+      width: 3rem;
+    }
+
+    #{$block}__prefix {
+      margin: 0 auto;
+
+      & svg {
+        color: rgb(var(--color-primary));
+      }
+    }
+
+    & > input {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      cursor: pointer;
+
+      &::-webkit-file-upload-button, &::file-selector-button {
+        color: transparent;
+        background-color: rgb(var(--color-grey-white));
+        border-color: transparent;
+        cursor: pointer;
+      }
+    }
+
+    &#{$block}--disabled {
+      background-color: rgb(var(--color-grey-soft));
+      border-color: rgb(var(--color-grey-dark));
+
+      #{$block}__prefix {
+        & svg {
+          color: rgb(var(--color-grey-600));
+        }
+      }
+
+      & > input {
+        cursor: default;
+      }
+    }
+
+    #{$block}__suffix {
+      display: none;
+    }
+
+    &.active {
+      @extend %flex-center;
+
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      backdrop-filter: blur(6px);
+      border-color: transparent;
+      border-radius: 0;
+      z-index: var(--z-over);
+      cursor: pointer;
+
+      #{$block}__prefix {
+        display: none;
+      }
+
+      & > input {
+        height: 75%;
+        width: calc(100% - 5rem);
+        max-width: 70rem;
+        inset: initial;
+        color: rgb(var(--color-grey-white));
+        background-color: rgb(var(--color-grey-white));
+        border-radius: var(--radius-medium);
+        opacity: 1;
+      }
+
+      #{$block}__suffix {
+        display: block;
+        max-width: 46rem;
+        max-height: calc(75svh / 2);
+        z-index: calc(var(--z-over) + 1);
+        pointer-events: none;
+      }
+    }
   }
 
   &--disabled {
@@ -32,6 +141,10 @@
 
   &__prefix {
 
+  }
+
+  &__suffix {
+    
   }
 
   &__input {
@@ -63,7 +176,13 @@
     }
   }
 
-  &__sufix {
-    
+  &__error {
+    display: none;
+    position: absolute;
+    color: rgb(var(--color-red));
+
+    &.active {
+      display: block;
+    }
   }
 }

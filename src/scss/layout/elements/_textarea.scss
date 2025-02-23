@@ -1,16 +1,43 @@
 .textarea {
   $block: &;
 
-  border: 2px solid rgb(var(--color-primary-light));
-  border-radius: var(--radius-medium);
-  padding: 0.75rem 1.25rem;
-  outline: none;
+  &__input {
+    border: 2px solid rgb(var(--color-primary-light));
+    border-radius: var(--radius-medium);
+    padding: 0.75rem 1.25rem;
+    outline: none;
+  
+    &:focus-within {
+      border-color: rgb(var(--color-primary));
+    }
 
-  &:focus-within {
-    border-color: rgb(var(--color-primary));
+    &.success {
+      border-color: rgb(var(--color-primary));
+    }
+
+    &.error {
+      border-color: rgb(var(--color-red));
+    }
+
+    &--grey {
+      border-color: rgb(var(--color-grey-light));
+  
+      &::placeholder {
+        color: rgb(var(--color-grey-light));
+      }
+    }
+  
+    &--disabled {
+      background-color: rgb(var(--color-grey-soft));
+    }
   }
 
-  &--disabled {
-    background-color: rgb(var(--color-grey-soft));
+  &__error {
+    display: none;
+    color: rgb(var(--color-red));
+
+    &.active {
+      display: block;
+    }
   }
 }

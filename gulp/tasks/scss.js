@@ -16,7 +16,6 @@ const basisFiles = {
   variables: "basis/_variables.scss",
   mixins: "basis/_mixins.scss",
   extends: "basis/_extends.scss",
-  animations: "basis/_animations.scss",
 };
 
 export const scss = () => {
@@ -31,7 +30,6 @@ export const scss = () => {
       path.join(app.path.src.scss, basisFiles.variables),
       path.join(app.path.src.scss, basisFiles.mixins),
       path.join(app.path.src.scss, basisFiles.extends),
-      path.join(app.path.src.scss, basisFiles.animations),
     ]))
     .pipe(app.plugins.replace(/@img\//g, "../img/"))
     .pipe(sass({

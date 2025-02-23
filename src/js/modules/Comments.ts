@@ -1,3 +1,4 @@
+import { httpStatus } from '../constants'
 import { request } from '../utils'
 
 /**
@@ -109,7 +110,7 @@ export class Comments {
     
     const { status } = await request(`${this.url}`, {})
 
-    if (status === 200) {
+    if (status === httpStatus.Success) {
       console.log('like success')
     }
   }

@@ -4,7 +4,9 @@
     <div class="post-card__desc-inner">
       <p class="post-card__desc">@@desc</p>
       <div class="post-card__range">
-        @@include("../components/rating.html")
+        @@include("../components/rating.html", {
+          "value": 3,
+        })
         <div class="post-card__range-inner">
           <p>@@user-name</p>
           @@user-logo  

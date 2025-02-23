@@ -1,0 +1,73 @@
+// vendors
+@import "../vendors/swiper-bundle.min";
+@import "../vendors/cropper.min";
+
+// common styles
+@import "../common";
+
+// components
+@import "../components/nav-pages";
+@import "../components/publication-item";
+@import "../components/tabs";
+@import "../components/tabs-head";
+@import "../components/collapse";
+@import "../components/gallery-card";
+@import "../components/rating";
+
+@import "../components/filter-actions";
+@import "../components/form-filters";
+@import "../components/filters";
+@import "../components/sorting";
+@import "../components/clear-filter-content-popup";
+
+@import "../components/steps";
+@import "../components/add-publication";
+@import "../components/cropper-publication";
+@import "../components/created-publication";
+@import "../components/publication";
+
+@import "../components/add-goods-from-site";
+@import "../components/confirm-add-goods";
+
+.main {
+  padding: 1.5rem 0 5.5rem 0;
+
+  @include media($md) {
+    padding: 2.5rem 0 5.25rem 0;
+  }
+
+  @include media($lg) {
+    padding: 2.5rem 0 1.25rem 0;
+  }
+
+  @include media($full) {
+    padding: 5rem 0 3.25rem 0;
+  }
+}
+
+.section { 
+  @include media($lg) {
+    padding: 0rem 2.5rem;
+  }
+  
+  &__inner {
+    max-width: var(--max-width-container-1120);
+  }
+
+  &--add-publication-steps {
+    margin-top: 2rem;
+  }
+
+  &--add-publication {
+    margin-top: 1.25rem;
+
+    @include media($md) {
+      margin-top: 2rem;
+      padding: 0rem 2.5rem;
+    }
+
+    @include media($full) {
+      margin-top: 2.5rem;
+    }
+  }
+}

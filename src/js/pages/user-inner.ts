@@ -354,97 +354,97 @@ window.addEventListener('load', () => {
   }
 
   try {
-    new Form(
-      '.user-board__form-posts', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-posts', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.user-board__form-followers', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-followers', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.user-board__form-subscriptions-sp', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-subscriptions-sp', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.user-board__form-subscriptions-tff', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-subscriptions-tff', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.user-board__form-subscriptions-bloggers', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-subscriptions-bloggers', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.user-board__form-subscriptions-shops', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-subscriptions-shops', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.user-board__form-likes-goods', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-likes-goods', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    new Form(
-      '.user-board__form-likes-publications', 
-      API_URLS.mock.autocomplete,
-      {
+    new Form({
+      selectorForm: '.user-board__form-likes-publications', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
         method: HttpMethods.POST
       },
-    )
+    })
   } catch (error) {
     console.log(error)
   }

@@ -39,18 +39,19 @@ interface IConstructor {
  * Абстракция для создания и управления swiper
  */
 export class CustomSwiper {
-  target: string | HTMLElement
-  options?: IOptions
-  breakMedia?: number
-  initialActionIndex?: number
-  swiperOptions: ISwiperOptions
+  private target: string | HTMLElement
+  private options?: IOptions
+  private breakMedia?: number
+  public initialActionIndex?: number
+  private swiperOptions: ISwiperOptions
   
-  swiper: Swiper | null
-  matchMedia: MediaQueryList
+  private swiper: Swiper | null
+  private matchMedia: MediaQueryList
 
   constructor({ target, options, breakMedia, initialActionIndex, btnsElements }: IConstructor) {
     this.target = target
     this.options = options
+    this.breakMedia = breakMedia
     this.initialActionIndex = initialActionIndex || 0 
 
     this.swiperOptions = {
@@ -71,7 +72,7 @@ export class CustomSwiper {
 
     if (!this.target) return
     
-    if (breakMedia) {
+    if (this.breakMedia) {
       this.matchMedia = window.matchMedia(`(min-width:${breakMedia}px)`)
       this.matchMedia.addListener((e) => this.breakpointChecker(e))
     }
@@ -79,14 +80,18 @@ export class CustomSwiper {
     this.init()
   }
 
-  private init() {
+  private init(): void {
     this.startSlide()
   }
 
-  public startSlide() {
+  public destroy(): void {
+    this.swiper?.destroy()
+  }
+
+  public startSlide(): void {
     if (this.matchMedia?.matches) return
   
-    this.swiper?.destroy()
+    this.destroy()
     this.swiper = new Swiper(this.target, this.swiperOptions)   
     
     if (this.initialActionIndex) {
@@ -94,7 +99,7 @@ export class CustomSwiper {
     }
   }
 
-  private breakpointChecker(e: MediaQueryListEvent) {
+  private breakpointChecker(e: MediaQueryListEvent): void {
     if (e.matches) {
       this.swiper?.destroy()
     } else {
