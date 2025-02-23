@@ -11,7 +11,7 @@
     bottom: 0;
     transform: scale(0);
     padding: 1.25rem;
-    background: rgba(0, 0, 0, 0.50);
+    background: rgba(var(--color-dark), 0.5);
     backdrop-filter: blur(6px);
     z-index: var(--z-over);
     cursor: pointer;
@@ -19,17 +19,6 @@
 
   &--onlymobile {
     @include media($lg) {
-
-      // & #{$block}__overlay {
-      //   position: relative;
-      //   height: 0;
-      //   padding: 0;
-      //   background-color: transparent;
-      //   backdrop-filter: none;
-      //   z-index: 1;
-      //   transform: scale(1);
-      // }
-
       & #{$block}__content {
         padding: 0;
       }

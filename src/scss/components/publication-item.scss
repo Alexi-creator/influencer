@@ -8,15 +8,15 @@
   background-color: rgb(var(--color-primary-soft));
   border-radius: var(--radius-small);
 
-  &#{$root}--dark {
+  &#{$block}--dark {
     background-color: rgb(var(--color-primary-tag-checked));
   }
 
-  &#{$root}--green {
+  &#{$block}--green {
     background-color: rgba(var(--color-green-dark), 0.04);
   }
 
-  &#{$root}--grey {
+  &#{$block}--grey {
     background-color: rgb(var(--color-grey-soft));
   }
 
@@ -26,6 +26,11 @@
     border-radius: var(--radius-small);
     overflow: hidden;
     flex-shrink: 0;
+    
+    & > img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__content {

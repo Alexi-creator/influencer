@@ -29,6 +29,8 @@ export class FormValidator {
 
       if (fieldSchema.type === 'object' && fieldSchema.required) {
         const hasFiles = (targetElement?.files?.length || 0) > 0
+        console.log('hasFiles', hasFiles)
+        
 
         if (!hasFiles) {
           return { [name]: fieldSchema.messages?.required || 'не добавлены файлы' }
@@ -41,6 +43,10 @@ export class FormValidator {
 
       if (typeof fieldValue === 'string' && fieldSchema.maxLength && fieldValue.length > fieldSchema.maxLength) {
         return { [name]: fieldSchema.messages?.maxLength || 'слишком много символов' }
+      }
+
+      if (typeof fieldValue === 'string' && fieldSchema.pattern && !fieldSchema.pattern.test(fieldValue)) {
+        return { [name]: fieldSchema.messages?.pattern || '' }
       }
     }
 

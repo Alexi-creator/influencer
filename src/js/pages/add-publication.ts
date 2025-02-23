@@ -1,6 +1,7 @@
 import '../common'
 import { API_URLS, BreakpointWidth, HttpMethods } from '../constants'
 
+import { AddGoods } from '../modules/AddGoods'
 import { AddPublication } from '../modules/AddPublication'
 import { Autocomplete } from '../modules/Autocomplete'
 import { Collapse } from '../modules/Collapse'
@@ -133,7 +134,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form({
-      selectorForm: '.add-publication__content-form-sp', 
+      selectorForm: '.add-publication__form-sp', 
       url: API_URLS.mock.autocomplete,
       apiOptions: {
         method: HttpMethods.POST
@@ -145,7 +146,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form({
-      selectorForm: '.add-publication__content-form-all', 
+      selectorForm: '.add-publication__form-all', 
       url: API_URLS.mock.autocomplete,
       apiOptions: {
         method: HttpMethods.POST
@@ -157,7 +158,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form({
-      selectorForm: '.add-publication__content-form-bought', 
+      selectorForm: '.add-publication__form-bought', 
       url: API_URLS.mock.autocomplete,
       apiOptions: {
         method: HttpMethods.POST
@@ -169,7 +170,7 @@ window.addEventListener('load', () => {
 
   try {
     new Form({
-      selectorForm: '.add-publication__content-form-user', 
+      selectorForm: '.add-publication__form-user', 
       url: API_URLS.mock.autocomplete,
       apiOptions: {
         method: HttpMethods.POST
@@ -263,6 +264,72 @@ window.addEventListener('load', () => {
 
   try {
     new Rating()
+  } catch (error) {
+    console.log(error)
+  }
+  
+  let onSubmitAddGoods
+  
+  try {
+    const { handleSubmit } = new AddGoods()
+    onSubmitAddGoods = handleSubmit
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    new Form({
+      selectorForm: '.add-goods-from-site__form',
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
+        method: HttpMethods.POST,
+      },
+      validateSchema: {
+        'link-goods': {
+          type: 'string',
+          required: true,
+          allowEmpty: false,
+          pattern: /^(https?:\/\/)([\w.-]+)(:\d+)?(\/[^\s]*)?$/i,
+          messages: {
+            type: 'неверный тип данных',
+            required: 'Обязательное поле для заполнения',
+            allowEmpty: 'Поле не должно быть пустым',
+            pattern: 'Значение должно быть url ссылкой',
+          },
+        },
+        'name-goods': {
+          type: 'string',
+          required: true,
+          allowEmpty: false,
+          minLength: 6,
+          messages: {
+            type: 'неверный тип данных',
+            required: 'Обязательное поле для заполнения',
+            minLength: 'Не менее 6 символов',
+          },
+        },
+        'price-goods': {
+          type: 'string',
+          required: true,
+          allowEmpty: false,
+          // pattern: /^(\d{1,3}(\s\d{3})*|\d+)([.,]\d{1,2})?$/,
+          messages: {
+            type: 'неверный тип данных',
+            required: 'Обязательное поле для заполнения',
+            // pattern: 'Должно быть число'
+          },
+        },
+        'add-image': {
+          type: 'object',
+          required: true,
+          messages: {
+            required: 'Обязательное поле для заполнения',
+          },
+        },
+      },
+      // onValidation: onValidationAddGoods,
+      onSubmit: onSubmitAddGoods,
+    })
   } catch (error) {
     console.log(error)
   }

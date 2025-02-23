@@ -758,7 +758,7 @@ export class AddPublication {
   private changeHandler(e: Event): void {
     const targetElement = e.target as HTMLInputElement
     
-    if (targetElement.closest(this.mainSelector)) {
+    if (targetElement.closest(this.fillingFormSelector)) {
       return this.addImages(targetElement)
     }
   }

@@ -1,0 +1,29 @@
+.confirm-add-goods {
+  max-width: 22.5rem;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__card {
+    margin-top: 2rem;
+
+    & .publication-item {
+      justify-content: flex-start
+    }
+  }
+
+  &__actions {
+    @extend %flex-center;
+
+    gap: 1.25rem;
+    margin-top: 2rem;
+
+    @include media($md) {
+      justify-content: space-between;
+    }
+  }
+}

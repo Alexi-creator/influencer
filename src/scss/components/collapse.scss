@@ -22,14 +22,14 @@
   }
 
   &--arrow {
-    #{$root}__head-icon {
+    #{$block}__head-icon {
       & use {
         stroke: rgb(var(--color-grey));
       }
     }
 
-    &#{$root}--close {
-      #{$root}__head-icon {
+    &#{$block}--close {
+      #{$block}__head-icon {
         transform: rotate(180deg);
       }
     }

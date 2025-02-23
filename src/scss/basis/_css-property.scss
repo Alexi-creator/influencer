@@ -1,5 +1,8 @@
 :root {
   // colors
+  --color-white: 255, 255, 255;
+  --color-dark: 0, 0, 0;
+
   --color-primary: 205, 150, 99;
   --color-primary-dark: 222, 186, 152;
   --color-primary-light: 229, 202, 177;
@@ -10,7 +13,6 @@
   --color-black-hover: 161, 161, 161;
   --color-black-middle: 225, 225, 225;
   --color-black-light: 234, 234, 234;
-  --color-white: 255, 255, 255;
   --color-grey: 170, 170, 170;
   --color-grey-scrollbar: 193, 193, 193;
   --color-grey-light: 212, 212, 212;

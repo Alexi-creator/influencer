@@ -1,11 +1,13 @@
 import { request, IOptions } from '../utils'
 import { HttpMethods } from '../constants'
+
 import { FormValidator } from './FormValidator'
 
 export interface IValidateSchema {
   type: string | number | Date
   required?: boolean
   allowEmpty?: boolean
+  pattern?: RegExp
   minLength?: number
   maxLength?: number
   messages?: {
@@ -14,6 +16,7 @@ export interface IValidateSchema {
     allowEmpty?: string
     minLength?: string
     maxLength?: string
+    pattern?: string
   }
 }
 
@@ -52,6 +55,7 @@ export class Form extends FormValidator {
   private onSubmit?: (response: {}, data: {}) => void
 
   private formElem: HTMLFormElement
+  private btnSubmitElem?: HTMLButtonElement
 
   private stateForm: IStateForm
   private requiredFields: string[]
@@ -84,10 +88,10 @@ export class Form extends FormValidator {
     }
 
     const form = document.querySelector(this.selectorForm)
+    if (form) this.formElem = form as HTMLFormElement
 
-    if (form) {
-      this.formElem = form as HTMLFormElement
-    }
+    const btnSubmitElem = this.formElem.querySelector('.submit, button[type="submit"]') as HTMLButtonElement
+    if (btnSubmitElem) this.btnSubmitElem = btnSubmitElem
     
     if (!this.formElem) return
 
@@ -139,7 +143,12 @@ export class Form extends FormValidator {
         this.apiOptions = { ...this.apiOptions, body: JSON.stringify(data) }
       }
   
+      this.btnSubmitElem?.classList.add('active')
+      
       const response = await request(url, this.apiOptions)
+      
+      this.btnSubmitElem?.classList.remove('active')
+      this.btnSubmitElem && (this.btnSubmitElem.disabled = true)
       this.onSubmit?.(response, data)
     }
   }
@@ -190,16 +199,20 @@ export class Form extends FormValidator {
 
     if (hasError) {
       this.stateForm.isValid = false
+      this.btnSubmitElem && (this.btnSubmitElem.disabled = true)
     } else {
       this.stateForm.isValid = true
+      this.btnSubmitElem && (this.btnSubmitElem.disabled = false)
 
       Object.entries(this.stateForm.values).forEach(([key, val]) => {
         if (typeof val === 'object' && Object.values(val).length === 0 && this.requiredFields.includes(key)) {
           this.stateForm.isValid = false
+          this.btnSubmitElem && (this.btnSubmitElem.disabled = true)
         }
         
         if (!val && this.requiredFields.includes(key)) {
           this.stateForm.isValid = false
+          this.btnSubmitElem && (this.btnSubmitElem.disabled = true)
         }
       })
     }
@@ -228,7 +241,7 @@ export class Form extends FormValidator {
       ) as Record<string, string | number>
   
       const validatedResult: Record<string, string> | null = this.validateForm(formValues, this.validateSchema, targetElement, name)
-      
+
       if (validatedResult) {
         const error = validatedResult[name]
 

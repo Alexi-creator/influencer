@@ -2,11 +2,11 @@
   $block: &;
 
   &--split {
-    #{$root}__list {
+    #{$block}__list {
       gap: 0.5rem;
     }
 
-    #{$root}__tab {
+    #{$block}__tab {
       &:first-child, &:last-child, &:not(:first-child):not(:last-child) {
         border-width: 0.125rem;
         border-radius: var(--radius-medium);

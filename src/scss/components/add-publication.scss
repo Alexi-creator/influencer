@@ -1,5 +1,5 @@
 .add-publication {
-  $root: &;
+  $block: &;
 
   &__inner {
 
@@ -346,7 +346,7 @@
       }
     }
 
-    #{$root}__content-results-list-item {
+    #{$block}__content-results-list-item {
       &-clear {
         @extend %flex-center;
 
@@ -356,7 +356,7 @@
       }
 
       &:hover {
-        #{$root}__content-results-list-item-clear {
+        #{$block}__content-results-list-item-clear {
           @include media($lg) {
             display: flex;
           }
@@ -403,7 +403,7 @@
           gap: 1rem;
         }
         
-        #{$root}__content-results-list-item {
+        #{$block}__content-results-list-item {
           max-width: 25.5rem;
 
           & .publication-item {
@@ -675,7 +675,7 @@
           padding: 1.5rem 3.25rem;
         }
 
-        & #{$root}__actions-preview {
+        & #{$block}__actions-preview {
           &-wrapper {
             @extend %flex-center;
 
@@ -810,5 +810,56 @@
 
   & .publication__swiper {
     height: auto;
+  }
+
+  &__from-site-popup {
+    & .popup {
+      &__header-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        @include media($md) {
+          flex-grow: 1;
+          font-size: 2rem;
+          text-align: center;
+        }
+      }
+
+      &__overlay {
+        @include media($md) {
+          display: flex;
+          bottom: 0;
+          padding: 2.5rem;
+          background: rgba(var(--color-dark), 0.5);
+          backdrop-filter: blur(6px);
+        }
+      }
+
+      &__content {
+        height: max-content;
+        max-width: 70rem;
+
+        @include media($md) {
+          gap: 1.5rem;
+          padding: 2.5rem 3rem;
+        }
+
+        @include media($lg) {
+          max-height: 74.16svh;
+          padding: 3.75rem 3rem;
+        }
+      }
+    }
+  }
+
+  &__from-site-confirm-popup {
+    & .popup {
+      &__content {
+        @include media($md) {
+          max-width: 34rem;
+          padding: 2.5rem 5rem;
+        }
+      }
+    }
   }
 }

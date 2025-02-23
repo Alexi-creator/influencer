@@ -1197,10 +1197,17 @@
       })
 
       @@include("./popup.html", {
-        "extra-class": "add-publication__from-site image-from-site",
+        "extra-class": "add-publication__from-site-popup popup--no-overlay",
         "id": "popup-from-site",
+        "title": "Добавить товар с другого сайта",
+        "body": '@@include("./add-goods-from-site.html")',
+      })
+
+      @@include("./popup.html", {
+        "extra-class": "add-publication__from-site-confirm-popup",
+        "id": "popup-confirm-from-site",
         "title": "",
-        "body": 'from site',
+        "body": '@@include("./confirm-add-goods.html")',
       })
     </div>
 

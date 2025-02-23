@@ -1,5 +1,5 @@
 .rating {
-  $root: &;
+  $block: &;
 
   @extend %inline-flex-row;
 

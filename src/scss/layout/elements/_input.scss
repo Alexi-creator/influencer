@@ -1,6 +1,8 @@
 .input-text {
   $block: &;
 
+  position: relative;
+
   &__label {
     height: 3rem;
     display: flex;
@@ -42,7 +44,12 @@
     background-color: rgb(var(--color-primary-soft));
     border-color: rgb(var(--color-primary));
 
-    #{$root}__prefix {
+    &-small {
+      height: 3rem;
+      width: 3rem;
+    }
+
+    #{$block}__prefix {
       margin: 0 auto;
 
       & svg {
@@ -66,11 +73,11 @@
       }
     }
 
-    &#{$root}--disabled {
+    &#{$block}--disabled {
       background-color: rgb(var(--color-grey-soft));
       border-color: rgb(var(--color-grey-dark));
 
-      #{$root}__prefix {
+      #{$block}__prefix {
         & svg {
           color: rgb(var(--color-grey-600));
         }
@@ -81,7 +88,7 @@
       }
     }
 
-    #{$root}__suffix {
+    #{$block}__suffix {
       display: none;
     }
 
@@ -99,7 +106,7 @@
       z-index: var(--z-over);
       cursor: pointer;
 
-      #{$root}__prefix {
+      #{$block}__prefix {
         display: none;
       }
 
@@ -114,7 +121,7 @@
         opacity: 1;
       }
 
-      #{$root}__suffix {
+      #{$block}__suffix {
         display: block;
         max-width: 46rem;
         max-height: calc(75svh / 2);
@@ -171,6 +178,7 @@
 
   &__error {
     display: none;
+    position: absolute;
     color: rgb(var(--color-red));
 
     &.active {
