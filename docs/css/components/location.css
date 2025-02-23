@@ -11,16 +11,6 @@
   align-items: center;
 }
 
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .location__inner {
   display: flex;
   flex-direction: column;

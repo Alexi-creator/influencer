@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20250209134851">
+  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20250223181315">
   <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20250209134851"></script>
+  <script defer src="js/ui-kit.min.js?_v=20250223181315"></script>
 </head>
   <body>
     <main class="ui-kit">
@@ -81,6 +81,14 @@
         </button>
         <button class="btn" disabled>Disabled</button>
         <button class="btn btn--dashed">Dashed</button>
+        <button class="btn btn--loading active">
+          Loading active
+          <svg><use xlink:href="./img/icons/icons.svg#loading"></use></svg>
+        </button>
+        <button class="btn btn--loading" disabled>
+          Loading disabled
+          <svg><use xlink:href="./img/icons/icons.svg#loading"></use></svg>
+        </button>
       </div>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__buttons">
         <button class="btn btn--color-white">
@@ -93,68 +101,149 @@
       
       <h2>Input:</h2>
       <div class="ui-kit__block ui-kit__input">
-        <label class="input-text ">
-  
-  <input name="input1" class="input-text__input" type="text" placeholder="Простой инпут" @@atr>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label " data-id="parent-input1">
+    
+    <input name="input1" class="input-text__input" type="text" placeholder="Простой инпут" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-input1"></p>
+</div>
+
       </div>
       <div class="ui-kit__block ui-kit__input">
-        <label class="input-text ">
-  
-    <div class="input-text__prefix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="input2" class="input-text__input" type="text" placeholder="Инпут с элементом слева" @@atr>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label " data-id="parent-input2">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="input2" class="input-text__input" type="text" placeholder="Инпут с элементом слева" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-input2"></p>
+</div>
+
       </div>
       <div class="ui-kit__block ui-kit__input">
-        <label class="input-text ">
-  
-    <div class="input-text__prefix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="input3" class="input-text__input" type="text" placeholder="Инпут с элементом слева и справа" @@atr>
-  
-    <div class="input-text__suffix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label " data-id="parent-input3">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="input3" class="input-text__input" type="text" placeholder="Инпут с элементом слева и справа" @@atr>
+    
+      <div class="input-text__suffix "><svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
+    
+  </label>
+  <p class="input-text__error" data-id="error-input3"></p>
+</div>
+
       </div>
       <div class="ui-kit__block ui-kit__input">
-        <label class="input-text input-text--small">
-  
-    <div class="input-text__prefix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="input4" class="input-text__input" type="text" placeholder="Инпут меньшего размера" @@atr>
-  
-    <div class="input-text__suffix "><svg class="search__icon-search"><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label input-text--small" data-id="parent-input4">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="input4" class="input-text__input" type="text" placeholder="Инпут меньшего размера" @@atr>
+    
+      <div class="input-text__suffix "><svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
+    
+  </label>
+  <p class="input-text__error" data-id="error-input4"></p>
+</div>
+
       </div>
       <div class="ui-kit__block ui-kit__input">
-        <label class="input-text input-text--color-grey">
-  
-  <input name="input5" class="input-text__input" type="password" placeholder="Пароль с серой рамкой" @@atr>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey" data-id="parent-input5">
+    
+    <input name="input5" class="input-text__input" type="password" placeholder="Пароль с серой рамкой" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-input5"></p>
+</div>
+
       </div>
       <div class="ui-kit__block ui-kit__input">
-        <label class="input-text input-text--color-grey input-text--disabled">
-  
-  <input name="input6" class="input-text__input" type="text" placeholder="Задизейбленный инпут" disabled>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey input-text--disabled" data-id="parent-input6">
+    
+    <input name="input6" class="input-text__input" type="text" placeholder="Задизейбленный инпут" disabled>
+    
+  </label>
+  <p class="input-text__error" data-id="error-input6"></p>
+</div>
+
       </div>
+
+      <h4>Input type file upload</h4>
+      <div class="ui-kit__block ui-kit__input">
+        <div class="input-text">
+  <label class="input-text__label input-text--upload" data-id="parent-input7">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg></div>
+    
+    <input name="input7" class="input-text__input" type="file" placeholder="" >
+    
+  </label>
+  <p class="input-text__error" data-id="error-input7"></p>
+</div>
+
+      </div>
+
+      <h4>Input type file upload (disabled)</h4>
+      <div class="ui-kit__block ui-kit__input">
+        <div class="input-text">
+  <label class="input-text__label input-text--upload input-text--disabled" data-id="parent-input8">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg></div>
+    
+    <input name="input8" class="input-text__input" type="file" placeholder="" disabled>
+    
+  </label>
+  <p class="input-text__error" data-id="error-input8"></p>
+</div>
+
+      </div>
+
+      <h2>TextArea:</h2>
+      <div class="textarea">
+  <textarea
+    class="textarea__input @@extra-class"
+    name="textarea"
+    placeholder="Введите текст"
+    data-id="parent-textarea"
+  ></textarea>
+  <p class="textarea__error" data-id="error-textarea"></p>
+</div>
+
+
+
+      <h2>TextArea с серой рамкой:</h2>
+      <div class="textarea">
+  <textarea
+    class="textarea__input textarea__input--grey"
+    name="textarea-grey"
+    placeholder="Введите текст"
+    data-id="parent-textarea-grey"
+  ></textarea>
+  <p class="textarea__error" data-id="error-textarea-grey"></p>
+</div>
+
+
 
       <h2>Search:</h2>
       <div class="ui-kit__block ui-kit__search">
         <div id="search" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
-  <label class="input-text autocomplete__input">
-  
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
-  
-    <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
+  <div class="input-text">
+  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
+    
+      <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -167,8 +256,11 @@
   <input name=select-search type="text" value="value1" hidden>
 </div>
 </div>
-  
-</label>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
 
   <input type="text" name="search" value="@@value" hidden>
 
@@ -190,13 +282,17 @@
       <h2>Autocomplete:</h2>
       <div class="ui-kit__block ui-kit__autocomplete">
         <div id="ui-autocomplete" class="autocomplete @@extra-class">
-  <label class="input-text autocomplete__input input-text--small input-text--color-grey">
-  
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete" @@atr>
-  
-</label>
+  <div class="input-text">
+  <label class="input-text__label autocomplete__input input-text--small input-text--color-grey" data-id="parent-@@name">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
 
   <input type="text" name="ui-kit-autocomplete" value="@@value" hidden>
 
@@ -216,15 +312,19 @@
       </div>
       <div class="ui-kit__block ui-kit__autocomplete">
         <div id="ui-autocomplete-url" class="autocomplete @@extra-class">
-  <label class="input-text autocomplete__input">
-  
-    <div class="input-text__prefix autocomplete__input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete-url" @@atr>
-  
-    <div class="input-text__suffix autocomplete__input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-  
-</label>
+  <div class="input-text">
+  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
+    
+      <div class="input-text__prefix autocomplete__input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete-url" @@atr>
+    
+      <div class="input-text__suffix autocomplete__input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
 
   <input type="text" name="ui-kit-autocomplete-url" value="@@value" hidden>
 
@@ -239,6 +339,40 @@
   </div>
 </div>
 
+      </div>
+
+      <h2>Gallery-card:</h2>
+      <div class="ui-kit__block ui-kit__gallery-card">
+        <div class="gallery-card">
+          <div class="gallery-card__item">
+            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
+          </div>
+          <div class="gallery-card__item">
+            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
+            <span class="gallery-card__item-more">+7</span>
+          </div>
+        </div>
       </div>
 
       <h2>Бегущая строка:</h2>
@@ -433,8 +567,54 @@
 </div>
       </div>
 
+      <h2>Rating:</h2>
+      <div class="ui-kit__block">
+        <div class="rating @@extra-class" data-rating="3">
+  <svg class="rating__icon" data-rate="1">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="2">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="3">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="4">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="5">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+
+  <input name="@@name" type="text" value="" hidden>
+</div>
+      </div>
+
+      <h2>Rating hover (active select):</h2>
+      <div class="ui-kit__block">
+        <div class="rating rating--select" data-rating="@@value">
+  <svg class="rating__icon" data-rate="1">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="2">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="3">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="4">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+  <svg class="rating__icon" data-rate="5">
+    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+  </svg>
+
+  <input name="rating" type="text" value="" hidden>
+</div>
+      </div>
+
       <h2>Collapse:</h2>
-      <div class="collapse ">
+      <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Title
@@ -448,8 +628,23 @@
   </div>
 </div>
 
+      <h2>Collapse arrow icon:</h2>
+      <div class="collapse  collapse--arrow">
+  <div class="collapse__head">
+    <span class="collapse__head-title">
+      Title
+    </span>
+    <svg class="collapse__head-icon">
+      <use xlink:href="./img/icons/icons.svg#arrow"></use>
+    </svg>
+  </div>
+  <div class="collapse__content">
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>
+  </div>
+</div>
+
       <h2>Popup (Modals):</h2>
-      <div id="1" class="popup ">
+      <div id="1" class="popup " @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -457,7 +652,7 @@
     </div>
   </div>
 </div>
-      <div id="2" class="popup ">
+      <div id="2" class="popup " @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -465,7 +660,7 @@
     </div>
   </div>
 </div>
-      <div id="title" class="popup ">
+      <div id="title" class="popup " @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -614,14 +809,42 @@
 
       <h2>Tabs:</h2>
       <div class="ui-kit__block ui-kit__tabs">
-        <div class="tabs">
+        <div class="tabs @@extra-class">
   <div class="tabs__head">
-    <ul class="tabs__list">
-      <li class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></li>
-      <li class="tabs__tab" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></li>
-      <li class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></li>
-      <li class="tabs__tab" data-tab-path="contacts">Контакты</li>
-    </ul>
+    <div class="tabs__list">
+      <button class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></button>
+      <button class="tabs__tab" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></button>
+      <button class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></button>
+      <button class="tabs__tab" data-tab-path="contacts">Контакты</button>
+    </div>
+  </div> 
+  <div class="tabs__contents">
+    <div class="tabs__content tabs__content--active" data-tab-target="goods">
+      content Товары
+    </div>
+    <div class="tabs__content" data-tab-target="sp">
+      content Совместные покупки
+    </div>
+    <div class="tabs__content" data-tab-target="tff">
+      content Test For Free
+    </div>
+    <div class="tabs__content" data-tab-target="contacts">
+      Контакты
+    </div>
+  </div>
+</div>
+      </div>
+
+      <h2>Tabs с раздельными табами:</h2>
+      <div class="ui-kit__block ui-kit__tabs">
+        <div class="tabs tabs--split">
+  <div class="tabs__head">
+    <div class="tabs__list">
+      <button class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></button>
+      <button class="tabs__tab" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></button>
+      <button class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></button>
+      <button class="tabs__tab" data-tab-path="contacts">Контакты</button>
+    </div>
   </div> 
   <div class="tabs__contents">
     <div class="tabs__content tabs__content--active" data-tab-target="goods">

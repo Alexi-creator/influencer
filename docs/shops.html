@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20250209134851">
+  <link rel="stylesheet" href="css/pages/shops.min.css?_v=20250223181315">
   <title>shops Page</title>
-  <script defer src="js/shops.min.js?_v=20250209134851"></script>
+  <script defer src="js/shops.min.js?_v=20250223181315"></script>
 </head>
   <body>
     <header class="header">
@@ -63,13 +63,14 @@
             <svg class="header__nav-search-title-cross"><use xlink:href="./img/icons/icons.svg#cross"></use></svg>
           </div>
           <div id="search-shops" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
-  <label class="input-text autocomplete__input">
-  
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
-  
-    <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
+  <div class="input-text">
+  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
+    
+      <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
   <div class="select__header">
     <div class="select__title">Везде</div>
     <div class="select__icon">
@@ -82,8 +83,11 @@
   <input name=select-search type="text" value="value2" hidden>
 </div>
 </div>
-  
-</label>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
 
   <input type="text" name="search-shops" value="@@value" hidden>
 
@@ -144,7 +148,7 @@
           </div>
         </li>
         <li class="header__nav-item header__nav-instagram">
-          <a href="#">
+          <a href="/add-publication.html">
             <svg>
               <use xlink:href="./img/icons/icons.svg#camera"></use>
             </svg>
@@ -247,7 +251,7 @@
   </ul>
 </div>
 
-  <div id="login" class="popup header__login">
+  <div id="login" class="popup header__login" @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -292,16 +296,24 @@
         <span class="login__or-text">или</span>
       </div>
       <form class="login__form login__form-sign-in">
-        <label class="input-text input-text--color-grey login__form-item">
-  
-  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-  
-</label>
-        <label class="input-text input-text--color-grey login__form-item">
-  
-  <input name="password" class="input-text__input" type="password" placeholder="Введите пароль" @@atr>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+    
+    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-email"></p>
+</div>
+
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+    
+    <input name="password" class="input-text__input" type="password" placeholder="Введите пароль" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-password"></p>
+</div>
+
         <button class="login__form-submit btn" type="submit">
           Войти
         </button>
@@ -351,21 +363,33 @@
         <span class="login__or-text">или</span>
       </div>
       <form class="login__form login__form-sign-up">
-        <label class="input-text input-text--color-grey login__form-item">
-  
-  <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-  
-</label>
-        <label class="input-text input-text--color-grey login__form-item">
-  
-  <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль" @@atr>
-  
-</label>
-        <label class="input-text input-text--color-grey login__form-item">
-  
-  <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль" @@atr>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+    
+    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-email"></p>
+</div>
+
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+    
+    <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-password"></p>
+</div>
+
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-repeat_password">
+    
+    <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-repeat_password"></p>
+</div>
+
         <button class="login__form-submit btn" type="submit">
           Зарегистрироваться
         </button>
@@ -384,7 +408,7 @@
   </div>
 </div>
 
-  <div id="location" class="popup header__location">
+  <div id="location" class="popup header__location" @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -462,7 +486,7 @@
   </div>
 </div>
 
-  <div id="choose-city" class="popup header__choose-city">
+  <div id="choose-city" class="popup header__choose-city" @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -482,13 +506,17 @@
       </button>
     </div>
     <div class="choose-city__search">
-      <label class="input-text ">
-  
-    <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город" @@atr>
-  
-</label>
+      <div class="input-text">
+  <label class="input-text__label " data-id="parent-@@name">
+    
+      <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
     </div>
     <ul class="choose-city__list">
       <li class="choose-city__list-item">
@@ -519,7 +547,7 @@
   </div>
 </div>
 
-  <div id="map" class="popup popup--no-overlay header__map">
+  <div id="map" class="popup popup--no-overlay header__map" @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -578,15 +606,19 @@
       </div>
       <div class="map__address-actions">
         <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
-  <label class="input-text autocomplete__input">
-  
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи" @@atr>
-  
-    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-  
-</label>
+  <div class="input-text">
+  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи" @@atr>
+    
+      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
 
   <input type="text" name="pickup-autocomplete" value="@@value" hidden>
 
@@ -602,15 +634,19 @@
 </div>
 
         <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
-  <label class="input-text autocomplete__input">
-  
-    <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки" @@atr>
-  
-    <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-  
-</label>
+  <div class="input-text">
+  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
+    
+      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки" @@atr>
+    
+      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
 
   <input type="text" name="courier-autocomplete" value="@@value" hidden>
 
@@ -646,7 +682,7 @@
   </div>
 </div>
 
-  <div id="search-pickup" class="popup popup--no-overlay header__search-pickup">
+  <div id="search-pickup" class="popup popup--no-overlay header__search-pickup" @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -670,15 +706,19 @@
     <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
     <div class="search-pickup__actions">
       <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
-  <label class="input-text autocomplete__input">
-  
-    <div class="input-text__prefix search-pickup__actions-input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес" @@atr>
-  
-    <div class="input-text__suffix search-pickup__actions-input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-  
-</label>
+  <div class="input-text">
+  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
+    
+      <div class="input-text__prefix search-pickup__actions-input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес" @@atr>
+    
+      <div class="input-text__suffix search-pickup__actions-input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
 
   <input type="text" name="search-pickup" value="@@value" hidden>
 
@@ -710,7 +750,7 @@
   </div>
 </div>
 
-  <div id="courier" class="popup popup--no-overlay header__courier">
+  <div id="courier" class="popup popup--no-overlay header__courier" @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       
@@ -736,31 +776,51 @@
         <div class="courier__actions-inputs-full">
           Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
         </div>
-        <label class="input-text input-text--color-grey">
-  
-  <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом" @@atr>
-  
-</label>
-        <label class="input-text input-text--color-grey">
-  
-  <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс" @@atr>
-  
-</label>
-        <label class="input-text input-text--color-grey">
-  
-  <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд" @@atr>
-  
-</label>
-        <label class="input-text input-text--color-grey">
-  
-  <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж" @@atr>
-  
-</label>
-        <label class="input-text input-text--color-grey">
-  
-  <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон" @@atr>
-  
-</label>
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
+    
+    <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
+    
+    <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
+    
+    <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
+    
+    <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
+        <div class="input-text">
+  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
+    
+    <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
       </div>
       <button class="btn" disabled>
         Продолжить
@@ -776,7 +836,7 @@
   <nav class="nav">
   <ul class="nav__list">
     <li >
-  <a class="nav__item nav__item-publication" href="#">
+  <a class="nav__item nav__item-publication" href="/add-publication.html">
     <svg class="nav__item-icon">
       <use xlink:href="./img/icons/icons.svg#camera"></use>
     </svg>
@@ -803,7 +863,7 @@
     
   </a>
 </li><li >
-  <a class="nav__item nav__item-shopping-bag" href="#">
+  <a class="nav__item nav__item-shopping-bag" href="/carts.html">
     <svg class="nav__item-icon">
       <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
     </svg>
@@ -998,16 +1058,16 @@
           </div>
         </div>
       </div>
-      <div class="swiper-button-prev">
+      <button class="swiper-button-prev">
         <svg>
           <use xlink:href="./img/icons/icons.svg#arrow"></use>
         </svg>
-      </div>
-      <div class="swiper-button-next">
+      </button>
+      <button class="swiper-button-next">
         <svg>
           <use xlink:href="./img/icons/icons.svg#arrow"></use>
         </svg>
-      </div>
+      </button>
     </div>
   
     <!-- Блок с кнопками сортировки и фильтрации для вкладки goods -->
@@ -1218,7 +1278,7 @@
             <div class="shop-window__form-filter-filters filters__items">
               <!-- filters__item--categories нужно добавить по дефолту -->
               <div class="filters__item filters__item--categories">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Категории
@@ -1617,7 +1677,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Прайс
@@ -1650,7 +1710,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер0
@@ -1705,7 +1765,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер10
@@ -1760,7 +1820,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер
@@ -1815,7 +1875,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Специальные предложение
@@ -1870,7 +1930,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер2
@@ -1925,7 +1985,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер3
@@ -1980,7 +2040,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер4
@@ -2035,7 +2095,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер5
@@ -3061,7 +3121,7 @@
             </div>
             <div class="shop-window__form-filter-filters filters__items filters--sp">
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны
@@ -3116,7 +3176,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны2
@@ -3181,7 +3241,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны3
@@ -3246,7 +3306,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны4
@@ -3311,7 +3371,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны5
@@ -3376,7 +3436,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны6
@@ -3441,7 +3501,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Платья и сарафаны7
@@ -3525,13 +3585,17 @@
         <div class="tab-content shop-window__joint-purchases">
           <div class="shop-window__joint-purchases-actions">
             <div class="shop-window__joint-purchases-search">
-              <label class="input-text input-text--color-grey">
-  
-    <div class="input-text__prefix "><svg class='shop-window__joint-purchases-search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
-  
-  <input name="@@name" class="input-text__input" type="@@type" placeholder="Введите название товара" @@atr>
-  
-</label>
+              <div class="input-text">
+  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
+    
+      <div class="input-text__prefix "><svg class='shop-window__joint-purchases-search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+    
+    <input name="@@name" class="input-text__input" type="@@type" placeholder="Введите название товара" @@atr>
+    
+  </label>
+  <p class="input-text__error" data-id="error-@@name"></p>
+</div>
+
             </div>
             <div class="shop-window__joint-purchases-btn">
               <button class="btn btn--color-primary-light">
@@ -4122,7 +4186,7 @@
             <div class="shop-window__form-filter-filters filters__items">
               <!-- filters__item--categories нужно добавить по дефолту -->
               <div class="filters__item filters__item--categories">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Категории
@@ -4521,7 +4585,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Прайс
@@ -4554,7 +4618,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер0
@@ -4609,7 +4673,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер10
@@ -4664,7 +4728,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер
@@ -4719,7 +4783,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Специальные предложение
@@ -4774,7 +4838,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер2
@@ -4829,7 +4893,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер3
@@ -4884,7 +4948,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер4
@@ -4939,7 +5003,7 @@
 </div>
               </div>
               <div class="filters__item">
-                <div class="collapse ">
+                <div class="collapse  @@extra-class">
   <div class="collapse__head">
     <span class="collapse__head-title">
       Размер5
@@ -5982,7 +6046,7 @@
     </div>
   </div>
   <div class="shop-window__popups">
-    <div id="clearFilter" class="popup ">
+    <div id="clearFilter" class="popup " @@media>
   <div class="popup__overlay">
     <div class="popup__content">
       

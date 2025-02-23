@@ -32,16 +32,6 @@
   flex-direction: column;
 }
 
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .cart-item {
   background-color: rgb(var(--color-primary-soft));
   border: 2px solid transparent;

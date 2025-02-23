@@ -4,21 +4,11 @@
   justify-content: flex-end;
 }
 
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .filter-actions {
   display: none;
   gap: 0.5rem;
   position: sticky;
-  top: 5rem;
+  top: 4.5rem;
   margin-left: auto;
   margin-top: 1.5rem;
   z-index: var(--z-popup);

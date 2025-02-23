@@ -1,17 +1,5 @@
 .rating {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  display: inline-flex;
 }
 
 .rating {
@@ -21,4 +9,22 @@
 .rating svg {
   width: 1rem;
   height: 1rem;
+  color: rgb(var(--color-grey-light));
+  transition: color 0.3s ease;
+}
+
+.rating[data-rating="1"] svg:nth-child(-n+1),
+.rating[data-rating="2"] svg:nth-child(-n+2),
+.rating[data-rating="3"] svg:nth-child(-n+3),
+.rating[data-rating="4"] svg:nth-child(-n+4),
+.rating[data-rating="5"] svg:nth-child(-n+5) {
+  color: rgb(var(--color-primary));
+}
+
+.rating--select svg {
+  cursor: pointer;
+}
+
+.rating--select svg.active {
+  color: rgb(var(--color-primary));
 }
