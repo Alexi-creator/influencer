@@ -1273,7 +1273,7 @@
             <p class="add-publication__filling-field-upload-info">
               Вы можете изменить порядок показа фотографий перетаскиванием. Чтобы посмотреть на фото в увеличенном масштабе, просто кликните на нее
             </p>
-            <button class="add-publication__filling-field-upload-settings btn btn--none" data-popup="cropper">Настроить область показа миниатюр</button>
+            <button type="button" class="add-publication__filling-field-upload-settings btn btn--none" data-popup="cropper">Настроить область показа миниатюр</button>
           </div>
         </div>
   
@@ -1426,7 +1426,10 @@
         <div class="add-publication__actions-preview-action" data-text="Cвернуть">Посмотреть</div>
       </button>
       <button class="add-publication__actions-next active btn btn--disabled" disabled>Далее</button>
-      <button class="add-publication__actions-publication btn">Опубликовать</button>
+      <button class="add-publication__actions-publication hide btn btn--loading">
+        Опубликовать
+        <svg class=""><use xlink:href="./img/icons/icons.svg#loading"></use></svg>
+      </button>
     </div>
   </div>
 </div>

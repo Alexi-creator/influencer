@@ -1,7 +1,7 @@
 .publication-item {
   $block: &;
 
-  @extend %flex-center;
+  @extend %flex-align-center;
 
   gap: 0.5rem;
   padding: 0.75rem;

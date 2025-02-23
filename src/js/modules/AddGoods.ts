@@ -172,7 +172,7 @@ export class AddGoods {
     console.log('response', response)
     console.log('data', data)
 
-    if (response?.status === httpStatus.Created) {
+    // if (response?.status === httpStatus.Created) {
       console.log('success')
       this.confirmPopupElem.classList.remove('popup--open')
       document.body.classList.remove('overflow')
@@ -186,9 +186,35 @@ export class AddGoods {
       
       const copyNodeForUserTab = this.createListItemNode('test-backend')
       this.userTabElem.appendChild(copyNodeForUserTab)
-    }
+
+      this.clearForm()
+      this.imgPreviewElem.classList.remove('active')
+      this.plugPreviewElem.classList.remove('hide')
+
+      const currentText = this.uploadTextElem.textContent
+      const dataText = this.uploadTextElem.dataset.text
+      this.uploadTextElem.textContent = dataText ||''
+      this.uploadTextElem.dataset.text = currentText || ''
+
+      this.uploadInputWrapperElem.classList.remove('hide')
+      this.uploadImgElem.classList.remove('active')
+      this.uploadTextElem.classList.remove('active')
+
+      this.hasUploadedImg = false
+    // }
 
     this.confirmSubmitBtnElem.classList.remove('active')
+  }
+
+  private clearForm(): void {
+    Object.keys(this.state).forEach(key => {
+      this.state[key] = ''
+    })
+
+    const inputElems = [...this.formElem.querySelectorAll('input[type="text"]')] as HTMLInputElement[]
+    inputElems.forEach(input => {
+      input.value = ''
+    })
   }
 
   private addImage(src: string): void {

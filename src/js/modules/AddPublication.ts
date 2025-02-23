@@ -590,8 +590,11 @@ export class AddPublication {
   }
 
   public handleSubmit = (response): void => {
-    if (response && response.status === httpStatus.Created) {
-      this.publicationBtnElem.classList.remove('active')
+    this.publicationBtnElem.classList.remove('active')
+    console.log('response', response)
+    
+    // if (response && response.status === httpStatus.Created) {
+      this.publicationBtnElem.classList.add('hide')
       this.prevBtnElem.classList.remove('active')
 
       this.onChangeStep(StepsEnum.created)
@@ -599,12 +602,13 @@ export class AddPublication {
       document.body.classList.add('overflow')
       
       // TODO добавить ссылку в попап (посмотреть публикацию)
-    }
+    // }
   }
 
   private publication(): void {
     // TODO проверить что уходят изображения которые именно обрезали
 
+    this.publicationBtnElem.classList.add('active')
     this.fillingFormSubmitElem.click()
   }
   
@@ -647,14 +651,16 @@ export class AddPublication {
 
       if (newStepNumber === 2) {
         this.nextBtnElem.classList.remove('active')
-        this.publicationBtnElem.classList.add('active')
+        // this.publicationBtnElem.classList.add('active')
+        this.publicationBtnElem.classList.remove('hide')
       }
     }
 
     if (variant === 'prev') {
       this.nextBtnElem.disabled = false
       this.nextBtnElem.classList.add('active')
-      this.publicationBtnElem.classList.remove('active')
+      // this.publicationBtnElem.classList.remove('active')
+      this.publicationBtnElem.classList.add('hide')
 
       if (newStepNumber === 0) {
         this.prevBtnElem.classList.remove('active')

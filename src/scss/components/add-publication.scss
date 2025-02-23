@@ -749,7 +749,7 @@
       }
     }
 
-    &-prev, &-publication, &-next {
+    &-prev, &-next {
       display: none;
 
       &.active {
@@ -760,6 +760,12 @@
     &-next {
       @include media($lg) {
         margin-left: auto;
+      }
+    }
+
+    &-publication {
+      &.hide {
+        display: none;
       }
     }
   }
