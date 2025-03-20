@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  @@include("../layout/head.html", {
+    "title": "product in modal Page",
+    "nameFile": "product-in-modal",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    })
+
+    @@include("../components/nav-pages.html")
+
+    <main class="main">
+      <section class="section section--product-in-modal">
+        <div class="section__inner">
+          <div class="title">
+            <h1 class="title-txt">Модальное окно товара</h1>
+          </div>
+            <button class="btn btn--text btn--color-grey" data-popup="popup-product-in-modal">
+              Открыть модальное окно товара
+            </button>
+          @@include("../components/popup.html", {
+            "extra-class": "popup--content",
+            "id": "popup-product-in-modal",
+            "title": "Перейти к полной версии карточки товара",
+            "body": '@@include("../components/product-in-modal.html")',
+          })
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
