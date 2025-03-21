@@ -1,3 +1,54 @@
 .product-in-modal {
   $block: &;
+
+  &__product-popup {
+    & .popup__overlay {
+      padding: 0;
+
+      @include media($lg) {
+        padding: 2.5rem 4rem;
+      }
+
+      @include media($full) {
+        padding: 5rem 16rem;
+      }
+    }
+
+    & .popup__content {
+      max-width: var(--max-width-container-popup-product-1408);
+      gap: 1rem;
+
+      @include media($lg) {
+        gap: 0.625rem;
+      }
+
+      @include media($full) {
+        gap: 1rem;
+      }
+    }
+
+    & .popup__header {
+      color: rgb(var(--color-primary));
+    }
+
+    & .product__wrapper {
+      @include media($lg) {
+        grid-template-columns: 31% 25% auto;
+        column-gap: 2rem;
+      }
+    }
+
+    & .product__delivery-content {
+      @include media($full) {
+        flex-flow: row;
+      }
+    }
+
+    & .product__delivery-description {
+      @include media ($full) {
+        grid-row: 2/3;
+        grid-column: 1/3;
+      }
+    }
+  }
 }

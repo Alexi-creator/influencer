@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product @@extra-class">
   <div class="product__wrapper">
     <div class="product__inner">
       <div class="product__img-container">  
@@ -193,33 +193,36 @@
       </div>
       <div class="product__short-description-sales-price-create-post">
         <a href="#">Создать публикацию с этим товаром</a>
+        <p>Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.</p>
       </div>
     </div>
-    <div class="product__short-description-sp-discount">
-      <div class="product__short-description-sp-discount-title">
-        Больше скидка:
-      </div>
-      <div class="product__short-description-sp-discount-inner">
-        <div class="product__short-description-sp-discount-content">
-          <div class="badge badge--without-border badge--discount">
-            - @@discount-extra %
-          </div>
-          <div class="product__short-description-sp-discount-sum">
-            <span class="number">
-              @@discount-extra-sum
-            </span>            
-             ₽
-          </div>
+    @@if(ifDiscount) {
+      <div class="product__short-description-sp-discount">
+        <div class="product__short-description-sp-discount-title">
+          Больше скидка:
         </div>
-        <div class="product__short-description-sp-discount-links">
-          <span>
-            в @@sp-discount-links-found Совместных Покупках
-          </span>
-            <a href="#">Перейти</a>
+        <div class="product__short-description-sp-discount-inner">
+          <div class="product__short-description-sp-discount-content">
+            <div class="badge badge--without-border badge--discount">
+              - @@discount-extra %
+            </div>
+            <div class="product__short-description-sp-discount-sum">
+              <span class="number">
+                @@discount-extra-sum
+              </span>            
+               ₽
+            </div>
+          </div>
+          <div class="product__short-description-sp-discount-links">
+            <span>
+              в @@sp-discount-links-found Совместных Покупках
+            </span>
+              <a href="#">Перейти</a>
+          </div>
+  
         </div>
-
       </div>
-    </div>
+    }
     <div class="product__short-description-shop">
       <div class="product__title-shop">
         Магазин
