@@ -4,26 +4,29 @@
   &__product-popup {
     & .popup__overlay {
       padding: 0;
-
-      @include media($lg) {
-        padding: 2.5rem 4rem;
-      }
-
-      @include media($full) {
-        padding: 5rem 16rem;
-      }
+      overflow-y: scroll;
     }
 
     & .popup__content {
-      max-width: var(--max-width-container-popup-product-1408);
       gap: 1rem;
+      max-height: unset;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      max-width: unset;
 
       @include media($lg) {
         gap: 0.625rem;
+        top: 2.5rem;
+        bottom: 2.5rem;
+        max-width: var(--max-width-container-popup-product-1072);
       }
 
       @include media($full) {
         gap: 1rem;
+        top: 5rem;
+        bottom: 5rem;
+        max-width: var(--max-width-container-popup-product-1408);
       }
     }
 
