@@ -1,57 +1,39 @@
 .product-in-modal {
   $block: &;
 
-  &__product-popup {
+  &__popup-product {
     & .popup__overlay {
       padding: 0;
-      overflow-y: scroll;
+
+      @include media($lg) {
+        padding: 2.5rem;
+      }
+
+      @include media($full) {
+        padding: 5rem;
+      }
     }
 
     & .popup__content {
       gap: 1rem;
-      max-height: unset;
-      position: fixed;
-      top: 0;
-      bottom: 0;
       max-width: unset;
+      padding: 1rem 1.25rem;
 
       @include media($lg) {
         gap: 0.625rem;
-        top: 2.5rem;
-        bottom: 2.5rem;
-        max-width: var(--max-width-container-popup-product-1072);
+        max-width: var(--max-width-container-1072);
+        padding: 1.5rem 2rem;
       }
 
       @include media($full) {
         gap: 1rem;
-        top: 5rem;
-        bottom: 5rem;
-        max-width: var(--max-width-container-popup-product-1408);
+        max-width: var(--max-width-container-1408);
+        padding: 1.5rem 2.5rem;
       }
     }
 
     & .popup__header {
       color: rgb(var(--color-primary));
-    }
-
-    & .product__wrapper {
-      @include media($lg) {
-        grid-template-columns: 31% 25% auto;
-        column-gap: 2rem;
-      }
-    }
-
-    & .product__delivery-content {
-      @include media($full) {
-        flex-flow: row;
-      }
-    }
-
-    & .product__delivery-description {
-      @include media ($full) {
-        grid-row: 2/3;
-        grid-column: 1/3;
-      }
     }
   }
 }

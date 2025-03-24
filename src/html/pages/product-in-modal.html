@@ -22,12 +22,12 @@
           <div class="title">
             <h1 class="title-txt">Модальное окно товара</h1>
           </div>
-            <button class="btn btn--text btn--color-grey" data-popup="popup-product-in-modal">
+            <button class="btn btn--text btn--color-grey" data-popup="popup-product">
               Открыть модальное окно товара
             </button>
           @@include("../components/popup.html", {
-            "extra-class": "product-in-modal__product-popup",
-            "id": "popup-product-in-modal",
+            "extra-class": "product-in-modal__popup-product",
+            "id": "popup-product",
             "title": "Перейти к полной версии карточки товара",
             "body": '@@include("../components/product-in-modal.html")',
           })
