@@ -1002,25 +1002,16 @@
     }
 
     & #{$block}__footer-link {
-      position: absolute;
       display: flex;
       width: 100%;
       justify-content: center;
-      bottom: -3rem;
+      margin: 1.5rem 0;
       color: rgb(var(--color-primary));
       font-weight: 600;
       font-size: 1rem;
 
       @include media($lg) {
         display: none;
-      }
-    }
-
-    & {
-      margin-bottom: 5rem;
-
-      @include media($lg) {
-        margin-bottom: 0;
       }
     }
   }

@@ -19,6 +19,10 @@
       max-width: unset;
       padding: 1rem 1.25rem;
 
+      @include media($md) {
+        padding: 1rem 2.5rem;
+      }
+
       @include media($lg) {
         gap: 0rem;
         max-width: var(--max-width-container-1072);
