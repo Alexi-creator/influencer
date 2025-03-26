@@ -1002,9 +1002,7 @@
     }
 
     & #{$block}__footer-link {
-      display: flex;
-      width: 100%;
-      justify-content: center;
+      @extend %flex-center;
       margin: 1.5rem 0;
       color: rgb(var(--color-primary));
       font-weight: 600;
