@@ -3,9 +3,9 @@
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/product.min.css?_v=20250223184053">
+  <link rel="stylesheet" href="css/pages/product.min.css?_v=20250327132836">
   <title>product Page</title>
-  <script defer src="js/product.min.js?_v=20250223184053"></script>
+  <script defer src="js/product.min.js?_v=20250327132836"></script>
 </head>
   <body>
     <header class="header">
@@ -923,7 +923,7 @@
       <a href="#">Test for Free</a>
     </li>
     <li>
-      <a href="#">Блогеры</a>
+      <a href="./users.html">Блогеры</a>
     </li>
     <li>
       <a href="#">Публикации</a>
@@ -955,7 +955,7 @@
 
       <section class="section section--product">
         <div class="section__inner">
-          <div class="product">
+          <div class="product @@extra-class">
   <div class="product__wrapper">
     <div class="product__inner">
       <div class="product__img-container">  
@@ -976,6 +976,7 @@
         </div>  
       </div>  
     </div>
+
     <div class="product__delivery-description">
       <div class="product__delivery-inner">
         <div class="product__title">
@@ -991,7 +992,7 @@
           <div class="product__delivery-content-item">
             <div class="product__delivery-content-icon">
               <svg>
-                <use xlink:href="/img/icons/icons.svg#truck"></use>
+                <use xlink:href="./img/icons/icons.svg#truck"></use>
               </svg>
             </div>  
             <div class="product__delivery-content-description">
@@ -1009,7 +1010,7 @@
           <div class="product__delivery-content-item">
             <div class="product__delivery-content-icon">
               <svg>
-                <use xlink:href="/img/icons/icons.svg#credit-card"></use>
+                <use xlink:href="./img/icons/icons.svg#credit-card"></use>
               </svg>
             </div>  
             <div class="product__delivery-content-description">
@@ -1035,6 +1036,7 @@
         </div>
       </div>
     </div>
+
     <div class="product__inner-description">
       <div class="product__short-description">
         <div class="product__short-description-title">
@@ -1099,6 +1101,7 @@
         </div>
       </div>
     </div>
+
     <div class="product__short-description-size-inner">
       <div class="product__short-description-size">
         <div class="product__short-description-choice-title">
@@ -1148,6 +1151,16 @@
         </div>
       </div>
     </div>
+
+    <div class="product__short-description-sp">
+      <div class="product__short-description-sp-title">
+        Совместная покупка:
+      </div>
+      <div class="product__short-description-sp-content">
+        Покупаем пока есть скидка, девочки
+      </div>
+    </div>
+
     <div class="product__short-description-sales">
       <div class="product__short-description-sales-price">
         <span class="product__short-description-sales-price-txt">Вы заплатите</span>
@@ -1180,33 +1193,38 @@
       </div>
       <div class="product__short-description-sales-price-create-post">
         <a href="#">Создать публикацию с этим товаром</a>
+        <p>Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.</p>
       </div>
     </div>
-    <div class="product__short-description-sp-discount">
-      <div class="product__short-description-sp-discount-title">
-        Больше скидка:
-      </div>
-      <div class="product__short-description-sp-discount-inner">
-        <div class="product__short-description-sp-discount-content">
-          <div class="badge badge--without-border badge--discount">
-            - 50 %
-          </div>
-          <div class="product__short-description-sp-discount-sum">
-            <span class="number">
-              459000
-            </span>            
-             ₽
-          </div>
-        </div>
-        <div class="product__short-description-sp-discount-links">
-          <span>
-            в 79 Совместных Покупках
-          </span>
-            <a href="#">Перейти</a>
-        </div>
 
+    
+      <div class="product__short-description-sp-discount">
+        <div class="product__short-description-sp-discount-title">
+          Больше скидка:
+        </div>
+        <div class="product__short-description-sp-discount-inner">
+          <div class="product__short-description-sp-discount-content">
+            <div class="badge badge--without-border badge--discount">
+              - 50 %
+            </div>
+            <div class="product__short-description-sp-discount-sum">
+              <span class="number">
+                459000
+              </span>            
+              ₽
+            </div>
+          </div>
+          <div class="product__short-description-sp-discount-links">
+            <span>
+              в 79 Совместных Покупках
+            </span>
+              <a href="#">Перейти</a>
+          </div>
+  
+        </div>
       </div>
-    </div>
+    
+
     <div class="product__short-description-shop">
       <div class="product__title-shop">
         Магазин
@@ -1220,9 +1238,10 @@
             Интернет магазин одежды и аксессуаров Lass
           </div>
         </div>
-          <button class="btn btn--none product__seller-btn">Подписаться</button>
+        <button class="btn btn--none product__seller-btn">Подписаться</button>
       </div>
     </div>
+  
     <div class="product__description-shop">
       <div class="product__title">
         О товаре
@@ -1253,9 +1272,14 @@
           Сделано в Италии
         </li>
       </ul>
+    </div>
   </div>
-  </div>
+
+  <a href="#" class="product__footer-link">
+    Перейти к полной версии карточки товара
+  </a>
 </div>
+
       
         </div>
       </section>

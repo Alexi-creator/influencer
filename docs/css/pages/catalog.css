@@ -248,6 +248,8 @@ button {
   --max-width-container: 106rem;
   --max-width-container-1120: 70rem;
   --max-width-container-user-1066: 66.625rem;
+  --max-width-container-1408: 88rem;
+  --max-width-container-1072: 67rem;
   --transition-base: all 0.2s linear;
   --transition-base-without-prop: 0.2s linear;
   --z-base: 1;
