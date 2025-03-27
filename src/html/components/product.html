@@ -1,291 +1,293 @@
 <div class="product @@extra-class">
-    <a href="#" class="product__header-link">
-      Перейти к полной версии карточки товара
-    </a>
-    <p href="#" class="product__header-txt">
-      Быстрый просмотр товара
-    </p>
-    <div class="product__wrapper">
-      <div class="product__inner">
-        <div class="product__img-container">  
-          <div class="product__grid-img product__item1">  
-            @@product-img1
-          </div>  
-          <div class="product__grid-img product__item2">  
-            @@product-img2
-          </div>  
-          <div class="product__grid-img product__item3">  
-            @@product-img3
-          </div>  
-          <div class="product__grid-img product__item4">  
-            @@product-img4
-          </div>  
-          <div class="product__grid-img product__item5">  
-            @@product-img5
-          </div>  
+  <div class="product__wrapper">
+    <div class="product__inner">
+      <div class="product__img-container">  
+        <div class="product__grid-img product__item1">  
+          @@product-img1
         </div>  
-      </div>
-      <div class="product__delivery-description">
-        <div class="product__delivery-inner">
-          <div class="product__title">
-            Доставка и оплата
+        <div class="product__grid-img product__item2">  
+          @@product-img2
+        </div>  
+        <div class="product__grid-img product__item3">  
+          @@product-img3
+        </div>  
+        <div class="product__grid-img product__item4">  
+          @@product-img4
+        </div>  
+        <div class="product__grid-img product__item5">  
+          @@product-img5
+        </div>  
+      </div>  
+    </div>
+
+    <div class="product__delivery-description">
+      <div class="product__delivery-inner">
+        <div class="product__title">
+          Доставка и оплата
+        </div>
+        <div class="product__delivery-point">
+          <span class="product__delivery-point-city">
+            @@point
+          </span>
+          <button class="btn btn--none product__delivery-btn">Изменить</button>
+        </div>
+        <div class="product__delivery-content">
+          <div class="product__delivery-content-item">
+            <div class="product__delivery-content-icon">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#truck"></use>
+              </svg>
+            </div>  
+            <div class="product__delivery-content-description">
+              <div class="product__delivery-description-point">
+                Курьером / наличные, только Москва
+              </div>
+              <div class="product__delivery-description-point">
+                от 2 до 7 дней
+              </div>
+              <div class="product__delivery-description-price">
+                @@delivery-price ₽
+              </div>
+            </div>
           </div>
-          <div class="product__delivery-point">
-            <span class="product__delivery-point-city">
-              @@point
+          <div class="product__delivery-content-item">
+            <div class="product__delivery-content-icon">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#credit-card"></use>
+              </svg>
+            </div>  
+            <div class="product__delivery-content-description">
+              <div class="product__delivery-description-point">
+                Транспортной компанией (ТК) / в другие города и страны
+              </div>
+              <div class="product__delivery-description-point">
+                от 7 до 21 дня
+              </div>
+              <div class="product__delivery-description-price">
+                Стоимость будет рассчитана после выбора ТК
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product__description-inner">
+        <div class="product__title">
+          Описание товара
+        </div>
+        <div class="product__description-content">
+          @@product-description
+        </div>
+      </div>
+    </div>
+
+    <div class="product__inner-description">
+      <div class="product__short-description">
+        <div class="product__short-description-title">
+          @@product-name
+        </div>
+        <div class="product__short-description-description">
+          @@product-short-description
+        </div>
+        <div class="product__short-description-score">
+          <div class="product__short-description-score-stars-inner">
+            @@include("../components/rating.html")
+          <div class="product__short-description-score-likes">
+            <svg><use xlink:href="./img/icons/icons.svg#likes"></use></svg>
+            @@likes-score
+          </div>
+          </div>
+          <div class="product__short-description-score-posts">
+            <a href="#">@@post-score публикаций</a>
+            <span>с этим товаром</span>
+          </div>
+        </div>
+      </div>
+      <div class="product__short-description-discount">
+        <div class="product__short-description-choice-title">
+          Стоимость с Вашей скидкой:
+        </div>
+        <div class="product__info-price">
+          <div class="product__info-price-inner">
+            <span class="product__info-price-item-crossed">
+              <span class="product__info-price-item-crossed number">
+                @@price-crossed
+              </span>
+              ₽
             </span>
-            <button class="btn btn--none product__delivery-btn">Изменить</button>
-          </div>
-          <div class="product__delivery-content">
-            <div class="product__delivery-content-item">
-              <div class="product__delivery-content-icon">
-                <svg>
-                  <use xlink:href="/img/icons/icons.svg#truck"></use>
-                </svg>
-              </div>  
-              <div class="product__delivery-content-description">
-                <div class="product__delivery-description-point">
-                  Курьером / наличные, только Москва
-                </div>
-                <div class="product__delivery-description-point">
-                  от 2 до 7 дней
-                </div>
-                <div class="product__delivery-description-price">
-                  @@delivery-price ₽
-                </div>
+            <span class="product__info-price-item-new">
+              <div class="badge badge--without-border badge--discount">
+                - @@discount-score %
               </div>
-            </div>
-            <div class="product__delivery-content-item">
-              <div class="product__delivery-content-icon">
-                <svg>
-                  <use xlink:href="/img/icons/icons.svg#credit-card"></use>
-                </svg>
-              </div>  
-              <div class="product__delivery-content-description">
-                <div class="product__delivery-description-point">
-                  Транспортной компанией (ТК) / в другие города и страны
-                </div>
-                <div class="product__delivery-description-point">
-                  от 7 до 21 дня
-                </div>
-                <div class="product__delivery-description-price">
-                  Стоимость будет рассчитана после выбора ТК
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product__description-inner">
-          <div class="product__title">
-            Описание товара
-          </div>
-          <div class="product__description-content">
-            @@product-description
-          </div>
-        </div>
-      </div>
-      <div class="product__inner-description">
-        <div class="product__short-description">
-          <div class="product__short-description-title">
-            @@product-name
-          </div>
-          <div class="product__short-description-description">
-            @@product-short-description
-          </div>
-          <div class="product__short-description-score">
-            <div class="product__short-description-score-stars-inner">
-              @@include("../components/rating.html")
-            <div class="product__short-description-score-likes">
-              <svg><use xlink:href="./img/icons/icons.svg#likes"></use></svg>
-              @@likes-score
-            </div>
-            </div>
-            <div class="product__short-description-score-posts">
-              <a href="#">@@post-score публикаций</a>
-              <span>с этим товаром</span>
-            </div>
-          </div>
-        </div>
-        <div class="product__short-description-discount">
-          <div class="product__short-description-choice-title">
-            Стоимость с Вашей скидкой:
-          </div>
-          <div class="product__info-price">
-            <div class="product__info-price-inner">
-              <span class="product__info-price-item-crossed">
-                <span class="product__info-price-item-crossed number">
-                  @@price-crossed
-                </span>
-                ₽
+              <span class="product__info-price-item-new number">
+                @@price-new
               </span>
-              <span class="product__info-price-item-new">
-                <div class="badge badge--without-border badge--discount">
-                  - @@discount-score %
-                </div>
-                <span class="product__info-price-item-new number">
-                  @@price-new
-                </span>
-                ₽
-              </span>
-          </div>
+              ₽
+            </span>
         </div>
       </div>
-      <div class="product__short-description-size-inner">
-        <div class="product__short-description-size">
-          <div class="product__short-description-choice-title">
-            Выберите размер:
-          </div>
-          <div class="product__short-description-choice-wrapper-size">
-            <div class="product__short-description-choice-select">
-              @@include("../components/select.html", {
-                "extra-class": "select--border-grey",
-                "name": "size",
-                "options": '<li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></li> <li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span data-count="4" class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li>',
-                'initial-value': '34',
-                'initial-label': '34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span>',
-              })
-            </div>
-            <a href="#">Таблица размеров</a>
-          </div>
+    </div>
+
+    <div class="product__short-description-size-inner">
+      <div class="product__short-description-size">
+        <div class="product__short-description-choice-title">
+          Выберите размер:
         </div>
-        <div class="product__short-description-size">
-          <div class="product__short-description-choice-title-amount">
-            Выберите количество:
+        <div class="product__short-description-choice-wrapper-size">
+          <div class="product__short-description-choice-select">
+            @@include("../components/select.html", {
+              "extra-class": "select--border-grey",
+              "name": "size",
+              "options": '<li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></li> <li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span data-count="4" class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li>',
+              'initial-value': '34',
+              'initial-label': '34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span>',
+            })
           </div>
-          <div class="product__short-description-choice-wrapper">
-            <div class="product__short-description-choice-select">
-              @@include("../components/select.html", {
-                "extra-class": "select--border-grey",
-                "name": "amount",
-                "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li>  <li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li> ',
-                'initial-label': '1 шт.',
-                'initial-value': '1',
-              })
-            </div>
-            <span class="product__short-description-choice-number product__viseable--one"><span>1 товар</span> со скидкой -10%</span>
-            <span class="product__short-description-choice-number product__viseable--more hide">Какие скидки на товар? <button class="btn btn--none" data-popup="discount">Узнать</button></span>
-          </div>
+          <a href="#">Таблица размеров</a>
         </div>
       </div>
-      <div class="product__short-description-sp">
-        <div class="product__short-description-sp-title">
+      <div class="product__short-description-size">
+        <div class="product__short-description-choice-title-amount">
           Выберите количество:
         </div>
-        <div class="product__short-description-sp-content">
-          Покупаем пока есть скидка, девочки
+        <div class="product__short-description-choice-wrapper">
+          <div class="product__short-description-choice-select">
+            @@include("../components/select.html", {
+              "extra-class": "select--border-grey",
+              "name": "amount",
+              "options": '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li>  <li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li> ',
+              'initial-label': '1 шт.',
+              'initial-value': '1',
+            })
+          </div>
+          <span class="product__short-description-choice-number product__viseable--one"><span>1 товар</span> со скидкой -10%</span>
+          <span class="product__short-description-choice-number product__viseable--more hide">Какие скидки на товар? <button class="btn btn--none" data-popup="discount">Узнать</button></span>
         </div>
       </div>
-      <div class="product__short-description-sales">
-        <div class="product__short-description-sales-price">
-          <span class="product__short-description-sales-price-txt">Вы заплатите</span>
-          <span class="product__info-price-item-new">
-            <span class="product__info-price-item-new product__info-price-item-new-count number">
-              @@price-new
-            </span>
-            ₽
+    </div>
+
+    <div class="product__short-description-sp">
+      <div class="product__short-description-sp-title">
+        Совместная покупка:
+      </div>
+      <div class="product__short-description-sp-content">
+        Покупаем пока есть скидка, девочки
+      </div>
+    </div>
+
+    <div class="product__short-description-sales">
+      <div class="product__short-description-sales-price">
+        <span class="product__short-description-sales-price-txt">Вы заплатите</span>
+        <span class="product__info-price-item-new">
+          <span class="product__info-price-item-new product__info-price-item-new-count number">
+            @@price-new
           </span>
-          <span class="product__short-description-sales-price-txt">за 1 шт. товара</span>
-        </div>
-        <div class="product__short-description-sales-price-actions">
-          <button class="product__short-description-sales-add btn">Добавить в корзину</button>
-          <a href="#" class="product__short-description-sales-cart hide btn btn--green">В корзине <span>перейти</span></a>
-          <div class="product__short-description-sales-change-count hide">
-            <button href="#" class="product__short-description-sales-increment hide btn btn--color-primary-light">
-              <svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>
-            </button>
-            <div class="product__short-description-sales-count-wrap">
-              <span class="product__short-description-sales-count">1</span>шт.
-            </div>
-            <button href="#" class="product__short-description-sales-decrement hide btn btn--color-primary-light">
-              <svg><use xlink:href="./img/icons/icons.svg#minus"></use></svg>
-            </button>
+          ₽
+        </span>
+        <span class="product__short-description-sales-price-txt">за 1 шт. товара</span>
+      </div>
+      <div class="product__short-description-sales-price-actions">
+        <button class="product__short-description-sales-add btn">Добавить в корзину</button>
+        <a href="#" class="product__short-description-sales-cart hide btn btn--green">В корзине <span>перейти</span></a>
+        <div class="product__short-description-sales-change-count hide">
+          <button href="#" class="product__short-description-sales-increment hide btn btn--color-primary-light">
+            <svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>
+          </button>
+          <div class="product__short-description-sales-count-wrap">
+            <span class="product__short-description-sales-count">1</span>шт.
           </div>
-          <a href="#" class="product__short-description-sales-buy btn btn--color-primary-light">Купить сейчас</a>
-          <button class="product__short-description-sales-actions btn btn--color-primary-light">
-            <svg><use xlink:href="./img/icons/icons.svg#heart-out-line"></use></svg>
+          <button href="#" class="product__short-description-sales-decrement hide btn btn--color-primary-light">
+            <svg><use xlink:href="./img/icons/icons.svg#minus"></use></svg>
           </button>
         </div>
-        <div class="product__short-description-sales-price-create-post">
-          <a href="#">Создать публикацию с этим товаром</a>
-          <p>Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.</p>
-        </div>
+        <a href="#" class="product__short-description-sales-buy btn btn--color-primary-light">Купить сейчас</a>
+        <button class="product__short-description-sales-actions btn btn--color-primary-light">
+          <svg><use xlink:href="./img/icons/icons.svg#heart-out-line"></use></svg>
+        </button>
       </div>
-      @@if(ifDiscount) {
-        <div class="product__short-description-sp-discount">
-          <div class="product__short-description-sp-discount-title">
-            Больше скидка:
-          </div>
-          <div class="product__short-description-sp-discount-inner">
-            <div class="product__short-description-sp-discount-content">
-              <div class="badge badge--without-border badge--discount">
-                - @@discount-extra %
-              </div>
-              <div class="product__short-description-sp-discount-sum">
-                <span class="number">
-                  @@discount-extra-sum
-                </span>            
-                ₽
-              </div>
-            </div>
-            <div class="product__short-description-sp-discount-links">
-              <span>
-                в @@sp-discount-links-found Совместных Покупках
-              </span>
-                <a href="#">Перейти</a>
-            </div>
-    
-          </div>
-        </div>
-      }
-      <div class="product__short-description-shop">
-        <div class="product__title-shop">
-          Магазин
-        </div>
-        <div class="product__seller-inner">
-          <div class="product__seller-inner-content">
-            <div class="product__seller-img">
-              @@img-seller
-            </div>
-            <div class="product__seller-name">
-              @@seller-name
-            </div>
-          </div>
-            <button class="btn btn--none product__seller-btn">Подписаться</button>
-        </div>
+      <div class="product__short-description-sales-price-create-post">
+        <a href="#">Создать публикацию с этим товаром</a>
+        <p>Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.</p>
       </div>
-      <div class="product__description-shop">
-        <div class="product__title">
-          О товаре
-        </div>
-        <ul class="product__short-description-shop-product">
-          <li>
-            <span class="product__table-dot"></span>
-            Материал: 100% кожа ягнёнка
-          </li>
-          <li>
-            <span class="product__table-dot"></span>
-            Отделка: 90% гусиный пух, 10% утиный пух
-          </li>
-          <li>
-            <span class="product__table-dot"></span>
-            Подкладка: 53% вискоза, 47% купро
-          </li>
-          <li>
-            <span class="product__table-dot"></span>
-            Цвет шампанского
-          </li>
-          <li>
-            <span class="product__table-dot"></span>
-            Стандартная посадка
-          </li>
-          <li>
-            <span class="product__table-dot"></span>
-            Сделано в Италии
-          </li>
-        </ul>
     </div>
+
+    @@if(ifDiscount) {
+      <div class="product__short-description-sp-discount">
+        <div class="product__short-description-sp-discount-title">
+          Больше скидка:
+        </div>
+        <div class="product__short-description-sp-discount-inner">
+          <div class="product__short-description-sp-discount-content">
+            <div class="badge badge--without-border badge--discount">
+              - @@discount-extra %
+            </div>
+            <div class="product__short-description-sp-discount-sum">
+              <span class="number">
+                @@discount-extra-sum
+              </span>            
+              ₽
+            </div>
+          </div>
+          <div class="product__short-description-sp-discount-links">
+            <span>
+              в @@sp-discount-links-found Совместных Покупках
+            </span>
+              <a href="#">Перейти</a>
+          </div>
+  
+        </div>
+      </div>
+    }
+
+    <div class="product__short-description-shop">
+      <div class="product__title-shop">
+        Магазин
+      </div>
+      <div class="product__seller-inner">
+        <div class="product__seller-inner-content">
+          <div class="product__seller-img">
+            @@img-seller
+          </div>
+          <div class="product__seller-name">
+            @@seller-name
+          </div>
+        </div>
+        <button class="btn btn--none product__seller-btn">Подписаться</button>
+      </div>
+    </div>
+  
+    <div class="product__description-shop">
+      <div class="product__title">
+        О товаре
+      </div>
+      <ul class="product__short-description-shop-product">
+        <li>
+          <span class="product__table-dot"></span>
+          Материал: 100% кожа ягнёнка
+        </li>
+        <li>
+          <span class="product__table-dot"></span>
+          Отделка: 90% гусиный пух, 10% утиный пух
+        </li>
+        <li>
+          <span class="product__table-dot"></span>
+          Подкладка: 53% вискоза, 47% купро
+        </li>
+        <li>
+          <span class="product__table-dot"></span>
+          Цвет шампанского
+        </li>
+        <li>
+          <span class="product__table-dot"></span>
+          Стандартная посадка
+        </li>
+        <li>
+          <span class="product__table-dot"></span>
+          Сделано в Италии
+        </li>
+      </ul>
     </div>
   </div>
+
   <a href="#" class="product__footer-link">
     Перейти к полной версии карточки товара
   </a>
