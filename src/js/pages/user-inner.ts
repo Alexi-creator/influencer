@@ -17,7 +17,6 @@ import { UserBoard } from '../modules/UserBoard'
 import { CustomSwiper } from '../modules/CustomSwiper'
 import { BtnShow } from '../modules/BtnShow'
 import { Density } from '../modules/Density'
-import { SyncCategories } from '../modules/SyncCategories'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { Ticker } from '../modules/Ticker'
@@ -529,12 +528,6 @@ window.addEventListener('load', () => {
   try {
     new BtnShow()
   } catch (error){
-    console.log(error)
-  }
-
-  try {
-    new SyncCategories()
-  } catch (error) {
     console.log(error)
   }
 

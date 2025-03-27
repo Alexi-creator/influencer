@@ -61,7 +61,7 @@ export class PreviewToolbarAction {
       // this.popupElem.classList.remove('popup--onlymobile')
     } else {
       // this.popupElem.dataset.media = String(BreakpointWidth.DESKTOP)
-      this.popupElem.classList.add('popup--onlymobile')
+      this.popupElem?.classList.add('popup--onlymobile')
     }
   }
 
