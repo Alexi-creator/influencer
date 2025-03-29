@@ -1,0 +1,57 @@
+.jp-details {
+  $block: &;
+
+  &__wrapper {
+    @extend %flex-column;
+    gap: 1.5rem;
+
+    @include media ($lg) {
+      gap: 2rem;
+    }
+  }
+
+  &__header {
+    @extend %flex-column;
+    gap: 1.25rem;
+  }
+
+  &__header__title {
+    @extend %flex-column;
+
+    @include media($lg) {
+      flex-flow: row;
+      justify-content: space-between
+    }
+  }
+
+  &__header__title-txt {
+    @extend %flex-column;
+    gap: 0.25rem;
+  }
+
+  &__header__title-txt-about {
+    font-size: 1.125rem;
+    color: rgb(var(--color-grey));
+  }
+
+  &__header__title-txt-phrase {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include media($lg) {
+      font-size: 2rem;
+    }
+  }
+
+  &__header__title-subscribe {
+    @extend %flex-end-center;
+    gap: 1.125rem;
+    flex-flow: row-reverse;
+
+    @include media($lg) {
+      flex-flow: row;
+    }
+  }
+
+  &__header-conditions {}
+}

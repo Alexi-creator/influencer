@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru-RU" class="isAuth">
+  @@include("../layout/head.html", {
+    "title": "inner-jp Page",
+    "nameFile": "inner-jp",
+  })
+  <body>
+    @@include("../layout/header.html", {
+      activeItem: "",
+      catalogExtraClass: "",
+      idPopup: "location",
+      locationAddress: "",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    })
+    @@include("../components/nav-pages.html")
+    <main class="main">
+      <section class="section section--inner-jp">
+        <div class="section__inner">
+          @@include("../components/jp-details.html")
+        </div>
+        <hr class="hr">
+      </section>
+    </main>
+  </body>
+</html>
