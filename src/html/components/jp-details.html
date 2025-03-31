@@ -63,7 +63,39 @@
         </div>
       </div>
       <div class="jp-details__header-conditions">
-        
+        <div class="jp-details__header-conditions-discount">
+          <div class="jp-details__header-conditions-discount-badge">
+            <div class="badge badge--font-commissioner badge--color-primary-light badge--without-border badge--big">
+              Скидка -@@discount-size%
+            </div>
+          </div>
+          <div class="jp-details__header-conditions-discount-sum">
+            при покупке от <span class="number">@@discount-sum</span> ₽
+          </div>
+        </div>
+        <div class="jp-details__header-conditions-progress">
+          <div class="jp-details__header-conditions-progress-sum">
+            <span>Уже купили на:</span>
+            <span class="number">@@old-sum</span>
+            <span> / </span>
+            <span class="number">@@all-sum</span>
+            <span class="currency"> ₽</span>
+          </div>
+          <div class="jp-details__header-conditions-progress-range">
+            <div class="progress progress--primary">
+              <div class="progress__line" style="width:@@isActiveSP_%%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="jp-details__header-conditions-activity">
+          <div class="jp-details__header-conditions-activity-title">
+            Активна до:
+          </div>
+          <div class="jp-details__header-conditions-activity-date">
+            <span class="jp-details__header-conditions-activity-date-day">@@activity-date-day </span>
+            <span class="jp-details__header-conditions-activity-date-time">@@activity-date-time</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="jp-details__store"></div>

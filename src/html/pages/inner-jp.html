@@ -17,7 +17,15 @@
     <main class="main">
       <section class="section section--inner-jp">
         <div class="section__inner">
-          @@include("../components/jp-details.html")
+          @@include("../components/jp-details.html", {
+            "discount-size": '30',
+            "discount-sum": '136000',
+            "old-sum":'79281',
+            "all-sum":'241093',
+            "isActiveSP_%": '30',
+            "activity-date-day":'27.01.2020',
+            "activity-date-time":'12:00'
+          })
         </div>
         <hr class="hr">
       </section>

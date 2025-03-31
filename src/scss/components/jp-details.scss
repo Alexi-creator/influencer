@@ -53,5 +53,90 @@
     }
   }
 
-  &__header-conditions {}
+  &__header-conditions {
+    @extend %flex-space-between;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.125rem;
+
+    @include media($md) {
+      justify-content: space-between;
+    }
+
+    @include media($lg) {
+      gap: 0;
+    }
+  }
+
+  &__header-conditions-discount {
+    @extend %flex-column;
+    flex: unset;
+    order: 2;
+    gap: 0.125rem;
+
+    @include media($lg) {
+      flex-flow: row;
+      order: 1;
+      gap: 0.75rem;
+    }
+  }
+
+  &__header-conditions-discount-badge {}
+
+  &__header-conditions-discount-sum {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    max-width: unset;
+
+    @include media($lg) {
+      max-width: 5.125rem;
+    }
+  }
+
+  &__header-conditions-progress {
+    order: 1;
+    min-width: 100%;
+    @extend %flex-column;
+    gap: 0.5rem;
+
+    @include media($md) {
+      order: 2;
+      min-width: unset;
+    }
+
+    @include media($md) {
+      min-width: 45%;
+    }
+  }
+
+  &__header-conditions-progress-sum {
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-align: center;
+
+    & :first-child {
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+  }
+
+  &__header-conditions-progress-range {}
+
+  &__header-conditions-activity {
+    line-height: 1.5rem;
+    order: 3;
+    flex: unset;
+    margin-left: 0.25rem;
+
+    @include media($md) {
+      margin-left: 0;
+    }
+  }
+
+  &__header-conditions-activity-title {}
+
+  &__header-conditions-activity-date {
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+  }
 }
