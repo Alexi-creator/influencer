@@ -13,6 +13,7 @@ import { ScrollIntoView } from '../modules/ScrollIntoView'
 import { SyncCategories } from '../modules/SyncCategories'
 import { PreviewToolbarAction } from '../modules/PreviewToolbarAction'
 import { NumberFormatter } from '../utils/numberFormatter'
+import { BtnShow } from '../modules/BtnShow'
 
 window.addEventListener('load', () => {
   try {
@@ -23,6 +24,11 @@ window.addEventListener('load', () => {
 
   try {
     new NumberFormatter()
+  } catch (error) {
+    console.log(error)
+  }
+  try {
+    new BtnShow()
   } catch (error) {
     console.log(error)
   }

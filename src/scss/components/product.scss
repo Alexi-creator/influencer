@@ -209,7 +209,7 @@
 
   &__short-description-score-likes {
     @extend %flex-align-center;
-  
+
     gap: 0.25rem;
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -226,7 +226,7 @@
 
   &__short-description-score-posts {
     @extend %flex-align-center;
-  
+
     gap: 0.2rem;
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -343,7 +343,7 @@
 
   &__short-description-choice-wrapper {
     @extend %flex-align-center;
-  
+
     gap: 0.5rem;
 
     @include media($lg) {
@@ -562,7 +562,7 @@
     }
 
     &.active {
-      & > * {
+      &>* {
         flex: none;
       }
     }
@@ -637,7 +637,7 @@
 
   &__short-description-sp-discount-links {
     @extend %flex-align-center;
-  
+
     gap: 0.5rem;
 
     span {
@@ -737,7 +737,7 @@
 
   &__delivery-description {
     @extend %flex-column;
-  
+
     gap: 1.5rem;
     grid-row: 3/3;
     grid-column: 1/6;
@@ -754,7 +754,7 @@
 
   &__description-shop {
     @extend %flex-column;
-  
+
     gap: 0.5rem;
 
     @include media ($md) {
@@ -774,7 +774,7 @@
 
   &__delivery-inner {
     @extend %flex-column;
-  
+
     gap: 0.5rem;
 
     @include media($md) {
@@ -976,12 +976,8 @@
         flex-wrap: nowrap;
       }
 
-      > * {
+      >* {
         flex: 0 0 auto;
-
-        @include media($md) {
-          flex: 1 1 auto;
-        }
       }
 
       & #{$block}__short-description-sales-buy {
