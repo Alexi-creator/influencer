@@ -45,9 +45,5 @@
     @include media($full) {
       margin-top: 0;
     }
-
-    #{$block}__inner {
-      max-width: var(--max-width-container-1120);
-    }
   }
 }
