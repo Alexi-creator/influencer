@@ -28,26 +28,24 @@
 @import "../components/jp-details";
 @import "../components/product";
 
+.main {
+  padding: 1.5rem 0 5.5rem;
+
+  @include media($md) {
+    padding: 2.5rem 0 6.5rem;
+  }
+
+  @include media($lg) {
+    padding: 5rem;
+  }
+}
+
 .section {
   $block: &;
 
   &--inner-jp {
-    margin-top: 0.25rem;
-
     #{$block}__inner {
       max-width: var(--max-width-container-1120);
-    }
-
-    @include media($md) {
-      margin-top: 1rem;
-    }
-
-    @include media($lg) {
-      margin-top: 2.5rem;
-    }
-
-    @include media($full) {
-      margin-top: 0;
     }
   }
 
