@@ -27,6 +27,7 @@ window.addEventListener('load', () => {
   } catch (error) {
     console.log(error)
   }
+
   try {
     new BtnShow()
   } catch (error) {

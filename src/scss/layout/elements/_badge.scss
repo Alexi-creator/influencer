@@ -62,6 +62,11 @@
     color: rgba(var(--color-green), 1);
   }
 
+  &#{$block}--color-grey {
+    background-color: rgb(var(--color-grey-pale));
+    color: rgba(var(--color-grey-dark), 1);
+  }
+
   &#{$block}--big {
     padding: 0 1.25rem;
     height: 3rem;

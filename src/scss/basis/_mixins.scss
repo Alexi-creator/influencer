@@ -13,3 +13,11 @@
 @mixin spinner($period: 1s, $type: linear, $time: infinite) {
   animation: spinner $period $type $time;
 }
+
+@mixin line-сlamp($row) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $row; /* Количество строк */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
