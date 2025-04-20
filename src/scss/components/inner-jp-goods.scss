@@ -1,0 +1,22 @@
+.preview-toolbar-action {
+  & .preview-toolbar-action__subscribe {
+    display: none;
+  }
+
+  &--active {
+    & .preview-toolbar-action__subscribe {
+      display: inline-flex;
+    }
+  }
+}
+
+.inner-jp-goods {
+  $block: &;
+
+  & .tabs__list {
+    & .tabs__tab {
+      border-radius: var(--radius-medium);
+      border-width: 2px;
+    }
+  }
+}

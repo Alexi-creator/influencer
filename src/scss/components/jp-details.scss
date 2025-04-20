@@ -51,11 +51,15 @@
 
   &__header-title-subscribe {
     @extend %flex-end-center;
+
+    flex-shrink: 0;
     gap: 1.125rem;
     flex-flow: row-reverse;
 
     @include media($lg) {
       flex-flow: row;
+      align-self: flex-start;
+      margin-top: 0.5rem;
     }
   }
 

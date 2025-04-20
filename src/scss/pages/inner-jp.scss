@@ -1,5 +1,5 @@
 // vendors
-@import "../vendors/swiper-bundle.min";
+// @import "../vendors/swiper-bundle.min";
 @import "../vendors/nouislider.min";
 
 // common styles
@@ -11,12 +11,11 @@
 @import "../components/product-menu";
 @import "../components/collapse";
 @import "../components/tabs";
-@import "../components/contact-info";
-@import "../components/joint-purchases-list";
-@import "../components/joint-purchases-card";
-@import "../components/range-slider";
-
 @import "../components/preview-toolbar-action";
+@import "../components/jp-details";
+@import "../components/product-card";
+@import "../components/inner-jp-goods";
+@import "../components/range-slider";
 @import "../components/cards-with-menu";
 @import "../components/tabs-head";
 @import "../components/tab-content";
@@ -25,8 +24,6 @@
 @import "../components/filters";
 @import "../components/sorting";
 @import "../components/clear-filter-content-popup";
-@import "../components/jp-details";
-@import "../components/product";
 
 .main {
   padding: 1.5rem 0 5.5rem;
@@ -36,7 +33,7 @@
   }
 
   @include media($lg) {
-    padding: 5rem;
+    padding: 5rem 0;
   }
 }
 
@@ -54,7 +51,7 @@
       margin: 1.5rem 0;
   
       @include media($lg) {
-        margin-top: 2.5rem 0;
+        margin: 2.5rem 0;
       }
     }
   }
