@@ -1,4 +1,9 @@
-<a class="product-card @@extra-class" href="#">
+@@if(href) {
+  <a class="product-card @@extra-class" href=@@href>
+}
+  @@if(!href) {
+  <div class="product-card @@extra-class" data-info='@@data-info'>
+}
   <div class="product-card__img">
     <div class="product-card__img-wrapper">
       <div class="product-card__img-first">
@@ -40,7 +45,7 @@
     </div>
     <div class="product-card__descr-top">
       <div class="product-card__brand">
-        Yves Saint Lauren
+        @@brand
       </div>
       <div class="product-card__title">
         @@title
@@ -77,4 +82,9 @@
       </div>
     </div>
   </div>
-</a>
+  @@if(href) {
+    </a>
+  }
+  @@if(!href) {
+    </div>
+  }

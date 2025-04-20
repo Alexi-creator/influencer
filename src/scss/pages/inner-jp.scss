@@ -7,6 +7,7 @@
 
 // components
 @import "../components/nav-pages";
+@import "../components/rating";
 @import "../components/share";
 @import "../components/product-menu";
 @import "../components/collapse";
@@ -14,7 +15,6 @@
 @import "../components/preview-toolbar-action";
 @import "../components/jp-details";
 @import "../components/product-card";
-@import "../components/inner-jp-goods";
 @import "../components/range-slider";
 @import "../components/cards-with-menu";
 @import "../components/tabs-head";
@@ -24,6 +24,8 @@
 @import "../components/filters";
 @import "../components/sorting";
 @import "../components/clear-filter-content-popup";
+@import "../components/product";
+@import "../components/inner-jp-goods";
 
 .main {
   padding: 1.5rem 0 5.5rem;

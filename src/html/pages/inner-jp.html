@@ -41,6 +41,14 @@
           @@include("../components/inner-jp-goods.html")
         </div>
       </section>
+
+      @@include("../components/popup.html", {
+        "extra-class": "product-in-modal",
+        "id": "popup-product",
+        "title": '<a href="#" class="product__header-link">Перейти к полной версии карточки товара</a> <span href="#" class="product__header-txt">Быстрый просмотр товара</span>',
+        "body": '@@include("../components/product-in-modal.html")',
+      })
+      <button id="openPopup" data-popup="popup-product" hidden></button>
     </main>
   </body>
 </html>

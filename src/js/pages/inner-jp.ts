@@ -1,8 +1,10 @@
 import '../common'
 
+import { API_URLS, BreakpointWidth, HttpMethods } from '../constants'
+
 import { Share } from '../modules/Share'
 import { Collapse } from '../modules/Collapse'
-import { Tabs } from '../modules/Tabs'
+// import { Tabs } from '../modules/Tabs'
 import { Density } from '../modules/Density'
 import { Sort } from '../modules/Sort'
 import { Filter } from '../modules/Filter'
@@ -10,14 +12,13 @@ import { Form } from '../modules/Form'
 import { RangeSlider } from '../modules/RangeSlider'
 import { Masonry } from '../modules/Masonry'
 import { ScrollIntoView } from '../modules/ScrollIntoView'
-import { SyncCategories } from '../modules/SyncCategories'
+// import { SyncCategories } from '../modules/SyncCategories'
 import { PreviewToolbarAction } from '../modules/PreviewToolbarAction'
 import { NumberFormatter } from '../utils/numberFormatter'
 import { BtnShow } from '../modules/BtnShow'
 import { CustomIntersectionObserver } from '../modules/CustomIntersectionObserver'
 import { observerBrandCallback } from '../modules/observerBrandCallback'
 import { InnerJp } from '../modules/InnerJp'
-import { API_URLS, BreakpointWidth, HttpMethods } from '../constants'
 
 window.addEventListener('load', () => {
   try {
@@ -71,19 +72,19 @@ window.addEventListener('load', () => {
   }
 
   try {
-      const targetElement = document.querySelector('.inner-jp-goods__tabs') as HTMLElement
+    const targetElement = document.querySelector('.inner-jp-goods__tabs') as HTMLElement
   
-      new CustomIntersectionObserver({
-        element: targetElement,
-        callback: observerBrandCallback,
-        options: {
-          mobileRootMargin: '-60px 0px 0px',
-          desktopRootMargin: '-160px 0px 0px',
-        },
-      })
-    } catch (error) {
-      console.log(error)
-    }
+    new CustomIntersectionObserver({
+      element: targetElement,
+      callback: observerBrandCallback,
+      options: {
+        mobileRootMargin: '-60px 0px 0px',
+        desktopRootMargin: '-160px 0px 0px',
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
 
   try {
     new PreviewToolbarAction()
@@ -120,16 +121,16 @@ window.addEventListener('load', () => {
   }
 
   try {
-      new Form({
-        selectorForm: '.inner-jp-goods__form-goods', 
-        url: API_URLS.mock.autocomplete,
-        apiOptions: {
-          method: HttpMethods.POST
-        },
-      })
-    } catch (error) {
-      console.log(error)
-    }
+    new Form({
+      selectorForm: '.inner-jp-goods__form-goods', 
+      url: API_URLS.mock.autocomplete,
+      apiOptions: {
+        method: HttpMethods.POST
+      },
+    })
+  } catch (error) {
+    console.log(error)
+  }
 
   try {
     new InnerJp()

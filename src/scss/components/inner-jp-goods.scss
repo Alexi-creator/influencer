@@ -5,7 +5,9 @@
 
   &--active {
     & .preview-toolbar-action__subscribe {
-      display: inline-flex;
+      @include media($md) {
+        display: inline-flex;
+      }
     }
   }
 }
@@ -13,8 +15,13 @@
 .inner-jp-goods {
   $block: &;
 
+  &__tabs {
+    margin: 0;
+  }
+
   & .tabs__list {
     & .tabs__tab {
+      margin: 0;
       border-radius: var(--radius-medium);
       border-width: 2px;
     }
