@@ -1,0 +1,196 @@
+<div class="jp-details @@extra-class">
+  <div class="jp-details__wrapper">
+    <div class="jp-details__header">
+      <div class="jp-details__header-title">
+        <div class="jp-details__header-title-txt">
+          <h1 class="jp-details__header-title-txt-about">
+            Совместная покупка
+          </h1>
+          <div class="jp-details__header-title-txt-phrase">
+            @@title
+          </div>
+        </div>
+        <div class="jp-details__header-title-subscribe">
+          <div class="share">
+            <svg class="share__open" data-popup="@@id">
+              <use xlink:href="./img/icons/icons.svg#share-link"></use>
+            </svg>
+            <div id="@@id" class="popup" data-media="">
+              <div class="popup__overlay">
+                <div class="popup__content">
+                  <div class="share__block">
+                    <div class="share__block-head">
+                      Поделиться
+                      <div class="share__close popup__close">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <ul class="share__list">
+                      <li>
+                        <svg class="share__item-icon">
+                          <use xlink:href="./img/icons/icons.svg#copy"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg class="share__item-icon">
+                          <use xlink:href="./img/icons/icons.svg#telegram"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg class="share__item-icon">
+                          <use xlink:href="./img/icons/icons.svg#facebook"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg class="share__item-icon">
+                          <use xlink:href="./img/icons/icons.svg#twitter"></use>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg class="share__item-icon">
+                          <use xlink:href="./img/icons/icons.svg#watsup"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <button class="btn btn--color-primary-light">Подписаться на СП</button> 
+        </div>
+      </div>
+        @@if(status == 'progress') {
+          <div class="jp-details__header-conditions jp-details__header-conditions--progress">
+        }
+        @@if(status == 'done') {
+          <div class="jp-details__header-conditions jp-details__header-conditions--done">
+        }
+        @@if(status == 'cancel') {
+          <div class="jp-details__header-conditions jp-details__header-conditions--cancel">
+        }
+        <div class="jp-details__header-conditions-discount">
+          <div class="jp-details__header-conditions-discount-badge">
+            @@if(status == 'progress') {
+              <div class="badge badge--font-commissioner badge--color-primary-light badge--without-border badge--big">
+                Скидка -@@discount-size%
+              </div>
+            }
+            @@if(status == 'done') {
+              <div class="badge badge--font-commissioner badge--color-green badge--without-border badge--big">
+                Скидка -@@discount-size%
+              </div>
+            }
+            @@if(status == 'cancel') {
+              <div class="badge badge--font-commissioner badge--color-grey badge--without-border badge--big">
+                Скидка -@@discount-size%
+              </div>
+            }
+          </div>
+          <div class="jp-details__header-conditions-discount-sum">
+            при покупке от <span class="jp-details__header-conditions-discount-sum-number">@@discount-sum ₽</span>
+          </div>
+        </div>
+        <div class="jp-details__header-conditions-progress">
+          <div class="jp-details__header-conditions-progress-sum">
+            <span class="jp-details__header-conditions-progress-sum-title">Уже купили на:</span>
+            <span class="number">@@old-sum</span>
+            <span> / </span>
+            <span class="number">@@all-sum</span>
+            <span class="currency"> ₽</span>
+          </div>
+          <div class="jp-details__header-conditions-progress-range">
+            @@if(status == 'progress') {
+              <div class="progress progress--primary">
+                <div class="progress__line" style="width:@@isActiveSP_%%"></div>
+              </div>
+            }
+            @@if(status == 'done') {
+              <div class="progress progress--green">
+                <div class="progress__line" style="width:@@isActiveSP_%%"></div>
+              </div>
+            }
+            @@if(status == 'cancel') {
+              <div class="progress progress--grey">
+                <div class="progress__line" style="width:@@isActiveSP_%%"></div>
+              </div>
+            }
+          </div>
+        </div>
+        <div class="jp-details__header-conditions-activity">
+          <div class=" jp-details__header-conditions-activity-title jp-details__header-conditions-activity-title--time">
+            Активна до:
+          </div>
+          <div class="jp-details__header-conditions-activity-title jp-details__header-conditions-activity-title--jp">
+            Совм. Покупка:
+          </div>
+          <time class="jp-details__header-conditions-activity-date" datetime="">@@activity-date-day @@activity-date-time</time>
+          <div class="jp-details__header-conditions-activity-status jp-details__header-conditions-activity-status--done">Состоялась</div>
+          <div class="jp-details__header-conditions-activity-status jp-details__header-conditions-activity-status--cancel">Не состоялась</div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-details__source">
+      <div class="jp-details__source-shop">
+        <div class="jp-details__source-shop-title">
+          Магазин
+        </div>
+        <div class="jp-details__source-shop-inner">
+          <div class="jp-details__source-shop-inner-content">
+            <div class="jp-details__source-shop-img">
+              <img src="img/shop-avatar.png">
+            </div>
+            <div class="jp-details__source-shop-name">
+              Интернет магазин одежды и аксессуаров Lass
+            </div>
+          </div>
+          <button class="btn btn--none">Подписаться</button>
+        </div>
+      </div>
+      <div class="jp-details__source-author">
+        <div class="jp-details__source-author-title">
+          Автор и дата создания
+        </div>
+        <div class="jp-details__source-author-inner">
+          <div class="jp-details__source-author-inner-content">
+            <div class="jp-details__source-author-img">
+              <img src="img/logo-cat.png">
+            </div>
+            <div class="jp-details__source-author-name">
+              <span class="jp-details__source-author-name-txt">
+                @@author-name
+              </span>
+              <p><span class="number">@@subscribers-number</span> подписчиков</p>
+            </div>
+          </div>
+          <div class="jp-details__source-author-sp-date">
+            <p>СП создана</p>      
+            <span>@@sp-date-creation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jp-details__description">
+      <div class="jp-details__description-title">
+        Описание Совместной Покупки
+      </div>
+      <div class="jp-details__description-inner">
+        <p class="jp-details__description-text hide-elem-height">
+          Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле. Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro.
+          Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.
+        </p>
+        <button class="btn-show btn btn--text btn--none btn--color-grey jp-details__description-btn" data-text="Cвернуть">
+          <span class="btn-show-text">Развернуть</span>
+        </button>
+      </div>
+    </div>
+    <div class="jp-details__controls">
+      <a class="jp-details__controls-btn-create-jp btn" href="#">
+        <div class="jp-details__controls-btn-create-jp-mobile">Создать Совместную Покупку</div>
+        <div class="jp-details__controls-btn-create-jp-desktop">Создать СП</div>
+      </a>
+      <a class="btn btn--text btn--none btn--color-grey" href="#">Создать публикацию</a>
+  </div>
+</div>

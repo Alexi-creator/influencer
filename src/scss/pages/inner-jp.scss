@@ -1,0 +1,60 @@
+// vendors
+// @import "../vendors/swiper-bundle.min";
+@import "../vendors/nouislider.min";
+
+// common styles
+@import "../common";
+
+// components
+@import "../components/nav-pages";
+@import "../components/rating";
+@import "../components/share";
+@import "../components/product-menu";
+@import "../components/collapse";
+@import "../components/tabs";
+@import "../components/preview-toolbar-action";
+@import "../components/jp-details";
+@import "../components/product-card";
+@import "../components/range-slider";
+@import "../components/cards-with-menu";
+@import "../components/tabs-head";
+@import "../components/tab-content";
+@import "../components/filter-actions";
+@import "../components/form-filters";
+@import "../components/filters";
+@import "../components/sorting";
+@import "../components/clear-filter-content-popup";
+@import "../components/product";
+@import "../components/inner-jp-goods";
+
+.main {
+  padding: 1.5rem 0 5.5rem;
+
+  @include media($md) {
+    padding: 2.5rem 0 6.5rem;
+  }
+
+  @include media($lg) {
+    padding: 5rem 0;
+  }
+}
+
+.section {
+  $block: &;
+
+  &--inner-jp {
+    #{$block}__inner {
+      max-width: var(--max-width-container-1120);
+    }
+  }
+
+  &--inner-jp-goods {
+    & .hr {
+      margin: 1.5rem 0;
+  
+      @include media($lg) {
+        margin: 2.5rem 0;
+      }
+    }
+  }
+}
