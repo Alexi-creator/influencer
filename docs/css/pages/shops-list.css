@@ -568,6 +568,11 @@ button {
   color: rgba(var(--color-green), 1);
 }
 
+.badge.badge--color-grey {
+  background-color: rgb(var(--color-grey-pale));
+  color: rgba(var(--color-grey-dark), 1);
+}
+
 .badge.badge--big {
   padding: 0 1.25rem;
   height: 3rem;
@@ -2607,7 +2612,7 @@ svg {
 .shops-block__actions {
   gap: 0.75rem;
   position: sticky;
-  top: 4.5rem;
+  top: 4rem;
   padding: 0.5rem 1.25rem;
   margin: 0 -1.25rem;
   background-color: rgb(var(--color-white));
@@ -2780,6 +2785,10 @@ svg {
   margin-top: -3rem;
 }
 
+.shops__preview-images-list > :last-child {
+  display: none;
+}
+
 .shops__preview-images-small {
   width: 4rem;
   height: 6rem;
@@ -2787,10 +2796,6 @@ svg {
      object-fit: cover;
   border: 2px solid rgb(var(--color-white));
   border-radius: var(--radius-medium);
-}
-
-.shops__preview-images-small:last-of-type {
-  display: none;
 }
 
 .shops__preview-description {
@@ -4073,7 +4078,7 @@ svg {
     margin-top: -5rem;
   }
 
-  .shops__preview-images-small:last-of-type {
+  .shops__preview-images-list > :last-child {
     display: block;
   }
 

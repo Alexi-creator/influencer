@@ -539,6 +539,11 @@ button {
   color: rgba(var(--color-green), 1);
 }
 
+.badge.badge--color-grey {
+  background-color: rgb(var(--color-grey-pale));
+  color: rgba(var(--color-grey-dark), 1);
+}
+
 .badge.badge--big {
   padding: 0 1.25rem;
   height: 3rem;

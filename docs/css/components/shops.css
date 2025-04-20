@@ -37,6 +37,10 @@
   margin-top: -3rem;
 }
 
+.shops__preview-images-list > :last-child {
+  display: none;
+}
+
 .shops__preview-images-small {
   width: 4rem;
   height: 6rem;
@@ -44,10 +48,6 @@
      object-fit: cover;
   border: 2px solid rgb(var(--color-white));
   border-radius: var(--radius-medium);
-}
-
-.shops__preview-images-small:last-of-type {
-  display: none;
 }
 
 .shops__preview-description {
@@ -137,7 +137,7 @@
     margin-top: -5rem;
   }
 
-  .shops__preview-images-small:last-of-type {
+  .shops__preview-images-list > :last-child {
     display: block;
   }
 

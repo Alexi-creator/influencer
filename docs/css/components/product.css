@@ -765,10 +765,6 @@
     flex-wrap: nowrap;
   }
 
-  .product--popup .product__short-description-sales-price-actions > * {
-    flex: 1 1 auto;
-  }
-
   .product--popup .product__short-description-sales-price-actions .product__short-description-sales-buy {
     min-width: unset;
     flex: none;
