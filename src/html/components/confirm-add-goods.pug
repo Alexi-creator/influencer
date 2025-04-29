@@ -1,0 +1,20 @@
+.confirm-add-goods
+  .confirm-add-goods__title
+    | Вы уверены что хотите добавить этот товар?
+  .confirm-add-goods__card
+  .confirm-add-goods__actions
+    button.btn.btn--text.btn--none.btn--color-grey(
+      data-popup="popup-from-site"
+      data-close-popup="popup-confirm-from-site"
+    )
+      | Еще подумаю
+    button.btn.btn--loading.confirm-add-goods__submit-btn
+      | Добавляем
+      svg
+        use(xlink:href="./img/icons/icons.svg#loading")
+
+template#list-item-template
+  li.add-publication__content-results-list-item(data-id="")
+    button.add-publication__content-results-list-item-clear.btn
+      svg
+        use(xlink:href="./img/icons/icons.svg#cross")

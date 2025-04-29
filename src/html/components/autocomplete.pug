@@ -17,11 +17,12 @@ mixin autocomplete(options)
     } = options;
 
   .autocomplete(id=id class=extraClass)
-    +input-text({
-      placeholder: placeholder,
+    +inputText({
+      name,
+      placeholder,
       type: "search",
-      prefix: prefix,
-      suffix: suffix,
+      prefix,
+      suffix,
       extraClass: inputExtraClass,
       extraClassPrefix: prefixClass,
       extraClassSuffix: suffixClass,

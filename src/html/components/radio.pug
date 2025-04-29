@@ -1,0 +1,11 @@
+mixin radio({ name, value, text, extraClass = '', isChecked = false })
+  label(class=`radio ${extraClass}`)
+    input(
+      type="radio",
+      name=name,
+      value=value,
+      checked=isChecked ? true : false
+    )
+    span.radio__content
+      span.radio__custom
+      != text

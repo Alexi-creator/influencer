@@ -1,0 +1,7 @@
+mixin checkbox({ name, text, mod = '', classes = '', disabled = false })
+  label.checkbox(class=mod)
+    input(type="checkbox", name=name, disabled=disabled)
+    span.checkbox__checkmark
+      svg
+        use(xlink:href="./img/icons/icons.svg#checkbox")
+    span.checkbox__label(class=classes)= text

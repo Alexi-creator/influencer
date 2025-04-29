@@ -1,0 +1,11 @@
+mixin publicationItem({ extraClass = '', img, title, price, currency, descr })
+  .publication-item(class=extraClass)
+    .publication-item__img
+      img(src=`@img/${img}`, alt="publication-item")
+    .publication-item__content
+      .publication-item__title #{title}
+      .publication-item__price
+        span.publication-item__price-number.number #{price}
+        span.publication-item__price-currency #{currency}
+      if descr
+        .publication-item__descr !{descr}

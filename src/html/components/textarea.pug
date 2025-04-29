@@ -1,0 +1,4 @@
+mixin textarea({ name, placeholder, extraClass = ''})
+  .textarea
+    textarea.textarea__input(class=extraClass name=name placeholder=placeholder data-id=`parent-${name}`)
+    p.textarea__error(data-id=`error-${name}`)

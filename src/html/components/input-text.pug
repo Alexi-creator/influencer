@@ -1,9 +1,9 @@
 mixin inputText({ name, placeholder, type = 'text', prefix = '', suffix = '', extraClass = '', extraClassPrefix = '', extraClassSuffix = '', atr = '' })
   .input-text
-    label.input-text__label(class=extraClass, data-id="parent-#{name}")
+    label.input-text__label(class=extraClass data-id="parent-" + name)
       if prefix
-        .input-text__prefix(class=extraClassPrefix) != prefix
-      input.input-text__input(type=type, name=name, placeholder=placeholder, atr)
+        .input-text__prefix(class=extraClassPrefix)!= prefix
+      input.input-text__input(type=type name=name placeholder=placeholder atr)
       if suffix
-        .input-text__suffix(class=extraClassSuffix) != suffix
-    p.input-text__error(data-id="error-#{name}")
+        .input-text__suffix(class=extraClassSuffix)!= suffix
+    p.input-text__error(data-id="error-" + name)

@@ -1,0 +1,8 @@
+mixin collapse({ title, icon, isClosed = false, extraClass = '' })
+  .collapse(class={ 'collapse--close': isClosed } extraClass)
+    .collapse__head
+      span.collapse__head-title= title
+      svg.collapse__head-icon
+        use(xlink:href=`./img/icons/icons.svg#${icon}`)
+    .collapse__content
+      block

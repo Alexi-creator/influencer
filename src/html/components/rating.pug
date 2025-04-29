@@ -1,0 +1,7 @@
+mixin rating({ extraClass = '', value = '', name = '' })
+  .rating(class=extraClass data-rating=value)
+    each n in [1, 2, 3, 4, 5]
+      svg.rating__icon(data-rate=n)
+        use(xlink:href="./img/icons/icons.svg#rating-star")
+    if name
+      input(type="text" name=name value="" hidden)
