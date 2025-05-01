@@ -1,35 +1,38 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var htmlClass = 'isAuth'
-//- - var title = 'carts Page'
-//- - var nameFile = 'carts'
+include ../components/title
 
-//- - var headerVars = {
-//-   activeItem: "",
-//-   catalogExtraClass: "",
-//-   locationAddress: "",
-//-   idPopup: "location",
-//-   icon: "location",
-//-   locationClass: "header__top-location--empty",
-//- }
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'carts Page'
+    var nameFile = 'carts'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
 
-//- - var isNeedNavPages = true
-
-//- block content
-//-   main.main
-//-     section.section.section--carts
-//-       .section__inner
-//-         include ../components/title.pug(
-//-           title='Корзины',
-//-           isSubscription='',
-//-           amount='',
-//-           sub='',
-//-           isCartStoreAndSP='isCartStoreAndSP',
-//-           storeAmount='1',
-//-           SPAmount='3',
-//-           cartSum='1 749 997',
-//-           isCartStore='',
-//-           isCartSP='',
-//-           cartsSumClass='carts-sum-class'
-//-         )
-//-         include ../components/cart-list.pug
+block content
+  main.main
+    section.section.section--carts
+      .section__inner
+        +title({
+          title: 'Корзины',
+          isSubscription: false,
+          amount: '',
+          sub: '',
+          isCartStoreAndSP: true,
+          storeAmount: '1',
+          SPAmount: '3',
+          cartSum: '1 749 997',
+          isCartStore: false,
+          isCartSP: false,
+          cartsSumClass: 'carts-sum-class'
+        })
+        include ../components/cart-list.pug
