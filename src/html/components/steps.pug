@@ -1,0 +1,40 @@
+.steps
+  .steps__inner
+    .steps__items
+      .steps__item.steps__item--current(data-step="choose-goods")
+        .steps__item-wrapper
+          .steps__item-step 1
+          svg.steps__item-circle
+            use(xlink:href="./img/icons/icons.svg#step")
+        .steps__item-line
+        .steps__item-name Выбор товаров
+
+      .steps__item(data-step="filling")
+        .steps__item-wrapper
+          .steps__item-step 2
+          svg.steps__item-circle
+            use(xlink:href="./img/icons/icons.svg#step")
+        .steps__item-line
+        .steps__item-name Наполнение
+
+      .steps__item(data-step="preview")
+        .steps__item-wrapper
+          .steps__item-step 3
+          svg.steps__item-circle
+            use(xlink:href="./img/icons/icons.svg#step")
+        .steps__item-line
+        .steps__item-name Предпросмотр
+
+      .steps__item(data-step="image-created")
+        .steps__item-wrapper
+          .steps__item-step
+            svg
+              use(xlink:href="./img/icons/icons.svg#check")
+          svg.steps__item-circle
+            use(xlink:href="./img/icons/icons.svg#step")
+        .steps__item-line
+        .steps__item-name Образ создан
+
+    .steps__divider
+      svg
+        use(xlink:href="./img/icons/icons.svg#step-divider")

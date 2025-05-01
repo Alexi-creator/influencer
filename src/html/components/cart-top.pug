@@ -1,0 +1,48 @@
+mixin cartTop(data)
+  .cart__top
+    .cart__top-inner
+      .cart__top-title
+        | Корзина ##{data.number} (СП)
+      .cart__top-content
+        if data.isSP
+          .cart__top-wrapper
+            .cart__top-content-title Совместная покупка
+            .cart__top-content-feature
+              .cart__top-content-catch-phrase= data.catchPhrase
+              .cart__top-content-feature-inner
+                .cart__top-content-feature-purchases
+                  div
+                    span
+                      | Уже купили на: &nbsp;
+                    span.number= data.soldSum
+                    span | / 
+                    span.number= data.allSum
+                    span.currency
+                      | &nbsp;₽
+                  if data.isActive
+                    .progress.progress--primary
+                      .progress__line(style=`width:${data.progress}`)
+                  if data.isHappened
+                    .progress.progress--green
+                      .progress__line(style='width:100%')
+                  if data.isNotHappened
+                    .progress.progress--grey
+                      .progress__line(style=`width:${data.progress}`)
+                div
+                  if data.isActive
+                    div Активна до:
+                    div.cart__top-content-event #{data.date} #{data.time}
+                  if data.isHappened
+                    div Совм. Покупка:
+                    div.cart__top-content-event.cart__top-content-event--is-happened Состоялась
+                  if data.isNotHappened
+                    div Совм. Покупка:
+                    div.cart__top-content-event.cart__top-content-event--is-not-happened Не состоялась
+        .cart__top-wrapper
+          .cart__top-content-title Магазин
+          .cart__top-seller-inner
+            .cart__top-seller-inner-content
+              .cart__top-seller-img
+                img(src='img/shop-avatar.png')
+              .cart__top-seller-name Интернет магазин одежды и аксессуаров Lass
+            button.btn.btn--color-primary-light.btn--none.cart__top-seller-btn Подписаться

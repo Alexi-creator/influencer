@@ -1,0 +1,15 @@
+block vars
+
+doctype html
+html(lang="ru-RU" class=htmlClass)
+  include ../layout/head.pug
+  
+  body
+    if isNeedHeader
+      include ./header.pug
+
+    if isNeedNavPages
+      include ../components/nav-pages.pug
+
+    block content
+

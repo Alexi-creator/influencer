@@ -1,0 +1,50 @@
+mixin cartControl(data)
+  .cart__control
+    if data.isTopControl
+      .cart__control-top
+        .cart__control-top-type= data.type
+        if data.isActiveChooseAll
+          .cart__control-top-choose-all
+            include ../components/checkbox.pug
+            +checkbox({
+              name: 'allCheckbox',
+              text: 'Выбрать все',
+              mod: 'checkbox--radius-medium',
+              classes: 'cart__control__top-choose-all-txt'
+            })
+        if data.isInActiveChooseAll
+          .cart__control-top-choose-all-inActive
+            include ../components/checkbox.pug
+            +checkbox({
+              name: 'checkbox',
+              text: 'Выбрать все',
+              mod: 'checkbox--disabled checkbox--radius-medium',
+              classes: 'cart__control__top-choose-all-txt',
+              disabled: 'disabled'
+            })
+
+    if data.isBottomControl
+      .cart__control-bottom
+        .cart__control-bottom-results
+          .cart__control-bottom-results-total Итого
+          .cart__control-bottom-results-group
+            .cart__control-bottom-results-group-position
+              = `${data.position} позиции`
+            .cart__control-bottom-results-group-amount
+              span.cart__control-bottom-results-group-amount-number= data.amount
+              |  шт. товаров
+            .cart__control-bottom-results-group-sum
+              span.cart__control-bottom-results-group-sum-old 0 ₽
+              span.cart__control-bottom-results-group-sum-new 0 ₽
+        .cart__control-bottom-control
+          if data.canCreateSP
+            .cart__control-bottom-control-up
+              button.btn.btn--color-primary-light Создать новую SP
+          if data.canUpdateStore
+            .cart__control-bottom-control-up
+              button.btn.btn--color-primary-light Обновить скидку
+              svg
+                use(xlink:href='./img/icons/icons.svg#info')
+          .cart__control-bottom-control-order
+            button.cart__control-bottom-control-btn-del.btn.btn--none.btn--text.btn--color-grey Удалить эту корзину
+            button.cart__control-bottom-control-btn-order.btn(disabled) Оформить заказ

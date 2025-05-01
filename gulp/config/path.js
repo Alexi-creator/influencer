@@ -17,9 +17,10 @@ export const path = {
   // пути для исходников
   src: {
     // раскоментить при использовании pug и закоментить ниже строчку
-    // html: `${srcFolder}/*.pug`,
-    htmlPages: `${srcFolder}/html/pages/*.html`,
-    html: `${srcFolder}/html/**/*.html`,
+    // htmlPages: `${srcFolder}/html/pages/*.html`,
+    htmlPages: `${srcFolder}/html/pages/*.pug`,
+    html: `${srcFolder}/html/**/*.pug`,
+    // html: `${srcFolder}/html/**/*.html`,
     files: `${srcFolder}/files/**/*.*`,
     scss: `${srcFolder}/scss/`,
     js: `${srcFolder}/js/pages/**/*.js`,
@@ -32,8 +33,8 @@ export const path = {
   // пути по которым следит watch
   watch: {
     // раскоментить при использовании pug и закоментить нижнию строчку
-    // html: `${srcFolder}/**/*.pug`,
-    html: `${srcFolder}/**/*.html`,
+    // html: `${srcFolder}/**/*.html`,
+    html: `${srcFolder}/**/*.pug`,
     files: `${srcFolder}/files/**/*.*`,
     scss: `${srcFolder}/scss/**/*.*`,
     js: `${srcFolder}/js/**/*.*`,

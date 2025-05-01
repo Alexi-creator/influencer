@@ -1,0 +1,243 @@
+include ./cart-top
+include ./cart-control
+include ./cart-item
+
+block cartListVars
+  -
+    var carts = [
+      {
+        top: {
+          isSP: true,
+          number: '1',
+          catchPhrase: 'Покупаем пока есть скидка, девочки',
+          soldSum: '79281',
+          allSum: '241093',
+          isActive: true,
+          isHappened: false,
+          isNotHappened: false,
+          progress: "35%",
+          date: '27.01.2020',
+          time: '12:00'
+        },
+        controlTop: {
+          isTopControl: true,
+          type: 'Товары',
+          isActiveChooseAll: true,
+          isInActiveChooseAll: false,
+          isBottomControl: false,
+          position: '',
+          amount: '',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: false,
+          canUpdateStore: true,
+        },
+        items: [
+          { pic: 'sp-slide2.jpg', brand: 'Balenciaga', description: 'Тянущееся платье с длинными рукавами', disabled: false, sp: true },
+          { pic: 'sp-slide4.jpg', brand: 'Louis Vuitton', description: 'Пуховик из кожи с узором Monogram Micro', disabled: false, sp: true },
+          { pic: 'sp-slide2.jpg', brand: 'Balenciaga', description: 'Тянущееся платье с длинными рукавами', disabled: false, sp: true },
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"', disabled: true, disabledSize: true, sp: true },
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"2', disabled: true, sp: true },
+        ],
+        controlBottom: {
+          isTopControl: false,
+          type: 'Товары',
+          isActiveChooseAll: true,
+          isInActiveChooseAll: false,
+          isBottomControl: true,
+          position: '5',
+          amount: '6',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: false,
+          canUpdateStore: false,
+        },
+      },
+      {
+        top: {
+          isSP: true,
+          number: '2',
+          catchPhrase: 'Покупаем пока есть скидка, девочки',
+          soldSum: '79281',
+          allSum: '241093',
+          isActive: false,
+          isHappened: false,
+          isNotHappened: true,
+          progress: "35%",
+          date: '27.01.2020',
+          time: '12:00'
+        },
+        controlTop: {
+          isTopControl: true,
+          type: 'Товары',
+          isActiveChooseAll: false,
+          isInActiveChooseAll: true,
+          isBottomControl: false,
+          position: '4',
+          amount: '21',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: false,
+          canUpdateStore: true,
+        },
+        items: [
+          {
+            pic: 'sp-slide3.jpg',
+            brand: 'Balenciaga',
+            description: 'Тянущееся платье с длинными рукавами',
+            disabled: true,
+            sp: true,
+          }
+        ],
+        controlBottom: {
+          isTopControl: false,
+          type: 'Товары',
+          isActiveChooseAll: true,
+          isInActiveChooseAll: false,
+          isBottomControl: true,
+          position: '1',
+          amount: '2',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: true,
+          canUpdateStore: false,
+        }
+      },
+      {
+        top: {
+          isSP: true,
+          number: '3',
+          catchPhrase: 'Покупаем пока есть скидка, девочки',
+          soldSum: '79281',
+          allSum: '241093',
+          isActive: false,
+          isHappened: true,
+          isNotHappened: false,
+          progress: "",
+          date: '27.01.2020',
+          time: '12:00'
+        },
+        controlTop: {
+          isTopControl: true,
+          type: 'Товары',
+          isActiveChooseAll: true,
+          isInActiveChooseAll: false,
+          isBottomControl: false,
+          position: '',
+          amount: '',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: false,
+          canUpdateStore: true,
+        },
+        items: [
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"3', disabled: true, sp: true },
+        ],
+        controlBottom: {
+          isTopControl: false,
+          type: 'Товары',
+          isActiveChooseAll: true,
+          isInActiveChooseAll: false,
+          isBottomControl: true,
+          position: '1',
+          amount: '2',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: true,
+          canUpdateStore: false,
+        },
+      },
+      {
+        top: {
+          isSP: false,
+          number: '4',
+          catchPhrase: '',
+          soldSum: '',
+          allSum: '',
+          isActive: false,
+          isHappened: false,
+          isNotHappened: false,
+          progress: "",
+          date: '',
+          time: ''
+        },
+        controlTop: {
+          isTopControl: true,
+          type: 'Товары',
+          isActiveChooseAll: true,
+          isInActiveChooseAll: false,
+          position: '',
+          amount: '',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: false,
+          canUpdateStore: true,
+        },
+        items: [
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"4', disabled: false, store: true, sp: false },
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"5', disabled: false, store: true, sp: false },
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"6', disabled: false, store: true, sp: false },
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"7', disabled: false, store: true, sp: false },
+          { pic: 'sp-slide3.jpg', brand: 'Balenciaga', description: 'Блейзер Hourglass из шерсти с узором "гусиная лапка"8', disabled: true, store: true, sp: false },
+        ],
+        controlBottom: {
+          type: 'Товары',
+          isActiveChooseAll: true,
+          isInActiveChooseAll: false,
+          isBottomControl: true,
+          position: '4',
+          amount: '21',
+          oldSum: '182500',
+          newSum: '93779',
+          totalOldSum: '205 000',
+          totalNewSum: '187 558',
+          canCreateSP: false,
+          canUpdateStore: true,
+        },
+      },
+    ]
+
+
+.cart-list
+  each cart in carts
+    .cart
+      +cartTop(cart.top)
+      +cartControl(cart.controlTop)
+      .cart__items
+        each item, idx in cart.items
+          +cartItem({
+            id: idx + 1,
+            store: item.store,
+            sp: item.sp,
+            onePieceDiscount: '/  459 000 ₽  /  -10%',
+            threePiecesDiscount: '/  408 000 ₽  /  -20%',
+            fourPiecesDiscount: '/  357 000 ₽  /  -40%',
+            oldSum: '102500',
+            newSum: '93779',
+            totalOldSum: '205 000',
+            totalNewSum: '187 558',
+            disabled: item.disabled,
+            picked: '',
+            disabledPicked: '',
+            cartCardPic: '<img src="@img/' + item.pic + '">',
+            cartCardBrand: item.brand,
+            cartCardBrandDescription: item.description,
+            sizes: '34 EU / XS',
+            amounts: '2 шт.',
+            disabledSize: item.disabledSize || false
+          })
+      +cartControl(cart.controlBottom)

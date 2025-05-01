@@ -1,0 +1,52 @@
+extends ../layout/baseLayout
+
+include ../components/popup
+
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'add publication'
+    var nameFile = 'add-publication'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty"
+    }
+
+block content
+  main.main
+    section.section
+      .section__inner
+        .title
+          h1.title-txt Создание Публикации
+          p.title-under
+            | Создайте свою собственную публикацию с отзывом о товаре, рекомендацией или даже целым образом из товаров на площадке!
+
+    section.section.section--add-publication-steps
+      .section__inner
+        include ../components/steps.pug
+
+    section.section.section--add-publication
+      .section__inner
+        include ../components/add-publication.pug
+
+  //- Popup: Товары в этой публикации
+  +popup({
+    extraClass: "publication-items-popup",
+    id: "publication-items",
+    title: "Товары в этой публикации",
+  })
+    <div class="publication-items-popup-content"></div>
+
+  //- Popup: Очистить фильтр 
+  +popup({
+    extraClass: "",
+    id: "clearFilter",
+    title: "",
+  })
+    include ../components/clear-filter-content-popup.pug

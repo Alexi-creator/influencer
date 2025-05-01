@@ -1,0 +1,38 @@
+mixin title({ title, isSubscription, amount, sub, isCartStoreAndSP, storeAmount, SPAmount, cartSum, cartsSumClass, isCartStore, isCartSP })
+  .title
+    h1.title-txt #{title}
+
+    if isSubscription
+      p.title-under #{amount} #{sub}
+
+    else if isCartStoreAndSP
+      p.title-under
+        span
+          | из 
+        span.title-under-bold #{storeAmount} магазина
+        |  
+        span и 
+        span.title-under-bold #{SPAmount} СП
+        |  
+        span на сумму 
+        span.title-under-bold(class=cartsSumClass)= ` ${cartSum}`
+        span.title-under-bold ₽
+
+    else if isCartStore
+      p.title-under
+        span
+          | из 
+        span.title-under-bold #{storeAmount} магазина
+        |  
+        span на сумму 
+        span.title-under-bold= ` ${cartSum}`
+        span.title-under-bold ₽
+
+    else if isCartSP
+      p.title-under
+        span из
+        span.title-under-bold #{SPAmount} СП
+        |  
+        span на сумму 
+        span.title-under-bold= ` ${cartSum}`
+        span.title-under-bold ₽
