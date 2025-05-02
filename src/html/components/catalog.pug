@@ -1,0 +1,237 @@
+include ./collapse
+
+block catalogVars
+  -
+    var menuItems = [
+      {
+        catalog: 'cloth',
+        title: 'Красота и здоровье',
+        body: 'test2',
+        isClosed: true,
+        icon: 'cloth'
+      },
+      {
+        catalog: 'electronics',
+        title: 'Электроника',
+        body: '<ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>',
+        isClosed: true,
+        icon: 'cloud'
+      },
+      {
+        catalog: 'cloth2',
+        title: 'Красота и здоровье2',
+        body: 'test2',
+        isClosed: true,
+        icon: 'cloth'
+      },
+      {
+        catalog: 'electronics2',
+        title: 'Электроника2',
+        body: '<ul class="catalog__list-second"><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Макияж</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Гель лаки и гелевые системы</a></li><li><a href="#">Дизайн ногтей</a></li></ul></div></div><li><div class="collapse collapse--close"><div class="collapse__head"><span class="collapse__head-title">Оборудования и материалы для тату-салона</span><svg class="collapse__head-icon"><use xlink:href="./img/icons/icons.svg#arrow"></use></svg></div><div class="collapse__content"><ul class="catalog__list-third"><li><a href="#">Тату машинки и аксессуары</a></li><li><a href="#">Держатели и наконечники</a></li></ul></div></div></li></li></ul>',
+        isClosed: true,
+        icon: 'cloud'
+      }
+    ]
+    var tabsContent = [
+      {
+        target: 'cloth',
+        title: 'Красота и здоровье',
+        items: [
+          {
+            title: 'Макияж',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' },
+              { title: 'Гель-лаки и гелевые системы2' },
+              { title: 'Дизайн ногтей2' },
+              { title: 'Гель-лаки и гелевые системы3' },
+              { title: 'Дизайн ногтей3' },
+              { title: 'Гель-лаки и гелевые системы4', isHide: true },
+              { title: 'Дизайн ногтей4', isHide: true },
+              { title: 'Гель-лаки и гелевые системы5', isHide: true },
+              { title: 'Дизайн ногтей5', isHide: true },
+              { isCollapseBtn: true }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона',
+            list: [
+              { title: 'Тату-машинки и аксессуары' },
+              { title: 'Держатели и наконечники' }
+            ]
+          },
+          {
+            title: 'Макияж2',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона2',
+            list: [
+              { title: 'Тату-машинки и аксессуары' },
+              { title: 'Держатели и наконечники' }
+            ]
+          },
+          {
+            title: 'Макияж3',
+            list: [
+              { title: 'Гель-лаки и гелевые системы3' },
+              { title: 'Дизайн ногтей3' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона3',
+            list: [
+              { title: 'Тату-машинки и аксессуары3' },
+              { title: 'Держатели и наконечники3' }
+            ]
+          }
+        ]
+      },
+      {
+        target: 'electronics',
+        title: 'Electronics',
+        items: [
+          {
+            title: 'Electronics',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона',
+            list: [
+              { title: 'Тату-машинки и аксессуары' },
+              { title: 'Держатели и наконечники' }
+            ]
+          },
+          {
+            title: 'Electronics2',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона2',
+            list: [
+              { title: 'Тату-машинки и аксессуары' },
+              { title: 'Держатели и наконечники' }
+            ]
+          },
+          {
+            title: 'Electronics3',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона3',
+            list: [
+              { title: 'Тату-машинки и аксессуары3' },
+              { title: 'Держатели и наконечники3' }
+            ]
+          }
+        ]
+      },
+      {
+        target: 'cloth2',
+        title: 'Красота и здоровье2',
+        items: [
+          {
+            title: 'Макияж2',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона2',
+            list: [
+              { title: 'Тату-машинки и аксессуары3' },
+              { title: 'Держатели и наконечники3' }
+            ]
+          },
+          {
+            title: 'Макияж3',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона3',
+            list: [
+              { title: 'Тату-машинки и аксессуары3' },
+              { title: 'Держатели и наконечники3' }
+            ]
+          }
+        ]
+      },
+      {
+        target: 'electronics2',
+        title: 'Electronics2',
+        items: [
+          {
+            title: 'Electronics2',
+            list: [
+              { title: 'Гель-лаки и гелевые системы' },
+              { title: 'Дизайн ногтей' }
+            ]
+          },
+          {
+            title: 'Оборудование и материалы для тату-салона',
+            list: [
+              { title: 'Тату-машинки и аксессуары3' },
+              { title: 'Держатели и наконечники3' }
+            ]
+          }
+        ]
+      }
+    ]
+
+.catalog
+  .catalog__mobile
+    .catalog__mobile-title Категории
+
+    .catalog__list.catalog__masonry
+      each item in menuItems
+        ul.catalog__masonry-item
+          li.catalog__item(data-catalog=item.catalog)
+            +collapse({
+              title: `<span class="catalog__item-title"><svg><use xlink:href='./img/icons/icons.svg#${item.icon}'></use></svg><span class="catalog__item-title-text">${item.title}</span></span>`,
+              isClosed: item.isClosed,
+            })
+              != item.body
+
+  .catalog__desktop.tabs
+    ul.catalog__menu.tabs__list
+      each item, index in menuItems
+        li.catalog__menu-item.tabs__tab(class={ "tabs__tab--active": index === 0 } data-tab-path=item.catalog)
+          span.catalog__item-title
+            svg
+              use(xlink:href=`./img/icons/icons.svg#${item.icon}`)
+            span.catalog__item-title-text #{item.title}
+
+    .catalog__content.tabs__contents
+      each tab, index in tabsContent
+          .tabs__content(class={ "tabs__content--active": index === 0 } data-tab-target=tab.target)
+            .catalog__desktop-title= tab.title
+            .catalog__masonry
+              each item in tab.items
+                .catalog__masonry-item
+                  .catalog__masonry-item-title= item.title
+                  ul.catalog__masonry-list
+                    each link in item.list
+                      if link.isCollapseBtn
+                        li.btn.btn-show.btn--text.btn--color-grey.btn--show(data-text="Свернуть")
+                          span.btn-show-text Развернуть
+                          svg
+                            use(xlink:href="./img/icons/icons.svg#arrow")
+                      else
+                        li.catalog__masonry-list-item(class={"hide-elem" : link.isHide})
+                          a(href="#")= link.title

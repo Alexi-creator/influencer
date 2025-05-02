@@ -1,23 +1,24 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var htmlClass = 'isAuth'
-//- - var title = 'catalog Page'
-//- - var nameFile = 'catalog'
+block vars
+  -
+    var htmlClass = ''
+    var title = 'catalog Page'
+    var nameFile = 'catalog'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "catalog",
+      catalogExtraClass: "active",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
 
-//- - var headerVars = {
-//-   activeItem: "catalog",
-//-   catalogExtraClass: "active",
-//-   locationAddress: "",
-//-   idPopup: "location",
-//-   icon: "location",
-//-   locationClass: "header__top-location--empty",
-//- }
-
-//- - var isNeedNavPages = true
-
-//- block content
-//-   main.main
-//-     section.section.section--catalog
-//-       .section__inner
-//-         include ../components/catalog.pug
+block content
+  main.main
+    section.section.section--catalog
+      .section__inner
+        include ../components/catalog.pug
 
