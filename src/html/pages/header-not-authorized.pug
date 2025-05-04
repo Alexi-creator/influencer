@@ -1,16 +1,16 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var title = 'header not authorized'
-//- - var nameFile = 'header-demo'
-
-//- - var headerVars = {
-//-   activeItem: "",
-//-   catalogExtraClass: "",
-//-   locationAddress: "",
-//-   locationExtraClass: "",
-//-   idPopup: "location",
-//-   icon: "location",
-//-   locationClass: "header__top-location--empty",
-//- }
-
-//- block content
+block vars
+  -
+    var htmlClass = ''
+    var title = 'header not authorized'
+    var nameFile = 'header-demo'
+    var isNeedHeader = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
