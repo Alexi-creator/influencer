@@ -1,0 +1,39 @@
+include ./input-text
+
+.courier
+  .courier__inner
+    .courier__header
+      button.courier__header-back
+        svg.courier__header-back-icon(data-popup="map", data-close-popup="courier")
+          use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+      .courier__header-title
+        | Уточнить адрес
+      button.courier__header-cross.btn.btn--color-primary-light
+        svg.courier__header-cross-icon(data-close-popup="courier")
+          use(xlink:href="./img/icons/icons.svg#cross")
+    .courier__actions
+      .courier__actions-inputs
+        .courier__actions-inputs-full
+          | Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
+        +inputText({
+          placeholder: "Дом",
+          extraClass: "input-text--color-grey",
+        })
+        +inputText({
+          placeholder: "Индекс",
+          extraClass: "input-text--color-grey",
+        })
+        +inputText({
+          placeholder: "Подъезд",
+          extraClass: "input-text--color-grey",
+        })
+        +inputText({
+          placeholder: "Этаж",
+          extraClass: "input-text--color-grey",
+        })
+        +inputText({
+          placeholder: "Домофон",
+          extraClass: "input-text--color-grey",
+        })
+      button.btn(disabled)
+        | Продолжить

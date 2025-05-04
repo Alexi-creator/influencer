@@ -4,7 +4,8 @@ mixin popup({ id = '', extraClass = '', media = '', title = '' })
       .popup__content
         if title
           .popup__header
-            .popup__header-title= title
+            .popup__header-title
+              != title
             button.popup__header-btn-close.btn.btn--color-primary-light(data-close-popup=id)
               svg.popup__header-btn-close-icon
                 use(xlink:href="./img/icons/icons.svg#cross")

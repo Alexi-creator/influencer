@@ -1,9 +1,15 @@
-mixin inputText({ name, placeholder, type = 'text', prefix = '', suffix = '', extraClass = '', extraClassPrefix = '', extraClassSuffix = '', atr = '' })
+mixin inputText({ name, placeholder, type = 'text', prefix = '', suffix = '', prefixBlock, suffixBlock, extraClass = '', extraClassPrefix = '', extraClassSuffix = '', atr = '' })
   .input-text
     label.input-text__label(class=extraClass data-id="parent-" + name)
       if prefix
         .input-text__prefix(class=extraClassPrefix)!= prefix
+      if prefixBlock
+        .input-text__prefix(class=extraClassPrefix)
+          block
       input.input-text__input(type=type name=name placeholder=placeholder atr)
       if suffix
         .input-text__suffix(class=extraClassSuffix)!= suffix
+      if suffixBlock
+        .input-text__suffix(class=extraClassSuffix)
+          block
     p.input-text__error(data-id="error-" + name)

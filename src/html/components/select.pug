@@ -1,0 +1,11 @@
+mixin select({ name, extraClass, initialLabel, options = [], initialValue })
+  div(id=name, class=`select ${extraClass} noselect`, role="button", tabindex="0")
+    .select__header
+      .select__title #{initialLabel}
+      .select__icon
+        svg
+          use(xlink:href='./img/icons/icons.svg#arrow')
+    ul.select__options
+      each option in options
+        li!= option
+    input(name=name, type="text", value=initialValue, hidden)

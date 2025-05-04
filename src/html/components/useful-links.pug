@@ -1,0 +1,24 @@
+block usefulLinksVars
+  -
+    const links = [
+      { text: 'Категории', href: '#', },
+      { text: 'Магазины', href: '#', },
+      { text: 'Совместные покупки', href: '#', },
+      { text: 'Test ForFree', href: '#', },
+      { text: 'Блогеры', href: '#', },
+      { text: 'Публикации', href: '#', },
+      { text: 'Служба поддержки', href: '#', },
+    ]
+
+.useful-links
+  .useful-links__title
+    | Полезные ссылки
+    svg.useful-links__title-cross
+      use(xlink:href="./img/icons/icons.svg#cross")
+  ul.useful-links__list
+    each link in links
+      li.useful-links__list-item
+        a(href=link.href)
+          | #{link.text}
+          svg
+            use(xlink:href="./img/icons/icons.svg#arrow")

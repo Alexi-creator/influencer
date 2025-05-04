@@ -8,6 +8,8 @@ mixin autocomplete(options)
       placeholder = '',
       prefix = '',
       suffix = '',
+      prefixBlock,
+      suffixBlock,
       value = '',
       tag = '',
       extraClass = '',
@@ -23,10 +25,13 @@ mixin autocomplete(options)
       type: "search",
       prefix,
       suffix,
+      prefixBlock,
+      suffixBlock,
       extraClass: inputExtraClass,
       extraClassPrefix: prefixClass,
       extraClassSuffix: suffixClass,
     })
+      block
 
     input(type="text", name=name, value=value, hidden)
 
