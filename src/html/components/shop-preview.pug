@@ -1,0 +1,27 @@
+include ./breadcrumbs
+include ./preview-toolbar-action
+
+.shop-preview
+  .shop-preview__block-img
+    img(src='@img/shop-preview.jpg', alt='shop-preview')
+  .shop-preview__block-descr
+    h1.shop-preview__title Интернет магазин женской одежды и аксессуаров Lass
+    p.shop-preview__about
+      | Lass — сеть магазинов женской одежды и аксессуаров. Ассортимент включает в себя блузы, юбки, брюки, платья, джемперы, рубашки, жакеты, нарядную одежду, пуховики, куртки, пальто и аксессуары от известных брендов.
+    .shop-preview__bread-crumbs
+      +breadcrumbs({
+        title: "Категории:",
+        items: [
+          { text: "Платья и сарафаны", href: "#" },
+          { text: "Блузы и рубашки", href: "#" },
+          { text: "Юбки", href: "" },
+          { text: "+ еще 12", href: "" },
+        ],
+      })
+    .shop-preview__followers 112 подписчиков
+    +previewToolbarAction({
+      title: "Интернет магазин женской одежды и аксессуаров Lass",
+      img: '@img/shop-avatar.png',
+      extraClass: "shop-preview__actions",
+      extraClassPopup: 'popup--onlymobile',
+    })
