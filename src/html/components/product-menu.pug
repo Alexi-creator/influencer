@@ -1,0 +1,109 @@
+include ./radio
+
+mixin productMenu(name)
+  ul.product-menu
+    //- Элемент первого уровня — Одежда
+    li.product-menu__item.collapse
+      .collapse__head
+        +radio({
+          name: name,
+          text: "<span class='product-menu__title'>Одежда level 1<span class='product-menu__count'>1200</span></span>",
+          value: "cloth-level-1",
+        })
+      ul.product-menu__submenu.collapse__content
+        //- Уровень 2 - 1
+        li.product-menu__item.collapse.collapse--close
+          .collapse__head
+            +radio({
+              name: name,
+              text: "<span class='product-menu__title'>Одежда level 2-1</span>",
+              value: "cloth-level-2-1",
+            })
+          ul.product-menu__submenu.collapse__content
+            li
+              +radio({
+                name: name,
+                text: "<span class='product-menu__title'>Одежда level 3-1</span>",
+                value: "cloth-level-3-1",
+              })
+            li
+              +radio({
+                name: name,
+                text: "<span class='product-menu__title'>Одежда level 3-2</span>",
+                value: "cloth-level-3-2",
+              })
+            li
+              +radio({
+                name: name,
+                text: "<span class='product-menu__title'>Одежда level 3-3</span>",
+                value: "cloth-level-3-3",
+              })
+
+        //- Уровень 2 - 2
+        li.product-menu__item.collapse.collapse--close
+          .collapse__head
+            +radio({
+              name: name,
+              text: "<span class='product-menu__title'>Одежда level 2-2</span>",
+              value: "cloth-level-2-2",
+            })
+          ul.product-menu__submenu.collapse__content
+            each val in [1, 2, 3]
+              li
+                +radio({
+                  name: name,
+                  text: "<span class='product-menu__title'>Одежда level 3</span>",
+                  value: "cloth-level-3-2-" + val,
+                })
+
+    //- Обувь
+    li.product-menu__item.collapse.collapse--close
+      .collapse__head
+        +radio({
+          name: name,
+          text: "<span class='product-menu__title'>Обувь level 1</span>",
+          value: "shoes-level-1",
+        })
+      ul.product-menu__submenu.collapse__content
+        each subLevel2, i in ["1", "2"]
+          li.product-menu__item.collapse.collapse--close
+            .collapse__head
+              +radio({
+                name: name,
+                text: "<span class='product-menu__title'>Обувь level 2-" + subLevel2 + "</span>",
+                value: "shoes-level-2-" + subLevel2,
+              })
+            ul.product-menu__submenu.collapse__content
+              each subLevel3 in [1, 2, 3]
+                li
+                  +radio({
+                    name: name,
+                    text: "<span class='product-menu__title'>Обувь level 3</span>",
+                    value: "shoes-level-3-" + (subLevel2 == "1" ? subLevel3 : "2-" + subLevel3),
+                  })
+
+    //- Бытовая техника
+    li.product-menu__item.collapse.collapse--close
+      .collapse__head
+        +radio({
+          name: name,
+          text: "<span class='product-menu__title'>Бытовая техника level 1</span>",
+          value: "Appliances-level-1",
+        })
+      ul.product-menu__submenu.collapse__content
+        each subLevel2, i in ["1", "2"]
+          li.product-menu__item.collapse.collapse--close
+            .collapse__head
+              +radio({
+                name: name,
+                text: "<span class='product-menu__title'>Бытовая техника level 2-" + subLevel2 + "</span>",
+                value: "Appliances-level-2-" + subLevel2,
+              })
+            ul.product-menu__submenu.collapse__content
+              each subLevel3 in [1, 2, 3]
+                li
+                  +radio({
+                    name: name,
+                    text: "<span class='product-menu__title'>Бытовая техника level 3</span>",
+                    value: "Appliances-level-3-" + (subLevel2 == "1" ? subLevel3 : "2-" + subLevel3),
+                  })

@@ -1,0 +1,15 @@
+include ./share
+
+mixin previewToolbarAction({ img, title, extraClass = '', extraClassBtn = '', extraClassPopup = '', media = '' })
+  .preview-toolbar-action(class=extraClass)
+    button.preview-toolbar-action__btn-top.scroll
+      svg
+        use(xlink:href="./img/icons/icons.svg#go-up")
+    .preview-toolbar-action__brand
+      .preview-toolbar-action__brand-logo
+        img(src=img, alt="shop-avatar")
+      .preview-toolbar-action__brand-name #{title}
+    .preview-toolbar-action__subscribe
+      button.btn(class=extraClassBtn) Подписаться
+      span.preview-toolbar-action__subscribe-dote
+      +share({ extraClassPopup, media })

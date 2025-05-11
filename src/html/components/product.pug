@@ -1,0 +1,180 @@
+include ./rating
+include ./select
+
+mixin product({ extraClass, images, point, isDiscount, productDescription, productName, productShortDescription, likesScore, postScore, priceCrossed, discountScore, priceNew, discountExtra, spDiscountLinksFound, imgSeller, sellerName, deliveryPrice, discountExtraSum })
+  .product(class=extraClass)
+    .product__wrapper
+      .product__inner
+        .product__img-container
+          each img, index in images
+            .product__grid-img(class=`product__item${index + 1}`)
+              img(src=img alt=img)
+
+      .product__delivery-description
+        .product__delivery-inner
+          .product__title Доставка и оплата
+          .product__delivery-point
+            span.product__delivery-point-city #{point}
+            button.btn.btn--none.product__delivery-btn Изменить
+          .product__delivery-content
+            .product__delivery-content-item
+              .product__delivery-content-icon
+                svg
+                  use(xlink:href="./img/icons/icons.svg#truck")
+              .product__delivery-content-description
+                .product__delivery-description-point Курьером / наличные, только Москва
+                .product__delivery-description-point от 2 до 7 дней
+                .product__delivery-description-price #{deliveryPrice} ₽
+            .product__delivery-content-item
+              .product__delivery-content-icon
+                svg
+                  use(xlink:href="./img/icons/icons.svg#credit-card")
+              .product__delivery-content-description
+                .product__delivery-description-point Транспортной компанией (ТК) / в другие города и страны
+                .product__delivery-description-point от 7 до 21 дня
+                .product__delivery-description-price Стоимость будет рассчитана после выбора ТК
+
+        .product__description-inner
+          .product__title Описание товара
+          .product__description-content #{productDescription}
+
+      .product__inner-description
+        .product__short-description
+          .product__short-description-title #{productName}
+          .product__short-description-description #{productShortDescription}
+          .product__short-description-score
+            .product__short-description-score-stars-inner
+              +rating({})
+              .product__short-description-score-likes
+                svg
+                  use(xlink:href="./img/icons/icons.svg#likes")
+                span #{likesScore}
+            .product__short-description-score-posts
+              a(href="#") #{postScore} публикаций
+              span с этим товаром
+        .product__short-description-discount
+          .product__short-description-choice-title Стоимость с Вашей скидкой:
+          .product__info-price
+            .product__info-price-inner
+              span.product__info-price-item-crossed
+                span.product__info-price-item-crossed.number #{priceCrossed}
+                | ₽
+              span.product__info-price-item-new
+                .badge.badge--without-border.badge--discount - #{discountScore} %
+                span.product__info-price-item-new.number #{priceNew}
+                | ₽
+
+        .product__short-description-size-inner
+          .product__short-description-size
+            .product__short-description-choice-title Выберите размер:
+            .product__short-description-choice-wrapper-size
+              .product__short-description-choice-select
+                +select({
+                  extraClass: "select--border-grey",
+                  name: "size",
+                  options: [
+                    '<li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></li>',
+                    '<li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span data-count="4" class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li>'
+                  ],
+                  initialValue: "34",
+                  initialLabel: '34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span>'
+                })
+              a(href="#") Таблица размеров
+          .product__short-description-size
+            .product__short-description-choice-title-amount Выберите количество:
+            .product__short-description-choice-wrapper
+              .product__short-description-choice-select
+                +select({
+                  extraClass: "select--border-grey",
+                  name: "amount",
+                  options: '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li>  <li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li>',
+                  initialValue: "1 шт.",
+                  initialLabel: '1'
+                })
+              span.product__short-description-choice-number.product__viseable--one
+                span 1 товар
+                |  со скидкой -10%
+              span.product__short-description-choice-number.product__viseable--more.hide
+                | Какие скидки на товар?
+                button.btn.btn--none(data-popup="discount") Узнать
+
+        .product__short-description-sp
+          .product__short-description-sp-title Совместная покупка:
+          .product__short-description-sp-content Покупаем пока есть скидка, девочки
+
+        .product__short-description-sales
+          .product__short-description-sales-price
+            span.product__short-description-sales-price-txt Вы заплатите
+            span.product__info-price-item-new
+              span.product__info-price-item-new.product__info-price-item-new-count.number #{priceNew}
+              |  ₽
+            span.product__short-description-sales-price-txt за 1 шт. товара
+          .product__short-description-sales-price-actions
+            button.product__short-description-sales-add.btn Добавить в корзину
+            a.product__short-description-sales-cart.hide.btn.btn--green(href="#") В корзине 
+              span перейти
+            .product__short-description-sales-change-count.hide
+              button.product__short-description-sales-increment.hide.btn.btn--color-primary-light(href="#")
+                svg
+                  use(xlink:href="./img/icons/icons.svg#plus")
+              .product__short-description-sales-count-wrap
+                span.product__short-description-sales-count 1
+                | шт.
+              button.product__short-description-sales-decrement.hide.btn.btn--color-primary-light(href="#")
+                svg
+                  use(xlink:href="./img/icons/icons.svg#minus")
+            a.product__short-description-sales-buy.btn.btn--color-primary-light(href="#") Купить сейчас
+            button.product__short-description-sales-actions.btn.btn--color-primary-light
+              svg
+                use(xlink:href="./img/icons/icons.svg#heart-out-line")
+          .product__short-description-sales-price-create-post
+            a(href="#") Создать публикацию с этим товаром
+            p Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.
+
+
+        if isDiscount
+          .product__short-description-sp-discount
+            .product__short-description-sp-discount-title Больше скидка:
+            .product__short-description-sp-discount-inner
+              .product__short-description-sp-discount-content
+                .badge.badge--without-border.badge--discount - #{discountExtra} %
+                .product__short-description-sp-discount-sum
+                  span.number #{discountExtraSum}
+                  |  ₽
+              .product__short-description-sp-discount-links
+                span в #{spDiscountLinksFound} Совместных Покупках
+                a(href="#") Перейти
+
+        .product__short-description-shop
+          .product__title-shop Магазин
+          .product__seller-inner
+            .product__seller-inner-content
+              .product__seller-img!= imgSeller
+              .product__seller-name #{sellerName}
+            button.btn.btn--none.product__seller-btn Подписаться
+
+        .product__description-shop
+          .product__title О товаре
+          ul.product__short-description-shop-product
+            li
+              span.product__table-dot
+              | Материал: 100% кожа ягнёнка
+            li
+              span.product__table-dot
+              | Отделка: 90% гусиный пух, 10% утиный пух
+            li
+              span.product__table-dot
+              | Подкладка: 53% вискоза, 47% купро
+            li
+              span.product__table-dot
+              | Цвет шампанского
+            li
+              span.product__table-dot
+              | Стандартная посадка
+            li
+              span.product__table-dot
+              | Сделано в Италии
+
+    a.product__footer-link(href="#")
+      | Перейти к полной версии карточки товара
+      
