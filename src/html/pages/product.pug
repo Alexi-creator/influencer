@@ -1,120 +1,219 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var title = 'product Page'
-//- - var nameFile = 'product'
+include ../components/popup
+include ../components/product
+include ../components/breadcrumbs
+include ../components/with-product
+include ../components/joint-purchases-card
+include ../components/post-card-list
+include ../components/discount
 
-//- - var headerVars = {
-//-   activeItem: "",
-//-   catalogExtraClass: "",
-//-   locationAddress: "",
-//-   idPopup: "location",
-//-   icon: "location",
-//-   locationClass: "header__top-location--empty",
-//- }
+block vars
+  -
+    var htmlClass = ''
+    var title = 'product Page'
+    var nameFile = 'product'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
+    var productData = {
+      images: [
+        "@img/product-img1.png",
+        "@img/product-img2.png",
+        "@img/product-img3.png",
+        "@img/product-img4.png",
+        "@img/product-img5.png",
+      ],
+      point: "в Москву",
+      deliveryPrice: "300",
+      productDescription: "Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.",
+      productName: "Louis Vouitton",
+      productShortDescription: "Пуховик из кожи с узором monogram micro",
+      likesScore: 89,
+      postScore: "108",
+      priceCrossed: "510000",
+      priceNew: "459000",
+      discountScore: "10",
+      productSpDescription: "Покупаем пока есть скидка, девочки",
+      imgSeller: '<img src="@img/shop-avatar.png"></img>',
+      sellerName: "Интернет магазин одежды и аксессуаров Lass",
+      discountExtra: "50",
+      discountExtraSum: "459000",
+      spDiscountLinksFound: "79",
+      extraClass: "",
+      isDiscount: false,
+    }
+    var postCards = [
+      {
+        imgSrc: "@img/post-card-img-black.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: "liked"
+      },
+      {
+        imgSrc: "@img/post-card-img-white.png",
+        userName: "Олеся Смирнова",
+        desc: "Светлый образ на холодную весну",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-louis-vuitton.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "scores",
+        scoresDiscus: "3058",
+        scoresLikes: "64197",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-jeans.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-louis-vuitton.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "scores",
+        scoresDiscus: "3058",
+        scoresLikes: "64197",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-jeans.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "scores",
+        scoresDiscus: "3058",
+        scoresLikes: "64197",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-card-img-black.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-card-img-white.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-card-img-white.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      }
+    ]
 
-//- - var isNeedNavPages = true
+block content
+  main.main
+    section.section.section--breadcrumbs
+      .section__inner
+        +breadcrumbs({
+          extraClass: "breadcrumbs--primary",
+          title: "",
+          items: [
+            { text: "Платья и сарафаны", href: "#" },
+            { text: "Блузы и рубашки", href: "#" },
+            { text: "Юбки", href: "" },
+            { text: "+ еще 12", href: "" },
+          ],
+        })
 
-//- block content
-//-   main.main
-//-     section.section.section--breadcrumbs
-//-       .section__inner
-//-         include ../components/breadcrumbs.pug(
-//-           extraClass="breadcrumbs--primary",
-//-           title=""
-//-         )
+    section.section.section--product
+      .section__inner
+        +product(productData)
 
-//-     section.section.section--product
-//-       .section__inner
-//-         - const productImg1 = '<img src="@img/product-img1.png"></img>'
-//-         - const productImg2 = '<img src="@img/product-img2.png"></img>'
-//-         - const productImg3 = '<img src="@img/product-img3.png"></img>'
-//-         - const productImg4 = '<img src="@img/product-img4.png"></img>'
-//-         - const productImg5 = '<img src="@img/product-img5.png"></img>'
-//-         include ../components/product.pug(
-//-           'product-img1': productImg1,
-//-           'product-img2': productImg2,
-//-           'product-img3': productImg3,
-//-           'product-img4': productImg4,
-//-           'product-img5': productImg5,
-//-           'point': "в Москву",
-//-           'delivery-price': "300",
-//-           'product-description': "Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.",
-//-           'product-name': "Louis Vouitton",
-//-           'product-short-description': "Пуховик из кожи с узором monogram micro",
-//-           'likes-score': "89",
-//-           'post-score': "108",
-//-           'price-crossed': "510000",
-//-           'price-new': "459000",
-//-           'discount-score': "10",
-//-           'product-sp-description': "Покупаем пока есть скидка, девочки",
-//-           'img-seller': '<img src="@img/shop-avatar.png"></img>',
-//-           'seller-name': "Интернет магазин одежды и аксессуаров Lass",
-//-           'discount-extra': "50",
-//-           'discount-extra-sum': "459000",
-//-           'sp-discount-links-found': "79",
-//-           'ifDiscount': "discount"
-//-         )
+    section.section.section--with-product
+      .section__inner
+        +withProduct({
+          extraClass: "",
+          title: "Совместные Покупки с этим товаром",
+          btnHeaderText: "Создать СП",
+          btnId: 'spBtnLoad',
+          btnLoadText: "Подгрузить все СП",
+        })
+          #spList.joint-purchases-list
+            +jointPurchasesCard({
+              extraClass: "joint-purchases-card--processing",
+              status: "",
+              width: "30%",
+            })
+            +jointPurchasesCard({
+              extraClass: "joint-purchases-card--processing",
+              status: "",
+              width: "30%",
+            })
 
-//-     section.section.section--with-product
-//-       .section__inner
-//-         - const spBody = `
-//-           <div id="spList" class="joint-purchases-list">
-//-             include ./joint-purchases-card.pug(
-//-               extra-class="joint-purchases-card--processing",
-//-               status="",
-//-               width="30%"
-//-             )
-//-             include ./joint-purchases-card.pug(
-//-               extra-class="joint-purchases-card--processing",
-//-               status="",
-//-               width="30%"
-//-             )
-//-           </div>`
-//-         include ../components/with-product.pug(
-//-           extraClass="",
-//-           title="Совместные Покупки с этим товаром",
-//-           'btn-header-text': "Создать СП",
-//-           body=spBody,
-//-           btnId='spBtnLoad',
-//-           'btn-load-text': "Подгрузить все СП"
-//-         )
+    section.section.section--with-product
+      .section__inner
+        +withProduct({
+          extraClass: "",
+          title: "Публикации с этим товаром",
+          btnHeaderText: "Создать Публикацию",
+          btnId: 'publicationBtnLoad',
+          btnLoadText: "Подгрузить все публикации",
+        })
+          +postCardList({ listId: "publicationList", cards: postCards })
 
-//-     section.section.section--with-product
-//-       .section__inner
-//-         - const publicationBody = 'include ./post-card-list.pug({ listId: "publicationList" })'
-//-         include ../components/with-product.pug(
-//-           extraClass="",
-//-           title="Публикации с этим товаром",
-//-           'btn-header-text': "Создать Публикацию",
-//-           body=publicationBody,
-//-           btnId='publicationBtnLoad',
-//-           'btn-load-text': "Подгрузить все публикации"
-//-         )
-
-//-     - const discountBody = `
-//-       include ../components/discount.pug(
-//-         img='<img src=\\"@img/product-img3.png\\" />',
-//-         brand="Louis Vouitton",
-//-         'product-name': "Пуховик из кожи с узором Monogram Micro",
-//-         'price-crossed': "182500",
-//-         'price-new': "459000",
-//-         number="1",
-//-         'discount-size': "10",
-//-         'img-seller': '<img src=\\"@img/shop-avatar.png\\" />',
-//-         'seller-name': "Интернет магазин одежды и аксессуаров Lass",
-//-         'discount-price-N1': "459000",
-//-         'discount-percent-N1': "10",
-//-         'discount-price-N2': "408000",
-//-         'discount-percent-N2': "20",
-//-         'discount-price-N3': "408000",
-//-         'discount-percent-N3': "20",
-//-         'discount-price-N4': "357000",
-//-         'discount-percent-N4': "40"
-//-       )`
-//-     include ../components/popup.pug(
-//-       extraClass="popup--discount",
-//-       id="discount",
-//-       title="Какие скидки на товары я получу от продавца",
-//-       body=discountBody
-//-     )
+    +popup({
+      extraClass: "popup--discount",
+      id: "discount",
+      title: "Какие скидки на товары я получу от продавца",
+    })
+      +discount({
+        imgSrc: "@img/product-img3.png",
+        brand: 'Louis Vouitton',
+        productName: 'Пуховик из кожи с узором Monogram Micro',
+        priceCrossed: '459000',
+        priceNew: '413100',
+        number: 1,
+        discountSize: 10,
+        imgSellerSrc: "@img/shop-avatar.png",
+        sellerName: 'Интернет магазин одежды и аксессуаров Lass',
+        discountPrices: [
+          { price: '459000', discount: '10' },
+          { price: '408000', discount: '20' },
+          { price: '380000', discount: '30' },
+          { price: '357000', discount: '40' }
+        ]
+      })
 

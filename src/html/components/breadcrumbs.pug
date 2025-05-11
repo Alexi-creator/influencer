@@ -1,0 +1,11 @@
+mixin breadcrumbs({ extraClass, title, items = [] })
+  .breadcrumbs(class=extraClass)
+    if title
+      span.breadcrumbs__title!= title
+    ul.breadcrumbs__list
+      each item in items
+        li.breadcrumbs__item
+          if item.href
+            a(href=item.href)= item.text
+          else
+            | #{item.text}

@@ -1,0 +1,64 @@
+include ./select
+
+mixin discount({ imgSrc, brand, productName, priceCrossed, priceNew, number, discountSize, imgSellerSrc, sellerName, discountPrices, selectOptions })
+  .discount
+    .discount__wrapper
+      .discount__inner
+        .discount__info
+          .discount__title Товар
+          .discount__info-inner
+            .discount__info-description
+              .discount__info-img 
+                img(src=imgSrc alt=imgSrc)
+              .discount__info-title
+                span.discount__info-brand= brand
+                span.discount__info-name= productName
+            .discount__info-price
+              .discount__info-price-inner
+                span.discount__info-price-item-crossed
+                  span.discount__info-price-item-crossed.number= priceCrossed
+                  | ₽
+                span.discount__info-price-item-new
+                  span.discount__info-price-item-new.number= priceNew
+                  | ₽
+                span.discount__info-price-item-amount за #{number} шт.
+              .discount__price-discount С персональной индивидуальной - #{discountSize}%
+        .discount__seller
+          .discount__title Продавец
+          .discount__seller-inner
+            .discount__seller-img
+              img(src=imgSellerSrc alt=imgSellerSrc)
+            .discount__seller-name= sellerName
+
+      .discount__inner
+        .discount__choice
+          .discount__title Выберите количество товара
+          .discount__choice-select
+            +select({
+              name: "amount-popup",
+              extraClass: "select--border-grey",
+              options: [
+                '<li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li>',
+                '<li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li>',
+                '<li class="select__options-item" data-value="3" role="button" tabindex="0">3 шт.</li>',
+                '<li class="select__options-item" data-value="4" role="button" tabindex="0">4 шт.</li>',
+              ],
+              initialLabel: '4 шт.',
+              initialValue: '4 шт.',
+            })
+        .discount__choice-math
+          .discount__title Расчет скидок на каждый товар
+          table
+            thead
+              tr
+                th # Товара
+                th Стоимость
+                th Скидка
+            tbody#bodyDiscountTable
+              each item, i in discountPrices
+                tr
+                  td #{'#' + (i + 1)}
+                  td 
+                    span.number= item.price
+                    |  ₽
+                  td -#{item.discount}%
