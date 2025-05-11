@@ -1,36 +1,64 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var htmlClass = 'isAuth'
-//- - var title = 'product in modal Page'
-//- - var nameFile = 'product-in-modal'
+include ../components/popup
+include ../components/product
 
-//- - var headerVars = {
-//-   activeItem: "",
-//-   catalogExtraClass: "",
-//-   locationAddress: "",
-//-   idPopup: "location",
-//-   icon: "location",
-//-   locationClass: "header__top-location--empty",
-//- }
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'product in modal Page'
+    var nameFile = 'product-in-modal'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
+    var productData = {
+      images: [
+        "@img/product-img1.png",
+        "@img/product-img2.png",
+        "@img/product-img3.png",
+        "@img/product-img4.png",
+        "@img/product-img5.png",
+      ],
+      point: "в Москву",
+      deliveryPrice: "300",
+      productDescription: "Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.",
+      productName: "Louis Vouitton",
+      productShortDescription: "Пуховик из кожи с узором monogram micro",
+      likesScore: 89,
+      postScore: "108",
+      priceCrossed: "510000",
+      priceNew: "459000",
+      discountScore: "10",
+      productSpDescription: "Покупаем пока есть скидка, девочки",
+      imgSeller: '<img src="@img/shop-avatar.png"></img>',
+      sellerName: "Интернет магазин одежды и аксессуаров Lass",
+      discountExtra: "50",
+      discountExtraSum: "459000",
+      spDiscountLinksFound: "79",
+      extraClass: "product--popup",
+      isDiscount: false,
+    }
 
-//- - var isNeedNavPages = true
+block content
+  main.main
+    section.section.section--product-in-modal
+      .section__inner
+        .title
+          h1.title-txt Модальное окно товара
 
-//- block content
-//-   main.main
-//-     section.section.section--product-in-modal
-//-       .section__inner
-//-         .title
-//-           h1.title-txt Модальное окно товара
+        button.btn.btn--text.btn--color-grey(data-popup="popup-product")
+          | Открыть модальное окно товара
 
-//-         button.btn.btn--text.btn--color-grey(data-popup="popup-product")
-//-           | Открыть модальное окно товара
-
-//-         - const popupTitle = `<a href="#" class="product__header-link">Перейти к полной версии карточки товара</a> <span href="#" class="product__header-txt">Быстрый просмотр товара</span>`
-//-         - const popupBody = `include ../components/product-in-modal.pug`
-//-         include ../components/popup.pug(
-//-           extraClass='product-in-modal',
-//-           id='popup-product',
-//-           title=popupTitle,
-//-           body=popupBody
-//-         )
-
+        +popup({
+          id: 'popup-product',
+          extraClass: 'product-in-modal',
+          title: `<a href="#" class="product__header-link">Перейти к полной версии карточки товара</a> <span href="#" class="product__header-txt">Быстрый просмотр товара</span>`,
+        })
+          +product(productData)
