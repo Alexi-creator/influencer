@@ -1,36 +1,47 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var htmlClass = 'isAuth'
-//- - var title = 'publication Page'
-//- - var nameFile = 'publication'
+include ../components/popup
+include ../components/publication-item
 
-//- - var headerVars = {
-//-   activeItem: "",
-//-   catalogExtraClass: "",
-//-   locationAddress: "",
-//-   idPopup: "location",
-//-   icon: "location",
-//-   locationClass: "header__top-location--empty",
-//- }
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'publication Page'
+    var nameFile = 'publication'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
+    var publications = [
+      { img: 'item-publication.jpg', title: 'Костюм классический UNIQ', price: '10000', currency: '₽', descr: '' },
+      { img: 'item-publication.jpg', title: 'Костюм классический UNIQ', price: '10000', currency: '₽', descr: '' },
+      { img: 'item-publication.jpg', title: 'Костюм классический UNIQ', price: '10000', currency: '₽', descr: '' },
+      { img: 'item-publication.jpg', title: 'Костюм классический UNIQ', price: '10000', currency: '₽', descr: '' },
+      { img: 'item-publication.jpg', title: 'Костюм классический UNIQ', price: '10000', currency: '₽', descr: '' }
+    ]
 
-//- - var isNeedNavPages = true
+block content
+  main.main
+    section.section.section--publication
+      .section__inner
+        include ../components/publication
 
-//- block content
-//-   main.main
-//-     section.section.section--publication
-//-       .section__inner
-//-         include ../components/publication.pug
+    section.section.section--comments
+      .section__inner
+        include ../components/comments.pug
 
-//-     section.section.section--comments
-//-       .section__inner
-//-         include ../components/comments.pug
-
-//-   - const popupBody = 'include ./publication-items-popup-content.pug'
-//-   include ../components/popup.pug(
-//-     extraClass="publication-items-popup",
-//-     id="publication-items",
-//-     title="Товары в этой публикации",
-//-     body=popupBody
-//-   )
-
+  +popup({
+    extraClass: "publication-items-popup",
+    id: "publication-items",
+    title: "Товары в этой публикации",
+  })
+    .publication-items-popup-content
+      each item in [...publications, ...publications]
+        +publicationItem(item)
 

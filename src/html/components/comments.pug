@@ -1,0 +1,125 @@
+include ./input-text
+include ./textarea
+
+.comments
+	.comments__title
+		| Комментарии 
+		span.comments__title-count 4
+
+	form.comments__comment
+		.comments__comment-avatar
+			svg.comments__comment-avatar-default
+				use(xlink:href='./img/icons/icons.svg#user-comments')
+			img.comments__comment-avatar-img(src='@img/avatar.jpg', alt='user-avatar')
+
+		.comments__comment-input.comments__comment-input--no-auth
+			+inputText({
+				name: "comment-disabled",
+				type: "text",
+				placeholder: "в свой аккаунт",
+				prefix: '<button type="button" class="btn btn--none" data-popup="login">Войдите</button>',
+				suffix: "",
+				extraClass: "input-text--color-grey input-text--disabled",
+				atr: "disabled"
+			})
+
+		.comments__comment-input.comments__comment-input--auth
+			+inputText({
+				name: "comment-main",
+				type: "text",
+				placeholder: "Ваш комментарий тут",
+				extraClass: "input-text--color-grey",
+			})
+
+		button.btn.comments__comment-submit.comments__comment-submit--no-auth(disabled, type="button") Отправить
+		button.btn.btn--color-primary-light.comments__comment-submit.comments__comment-submit--auth(type="submit") Отправить
+
+	.comments__list
+		.comments__item
+			.comments__item-wrapper
+				.comments__item-time 18 апреля 2021 в 10:53
+				.comments__item-avatar
+					img.comments__item-avatar-img(src='@img/user-julia.jpg', alt='user-avatar')
+				.comments__item-title
+					.comments__item-title-name Юлия М.
+				.comments__item-text
+					| в целом выглядит норм, но быстро будешь пачкаться и ходить как свинка. есть другие варианты по цвету или теперь в тренде только белый?
+				.comments__item-actions
+					button.comments__item-actions-like
+						svg.comments__item-actions-svg
+							use(xlink:href='./img/icons/icons.svg#favourite')
+					.comments__item-actions-count 0
+					button.btn.btn--none.comments__item-actions-btn Ответить
+				.comments__item-line
+
+			.comments__item-answer-wrapper
+				.comments__item
+					.comments__item-wrapper
+						.comments__item-time 18 апреля 2021 в 10:53
+						.comments__item-avatar
+							img.comments__item-avatar-img(src='@img/logo-user-sm.jpg', alt='user-avatar')
+						.comments__item-title
+							.comments__item-title-name Олеся Смирнова
+							.comments__item-title-descr в ответ Юлия М.
+						.comments__item-text
+							| Юлия, вариантов много, просто эта публикация посвящена именно белому цвету. Посмотрите например вот эти: 
+							a.comments__item-text-link(href='') черным цветом 
+							| и с 
+							a.comments__item-text-link(href='') зеленым 
+							| . Еще можете на меня подписаться, я каждую неделю выкладываю публикации с новыми цветами и новым стилем.
+						.comments__item-actions
+							button.comments__item-actions-like
+								svg.comments__item-actions-svg
+									use(xlink:href='./img/icons/icons.svg#favourite')
+							.comments__item-actions-count 3
+							button.btn.btn--none.comments__item-actions-btn Ответить
+						.comments__item-line
+
+					.comments__item-answer-wrapper
+						.comments__item
+							.comments__item-wrapper
+								.comments__item-time 18 апреля 2021 в 10:53
+								.comments__item-avatar
+									img.comments__item-avatar-img(src='@img/user-julia.jpg', alt='user-avatar')
+								.comments__item-title
+									.comments__item-title-name Юлия М.
+									.comments__item-title-descr в ответ Олеся Смирнова
+								.comments__item-text
+									| ок, спасибо за ссылки. сейчас гляну
+								.comments__item-actions
+									button.comments__item-actions-like
+										svg.comments__item-actions-svg
+											use(xlink:href='./img/icons/icons.svg#favourite')
+									.comments__item-actions-count 1
+									button.btn.btn--none.comments__item-actions-btn Ответить
+								.comments__item-line
+							.comments__item-answer-wrapper
+
+		.comments__item
+			.comments__item-wrapper
+				.comments__item-time 18 апреля 2021 в 11:57
+				.comments__item-avatar
+					img.comments__item-avatar-img(src='@img/user-ekaterina.jpg', alt='user-avatar')
+				.comments__item-title
+					.comments__item-title-name Екатерина Добрынина
+				.comments__item-text
+					| А мне очень понравилась подборка для образа, просто бомба!
+				.comments__item-actions
+					button.comments__item-actions-like
+						svg.comments__item-actions-svg
+							use(xlink:href='./img/icons/icons.svg#favourite')
+					.comments__item-actions-count 978
+					button.btn.btn--none.comments__item-actions-btn Ответить
+			.comments__item-answer-wrapper
+
+		template#answer-template
+			.comments__item-answer-new
+				.comments__item-answer-new-logo
+					img(src='@img/avatar.jpg', alt='user-logo')
+				.comments__item-answer-new-input-wrapper
+					+textarea({
+						"name": "answer",
+						"placeholder": "Введите текст",
+						"extraClass": "comments__item-answer-new-input"
+					})
+				button.btn.btn--color-primary-light.comments__item-answer-new-btn Отправить
