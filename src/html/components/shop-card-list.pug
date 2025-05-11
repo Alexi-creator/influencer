@@ -1,0 +1,64 @@
+include ./shop-card
+
+mixin shopCardList({ extraClass })
+  .shop-card-list(class=extraClass)
+    +shopCard({
+      shopLogoSrc: "@img/shop-avatar.png",
+      shopName: 'Интернет магазин женской одежды и аксессуаров Lass',
+      itemImages: [
+        '@img/product-card.jpg',
+        '@img/product-first.png',
+        '@img/product-third.png',
+        '@img/product-fourth.png',
+        '@img/product-fifth.png',
+        '@img/product-card.jpg',
+        '@img/product-first.png'
+      ],
+      desc: 'Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8',
+      isSubscribe: true,
+    })
+    +shopCard({
+      shopLogoSrc: "@img/shop-avatar.png",
+      shopName: 'Интернет магазин женской одежды и аксессуаров Lass2',
+      itemImages: [
+        '@img/product-card.jpg',
+        '@img/product-first.png',
+        '@img/product-third.png',
+        '@img/product-fourth.png',
+        '@img/product-fifth.png',
+        '@img/product-card.jpg',
+        '@img/product-first.png'
+      ],
+      desc: 'Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8',
+      isSubscribe: false,
+    })
+    +shopCard({
+      shopLogoSrc: "@img/shop-avatar.png",
+      shopName: 'Интернет магазин женской одежды и аксессуаров Lass3',
+      itemImages: [
+        '@img/product-card.jpg',
+        '@img/product-first.png',
+        '@img/product-third.png',
+        '@img/product-fourth.png',
+        '@img/product-fifth.png',
+        '@img/product-card.jpg',
+        '@img/product-first.png'
+      ],
+      desc: 'Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8',
+      isSubscribe: true,
+    })
+    +shopCard({
+      shopLogoSrc: "@img/shop-avatar.png",
+      shopName: 'Интернет магазин женской одежды и аксессуаров Lass4',
+      itemImages: [
+        '@img/product-card.jpg',
+        '@img/product-first.png',
+        '@img/product-third.png',
+        '@img/product-fourth.png',
+        '@img/product-fifth.png',
+        '@img/product-card.jpg',
+        '@img/product-first.png'
+      ],
+      desc: 'Платья и сарафаны / Сумки / Кофты / Юбки  +  еще 8',
+      isSubscribe: false,
+    })

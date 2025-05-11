@@ -40,8 +40,10 @@ mixin autocomplete(options)
       if tag
         #{tag}.autocomplete__options
           if options.options
-            != options.options
+            each item in options.options
+              != item
       else
         ul.autocomplete__options
           if options.options
-            != options.options
+            each item in options.options
+              != item

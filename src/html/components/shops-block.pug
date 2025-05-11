@@ -1,0 +1,121 @@
+include ./autocomplete
+include ./collapse
+include ./radio
+include ./checkbox
+include ./popup
+
+block shopBlockVars
+  -
+    var sortingOptions = [
+      { mod: 'popular-asc', text: 'По популярности', icon: 'sorting-top', value: 'popular-asc' },
+      { mod: 'name-asc', text: 'По имени', icon: 'sorting-top', value: 'name-asc' },
+      { mod: 'date-asc', text: 'По дате регистрации', icon: 'sorting-top', value: 'date-asc' },
+      { mod: 'popular-desc', text: 'По популярности', icon: 'sorting-down', value: 'popular-desc' },
+      { mod: 'name-desc', text: 'По имени', icon: 'sorting-down', value: 'name-desc' },
+      { mod: 'date-desc', text: 'По дате регистрации', icon: 'sorting-down', value: 'date-desc' }
+    ]
+    var checkboxes = [
+      { name: "filter_users", text: "все", mod: "", classes: "" },
+      { name: "filter_users", text: "FronTTrend SeTTer", mod: "", classes: "" },
+      { name: "filter_users", text: "мои подписки", mod: "", classes: "" },
+      { name: "filter_users", text: "мои подписчики", mod: "", classes: "" }
+    ]
+
+.shops-block
+  .shops-block__actions
+    +autocomplete({
+      id: 'shops-autocomplete',
+      name: 'shops-autocomplete',
+      placeholder: 'Введите название магазина',
+      prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+      suffix: '',
+      tag: '',
+      extraClass: 'shops-block__autocomplete',
+      inputExtraClass: 'autocomplete__input input-text--color-grey',
+      options: [
+        '<li class="autocomplete__options-item" data-value="val1" tabindex="0">Магазин 1</li>',
+        '<li class="autocomplete__options-item" data-value="val2" tabindex="0">Магазин 2</li>',
+        '<li class="autocomplete__options-item" data-value="val3" tabindex="0">Магазин 3</li>',
+        '<li class="autocomplete__options-item" data-value="val4" tabindex="0">Магазин 4</li>',
+        '<li class="autocomplete__options-item" data-value="val5" tabindex="0">Магазин 5</li>',
+        '<li class="autocomplete__options-item" data-value="val6" tabindex="0">Магазин 6</li>',
+        '<li class="autocomplete__options-item" data-value="val7" tabindex="0">Магазин 7</li>',
+        '<li class="autocomplete__options-item" data-value="val8" tabindex="0">Магазин 8</li>',
+        '<li class="autocomplete__options-item" data-value="val9" tabindex="0">Магазин 9</li>',
+        '<li class="autocomplete__options-item" data-value="val10" tabindex="0">Магазин 10</li>',
+      ]
+    })
+
+    // Блок с кнопками сортировки и фильтрации
+    .filter-actions.shops-block__actions-btns.active
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="title-under")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__categories.btn.btn--outlined.btn--color-grey.scroll(data-target="title-under")
+        .filter-actions__text Категории
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#categories")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .shops-block__actions-filters-count.filter-actions__filters-count
+
+  // Форма с категорией и сортировкой
+  form.shops-block__form.form-filters
+    .sorting
+      .sorting__title
+        | Сортировка
+        .sorting__cross
+          svg
+            use(xlink:href="./img/icons/icons.svg#cross")
+      each item in sortingOptions
+        .sorting__btn(class='sorting__btn--' + item.mod)
+          +radio({
+            name: 'sorting',
+            text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${item.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${item.icon}'></use></svg></span>`,
+            extraClass: 'radio--btn',
+            value: item.value
+          })
+
+    .div.shops-block__form-chips.form-filters__chips
+
+    .div.shops-block__form-filter.filters
+      .filters__title
+        | Фильтры
+        .shops-block__form-filter-cross.filters__title-cross
+          svg
+            use(xlink:href="./img/icons/icons.svg#cross")
+      .shops-block__form-filter-filters.filters__items
+        .filters__item
+          +collapse({
+            title: "Фильтр",
+            isClosed: false,
+            icon: "collapse"
+          })
+           .filters__collapse.filters__collapse-grid
+              each checkbox in checkboxes
+                +checkbox(checkbox)
+
+      .shops-block__form-filter-actions.filters__actions.form__btns
+        button(type="button", class="btn btn--text shops-block__form-filter-clear filters__clear", data-popup="clearFilter")
+          svg.shops-block__form-filter-actions-clear.filters__actions-clear
+            use(xlink:href="./img/icons/icons.svg#trash")
+          span.shops-block__form-filter-actions-text.filters__actions-text Очистить все категории
+        button(type="submit", class="btn shops-block__form-filter-submit")
+          | Применить
+          span.btn__suffix
+
+  .shops-block__wrapper
+    each item in [1, 2, 3, 4]
+      include ./shops
+
+  +popup({
+    "extraClass": "",
+    "id": "clearFilter",
+    "title": "",
+  })
+    include ./clear-filter-content-popup

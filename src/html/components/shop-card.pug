@@ -1,0 +1,43 @@
+include ./badge
+include ./breadcrumbs
+include ./share
+
+mixin shopCard({ shopLogoSrc, shopName, itemImages, isSubscribe })
+  .shop-card
+    .shop-card__inner
+      .shop-card__top
+        .shop-card__title-inner
+          .shop-card__title-img
+            img(src=shopLogoSrc alt=shopLogoSrc)
+          .shop-card__title-txt
+            h2.shop-card__title-name
+              = shopName
+            .shop-card__title-features
+              +badge('badge--small')
+                <span class="badge__sub">до</span>-10%
+              +badge('badge--small')
+                | 134 СП
+              +badge('badge--small')
+                | 79 TFF
+        .shop-card__catalog-img
+          each item in itemImages
+            .shop-card__catalog-item
+              img(src=item alt=item)
+        .shop-card__desc
+          +breadcrumbs({
+            title: 'Категории:',
+            items: [
+              { text: "Платья и сарафаны", href: "#" },
+              { text: "Блузы и рубашки", href: "#" },
+              { text: "Юбки", href: "" },
+              { text: "+ еще 12", href: "" },
+            ],
+          })
+      .shop-card__sub
+        if isSubscribe
+          button.btn.btn--color-primary-light Подписаться
+        else
+          button.shop-card__unsub.btn.btn--color-green Вы подписаны
+        svg.shop-card__sub-round
+          use(xlink:href="/img/icons/icons.svg#round")
+        +share({ id: shopName })

@@ -1,0 +1,43 @@
+include ./breadcrumbs
+include ./shop-card-list
+
+.shops
+  .shops__preview
+    .shops__preview-inner
+      .shops__preview-images
+        .shops__preview-images-wrapper
+          img.shops__preview-images-main(src="@img/shop-preview.jpg", alt="shop-preview", loading="lazy")
+          .shops__preview-images-list
+            img.shops__preview-images-small(src="@img/product-card.jpg", alt="shop-preview", loading="lazy")
+            img.shops__preview-images-small(src="@img/product-first.png", alt="shop-preview", loading="lazy")
+            img.shops__preview-images-small(src="@img/product-third.png", alt="shop-preview", loading="lazy")
+            img.shops__preview-images-small(src="@img/product-fourth.png", alt="shop-preview", loading="lazy")
+            img.shops__preview-images-small(src="@img/product-fifth.png", alt="shop-preview", loading="lazy")
+
+      .shops__preview-description
+        .shops__preview-description-title
+          | Интернет магазин женской одежды и аксессуаров Lass
+        .shops__preview-description-badges
+          .badge.badge--small
+            .badge__sub до-10%
+          .badge.badge--small 134 СП
+          .badge.badge--small 79 TFF
+        .shops__preview-description-about
+          | Lass — сеть магазинов женской одежды и аксессуаров. Ассортимент включает в себя блузы, юбки, брюки, платья, джемперы, рубашки, жакеты, нарядную одежду, пуховики, куртки, пальто и аксессуары от известных брендов.
+        .shops__preview-description-breadcrumbs
+          +breadcrumbs({
+            title: "Категории:",
+            items: [
+              { text: "Платья и сарафаны", href: "#" },
+              { text: "Блузы и рубашки", href: "#" },
+              { text: "Юбки", href: "" },
+              { text: "+ еще 12", href: "" },
+            ],
+          })
+        .shops__preview-description-share
+          button.btn.btn--color-primary-light Подписаться
+          svg.shop-card__sub-round
+            use(xlink:href="/img/icons/icons.svg#round")
+          +share({ id: 'shops' })
+
+  +shopCardList({ extraClass: "shops__list" })
