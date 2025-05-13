@@ -1,0 +1,8 @@
+mixin chip({ title = '', options = '', count = null })
+  .chip
+    span.chip__title #{title}#{title ? ' :' : ''}
+    span.chip__options #{options}
+    if count
+      span.chip__more и еще #{count}
+    svg.chip__cross
+      use(xlink:href="./img/icons/icons.svg#cross")

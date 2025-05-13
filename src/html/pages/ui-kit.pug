@@ -1,606 +1,591 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var title = 'Ui Kit'
-//- - var nameFile = 'ui-kit'
+include ../components/breadcrumbs
+include ../components/input-text
+include ../components/textarea
+include ../components/autocomplete
+include ../components/ticker
+include ../components/select
+include ../components/checkbox
+include ../components/radio
+include ../components/counter
+include ../components/rating
+include ../components/collapse
+include ../components/popup
+include ../components/badge
+include ../components/range-slider
+include ../components/progress
+include ../components/tabs
+include ../components/chip
 
+block vars
+  -
+    var title = 'Ui Kit'
+    var nameFile = 'ui-kit'
 
-//- block content
-//-   main.ui-kit
-//-     a.ui-kit__home(href="/index.html") &lt; Главная
+block content
+  main.ui-kit
+    a.ui-kit__home(href="/index.html") &lt; Главная
 
-//-     h1 UI KIT
+    h1 UI KIT
 
-//-     h2 Breadcrumbs:
-//-     .ui-kit__block.ui-kit__breadcrumbs
-//-       include ../components/breadcrumbs.pug, { title: "Категории:" }
+    h2 Breadcrumbs:
+    .ui-kit__block.ui-kit__breadcrumbs
+      +breadcrumbs({
+        extraClass: "",
+        title: "",
+        items: [
+          { text: "Платья и сарафаны", href: "#" },
+          { text: "Блузы и рубашки", href: "#" },
+          { text: "Юбки", href: "" },
+          { text: "+ еще 12", href: "" },
+        ],
+      })
     
-//-     .ui-kit__block.ui-kit__breadcrumbs
-//-       include ../components/breadcrumbs.pug, { extraClass: "breadcrumbs--primary", title: "" }
+    .ui-kit__block.ui-kit__breadcrumbs
+      +breadcrumbs({
+        extraClass: "breadcrumbs--primary",
+        title: "",
+        items: [
+          { text: "Платья и сарафаны", href: "#" },
+          { text: "Блузы и рубашки", href: "#" },
+          { text: "Юбки", href: "" },
+          { text: "+ еще 12", href: "" },
+        ],
+      })
 
-//-     h2 Buttons:
-//-     .ui-kit__block.ui-kit__buttons
-//-       button.btn Standart
-//-       button.btn.btn--color-primary-light primary light
-//-       button.btn.btn--color-primary-light-text-black primary light text black
-//-       button.btn
-//-         | Count
-//-         span.btn__suffix (7)
-//-       button.btn.btn--text Text
-//-       button.btn.btn--none Text padding height 0
-//-       button.btn.btn--color-green Color green
-//-       button.btn.btn--text.btn--color-grey Text grey
-//-       button.btn.btn--small Small
-//-       button.btn.btn--outlined Outlined
-//-       button.btn.btn--tag Tag
-//-       button.btn.btn--tag.btn--tag-checked Tag checked
-//-       button.btn.btn--green Green
-//-       button.btn.btn--outlined.btn--color-grey
-//-         | Outlined grey with icons
-//-         svg
-//-           use(xlink:href="./img/icons/icons.svg#filters")
-//-       button.btn(disabled) Disabled
-//-       button.btn.btn--dashed Dashed
-//-       button.btn.btn--loading.active
-//-         | Loading active
-//-         svg
-//-           use(xlink:href="./img/icons/icons.svg#loading")
-//-       button.btn.btn--loading(disabled)
-//-         | Loading disabled
-//-         svg
-//-           use(xlink:href="./img/icons/icons.svg#loading")
+    h2 Buttons:
+    .ui-kit__block.ui-kit__buttons
+      button.btn Standart
+      button.btn.btn--color-primary-light primary light
+      button.btn.btn--color-primary-light-text-black primary light text black
+      button.btn
+        | Count
+        span.btn__suffix (7)
+      button.btn.btn--text Text
+      button.btn.btn--none Text padding height 0
+      button.btn.btn--color-green Color green
+      button.btn.btn--text.btn--color-grey Text grey
+      button.btn.btn--small Small
+      button.btn.btn--outlined Outlined
+      button.btn.btn--tag Tag
+      button.btn.btn--tag.btn--tag-checked Tag checked
+      button.btn.btn--green Green
+      button.btn.btn--outlined.btn--color-grey
+        | Outlined grey with icons
+        svg
+          use(xlink:href="./img/icons/icons.svg#filters")
+      button.btn(disabled) Disabled
+      button.btn.btn--dashed Dashed
+      button.btn.btn--loading.active
+        | Loading active
+        svg
+          use(xlink:href="./img/icons/icons.svg#loading")
+      button.btn.btn--loading(disabled)
+        | Loading disabled
+        svg
+          use(xlink:href="./img/icons/icons.svg#loading")
 
-//-     .ui-kit__block.ui-kit__block--primary.ui-kit__buttons
-//-       button.btn.btn--color-white
-//-         | color white
-//-         svg
-//-           use(xlink:href="./img/icons/icons.svg#filters")
+    .ui-kit__block.ui-kit__block--primary.ui-kit__buttons
+      button.btn.btn--color-white
+        | color white
+        svg
+          use(xlink:href="./img/icons/icons.svg#filters")
 
 
-//-     h2 Input:
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input1",
-//-         type: "text",
-//-         placeholder: "Простой инпут",
-//-         prefix: "",
-//-         suffix: "",
-//-         "extra-class": "",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": ""
-//-       }
+    h2 Input:
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input1",
+        type: "text",
+        placeholder: "Простой инпут",
+        prefix: "",
+        suffix: "",
+        extraClass: "",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+      })
 
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input2",
-//-         type: "text",
-//-         placeholder: "Инпут с элементом слева",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
-//-         suffix: "",
-//-         "extra-class": "",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": ""
-//-       }
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input2",
+        type: "text",
+        placeholder: "Инпут с элементом слева",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+        suffix: "",
+        extraClass: "",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+      })
 
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input3",
-//-         type: "text",
-//-         placeholder: "Инпут с элементом слева и справа",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
-//-         suffix: '<svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg>',
-//-         "extra-class": "",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": ""
-//-       }
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input3",
+        type: "text",
+        placeholder: "Инпут с элементом слева и справа",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+        suffix: '<svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg>',
+        extraClass: "",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+      })
 
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input4",
-//-         type: "text",
-//-         placeholder: "Инпут меньшего размера",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
-//-         suffix: '<svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg>',
-//-         "extra-class": "input-text--small",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": ""
-//-       }
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input4",
+        type: "text",
+        placeholder: "Инпут меньшего размера",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+        suffix: '<svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg>',
+        extraClass: "input-text--small",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+      })
 
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input5",
-//-         type: "password",
-//-         placeholder: "Пароль с серой рамкой",
-//-         prefix: "",
-//-         suffix: "",
-//-         "extra-class": "input-text--color-grey",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": ""
-//-       }
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input5",
+        type: "password",
+        placeholder: "Пароль с серой рамкой",
+        prefix: '',
+        suffix: '',
+        extraClass: "input-text--color-grey",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+      })
 
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input6",
-//-         type: "text",
-//-         placeholder: "Задизейбленный инпут",
-//-         prefix: "",
-//-         suffix: "",
-//-         "extra-class": "input-text--color-grey input-text--disabled",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": "",
-//-         atr: "disabled"
-//-       }  
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input6",
+        type: "text",
+        placeholder: "Задизейбленный инпут",
+        prefix: '',
+        suffix: '',
+        extraClass: "input-text--color-grey input-text--disabled",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+        disabled: true,
+      })
     
-//-     h4 Input type file upload
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input7",
-//-         type: "file",
-//-         placeholder: "",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>',
-//-         suffix: "",
-//-         "extra-class": "input-text--upload",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": "",
-//-         atr: ""
-//-       }
+    h4 Input type file upload
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input7",
+        type: "file",
+        placeholder: "",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>',
+        suffix: '',
+        extraClass: "input-text--upload",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+      })
 
-//-     h4 Input type file upload (disabled)
-//-     .ui-kit__block.ui-kit__input
-//-       include ../components/input-text.pug, {
-//-         name: "input8",
-//-         type: "file",
-//-         placeholder: "",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>',
-//-         suffix: "",
-//-         "extra-class": "input-text--upload input-text--disabled",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": "",
-//-         atr: "disabled"
-//-       }
+    h4 Input type file upload (disabled)
+    .ui-kit__block.ui-kit__input
+      +inputText({
+        name: "input8",
+        type: "file",
+        placeholder: "",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>',
+        suffix: '',
+        extraClass: "input-text--upload input-text--disabled",
+        extraClassPrefix: "",
+        extraClassSuffix: "",
+        disabled: true,
+      })
 
-//-     h2 TextArea:
-//-       include ../components/textarea.pug, {
-//-         name: "textarea",
-//-         placeholder: "Введите текст"
-//-       }
+    h2 TextArea:
+      +textarea({
+        name: "textarea",
+        placeholder: "Введите текст",
+        extraClass: "",
+      })
 
-//-     h2 TextArea с серой рамкой:
-//-       include ../components/textarea.pug, {
-//-         name: "textarea-grey",
-//-         placeholder: "Введите текст",
-//-         "extra-class": "textarea__input--grey"
-//-       }
+    h2 TextArea с серой рамкой:
+      +textarea({
+        name: "textarea-grey",
+        placeholder: "Введите текст",
+        extraClass: "textarea__input--grey",
+      })
 
-//-     h2 Search:
-//-     .ui-kit__block.ui-kit__search
-//-       include ../components/autocomplete.pug, {
-//-         id: "search",
-//-         name: "search",
-//-         placeholder: "Найдите что-нибудь",
-//-         "input-extra-class": "autocomplete__input",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
-//-         suffix: 'include("../components/select.pug", { options: "<li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li>", "name": "select-search", "initial-value": "value1", "initial-label": "Везде", "extra-class": "select--transparent" })',
-//-         "extra-class": "header__nav-search-input autocomplete--img autocomplete--select",
-//-         "extra-class-prefix": "",
-//-         "extra-class-suffix": "autocomplete__suffix",
-//-         tag: "div",
-//-         options: '<a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><img class="autocomplete__options-item-img" src="@img/avatar.jpg" /><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><img class="autocomplete__options-item-img" src="@img/sp-slide2.jpg" /><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>'
-//-       }
+    h2 Search:
+    //- TODO пофиксить прокидку одновременно prefix и suffix
+    //- suffix: 'include("../components/select.pug", { options: "<li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li>", "name": "select-search", "initial-value": "value1", "initial-label": "Везде", "extra-class": "select--transparent" })',
+    .ui-kit__block.ui-kit__search
+      +autocomplete({
+        id: "search",
+        name: "search",
+        placeholder: "Найдите что-нибудь",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+        tag: '',
+        extraClass: "header__nav-search-input autocomplete--img autocomplete--select",
+        inputExtraClass: "autocomplete__input",
+        tag: "div",
+        options: '<a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><img class="autocomplete__options-item-img" src="@img/avatar.jpg" /><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><img class="autocomplete__options-item-img" src="@img/sp-slide2.jpg" /><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>',
+      })
 
-//-     h2 Autocomplete:
-//-     .ui-kit__block.ui-kit__autocomplete
-//-       include ../components/autocomplete.pug, {
-//-         id: "ui-autocomplete",
-//-         name: "ui-kit-autocomplete",
-//-         placeholder: "ui-kit-autocomplete",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
-//-         suffix: "",
-//-         "input-extra-class": "autocomplete__input input-text--small input-text--color-grey",
-//-         "extra-class-prefix": "",
-//-         tag: "",
-//-         options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">label1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">label2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">label3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">label4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">label5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">label6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">label7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">label8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">label9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">label10</li>'
-//-       }
+    h2 Autocomplete:
+    .ui-kit__block.ui-kit__autocomplete
+      +autocomplete({
+        id: "ui-autocomplete",
+        name: "ui-kit-autocomplete",
+        placeholder: "ui-kit-autocomplete",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+        extraClass: "",
+        inputExtraClass: "autocomplete__input input-text--small input-text--color-grey",
+        options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">label1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">label2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">label3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">label4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">label5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">label6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">label7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">label8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">label9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">label10</li>',
+      })
 
-//-     .ui-kit__block.ui-kit__autocomplete
-//-       include ../components/autocomplete.pug, {
-//-         id: "ui-autocomplete-url",
-//-         name: "ui-kit-autocomplete-url",
-//-         placeholder: "ui-kit-autocomplete-url",
-//-         "input-extra-class": "autocomplete__input",
-//-         prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
-//-         suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>',
-//-         tag: "",
-//-         options: ""
-//-       }
+    .ui-kit__block.ui-kit__autocomplete
+      //- TODO пофиксить прокидку одновременно prefix и suffix
+      //- suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>'
+      +autocomplete({
+        id: "ui-autocomplete-url",
+        name: "ui-autocomplete-url",
+        placeholder: "ui-autocomplete-url",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+        extraClass: "",
+        inputExtraClass: "autocomplete__input",
+        options: '',
+      })
 
+    h2 Gallery-card:
+    .ui-kit__block.ui-kit__gallery-card
+      .gallery-card
+        each src, index in ['@img/publication.jpg', '@img/post-card-img-black.png', '@img/publication.jpg', '@img/publication.jpg', '@img/post-card-img-black.png', '@img/publication.jpg', '@img/publication.jpg', '@img/post-card-img-black.png']
+          .gallery-card__item
+            img(src=src)
+        .gallery-card__item
+          img(src='@img/publication.jpg')
+          span.gallery-card__item-more +7
 
-//-     h2 Gallery-card:
-//-     .ui-kit__block.ui-kit__gallery-card
-//-       .gallery-card
-//-         each src, index in ['@img/publication.jpg', '@img/post-card-img-black.png', '@img/publication.jpg', '@img/publication.jpg', '@img/post-card-img-black.png', '@img/publication.jpg', '@img/publication.jpg', '@img/post-card-img-black.png']
-//-           .gallery-card__item
-//-             img(src=src)
-//-         .gallery-card__item
-//-           img(src='@img/publication.jpg')
-//-           span.gallery-card__item-more +7
+    h2 Бегущая строка:
+    .ui-kit__block.ui-kit__ticker
+      +ticker({
+        text: 'Наведи на меня курсором! Длинный текст который не вмещается в блоке.'
+      })
 
-//-     h2 Бегущая строка:
-//-     .ui-kit__block.ui-kit__ticker
-//-       //- file include emulation (можно использовать миксин или pug-include)
-//-       include ../components/ticker.pug
+    h2 Select:
+    .ui-kit__block.ui-kit__select
+      +select({
+        extraClass: "",
+        name: "select",
+        options: [
+          '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li>',
+          '<li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li>',
+          '<li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
+        ],
+        initialLabel: 'Везде',
+        initialValue: 'Везде',
+      })
 
-//-       //- // если ты передаёшь параметры, то можно так:
-//-       //- +ticker({ text: 'Наведи на меня курсором! Длинный текст который не вмещается в блоке.' })
+      +select({
+        extraClass: "select--transparent",
+        name: "select2",
+        options: [
+          '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li>',
+          '<li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li>',
+          '<li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
+        ],
+        initialLabel: 'Везде',
+        initialValue: 'Везде',
+      })
 
-//-     h2 Select:
-//-     .ui-kit__block.ui-kit__select
-//-       include ../components/select.html
-//-         {
-//-           "options": '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
-//-           "name": "user-board-subscriptions",
-//-           "initial-value": "Везде",
-//-           "initial-label": "Везде"
-//-         }
+      +select({
+        extraClass: "select--border-grey",
+        name: "select3",
+        options: [
+          '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li>',
+          '<li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li>',
+          '<li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
+        ],
+        initialLabel: 'Везде',
+        initialValue: 'Везде',
+      })
 
-//-       include ../components/select.html
-//-         {
-//-           "options": '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
-//-           "name": "user-board-subscriptions",
-//-           "initial-value": "Везде",
-//-           "initial-label": "Везде",
-//-           "extra-class": "select--transparent"
-//-         }
+      +select({
+        extraClass: "",
+        name: "select4",
+        options: [
+          '<li class="select__options-item" data-value="Очень много опций" role="button" tabindex="0">Очень много опций</li>',
+          '<li class="select__options-item" data-value="Очень много опций2" role="button" tabindex="0">Очень много опций2</li>',
+          '<li class="select__options-item" data-value="Очень много опций3" role="button" tabindex="0">Очень много опций3</li>',
+          '<li class="select__options-item" data-value="Очень много опций4" role="button" tabindex="0">Очень много опций4</li>',
+          '<li class="select__options-item" data-value="Очень много опций5" role="button" tabindex="0">Очень много опций5</li>',
+          '<li class="select__options-item" data-value="Очень много опций6" role="button" tabindex="0">Очень много опций6</li>',
+          '<li class="select__options-item" data-value="Очень много опций7" role="button" tabindex="0">Очень много опций7</li>',
+          '<li class="select__options-item" data-value="Очень много опций8" role="button" tabindex="0">Очень много опций8</li>',
+          '<li class="select__options-item" data-value="Очень много опций9" role="button" tabindex="0">Очень много опций9</li>',
+          '<li class="select__options-item" data-value="Очень много опций10" role="button" tabindex="0">Очень много опций10</li>',
+        ],
+        initialLabel: 'Очень много опций10',
+        initialValue: 'Очень много опций10',
+      })
 
-//-       include ../components/select.html
-//-         {
-//-           "options": '<li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>',
-//-           "name": "user-board-subscriptions",
-//-           "initial-value": "Везде",
-//-           "initial-label": "Везде",
-//-           "extra-class": "select--border-grey"
-//-         }
+    h2 Checkbox:
+    .ui-kit__block.ui-kit__checkbox
+      +checkbox({
+        name: "checkbox",
+        text: "text",
+        mod: "",
+        classes: "",
+      })
+      +checkbox({
+        name: "checkbox",
+        text: "text 2",
+        mod: "",
+        classes: "",
+      })
+      +checkbox({
+        name: "checkbox",
+        text: "По популярности",
+        mod: "checkbox--tag",
+        classes: "btn btn--tag btn--small",
+      })
+      +checkbox({
+        name: "checkbox",
+        text: "По цене",
+        mod: "checkbox--tag",
+        classes: "btn btn--tag btn--small",
+      })
 
-//-       .select.noselect
-//-         .select__header
-//-           .select__title
-//-           .select__icon
-//-             svg
-//-               use(xlink:href="./img/icons/icons.svg#arrow")
-//-         ul.select__options
-//-           li.select__options-item(data-value="val31") Очень много опций
-//-           li.select__options-item(data-value="val32") Очень много опций 2
-//-           li.select__options-item(data-value="val33") Очень много опций 3
-//-           li.select__options-item(data-value="val34") Очень много опций 4
-//-           li.select__options-item(data-value="val35") Очень много опций 5
-//-           li.select__options-item(data-value="val36") Очень много опций 6
-//-           li.select__options-item(data-value="val37") Очень много опций 7
-//-           li.select__options-item(data-value="val38") Очень много опций 8
-//-           li.select__options-item(data-value="val39") Очень много опций 9
-//-           li.select__options-item(data-value="val40") Очень много опций 10
-//-           li.select__options-item(data-value="val41") Очень много опций 11
-//-           li.select__options-item(data-value="val42") Очень много опций 12
-//-           li.select__options-item(data-value="val43") Очень много опций 13
-//-         input(type="text", name="select", value="val31", hidden)
+    h2 Radio:
+    .ui-kit__block.ui-kit__radio
+      +radio({
+        name: "radio-uikit",
+        value: "1",
+        text: "text",
+        extraClass: ""
+      })
+      +radio({
+        name: "radio-uikit",
+        value: "2",
+        text: "text",
+        extraClass: ""
+      })
+      +radio({
+        name: "radio-uikit",
+        value: "3",
+        text: "text",
+        extraClass: ""
+      })
+      +radio({
+        name: "radio-uikit",
+        value: "4",
+        text: "text",
+        extraClass: ""
+      })
+      +radio({
+        name: "radio-uikit",
+        value: "5",
+        text: "active",
+        isChecked: true,
+        extraClass: "",
+      })
+      +radio({
+        name: "radio-uikit",
+        value: "btn",
+        text: "<span class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></span>",
+        extraClass: "radio--btn",
+      })
 
-//-     h2 Checkbox:
-//-     .ui-kit__block.ui-kit__checkbox
-//-       include ../components/checkbox.html
-//-         {
-//-           "name": "checkbox",
-//-           "text": "text",
-//-           "mod": "",
-//-           "classes": ""
-//-         }
-//-       include ../components/checkbox.html
-//-         {
-//-           "name": "checkbox",
-//-           "text": "text 2",
-//-           "mod": "",
-//-           "classes": ""
-//-         }
-//-       include ../components/checkbox.html
-//-         {
-//-           "name": "checkbox",
-//-           "text": "По популярности",
-//-           "mod": "checkbox--tag",
-//-           "classes": "btn btn--tag btn--small"
-//-         }
-//-       include ../components/checkbox.html
-//-         {
-//-           "name": "checkbox",
-//-           "text": "По цене",
-//-           "mod": "checkbox--tag",
-//-           "classes": "btn btn--tag btn--small"
-//-         }
+    h2 Counter:
+    .ui-kit__block.ui-kit__counter
+      +counter("green", 9)
+      +counter("primary", 1)
+      +counter("red", 32)
+      +counter("grey", 10)
 
-//-     h2 Radio:
-//-     .ui-kit__block.ui-kit__radio
-//-       include ../components/radio.html
-//-         {
-//-           "name": "radio-uikit",
-//-           "text": "text",
-//-           "mod": "",
-//-           "value": "1"
-//-         }
-//-       include ../components/radio.html
-//-         {
-//-           "name": "radio-uikit",
-//-           "text": "text",
-//-           "mod": "",
-//-           "value": "2"
-//-         }
-//-       include ../components/radio.html
-//-         {
-//-           "name": "radio-uikit",
-//-           "text": "text",
-//-           "mod": "",
-//-           "value": "3"
-//-         }
-//-       include ../components/radio.html
-//-         {
-//-           "name": "radio-uikit",
-//-           "text": "text",
-//-           "mod": "",
-//-           "value": "4"
-//-         }
-//-       include ../components/radio.html
-//-         {
-//-           "name": "radio-uikit",
-//-           "text": "active",
-//-           "mod": "active",
-//-           "value": "5"
-//-         }
-//-       include ../components/radio.html
-//-         {
-//-           "name": "radio-uikit",
-//-           "text": "<span class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></span>",
-//-           "extra-class": "radio--btn",
-//-           "value": "btn"
-//-         }
+    h2 Rating:
+    .ui-kit__block
+      +rating({
+        extraClass: "",
+        value: 3,
+      })
 
+    h2 Rating hover (active select):
+    .ui-kit__block
+      +rating({
+        extraClass: "rating--select",
+        value: "",
+        name: "rating",
+      })
 
-//-     h2 Counter:
-//-     .ui-kit__block.ui-kit__counter
-//-       include ../components/counter.html
-//-         {
-//-           "count": "9",
-//-           "color": "green"
-//-         }
-//-       include ../components/counter.html
-//-         {
-//-           "count": "1",
-//-           "color": "primary"
-//-         }
-//-       include ../components/counter.html
-//-         {
-//-           "count": "32",
-//-           "color": "red"
-//-         }
-//-       include ../components/counter.html
-//-         {
-//-           "count": "10",
-//-           "color": "grey"
-//-         }
+    h2 Collapse:
+    +collapse({
+      title: "Title",
+      isClosed: false,
+      icon: "collapse",
+    })
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>
 
-//-     h2 Rating:
-//-     .ui-kit__block
-//-       include ../components/rating.html
-//-         {
-//-           "value": 3
-//-         }
+    h2 Collapse arrow icon:
+    +collapse({
+      extraClass: "collapse--arrow",
+      title: "Title",
+      isClosed: false,
+      icon: "arrow",
+    })
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>
 
-//-     h2 Rating hover (active select):
-//-     .ui-kit__block
-//-       include ../components/rating.html
-//-         {
-//-           "extra-class": "rating--select",
-//-           "name": "rating"
-//-         }
+    h2 Popup (Modals):
+    +popup({
+      extraClass: "",
+      id: "1",
+      title: "",
+    })
+      <div>popup 1</div>
 
-//-     h2 Collapse:
-//-     include ../components/collapse.html
-//-       {
-//-         "title": "Title",
-//-         "isClosed": false,
-//-         "icon": "collapse",
-//-         "body": "<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>"
-//-       }
+    +popup({
+      extraClass: "",
+      id: "2",
+      title: "",
+    })
+      <div>popup 2</div>
 
-//-     h2 Collapse arrow icon:
-//-     include ../components/collapse.html
-//-       {
-//-         "extra-class": "collapse--arrow",
-//-         "title": "Title",
-//-         "isClosed": false,
-//-         "icon": "arrow",
-//-         "body": "<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>"
-//-       }
+    +popup({
+      extraClass: "",
+      id: "title",
+      title: "Popup c title и с кнопкой закрытия",
+    })
+      <div>Контент модалки</div>
 
-//-     h2 Popup (Modals):
-//-     include ../components/popup.html
-//-       {
-//-         "extra-class": "",
-//-         "id": "1",
-//-         "title": "",
-//-         "body": "<div>popup 1</div>"
-//-       }
-//-     include ../components/popup.html
-//-       {
-//-         "extra-class": "",
-//-         "id": "2",
-//-         "title": "",
-//-         "body": "<div>popup 2</div>"
-//-       }
-//-     include ../components/popup.html
-//-       {
-//-         "extra-class": "",
-//-         "id": "title",
-//-         "title": "Popup c title и с кнопкой закрытия ->",
-//-         "body": "<div>Контент модалки</div>"
-//-       }
+    button.btn(data-popup="1") open popup 1
+    button.btn(data-popup="2") open popup 2
+    button.btn(data-popup="title") Popup c title
 
-//-     .btn(data-popup="1") open popup 1
-//-     .btn(data-popup="2") open popup 2
-//-     .btn(data-popup="title") Popup c title
+    h2 Badges:
+    .ui-kit__block.ui-kit__block--primary.ui-kit__badges
+      +badge()
+        span.badge__sub -50%
+      +badge()
+        svg
+          use(xlink:href="./img/icons/icons.svg#camera")
+      +badge()
+        | СП
+      +badge()
+        | TFF
+      +badge("badge--big")
+        | big
+      +badge("badge--small")
+        | small
+      +badge("badge--round badge--font-commissioner badge--color-white")
+        | Round
+      +badge("badge--big badge--without-border")
+        | big without border
+      +badge("badge--font-commissioner")
+        | font commissioner
 
-//-     h2 Badges:
-//-     .ui-kit__block.ui-kit__block--primary.ui-kit__badges
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "",
-//-           "body": "<span class='badge__sub'>до</span>-50%"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "",
-//-           "body": "<svg><use xlink:href='./img/icons/icons.svg#camera\'></use></svg>"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "",
-//-           "body": "СП"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "",
-//-           "body": "TFF"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--big",
-//-           "body": "big"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--small",
-//-           "body": "small"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--round badge--font-commissioner badge--color-white",
-//-           "body": "Round"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--big badge--without-border",
-//-           "body": "big without border"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--font-commissioner",
-//-           "body": "font commissioner"
-//-         }
+    .ui-kit__block.ui-kit__badges
+      +badge("badge--font-commissioner badge--color-primary-light badge--without-border")
+        | color light primary
+      +badge("badge--font-commissioner badge--color-green badge--without-border")
+        | color green
+      +badge("badge--font-commissioner badge--color-grey badge--without-border")
+        | color grey
 
-//-     .ui-kit__block.ui-kit__badges
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--font-commissioner badge--color-primary-light badge--without-border",
-//-           "body": "color light primary"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--font-commissioner badge--color-green badge--without-border",
-//-           "body": "color green"
-//-         }
-//-       include ../components/badge.html
-//-         {
-//-           "extra-class": "badge--font-commissioner badge--color-grey badge--without-border",
-//-           "body": "color grey"
-//-         }
+    h2 Swiper:
+    .ui-kit__block.ui-kit__swiper-btns
+      | swiper кнопки отдельно от блока
+      br
+      | если swiper 1 на странице, то при инициализации, можно кнопки не передавать
+      .swiper.swiper-uikit-btns
+        .swiper-wrapper
+          .swiper-slide Slide 1
+          .swiper-slide Slide 2
+          .swiper-slide Slide 3
+          | ...
+      .swiper-button-prev.swiper-button-out-prev
+        svg
+          use(xlink:href="./img/icons/icons.svg#arrow")
+      .swiper-button-next.swiper-button-out-next
+        svg
+          use(xlink:href="./img/icons/icons.svg#arrow")
 
-//-     h2 Swiper:
-//-     .ui-kit__block.ui-kit__swiper-btns
-//-       | swiper кнопки отдельно от блока
-//-       br
-//-       | если swiper 1 на странице, то при инициализации, можно кнопки не передавать
-//-       .swiper.swiper-uikit-btns
-//-         .swiper-wrapper
-//-           .swiper-slide Slide 1
-//-           .swiper-slide Slide 2
-//-           .swiper-slide Slide 3
-//-           | ...
-//-       .swiper-button-prev.swiper-button-out-prev
-//-         svg
-//-           use(xlink:href="./img/icons/icons.svg#arrow")
-//-       .swiper-button-next.swiper-button-out-next
-//-         svg
-//-           use(xlink:href="./img/icons/icons.svg#arrow")
+    h2 Range Slider nouislider:
+    .ui-kit__block.ui-kit__slider
+      +rangeSlider({
+        minName: "rangemin",
+        maxName: "rangemax",
+        minValue: "200000",
+        maxValue: "500000",
+        min: "50000",
+        max: "1000000",
+        currencySymbol: "&#8381;",
+        step: "1000"
+      })
 
-//-     h2 Range Slider nouislider:
-//-     .ui-kit__block.ui-kit__slider
-//-       include ../components/range-slider.html
-//-       - var minName = "rangemin"
-//-       - var maxName = "rangemax"
-//-       - var minValue = "200000"
-//-       - var maxValue = "500000"
-//-       - var min = "50000"
-//-       - var max = "1000000"
-//-       - var currencySymbol = "&#8381;"
-//-       - var step = "1000"
+    .ui-kit__block.ui-kit__slider
+      +rangeSlider({
+        minName: "rangemin2",
+        maxName: "rangemax2",
+        minValue: "20",
+        maxValue: "80",
+        min: "1",
+        max: "100",
+        currencySymbol: "%",
+        step: "1"
+      })
 
-//-     .ui-kit__block.ui-kit__slider
-//-       include ../components/range-slider.html
-//-       - var minName = "rangemin2"
-//-       - var maxName = "rangemax2"
-//-       - var minValue = "20"
-//-       - var maxValue = "80"
-//-       - var min = "1"
-//-       - var max = "100"
-//-       - var currencySymbol = "%"
-//-       - var step = "1"
+    h2 Divider:
+    .ui-kit__block.ui-kit__divider
+      hr.hr
 
-//-     h2 Divider:
-//-     .ui-kit__block.ui-kit__divider
-//-       .hr
+    h2 Progress:
+    .ui-kit__block.ui-kit__progress
+      +progress({
+        color: "primary",
+        width: "35%"
+      })
+      +progress({
+        color: "green",
+        width: "85%"
+      })
+      +progress({
+        color: "grey",
+        width: "20%"
+      })
 
-//-     h2 Progress:
-//-     .ui-kit__block.ui-kit__progress
-//-       include ../components/progress.html
-//-       - var color = "primary"
-//-       - var width = "35%"
+    h2 Tabs:
+    .ui-kit__block.ui-kit__tabs
+      +tabs({
+        extraClass: '',
+        activeTab: 'goods',
+        tabs: [
+          { path: 'goods', label: 'Товары', count: 501, content: 'content Товары' },
+          { path: 'sp', label: 'Совместные покупки', count: 79, content: 'content Совместные покупки' },
+          { path: 'tff', label: 'Test For Free', count: 13, content: 'content Test For Free' },
+          { path: 'contacts', label: 'Контакты', content: 'Контакты' },
+        ]
+      })
 
-//-       include ../components/progress.html
-//-       - var color = "green"
-//-       - var width = "85%"
+    h2 Tabs с раздельными табами:
+    .ui-kit__block.ui-kit__tabs
+      +tabs({
+        extraClass: 'tabs--split',
+        activeTab: 'goods',
+        tabs: [
+          { path: 'goods', label: 'Товары', count: 501, content: 'content Товары' },
+          { path: 'sp', label: 'Совместные покупки', count: 79, content: 'content Совместные покупки' },
+          { path: 'tff', label: 'Test For Free', count: 13, content: 'content Test For Free' },
+          { path: 'contacts', label: 'Контакты', content: 'Контакты' },
+        ]
+      })
 
-//-       include ../components/progress.html
-//-       - var color = "grey"
-//-       - var width = "20%"
+    h2 Chips:
+    .ui-kit__block.ui-kit__chips
+      +chip({ title: 'Размеры', options: "36, 38, 40", count: 22 })
+      +chip({ title: 'Размеры2', options: "36, 38, 40", count: 42 })
+      +chip({ title: 'Размеры3', options: "36, 38, 40", count: 18 })
 
-//-     h2 Tabs:
-//-     .ui-kit__block.ui-kit__tabs
-//-       include ../components/tabs.html
+    h2 Scroll:
+    .ui-kit__block.ui-kit__scroll
+      button.btn.scroll Скролл до верха
+      button.btn.scroll(data-target="ui-kit__radio") Скролл до назначенного элемента
 
-//-     h2 Tabs с раздельными табами:
-//-     .ui-kit__block.ui-kit__tabs
-//-       include ../components/tabs.html
-//-       - var extraClass = "tabs--split"
-
-//-     h2 Chips:
-//-     .ui-kit__block.ui-kit__chips
-//-       include ../components/chip.html
-//-       - var title = "Размеры"
-//-       - var options = "36, 38, 40"
-//-       - var count = "22"
-
-//-       include ../components/chip.html
-//-       - var title = "Размеры2"
-//-       - var options = "36, 38, 40"
-//-       - var count = "42"
-
-//-       include ../components/chip.html
-//-       - var title = "Размеры3"
-//-       - var options = "36, 38, 40"
-//-       - var count = "18"
-
-//-     h2 Scroll:
-//-     .ui-kit__block.ui-kit__scroll
-//-       button.btn.scroll Скролл до верха
-//-       button.btn.scroll(data-target="ui-kit__radio") Скролл до назначенного элемента
-
-//-     h2 Tooltip:
-//-     .ui-kit__block
-//-       svg(style="color: red", data-tooltip="Тултип Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eius obcaecati at laboriosam veniam impedit laudantium velit atque nemo ducimus sint inventore, dolore qui hic doloremque voluptatum perferendis labore quasi!")
-//-         use(xlink:href="./img/icons/icons.svg#info")
+    h2 Tooltip:
+    .ui-kit__block
+      svg(style="color: red", data-tooltip="Тултип Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eius obcaecati at laboriosam veniam impedit laudantium velit atque nemo ducimus sint inventore, dolore qui hic doloremque voluptatum perferendis labore quasi!")
+        use(xlink:href="./img/icons/icons.svg#info")
 
 
