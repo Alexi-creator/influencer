@@ -1,0 +1,20 @@
+include ./ticker
+
+mixin userCard({ name, imgSrc, desc, scoresInst, scoresUsers, sub })
+  a.user-card(href="#")
+    .user-card__wrapper
+      .user-card__image-container
+        img(src=imgSrc alt=imgSrc)
+      +ticker({ text: name, extraClass: 'user-card__name' })
+      p.user-card__desc= desc
+      .user-card__scores
+        .user-card__scores-inst
+          svg
+            use(xlink:href="./img/icons/icons.svg#view_logo")
+          span= scoresInst
+        .user-card__scores-users
+          svg
+            use(xlink:href="./img/icons/icons.svg#user-logo-sm")
+          span= scoresUsers
+      if sub
+        .user-card__sub.badge.badge--color-white-green.badge--font-commissioner Вы подписаны

@@ -1,31 +1,36 @@
-//- extends ../layout/baseLayout.pug
+extends ../layout/baseLayout
 
-//- - var title = 'user Page'
-//- - var nameFile = 'user-inner'
+include ../components/user-info
 
-//- - var headerVars = {
-//-   activeItem: "",
-//-   catalogExtraClass: "",
-//-   locationAddress: "",
-//-   idPopup: "location",
-//-   icon: "location",
-//-   locationClass: "header__top-location--empty",
-//- }
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'user inner Page'
+    var nameFile = 'user-inner'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
 
-//- - var isNeedNavPages = true
-
-//- block content
-//-   main.main
-//-     section.section.section--user-info
-//-       .section__inner
-//-         include ../components/user-info.pug
-//-           - var img = '@img/avatar-influencer.jpg'
-//-           - var influencer = "influencer"
-//-           - var blogerName = "Елена Брадиславская"
-//-           - var postCount = "9801"
-//-           - var subCount = "140892"
-//-           - var desc = "Ревизорро обуви и одежды. Более 10 лет в сфере блогинга. Производство контента не требует большого количества дорогостоящего оборудования, специального образования или технологического мастерства по сравнению с традиционными средствами массовой информации. Для Ревизорро обуви и одежды. Более 10 лет в сфере блогинга. Производство контента не требует большого количества дорогостоящего оборудования, специального образования или технологического мастерства по сравнению с традиционными средствами массовой информации."
-
-//-     section.section.section--user-board
-//-       .section__inner
-//-         include ../components/user-board.pug
+block content
+  main.main
+    section.section.section--user-info
+      .section__inner
+        +userInfo({
+          img: '@img/avatar-influencer.jpg',
+          influencer: "influencer",
+          bloggerName: "Елена Брадиславская",
+          postCount: "9801",
+          subCount: "140892",
+          desc: "Ревизорро обуви и одежды. Более 10 лет в сфере блогинга. Производство контента не требует большого количества дорогостоящего оборудования, специального образования или технологического мастерства по сравнению с традиционными средствами массовой информации. Для Ревизорро обуви и одежды. Более 10 лет в сфере блогинга. Производство контента не требует большого количества дорогостоящего оборудования, специального образования или технологического мастерства по сравнению с традиционными средствами массовой информации.",
+        })
+          
+    section.section.section--user-board
+      .section__inner
+        include ../components/user-board.pug
