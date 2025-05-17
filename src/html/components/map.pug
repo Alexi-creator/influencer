@@ -1,0 +1,63 @@
+include ./radio
+include ./autocomplete
+
+.map
+  .map__inner
+    .map__header
+      button.map__header-back
+        svg.map__header-back-icon(data-popup="location", data-close-popup="map")
+          use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+      .map__header-title Способ доставки товаров
+      .map__header-options
+        +radio({
+          name: "choose-delivery",
+          text: "Самовывоз",
+          value: "pickup",
+          extraClass: "radio--active radio--reverse",
+          isChecked: "checked",
+        })
+        +radio({
+          name: "choose-delivery",
+          text: "Курьером",
+          value: "courier",
+          extraClass: "radio--active radio--reverse",
+        })
+      button.map__header-cross.btn.btn--color-primary-light
+        svg.map__header-cross-icon(data-close-popup="map")
+          use(xlink:href="./img/icons/icons.svg#cross")
+    .map__yandex
+      iframe#maps(width="100%" height="100%" frameborder="0" data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor")
+    .map__address
+      .map__address-header Куда доставить заказ?
+      .map__address-descr
+        .map__address-descr-pickup
+          | Выберите пункт выдачи или найдите
+        .map__address-descr-courier
+          | Выберите адрес на карте или найдите
+      .map__address-actions
+        +autocomplete({
+          id: "pickup-autocomplete",
+          name: "pickup-autocomplete",
+          placeholder: "Пункт выдачи",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>',
+          extraClass: "map__address-actions-input map__autocomplete--pickup",
+          inputExtraClass: "autocomplete__input",
+        })
+        +autocomplete({
+          id: "courier-autocomplete",
+          name: "courier-autocomplete",
+          placeholder: "Адрес доставки",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>',
+          extraClass: "map__address-actions-input map__autocomplete--courier",
+          inputExtraClass: "autocomplete__input",
+        })
+        button.map__address-actions-define
+          svg.map__address-actions-define-icon
+            use(xlink:href="./img/icons/icons.svg#compass")
+          | Определить местоположение
+        button.btn.map__btn.map__btn--pickup(data-close-popup="map", data-popup="location", disabled)
+          | Продолжить
+        button.btn.map__btn.map__btn--courier(disabled)
+          | Продолжить

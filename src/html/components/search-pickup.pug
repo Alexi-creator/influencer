@@ -1,0 +1,31 @@
+include ./autocomplete
+
+.search-pickup
+  .search-pickup__inner
+    .search-pickup__header
+      button.search-pickup__header-back
+        svg.search-pickup__header-back-icon(data-popup="map", data-close-popup="search-pickup")
+          use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+      .search-pickup__header-title
+        | Куда доставить заказ?
+      button.search-pickup__header-cross.btn.btn--color-primary-light
+        svg.search-pickup__header-cross-icon(data-close-popup="search-pickup")
+          use(xlink:href="./img/icons/icons.svg#cross")
+    .search-pickup__descr
+      | Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший
+    .search-pickup__actions
+      +autocomplete({
+        id: "search-pickup-autocomplete",
+        name: "search-pickup",
+        placeholder: "Введите адрес",
+        prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+        suffix: '<div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div>',
+        extraClass: "search-pickup__actions-input",
+        inputExtraClass: "autocomplete__input",
+      })
+      button.search-pickup__actions-define
+        svg.search-pickup__header-actions-define-icon
+          use(xlink:href="./img/icons/icons.svg#compass")
+        | Определить местоположение
+      button.btn.search-pickup__btn(data-close-popup="search-pickup", disabled)
+        | Продолжить

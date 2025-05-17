@@ -1,0 +1,106 @@
+include ./badge
+include ./progress
+
+mixin jointPurchasesCard({ extraClass, status, width })
+  -
+    var slides = [
+      {
+        img1: '@img/sp-slide1.jpg',
+        img2: '@img/sp-slide2.jpg',
+        title: 'Короткое платье из денима с "Gucci Boutique"',
+        priceOld: '12 500 ₽',
+        priceNew: '10 500 ₽'
+      },
+      {
+        img1: '@img/sp-slide2.jpg',
+        img2: '@img/sp-slide3.jpg',
+        title: 'Короткое платье из денима с "Gucci Boutique"',
+        priceOld: '12 500 ₽',
+        priceNew: '10 500 ₽'
+      },
+      {
+        img1: '@img/sp-slide3.jpg',
+        img2: '@img/sp-slide4.jpg',
+        title: 'Короткое платье из денима с "Gucci Boutique"',
+        priceOld: '12 500 ₽',
+        priceNew: '10 500 ₽'
+      },
+      {
+        img1: '@img/sp-slide4.jpg',
+        img2: '@img/sp-slide1.jpg',
+        title: 'Короткое платье из денима с "Gucci Boutique"',
+        priceOld: '12 500 ₽',
+        priceNew: '10 500 ₽'
+      }
+    ]
+
+  .joint-purchases-card(class=extraClass)
+    .joint-purchases-card__about
+      .joint-purchases-card__logo
+        img(src='@img/shop-avatar.png', alt='shop-avatar')
+      .joint-purchases-card__title Скупаем платья Gucci со скидкой
+      .joint-purchases-card__subscribe
+        | Подписаться
+        span.joint-purchases-card__subscribe-delimiter
+        svg
+          use(xlink:href='./img/icons/icons.svg#share-link')
+      .joint-purchases-card__categories Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
+
+    .joint-purchases-card__slider
+      .swiper.swiper-joint-purchases
+        .swiper-wrapper
+          each slide in slides
+            .swiper-slide
+              .joint-purchases-card__slide
+                img.joint-purchases-card__slide-img(src=slide.img1, alt='')
+                img.joint-purchases-card__slide-img-more(src=slide.img2, alt='')
+                .joint-purchases-card__slide-info
+                  .joint-purchases-card__slide-info-title= slide.title
+                  .joint-purchases-card__slide-info-price
+                    .joint-purchases-card__slide-info-price-old= slide.priceOld
+                    .joint-purchases-card__slide-info-price-new= slide.priceNew
+
+      .joint-purchases-card__btn-prev.swiper-button-prev
+        svg
+          use(xlink:href='./img/icons/icons.svg#arrow')
+      .joint-purchases-card__btn-next.swiper-button-next
+        svg
+          use(xlink:href='./img/icons/icons.svg#arrow')
+
+    .joint-purchases-card__info
+      .joint-purchases-card__discount
+        .joint-purchases-card__discount-amount
+          +badge("badge--big badge--without-border badge--font-commissioner")
+            | Скидка -30%
+        .joint-purchases-card__discount-from
+          | при покупке
+          span от 136 000 &#8381;
+
+      .joint-purchases-card__already
+        .joint-purchases-card__already-title Уже купили на:
+        .joint-purchases-card__already-count
+          span 79 281
+          span /
+          span 241 093
+          span &#8381;
+
+      .joint-purchases-card__progress
+        +progress({
+          color: "",
+          width: width
+        })
+
+      .joint-purchases-card__hr.hr
+
+      .joint-purchases-card__until
+        | Активна до:
+        .joint-purchases-card__until-date 27.01.2020 12:00
+
+      .joint-purchases-card__status
+        .joint-purchases-card__status-title Совм. Покупка:
+        .joint-purchases-card__status-text= status
+
+    .joint-purchases-card__brand
+      .joint-purchases-card__brand-logo
+        img(src='@img/shop-avatar.png', alt='shop-avatar')
+      .joint-purchases-card__brand-title Интернет магазин одежды и аксессуаров Lass

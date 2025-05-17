@@ -1,0 +1,35 @@
+include ./preview-toolbar-action
+
+mixin userInfo({ img = '', bloggerName = '', desc = '', postCount = 0, subCount = 0, influencer = false })
+  .user-info
+    .user-info__image-container
+      img.user-info__image-avatar(src=img, alt=blogerName)
+      if influencer
+        .user-info__image-text-overlay
+          img(src='/img/Influencer-frame-full.png', alt='influencer')
+    .user-info__desc-wrapper
+      .user-info__desc-title-inner
+        h3 #{bloggerName}
+        if influencer
+          svg
+            use(xlink:href="/img/icons/icons.svg#influencer-tag")
+      .user-info__content
+        .user-info__desc-inner
+          p.user-info__desc-text.hide-elem-height #{desc}
+          button.btn-show.user-info__btn(data-text="Свернуть")
+            span.btn-show-text Развернуть
+        .user-info__desc-sub-inner
+          .user-info__desc-sub
+            span.number #{postCount}
+            span &nbsp; публикаций
+          .user-info__desc-sub
+            span.number #{subCount}
+            span &nbsp; подписчиков
+        .user-info__desc-sub-share
+          +previewToolbarAction({
+            title: bloggerName,
+            img: img,
+            extraClassBtn: "btn--color-primary-light",
+            extraClassPopup: 'popup--onlymobile',
+            media: "0",
+          })

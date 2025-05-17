@@ -1,0 +1,1193 @@
+include ./autocomplete
+include ./radio
+include ./popup
+include ./checkbox
+include ./collapse
+include ./product-menu
+include ./range-slider
+include ./post-card-list
+include ./user-card
+include ./select
+include ./joint-purchases-card
+include ./product-card
+include ./shop-card-list
+
+block userBoardVars
+  -
+    var sortingOptions = [
+      { value: 'popular-asc',  text: "По популярности", icon: "sorting-top" },
+      { value: 'rate-asc',     text: "По рейтингу",     icon: "sorting-top" },
+      { value: 'cost-asc',     text: "По стоимости",    icon: "sorting-top" },
+      { value: 'name-asc',     text: "По названию",     icon: "sorting-top" },
+      { value: 'popular-desc', text: "По популярности", icon: "sorting-down" },
+      { value: 'rate-desc',    text: "По рейтингу",     icon: "sorting-down" },
+      { value: 'cost-desc',    text: "По стоимости",    icon: "sorting-down" },
+      { value: 'name-desc',    text: "По названию",     icon: "sorting-down" }
+    ]
+    var filters = [
+      {
+        title: 'Категории',
+        mod: 'filters__item--categories',
+        type: 'popup',
+        popupId: 'category-goods',
+        popupTitle: 'Все категории товаров',
+        contentKey: 'categories-goods'
+      },
+      {
+        title: 'Прайс',
+        type: 'rangeSlider',
+        slider: {
+          minName: "rangemin",
+          maxName: "rangemax",
+          minValue: "200000",
+          maxValue: "500000",
+          min: "0",
+          max: "1000000",
+          currencySymbol: "&#8381;",
+          step: "1000"
+        }
+      },
+      {
+        title: 'Размер',
+        type: 'checkboxGroup',
+        checkboxes: [
+          { name: 'size36', text: '36' },
+          { name: 'size38', text: '38' },
+          { name: 'size40', text: '40' },
+          { name: 'size42', text: '42' }
+        ]
+      },
+      {
+        title: 'Специальные предложение',
+        type: 'checkboxGroup',
+        checkboxes: [
+          { name: 'specials36', text: 'Test For Free' },
+          { name: 'specials38', text: 'Совместная Покупка' },
+          { name: 'specials40', text: 'Благотворительная покупка' },
+          { name: 'specials42', text: 'Акция “2 по цене 1”' }
+        ]
+      },
+      ...[0, 1, 2, 3, 4, 5].map(i => ({
+        title: `Размер${i}`,
+        type: 'checkboxGroup',
+        checkboxes: [
+          { name: `${i}size36`, text: '36' },
+          { name: `${i}size38`, text: '38' },
+          { name: `${i}size40`, text: '40' },
+          { name: `${i}size42`, text: '42' }
+        ]
+      }))
+    ]
+    var postCards = [
+      {
+        imgSrc: "@img/post-card-img-black.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: "liked"
+      },
+      {
+        imgSrc: "@img/post-card-img-white.png",
+        userName: "Олеся Смирнова",
+        desc: "Светлый образ на холодную весну",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-louis-vuitton.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "scores",
+        scoresDiscus: "3058",
+        scoresLikes: "64197",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-jeans.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-louis-vuitton.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "scores",
+        scoresDiscus: "3058",
+        scoresLikes: "64197",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-jeans.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "scores",
+        scoresDiscus: "3058",
+        scoresLikes: "64197",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-card-img-black.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-card-img-white.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      },
+      {
+        imgSrc: "@img/post-card-img-white.png",
+        userName: "Олеся Смирнова",
+        desc: "Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный",
+        userLogoSrc: "@img/logo-user-sm.jpg",
+        scores: "",
+        scoresDiscus: "",
+        scoresLikes: "",
+        liked: ""
+      }
+    ]
+    var userCards = [
+      {
+        imgSrc: "@img/shop-preview.jpg",
+        name: "Елена Брадиславская длинное имя",
+        desc: "Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+        scoresInst: "9801",
+        scoresUsers: "140892",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-rocher.png",
+        name: "YVES ROCHER",
+        desc: "Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-cat.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: "Вы подписаны"
+      },
+      {
+        imgSrc: "@img/logo-vtb.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      }
+    ];
+    var goods = [
+      {
+        extraClass: "",
+        title: "Комбинезон из шелковой вискозы с",
+        discount: "--discount",
+        sale: "от 91 250 ₽",
+        hasLike: true,
+        sizes: "<li>36</li><li>38</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren", "title": "Комбинезон из шелковой вискозы с"},
+        brand: "Yves Saint Lauren"
+      },
+      {
+        extraClass: "",
+        title: "Плетеная сумка-сэтчел",
+        discount: "",
+        sale: "",
+        like: "",
+        sizes: "<li>38</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 2", "title": "Плетеная сумка-сэтчел"},
+        brand: "Yves Saint Lauren 2"
+      },
+      {
+        extraClass: "",
+        title: "Туфли ZOE с острым носом и эластичныим",
+        discount: "",
+        sale: "",
+        like: "",
+        sizes: "<li>36</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 3", "title": "Туфли ZOE с острым носом и эластичныим"},
+        brand: "Yves Saint Lauren 3"
+      },
+      {
+        extraClass: "",
+        title: "Пуховик из кожи с узором monogram mi",
+        discount: "",
+        sale: "",
+        like: true,
+        sizes: "<li>36</li><li>38</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 4", "title": "Пуховик из кожи с узором monogram mi"},
+        brand: "Yves Saint Lauren 4"
+      },
+      {
+        extraClass: "",
+        title: "Пуховик из кожи с узором monogram mi 2",
+        discount: "",
+        sale: "",
+        like: "",
+        sizes: "<li>36</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 5", "title": "Пуховик из кожи с узором monogram mi 2"},
+        brand: "Yves Saint Lauren 5"
+      },
+      {
+        extraClass: "",
+        title: "Пуховик из кожи с узором monogram mi 3",
+        discount: "",
+        sale: "",
+        like: true,
+        sizes: "<li>38</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 6", "title": "Пуховик из кожи с узором monogram mi 3"},
+        brand: "Yves Saint Lauren 6"
+      }
+    ]
+    var spFilters = [
+      { title: 'Платья и сарафаны', items: ['Вечерние платья', 'Деловые платья', 'Сарафаны', 'Экстравагантные дизайнерские платья'] },
+      { title: 'Платья и сарафаны2', items: ['Вечерние платья', 'Деловые платья', 'Сарафаны', 'Экстравагантные дизайнерские платья', 'Юбки'] },
+      { title: 'Платья и сарафаны3', items: ['Вечерние платья', 'Деловые платья', 'Сарафаны', 'Экстравагантные дизайнерские платья', 'Юбки'] },
+      { title: 'Платья и сарафаны4', items: ['Вечерние платья', 'Деловые платья', 'Сарафаны', 'Экстравагантные дизайнерские платья', 'Юбки'] },
+      { title: 'Платья и сарафаны5', items: ['Вечерние платья', 'Деловые платья', 'Сарафаны', 'Экстравагантные дизайнерские платья', 'Юбки'] },
+      { title: 'Платья и сарафаны6', items: ['Вечерние платья', 'Деловые платья', 'Сарафаны', 'Экстравагантные дизайнерские платья', 'Юбки'] },
+      { title: 'Платья и сарафаны7', items: ['Вечерние платья', 'Деловые платья', 'Сарафаны', 'Экстравагантные дизайнерские платья', 'Юбки'] },
+    ]
+
+.user-board.tabs
+  .user-board__inner
+    .user-board__tabs.tabs-head.tabs__head
+      .swiper.user-board__tabs-swiper
+        .tabs__list.swiper-wrapper
+          .swiper-slide.tabs__tab.tabs__tab--active(data-tab-path="posts")
+            | Публикации 
+            span.tabs__tab-count 35
+          .swiper-slide.tabs__tab(data-tab-path="followers")
+            | Подписчики 
+            span.tabs__tab-count 4
+          .swiper-slide.tabs__tab(data-tab-path="subscriptions")
+            | Подписки 
+            span.tabs__tab-count 28
+          .swiper-slide.tabs__tab(data-tab-path="likes")
+            | Нравится 
+            span.tabs__tab-count 170
+      button.swiper-button-prev
+        svg
+          use(xlink:href="./img/icons/icons.svg#arrow")
+      button.swiper-button-next
+        svg
+          use(xlink:href="./img/icons/icons.svg#arrow")
+
+
+    // Блок с кнопками сортировки и фильтрации для вкладки posts
+    .filter-actions.filter-actions--posts.user-board__actions-posts
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-posts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+    // Блок с кнопками сортировки и фильтрации для вкладки followers
+    .filter-actions.filter-actions--followers.user-board__actions-followers
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-followers.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+
+    // Блок с кнопками сортировки и фильтрации для вкладки subscriptions при селекте sp
+    .filter-actions.filter-actions--subscriptions-sp.user-board__actions-subscriptions-sp
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-subscriptions-sp.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Категории
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#categories")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+    // Блок с кнопками сортировки и фильтрации для вкладки subscriptions при селекте tff
+    .filter-actions.filter-actions--subscriptions-tff.user-board__actions-subscriptions-tff
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-subscriptions-tff.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+      button.filter-actions__density.btn.btn--outlined.btn--color-grey.btn--icon
+        svg.filter-actions__density-tile
+          use(xlink:href="./img/icons/icons.svg#density-tile")
+        svg.filter-actions__density-grid
+          use(xlink:href="./img/icons/icons.svg#density-grid")
+
+    // Блок с кнопками сортировки и фильтрации для вкладки subscriptions при селекте bloggers
+    .filter-actions.filter-actions--subscriptions-bloggers.user-board__actions-subscriptions-bloggers
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-subscriptions-bloggers.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+    // Блок с кнопками сортировки и фильтрации для вкладки subscriptions при селекте goods
+    .filter-actions.filter-actions--subscriptions-shops.user-board__actions-subscriptions-shops
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-subscriptions-shops.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+    // Блок с кнопками сортировки и фильтрации для вкладки likes при селекте goods
+    .filter-actions.filter-actions--likes-goods.user-board__actions-likes-goods
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+          options: '',
+          tag: ""
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-likes-goods.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+      button.filter-actions__density.btn.btn--outlined.btn--color-grey.btn--icon
+        svg.filter-actions__density-tile
+          use(xlink:href="./img/icons/icons.svg#density-tile")
+        svg.filter-actions__density-grid
+          use(xlink:href="./img/icons/icons.svg#density-grid")
+
+    // Блок с кнопками сортировки и фильтрации для вкладки likes при селекте publications
+    .filter-actions.filter-actions--likes-publications.user-board__actions-likes-publications
+      .user-board__search
+        +autocomplete({
+          id: "user-inner-autocomplete",
+          name: "user-inner-autocomplete",
+          placeholder: "Введите название или имя автора публикации",
+          prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+          inputExtraClass: "autocomplete__input input-text--color-grey",
+        })
+
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.user-board__actions-filters-likes-publications.btn.btn--outlined.btn--color-grey.scroll(data-target="user-board__tabs-swiper")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-board__actions-filters-count.filter-actions__filters-count
+
+    // Контент табов (Публикации, подписчики, подписки, нравится)
+    .tabs__contents.user-board__contents
+
+      // Таб posts
+      .tabs__content.tabs__content--active.user-board__contents-tab(data-tab-target="posts")
+
+        // Форма с фильтрами и сортировками для вкладки posts
+        form.user-board__form-posts.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Контент posts
+        .user-board__content-posts.user-board__content.tab-content
+          +postCardList({ listId: "publicationList", cards: postCards })
+
+      // Таб followers
+      .tabs__content.user-board__contents-tab(data-tab-target="followers")
+
+        // Форма с фильтрами и сортировками для вкладки followers
+        form.user-board__form-followers.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+    
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Контент followers
+        .user-board__content-followers.user-board__content.tab-content
+          .user-card-list__cards-wrapper.user-card-list__cards-wrapper--no-margin-top
+            each item in userCards
+              +userCard(item)
+
+      // Таб subscription
+      .tabs__content.user-board__contents-tab(data-tab-target="subscriptions")
+
+        // Селект для выбора контента в табе
+        .user-board__select
+          +select({
+            options: [
+              '<li class="select__options-item" data-value="subscriptions-sp" role="button" tabindex="0">Совместные Покупки</li>',
+              '<li class="select__options-item" data-value="subscriptions-tff" role="button" tabindex="0">Test For Free</li>',
+              '<li class="select__options-item" data-value="subscriptions-bloggers" role="button" tabindex="0">Блогеры</li>',
+              '<li class="select__options-item" data-value="subscriptions-shops" role="button" tabindex="0">Магазины</li>',
+            ],
+            name: "user-board-subscriptions",
+            extraClass: "select--border-grey",
+            initialValue: "subscriptions-sp",
+            initialLabel: "Совместные Покупки",
+          })
+
+        // Форма с фильтрами и сортировками для вкладки subscriptions при выбранном селекте sp
+        form.user-board__form-subscriptions-sp.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+    
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items.filters--sp
+              each filter in spFilters
+                .filters__item
+                  +collapse({
+                    title: filter.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    .filters__collapse.filters__collapse-wrap
+                      each item, index in filter.items
+                        +checkbox({
+                          name: `0size38-${index}`,
+                          text: item,
+                          mod: "checkbox--tag",
+                          classes: "btn btn--tag btn--small",
+                        })
+
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Форма с фильтрами и сортировками для вкладки subscriptions при выбранном селекте tff
+        form.user-board__form-subscriptions-tff.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+    
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Форма с фильтрами и сортировками для вкладки subscriptions при выбранном селекте bloggers
+        form.user-board__form-subscriptions-bloggers.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+    
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Форма с фильтрами и сортировками для вкладки subscriptions при выбранном селекте shops
+        form.user-board__form-subscriptions-shops.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+    
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Контент для вкладки subscriptions при выбранном селекте sp
+        .user-board__content-subscriptions-sp.user-board__content.tab-content
+          .joint-purchases-list
+            +jointPurchasesCard({
+              extraClass: "joint-purchases-card--processing",
+              status: "",
+              width: "30%",
+            })
+            +jointPurchasesCard({
+              extraClass: "joint-purchases-card--ready",
+              status: "Состоялась",
+              width: "100%",
+            })
+            +jointPurchasesCard({
+              extraClass: "joint-purchases-card--disabled",
+              status: "Не состоялась",
+              width: "100%",
+            })
+
+        // Контент для вкладки subscriptions при выбранном селекте tff
+        .user-board__content-subscriptions-tff.user-board__content.tab-content
+          .cards-with-menu.cards-with-menu--subscriptions-tff
+            .cards-with-menu__menu
+              +productMenu("categories-tff")
+            .cards-with-menu__items
+              each product in goods
+                +productCard(product)
+
+        // Контент для вкладки subscriptions при выбранном селекте bloggers
+        .user-board__content-subscriptions-bloggers.user-board__content.tab-content
+          .user-card-list__cards-wrapper
+            each item in userCards
+              +userCard(item)
+
+        // Контент для вкладки subscriptions при выбранном селекте shops
+        .user-board__content-subscriptions-shops.user-board__content.tab-content
+          +shopCardList({})
+
+      // Таб likes
+      .tabs__content.user-board__contents-tab(data-tab-target="likes")
+
+        // Селект для выбора контента в табе
+        .user-board__select
+          +select({
+            options: [
+              '<li class="select__options-item" data-value="likes-goods" role="button" tabindex="0">Товары</li>',
+              '<li class="select__options-item" data-value="likes-publications" role="button" tabindex="0">Публикации</li>',
+            ],
+            name: "user-board-likes",
+            extraClass: "select--border-grey",
+            initialValue: "likes-goods",
+            initialLabel: "Товары",
+          })
+
+        // Форма с фильтрами и сортировками для вкладки likes при выбранном селекте goods
+        form.user-board__form-likes-goods.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+    
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Форма с фильтрами и сортировками для вкладки likes при выбранном селекте publications
+        form.user-board__form-likes-publications.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .user-board__form-chips.form-filters__chips
+    
+          .user-board__form-filter.filters
+            .filters__title
+              | Фильтры
+              .user-board__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+            .user-board__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+            .user-board__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.user-board__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.user-board__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.user-board__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+              button.btn.user-board__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Контент для вкладки likes при выбранном селекте goods
+        .user-board__content-likes-goods.user-board__content.tab-content
+          .cards-with-menu.cards-with-menu--likes-goods
+            .cards-with-menu__menu
+              +productMenu("categories-goods")
+            .cards-with-menu__items
+              each product in goods
+                +productCard(product)
+
+        // Контент для вкладки likes при выбранном селекте publications
+        .user-board__content-likes-publications.user-board__content.tab-content
+          +postCardList({ listId: "", cards: postCards })
+        
+    +popup({
+      extraClass: "",
+      id: "clearFilter",
+      title: "",
+    })
+      include ./clear-filter-content-popup
+

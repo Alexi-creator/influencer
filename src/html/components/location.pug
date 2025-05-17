@@ -1,0 +1,38 @@
+.location(class=extraClass)
+  .location__inner
+    .location__img.location__not-setup
+      img(src='@img/delivery.jpg', alt='delivery')
+    .location__descr.location__setup
+      | Выберите адрес, чтобы увидеть условия доставки
+    .location__actions
+      .location__actions-city
+        svg.location__address-city-icon
+          use(xlink:href='./img/icons/icons.svg#map')
+        span.location__address-city-name Москва
+      button.location__actions-change.btn.btn--text(data-popup='choose-city', data-close-popup='location')
+        | Изменить
+    ul.location__addresses.location__setup
+      li.location__address(data-value='почта_россии', role='button', tabindex='0', data-delivery='pickup', data-close-popup='location')
+        .location__address-header
+          .location__address-option Отделение Почты России
+          button.location__address-remove
+            svg.location__address-remove-icon
+              use(xlink:href='./img/icons/icons.svg#cross')
+        .location__address-address 188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
+        .location__address-storage-period
+          | Срок хранения заказа - 
+          span.location__address-storage-period-count 15 дней
+      li.location__address.location__address--selected(data-value='адрес 1', role='button', tabindex='0', data-delivery='courier', data-close-popup='location')
+        .location__address-header
+          .location__address-option Доставка по адресу
+          button.location__address-remove
+            svg.location__address-remove-icon
+              use(xlink:href='./img/icons/icons.svg#cross')
+        .location__address-address 188508, г Москва, пр-кт Космонавтов, дом 1
+        .location__address-contacts Маргарита А., +7 999 123 45 67
+    .location__descr.location__not-setup
+      | Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров
+    button.location__button.location__not-setup.btn(data-popup='map', data-close-popup='location')
+      | Выбрать адрес на карте
+    button.location__button.location__setup.btn(data-popup='map', data-close-popup='location')
+      | Добавить новый адрес или пункт

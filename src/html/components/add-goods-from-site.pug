@@ -1,0 +1,76 @@
+include ./input-text
+
+block addGoodsFromSiteVars
+  -
+    var fields = [
+      { title: 'Вставьте ссылку', name: 'link-goods', placeholder: 'Ссылка на страницу с нужным товаром' },
+      { title: 'Название', name: 'name-goods', placeholder: 'Название товара' },
+      { title: 'Стоимость', name: 'price-goods', placeholder: 'Стоимость товара' },
+    ]
+
+.add-goods-from-site
+  .add-goods-from-site__inner
+    .add-goods-from-site__title
+      | Вставьте ссылку на страницу с нужным товаром и мы попробуем автоматически подставить информацию в поля ниже. Если что-то скопируется недостоверно, вы сможете изменить это вручную.
+
+    form.add-goods-from-site__form
+      .add-goods-from-site__form-column
+        each field in fields
+          .add-goods-from-site__form-field
+            .add-goods-from-site__form-field-title= field.title
+            +inputText({
+              name: field.name,
+              type: 'text',
+              placeholder: field.placeholder,
+              prefix: '',
+              suffix: '',
+              extraClass: 'input-text--color-grey',
+              extraClassPrefix: '',
+              extraClassSuffix: '',
+            })
+
+      .add-goods-from-site__form-column.add-goods-from-site__form-column-second
+        .add-goods-from-site__form-field
+          .add-goods-from-site__form-field-title Фото товара
+          .add-goods-from-site__form-field-upload
+            .add-goods-from-site__form-field-upload-input
+              +inputText({
+                name: 'add-image',
+                type: 'file',
+                placeholder: '',
+                prefix: '<svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>',
+                suffix: '',
+                extraClass: 'input-text--disabled input-text--upload input-text--upload-small add-goods-from-site__form-field-upload',
+                extraClassPrefix: '',
+                extraClassSuffix: '',
+              })
+            .add-goods-from-site__form-field-upload-img
+            .add-goods-from-site__form-field-upload-text(data-text="Загрузить другое фото") Загрузить фото
+
+        .add-goods-from-site__form-field
+          .add-goods-from-site__form-field-title Предпросмотр стороннего товара
+          .add-goods-from-site__form-field-preview
+            .add-goods-from-site__form-field-preview-plug
+              .add-goods-from-site__form-field-preview-plug-item
+              .add-goods-from-site__form-field-preview-plug-item
+              .add-goods-from-site__form-field-preview-plug-item
+              .add-goods-from-site__form-field-preview-plug-item
+            .add-goods-from-site__form-field-preview-img
+              .publication-item.publication-item--grey
+                .publication-item__img
+                .publication-item__content
+                  .publication-item__title
+                  .publication-item__price
+                    span.publication-item__price-number
+                  .publication-item__descr
+                    span.add-publication__content-results-list-item-subtitle Товар с другого сайта
+
+      button.btn.submit.add-goods-from-site__form-btn(
+        data-popup="popup-confirm-from-site"
+        data-close-popup="popup-from-site"
+        type="button"
+        disabled
+      )
+        | Добавить
+
+      button.add-goods-from-site__form-submit-btn(type="submit" hidden)

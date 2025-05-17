@@ -1,0 +1,38 @@
+include ./input-text
+include ./radio
+
+.choose-city
+  .choose-city__inner
+    .choose-city__header
+      button.choose-city__back
+        svg.choose-city__back-icon(data-popup="location", data-close-popup="choose-city")
+          use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+      .choose-city__title Выберите город
+      button.choose-city__cross(data-close-popup="choose-city")
+        svg.choose-city__cross-icon
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+    .choose-city__search
+      +inputText({
+        name: "search",
+        type: "search",
+        placeholder: "Найдите свой город",
+        prefix: "<svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg>",
+        extraClass: "",
+      })
+
+    ul.choose-city__list
+      li.choose-city__list-item
+        +radio({
+          name: "city",
+          text: "Москва",
+          value: "Москва",
+          extraClass: "radio--active",
+        })
+      li.choose-city__list-item
+        +radio({
+          name: "city",
+          text: "Санкт-Петербург",
+          value: "Санкт-Петербург",
+          extraClass: "radio--active",
+        })

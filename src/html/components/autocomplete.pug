@@ -1,0 +1,49 @@
+include ./input-text
+
+mixin autocomplete(options)
+  -
+    const {
+      id = '',
+      name = '',
+      placeholder = '',
+      prefix = '',
+      suffix = '',
+      prefixBlock,
+      suffixBlock,
+      value = '',
+      tag = '',
+      extraClass = '',
+      inputExtraClass = '',
+      prefixClass = '',
+      suffixClass = '',
+    } = options;
+
+  .autocomplete(id=id class=extraClass)
+    +inputText({
+      name,
+      placeholder,
+      type: "search",
+      prefix,
+      suffix,
+      prefixBlock,
+      suffixBlock,
+      extraClass: inputExtraClass,
+      extraClassPrefix: prefixClass,
+      extraClassSuffix: suffixClass,
+    })
+      block
+
+    input(type="text", name=name, value=value, hidden)
+
+    .autocomplete__body
+      .autocomplete__body-title Результаты поиска
+      if tag
+        #{tag}.autocomplete__options
+          if options.options
+            each item in options.options
+              != item
+      else
+        ul.autocomplete__options
+          if options.options
+            each item in options.options
+              != item

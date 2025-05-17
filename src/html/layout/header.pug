@@ -1,0 +1,174 @@
+include ../components/select
+include ../components/autocomplete
+include ../components/counter
+include ../components/popup
+
+header.header
+  .header__inner
+    .header__top
+      button.header__top-location(class=`${headerVars.locationClass}`, data-popup=`${headerVars.idPopup}`)
+        svg
+          use(xlink:href=`./img/icons/icons.svg#${headerVars.icon}`)
+        span.header__top-location-address #{headerVars.locationAddress}
+        span.header__top-location-cta Укажите точный адрес
+      .header__top-info
+        a(href="#") Инструкции
+        a(href="#") Контакты
+        +select({
+          name: "language",
+          extraClass: "select--transparent header__top-language",
+          options: [
+            '<li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li>',
+            '<li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li>',
+            '<li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>',
+          ],
+          initialLabel: 'Русский',
+          initialValue: 'ru',
+        })
+  
+    nav.header__nav
+      ul.header__nav-list
+        li.header__nav-item.header__nav-logo
+          a.header__nav-logo-small(href="./index.html")
+            img(width="24", height="24", src="@img/small-logo.svg", alt="small-logo")
+          a.header__nav-logo-big(href="./index.html")
+            img(width="106", height="24", src="@img/logo.svg", alt="logo")
+        li.header__nav-item.header__nav-catalog(class=`${headerVars.catalogExtraClass}`)
+          a.btn(href="./catalog.html")
+            svg.header__nav-catalog-icon-catalog
+              use(xlink:href="./img/icons/icons.svg#catalog")
+            svg.header__nav-catalog-icon-cross
+              use(xlink:href="./img/icons/icons.svg#cross")
+            span.header__nav-catalog-title Каталог
+        li.header__nav-item.header__nav-search
+          .header__nav-search-title
+            .header__nav-search-title-text Поиск по сайту
+            svg.header__nav-search-title-cross
+              use(xlink:href="./img/icons/icons.svg#cross")
+          +autocomplete({
+            id: "search-shops",
+            name: "search-shops",
+            placeholder: "Найдите что-нибудь",
+            inputExtraClass: "autocomplete__input",
+            prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+            suffix: "",
+            suffixBlock: true,
+            extraClass: "header__nav-search-input autocomplete--img autocomplete--select",
+            prefixClass: "",
+            suffixClass: "autocomplete__suffix",
+            tag: "div",
+            options: '<a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><img class="autocomplete__options-item-img" src="@img/avatar.jpg" /><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><img class="autocomplete__options-item-img" src="@img/sp-slide2.jpg" /><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>',
+          })
+            +select({
+              options: [
+                "<li class=select__options-item data-value=value1 role=button tabindex=0>Везде2</li>",
+                "<li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li>",
+                "<li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>",
+              ],
+              name: "select-search",
+              initialValue: "value2",
+              initialLabel: "Везде",
+              extraClass: "select--transparent",
+            })
+          .header__nav-search-filter
+            .header__nav-search-filter-title Где будем искать
+          .header__nav-search-mask
+        li.header__nav-item.header__nav-basket
+          a(href="/carts.html")
+            svg
+              use(xlink:href="./img/icons/icons.svg#shopping-bag")
+          .header__nav-item-counter
+            +counter("green", "9")
+        li.header__nav-item.header__nav-favorite
+          a(href="#")
+            svg
+              use(xlink:href="./img/icons/icons.svg#heart")
+          .header__nav-item-counter
+            +counter("green", "4")
+        li.header__nav-item.header__nav-feed
+          a(href="#")
+            svg
+              use(xlink:href="./img/icons/icons.svg#feed")
+          .header__nav-item-counter
+            +counter("green", "1")
+        li.header__nav-item.header__nav-instagram
+          a(href="/add-publication.html")
+            svg
+              use(xlink:href="./img/icons/icons.svg#camera")
+        li.header__nav-item.header__nav-profile(data-popup="login")
+          a.header__nav-sign-in(href="#")
+            svg
+              use(xlink:href="./img/icons/icons.svg#user")
+            | Войти в аккаунт
+          a.header__nav-account(href="#")
+            .header__nav-rating.badge.badge--font-commissioner.badge--color-primary-light.badge--without-border
+              | Мой рейтинг: 109
+            .header__nav-avatar
+              img(src="@img/avatar.jpg", alt="avatar")
+        li.header__nav-item.header__nav-more
+          svg
+            use(xlink:href="./img/icons/icons.svg#more")
+        li.header__nav-item.header__nav-location(data-popup="location")
+          svg
+            use(xlink:href="./img/icons/icons.svg#map")
+  include ../components/useful-links
+
+  +popup({
+    extraClass: "header__login",
+    id: "login",
+    title: `
+      <div class="header__login-title-sign-in">Войдите в свой профиль</div>
+      <div class="header__login-title-sign-up">Зарегистрируйтесь</div>
+    `,
+  })
+    include ../components/login
+
+  +popup({
+    extraClass: "header__location",
+    id: "location",
+    title: "Куда доставить заказ?",
+  })
+    - const extraClass = headerVars.locationExtraClass
+    include ../components/location
+
+  +popup({
+    extraClass: "header__choose-city",
+    id: "choose-city",
+    title: "",
+  })
+    include ../components/choose-city
+
+  +popup({
+    extraClass: "popup--no-overlay header__map",
+    id: "map",
+    title: "",
+  })
+    include ../components/map
+
+  +popup({
+    extraClass: "popup--no-overlay header__search-pickup",
+    id: "search-pickup",
+    title: "",
+  })
+    include ../components/search-pickup
+
+  +popup({
+    extraClass: "popup--no-overlay header__courier",
+    id: "courier",
+    title: "",
+  })
+    include ../components/courier
+
+  - const activeItem = headerVars.activeItem
+  include ../components/menu-mobile
+
+  template#address
+    li.location__address(data-value="", role="button", tabindex="0", data-close-popup="location", data-deleivery="")
+      .location__address-header
+        .location__address-option
+        button.location__address-remove
+          svg.location__address-remove-icon
+            use(xlink:href="./img/icons/icons.svg#cross")
+      .location__address-address
+      .location__address-storage-period
+        span.location__address-storage-period-count

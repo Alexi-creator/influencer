@@ -1,0 +1,18 @@
+include ./popup
+
+mixin share({ id, extraClassPopup = '', media = '' })
+  .share
+    svg.share__open(data-popup=id)
+      use(xlink:href="./img/icons/icons.svg#share-link")
+    +popup({ id, extraClass, media })
+      .share__block
+        .share__block-head
+          | Поделиться
+          .share__close.popup__close
+            svg
+              use(xlink:href="./img/icons/icons.svg#cross")
+        ul.share__list
+          each icon in ['copy', 'telegram', 'facebook', 'twitter', 'watsup']
+            li
+              svg.share__item-icon
+                use(xlink:href=`./img/icons/icons.svg#${icon}`)

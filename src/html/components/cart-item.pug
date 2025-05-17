@@ -1,0 +1,79 @@
+include ./checkbox
+
+mixin cartItem(data)
+  .cart-item(
+    class=(data.disabled ? 'cart-item--disabled' : '')
+    data-id=data.id
+    data-old-price=data.oldSum
+    data-new-price=data.newSum
+  )
+    .cart-item__wrapper
+      .cart-item__product-card
+        .cart-item__product-card-pic
+          != data.cartCardPic
+        .cart-item__product-card-description
+          .cart-item__product-card-description-title
+            = data.cartCardBrand
+          .cart-item__product-card-description-txt
+            = data.cartCardBrandDescription
+      .cart-item__control
+        .cart-item__control-size(class=(data.disabledSize ? 'cart-item--disabled-size' : ''))
+          = data.sizes
+        .cart-item__control-amount
+          button.cart-item__control-minus(disabled=data.disabled)
+            svg
+              use(xlink:href='./img/icons/icons.svg#minus')
+          input.cart-item__control-amount-input(
+            name='control-items'
+            type='text'
+            value=data.amounts
+            disabled=data.disabled
+          )
+          button.cart-item__control-plus(disabled=data.disabled)
+            svg
+              use(xlink:href='./img/icons/icons.svg#plus')
+      .cart-item__discount(
+        class=(data.sp ? 'cart-item__discount--sp' : '') + (data.store ? ' cart-item__discount--store' : '')
+      )
+        .cart-item__discount-upper
+          .cart-item__discount-upper-title
+            if data.store
+              span.cart-item__discount-upper-title-store--md Ваша скидка:
+              span.cart-item__discount-upper-title-store--mobile Скидка:
+            if data.sp
+              span.cart-item__discount-upper-title-sp--mobile Скидка:
+              span.cart-item__discount-upper-title-sp--md Ваша скидка:
+              span.cart-item__discount-upper-title-sp--lg Скидка в СП:
+          .cart-item__discount-upper-size
+            .badge.badge--discount-cart
+              | -23%
+      .cart-item__navigate-choose(class=(data.store ? 'cart-item__navigate-choose--store' : ''))
+        if data.disabled
+          svg(
+            data-tooltip="Товара выбранного вами размера не осталось в наличии. Вы можете удалить его из корзины или <a href='#' class='cart-item__tooltip btn btn--primary btn--none'>Выбрать другой размер</a>"
+          )
+            use(xlink:href='./img/icons/icons.svg#info')
+          span Товар недоступен
+        else
+          +checkbox({
+            name: 'checkbox',
+            text: 'Выбрать',
+            mod: 'checkbox--radius-medium',
+            classes: 'cart-control__top-choose-all-txt'
+          })
+      .cart-item__navigate-price(class=(data.store ? 'cart-item__navigate-price--store' : ''))
+        span.cart-item__navigate-price-old-sum
+          = data.totalOldSum + ' ₽'
+        span.cart-item__navigate-price-new-sum
+          = data.totalNewSum + ' ₽'
+      .cart-item__delete(class=(data.store ? 'cart-item__delete--store' : ''))
+        button.btn.btn--text.btn--color-grey.btn--none Удалить
+      if data.store
+        .cart-item__discount-details
+          .cart-item__discount-store
+            span 1 шт. 
+              = data.onePieceDiscount
+            span 2-3 шт. 
+              = data.threePiecesDiscount
+            span 4 шт. и более
+              = data.fourPiecesDiscount

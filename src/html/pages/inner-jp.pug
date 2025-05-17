@@ -1,0 +1,87 @@
+extends ../layout/baseLayout
+
+include ../components/popup
+include ../components/product
+
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'inner-jp Page'
+    var nameFile = 'inner-jp'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
+    var jpDetails = {
+      extraClass: '',
+      title: 'Покупаем пока есть скидка, девочки. Может быть такое, что в загловке появится и вторая строчка.',
+      discountSize: '30',
+      discountSum: '136 000',
+      oldSum: '79281',
+      allSum: '241093',
+      isActiveSP: '30',
+      activityDateDay: '27.01.2020',
+      activityDateTime: '12:00',
+      subscribersNumber: '140892',
+      authorName: 'Котов Кот Котович',
+      spDateCreation: '18 апреля 2021',
+      status: 'progress',
+      describeSp: `
+        Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле. Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro.
+        Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.
+      `,
+    }
+    var productData = {
+      images: [
+        "@img/product-img1.png",
+        "@img/product-img2.png",
+        "@img/product-img3.png",
+        "@img/product-img4.png",
+        "@img/product-img5.png",
+      ],
+      point: "в Москву",
+      deliveryPrice: "300",
+      productDescription: "Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.",
+      productName: "Louis Vouitton",
+      productShortDescription: "Пуховик из кожи с узором monogram micro",
+      likesScore: 89,
+      postScore: "108",
+      priceCrossed: "510000",
+      priceNew: "459000",
+      discountScore: "10",
+      productSpDescription: "Покупаем пока есть скидка, девочки",
+      imgSeller: '<img src="@img/shop-avatar.png"></img>',
+      sellerName: "Интернет магазин одежды и аксессуаров Lass",
+      discountExtra: "50",
+      discountExtraSum: "459000",
+      spDiscountLinksFound: "79",
+      extraClass: "product--popup",
+      isDiscount: false,
+    }
+
+block content
+  main.main
+    section.section.section--inner-jp
+      .section__inner
+        include ../components/jp-details
+
+    section.section.section--inner-jp-goods
+      .section__inner
+        hr.hr
+        include ../components/inner-jp-goods
+
+    +popup({
+      id: 'popup-product',
+      extraClass: 'product-in-modal',
+      title: `<a href="#" class="product__header-link">Перейти к полной версии карточки товара</a> <span href="#" class="product__header-txt">Быстрый просмотр товара</span>`,
+    })
+      +product(productData)
+
+    button#openPopup(data-popup="popup-product", hidden)
+

@@ -1,3 +1,6 @@
+/**
+ * Управление блоком авторизации / регистрации
+ */
 export class Login {
   private selectorContainer: string
   private selectorBtnSignIn: string

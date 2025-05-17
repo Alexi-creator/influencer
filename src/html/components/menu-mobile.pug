@@ -1,0 +1,56 @@
+include ./menu-mobile-item
+
+block menuItemsVars
+  -
+    const menuItems = [
+      {
+        href: "/add-publication.html",
+        icon: "camera",
+        body: "Публикация",
+        class: "publication",
+        isActive: activeItem === 'publication' ? 'active' : '',
+        count: 0,
+        avatar: "",
+      },
+      {
+        href: "./catalog.html",
+        icon: "catalog",
+        body: "Каталог",
+        class: "catalog",
+        isActive: activeItem === 'catalog' ? 'active' : '',
+        count: 0,
+        avatar: "",
+      },
+      {
+        href: "#",
+        icon: "feed",
+        body: "Лента",
+        class: "feed",
+        isActive: activeItem === 'feed' ? 'active' : '',
+        count: 0,
+        avatar: "",
+      },
+      {
+        href: "/carts.html",
+        icon: "shopping-bag",
+        body: "Корзина",
+        class: "shopping-bag",
+        isActive: activeItem === 'shopping-bag' ? 'active' : '',
+        count: 1,
+        avatar: "",
+      },
+      {
+        href: "#",
+        icon: "profile",
+        body: "Профиль",
+        class: "profile",
+        isActive: activeItem === 'profile' ? 'active' : '',
+        count: 0,
+        avatar: "true",
+      },
+    ]
+
+nav.nav
+  ul.nav__list
+    each item in menuItems
+      +menuMobileItem(item)

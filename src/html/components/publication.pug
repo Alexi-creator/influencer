@@ -1,0 +1,110 @@
+include ./publication-item
+
+.publication
+	.publication__author
+		.publication__author-avatar
+			img(src='@img/logo-user-sm.jpg')
+		.publication__author-name Олеся Смирнова
+		.publication__author-created 17 минут назад
+
+	.publication__title Светлый образ на холодную весну
+
+	.publication__actions
+		button
+			svg.publication__actions-share
+				use(xlink:href='./img/icons/icons.svg#share')
+		button
+			svg.publication__actions-favourite
+				use(xlink:href='./img/icons/icons.svg#heart')
+		.publication__actions-views 6072 просмотров
+
+	.publication__set
+		.publication__set-items
+			each item in publications
+				+publicationItem(item)
+
+		.publication__swiper
+			.swiper.swiper-publication
+				.swiper-wrapper
+					.swiper-slide
+						img(src='@img/publication.jpg')
+					.swiper-slide
+						img(src='@img/post-card-img-black.png')
+					.swiper-slide
+						img(src='@img/publication.jpg')
+				button.swiper-button-prev
+					svg
+						use(xlink:href='./img/icons/icons.svg#arrow')
+				button.swiper-button-next
+					svg
+						use(xlink:href='./img/icons/icons.svg#arrow')
+				.swiper-pagination
+
+		.publication__set-items
+			each item in publications
+				+publicationItem(item)
+
+	.publication__goods
+		.gallery-card
+			.gallery-card__item
+				img(src='@img/publication.jpg')
+			.gallery-card__item
+				img(src='@img/post-card-img-black.png')
+			.gallery-card__item
+				img(src='@img/publication.jpg')
+			.gallery-card__item
+				img(src='@img/publication.jpg')
+			.gallery-card__item
+				img(src='@img/post-card-img-black.png')
+			.gallery-card__item
+				img(src='@img/publication.jpg')
+			.gallery-card__item
+				img(src='@img/publication.jpg')
+			.gallery-card__item
+				img(src='@img/post-card-img-black.png')
+			.gallery-card__item
+				img(src='@img/publication.jpg')
+				span.gallery-card__item-more +7
+		.publication__goods-count 9 товаров
+		button.btn.btn--none.publication__goods-btn-popup(data-popup='publication-items') Посмотреть
+
+	.publication__descr
+		| Безупречный белый позволителен дамам любого возраста и рода занятий,
+		| делая внешность неотразимой и такой безукоризненной.
+		| Облачаясь в белый цвет с ног до головы этой весной, отдавайте
+		| предпочтение белым платьям на весну, брючным костюмам, рубашкам и
+		| блузкам в белом цвете, а также и верхней одежде в белом цвете на весну.
+		| Именно белый цвет в модных образах весны 2021 будет на пике популярности
+		| для многих барышень.
+
+	.publication__price
+		| Общая стоимость образа: 97 062 ₽
+
+	.publication__likes
+		svg.publication__likes-icon
+			use(xlink:href='./img/icons/icons.svg#thumbs-up')
+		.publication__likes-text
+			| 16 Отметок “Нравится”
+
+	ul.publication__hashtags
+		li
+			a(href='#') #весна22
+		li
+			a(href='#') #холод
+		li
+			a(href='#') #лучшийобраз
+		li
+			a(href='#') #костюмы
+		li
+			a(href='#') #недешево
+
+	.publication__subscribe
+		.publication__subscribe-top
+			.publication__subscribe-line
+			.publication__subscribe-avatar
+				img(src='@img/logo-user-sm.jpg')
+			.publication__subscribe-line
+		.publication__subscribe-name Олеся Смирнова
+		.publication__subscribe-activity Персональный стилист / Актриса / Блогер
+		.publication__subscribe-btn
+			button.btn Подписаться

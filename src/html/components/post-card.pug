@@ -1,0 +1,30 @@
+include ./rating
+
+mixin postCard(data)
+  a.post-card(href="#")
+    .post-card__wrapper
+      img(src=data.imgSrc alt=data.imgSrc)
+      .post-card__desc-inner
+        p.post-card__desc= data.desc
+        .post-card__range
+          +rating({
+            extraClass: "",
+            value: 3,
+          })
+          .post-card__range-inner
+            p= data.userName
+            img(src=data.userLogoSrc alt=data.userLogoSrc)
+        if data.scores
+          .post-card__scores
+            .post-card__discus
+              svg
+                use(xlink:href="./img/icons/icons.svg#logo-discus")
+              span= data.scoresDiscus
+            .post-card__discus
+              svg
+                use(xlink:href="./img/icons/icons.svg#logo-likes-grey")
+              span= data.scoresLikes
+      if data.liked
+        .post-card__liked
+          svg
+            use(xlink:href="/img/icons/icons.svg#favourite")

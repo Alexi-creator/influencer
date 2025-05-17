@@ -1,0 +1,103 @@
+.jp-details(class=jpDetails.extraClass)
+  .jp-details__wrapper
+    .jp-details__header
+      .jp-details__header-title
+        .jp-details__header-title-txt
+          h1.jp-details__header-title-txt-about Совместная покупка
+          .jp-details__header-title-txt-phrase #{jpDetails.title}
+        .jp-details__header-title-subscribe
+          .share
+            svg.share__open(data-popup=jpDetails.id)
+              use(xlink:href="./img/icons/icons.svg#share-link")
+            .popup(data-media="")
+              .popup__overlay
+                .popup__content
+                  .share__block
+                    .share__block-head
+                      | Поделиться
+                      .share__close.popup__close
+                        svg
+                          use(xlink:href="./img/icons/icons.svg#cross")
+                    ul.share__list
+                      each icon in ['copy', 'telegram', 'facebook', 'twitter', 'watsup']
+                        li
+                          svg.share__item-icon
+                            use(xlink:href=`./img/icons/icons.svg#${jpDetails.icon}`)
+          button.btn.btn--color-primary-light Подписаться на СП
+     
+      if jpDetails.status
+        .jp-details__header-conditions(class='jp-details__header-conditions--' + jpDetails.status)
+
+          .jp-details__header-conditions-discount
+            .jp-details__header-conditions-discount-badge
+              if jpDetails.status == 'progress'
+                .badge.badge--font-commissioner.badge--color-primary-light.badge--without-border.badge--big Скидка -#{jpDetails.discountSize}%
+              if jpDetails.status == 'done'
+                .badge.badge--font-commissioner.badge--color-green.badge--without-border.badge--big Скидка -#{jpDetails.discountSize}%
+              if jpDetails.status == 'cancel'
+                .badge.badge--font-commissioner.badge--color-grey.badge--without-border.badge--big Скидка -#{jpDetails.discountSize}%
+            .jp-details__header-conditions-discount-sum
+              | при покупке от 
+              span.jp-details__header-conditions-discount-sum-number #{jpDetails.discountSum} ₽
+
+          .jp-details__header-conditions-progress
+            .jp-details__header-conditions-progress-sum
+              span.jp-details__header-conditions-progress-sum-title Уже купили на:
+              span.number #{jpDetails.oldSum}
+              span  /
+              span.number #{jpDetails.allSum}
+              span.currency ₽
+            .jp-details__header-conditions-progress-range
+              if jpDetails.status == 'progress'
+                .progress.progress--primary
+                  .progress__line(style=`width:${jpDetails.isActiveSP}%`)
+              if jpDetails.status == 'done'
+                .progress.progress--green
+                  .progress__line(style=`width:${jpDetails.isActiveSP}%`)
+              if jpDetails.status == 'cancel'
+                .progress.progress--grey
+                  .progress__line(style=`width:${jpDetails.isActiveSP}%`)
+
+          .jp-details__header-conditions-activity
+            .jp-details__header-conditions-activity-title.jp-details__header-conditions-activity-title--time Активна до:
+            .jp-details__header-conditions-activity-title.jp-details__header-conditions-activity-title--jp Совм. Покупка:
+            time.jp-details__header-conditions-activity-date(datetime="") #{jpDetails.activityDateDay} #{jpDetails.activityDateTime}
+            .jp-details__header-conditions-activity-status.jp-details__header-conditions-activity-status--done Состоялась
+            .jp-details__header-conditions-activity-status.jp-details__header-conditions-activity-status--cancel Не состоялась
+
+    .jp-details__source
+      .jp-details__source-shop
+        .jp-details__source-shop-title Магазин
+        .jp-details__source-shop-inner
+          .jp-details__source-shop-inner-content
+            .jp-details__source-shop-img
+              img(src="img/shop-avatar.png")
+            .jp-details__source-shop-name Интернет магазин одежды и аксессуаров Lass
+          button.btn.btn--none Подписаться
+      .jp-details__source-author
+        .jp-details__source-author-title Автор и дата создания
+        .jp-details__source-author-inner
+          .jp-details__source-author-inner-content
+            .jp-details__source-author-img
+              img(src="img/logo-cat.png")
+            .jp-details__source-author-name
+              span.jp-details__source-author-name-txt #{jpDetails.authorName}
+              p
+                span.number #{jpDetails.subscribersNumber}
+                |  подписчиков
+          .jp-details__source-author-sp-date
+            p СП создана
+            span #{jpDetails.spDateCreation}
+
+    .jp-details__description
+      .jp-details__description-title Описание Совместной Покупки
+      .jp-details__description-inner
+        p.jp-details__description-text.hide-elem-height #{jpDetails.describeSp}
+        button.btn-show.btn.btn--text.btn--none.btn--color-grey.jp-details__description-btn(data-text="Cвернуть")
+          span.btn-show-text Развернуть
+
+    .jp-details__controls
+      a.jp-details__controls-btn-create-jp.btn(href="#")
+        .jp-details__controls-btn-create-jp-mobile Создать Совместную Покупку
+        .jp-details__controls-btn-create-jp-desktop Создать СП
+      a.btn.btn--text.btn--none.btn--color-grey(href="#") Создать публикацию

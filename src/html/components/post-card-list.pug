@@ -1,0 +1,6 @@
+include ./post-card
+
+mixin postCardList({ listId, cards })
+  div.post-card-list(id=listId)
+    each card in cards
+      +postCard(card)

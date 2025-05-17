@@ -1,0 +1,36 @@
+extends ../layout/baseLayout
+
+include ../components/user-info
+
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'user inner Page'
+    var nameFile = 'user-inner'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
+
+block content
+  main.main
+    section.section.section--user-info
+      .section__inner
+        +userInfo({
+          img: '@img/avatar-influencer.jpg',
+          influencer: "influencer",
+          bloggerName: "Елена Брадиславская",
+          postCount: "9801",
+          subCount: "140892",
+          desc: "Ревизорро обуви и одежды. Более 10 лет в сфере блогинга. Производство контента не требует большого количества дорогостоящего оборудования, специального образования или технологического мастерства по сравнению с традиционными средствами массовой информации. Для Ревизорро обуви и одежды. Более 10 лет в сфере блогинга. Производство контента не требует большого количества дорогостоящего оборудования, специального образования или технологического мастерства по сравнению с традиционными средствами массовой информации.",
+        })
+          
+    section.section.section--user-board
+      .section__inner
+        include ../components/user-board.pug

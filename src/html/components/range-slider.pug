@@ -1,0 +1,26 @@
+mixin rangeSlider(data)
+  .range
+    .range__slider(data-step=data.step)
+    .range__inputs
+      .range__min
+        div от
+        .range__input-wrapper
+          input.range__input.range__input-min.input-text.input-text--color-grey(
+            name=data.minName,
+            type="text",
+            value=data.minValue,
+            data-min=data.min,
+            placeholder=data.min
+          )
+        .range__currency !{data.currencySymbol}
+      .range__max
+        div до
+        .range__input-wrapper
+          input.range__input.range__input-max.input-text.input-text--color-grey(
+            name=data.maxName,
+            type="text",
+            value=data.maxValue,
+            data-max=data.max,
+            placeholder=data.max
+          )
+        .range__currency !{data.currencySymbol}

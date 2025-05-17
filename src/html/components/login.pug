@@ -1,0 +1,90 @@
+.login.login--sign-in
+  .login__inner
+
+    //- Блок логина
+    .login__sign-in
+      .login__descr
+        | Чтобы пользоваться лентой новостей
+      .login__options
+        button.login__options-item.btn
+          svg
+            use(xlink:href="./img/icons/icons.svg#google")
+          | Войти через Google
+          svg.login__options-item-arrow
+            use(xlink:href="./img/icons/icons.svg#arrow")
+        button.login__options-item.btn
+          svg
+            use(xlink:href="./img/icons/icons.svg#vk")
+          | Войти через ВКонтакте
+          svg.login__options-item-arrow
+            use(xlink:href="./img/icons/icons.svg#arrow")
+      .login__or
+        span.login__or-text или
+      form.login__form.login__form-sign-in
+        +inputText({
+          name: "email",
+          type: "text",
+          placeholder: "Введите свою эл. почту",
+          prefix: "",
+          suffix: "",
+          extraClass: "input-text--color-grey login__form-item",
+          extraClassPrefix: "",
+          extraClassSuffix: "",
+        })
+        +inputText({
+          name: "password",
+          type: "password",
+          placeholder: "Введите пароль",
+          prefix: "",
+          suffix: "",
+          extraClass: "input-text--color-grey login__form-item",
+          extraClassPrefix: "",
+          extraClassSuffix: "",
+        })
+        button.login__form-submit.btn(type="submit") Войти
+      .login__choice
+        .login__choice-title Нет аккаунта?
+        button.login__choice-btn.login__choice-sign-up(type="button") Зарегистрируйтесь
+
+    //- Блок регистрации
+    .login__sign-up
+      .login__descr
+        | Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
+      .login__options
+        button.login__options-item.btn
+          svg
+            use(xlink:href="./img/icons/icons.svg#google")
+          | Регистрация через Google
+          svg.login__options-item-arrow
+            use(xlink:href="./img/icons/icons.svg#arrow")
+        button.login__options-item.btn
+          svg
+            use(xlink:href="./img/icons/icons.svg#vk")
+          | Регистрация через ВКонтакте
+          svg.login__options-item-arrow
+            use(xlink:href="./img/icons/icons.svg#arrow")
+      .login__or
+        span.login__or-text или
+      form.login__form.login__form-sign-up
+        +inputText({
+          name: "email",
+          type: "text",
+          placeholder: "Введите свою эл. почту",
+          extraClass: "input-text--color-grey login__form-item",
+        })
+        +inputText({
+          name: "password",
+          type: "password",
+          placeholder: "Придумайте пароль",
+          extraClass: "input-text--color-grey login__form-item",
+        })
+        +inputText({
+          name: "repeat_password",
+          type: "password",
+          placeholder: "Повторите ввод пароля пароль",
+          extraClass: "input-text--color-grey login__form-item",
+        })
+        button.login__form-submit.btn(type="submit") Зарегистрироваться
+      .login__choice
+        .login__choice-title Есть аккаунт?
+        button.login__choice-btn.login__choice-sign-in(type="button") Войти

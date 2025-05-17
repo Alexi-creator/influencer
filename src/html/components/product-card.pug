@@ -1,0 +1,52 @@
+include ./badge
+
+mixin productCard({ extraClass, title, discount, sale, hasLike, sizes, applicationStatus, href, dataInfo, brand })
+  - const tag = href ? 'a' : 'div'
+  - const attrs = href ? { class: extraClass, href } : { class: extraClass, 'data-info': dataInfo }
+  #{tag}&attributes(attrs).product-card
+
+    .product-card__img
+      .product-card__img-wrapper
+        .product-card__img-first
+          img(src='@img/product-card.jpg', alt='product')
+        .product-card__img-second
+          img(src='@img/product-card2.jpg', alt='product2')
+      if hasLike
+        .product-card__like
+          svg
+            use(xlink:href=`./img/icons/icons.svg#favourite`)
+      .product-card__application-status !{applicationStatus}
+
+    .product-card__descr
+      .product-card__info
+        .product-card__info-wrap
+          +badge()
+            <span class="badge__sub">до</span> -50%
+          +badge()
+            <svg><use xlink:href="./img/icons/icons.svg#camera"></use></svg>
+          +badge()
+            | СП
+          +badge()
+            | TFF
+
+      .product-card__descr-top
+        .product-card__brand #{brand}
+        .product-card__title #{title}
+        .product-card__sizes
+          | Размеры:
+          ul.product-card__sizes-variants
+            sizes
+          span.product-card__sizes-more еще 13
+        .product-card__date
+          span.product-card__date-text До завершения:
+          span.product-card__date-number #{date}
+        .product-card__likes
+          svg
+            use(xlink:href='./img/icons/icons.svg#favourite')
+          | 89
+
+      .product-card__descr-bottom
+        .product-card__status Статус: #{status}
+        .product-card__price(class='product-card__price' + (discount || ''))
+          .product-card__price-current 27 966 ₽
+          .product-card__price-sale #{sale}

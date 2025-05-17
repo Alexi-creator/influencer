@@ -1,0 +1,9 @@
+mixin withProduct({ extraClass = '', title, btnHeaderText, btnId, btnLoadText })
+  .with-product(class=extraClass)
+    .with-product__inner
+      .with-product__title= title
+      button.btn.with-product__action-btn= btnHeaderText
+      .with-product__content
+        block
+      .with-product__load-btn
+        button.btn.btn--dashed(id=btnId)= btnLoadText

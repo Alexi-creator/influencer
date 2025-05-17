@@ -1,0 +1,287 @@
+include ./preview-toolbar-action
+include ./product-menu
+include ./collapse
+include ./checkbox
+include ./range-slider
+include ./product-card
+include ./popup
+
+block innerJpGoodsVars
+  -
+    var sortingOptions = [
+      { value: 'popular-asc',  text: "По популярности", icon: "sorting-top" },
+      { value: 'rate-asc',     text: "По рейтингу",     icon: "sorting-top" },
+      { value: 'cost-asc',     text: "По стоимости",    icon: "sorting-top" },
+      { value: 'name-asc',     text: "По названию",     icon: "sorting-top" },
+      { value: 'popular-desc', text: "По популярности", icon: "sorting-down" },
+      { value: 'rate-desc',    text: "По рейтингу",     icon: "sorting-down" },
+      { value: 'cost-desc',    text: "По стоимости",    icon: "sorting-down" },
+      { value: 'name-desc',    text: "По названию",     icon: "sorting-down" }
+    ]
+    var filters = [
+      {
+        title: 'Категории',
+        mod: 'filters__item--categories',
+        type: 'popup',
+        popupId: 'category-goods',
+        popupTitle: 'Все категории товаров',
+        contentKey: 'categories-goods'
+      },
+      {
+        title: 'Прайс',
+        type: 'rangeSlider',
+        slider: {
+          minName: "rangemin",
+          maxName: "rangemax",
+          minValue: "200000",
+          maxValue: "500000",
+          min: "0",
+          max: "1000000",
+          currencySymbol: "&#8381;",
+          step: "1000"
+        }
+      },
+      {
+        title: 'Размер',
+        type: 'checkboxGroup',
+        checkboxes: [
+          { name: 'size36', text: '36' },
+          { name: 'size38', text: '38' },
+          { name: 'size40', text: '40' },
+          { name: 'size42', text: '42' }
+        ]
+      },
+      {
+        title: 'Специальные предложение',
+        type: 'checkboxGroup',
+        checkboxes: [
+          { name: 'specials36', text: 'Test For Free' },
+          { name: 'specials38', text: 'Совместная Покупка' },
+          { name: 'specials40', text: 'Благотворительная покупка' },
+          { name: 'specials42', text: 'Акция “2 по цене 1”' }
+        ]
+      },
+      ...[0, 1, 2, 3, 4, 5].map(i => ({
+        title: `Размер${i}`,
+        type: 'checkboxGroup',
+        checkboxes: [
+          { name: `${i}size36`, text: '36' },
+          { name: `${i}size38`, text: '38' },
+          { name: `${i}size40`, text: '40' },
+          { name: `${i}size42`, text: '42' }
+        ]
+      }))
+    ]
+    var goods = [
+      {
+        extraClass: "",
+        title: "Комбинезон из шелковой вискозы с",
+        discount: "--discount",
+        sale: "от 91 250 ₽",
+        hasLike: true,
+        sizes: "<li>36</li><li>38</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren", "title": "Комбинезон из шелковой вискозы с"},
+        brand: "Yves Saint Lauren"
+      },
+      {
+        extraClass: "",
+        title: "Плетеная сумка-сэтчел",
+        discount: "",
+        sale: "",
+        like: "",
+        sizes: "<li>38</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 2", "title": "Плетеная сумка-сэтчел"},
+        brand: "Yves Saint Lauren 2"
+      },
+      {
+        extraClass: "",
+        title: "Туфли ZOE с острым носом и эластичныим",
+        discount: "",
+        sale: "",
+        like: "",
+        sizes: "<li>36</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 3", "title": "Туфли ZOE с острым носом и эластичныим"},
+        brand: "Yves Saint Lauren 3"
+      },
+      {
+        extraClass: "",
+        title: "Пуховик из кожи с узором monogram mi",
+        discount: "",
+        sale: "",
+        like: true,
+        sizes: "<li>36</li><li>38</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 4", "title": "Пуховик из кожи с узором monogram mi"},
+        brand: "Yves Saint Lauren 4"
+      },
+      {
+        extraClass: "",
+        title: "Пуховик из кожи с узором monogram mi 2",
+        discount: "",
+        sale: "",
+        like: "",
+        sizes: "<li>36</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 5", "title": "Пуховик из кожи с узором monogram mi 2"},
+        brand: "Yves Saint Lauren 5"
+      },
+      {
+        extraClass: "",
+        title: "Пуховик из кожи с узором monogram mi 3",
+        discount: "",
+        sale: "",
+        like: true,
+        sizes: "<li>38</li><li>40</li>",
+        applicationStatus: "",
+        href: "",
+        dataInfo: {"brand": "Yves Saint Lauren 6", "title": "Пуховик из кожи с узором monogram mi 3"},
+        brand: "Yves Saint Lauren 6"
+      }
+    ]
+
++previewToolbarAction({
+  title: "СП",
+  img: '@img/shop-avatar.png',
+  'extraClassPopup': 'popup--onlymobile',
+})
+
+.inner-jp-goods.tabs
+  .inner-jp-goods__inner
+    .inner-jp-goods__tabs.tabs-head.tabs__head
+      .swiper.inner-jp-goods__tabs-swiper
+        .tabs__list.swiper-wrapper
+          .swiper-slide.tabs__tab.tabs__tab--active(data-tab-path="goods")
+            | Товары 
+            span.tabs__tab-count 501
+
+    // Блок с кнопками сортировки и фильтрации для вкладки goods
+    .filter-actions.filter-actions--goods.inner-jp-goods__actions-goods.active
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="jp-details__controls")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.inner-jp-goods__actions-filters-goods.btn.btn--outlined.btn--color-grey.scroll(data-target="jp-details__controls")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .inner-jp-goods__actions-filters-count.filter-actions__filters-count
+
+      button.filter-actions__density.filter-actions__density--ml-auto.btn.btn--outlined.btn--color-grey.btn--icon
+        svg.filter-actions__density-tile
+          use(xlink:href="./img/icons/icons.svg#density-tile")
+        svg.filter-actions__density-grid
+          use(xlink:href="./img/icons/icons.svg#density-grid")
+
+    // Контент табов
+    .tabs__contents.inner-jp-goods__tabs-contents
+
+      // Таб товары
+      .tabs__content.tabs__content--active(data-tab-target="goods")
+        // Форма с фильтрами и сортировками для товаров goods
+        form.inner-jp-goods__form-goods.form-filters
+          .sorting
+            .sorting__title
+              | Сортировка
+              .sorting__cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            each option in sortingOptions
+              .sorting__btn(class=`sorting__btn--${option.value}`)
+                +radio({
+                  name: "sorting",
+                  value: option.value,
+                  text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+                  extraClass: "radio--btn"
+                })
+
+          .inner-jp-goods__form-chips.form-filters__chips
+
+          .inner-jp-goods__form-filter.filters
+            .filters__title
+              | Фильтры
+              .inner-jp-goods__form-filter-cross.filters__title-cross
+                svg
+                  use(xlink:href="./img/icons/icons.svg#cross")
+
+            .inner-jp-goods__form-filter-filters.filters__items
+              each item in filters
+                .filters__item(class=item.mod)
+                  +collapse({
+                    title: item.title,
+                    isClosed: false,
+                    icon: "collapse"
+                  })
+                    if item.type === 'popup'
+                      .filters__collapse
+                        .popup(id=item.popupId)
+                          .popup__overlay
+                            .popup__content
+                              .filters__item-header
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#arrowGoLeft")
+                                span= item.popupTitle
+                                svg(data-close-popup=item.popupId)
+                                  use(xlink:href="./img/icons/icons.svg#cross")
+                              +productMenu(item.contentKey)
+                        .btn.btn--text(data-popup=item.popupId)= item.popupTitle
+                    else if item.type === 'rangeSlider'
+                      .filters__collapse
+                        +rangeSlider(item.slider)
+                    else if item.type === 'checkboxGroup'
+                      .filters__collapse.filters__collapse-grid
+                        each checkbox in item.checkboxes
+                          +checkbox({
+                            name: checkbox.name,
+                            text: checkbox.text,
+                            mod: checkbox.mod || '',
+                            classes: checkbox.classes || ''
+                          })
+
+            .inner-jp-goods__form-filter-actions.filters__actions.form__btns
+              button.btn.btn--text.inner-jp-goods__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+                svg.inner-jp-goods__form-filter-actions-clear.filters__actions-clear
+                  use(xlink:href="./img/icons/icons.svg#trash")
+                span.inner-jp-goods__form-filter-actions-text.filters__actions-text Очистить все фильтры
+              button.btn.inner-jp-goods__form-filter-submit(type="submit")
+                | Применить
+                span.btn__suffix
+
+        // Контент товары goods
+        div(class="tab-content cards-with-menu cards-with-menu--goods")
+          .cards-with-menu__menu
+            +productMenu({ name: "categories-goods" })
+          .cards-with-menu__items
+            each product in goods
+              +productCard({
+                extraClass: product.extraClass,
+                title: product.title,
+                discount: product.discount,
+                sale: product.sale,
+                hasLike: product.hasLike,
+                sizes: product.sizes,
+                applicationStatus: product.applicationStatus,
+                href: product.href,
+                dataInfo: product.dataInfo,
+                brand: product.brand
+              })
+
+  .inner-jp-goods__popups
+    +popup({
+      "id": "clearFilter",
+    })
+      include ./clear-filter-content-popup

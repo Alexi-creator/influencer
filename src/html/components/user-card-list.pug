@@ -1,0 +1,255 @@
+include ./autocomplete
+include ./collapse
+include ./radio
+include ./checkbox
+include ./user-card
+
+block userCardListVars
+  -
+    var sortingOptions = [
+      { value: 'popular-asc',  text: "По популярности", icon: "sorting-top" },
+      { value: 'rate-asc',     text: "По рейтингу",     icon: "sorting-top" },
+      { value: 'cost-asc',     text: "По стоимости",    icon: "sorting-top" },
+      { value: 'name-asc',     text: "По названию",     icon: "sorting-top" },
+      { value: 'popular-desc', text: "По популярности", icon: "sorting-down" },
+      { value: 'rate-desc',    text: "По рейтингу",     icon: "sorting-down" },
+      { value: 'cost-desc',    text: "По стоимости",    icon: "sorting-down" },
+      { value: 'name-desc',    text: "По названию",     icon: "sorting-down" }
+    ]
+    var filters = [
+      {
+        title: 'Фильтр',
+        type: 'checkboxGroup',
+        checkboxes: [
+          { name: 'filter_users', text: 'все' },
+          { name: 'filter_users', text: 'FronTTrend SeTTer' },
+          { name: 'filter_users', text: 'мои подписки' },
+          { name: 'filter_users', text: 'мои подписчики' }
+        ]
+      },
+    ]
+    var userCards = [
+      {
+        imgSrc: "@img/shop-preview.jpg",
+        name: "Елена Брадиславская длинное имя",
+        desc: "Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+        scoresInst: "9801",
+        scoresUsers: "140892",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-rocher.png",
+        name: "YVES ROCHER",
+        desc: "Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-cat.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: "Вы подписаны"
+      },
+      {
+        imgSrc: "@img/logo-vtb.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-vtb.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-cat.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-woman.png",
+        name: "Елена Брадиславская",
+        desc: "Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+        scoresInst: "9801",
+        scoresUsers: "140892",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-rocher.png",
+        name: "YVES ROCHER",
+        desc: "Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: "Вы подписаны"
+      },
+      {
+        imgSrc: "@img/logo-rocher.png",
+        name: "YVES ROCHER",
+        desc: "Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-woman.png",
+        name: "Елена Брадиславская",
+        desc: "Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+        scoresInst: "9801",
+        scoresUsers: "140892",
+        sub: "Вы подписаны"
+      },
+      {
+        imgSrc: "@img/logo-vtb.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-cat.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-cat.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-vtb.png",
+        name: "Кот",
+        desc: "Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-rocher.png",
+        name: "YVES ROCHER",
+        desc: "Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.",
+        scoresInst: "1089",
+        scoresUsers: "172",
+        sub: ""
+      },
+      {
+        imgSrc: "@img/logo-woman.png",
+        name: "Елена Брадиславская",
+        desc: "Ревизор обуви и одежды. Более 10 лет в сфере блогинга.",
+        scoresInst: "9801",
+        scoresUsers: "140892",
+        sub: ""
+      }
+    ]
+
+.user-card-list
+  .user-card-list__actions
+    +autocomplete({
+      id: "users-autocomplete",
+      name: "users-autocomplete",
+      placeholder: "Введите имя блогера",
+      prefix: '<svg><use xlink:href="./img/icons/icons.svg#search"></use></svg>',
+      suffix: "",
+      tag: '',
+      extraClass: "user-card-list__autocomplete",
+      inputExtraClass: "autocomplete__input input-text--color-grey",
+      options: '<li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>',
+    })
+
+    // Блок с кнопками сортировки и фильтрации
+    .filter-actions.user-card-list__actions-btns.active
+      button.filter-actions__sorts.btn.btn--outlined.btn--color-grey.scroll(data-target="shop-preview__followers")
+        .filter-actions__text Сортировка
+        svg.filter-actions__icon.filter-actions__icon--common
+          use(xlink:href="./img/icons/icons.svg#sorts")
+        svg.filter-actions__icon.filter-actions__icon--cross
+          use(xlink:href="./img/icons/icons.svg#cross")
+
+      button.filter-actions__filters.btn.btn--outlined.btn--color-grey.scroll(data-target="shop-preview__followers")
+        .filter-actions__text Фильтры
+        .filter-actions__icon
+          svg.filter-actions__icon.filter-actions__icon--common
+            use(xlink:href="./img/icons/icons.svg#filters")
+          svg.filter-actions__icon.filter-actions__icon--cross
+            use(xlink:href="./img/icons/icons.svg#cross")
+        .user-card-list__actions-filters-count.filter-actions__filters-count
+
+
+  // Форма с фильтрами и сортировками
+  form.user-card-list__form.form-filters
+    .sorting
+      .sorting__title
+        | Сортировка
+        .sorting__cross
+          svg
+            use(xlink:href="./img/icons/icons.svg#cross")
+
+      each option in sortingOptions
+        .sorting__btn(class=`sorting__btn--${option.value}`)
+          +radio({
+            name: "sorting",
+            value: option.value,
+            text: `<span class='btn btn--color-white'><span class='sorting__btn-text'>${option.text}</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#${option.icon}'></use></svg></span>`,
+            extraClass: "radio--btn"
+          })
+
+    .user-card-list__form-chips.form-filters__chips
+
+    .user-card-list__form-filter.filters
+      .filters__title
+        | Фильтры
+        .user-card-list__form-filter-cross.filters__title-cross
+          svg
+            use(xlink:href="./img/icons/icons.svg#cross")
+      .user-card-list__form-filter-filters.filters__items
+        each item in filters
+          .filters__item(class=item.mod)
+            +collapse({
+              title: item.title,
+              isClosed: false,
+              icon: "collapse"
+            })
+              .filters__collapse.filters__collapse-grid
+                each checkbox in item.checkboxes
+                  +checkbox({
+                    name: checkbox.name,
+                    text: checkbox.text,
+                    mod: checkbox.mod || '',
+                    classes: checkbox.classes || ''
+                  })
+
+      .user-card-list__form-filter-actions.filters__actions.form__btns
+        button.btn.btn--text.user-card-list__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
+          svg.user-card-list__form-filter-actions-clear.filters__actions-clear
+            use(xlink:href="./img/icons/icons.svg#trash")
+          span.user-card-list__form-filter-actions-text.filters__actions-text Очистить все фильтры
+
+        button.btn.user-card-list__form-filter-submit(type="submit")
+          | Применить
+          span.btn__suffix
+
+  .user-card-list__cards-wrapper
+    each item in userCards
+      +userCard(item)
+
+  +popup({
+    id: "clearFilter",
+  })
+    include ./clear-filter-content-popup

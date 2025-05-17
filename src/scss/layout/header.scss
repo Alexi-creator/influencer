@@ -96,6 +96,24 @@
     }
   }
 
+  &__login {
+    &-title-sign {
+      &-up {
+        display: none;  
+      }
+    }
+
+    &:has(.login--sign-up) {
+      #{$block}__login-title-sign-up {
+        display: block;  
+      }
+
+      #{$block}__login-title-sign-in {
+        display: none;
+      }
+    }
+  }
+
   &__nav {
     &-list {
       display: flex;

@@ -1,0 +1,33 @@
+extends ../layout/baseLayout
+
+include ../components/title
+
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'users Page'
+    var nameFile = 'users'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
+
+block content
+  main.main
+    section.section.section--users
+      .section__inner
+        +title({
+          title: 'Блогеры',
+          isSubscription: 'isSubscription',
+          amount: '7034',
+          sub: 'пользователей',
+        })
+        include ../components/user-card-list
+
+

@@ -1,0 +1,13 @@
+include ./counter
+
+mixin menuMobileItem(item)
+  li(class=item.isActive)
+    a.nav__item(class='nav__item-' + item.class href=item.href)
+      svg.nav__item-icon
+        use(xlink:href='./img/icons/icons.svg#' + item.icon)
+      if item.avatar
+        img.nav__avatar(src='@img/avatar.jpg', alt='avatar')
+      .nav__item-title= item.body
+      if item.count > 0
+        .nav__item-counter
+          +counter("green", item.count)

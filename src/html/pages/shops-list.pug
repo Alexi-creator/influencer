@@ -1,0 +1,41 @@
+extends ../layout/baseLayout
+
+include ../components/title
+
+block vars
+  -
+    var htmlClass = 'isAuth'
+    var title = 'shops list Page'
+    var nameFile = 'shops-list'
+    var isNeedHeader = true
+    var isNeedNavPages = true
+    var headerVars = {
+      activeItem: "",
+      catalogExtraClass: "",
+      locationAddress: "",
+      idPopup: "location",
+      icon: "location",
+      locationClass: "header__top-location--empty",
+    }
+
+block content
+  main.main
+    section.section.section--shops
+      .section__inner
+        +title({
+          title: 'Магазины',
+          isSubscription: 'isSubscription',
+          amount: '116',
+          sub: 'продавцов',
+          isCartStoreAndSP: '',
+          storeAmount: '',
+          SPAmount: '',
+          cartSum: '',
+          isCartStore: '',
+          isCartSP: ''
+        })
+
+    section.section.section--shops
+      .section__inner
+        include ../components/shops-block.pug
+
