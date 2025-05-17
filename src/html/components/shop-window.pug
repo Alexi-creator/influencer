@@ -388,9 +388,12 @@ block shopWindowVars
                   })
                     .filters__collapse.filters__collapse-wrap
                       each item, index in filter.items
-                        label.checkbox.checkbox--tag
-                          input(type="checkbox", name=`0size38-${index}`)
-                          span.btn.btn--tag.btn--small= item
+                        +checkbox({
+                          name: `0size38-${index}`,
+                          text: item,
+                          mod: "checkbox--tag",
+                          classes: "btn btn--tag btn--small",
+                        })
               
             .shop-window__form-filter-actions.filters__actions.form__btns
               button.btn.btn--text.shop-window__form-filter-clear.filters__clear(type="button", data-popup="clearFilter")
