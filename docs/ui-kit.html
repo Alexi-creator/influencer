@@ -1,69 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20250517100945">
-  <title>Ui Kit</title>
-  <script defer src="js/ui-kit.min.js?_v=20250517100945"></script>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages/ui-kit.min.css?_v=20250517101341">
+    <title>Ui Kit</title>
+    <script defer src="js/ui-kit.min.js?_v=20250517101341"></script>
+  </head>
   <body>
-    <main class="ui-kit">
-      <a class="ui-kit__home" href="/index.html">&lt; Главная</a>
-
+    <main class="ui-kit"><a class="ui-kit__home" href="/index.html">&lt; Главная</a>
       <h1>UI KIT</h1>
-
       <h2>Breadcrumbs:</h2>
       <div class="ui-kit__block ui-kit__breadcrumbs">
-        <div class="breadcrumbs @@extraClass">
-  
-    <span class="breadcrumbs__title">Категории:</span>
-  
-  <ul class="breadcrumbs__list">
-    <li class="breadcrumbs__item">
-      <a href="#">Платья и сарафаны</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <a href="#">Блузы и рубашки</a>
-    </li>
-    <li class="breadcrumbs__item">
-      Юбки
-    </li>
-    <li class="breadcrumbs__item">
-      + еще 12
-    </li>
-  </ul>
-</div>
+        <div class="breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="#">Платья и сарафаны</a>
+            </li>
+            <li class="breadcrumbs__item"><a href="#">Блузы и рубашки</a>
+            </li>
+            <li class="breadcrumbs__item">Юбки
+            </li>
+            <li class="breadcrumbs__item">+ еще 12
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__breadcrumbs">
         <div class="breadcrumbs breadcrumbs--primary">
-  
-  <ul class="breadcrumbs__list">
-    <li class="breadcrumbs__item">
-      <a href="#">Платья и сарафаны</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <a href="#">Блузы и рубашки</a>
-    </li>
-    <li class="breadcrumbs__item">
-      Юбки
-    </li>
-    <li class="breadcrumbs__item">
-      + еще 12
-    </li>
-  </ul>
-</div>
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="#">Платья и сарафаны</a>
+            </li>
+            <li class="breadcrumbs__item"><a href="#">Блузы и рубашки</a>
+            </li>
+            <li class="breadcrumbs__item">Юбки
+            </li>
+            <li class="breadcrumbs__item">+ еще 12
+            </li>
+          </ul>
+        </div>
       </div>
-
       <h2>Buttons:</h2>
       <div class="ui-kit__block ui-kit__buttons">
         <button class="btn">Standart</button>
         <button class="btn btn--color-primary-light">primary light</button>
         <button class="btn btn--color-primary-light-text-black">primary light text black</button>
-        <button class="btn">
-          Count
-          <span class="btn__suffix">(7)</span>
-        </button>
+        <button class="btn">Count<span class="btn__suffix">(7)</span></button>
         <button class="btn btn--text">Text</button>
         <button class="btn btn--none">Text padding height 0</button>
         <button class="btn btn--color-green">Color green</button>
@@ -73,667 +54,450 @@
         <button class="btn btn--tag">Tag</button>
         <button class="btn btn--tag btn--tag-checked">Tag checked</button>
         <button class="btn btn--green">Green</button>
-        <button class="btn btn--outlined btn--color-grey">
-          Outlined grey with icons
+        <button class="btn btn--outlined btn--color-grey">Outlined grey with icons
           <svg>
             <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
         </button>
         <button class="btn" disabled>Disabled</button>
         <button class="btn btn--dashed">Dashed</button>
-        <button class="btn btn--loading active">
-          Loading active
-          <svg><use xlink:href="./img/icons/icons.svg#loading"></use></svg>
+        <button class="btn btn--loading active">Loading active
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#loading"></use>
+          </svg>
         </button>
-        <button class="btn btn--loading" disabled>
-          Loading disabled
-          <svg><use xlink:href="./img/icons/icons.svg#loading"></use></svg>
+        <button class="btn btn--loading" disabled>Loading disabled
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#loading"></use>
+          </svg>
         </button>
       </div>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__buttons">
-        <button class="btn btn--color-white">
-          color white
+        <button class="btn btn--color-white">color white
           <svg>
             <use xlink:href="./img/icons/icons.svg#filters"></use>
           </svg>
         </button>
       </div>
-      
       <h2>Input:</h2>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label " data-id="parent-input1">
-    
-    <input name="input1" class="input-text__input" type="text" placeholder="Простой инпут" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-input1"></p>
-</div>
-
+          <label class="input-text__label" data-id="parent-input1">
+            <input class="input-text__input" type="text" name="input1" placeholder="Простой инпут"/>
+          </label>
+          <p class="input-text__error" data-id="error-input1"></p>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label " data-id="parent-input2">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="input2" class="input-text__input" type="text" placeholder="Инпут с элементом слева" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-input2"></p>
-</div>
-
+          <label class="input-text__label" data-id="parent-input2">
+            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+            <input class="input-text__input" type="text" name="input2" placeholder="Инпут с элементом слева"/>
+          </label>
+          <p class="input-text__error" data-id="error-input2"></p>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label " data-id="parent-input3">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="input3" class="input-text__input" type="text" placeholder="Инпут с элементом слева и справа" @@atr>
-    
-      <div class="input-text__suffix "><svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-input3"></p>
-</div>
-
+          <label class="input-text__label" data-id="parent-input3">
+            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+            <input class="input-text__input" type="text" name="input3" placeholder="Инпут с элементом слева и справа"/>
+            <div class="input-text__suffix"><svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
+          </label>
+          <p class="input-text__error" data-id="error-input3"></p>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label input-text--small" data-id="parent-input4">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="input4" class="input-text__input" type="text" placeholder="Инпут меньшего размера" @@atr>
-    
-      <div class="input-text__suffix "><svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-input4"></p>
-</div>
-
+          <label class="input-text__label input-text--small" data-id="parent-input4">
+            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+            <input class="input-text__input" type="text" name="input4" placeholder="Инпут меньшего размера"/>
+            <div class="input-text__suffix"><svg><use xlink:href="./img/icons/icons.svg#checkbox"></use></svg></div>
+          </label>
+          <p class="input-text__error" data-id="error-input4"></p>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-input5">
-    
-    <input name="input5" class="input-text__input" type="password" placeholder="Пароль с серой рамкой" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-input5"></p>
-</div>
-
+          <label class="input-text__label input-text--color-grey" data-id="parent-input5">
+            <input class="input-text__input" type="password" name="input5" placeholder="Пароль с серой рамкой"/>
+          </label>
+          <p class="input-text__error" data-id="error-input5"></p>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label input-text--color-grey input-text--disabled" data-id="parent-input6">
-    
-    <input name="input6" class="input-text__input" type="text" placeholder="Задизейбленный инпут" disabled>
-    
-  </label>
-  <p class="input-text__error" data-id="error-input6"></p>
-</div>
-
+          <label class="input-text__label input-text--color-grey input-text--disabled" data-id="parent-input6">
+            <input class="input-text__input" type="text" name="input6" placeholder="Задизейбленный инпут" disabled="disabled"/>
+          </label>
+          <p class="input-text__error" data-id="error-input6"></p>
+        </div>
       </div>
-
       <h4>Input type file upload</h4>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label input-text--upload" data-id="parent-input7">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg></div>
-    
-    <input name="input7" class="input-text__input" type="file" placeholder="" >
-    
-  </label>
-  <p class="input-text__error" data-id="error-input7"></p>
-</div>
-
+          <label class="input-text__label input-text--upload" data-id="parent-input7">
+            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg></div>
+            <input class="input-text__input" type="file" name="input7" placeholder=""/>
+          </label>
+          <p class="input-text__error" data-id="error-input7"></p>
+        </div>
       </div>
-
       <h4>Input type file upload (disabled)</h4>
       <div class="ui-kit__block ui-kit__input">
         <div class="input-text">
-  <label class="input-text__label input-text--upload input-text--disabled" data-id="parent-input8">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg></div>
-    
-    <input name="input8" class="input-text__input" type="file" placeholder="" disabled>
-    
-  </label>
-  <p class="input-text__error" data-id="error-input8"></p>
-</div>
-
+          <label class="input-text__label input-text--upload input-text--disabled" data-id="parent-input8">
+            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg></div>
+            <input class="input-text__input" type="file" name="input8" placeholder="" disabled="disabled"/>
+          </label>
+          <p class="input-text__error" data-id="error-input8"></p>
+        </div>
       </div>
-
-      <h2>TextArea:</h2>
-      <div class="textarea">
-  <textarea
-    class="textarea__input @@extra-class"
-    name="textarea"
-    placeholder="Введите текст"
-    data-id="parent-textarea"
-  ></textarea>
-  <p class="textarea__error" data-id="error-textarea"></p>
-</div>
-
-
-
-      <h2>TextArea с серой рамкой:</h2>
-      <div class="textarea">
-  <textarea
-    class="textarea__input textarea__input--grey"
-    name="textarea-grey"
-    placeholder="Введите текст"
-    data-id="parent-textarea-grey"
-  ></textarea>
-  <p class="textarea__error" data-id="error-textarea-grey"></p>
-</div>
-
-
-
+      <h2>TextArea:
+        <div class="textarea">
+          <textarea class="textarea__input" name="textarea" placeholder="Введите текст" data-id="parent-textarea"></textarea>
+          <p class="textarea__error" data-id="error-textarea"></p>
+        </div>
+      </h2>
+      <h2>TextArea с серой рамкой:
+        <div class="textarea">
+          <textarea class="textarea__input textarea__input--grey" name="textarea-grey" placeholder="Введите текст" data-id="parent-textarea-grey"></textarea>
+          <p class="textarea__error" data-id="error-textarea-grey"></p>
+        </div>
+      </h2>
       <h2>Search:</h2>
       <div class="ui-kit__block ui-kit__search">
-        <div id="search" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
-    
-      <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li>
-  </ul>
-  <input name=select-search type="text" value="value1" hidden>
-</div>
-</div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="search" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-      <div class="autocomplete__options">
-        
-          <a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
-        
+        <div class="autocomplete header__nav-search-input autocomplete--img autocomplete--select" id="search">
+          <div class="input-text">
+            <label class="input-text__label autocomplete__input" data-id="parent-search">
+              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+              <input class="input-text__input" type="search" name="search" placeholder="Найдите что-нибудь"/>
+            </label>
+            <p class="input-text__error" data-id="error-search"></p>
+          </div>
+          <input type="text" name="search" value="" hidden="hidden"/>
+          <div class="autocomplete__body">
+            <div class="autocomplete__body-title">Результаты поиска</div>
+            <div class="autocomplete__options"><a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
+            </div>
+          </div>
+        </div>
       </div>
-    
-    
-  </div>
-</div>
-
-      </div>
-
       <h2>Autocomplete:</h2>
       <div class="ui-kit__block ui-kit__autocomplete">
-        <div id="ui-autocomplete" class="autocomplete @@extra-class">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input input-text--small input-text--color-grey" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="ui-kit-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-          <li class="autocomplete__options-item" data-value="val1" tabindex="0">label1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">label2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">label3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">label4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">label5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">label6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">label7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">label8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">label9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">label10</li>
-        
-      </ul>
-    
-  </div>
-</div>
-
+        <div class="autocomplete" id="ui-autocomplete">
+          <div class="input-text">
+            <label class="input-text__label autocomplete__input input-text--small input-text--color-grey" data-id="parent-ui-kit-autocomplete">
+              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+              <input class="input-text__input" type="search" name="ui-kit-autocomplete" placeholder="ui-kit-autocomplete"/>
+            </label>
+            <p class="input-text__error" data-id="error-ui-kit-autocomplete"></p>
+          </div>
+          <input type="text" name="ui-kit-autocomplete" value="" hidden="hidden"/>
+          <div class="autocomplete__body">
+            <div class="autocomplete__body-title">Результаты поиска</div>
+            <ul class="autocomplete__options"><li class="autocomplete__options-item" data-value="val1" tabindex="0">label1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">label2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">label3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">label4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">label5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">label6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">label7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">label8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">label9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">label10</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__autocomplete">
-        <div id="ui-autocomplete-url" class="autocomplete @@extra-class">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix autocomplete__input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="ui-kit-autocomplete-url" @@atr>
-    
-      <div class="input-text__suffix autocomplete__input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="ui-kit-autocomplete-url" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
+        <div class="autocomplete" id="ui-autocomplete-url">
+          <div class="input-text">
+            <label class="input-text__label autocomplete__input" data-id="parent-ui-autocomplete-url">
+              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+              <input class="input-text__input" type="search" name="ui-autocomplete-url" placeholder="ui-autocomplete-url"/>
+            </label>
+            <p class="input-text__error" data-id="error-ui-autocomplete-url"></p>
+          </div>
+          <input type="text" name="ui-autocomplete-url" value="" hidden="hidden"/>
+          <div class="autocomplete__body">
+            <div class="autocomplete__body-title">Результаты поиска</div>
+            <ul class="autocomplete__options">
+            </ul>
+          </div>
+        </div>
       </div>
-
       <h2>Gallery-card:</h2>
       <div class="ui-kit__block ui-kit__gallery-card">
         <div class="gallery-card">
-          <div class="gallery-card__item">
-            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
-          </div>
-          <div class="gallery-card__item">
-            <picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-            <span class="gallery-card__item-more">+7</span>
-          </div>
+          <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></div>
+          <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture><span class="gallery-card__item-more">+7</span></div>
         </div>
       </div>
-
       <h2>Бегущая строка:</h2>
       <div class="ui-kit__block ui-kit__ticker">
-        <div class="ticker @@extra-class">
-  <div class="ticker__text">
-    Наведи на меня курсором! Длинный текст который не вмещается в блоке.
-  </div>
-</div>
+        <div class="ticker">
+          <div class="ticker__text">Наведи на меня курсором! Длинный текст который не вмещается в блоке.</div>
+        </div>
       </div>
-
       <h2>Select:</h2>
       <div class="ui-kit__block ui-kit__select">
-        <div id="user-board-subscriptions" class="select @@extra-class noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>
-  </ul>
-  <input name=user-board-subscriptions type="text" value="Везде" hidden>
-</div>
-
-        <div id="user-board-subscriptions" class="select select--transparent noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>
-  </ul>
-  <input name=user-board-subscriptions type="text" value="Везде" hidden>
-</div>
-
-        <div id="user-board-subscriptions" class="select select--border-grey noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li> <li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li> <li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li>
-  </ul>
-  <input name=user-board-subscriptions type="text" value="Везде" hidden>
-</div>
-
-        <div class="select noselect">
+        <div class="select  noselect" id="select" role="button" tabindex="0">
           <div class="select__header">
-            <div class="select__title"></div>
+            <div class="select__title">Везде</div>
             <div class="select__icon">
-              <svg><use xlink:href="./img/icons/icons.svg#arrow"></use></svg>
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
             </div>
           </div>
           <ul class="select__options">
-            <li class="select__options-item" data-value="val31">Очень много опций</li>
-            <li class="select__options-item" data-value="val32">Очень много опций 2</li>
-            <li class="select__options-item" data-value="val33">Очень много опций 3</li>
-            <li class="select__options-item" data-value="val34">Очень много опций 4</li>
-            <li class="select__options-item" data-value="val35">Очень много опций 5</li>
-            <li class="select__options-item" data-value="val36">Очень много опций 6</li>
-            <li class="select__options-item" data-value="val37">Очень много опций 7</li>
-            <li class="select__options-item" data-value="val38">Очень много опций 8</li>
-            <li class="select__options-item" data-value="val39">Очень много опций 9</li>
-            <li class="select__options-item" data-value="val40">Очень много опций 10</li>
-            <li class="select__options-item" data-value="val41">Очень много опций 11</li>
-            <li class="select__options-item" data-value="val42">Очень много опций 12</li>
-            <li class="select__options-item" data-value="val43">Очень много опций 13</li>
+            <li><li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li></li>
+            <li><li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li></li>
+            <li><li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li></li>
           </ul>
-          <input name="select" type="text" value="val31" hidden="">
+          <input name="select" type="text" value="Везде" hidden="hidden"/>
+        </div>
+        <div class="select select--transparent noselect" id="select2" role="button" tabindex="0">
+          <div class="select__header">
+            <div class="select__title">Везде</div>
+            <div class="select__icon">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <ul class="select__options">
+            <li><li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li></li>
+            <li><li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li></li>
+            <li><li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li></li>
+          </ul>
+          <input name="select2" type="text" value="Везде" hidden="hidden"/>
+        </div>
+        <div class="select select--border-grey noselect" id="select3" role="button" tabindex="0">
+          <div class="select__header">
+            <div class="select__title">Везде</div>
+            <div class="select__icon">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <ul class="select__options">
+            <li><li class="select__options-item" data-value="Везде" role="button" tabindex="0">Везде</li></li>
+            <li><li class="select__options-item" data-value="Везде2" role="button" tabindex="0">Везде2</li></li>
+            <li><li class="select__options-item" data-value="Везде3 очень длинный текст" role="button" tabindex="0">Везде3 очень длинный текст</li></li>
+          </ul>
+          <input name="select3" type="text" value="Везде" hidden="hidden"/>
+        </div>
+        <div class="select  noselect" id="select4" role="button" tabindex="0">
+          <div class="select__header">
+            <div class="select__title">Очень много опций10</div>
+            <div class="select__icon">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg>
+            </div>
+          </div>
+          <ul class="select__options">
+            <li><li class="select__options-item" data-value="Очень много опций" role="button" tabindex="0">Очень много опций</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций2" role="button" tabindex="0">Очень много опций2</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций3" role="button" tabindex="0">Очень много опций3</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций4" role="button" tabindex="0">Очень много опций4</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций5" role="button" tabindex="0">Очень много опций5</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций6" role="button" tabindex="0">Очень много опций6</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций7" role="button" tabindex="0">Очень много опций7</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций8" role="button" tabindex="0">Очень много опций8</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций9" role="button" tabindex="0">Очень много опций9</li></li>
+            <li><li class="select__options-item" data-value="Очень много опций10" role="button" tabindex="0">Очень много опций10</li></li>
+          </ul>
+          <input name="select4" type="text" value="Очень много опций10" hidden="hidden"/>
         </div>
       </div>
-
       <h2>Checkbox:</h2>
       <div class="ui-kit__block ui-kit__checkbox">
-        <label class="checkbox ">
-  <input name="checkbox" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    text
-  </span>
-</label>
-        <label class="checkbox ">
-  <input name="checkbox" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    text 2
-  </span>
-</label>
+        <label class="checkbox">
+          <input type="checkbox" name="checkbox"/><span class="checkbox__checkmark">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+            </svg></span><span class="checkbox__label">text</span>
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="checkbox"/><span class="checkbox__checkmark">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+            </svg></span><span class="checkbox__label">text 2</span>
+        </label>
         <label class="checkbox checkbox--tag">
-  <input name="checkbox" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    По популярности
-  </span>
-</label>
+          <input type="checkbox" name="checkbox"/><span class="checkbox__checkmark">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+            </svg></span><span class="checkbox__label btn btn--tag btn--small">По популярности</span>
+        </label>
         <label class="checkbox checkbox--tag">
-  <input name="checkbox" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label btn btn--tag btn--small">
-    По цене
-  </span>
-</label>
+          <input type="checkbox" name="checkbox"/><span class="checkbox__checkmark">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+            </svg></span><span class="checkbox__label btn btn--tag btn--small">По цене</span>
+        </label>
       </div>
-
       <h2>Radio:</h2>
       <div class="ui-kit__block ui-kit__radio">
-        <label class="radio @@extra-class">
-  <input name="radio-uikit" type="radio" value="1" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    text
-  </span>
-</label>
-
-        <label class="radio @@extra-class">
-  <input name="radio-uikit" type="radio" value="2" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    text
-  </span>
-</label>
-
-        <label class="radio @@extra-class">
-  <input name="radio-uikit" type="radio" value="3" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    text
-  </span>
-</label>
-
-        <label class="radio @@extra-class">
-  <input name="radio-uikit" type="radio" value="4" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    text
-  </span>
-</label>
-
-        <label class="radio @@extra-class">
-  <input name="radio-uikit" type="radio" value="5" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    active
-  </span>
-</label>
-
+        <label class="radio ">
+          <input type="radio" name="radio-uikit" value="1"/><span class="radio__content"><span class="radio__custom"></span>text</span>
+        </label>
+        <label class="radio ">
+          <input type="radio" name="radio-uikit" value="2"/><span class="radio__content"><span class="radio__custom"></span>text</span>
+        </label>
+        <label class="radio ">
+          <input type="radio" name="radio-uikit" value="3"/><span class="radio__content"><span class="radio__custom"></span>text</span>
+        </label>
+        <label class="radio ">
+          <input type="radio" name="radio-uikit" value="4"/><span class="radio__content"><span class="radio__custom"></span>text</span>
+        </label>
+        <label class="radio ">
+          <input type="radio" name="radio-uikit" value="5" checked="checked"/><span class="radio__content"><span class="radio__custom"></span>active</span>
+        </label>
         <label class="radio radio--btn">
-  <input name="radio-uikit" type="radio" value="btn" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></span>
-  </span>
-</label>
-
+          <input type="radio" name="radio-uikit" value="btn"/><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'>like button <svg><use xlink:href='./img/icons/icons.svg#filters'></use></svg></span></span>
+        </label>
       </div>
-
       <h2>Counter:</h2>
       <div class="ui-kit__block ui-kit__counter">
-        <div class="counter counter--green">
-  9
-</div>
-        <div class="counter counter--primary">
-  1
-</div>
-        <div class="counter counter--red">
-  32
-</div>
-        <div class="counter counter--grey">
-  10
-</div>
+        <div class="counter counter--green">9</div>
+        <div class="counter counter--primary">1</div>
+        <div class="counter counter--red">32</div>
+        <div class="counter counter--grey">10</div>
       </div>
-
       <h2>Rating:</h2>
       <div class="ui-kit__block">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
+        <div class="rating" data-rating="3">
+          <svg class="rating__icon" data-rate="1">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="2">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="3">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="4">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="5">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+        </div>
       </div>
-
       <h2>Rating hover (active select):</h2>
       <div class="ui-kit__block">
-        <div class="rating rating--select" data-rating="@@value">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="rating" type="text" value="" hidden>
-</div>
-      </div>
-
-      <h2>Collapse:</h2>
-      <div class="collapse  @@extra-class">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Title
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>
-  </div>
-</div>
-
-      <h2>Collapse arrow icon:</h2>
-      <div class="collapse  collapse--arrow">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Title
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#arrow"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>
-  </div>
-</div>
-
-      <h2>Popup (Modals):</h2>
-      <div id="1" class="popup " @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div>popup 1</div>
-    </div>
-  </div>
-</div>
-      <div id="2" class="popup " @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div>popup 2</div>
-    </div>
-  </div>
-</div>
-      <div id="title" class="popup " @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Popup c title и с кнопкой закрытия -></div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="title">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
+        <div class="rating rating--select" data-rating="">
+          <svg class="rating__icon" data-rate="1">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="2">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="3">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="4">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <svg class="rating__icon" data-rate="5">
+            <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+          </svg>
+          <input type="text" name="rating" value="" hidden="hidden"/>
         </div>
-      
-      <div>Контент модалки</div>
-    </div>
-  </div>
-</div>
-      <div class="btn" data-popup="1">open popup 1</div>
-      <div class="btn" data-popup="2">open popup 2</div>
-      <div class="btn" data-popup="title">Popup c title</div>
-
+      </div>
+      <h2>Collapse:</h2>
+      <div class="collapse" extraClass="extraClass">
+        <div class="collapse__head"><span class="collapse__head-title">Title</span>
+          <svg class="collapse__head-icon">
+            <use xlink:href="./img/icons/icons.svg#collapse"></use>
+          </svg>
+        </div>
+        <div class="collapse__content"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>
+        </div>
+      </div>
+      <h2>Collapse arrow icon:</h2>
+      <div class="collapse" extraClass="extraClass">
+        <div class="collapse__head"><span class="collapse__head-title">Title</span>
+          <svg class="collapse__head-icon">
+            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+          </svg>
+        </div>
+        <div class="collapse__content"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt neque quidem non, voluptatem velit quo laudantium ex minus error rem officia, nulla a nobis iure est vitae! Voluptas, delectus accusamus.</div>
+        </div>
+      </div>
+      <h2>Popup (Modals):</h2>
+      <div class="popup " id="1">
+        <div class="popup__overlay">
+          <div class="popup__content"><div>popup 1</div>
+          </div>
+        </div>
+      </div>
+      <div class="popup " id="2">
+        <div class="popup__overlay">
+          <div class="popup__content"><div>popup 2</div>
+          </div>
+        </div>
+      </div>
+      <div class="popup " id="title">
+        <div class="popup__overlay">
+          <div class="popup__content">
+            <div class="popup__header">
+              <div class="popup__header-title">Popup c title и с кнопкой закрытия
+              </div>
+              <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="title">
+                <svg class="popup__header-btn-close-icon">
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </button>
+            </div><div>Контент модалки</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn" data-popup="1">open popup 1</button>
+      <button class="btn" data-popup="2">open popup 2</button>
+      <button class="btn" data-popup="title">Popup c title</button>
       <h2>Badges:</h2>
       <div class="ui-kit__block ui-kit__block--primary ui-kit__badges">
-        <div class="badge ">
-  <span class='badge__sub'>до</span>-50%
-</div>
-        <div class="badge ">
-  <svg><use xlink:href='./img/icons/icons.svg#camera'></use></svg>
-</div>
-        <div class="badge ">
-  СП
-</div>
-        <div class="badge ">
-  TFF
-</div>
-        <div class="badge badge--big">
-  big
-</div>
-        <div class="badge badge--small">
-  small
-</div>
-        <div class="badge badge--round badge--font-commissioner badge--color-white">
-  Round
-</div>
-        <div class="badge badge--big badge--without-border">
-  big without border
-</div>
-        <div class="badge badge--font-commissioner">
-  font commissioner
-</div>
+        <div class="badge"><span class="badge__sub">-50%</span>
+        </div>
+        <div class="badge">
+          <svg>
+            <use xlink:href="./img/icons/icons.svg#camera"></use>
+          </svg>
+        </div>
+        <div class="badge">СП
+        </div>
+        <div class="badge">TFF
+        </div>
+        <div class="badge badge--big">big
+        </div>
+        <div class="badge badge--small">small
+        </div>
+        <div class="badge badge--round badge--font-commissioner badge--color-white">Round
+        </div>
+        <div class="badge badge--big badge--without-border">big without border
+        </div>
+        <div class="badge badge--font-commissioner">font commissioner
+        </div>
       </div>
-
       <div class="ui-kit__block ui-kit__badges">
-        <div class="badge badge--font-commissioner badge--color-primary-light badge--without-border">
-  color light primary
-</div>
-        <div class="badge badge--font-commissioner badge--color-green badge--without-border">
-  color green
-</div>
-        <div class="badge badge--font-commissioner badge--color-grey badge--without-border">
-  color grey
-</div>
+        <div class="badge badge--font-commissioner badge--color-primary-light badge--without-border">color light primary
+        </div>
+        <div class="badge badge--font-commissioner badge--color-green badge--without-border">color green
+        </div>
+        <div class="badge badge--font-commissioner badge--color-grey badge--without-border">color grey
+        </div>
       </div>
-
       <h2>Swiper:</h2>
-      <div class="ui-kit__block ui-kit__swiper-btns">
-        swiper кнопки отдельно от блока <br/>
-        если swiper 1 на странице, то при инициализации, можно кнопки не передавать
+      <div class="ui-kit__block ui-kit__swiper-btns">swiper кнопки отдельно от блока<br>если swiper 1 на странице, то при инициализации, можно кнопки не передавать
         <div class="swiper swiper-uikit-btns">
           <div class="swiper-wrapper">
             <div class="swiper-slide">Slide 1</div>
             <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            ...
+            <div class="swiper-slide">Slide 3</div>...
           </div>
         </div>
         <div class="swiper-button-prev swiper-button-out-prev">
@@ -747,166 +511,148 @@
           </svg>
         </div>
       </div>
-
       <h2>Range Slider nouislider:</h2>
       <div class="ui-kit__block ui-kit__slider">
         <div class="range">
-  <div class="range__slider" data-step="1000"></div>
-  <div class="range__inputs">
-    <div class="range__min">
-      <div>от</div>
-      <div class="range__input-wrapper">
-        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="200000" data-min="50000" placeholder="50000">
-      </div>
-      <div class="range__currency">&#8381;</div>
-    </div>
-    <div class="range__max">
-      <div>до</div>
-      <div class="range__input-wrapper">
-        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="500000" data-max="1000000" placeholder="1000000">
-      </div>
-      <div class="range__currency">&#8381;</div>
-    </div>
-  </div>
-</div>
+          <div class="range__slider" data-step="1000"></div>
+          <div class="range__inputs">
+            <div class="range__min">
+              <div>от</div>
+              <div class="range__input-wrapper">
+                <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin" type="text" value="200000" data-min="50000" placeholder="50000"/>
+              </div>
+              <div class="range__currency">&#8381;</div>
+            </div>
+            <div class="range__max">
+              <div>до</div>
+              <div class="range__input-wrapper">
+                <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax" type="text" value="500000" data-max="1000000" placeholder="1000000"/>
+              </div>
+              <div class="range__currency">&#8381;</div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="ui-kit__block ui-kit__slider">
         <div class="range">
-  <div class="range__slider" data-step="1"></div>
-  <div class="range__inputs">
-    <div class="range__min">
-      <div>от</div>
-      <div class="range__input-wrapper">
-        <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin2" type="text" value="20" data-min="1" placeholder="1">
+          <div class="range__slider" data-step="1"></div>
+          <div class="range__inputs">
+            <div class="range__min">
+              <div>от</div>
+              <div class="range__input-wrapper">
+                <input class="range__input range__input-min input-text input-text--color-grey" name="rangemin2" type="text" value="20" data-min="1" placeholder="1"/>
+              </div>
+              <div class="range__currency">%</div>
+            </div>
+            <div class="range__max">
+              <div>до</div>
+              <div class="range__input-wrapper">
+                <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax2" type="text" value="80" data-max="100" placeholder="100"/>
+              </div>
+              <div class="range__currency">%</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="range__currency">%</div>
-    </div>
-    <div class="range__max">
-      <div>до</div>
-      <div class="range__input-wrapper">
-        <input class="range__input range__input-max input-text input-text--color-grey" name="rangemax2" type="text" value="80" data-max="100" placeholder="100">
-      </div>
-      <div class="range__currency">%</div>
-    </div>
-  </div>
-</div>
-      </div>
-
       <h2>Divider:</h2>
       <div class="ui-kit__block ui-kit__divider">
-        <div class="hr"></div>
+        <hr class="hr">
       </div>
-
       <h2>Progress:</h2>
       <div class="ui-kit__block ui-kit__progress">
         <div class="progress progress--primary">
-  <div class="progress__line" style="width:35%"></div>
-</div>
+          <div class="progress__line" style="width: 35%"></div>
+        </div>
         <div class="progress progress--green">
-  <div class="progress__line" style="width:85%"></div>
-</div>
+          <div class="progress__line" style="width: 85%"></div>
+        </div>
         <div class="progress progress--grey">
-  <div class="progress__line" style="width:20%"></div>
-</div>
+          <div class="progress__line" style="width: 20%"></div>
+        </div>
       </div>
-
       <h2>Tabs:</h2>
       <div class="ui-kit__block ui-kit__tabs">
-        <div class="tabs @@extra-class">
-  <div class="tabs__head">
-    <div class="tabs__list">
-      <button class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></button>
-      <button class="tabs__tab" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></button>
-      <button class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></button>
-      <button class="tabs__tab" data-tab-path="contacts">Контакты</button>
-    </div>
-  </div> 
-  <div class="tabs__contents">
-    <div class="tabs__content tabs__content--active" data-tab-target="goods">
-      content Товары
-    </div>
-    <div class="tabs__content" data-tab-target="sp">
-      content Совместные покупки
-    </div>
-    <div class="tabs__content" data-tab-target="tff">
-      content Test For Free
-    </div>
-    <div class="tabs__content" data-tab-target="contacts">
-      Контакты
-    </div>
-  </div>
-</div>
+        <div class="tabs">
+          <div class="tabs__head">
+            <div class="tabs__list">
+              <button class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары<span class="tabs__tab-count">501</span>
+              </button>
+              <button class="tabs__tab" data-tab-path="sp">Совместные покупки<span class="tabs__tab-count">79</span>
+              </button>
+              <button class="tabs__tab" data-tab-path="tff">Test For Free<span class="tabs__tab-count">13</span>
+              </button>
+              <button class="tabs__tab" data-tab-path="contacts">Контакты
+              </button>
+            </div>
+          </div>
+          <div class="tabs__contents">
+            <div class="tabs__content tabs__content--active" data-tab-target="goods">content Товары
+            </div>
+            <div class="tabs__content" data-tab-target="sp">content Совместные покупки
+            </div>
+            <div class="tabs__content" data-tab-target="tff">content Test For Free
+            </div>
+            <div class="tabs__content" data-tab-target="contacts">Контакты
+            </div>
+          </div>
+        </div>
       </div>
-
       <h2>Tabs с раздельными табами:</h2>
       <div class="ui-kit__block ui-kit__tabs">
         <div class="tabs tabs--split">
-  <div class="tabs__head">
-    <div class="tabs__list">
-      <button class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары <span class="tabs__tab-count">501</span></button>
-      <button class="tabs__tab" data-tab-path="sp">Совместные покупки <span class="tabs__tab-count">79</span></button>
-      <button class="tabs__tab" data-tab-path="tff">Test For Free <span class="tabs__tab-count">13</span></button>
-      <button class="tabs__tab" data-tab-path="contacts">Контакты</button>
-    </div>
-  </div> 
-  <div class="tabs__contents">
-    <div class="tabs__content tabs__content--active" data-tab-target="goods">
-      content Товары
-    </div>
-    <div class="tabs__content" data-tab-target="sp">
-      content Совместные покупки
-    </div>
-    <div class="tabs__content" data-tab-target="tff">
-      content Test For Free
-    </div>
-    <div class="tabs__content" data-tab-target="contacts">
-      Контакты
-    </div>
-  </div>
-</div>
+          <div class="tabs__head">
+            <div class="tabs__list">
+              <button class="tabs__tab tabs__tab--active" data-tab-path="goods">Товары<span class="tabs__tab-count">501</span>
+              </button>
+              <button class="tabs__tab" data-tab-path="sp">Совместные покупки<span class="tabs__tab-count">79</span>
+              </button>
+              <button class="tabs__tab" data-tab-path="tff">Test For Free<span class="tabs__tab-count">13</span>
+              </button>
+              <button class="tabs__tab" data-tab-path="contacts">Контакты
+              </button>
+            </div>
+          </div>
+          <div class="tabs__contents">
+            <div class="tabs__content tabs__content--active" data-tab-target="goods">content Товары
+            </div>
+            <div class="tabs__content" data-tab-target="sp">content Совместные покупки
+            </div>
+            <div class="tabs__content" data-tab-target="tff">content Test For Free
+            </div>
+            <div class="tabs__content" data-tab-target="contacts">Контакты
+            </div>
+          </div>
+        </div>
       </div>
-
       <h2>Chips:</h2>
       <div class="ui-kit__block ui-kit__chips">
-        <div class="chip">
-  <span class="chip__title">Размеры :</span>
-  <span class="chip__options">36, 38, 40</span>
-  <span class="chip__more">и еще 22</span>
-  <svg class="chip__cross">
-    <use xlink:href="./img/icons/icons.svg#cross"></use>
-  </svg>
-</div>
-        <div class="chip">
-  <span class="chip__title">Размеры2 :</span>
-  <span class="chip__options">36, 38, 40</span>
-  <span class="chip__more">и еще 42</span>
-  <svg class="chip__cross">
-    <use xlink:href="./img/icons/icons.svg#cross"></use>
-  </svg>
-</div>
-        <div class="chip">
-  <span class="chip__title">Размеры3 :</span>
-  <span class="chip__options">36, 38, 40</span>
-  <span class="chip__more">и еще 18</span>
-  <svg class="chip__cross">
-    <use xlink:href="./img/icons/icons.svg#cross"></use>
-  </svg>
-</div>
+        <div class="chip"><span class="chip__title">Размеры :</span><span class="chip__options">36, 38, 40</span><span class="chip__more">и еще 22</span>
+          <svg class="chip__cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="chip"><span class="chip__title">Размеры2 :</span><span class="chip__options">36, 38, 40</span><span class="chip__more">и еще 42</span>
+          <svg class="chip__cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <div class="chip"><span class="chip__title">Размеры3 :</span><span class="chip__options">36, 38, 40</span><span class="chip__more">и еще 18</span>
+          <svg class="chip__cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
       </div>
-
       <h2>Scroll:</h2>
       <div class="ui-kit__block ui-kit__scroll">
         <button class="btn scroll">Скролл до верха</button>
         <button class="btn scroll" data-target="ui-kit__radio">Скролл до назначенного элемента</button>
       </div>
-
       <h2>Tooltip:</h2>
       <div class="ui-kit__block">
         <svg style="color: red" data-tooltip="Тултип Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eius obcaecati at laboriosam veniam impedit laudantium velit atque nemo ducimus sint inventore, dolore qui hic doloremque voluptatum perferendis labore quasi!">
           <use xlink:href="./img/icons/icons.svg#info"></use>
         </svg>
       </div>
-
     </main>
   </body>
 </html>

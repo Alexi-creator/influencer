@@ -2242,6 +2242,18 @@ button {
   stroke: rgb(var(--color-grey));
 }
 
+.header__login-title-sign-up {
+  display: none;
+}
+
+.header__login:has(.login--sign-up) .header__login-title-sign-up {
+  display: block;
+}
+
+.header__login:has(.login--sign-up) .header__login-title-sign-in {
+  display: none;
+}
+
 .header__nav-list {
   display: flex;
   align-items: center;
@@ -3368,7 +3380,7 @@ svg {
   max-width: 17.68rem;
 }
 
-.cart-item__product-card-decription-title {
+.cart-item__product-card-description-title {
   color: rgb(var(--color-grey));
 }
 
@@ -3816,7 +3828,6 @@ svg {
   .cart-item__discount--store {
     grid-row: 2/3;
     grid-column: 9/9;
-    margin-top: 0.5rem;
   }
 
   .cart-item__navigate-choose {

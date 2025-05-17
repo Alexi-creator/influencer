@@ -113,7 +113,7 @@
   max-width: 17.68rem;
 }
 
-.cart-item__product-card-decription-title {
+.cart-item__product-card-description-title {
   color: rgb(var(--color-grey));
 }
 
@@ -305,7 +305,6 @@
   .cart-item__discount--store {
     grid-row: 2/3;
     grid-column: 9/9;
-    margin-top: 0.5rem;
   }
 
   .cart-item__navigate-choose {

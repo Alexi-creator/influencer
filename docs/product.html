@@ -1,2140 +1,1638 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/product.min.css?_v=20250517100945">
-  <title>product Page</title>
-  <script defer src="js/product.min.js?_v=20250517100945"></script>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages/product.min.css?_v=20250517101341">
+    <title>product Page</title>
+    <script defer src="js/product.min.js?_v=20250517101341"></script>
+  </head>
   <body>
     <header class="header">
-  <div class="header__inner">
-    <div class="header__top">
-      <button class="header__top-location header__top-location--empty" data-popup="location">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#location"></use>
-        </svg>
-        <span class="header__top-location-address"></span>
-        <span class="header__top-location-cta">Укажите точный адрес</span>
-      </button>
-      <div class="header__top-info">
-        <a href="#">Инструкции</a>
-        <a href="#">Контакты</a>
-        <div id="language" class="select select--transparent header__top-language noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Русский</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>
-  </ul>
-  <input name=language type="text" value="ru" hidden>
-</div>
-
+      <div class="header__inner">
+        <div class="header__top">
+          <button class="header__top-location header__top-location--empty" data-popup="location">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#location"></use>
+            </svg><span class="header__top-location-address"></span><span class="header__top-location-cta">Укажите точный адрес</span>
+          </button>
+          <div class="header__top-info"><a href="#">Инструкции</a><a href="#">Контакты</a>
+                <div class="select select--transparent header__top-language noselect" id="language" role="button" tabindex="0">
+                  <div class="select__header">
+                    <div class="select__title">Русский</div>
+                    <div class="select__icon">
+                      <svg>
+                        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="select__options">
+                    <li><li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li></li>
+                    <li><li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li></li>
+                    <li><li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li></li>
+                  </ul>
+                  <input name="language" type="text" value="ru" hidden>
+                </div>
+          </div>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-logo"><a class="header__nav-logo-small" href="./index.html"><img width="24" height="24" src="img/small-logo.svg" alt="small-logo"></a><a class="header__nav-logo-big" href="./index.html"><img width="106" height="24" src="img/logo.svg" alt="logo"></a></li>
+            <li class="header__nav-item header__nav-catalog"><a class="btn" href="./catalog.html">
+                <svg class="header__nav-catalog-icon-catalog">
+                  <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                </svg>
+                <svg class="header__nav-catalog-icon-cross">
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg><span class="header__nav-catalog-title">Каталог</span></a></li>
+            <li class="header__nav-item header__nav-search">
+              <div class="header__nav-search-title">
+                <div class="header__nav-search-title-text">Поиск по сайту</div>
+                <svg class="header__nav-search-title-cross">
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+                  <div class="autocomplete header__nav-search-input autocomplete--img autocomplete--select" id="search-shops">
+                        <div class="input-text">
+                          <label class="input-text__label autocomplete__input" data-id="parent-search-shops">
+                            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                            <input class="input-text__input" type="search" name="search-shops" placeholder="Найдите что-нибудь">
+                            <div class="input-text__suffix autocomplete__suffix">
+                                  <div class="select select--transparent noselect" id="select-search" role="button" tabindex="0">
+                                    <div class="select__header">
+                                      <div class="select__title">Везде</div>
+                                      <div class="select__icon">
+                                        <svg>
+                                          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <ul class="select__options">
+                                      <li><li class=select__options-item data-value=value1 role=button tabindex=0>Везде2</li></li>
+                                      <li><li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li></li>
+                                      <li><li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li></li>
+                                    </ul>
+                                    <input name="select-search" type="text" value="value2" hidden>
+                                  </div>
+                            </div>
+                          </label>
+                          <p class="input-text__error" data-id="error-search-shops"></p>
+                        </div>
+                    <input type="text" name="search-shops" value="" hidden>
+                    <div class="autocomplete__body">
+                      <div class="autocomplete__body-title">Результаты поиска</div>
+                      <div class="autocomplete__options"><a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
+                      </div>
+                    </div>
+                  </div>
+              <div class="header__nav-search-filter">
+                <div class="header__nav-search-filter-title">Где будем искать</div>
+              </div>
+              <div class="header__nav-search-mask"></div>
+            </li>
+            <li class="header__nav-item header__nav-basket"><a href="/carts.html">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">9</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-favorite"><a href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#heart"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">4</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-feed"><a href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#feed"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">1</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-instagram"><a href="/add-publication.html">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#camera"></use>
+                </svg></a></li>
+            <li class="header__nav-item header__nav-profile" data-popup="login"><a class="header__nav-sign-in" href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#user"></use>
+                </svg>Войти в аккаунт</a><a class="header__nav-account" href="#">
+                <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">Мой рейтинг: 109</div>
+                <div class="header__nav-avatar"><picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture></div></a></li>
+            <li class="header__nav-item header__nav-more">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#more"></use>
+              </svg>
+            </li>
+            <li class="header__nav-item header__nav-location" data-popup="location">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#map"></use>
+              </svg>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item header__nav-logo">
-          <a class="header__nav-logo-small" href="./index.html">
-            <img width="24" height="24" src="img/small-logo.svg" alt="small-logo">
-          </a>
-          <a class="header__nav-logo-big" href="./index.html">
-            <img width="106" height="24" src="img/logo.svg" alt="logo">
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-catalog ">
-          <a class="btn" href="./catalog.html">
-            <svg class="header__nav-catalog-icon-catalog">
-              <use xlink:href="./img/icons/icons.svg#catalog"></use>
-            </svg>
-            <svg class="header__nav-catalog-icon-cross">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-            <span class="header__nav-catalog-title">Каталог</span>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-search">
-          <div class="header__nav-search-title">
-            <div class="header__nav-search-title-text">Поиск по сайту</div>
-            <svg class="header__nav-search-title-cross"><use xlink:href="./img/icons/icons.svg#cross"></use></svg>
-          </div>
-          <div id="search-shops" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
-    
-      <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li> <li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>
-  </ul>
-  <input name=select-search type="text" value="value2" hidden>
-</div>
-</div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="search-shops" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-      <div class="autocomplete__options">
-        
-          <a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
-        
+      <div class="useful-links">
+        <div class="useful-links__title">Полезные ссылки
+          <svg class="useful-links__title-cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <ul class="useful-links__list">
+          <li class="useful-links__list-item"><a href="#">Категории
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Магазины
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Совместные покупки
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Test ForFree
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Блогеры
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Публикации
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Служба поддержки
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+        </ul>
       </div>
+          <div class="popup header__login" id="login">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="popup__header">
+                  <div class="popup__header-title">
+      <div class="header__login-title-sign-in">Войдите в свой профиль</div>
+      <div class="header__login-title-sign-up">Зарегистрируйтесь</div>
     
-    
-  </div>
-</div>
-
-          <div class="header__nav-search-filter">
-            <div class="header__nav-search-filter-title">
-              Где будем искать
+                  </div>
+                  <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
+                    <svg class="popup__header-btn-close-icon">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="login login--sign-in">
+                  <div class="login__inner">
+                    <div class="login__sign-in">
+                      <div class="login__descr">Чтобы пользоваться лентой новостей</div>
+                      <div class="login__options">
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#google"></use>
+                          </svg>Войти через Google
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#vk"></use>
+                          </svg>Войти через ВКонтакте
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="login__or"><span class="login__or-text">или</span></div>
+                      <form class="login__form login__form-sign-in">
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+                                <input class="input-text__input" type="text" name="email" placeholder="Введите свою эл. почту">
+                              </label>
+                              <p class="input-text__error" data-id="error-email"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+                                <input class="input-text__input" type="password" name="password" placeholder="Введите пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-password"></p>
+                            </div>
+                        <button class="login__form-submit btn" type="submit">Войти</button>
+                      </form>
+                      <div class="login__choice">
+                        <div class="login__choice-title">Нет аккаунта?</div>
+                        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+                      </div>
+                    </div>
+                    <div class="login__sign-up">
+                      <div class="login__descr">Чтобы подписываться на акции, создавать публикации и сохранять любимые товары</div>
+                      <div class="login__options">
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#google"></use>
+                          </svg>Регистрация через Google
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#vk"></use>
+                          </svg>Регистрация через ВКонтакте
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="login__or"><span class="login__or-text">или</span></div>
+                      <form class="login__form login__form-sign-up">
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+                                <input class="input-text__input" type="text" name="email" placeholder="Введите свою эл. почту">
+                              </label>
+                              <p class="input-text__error" data-id="error-email"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+                                <input class="input-text__input" type="password" name="password" placeholder="Придумайте пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-password"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-repeat_password">
+                                <input class="input-text__input" type="password" name="repeat_password" placeholder="Повторите ввод пароля пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-repeat_password"></p>
+                            </div>
+                        <button class="login__form-submit btn" type="submit">Зарегистрироваться</button>
+                      </form>
+                      <div class="login__choice">
+                        <div class="login__choice-title">Есть аккаунт?</div>
+                        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="header__nav-search-mask"></div>
-        </li>
-        <li class="header__nav-item header__nav-basket">
-          <a href="/carts.html">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  9
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-favorite">
-          <a href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#heart"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  4
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-feed">
-          <a href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#feed"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  1
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-instagram">
-          <a href="/add-publication.html">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#camera"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-profile" data-popup="login">
-          <a class="header__nav-sign-in" href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#user"></use>
-            </svg>
-            Войти в аккаунт
-          </a>
-          <a class="header__nav-account" href="#">
-            <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">
-              Мой рейтинг: 109
+          <div class="popup header__location" id="location">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="popup__header">
+                  <div class="popup__header-title">Куда доставить заказ?
+                  </div>
+                  <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
+                    <svg class="popup__header-btn-close-icon">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="location">
+                  <div class="location__inner">
+                    <div class="location__img location__not-setup"><picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture></div>
+                    <div class="location__descr location__setup">Выберите адрес, чтобы увидеть условия доставки</div>
+                    <div class="location__actions">
+                      <div class="location__actions-city">
+                        <svg class="location__address-city-icon">
+                          <use xlink:href="./img/icons/icons.svg#map"></use>
+                        </svg><span class="location__address-city-name">Москва</span>
+                      </div>
+                      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">Изменить</button>
+                    </div>
+                    <ul class="location__addresses location__setup">
+                      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
+                        <div class="location__address-header">
+                          <div class="location__address-option">Отделение Почты России</div>
+                          <button class="location__address-remove">
+                            <svg class="location__address-remove-icon">
+                              <use xlink:href="./img/icons/icons.svg#cross"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+                        <div class="location__address-storage-period">Срок хранения заказа - <span class="location__address-storage-period-count">15 дней</span></div>
+                      </li>
+                      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
+                        <div class="location__address-header">
+                          <div class="location__address-option">Доставка по адресу</div>
+                          <button class="location__address-remove">
+                            <svg class="location__address-remove-icon">
+                              <use xlink:href="./img/icons/icons.svg#cross"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
+                        <div class="location__address-contacts">Маргарита А., +7 999 123 45 67</div>
+                      </li>
+                    </ul>
+                    <div class="location__descr location__not-setup">Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров</div>
+                    <button class="location__button location__not-setup btn" data-popup="map" data-close-popup="location">Выбрать адрес на карте</button>
+                    <button class="location__button location__setup btn" data-popup="map" data-close-popup="location">Добавить новый адрес или пункт</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="header__nav-avatar">
-              <picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture>
+          </div>
+          <div class="popup header__choose-city" id="choose-city">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="choose-city">
+                  <div class="choose-city__inner">
+                    <div class="choose-city__header">
+                      <button class="choose-city__back">
+                        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="choose-city__title">Выберите город</div>
+                      <button class="choose-city__cross" data-close-popup="choose-city">
+                        <svg class="choose-city__cross-icon">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="choose-city__search">
+                      <div class="input-text">
+                        <label class="input-text__label" data-id="parent-search">
+                          <div class="input-text__prefix"><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+                          <input class="input-text__input" type="search" name="search" placeholder="Найдите свой город">
+                        </label>
+                        <p class="input-text__error" data-id="error-search"></p>
+                      </div>
+                    </div>
+                    <ul class="choose-city__list">
+                      <li class="choose-city__list-item">
+                        <label class="radio radio--active">
+                          <input type="radio" name="city" value="Москва"><span class="radio__content"><span class="radio__custom"></span>Москва</span>
+                        </label>
+                      </li>
+                      <li class="choose-city__list-item">
+                        <label class="radio radio--active">
+                          <input type="radio" name="city" value="Санкт-Петербург"><span class="radio__content"><span class="radio__custom"></span>Санкт-Петербург</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
+          <div class="popup popup--no-overlay header__map" id="map">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="map">
+                  <div class="map__inner">
+                    <div class="map__header">
+                      <button class="map__header-back">
+                        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="map__header-title">Способ доставки товаров</div>
+                      <div class="map__header-options">
+                        <label class="radio radio--active radio--reverse">
+                          <input type="radio" name="choose-delivery" value="pickup" checked><span class="radio__content"><span class="radio__custom"></span>Самовывоз</span>
+                        </label>
+                        <label class="radio radio--active radio--reverse">
+                          <input type="radio" name="choose-delivery" value="courier"><span class="radio__content"><span class="radio__custom"></span>Курьером</span>
+                        </label>
+                      </div>
+                      <button class="map__header-cross btn btn--color-primary-light">
+                        <svg class="map__header-cross-icon" data-close-popup="map">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="map__yandex">
+                      <iframe id="maps" width="100%" height="100%" frameborder="0" data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;amp;source=constructor"></iframe>
+                    </div>
+                    <div class="map__address">
+                      <div class="map__address-header">Куда доставить заказ?</div>
+                      <div class="map__address-descr">
+                        <div class="map__address-descr-pickup">Выберите пункт выдачи или найдите</div>
+                        <div class="map__address-descr-courier">Выберите адрес на карте или найдите</div>
+                      </div>
+                      <div class="map__address-actions">
+                        <div class="autocomplete map__address-actions-input map__autocomplete--pickup" id="pickup-autocomplete">
+                          <div class="input-text">
+                            <label class="input-text__label autocomplete__input" data-id="parent-pickup-autocomplete">
+                              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                              <input class="input-text__input" type="search" name="pickup-autocomplete" placeholder="Пункт выдачи">
+                              <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                            </label>
+                            <p class="input-text__error" data-id="error-pickup-autocomplete"></p>
+                          </div>
+                          <input type="text" name="pickup-autocomplete" value="" hidden>
+                          <div class="autocomplete__body">
+                            <div class="autocomplete__body-title">Результаты поиска</div>
+                            <ul class="autocomplete__options">
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="autocomplete map__address-actions-input map__autocomplete--courier" id="courier-autocomplete">
+                          <div class="input-text">
+                            <label class="input-text__label autocomplete__input" data-id="parent-courier-autocomplete">
+                              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                              <input class="input-text__input" type="search" name="courier-autocomplete" placeholder="Адрес доставки">
+                              <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                            </label>
+                            <p class="input-text__error" data-id="error-courier-autocomplete"></p>
+                          </div>
+                          <input type="text" name="courier-autocomplete" value="" hidden>
+                          <div class="autocomplete__body">
+                            <div class="autocomplete__body-title">Результаты поиска</div>
+                            <ul class="autocomplete__options">
+                            </ul>
+                          </div>
+                        </div>
+                        <button class="map__address-actions-define">
+                          <svg class="map__address-actions-define-icon">
+                            <use xlink:href="./img/icons/icons.svg#compass"></use>
+                          </svg>Определить местоположение
+                        </button>
+                        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>Продолжить</button>
+                        <button class="btn map__btn map__btn--courier" disabled>Продолжить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup popup--no-overlay header__search-pickup" id="search-pickup">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="search-pickup">
+                  <div class="search-pickup__inner">
+                    <div class="search-pickup__header">
+                      <button class="search-pickup__header-back">
+                        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="search-pickup__header-title">Куда доставить заказ?</div>
+                      <button class="search-pickup__header-cross btn btn--color-primary-light">
+                        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
+                    <div class="search-pickup__actions">
+                      <div class="autocomplete search-pickup__actions-input" id="search-pickup-autocomplete">
+                        <div class="input-text">
+                          <label class="input-text__label autocomplete__input" data-id="parent-search-pickup">
+                            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                            <input class="input-text__input" type="search" name="search-pickup" placeholder="Введите адрес">
+                            <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                          </label>
+                          <p class="input-text__error" data-id="error-search-pickup"></p>
+                        </div>
+                        <input type="text" name="search-pickup" value="" hidden>
+                        <div class="autocomplete__body">
+                          <div class="autocomplete__body-title">Результаты поиска</div>
+                          <ul class="autocomplete__options">
+                          </ul>
+                        </div>
+                      </div>
+                      <button class="search-pickup__actions-define">
+                        <svg class="search-pickup__header-actions-define-icon">
+                          <use xlink:href="./img/icons/icons.svg#compass"></use>
+                        </svg>Определить местоположение
+                      </button>
+                      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>Продолжить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup popup--no-overlay header__courier" id="courier">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="courier">
+                  <div class="courier__inner">
+                    <div class="courier__header">
+                      <button class="courier__header-back">
+                        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="courier__header-title">Уточнить адрес</div>
+                      <button class="courier__header-cross btn btn--color-primary-light">
+                        <svg class="courier__header-cross-icon" data-close-popup="courier">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="courier__actions">
+                      <div class="courier__actions-inputs">
+                        <div class="courier__actions-inputs-full">Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Дом">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Индекс">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Подъезд">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Этаж">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Домофон">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                      </div>
+                      <button class="btn" disabled>Продолжить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <nav class="nav">
+        <ul class="nav__list">
+                <li><a class="nav__item nav__item-publication" href="/add-publication.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#camera"></use>
+                    </svg>
+                    <div class="nav__item-title">Публикация</div></a></li>
+                <li><a class="nav__item nav__item-catalog" href="./catalog.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                    </svg>
+                    <div class="nav__item-title">Каталог</div></a></li>
+                <li><a class="nav__item nav__item-feed" href="#">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#feed"></use>
+                    </svg>
+                    <div class="nav__item-title">Лента</div></a></li>
+                <li><a class="nav__item nav__item-shopping-bag" href="/carts.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+                    </svg>
+                    <div class="nav__item-title">Корзина</div>
+                    <div class="nav__item-counter">
+                            <div class="counter counter--green">1</div>
+                    </div></a></li>
+                <li><a class="nav__item nav__item-profile" href="#">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#profile"></use>
+                    </svg><picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
+                    <div class="nav__item-title">Профиль</div></a></li>
+        </ul>
+      </nav>
+      <template id="address">
+        <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
+          <div class="location__address-header">
+            <div class="location__address-option"></div>
+            <button class="location__address-remove">
+              <svg class="location__address-remove-icon">
+                <use xlink:href="./img/icons/icons.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="location__address-address"></div>
+          <div class="location__address-storage-period"><span class="location__address-storage-period-count"></span></div>
         </li>
-        <li class="header__nav-item header__nav-more">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#more"></use>
-          </svg>
-        </li>
-        <li class="header__nav-item header__nav-location" data-popup="location">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#map"></use>
-          </svg>
-        </li>
+      </template>
+    </header>
+    <nav class="nav-pages">
+      <ul class="nav-pages__list">
+        <li><a href="#">Магазины</a></li>
+        <li><a href="#">Совместные покупки</a></li>
+        <li><a href="#">Test for Free</a></li>
+        <li><a href="./users.html">Блогеры</a></li>
+        <li><a href="#">Публикации</a></li>
       </ul>
     </nav>
-  </div>
-
-  <div class="useful-links">
-  <div class="useful-links__title">
-    Полезные ссылки
-    <svg class="useful-links__title-cross">
-      <use xlink:href="./img/icons/icons.svg#cross"></use>
-    </svg>
-  </div>
-  <ul class="useful-links__list">
-    <li class="useful-links__list-item">
-      <a href="#">
-        Категории
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Магазины
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Совместные покупки
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Test ForFree
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Блогеры
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Публикации
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Служба поддержки
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-  </ul>
-</div>
-
-  <div id="login" class="popup header__login" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Войдите в свой профиль</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      
-      <div class="login login--sign-in">
-  <div class="login__inner">
-
-    <!-- Блок логина -->
-    <div class="login__sign-in">
-      <div class="login__descr">
-        Чтобы пользоваться лентой новостей
-      </div>
-      <div class="login__options">
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#google"></use>
-          </svg>
-          Войти через Google
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#vk"></use>
-          </svg>
-          Войти через ВКонтакте
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__or">
-        <span class="login__or-text">или</span>
-      </div>
-      <form class="login__form login__form-sign-in">
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
-    
-    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-email"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
-    
-    <input name="password" class="input-text__input" type="password" placeholder="Введите пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-password"></p>
-</div>
-
-        <button class="login__form-submit btn" type="submit">
-          Войти
-        </button>
-      </form>
-      <div class="login__choice">
-        <div class="login__choice-title">
-          Нет аккаунта?
-        </div>
-        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
-      </div>
-    </div>
-
-    <!-- Блок регистрации -->
-    <div class="login__sign-up">
-      <div class="login__title">
-        Зарегистрируйтесь
-        <button class="login__title-cross" type="button" data-close-popup="login">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__descr">
-        Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
-      </div>
-      <div class="login__options">
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#google"></use>
-          </svg>
-          Регистрация через Google
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#vk"></use>
-          </svg>
-          Регистрация через ВКонтакте
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__or">
-        <span class="login__or-text">или</span>
-      </div>
-      <form class="login__form login__form-sign-up">
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
-    
-    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-email"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
-    
-    <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-password"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-repeat_password">
-    
-    <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-repeat_password"></p>
-</div>
-
-        <button class="login__form-submit btn" type="submit">
-          Зарегистрироваться
-        </button>
-      </form>
-      <div class="login__choice">
-        <div class="login__choice-title">
-          Есть аккаунт?
-        </div>
-        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="location" class="popup header__location" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Куда доставить заказ?</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      
-      <div class="location @@locationExtraClass">
-  <div class="location__inner">
-    <div class="location__img location__not-setup">
-      <picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture>
-    </div>
-    <div class="location__descr location__setup">
-      Выберите адрес, чтобы увидеть условия доставки
-    </div>
-    <div class="location__actions">
-      <div class="location__actions-city">
-        <svg class="location__address-city-icon">
-          <use xlink:href="./img/icons/icons.svg#map"></use>
-        </svg>
-        <span class="location__address-city-name">Москва</span>
-      </div>
-      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">
-        Изменить
-      </button>
-    </div>
-    <ul class="location__addresses location__setup">
-      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
-        <div class="location__address-header">
-          <div class="location__address-option">Отделение Почты России</div>
-          <button class="location__address-remove">
-            <svg class="location__address-remove-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
-        <div class="location__address-storage-period">
-          Срок хранения заказа - 
-          <span class="location__address-storage-period-count">15 дней</span>
-        </div>
-      </li>
-      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
-        <div class="location__address-header">
-          <div class="location__address-option">Доставка по адресу</div>
-          <button class="location__address-remove">
-            <svg class="location__address-remove-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
-        <div class="location__address-contacts">
-          Маргарита А., +7 999 123 45 67
-        </div>
-      </li>
-    </ul>
-    <div class="location__descr location__not-setup">
-      Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров
-    </div>
-    <button class="location__button location__not-setup btn" data-popup="map" data-close-popup="location">
-      Выбрать адрес на карте
-    </button>
-    <button class="location__button location__setup btn" data-popup="map" data-close-popup="location">
-      Добавить новый адрес или пункт
-    </button>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-  <div id="choose-city" class="popup header__choose-city" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="choose-city">
-  <div class="choose-city__inner">
-    <div class="choose-city__header">
-      <button class="choose-city__back">
-        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="choose-city__title">Выберите город</div>
-      <button class="choose-city__cross" data-close-popup="choose-city">
-        <svg class="choose-city__cross-icon">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="choose-city__search">
-      <div class="input-text">
-  <label class="input-text__label " data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-    </div>
-    <ul class="choose-city__list">
-      <li class="choose-city__list-item">
-        <label class="radio radio--active">
-  <input name="city" type="radio" value="Москва" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Москва
-  </span>
-</label>
-
-      </li>
-      <li class="choose-city__list-item">
-        <label class="radio radio--active">
-  <input name="city" type="radio" value="Санкт-Петербург" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Санкт-Петербург
-  </span>
-</label>
-
-      </li>
-    </ul>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="map" class="popup popup--no-overlay header__map" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="map">
-  <div class="map__inner">
-    <div class="map__header">
-      <button class="map__header-back">
-        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="map__header-title">Способ доставки товаров</div>
-      <div class="map__header-options">
-        <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="pickup" checked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Самовывоз
-  </span>
-</label>
-
-        <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="courier" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Курьером
-  </span>
-</label>
-
-      </div>
-      <button class="map__header-cross btn btn--color-primary-light">
-        <svg class="map__header-cross-icon" data-close-popup="map">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="map__yandex">
-      <iframe
-        id="maps"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor"
-      >
-      </iframe>
-    </div>
-    <div class="map__address">
-      <div class="map__address-header">Куда доставить заказ?</div>
-      <div class="map__address-descr">
-        <div class="map__address-descr-pickup">
-          Выберите пункт выдачи или найдите
-        </div>
-        <div class="map__address-descr-courier">
-          Выберите адрес на карте или найдите
-        </div>
-      </div>
-      <div class="map__address-actions">
-        <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи" @@atr>
-    
-      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="pickup-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-        <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки" @@atr>
-    
-      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="courier-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-        <button class="map__address-actions-define">
-          <svg class="map__address-actions-define-icon">
-            <use xlink:href="./img/icons/icons.svg#compass"></use>
-          </svg>
-          Определить местоположение
-        </button>
-        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>
-          Продолжить
-        </button>
-        <button class="btn map__btn map__btn--courier" disabled>
-          Продолжить
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="search-pickup" class="popup popup--no-overlay header__search-pickup" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="search-pickup">
-  <div class="search-pickup__inner">
-    <div class="search-pickup__header">
-      <button class="search-pickup__header-back">
-        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="search-pickup__header-title">
-        Куда доставить заказ?
-      </div>
-      <button class="search-pickup__header-cross btn btn--color-primary-light">
-        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
-    <div class="search-pickup__actions">
-      <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix search-pickup__actions-input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес" @@atr>
-    
-      <div class="input-text__suffix search-pickup__actions-input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="search-pickup" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-      <button class="search-pickup__actions-define">
-        <svg class="search-pickup__header-actions-define-icon">
-          <use xlink:href="./img/icons/icons.svg#compass"></use>
-        </svg>
-        Определить местоположение
-      </button>
-      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>
-        Продолжить
-      </button>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="courier" class="popup popup--no-overlay header__courier" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="courier">
-  <div class="courier__inner">
-    <div class="courier__header">
-      <button class="courier__header-back">
-        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="courier__header-title">
-        Уточнить адрес
-      </div>
-      <button class="courier__header-cross btn btn--color-primary-light">
-        <svg class="courier__header-cross-icon" data-close-popup="courier">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="courier__actions">
-      <div class="courier__actions-inputs">
-        <div class="courier__actions-inputs-full">
-          Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
-        </div>
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-      </div>
-      <button class="btn" disabled>
-        Продолжить
-      </button>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <nav class="nav">
-  <ul class="nav__list">
-    <li >
-  <a class="nav__item nav__item-publication" href="/add-publication.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#camera"></use>
-    </svg>
-    
-    <div class="nav__item-title">Публикация</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-catalog" href="./catalog.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#catalog"></use>
-    </svg>
-    
-    <div class="nav__item-title">Каталог</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-feed" href="#">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#feed"></use>
-    </svg>
-    
-    <div class="nav__item-title">Лента</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-shopping-bag" href="/carts.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-    </svg>
-    
-    <div class="nav__item-title">Корзина</div>
-    
-      <div class="nav__item-counter">
-        <div class="counter counter--green">
-  1
-</div>
-      </div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-profile" href="#">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#profile"></use>
-    </svg>
-    
-      <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
-    
-    <div class="nav__item-title">Профиль</div>
-    
-  </a>
-</li>
-  </ul>
-</nav>
-
-
-  <template id="address">
-    <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
-      <div class="location__address-header">
-        <div class="location__address-option"></div>
-        <button class="location__address-remove">
-          <svg class="location__address-remove-icon">
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="location__address-address"></div>
-      <div class="location__address-storage-period">
-
-        <span class="location__address-storage-period-count"></span>
-      </div>
-    </li>
-  </template>
-</header> 
-    <nav class="nav-pages">
-  <ul class="nav-pages__list">
-    <li>
-      <a href="#">Магазины</a>
-    </li>
-    <li>
-      <a href="#">Совместные покупки</a>
-    </li>
-    <li>
-      <a href="#">Test for Free</a>
-    </li>
-    <li>
-      <a href="./users.html">Блогеры</a>
-    </li>
-    <li>
-      <a href="#">Публикации</a>
-    </li>
-  </ul>
-</nav>
     <main class="main">
       <section class="section section--breadcrumbs">
         <div class="section__inner">
           <div class="breadcrumbs breadcrumbs--primary">
-  
-  <ul class="breadcrumbs__list">
-    <li class="breadcrumbs__item">
-      <a href="#">Платья и сарафаны</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <a href="#">Блузы и рубашки</a>
-    </li>
-    <li class="breadcrumbs__item">
-      Юбки
-    </li>
-    <li class="breadcrumbs__item">
-      + еще 12
-    </li>
-  </ul>
-</div>
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a href="#">Платья и сарафаны</a>
+              </li>
+              <li class="breadcrumbs__item"><a href="#">Блузы и рубашки</a>
+              </li>
+              <li class="breadcrumbs__item">Юбки
+              </li>
+              <li class="breadcrumbs__item">+ еще 12
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
-
       <section class="section section--product">
         <div class="section__inner">
-          <div class="product @@extra-class">
-  <div class="product__wrapper">
-    <div class="product__inner">
-      <div class="product__img-container">  
-        <div class="product__grid-img product__item1">  
-          <picture><source srcset="img/product-img1.webp" type="image/webp"><img src="img/product-img1.png"></picture></img>
-        </div>  
-        <div class="product__grid-img product__item2">  
-          <picture><source srcset="img/product-img2.webp" type="image/webp"><img src="img/product-img2.png"></picture></img>
-        </div>  
-        <div class="product__grid-img product__item3">  
-          <picture><source srcset="img/product-img3.webp" type="image/webp"><img src="img/product-img3.png"></picture></img>
-        </div>  
-        <div class="product__grid-img product__item4">  
-          <picture><source srcset="img/product-img4.webp" type="image/webp"><img src="img/product-img4.png"></picture></img>
-        </div>  
-        <div class="product__grid-img product__item5">  
-          <picture><source srcset="img/product-img5.webp" type="image/webp"><img src="img/product-img5.png"></picture></img>
-        </div>  
-      </div>  
-    </div>
-
-    <div class="product__delivery-description">
-      <div class="product__delivery-inner">
-        <div class="product__title">
-          Доставка и оплата
-        </div>
-        <div class="product__delivery-point">
-          <span class="product__delivery-point-city">
-            в Москву
-          </span>
-          <button class="btn btn--none product__delivery-btn">Изменить</button>
-        </div>
-        <div class="product__delivery-content">
-          <div class="product__delivery-content-item">
-            <div class="product__delivery-content-icon">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#truck"></use>
-              </svg>
-            </div>  
-            <div class="product__delivery-content-description">
-              <div class="product__delivery-description-point">
-                Курьером / наличные, только Москва
+          <div class="product">
+            <div class="product__wrapper">
+              <div class="product__inner">
+                <div class="product__img-container">
+                  <div class="product__grid-img product__item1"><picture><source srcset="img/product-img1.webp" type="image/webp"><img src="img/product-img1.png" alt="img/product-img1.png"/></picture></div>
+                  <div class="product__grid-img product__item2"><picture><source srcset="img/product-img2.webp" type="image/webp"><img src="img/product-img2.png" alt="img/product-img2.png"/></picture></div>
+                  <div class="product__grid-img product__item3"><picture><source srcset="img/product-img3.webp" type="image/webp"><img src="img/product-img3.png" alt="img/product-img3.png"/></picture></div>
+                  <div class="product__grid-img product__item4"><picture><source srcset="img/product-img4.webp" type="image/webp"><img src="img/product-img4.png" alt="img/product-img4.png"/></picture></div>
+                  <div class="product__grid-img product__item5"><picture><source srcset="img/product-img5.webp" type="image/webp"><img src="img/product-img5.png" alt="img/product-img5.png"/></picture></div>
+                </div>
               </div>
-              <div class="product__delivery-description-point">
-                от 2 до 7 дней
+              <div class="product__delivery-description">
+                <div class="product__delivery-inner">
+                  <div class="product__title">Доставка и оплата</div>
+                  <div class="product__delivery-point"><span class="product__delivery-point-city">в Москву</span>
+                    <button class="btn btn--none product__delivery-btn">Изменить</button>
+                  </div>
+                  <div class="product__delivery-content">
+                    <div class="product__delivery-content-item">
+                      <div class="product__delivery-content-icon">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#truck"></use>
+                        </svg>
+                      </div>
+                      <div class="product__delivery-content-description">
+                        <div class="product__delivery-description-point">Курьером / наличные, только Москва</div>
+                        <div class="product__delivery-description-point">от 2 до 7 дней</div>
+                        <div class="product__delivery-description-price">300 ₽</div>
+                      </div>
+                    </div>
+                    <div class="product__delivery-content-item">
+                      <div class="product__delivery-content-icon">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#credit-card"></use>
+                        </svg>
+                      </div>
+                      <div class="product__delivery-content-description">
+                        <div class="product__delivery-description-point">Транспортной компанией (ТК) / в другие города и страны</div>
+                        <div class="product__delivery-description-point">от 7 до 21 дня</div>
+                        <div class="product__delivery-description-price">Стоимость будет рассчитана после выбора ТК</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__description-inner">
+                  <div class="product__title">Описание товара</div>
+                  <div class="product__description-content">Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.</div>
+                </div>
               </div>
-              <div class="product__delivery-description-price">
-                300 ₽
+              <div class="product__inner-description">
+                <div class="product__short-description">
+                  <div class="product__short-description-title">Louis Vouitton</div>
+                  <div class="product__short-description-description">Пуховик из кожи с узором monogram micro</div>
+                  <div class="product__short-description-score">
+                    <div class="product__short-description-score-stars-inner">
+                      <div class="rating" data-rating="">
+                        <svg class="rating__icon" data-rate="1">
+                          <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                        </svg>
+                        <svg class="rating__icon" data-rate="2">
+                          <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                        </svg>
+                        <svg class="rating__icon" data-rate="3">
+                          <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                        </svg>
+                        <svg class="rating__icon" data-rate="4">
+                          <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                        </svg>
+                        <svg class="rating__icon" data-rate="5">
+                          <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                        </svg>
+                      </div>
+                      <div class="product__short-description-score-likes">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#likes"></use>
+                        </svg><span>89</span>
+                      </div>
+                    </div>
+                    <div class="product__short-description-score-posts"><a href="#">108 публикаций</a><span>с этим товаром</span></div>
+                  </div>
+                </div>
+                <div class="product__short-description-discount">
+                  <div class="product__short-description-choice-title">Стоимость с Вашей скидкой:</div>
+                  <div class="product__info-price">
+                    <div class="product__info-price-inner"><span class="product__info-price-item-crossed"><span class="product__info-price-item-crossed number">510000</span>₽</span><span class="product__info-price-item-new">
+                        <div class="badge badge--without-border badge--discount">- 10 %</div><span class="product__info-price-item-new number">459000</span>₽</span></div>
+                  </div>
+                </div>
+                <div class="product__short-description-size-inner">
+                  <div class="product__short-description-size">
+                    <div class="product__short-description-choice-title">Выберите размер:</div>
+                    <div class="product__short-description-choice-wrapper-size">
+                      <div class="product__short-description-choice-select">
+                            <div class="select select--border-grey noselect" id="size" role="button" tabindex="0">
+                              <div class="select__header">
+                                <div class="select__title">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></div>
+                                <div class="select__icon">
+                                  <svg>
+                                    <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                              <ul class="select__options">
+                                <li><li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></li></li>
+                                <li><li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span data-count="4" class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li></li>
+                              </ul>
+                              <input name="size" type="text" value="34" hidden>
+                            </div>
+                      </div><a href="#">Таблица размеров</a>
+                    </div>
+                  </div>
+                  <div class="product__short-description-size">
+                    <div class="product__short-description-choice-title-amount">Выберите количество:</div>
+                    <div class="product__short-description-choice-wrapper">
+                      <div class="product__short-description-choice-select">
+                            <div class="select select--border-grey noselect" id="amount" role="button" tabindex="0">
+                              <div class="select__header">
+                                <div class="select__title">1</div>
+                                <div class="select__icon">
+                                  <svg>
+                                    <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                              <ul class="select__options">
+                                <li><</li>
+                                <li>l</li>
+                                <li>i</li>
+                                <li> </li>
+                                <li>c</li>
+                                <li>l</li>
+                                <li>a</li>
+                                <li>s</li>
+                                <li>s</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>s</li>
+                                <li>e</li>
+                                <li>l</li>
+                                <li>e</li>
+                                <li>c</li>
+                                <li>t</li>
+                                <li>_</li>
+                                <li>_</li>
+                                <li>o</li>
+                                <li>p</li>
+                                <li>t</li>
+                                <li>i</li>
+                                <li>o</li>
+                                <li>n</li>
+                                <li>s</li>
+                                <li>-</li>
+                                <li>i</li>
+                                <li>t</li>
+                                <li>e</li>
+                                <li>m</li>
+                                <li>"</li>
+                                <li> </li>
+                                <li>d</li>
+                                <li>a</li>
+                                <li>t</li>
+                                <li>a</li>
+                                <li>-</li>
+                                <li>v</li>
+                                <li>a</li>
+                                <li>l</li>
+                                <li>u</li>
+                                <li>e</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>1</li>
+                                <li>"</li>
+                                <li> </li>
+                                <li>r</li>
+                                <li>o</li>
+                                <li>l</li>
+                                <li>e</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>b</li>
+                                <li>u</li>
+                                <li>t</li>
+                                <li>t</li>
+                                <li>o</li>
+                                <li>n</li>
+                                <li>"</li>
+                                <li> </li>
+                                <li>t</li>
+                                <li>a</li>
+                                <li>b</li>
+                                <li>i</li>
+                                <li>n</li>
+                                <li>d</li>
+                                <li>e</li>
+                                <li>x</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>0</li>
+                                <li>"</li>
+                                <li>></li>
+                                <li>1</li>
+                                <li> </li>
+                                <li>ш</li>
+                                <li>т</li>
+                                <li>.</li>
+                                <li><</li>
+                                <li>/</li>
+                                <li>l</li>
+                                <li>i</li>
+                                <li>></li>
+                                <li> </li>
+                                <li> </li>
+                                <li><</li>
+                                <li>l</li>
+                                <li>i</li>
+                                <li> </li>
+                                <li>c</li>
+                                <li>l</li>
+                                <li>a</li>
+                                <li>s</li>
+                                <li>s</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>s</li>
+                                <li>e</li>
+                                <li>l</li>
+                                <li>e</li>
+                                <li>c</li>
+                                <li>t</li>
+                                <li>_</li>
+                                <li>_</li>
+                                <li>o</li>
+                                <li>p</li>
+                                <li>t</li>
+                                <li>i</li>
+                                <li>o</li>
+                                <li>n</li>
+                                <li>s</li>
+                                <li>-</li>
+                                <li>i</li>
+                                <li>t</li>
+                                <li>e</li>
+                                <li>m</li>
+                                <li>"</li>
+                                <li> </li>
+                                <li>d</li>
+                                <li>a</li>
+                                <li>t</li>
+                                <li>a</li>
+                                <li>-</li>
+                                <li>v</li>
+                                <li>a</li>
+                                <li>l</li>
+                                <li>u</li>
+                                <li>e</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>2</li>
+                                <li>"</li>
+                                <li> </li>
+                                <li>r</li>
+                                <li>o</li>
+                                <li>l</li>
+                                <li>e</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>b</li>
+                                <li>u</li>
+                                <li>t</li>
+                                <li>t</li>
+                                <li>o</li>
+                                <li>n</li>
+                                <li>"</li>
+                                <li> </li>
+                                <li>t</li>
+                                <li>a</li>
+                                <li>b</li>
+                                <li>i</li>
+                                <li>n</li>
+                                <li>d</li>
+                                <li>e</li>
+                                <li>x</li>
+                                <li>=</li>
+                                <li>"</li>
+                                <li>0</li>
+                                <li>"</li>
+                                <li>></li>
+                                <li>2</li>
+                                <li> </li>
+                                <li>ш</li>
+                                <li>т</li>
+                                <li>.</li>
+                                <li><</li>
+                                <li>/</li>
+                                <li>l</li>
+                                <li>i</li>
+                                <li>></li>
+                              </ul>
+                              <input name="amount" type="text" value="1 шт." hidden>
+                            </div>
+                      </div><span class="product__short-description-choice-number product__viseable--one"><span>1 товар</span> со скидкой -10%</span><span class="product__short-description-choice-number product__viseable--more hide">Какие скидки на товар?
+                        <button class="btn btn--none" data-popup="discount">Узнать</button></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__short-description-sp">
+                  <div class="product__short-description-sp-title">Совместная покупка:</div>
+                  <div class="product__short-description-sp-content">Покупаем пока есть скидка, девочки</div>
+                </div>
+                <div class="product__short-description-sales">
+                  <div class="product__short-description-sales-price"><span class="product__short-description-sales-price-txt">Вы заплатите</span><span class="product__info-price-item-new"><span class="product__info-price-item-new product__info-price-item-new-count number">459000</span> ₽</span><span class="product__short-description-sales-price-txt">за 1 шт. товара</span></div>
+                  <div class="product__short-description-sales-price-actions">
+                    <button class="product__short-description-sales-add btn">Добавить в корзину</button><a class="product__short-description-sales-cart hide btn btn--green" href="#">В корзине <span>перейти</span></a>
+                    <div class="product__short-description-sales-change-count hide">
+                      <button class="product__short-description-sales-increment hide btn btn--color-primary-light" href="#">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#plus"></use>
+                        </svg>
+                      </button>
+                      <div class="product__short-description-sales-count-wrap"><span class="product__short-description-sales-count">1</span>шт.</div>
+                      <button class="product__short-description-sales-decrement hide btn btn--color-primary-light" href="#">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#minus"></use>
+                        </svg>
+                      </button>
+                    </div><a class="product__short-description-sales-buy btn btn--color-primary-light" href="#">Купить сейчас</a>
+                    <button class="product__short-description-sales-actions btn btn--color-primary-light">
+                      <svg>
+                        <use xlink:href="./img/icons/icons.svg#heart-out-line"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="product__short-description-sales-price-create-post"><a href="#">Создать публикацию с этим товаром</a>
+                    <p>Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.</p>
+                  </div>
+                </div>
+                <div class="product__short-description-shop">
+                  <div class="product__title-shop">Магазин</div>
+                  <div class="product__seller-inner">
+                    <div class="product__seller-inner-content">
+                      <div class="product__seller-img"><picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img></div>
+                      <div class="product__seller-name">Интернет магазин одежды и аксессуаров Lass</div>
+                    </div>
+                    <button class="btn btn--none product__seller-btn">Подписаться</button>
+                  </div>
+                </div>
+                <div class="product__description-shop">
+                  <div class="product__title">О товаре</div>
+                  <ul class="product__short-description-shop-product">
+                    <li><span class="product__table-dot"></span>Материал: 100% кожа ягнёнка</li>
+                    <li><span class="product__table-dot"></span>Отделка: 90% гусиный пух, 10% утиный пух</li>
+                    <li><span class="product__table-dot"></span>Подкладка: 53% вискоза, 47% купро</li>
+                    <li><span class="product__table-dot"></span>Цвет шампанского</li>
+                    <li><span class="product__table-dot"></span>Стандартная посадка</li>
+                    <li><span class="product__table-dot"></span>Сделано в Италии</li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            </div><a class="product__footer-link" href="#">Перейти к полной версии карточки товара</a>
           </div>
-          <div class="product__delivery-content-item">
-            <div class="product__delivery-content-icon">
-              <svg>
-                <use xlink:href="./img/icons/icons.svg#credit-card"></use>
-              </svg>
-            </div>  
-            <div class="product__delivery-content-description">
-              <div class="product__delivery-description-point">
-                Транспортной компанией (ТК) / в другие города и страны
-              </div>
-              <div class="product__delivery-description-point">
-                от 7 до 21 дня
-              </div>
-              <div class="product__delivery-description-price">
-                Стоимость будет рассчитана после выбора ТК
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="product__description-inner">
-        <div class="product__title">
-          Описание товара
-        </div>
-        <div class="product__description-content">
-          Дизайн пуховика из кожи ягнёнка с набивкой из гусиного пуха превосходно отражает ключевую концепцию коллекции изделий из кожи. Изысканная модель цвета шампанского украшена тиснёным узором Monogram Micro. Контрастная эмблема Louis Vuitton и кнопки с гравировкой — дань традициям Дома. Эластичный пояс дополняет объёмный силуэт в спортивном стиле.
-        </div>
-      </div>
-    </div>
-
-    <div class="product__inner-description">
-      <div class="product__short-description">
-        <div class="product__short-description-title">
-          Louis Vouitton
-        </div>
-        <div class="product__short-description-description">
-          Пуховик из кожи с узором monogram micro
-        </div>
-        <div class="product__short-description-score">
-          <div class="product__short-description-score-stars-inner">
-            <div class="rating @@extra-class" data-rating="@@value">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-          <div class="product__short-description-score-likes">
-            <svg><use xlink:href="./img/icons/icons.svg#likes"></use></svg>
-            89
-          </div>
-          </div>
-          <div class="product__short-description-score-posts">
-            <a href="#">108 публикаций</a>
-            <span>с этим товаром</span>
-          </div>
-        </div>
-      </div>
-      <div class="product__short-description-discount">
-        <div class="product__short-description-choice-title">
-          Стоимость с Вашей скидкой:
-        </div>
-        <div class="product__info-price">
-          <div class="product__info-price-inner">
-            <span class="product__info-price-item-crossed">
-              <span class="product__info-price-item-crossed number">
-                510000
-              </span>
-              ₽
-            </span>
-            <span class="product__info-price-item-new">
-              <div class="badge badge--without-border badge--discount">
-                - 10 %
-              </div>
-              <span class="product__info-price-item-new number">
-                459000
-              </span>
-              ₽
-            </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="product__short-description-size-inner">
-      <div class="product__short-description-size">
-        <div class="product__short-description-choice-title">
-          Выберите размер:
-        </div>
-        <div class="product__short-description-choice-wrapper-size">
-          <div class="product__short-description-choice-select">
-            <div id="size" class="select select--border-grey noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="34" role="button" tabindex="0">34 EU / XS<span data-count="11" class="select__options-item-descr">в наличии 11 шт.</span></li> <li class="select__options-item" data-value="38" role="button" tabindex="0">38 EU / XL<span data-count="4" class="select__options-item-descr select__options-item-descr--red">осталось 4 шт.</span></li>
-  </ul>
-  <input name=size type="text" value="34" hidden>
-</div>
-
-          </div>
-          <a href="#">Таблица размеров</a>
-        </div>
-      </div>
-      <div class="product__short-description-size">
-        <div class="product__short-description-choice-title-amount">
-          Выберите количество:
-        </div>
-        <div class="product__short-description-choice-wrapper">
-          <div class="product__short-description-choice-select">
-            <div id="amount" class="select select--border-grey noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">1 шт.</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li>  <li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li> 
-  </ul>
-  <input name=amount type="text" value="1" hidden>
-</div>
-
-          </div>
-          <span class="product__short-description-choice-number product__viseable--one"><span>1 товар</span> со скидкой -10%</span>
-          <span class="product__short-description-choice-number product__viseable--more hide">Какие скидки на товар? <button class="btn btn--none" data-popup="discount">Узнать</button></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="product__short-description-sp">
-      <div class="product__short-description-sp-title">
-        Совместная покупка:
-      </div>
-      <div class="product__short-description-sp-content">
-        Покупаем пока есть скидка, девочки
-      </div>
-    </div>
-
-    <div class="product__short-description-sales">
-      <div class="product__short-description-sales-price">
-        <span class="product__short-description-sales-price-txt">Вы заплатите</span>
-        <span class="product__info-price-item-new">
-          <span class="product__info-price-item-new product__info-price-item-new-count number">
-            459000
-          </span>
-          ₽
-        </span>
-        <span class="product__short-description-sales-price-txt">за 1 шт. товара</span>
-      </div>
-      <div class="product__short-description-sales-price-actions">
-        <button class="product__short-description-sales-add btn">Добавить в корзину</button>
-        <a href="#" class="product__short-description-sales-cart hide btn btn--green">В корзине <span>перейти</span></a>
-        <div class="product__short-description-sales-change-count hide">
-          <button href="#" class="product__short-description-sales-increment hide btn btn--color-primary-light">
-            <svg><use xlink:href="./img/icons/icons.svg#plus"></use></svg>
-          </button>
-          <div class="product__short-description-sales-count-wrap">
-            <span class="product__short-description-sales-count">1</span>шт.
-          </div>
-          <button href="#" class="product__short-description-sales-decrement hide btn btn--color-primary-light">
-            <svg><use xlink:href="./img/icons/icons.svg#minus"></use></svg>
-          </button>
-        </div>
-        <a href="#" class="product__short-description-sales-buy btn btn--color-primary-light">Купить сейчас</a>
-        <button class="product__short-description-sales-actions btn btn--color-primary-light">
-          <svg><use xlink:href="./img/icons/icons.svg#heart-out-line"></use></svg>
-        </button>
-      </div>
-      <div class="product__short-description-sales-price-create-post">
-        <a href="#">Создать публикацию с этим товаром</a>
-        <p>Совместная покупка "Покупаем пока есть скидка, девочки" активна до 06.09.21. Если до этого времени сумма покупок в "Название" достигнет 990 000 руб., мы подтвердим Ваш заказ и произведем списание заблокированных средств с указанной Вами банковской карты.</p>
-      </div>
-    </div>
-
-    
-      <div class="product__short-description-sp-discount">
-        <div class="product__short-description-sp-discount-title">
-          Больше скидка:
-        </div>
-        <div class="product__short-description-sp-discount-inner">
-          <div class="product__short-description-sp-discount-content">
-            <div class="badge badge--without-border badge--discount">
-              - 50 %
-            </div>
-            <div class="product__short-description-sp-discount-sum">
-              <span class="number">
-                459000
-              </span>            
-              ₽
-            </div>
-          </div>
-          <div class="product__short-description-sp-discount-links">
-            <span>
-              в 79 Совместных Покупках
-            </span>
-              <a href="#">Перейти</a>
-          </div>
-  
-        </div>
-      </div>
-    
-
-    <div class="product__short-description-shop">
-      <div class="product__title-shop">
-        Магазин
-      </div>
-      <div class="product__seller-inner">
-        <div class="product__seller-inner-content">
-          <div class="product__seller-img">
-            <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png"></picture></img>
-          </div>
-          <div class="product__seller-name">
-            Интернет магазин одежды и аксессуаров Lass
-          </div>
-        </div>
-        <button class="btn btn--none product__seller-btn">Подписаться</button>
-      </div>
-    </div>
-  
-    <div class="product__description-shop">
-      <div class="product__title">
-        О товаре
-      </div>
-      <ul class="product__short-description-shop-product">
-        <li>
-          <span class="product__table-dot"></span>
-          Материал: 100% кожа ягнёнка
-        </li>
-        <li>
-          <span class="product__table-dot"></span>
-          Отделка: 90% гусиный пух, 10% утиный пух
-        </li>
-        <li>
-          <span class="product__table-dot"></span>
-          Подкладка: 53% вискоза, 47% купро
-        </li>
-        <li>
-          <span class="product__table-dot"></span>
-          Цвет шампанского
-        </li>
-        <li>
-          <span class="product__table-dot"></span>
-          Стандартная посадка
-        </li>
-        <li>
-          <span class="product__table-dot"></span>
-          Сделано в Италии
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <a href="#" class="product__footer-link">
-    Перейти к полной версии карточки товара
-  </a>
-</div>
-
-      
         </div>
       </section>
-
       <section class="section section--with-product">
         <div class="section__inner">
-          <div class="with-product ">
-  <div class="with-product__inner">
-    <div class="with-product__title">
-      Совместные Покупки с этим товаром
-    </div>
-    <button class="btn with-product__action-btn">Создать СП</button>
-    <div class="with-product__content">
-      <div id="spList" class="joint-purchases-list"><div class="joint-purchases-card joint-purchases-card--processing">
-  <div class="joint-purchases-card__about">
-    <div class="joint-purchases-card__logo">
-      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
-    </div>
-    <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
-    <div class="joint-purchases-card__subscribe">
-      Подписаться
-      <span class="joint-purchases-card__subscribe-delimiter"></span>
-      <svg><use xlink:href='./img/icons/icons.svg#share-link'></use></svg>
-    </div>
-    <div class="joint-purchases-card__categories">
-      Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
-    </div>
-  </div>
-  <div class="joint-purchases-card__slider">
-    <div class="swiper swiper-joint-purchases">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
+          <div class="with-product">
+            <div class="with-product__inner">
+              <div class="with-product__title">Совместные Покупки с этим товаром</div>
+              <button class="btn with-product__action-btn">Создать СП</button>
+              <div class="with-product__content">
+                <div class="joint-purchases-list" id="spList">
+                  <div class="joint-purchases-card joint-purchases-card--processing">
+                    <div class="joint-purchases-card__about">
+                      <div class="joint-purchases-card__logo"><picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"/></picture></div>
+                      <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
+                      <div class="joint-purchases-card__subscribe">Подписаться<span class="joint-purchases-card__subscribe-delimiter"></span>
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#share-link"></use>
+                        </svg>
+                      </div>
+                      <div class="joint-purchases-card__categories">Категории: Платья и сарафаны, Юбки, Летние платья и еще 23</div>
+                    </div>
+                    <div class="joint-purchases-card__slider">
+                      <div class="swiper swiper-joint-purchases">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide1.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide1.jpg" alt=""/></picture><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide2.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide2.jpg" alt=""/></picture><picture><source srcset="img/sp-slide3.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide3.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide3.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide3.jpg" alt=""/></picture><picture><source srcset="img/sp-slide4.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide4.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide4.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide4.jpg" alt=""/></picture><picture><source srcset="img/sp-slide1.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide1.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="joint-purchases-card__btn-prev swiper-button-prev">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                        </svg>
+                      </div>
+                      <div class="joint-purchases-card__btn-next swiper-button-next">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="joint-purchases-card__info">
+                      <div class="joint-purchases-card__discount">
+                        <div class="joint-purchases-card__discount-amount">
+                          <div class="badge badge--big badge--without-border badge--font-commissioner">Скидка -30%
+                          </div>
+                        </div>
+                        <div class="joint-purchases-card__discount-from">при покупке<span>от 136 000 &#8381;</span></div>
+                      </div>
+                      <div class="joint-purchases-card__already">
+                        <div class="joint-purchases-card__already-title">Уже купили на:</div>
+                        <div class="joint-purchases-card__already-count"><span>79 281</span><span>/</span><span>241 093</span><span>&#8381;</span></div>
+                      </div>
+                      <div class="joint-purchases-card__progress">
+                        <div class="progress">
+                          <div class="progress__line" style="width: 30%"></div>
+                        </div>
+                      </div>
+                      <div class="joint-purchases-card__hr hr"></div>
+                      <div class="joint-purchases-card__until">Активна до:
+                        <div class="joint-purchases-card__until-date">27.01.2020 12:00</div>
+                      </div>
+                      <div class="joint-purchases-card__status">
+                        <div class="joint-purchases-card__status-title">Совм. Покупка:</div>
+                        <div class="joint-purchases-card__status-text"></div>
+                      </div>
+                    </div>
+                    <div class="joint-purchases-card__brand">
+                      <div class="joint-purchases-card__brand-logo"><picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"/></picture></div>
+                      <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
+                    </div>
+                  </div>
+                  <div class="joint-purchases-card joint-purchases-card--processing">
+                    <div class="joint-purchases-card__about">
+                      <div class="joint-purchases-card__logo"><picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"/></picture></div>
+                      <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
+                      <div class="joint-purchases-card__subscribe">Подписаться<span class="joint-purchases-card__subscribe-delimiter"></span>
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#share-link"></use>
+                        </svg>
+                      </div>
+                      <div class="joint-purchases-card__categories">Категории: Платья и сарафаны, Юбки, Летние платья и еще 23</div>
+                    </div>
+                    <div class="joint-purchases-card__slider">
+                      <div class="swiper swiper-joint-purchases">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide1.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide1.jpg" alt=""/></picture><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide2.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide2.jpg" alt=""/></picture><picture><source srcset="img/sp-slide3.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide3.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide3.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide3.jpg" alt=""/></picture><picture><source srcset="img/sp-slide4.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide4.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="joint-purchases-card__slide"><picture><source srcset="img/sp-slide4.webp" type="image/webp"><img class="joint-purchases-card__slide-img" src="img/sp-slide4.jpg" alt=""/></picture><picture><source srcset="img/sp-slide1.webp" type="image/webp"><img class="joint-purchases-card__slide-img-more" src="img/sp-slide1.jpg" alt=""/></picture>
+                              <div class="joint-purchases-card__slide-info">
+                                <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с &quot;Gucci Boutique&quot;</div>
+                                <div class="joint-purchases-card__slide-info-price">
+                                  <div class="joint-purchases-card__slide-info-price-old">12 500 ₽</div>
+                                  <div class="joint-purchases-card__slide-info-price-new">10 500 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="joint-purchases-card__btn-prev swiper-button-prev">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                        </svg>
+                      </div>
+                      <div class="joint-purchases-card__btn-next swiper-button-next">
+                        <svg>
+                          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="joint-purchases-card__info">
+                      <div class="joint-purchases-card__discount">
+                        <div class="joint-purchases-card__discount-amount">
+                          <div class="badge badge--big badge--without-border badge--font-commissioner">Скидка -30%
+                          </div>
+                        </div>
+                        <div class="joint-purchases-card__discount-from">при покупке<span>от 136 000 &#8381;</span></div>
+                      </div>
+                      <div class="joint-purchases-card__already">
+                        <div class="joint-purchases-card__already-title">Уже купили на:</div>
+                        <div class="joint-purchases-card__already-count"><span>79 281</span><span>/</span><span>241 093</span><span>&#8381;</span></div>
+                      </div>
+                      <div class="joint-purchases-card__progress">
+                        <div class="progress">
+                          <div class="progress__line" style="width: 30%"></div>
+                        </div>
+                      </div>
+                      <div class="joint-purchases-card__hr hr"></div>
+                      <div class="joint-purchases-card__until">Активна до:
+                        <div class="joint-purchases-card__until-date">27.01.2020 12:00</div>
+                      </div>
+                      <div class="joint-purchases-card__status">
+                        <div class="joint-purchases-card__status-title">Совм. Покупка:</div>
+                        <div class="joint-purchases-card__status-text"></div>
+                      </div>
+                    </div>
+                    <div class="joint-purchases-card__brand">
+                      <div class="joint-purchases-card__brand-logo"><picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"/></picture></div>
+                      <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="with-product__load-btn">
+                <button class="btn btn--dashed" id="spBtnLoad">Подгрузить все СП</button>
               </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="joint-purchases-card__btn-prev swiper-button-prev">
-      <svg>
-        <use xlink:href="./img/icons/icons.svg#arrow"></use>
-      </svg>
-    </div>
-    <div class="joint-purchases-card__btn-next swiper-button-next">
-      <svg>
-        <use xlink:href="./img/icons/icons.svg#arrow"></use>
-      </svg>
-    </div>
-  </div>
-  <div class="joint-purchases-card__info">
-    <div class="joint-purchases-card__discount">
-      <div class="joint-purchases-card__discount-amount">
-        <div class="badge badge--big badge--without-border badge--font-commissioner">
-  Скидка -30%
-</div>
-      </div>
-      <div class="joint-purchases-card__discount-from">
-        при покупке
-        <span>от 136 000 &#8381;</span>
-      </div>
-    </div>
-    <div class="joint-purchases-card__already">
-      <div class="joint-purchases-card__already-title">Уже купили на:</div>
-      <div class="joint-purchases-card__already-count">
-        <span>79 281</span>
-        <span>/</span>
-        <span>241 093</span>
-        <span>&#8381;</span>
-      </div>
-    </div>
-    <div class="joint-purchases-card__progress">
-      <div class="progress progress--">
-  <div class="progress__line" style="width:30%"></div>
-</div>
-    </div>
-    <div class="joint-purchases-card__hr hr"></div>
-    <div class="joint-purchases-card__until">
-      Активна до:
-      <div class="joint-purchases-card__until-date">
-        27.01.2020 12:00
-      </div>
-    </div>
-    <div class="joint-purchases-card__status">
-      <div class="joint-purchases-card__status-title">
-        Совм. Покупка:
-      </div>
-      <div class="joint-purchases-card__status-text"></div>
-    </div>
-  </div>
-  <div class="joint-purchases-card__brand">
-    <div class="joint-purchases-card__brand-logo">
-      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
-    </div>
-    <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
-  </div>
-</div> <div class="joint-purchases-card joint-purchases-card--processing">
-  <div class="joint-purchases-card__about">
-    <div class="joint-purchases-card__logo">
-      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
-    </div>
-    <div class="joint-purchases-card__title">Скупаем платья Gucci со скидкой</div>
-    <div class="joint-purchases-card__subscribe">
-      Подписаться
-      <span class="joint-purchases-card__subscribe-delimiter"></span>
-      <svg><use xlink:href='./img/icons/icons.svg#share-link'></use></svg>
-    </div>
-    <div class="joint-purchases-card__categories">
-      Категории: Платья и сарафаны, Юбки, Летние платья и еще 23
-    </div>
-  </div>
-  <div class="joint-purchases-card__slider">
-    <div class="swiper swiper-joint-purchases">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide4.webp" type="image/webp"><img src="img/sp-slide4.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide1.webp" type="image/webp"><img src="img/sp-slide1.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="joint-purchases-card__slide">
-            <picture><source srcset="img/sp-slide2.webp" type="image/webp"><img src="img/sp-slide2.jpg" alt="" class="joint-purchases-card__slide-img"></picture>
-            <picture><source srcset="img/sp-slide3.webp" type="image/webp"><img src="img/sp-slide3.jpg" alt="" class="joint-purchases-card__slide-img-more"></picture>
-            <div class="joint-purchases-card__slide-info">
-              <div class="joint-purchases-card__slide-info-title">Короткое платье из денима с "Gucci Boutique"</div>
-              <div class="joint-purchases-card__slide-info-price">
-                <div class="joint-purchases-card__slide-info-price-old">12 500 &#8381;</div>
-                <div class="joint-purchases-card__slide-info-price-new">10 500 &#8381;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="joint-purchases-card__btn-prev swiper-button-prev">
-      <svg>
-        <use xlink:href="./img/icons/icons.svg#arrow"></use>
-      </svg>
-    </div>
-    <div class="joint-purchases-card__btn-next swiper-button-next">
-      <svg>
-        <use xlink:href="./img/icons/icons.svg#arrow"></use>
-      </svg>
-    </div>
-  </div>
-  <div class="joint-purchases-card__info">
-    <div class="joint-purchases-card__discount">
-      <div class="joint-purchases-card__discount-amount">
-        <div class="badge badge--big badge--without-border badge--font-commissioner">
-  Скидка -30%
-</div>
-      </div>
-      <div class="joint-purchases-card__discount-from">
-        при покупке
-        <span>от 136 000 &#8381;</span>
-      </div>
-    </div>
-    <div class="joint-purchases-card__already">
-      <div class="joint-purchases-card__already-title">Уже купили на:</div>
-      <div class="joint-purchases-card__already-count">
-        <span>79 281</span>
-        <span>/</span>
-        <span>241 093</span>
-        <span>&#8381;</span>
-      </div>
-    </div>
-    <div class="joint-purchases-card__progress">
-      <div class="progress progress--">
-  <div class="progress__line" style="width:30%"></div>
-</div>
-    </div>
-    <div class="joint-purchases-card__hr hr"></div>
-    <div class="joint-purchases-card__until">
-      Активна до:
-      <div class="joint-purchases-card__until-date">
-        27.01.2020 12:00
-      </div>
-    </div>
-    <div class="joint-purchases-card__status">
-      <div class="joint-purchases-card__status-title">
-        Совм. Покупка:
-      </div>
-      <div class="joint-purchases-card__status-text"></div>
-    </div>
-  </div>
-  <div class="joint-purchases-card__brand">
-    <div class="joint-purchases-card__brand-logo">
-      <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="shop-avatar"></picture>
-    </div>
-    <div class="joint-purchases-card__brand-title">Интернет магазин одежды и аксессуаров Lass</div>
-  </div>
-</div></div>
-    </div>
-    <div class="with-product__load-btn">
-      <button id="spBtnLoad" class="btn btn--dashed">Подгрузить все СП</button>
-    </div>
-  </div>
-</div>
         </div>
       </section>
-
       <section class="section section--with-product">
         <div class="section__inner">
-          <div class="with-product ">
-  <div class="with-product__inner">
-    <div class="with-product__title">
-      Публикации с этим товаром
-    </div>
-    <button class="btn with-product__action-btn">Создать Публикацию</button>
-    <div class="with-product__content">
-      <div id="publicationList" class="post-card-list">
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-    </div>
-    
-      <div class="post-card__liked">
-        <svg>
-          <use xlink:href="/img/icons/icons.svg#favourite"></use>
-        </svg>
-      </div>
-      
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-card-img-white.webp" type="image/webp"><img src="img/post-card-img-white.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Светлый образ на холодную весну</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-louis-vuitton.webp" type="image/webp"><img src="img/post-louis-vuitton.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-        <div class="post-card__scores">
-          <div class="post-card__discus">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
-            </svg>
-            <span>3058</span>
+          <div class="with-product">
+            <div class="with-product__inner">
+              <div class="with-product__title">Публикации с этим товаром</div>
+              <button class="btn with-product__action-btn">Создать Публикацию</button>
+              <div class="with-product__content">
+                <div class="post-card-list" id="publicationList"><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png" alt="img/post-card-img-black.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="post-card__liked">
+                        <svg>
+                          <use xlink:href="/img/icons/icons.svg#favourite"></use>
+                        </svg>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-card-img-white.webp" type="image/webp"><img src="img/post-card-img-white.png" alt="img/post-card-img-white.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Светлый образ на холодную весну</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-louis-vuitton.webp" type="image/webp"><img src="img/post-louis-vuitton.png" alt="img/post-louis-vuitton.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                        <div class="post-card__scores">
+                          <div class="post-card__discus">
+                            <svg>
+                              <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
+                            </svg><span>3058</span>
+                          </div>
+                          <div class="post-card__discus">
+                            <svg>
+                              <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
+                            </svg><span>64197</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-jeans.webp" type="image/webp"><img src="img/post-jeans.png" alt="img/post-jeans.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-louis-vuitton.webp" type="image/webp"><img src="img/post-louis-vuitton.png" alt="img/post-louis-vuitton.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                        <div class="post-card__scores">
+                          <div class="post-card__discus">
+                            <svg>
+                              <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
+                            </svg><span>3058</span>
+                          </div>
+                          <div class="post-card__discus">
+                            <svg>
+                              <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
+                            </svg><span>64197</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-jeans.webp" type="image/webp"><img src="img/post-jeans.png" alt="img/post-jeans.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                        <div class="post-card__scores">
+                          <div class="post-card__discus">
+                            <svg>
+                              <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
+                            </svg><span>3058</span>
+                          </div>
+                          <div class="post-card__discus">
+                            <svg>
+                              <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
+                            </svg><span>64197</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png" alt="img/post-card-img-black.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-card-img-white.webp" type="image/webp"><img src="img/post-card-img-white.png" alt="img/post-card-img-white.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a><a class="post-card" href="#">
+                    <div class="post-card__wrapper"><picture><source srcset="img/post-card-img-white.webp" type="image/webp"><img src="img/post-card-img-white.png" alt="img/post-card-img-white.png"/></picture>
+                      <div class="post-card__desc-inner">
+                        <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
+                        <div class="post-card__range">
+                          <div class="rating" data-rating="3">
+                            <svg class="rating__icon" data-rate="1">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="2">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="3">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="4">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                            <svg class="rating__icon" data-rate="5">
+                              <use xlink:href="./img/icons/icons.svg#rating-star"></use>
+                            </svg>
+                          </div>
+                          <div class="post-card__range-inner">
+                            <p>Олеся Смирнова</p><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg" alt="img/logo-user-sm.jpg"/></picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div></a>
+                </div>
+              </div>
+              <div class="with-product__load-btn">
+                <button class="btn btn--dashed" id="publicationBtnLoad">Подгрузить все публикации</button>
+              </div>
+            </div>
           </div>
-          <div class="post-card__discus">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
-            </svg>
-            <span>64197</span>
-          </div>
-        </div>
-    </div>
-    
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-jeans.webp" type="image/webp"><img src="img/post-jeans.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-louis-vuitton.webp" type="image/webp"><img src="img/post-louis-vuitton.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-        <div class="post-card__scores">
-          <div class="post-card__discus">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
-            </svg>
-            <span>3058</span>
-          </div>
-          <div class="post-card__discus">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
-            </svg>
-            <span>64197</span>
-          </div>
-        </div>
-    </div>
-    
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-jeans.webp" type="image/webp"><img src="img/post-jeans.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-        <div class="post-card__scores">
-          <div class="post-card__discus">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#logo-discus"></use>
-            </svg>
-            <span>3058</span>
-          </div>
-          <div class="post-card__discus">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#logo-likes-grey"></use>
-            </svg>
-            <span>64197</span>
-          </div>
-        </div>
-    </div>
-    
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-card-img-white.webp" type="image/webp"><img src="img/post-card-img-white.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-</a>
-
-  <a href="#" class="post-card">
-  <div class="post-card__wrapper">
-    <picture><source srcset="img/post-card-img-white.webp" type="image/webp"><img src="img/post-card-img-white.png"></picture></img>  
-    <div class="post-card__desc-inner">
-      <p class="post-card__desc">Отзыв о черной простыне Karna Loft35 Сатин, 260x280, черный</p>
-      <div class="post-card__range">
-        <div class="rating @@extra-class" data-rating="3">
-  <svg class="rating__icon" data-rate="1">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="2">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="3">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="4">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-  <svg class="rating__icon" data-rate="5">
-    <use xlink:href="./img/icons/icons.svg#rating-star"></use>
-  </svg>
-
-  <input name="@@name" type="text" value="" hidden>
-</div>
-        <div class="post-card__range-inner">
-          <p>Олеся Смирнова</p>
-          <picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>  
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-</a>
-
-</div>
-    </div>
-    <div class="with-product__load-btn">
-      <button id="publicationBtnLoad" class="btn btn--dashed">Подгрузить все публикации</button>
-    </div>
-  </div>
-</div>
         </div>
       </section>
-
-      <div id="discount" class="popup popup--discount" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Какие скидки на товары я получу от продавца</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="discount">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      
-      <div class="discount">
-  <div class="discount__wrapper">
-    <div class="discount__inner">
-      <div class="discount__info">
-        <div class="discount__title">
-          Товар
-        </div>
-        <div class="discount__info-inner">
-          <div class="discount__info-description">
-            <div class="discount__info-img">
-              <picture><source srcset="img/product-img3.webp" type="image/webp"><img src="img/product-img3.png" /></picture>
-            </div>
-            <div class="discount__info-title">
-              <span class="discount__info-brand">Louis Vouitton</span>
-              <span class="discount__info-name">Пуховик из кожи с узором Monogram Micro</span>
+          <div class="popup popup--discount" id="discount">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="popup__header">
+                  <div class="popup__header-title">Какие скидки на товары я получу от продавца
+                  </div>
+                  <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="discount">
+                    <svg class="popup__header-btn-close-icon">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="discount">
+                  <div class="discount__wrapper">
+                    <div class="discount__inner">
+                      <div class="discount__info">
+                        <div class="discount__title">Товар</div>
+                        <div class="discount__info-inner">
+                          <div class="discount__info-description">
+                            <div class="discount__info-img"> <picture><source srcset="img/product-img3.webp" type="image/webp"><img src="img/product-img3.png" alt="img/product-img3.png"/></picture></div>
+                            <div class="discount__info-title"><span class="discount__info-brand">Louis Vouitton</span><span class="discount__info-name">Пуховик из кожи с узором Monogram Micro</span></div>
+                          </div>
+                          <div class="discount__info-price">
+                            <div class="discount__info-price-inner"><span class="discount__info-price-item-crossed"><span class="discount__info-price-item-crossed number">459000</span>₽</span><span class="discount__info-price-item-new"><span class="discount__info-price-item-new number">413100</span>₽</span><span class="discount__info-price-item-amount">за 1 шт.</span></div>
+                            <div class="discount__price-discount">С персональной индивидуальной - 10%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="discount__seller">
+                        <div class="discount__title">Продавец</div>
+                        <div class="discount__seller-inner">
+                          <div class="discount__seller-img"><picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" alt="img/shop-avatar.png"/></picture></div>
+                          <div class="discount__seller-name">Интернет магазин одежды и аксессуаров Lass</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="discount__inner">
+                      <div class="discount__choice">
+                        <div class="discount__title">Выберите количество товара</div>
+                        <div class="discount__choice-select">
+                              <div class="select select--border-grey noselect" id="amount-popup" role="button" tabindex="0">
+                                <div class="select__header">
+                                  <div class="select__title">4 шт.</div>
+                                  <div class="select__icon">
+                                    <svg>
+                                      <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <ul class="select__options">
+                                  <li><li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li></li>
+                                  <li><li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li></li>
+                                  <li><li class="select__options-item" data-value="3" role="button" tabindex="0">3 шт.</li></li>
+                                  <li><li class="select__options-item" data-value="4" role="button" tabindex="0">4 шт.</li></li>
+                                </ul>
+                                <input name="amount-popup" type="text" value="4 шт." hidden>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="discount__choice-math">
+                        <div class="discount__title">Расчет скидок на каждый товар</div>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th># Товара</th>
+                              <th>Стоимость</th>
+                              <th>Скидка</th>
+                            </tr>
+                          </thead>
+                          <tbody id="bodyDiscountTable">
+                            <tr>
+                              <td>#1</td>
+                              <td> <span class="number">459000</span> ₽</td>
+                              <td>-10%</td>
+                            </tr>
+                            <tr>
+                              <td>#2</td>
+                              <td> <span class="number">408000</span> ₽</td>
+                              <td>-20%</td>
+                            </tr>
+                            <tr>
+                              <td>#3</td>
+                              <td> <span class="number">380000</span> ₽</td>
+                              <td>-30%</td>
+                            </tr>
+                            <tr>
+                              <td>#4</td>
+                              <td> <span class="number">357000</span> ₽</td>
+                              <td>-40%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="discount__info-price">
-            <div class="discount__info-price-inner">
-              <span class="discount__info-price-item-crossed">
-                <span class="discount__info-price-item-crossed number">
-                  182500
-                </span>
-                ₽
-              </span>
-              <span class="discount__info-price-item-new">
-                <span class="discount__info-price-item-new number">
-                  459000
-                </span>
-                ₽
-              </span>
-              <span class="discount__info-price-item-amount">
-                за 1 шт.
-            </div>
-            <div class="discount__price-discount">
-              С персональной индивидуальной - 10%
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="discount__seller">
-        <div class="discount__title">
-          Продавец
-        </div>
-        <div class="discount__seller-inner">
-          <div class="discount__seller-img">
-            <picture><source srcset="img/shop-avatar.webp" type="image/webp"><img src="img/shop-avatar.png" /></picture>
-          </div>
-          <div class="discount__seller-name">
-            Интернет магазин одежды и аксессуаров Lass
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="discount__inner">
-      <div class="discount__choice">
-        <div class="discount__title">
-          Выберите количество товара
-        </div>
-        <div class="discount__choice-select">
-          <div id="amount-popup" class="select select--border-grey noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">4 шт.</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="1" role="button" tabindex="0">1 шт.</li> <li class="select__options-item" data-value="2" role="button" tabindex="0">2 шт.</li>  <li class="select__options-item" data-value="3" role="button" tabindex="0">3 шт.</li> <li class="select__options-item" data-value="4" role="button" tabindex="0">4 шт.</li> 
-  </ul>
-  <input name=amount-popup type="text" value="4 шт." hidden>
-</div>
-
-        </div>
-      </div>
-      <div class="discount__choice-math">
-        <div class="discount__title">
-          Расчет скидок на каждый товар
-        </div>
-        <table>  
-          <thead>  
-              <tr>  
-                <th># Товара</th>  
-                <th>Стоимость</th>  
-                <th>Скидка</th>  
-              </tr>  
-          </thead>  
-          <tbody id="bodyDiscountTable">  
-            <tr>  
-              <td>#1</td>  
-              <td><span class="number">459000</span> ₽</td>  
-              <td>-10%</td>  
-            </tr>  
-            <tr>  
-              <td>#2</td>  
-              <td><span class="number">408000</span> ₽</td>  
-              <td>-20%</td>  
-            </tr>  
-            <tr>  
-              <td>#3</td>  
-              <td><span class="number">408000</span> ₽</td>  
-              <td>-20%</td>  
-            </tr>  
-            <tr>  
-              <td>#4</td>  
-              <td><span class="number">357000</span> ₽</td>  
-              <td>-40%</td>  
-            </tr>  
-          </tbody>  
-      </table>  
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
     </main>
   </body>
 </html>

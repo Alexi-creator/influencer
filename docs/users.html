@@ -1,1655 +1,1120 @@
 <!DOCTYPE html>
-<html lang="ru-RU">
+<html class="isAuth" lang="ru-RU">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/users.min.css?_v=20250517100945">
-  <title>users Page</title>
-  <script defer src="js/users.min.js?_v=20250517100945"></script>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages/users.min.css?_v=20250517101341">
+    <title>users Page</title>
+    <script defer src="js/users.min.js?_v=20250517101341"></script>
+  </head>
   <body>
     <header class="header">
-  <div class="header__inner">
-    <div class="header__top">
-      <button class="header__top-location header__top-location--empty" data-popup="location">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#location"></use>
-        </svg>
-        <span class="header__top-location-address"></span>
-        <span class="header__top-location-cta">Укажите точный адрес</span>
-      </button>
-      <div class="header__top-info">
-        <a href="#">Инструкции</a>
-        <a href="#">Контакты</a>
-        <div id="language" class="select select--transparent header__top-language noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Русский</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>
-  </ul>
-  <input name=language type="text" value="ru" hidden>
-</div>
-
+      <div class="header__inner">
+        <div class="header__top">
+          <button class="header__top-location header__top-location--empty" data-popup="location">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#location"></use>
+            </svg><span class="header__top-location-address"></span><span class="header__top-location-cta">Укажите точный адрес</span>
+          </button>
+          <div class="header__top-info"><a href="#">Инструкции</a><a href="#">Контакты</a>
+                <div class="select select--transparent header__top-language noselect" id="language" role="button" tabindex="0">
+                  <div class="select__header">
+                    <div class="select__title">Русский</div>
+                    <div class="select__icon">
+                      <svg>
+                        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="select__options">
+                    <li><li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li></li>
+                    <li><li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li></li>
+                    <li><li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li></li>
+                  </ul>
+                  <input name="language" type="text" value="ru" hidden>
+                </div>
+          </div>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-logo"><a class="header__nav-logo-small" href="./index.html"><img width="24" height="24" src="img/small-logo.svg" alt="small-logo"></a><a class="header__nav-logo-big" href="./index.html"><img width="106" height="24" src="img/logo.svg" alt="logo"></a></li>
+            <li class="header__nav-item header__nav-catalog"><a class="btn" href="./catalog.html">
+                <svg class="header__nav-catalog-icon-catalog">
+                  <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                </svg>
+                <svg class="header__nav-catalog-icon-cross">
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg><span class="header__nav-catalog-title">Каталог</span></a></li>
+            <li class="header__nav-item header__nav-search">
+              <div class="header__nav-search-title">
+                <div class="header__nav-search-title-text">Поиск по сайту</div>
+                <svg class="header__nav-search-title-cross">
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+                  <div class="autocomplete header__nav-search-input autocomplete--img autocomplete--select" id="search-shops">
+                        <div class="input-text">
+                          <label class="input-text__label autocomplete__input" data-id="parent-search-shops">
+                            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                            <input class="input-text__input" type="search" name="search-shops" placeholder="Найдите что-нибудь">
+                            <div class="input-text__suffix autocomplete__suffix">
+                                  <div class="select select--transparent noselect" id="select-search" role="button" tabindex="0">
+                                    <div class="select__header">
+                                      <div class="select__title">Везде</div>
+                                      <div class="select__icon">
+                                        <svg>
+                                          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <ul class="select__options">
+                                      <li><li class=select__options-item data-value=value1 role=button tabindex=0>Везде2</li></li>
+                                      <li><li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li></li>
+                                      <li><li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li></li>
+                                    </ul>
+                                    <input name="select-search" type="text" value="value2" hidden>
+                                  </div>
+                            </div>
+                          </label>
+                          <p class="input-text__error" data-id="error-search-shops"></p>
+                        </div>
+                    <input type="text" name="search-shops" value="" hidden>
+                    <div class="autocomplete__body">
+                      <div class="autocomplete__body-title">Результаты поиска</div>
+                      <div class="autocomplete__options"><a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
+                      </div>
+                    </div>
+                  </div>
+              <div class="header__nav-search-filter">
+                <div class="header__nav-search-filter-title">Где будем искать</div>
+              </div>
+              <div class="header__nav-search-mask"></div>
+            </li>
+            <li class="header__nav-item header__nav-basket"><a href="/carts.html">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">9</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-favorite"><a href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#heart"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">4</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-feed"><a href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#feed"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">1</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-instagram"><a href="/add-publication.html">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#camera"></use>
+                </svg></a></li>
+            <li class="header__nav-item header__nav-profile" data-popup="login"><a class="header__nav-sign-in" href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#user"></use>
+                </svg>Войти в аккаунт</a><a class="header__nav-account" href="#">
+                <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">Мой рейтинг: 109</div>
+                <div class="header__nav-avatar"><picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture></div></a></li>
+            <li class="header__nav-item header__nav-more">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#more"></use>
+              </svg>
+            </li>
+            <li class="header__nav-item header__nav-location" data-popup="location">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#map"></use>
+              </svg>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item header__nav-logo">
-          <a class="header__nav-logo-small" href="./index.html">
-            <img width="24" height="24" src="img/small-logo.svg" alt="small-logo">
-          </a>
-          <a class="header__nav-logo-big" href="./index.html">
-            <img width="106" height="24" src="img/logo.svg" alt="logo">
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-catalog ">
-          <a class="btn" href="./catalog.html">
-            <svg class="header__nav-catalog-icon-catalog">
-              <use xlink:href="./img/icons/icons.svg#catalog"></use>
-            </svg>
-            <svg class="header__nav-catalog-icon-cross">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-            <span class="header__nav-catalog-title">Каталог</span>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-search">
-          <div class="header__nav-search-title">
-            <div class="header__nav-search-title-text">Поиск по сайту</div>
-            <svg class="header__nav-search-title-cross"><use xlink:href="./img/icons/icons.svg#cross"></use></svg>
-          </div>
-          <div id="search-shops" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
-    
-      <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li> <li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>
-  </ul>
-  <input name=select-search type="text" value="value2" hidden>
-</div>
-</div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="search-shops" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-      <div class="autocomplete__options">
-        
-          <a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
-        
+      <div class="useful-links">
+        <div class="useful-links__title">Полезные ссылки
+          <svg class="useful-links__title-cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <ul class="useful-links__list">
+          <li class="useful-links__list-item"><a href="#">Категории
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Магазины
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Совместные покупки
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Test ForFree
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Блогеры
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Публикации
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Служба поддержки
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+        </ul>
       </div>
+          <div class="popup header__login" id="login">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="popup__header">
+                  <div class="popup__header-title">
+      <div class="header__login-title-sign-in">Войдите в свой профиль</div>
+      <div class="header__login-title-sign-up">Зарегистрируйтесь</div>
     
-    
-  </div>
-</div>
-
-          <div class="header__nav-search-filter">
-            <div class="header__nav-search-filter-title">
-              Где будем искать
+                  </div>
+                  <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
+                    <svg class="popup__header-btn-close-icon">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="login login--sign-in">
+                  <div class="login__inner">
+                    <div class="login__sign-in">
+                      <div class="login__descr">Чтобы пользоваться лентой новостей</div>
+                      <div class="login__options">
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#google"></use>
+                          </svg>Войти через Google
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#vk"></use>
+                          </svg>Войти через ВКонтакте
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="login__or"><span class="login__or-text">или</span></div>
+                      <form class="login__form login__form-sign-in">
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+                                <input class="input-text__input" type="text" name="email" placeholder="Введите свою эл. почту">
+                              </label>
+                              <p class="input-text__error" data-id="error-email"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+                                <input class="input-text__input" type="password" name="password" placeholder="Введите пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-password"></p>
+                            </div>
+                        <button class="login__form-submit btn" type="submit">Войти</button>
+                      </form>
+                      <div class="login__choice">
+                        <div class="login__choice-title">Нет аккаунта?</div>
+                        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+                      </div>
+                    </div>
+                    <div class="login__sign-up">
+                      <div class="login__descr">Чтобы подписываться на акции, создавать публикации и сохранять любимые товары</div>
+                      <div class="login__options">
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#google"></use>
+                          </svg>Регистрация через Google
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#vk"></use>
+                          </svg>Регистрация через ВКонтакте
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="login__or"><span class="login__or-text">или</span></div>
+                      <form class="login__form login__form-sign-up">
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+                                <input class="input-text__input" type="text" name="email" placeholder="Введите свою эл. почту">
+                              </label>
+                              <p class="input-text__error" data-id="error-email"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+                                <input class="input-text__input" type="password" name="password" placeholder="Придумайте пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-password"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-repeat_password">
+                                <input class="input-text__input" type="password" name="repeat_password" placeholder="Повторите ввод пароля пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-repeat_password"></p>
+                            </div>
+                        <button class="login__form-submit btn" type="submit">Зарегистрироваться</button>
+                      </form>
+                      <div class="login__choice">
+                        <div class="login__choice-title">Есть аккаунт?</div>
+                        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="header__nav-search-mask"></div>
-        </li>
-        <li class="header__nav-item header__nav-basket">
-          <a href="/carts.html">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  9
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-favorite">
-          <a href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#heart"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  4
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-feed">
-          <a href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#feed"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  1
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-instagram">
-          <a href="/add-publication.html">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#camera"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-profile" data-popup="login">
-          <a class="header__nav-sign-in" href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#user"></use>
-            </svg>
-            Войти в аккаунт
-          </a>
-          <a class="header__nav-account" href="#">
-            <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">
-              Мой рейтинг: 109
+          <div class="popup header__location" id="location">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="popup__header">
+                  <div class="popup__header-title">Куда доставить заказ?
+                  </div>
+                  <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
+                    <svg class="popup__header-btn-close-icon">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="location">
+                  <div class="location__inner">
+                    <div class="location__img location__not-setup"><picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture></div>
+                    <div class="location__descr location__setup">Выберите адрес, чтобы увидеть условия доставки</div>
+                    <div class="location__actions">
+                      <div class="location__actions-city">
+                        <svg class="location__address-city-icon">
+                          <use xlink:href="./img/icons/icons.svg#map"></use>
+                        </svg><span class="location__address-city-name">Москва</span>
+                      </div>
+                      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">Изменить</button>
+                    </div>
+                    <ul class="location__addresses location__setup">
+                      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
+                        <div class="location__address-header">
+                          <div class="location__address-option">Отделение Почты России</div>
+                          <button class="location__address-remove">
+                            <svg class="location__address-remove-icon">
+                              <use xlink:href="./img/icons/icons.svg#cross"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+                        <div class="location__address-storage-period">Срок хранения заказа - <span class="location__address-storage-period-count">15 дней</span></div>
+                      </li>
+                      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
+                        <div class="location__address-header">
+                          <div class="location__address-option">Доставка по адресу</div>
+                          <button class="location__address-remove">
+                            <svg class="location__address-remove-icon">
+                              <use xlink:href="./img/icons/icons.svg#cross"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
+                        <div class="location__address-contacts">Маргарита А., +7 999 123 45 67</div>
+                      </li>
+                    </ul>
+                    <div class="location__descr location__not-setup">Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров</div>
+                    <button class="location__button location__not-setup btn" data-popup="map" data-close-popup="location">Выбрать адрес на карте</button>
+                    <button class="location__button location__setup btn" data-popup="map" data-close-popup="location">Добавить новый адрес или пункт</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="header__nav-avatar">
-              <picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture>
+          </div>
+          <div class="popup header__choose-city" id="choose-city">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="choose-city">
+                  <div class="choose-city__inner">
+                    <div class="choose-city__header">
+                      <button class="choose-city__back">
+                        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="choose-city__title">Выберите город</div>
+                      <button class="choose-city__cross" data-close-popup="choose-city">
+                        <svg class="choose-city__cross-icon">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="choose-city__search">
+                      <div class="input-text">
+                        <label class="input-text__label" data-id="parent-search">
+                          <div class="input-text__prefix"><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+                          <input class="input-text__input" type="search" name="search" placeholder="Найдите свой город">
+                        </label>
+                        <p class="input-text__error" data-id="error-search"></p>
+                      </div>
+                    </div>
+                    <ul class="choose-city__list">
+                      <li class="choose-city__list-item">
+                        <label class="radio radio--active">
+                          <input type="radio" name="city" value="Москва"><span class="radio__content"><span class="radio__custom"></span>Москва</span>
+                        </label>
+                      </li>
+                      <li class="choose-city__list-item">
+                        <label class="radio radio--active">
+                          <input type="radio" name="city" value="Санкт-Петербург"><span class="radio__content"><span class="radio__custom"></span>Санкт-Петербург</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
+          <div class="popup popup--no-overlay header__map" id="map">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="map">
+                  <div class="map__inner">
+                    <div class="map__header">
+                      <button class="map__header-back">
+                        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="map__header-title">Способ доставки товаров</div>
+                      <div class="map__header-options">
+                        <label class="radio radio--active radio--reverse">
+                          <input type="radio" name="choose-delivery" value="pickup" checked><span class="radio__content"><span class="radio__custom"></span>Самовывоз</span>
+                        </label>
+                        <label class="radio radio--active radio--reverse">
+                          <input type="radio" name="choose-delivery" value="courier"><span class="radio__content"><span class="radio__custom"></span>Курьером</span>
+                        </label>
+                      </div>
+                      <button class="map__header-cross btn btn--color-primary-light">
+                        <svg class="map__header-cross-icon" data-close-popup="map">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="map__yandex">
+                      <iframe id="maps" width="100%" height="100%" frameborder="0" data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;amp;source=constructor"></iframe>
+                    </div>
+                    <div class="map__address">
+                      <div class="map__address-header">Куда доставить заказ?</div>
+                      <div class="map__address-descr">
+                        <div class="map__address-descr-pickup">Выберите пункт выдачи или найдите</div>
+                        <div class="map__address-descr-courier">Выберите адрес на карте или найдите</div>
+                      </div>
+                      <div class="map__address-actions">
+                        <div class="autocomplete map__address-actions-input map__autocomplete--pickup" id="pickup-autocomplete">
+                          <div class="input-text">
+                            <label class="input-text__label autocomplete__input" data-id="parent-pickup-autocomplete">
+                              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                              <input class="input-text__input" type="search" name="pickup-autocomplete" placeholder="Пункт выдачи">
+                              <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                            </label>
+                            <p class="input-text__error" data-id="error-pickup-autocomplete"></p>
+                          </div>
+                          <input type="text" name="pickup-autocomplete" value="" hidden>
+                          <div class="autocomplete__body">
+                            <div class="autocomplete__body-title">Результаты поиска</div>
+                            <ul class="autocomplete__options">
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="autocomplete map__address-actions-input map__autocomplete--courier" id="courier-autocomplete">
+                          <div class="input-text">
+                            <label class="input-text__label autocomplete__input" data-id="parent-courier-autocomplete">
+                              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                              <input class="input-text__input" type="search" name="courier-autocomplete" placeholder="Адрес доставки">
+                              <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                            </label>
+                            <p class="input-text__error" data-id="error-courier-autocomplete"></p>
+                          </div>
+                          <input type="text" name="courier-autocomplete" value="" hidden>
+                          <div class="autocomplete__body">
+                            <div class="autocomplete__body-title">Результаты поиска</div>
+                            <ul class="autocomplete__options">
+                            </ul>
+                          </div>
+                        </div>
+                        <button class="map__address-actions-define">
+                          <svg class="map__address-actions-define-icon">
+                            <use xlink:href="./img/icons/icons.svg#compass"></use>
+                          </svg>Определить местоположение
+                        </button>
+                        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>Продолжить</button>
+                        <button class="btn map__btn map__btn--courier" disabled>Продолжить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup popup--no-overlay header__search-pickup" id="search-pickup">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="search-pickup">
+                  <div class="search-pickup__inner">
+                    <div class="search-pickup__header">
+                      <button class="search-pickup__header-back">
+                        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="search-pickup__header-title">Куда доставить заказ?</div>
+                      <button class="search-pickup__header-cross btn btn--color-primary-light">
+                        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
+                    <div class="search-pickup__actions">
+                      <div class="autocomplete search-pickup__actions-input" id="search-pickup-autocomplete">
+                        <div class="input-text">
+                          <label class="input-text__label autocomplete__input" data-id="parent-search-pickup">
+                            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                            <input class="input-text__input" type="search" name="search-pickup" placeholder="Введите адрес">
+                            <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                          </label>
+                          <p class="input-text__error" data-id="error-search-pickup"></p>
+                        </div>
+                        <input type="text" name="search-pickup" value="" hidden>
+                        <div class="autocomplete__body">
+                          <div class="autocomplete__body-title">Результаты поиска</div>
+                          <ul class="autocomplete__options">
+                          </ul>
+                        </div>
+                      </div>
+                      <button class="search-pickup__actions-define">
+                        <svg class="search-pickup__header-actions-define-icon">
+                          <use xlink:href="./img/icons/icons.svg#compass"></use>
+                        </svg>Определить местоположение
+                      </button>
+                      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>Продолжить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup popup--no-overlay header__courier" id="courier">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="courier">
+                  <div class="courier__inner">
+                    <div class="courier__header">
+                      <button class="courier__header-back">
+                        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="courier__header-title">Уточнить адрес</div>
+                      <button class="courier__header-cross btn btn--color-primary-light">
+                        <svg class="courier__header-cross-icon" data-close-popup="courier">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="courier__actions">
+                      <div class="courier__actions-inputs">
+                        <div class="courier__actions-inputs-full">Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Дом">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Индекс">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Подъезд">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Этаж">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Домофон">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                      </div>
+                      <button class="btn" disabled>Продолжить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <nav class="nav">
+        <ul class="nav__list">
+                <li><a class="nav__item nav__item-publication" href="/add-publication.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#camera"></use>
+                    </svg>
+                    <div class="nav__item-title">Публикация</div></a></li>
+                <li><a class="nav__item nav__item-catalog" href="./catalog.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                    </svg>
+                    <div class="nav__item-title">Каталог</div></a></li>
+                <li><a class="nav__item nav__item-feed" href="#">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#feed"></use>
+                    </svg>
+                    <div class="nav__item-title">Лента</div></a></li>
+                <li><a class="nav__item nav__item-shopping-bag" href="/carts.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+                    </svg>
+                    <div class="nav__item-title">Корзина</div>
+                    <div class="nav__item-counter">
+                            <div class="counter counter--green">1</div>
+                    </div></a></li>
+                <li><a class="nav__item nav__item-profile" href="#">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#profile"></use>
+                    </svg><picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
+                    <div class="nav__item-title">Профиль</div></a></li>
+        </ul>
+      </nav>
+      <template id="address">
+        <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
+          <div class="location__address-header">
+            <div class="location__address-option"></div>
+            <button class="location__address-remove">
+              <svg class="location__address-remove-icon">
+                <use xlink:href="./img/icons/icons.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="location__address-address"></div>
+          <div class="location__address-storage-period"><span class="location__address-storage-period-count"></span></div>
         </li>
-        <li class="header__nav-item header__nav-more">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#more"></use>
-          </svg>
-        </li>
-        <li class="header__nav-item header__nav-location" data-popup="location">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#map"></use>
-          </svg>
-        </li>
+      </template>
+    </header>
+    <nav class="nav-pages">
+      <ul class="nav-pages__list">
+        <li><a href="#">Магазины</a></li>
+        <li><a href="#">Совместные покупки</a></li>
+        <li><a href="#">Test for Free</a></li>
+        <li><a href="./users.html">Блогеры</a></li>
+        <li><a href="#">Публикации</a></li>
       </ul>
     </nav>
-  </div>
-
-  <div class="useful-links">
-  <div class="useful-links__title">
-    Полезные ссылки
-    <svg class="useful-links__title-cross">
-      <use xlink:href="./img/icons/icons.svg#cross"></use>
-    </svg>
-  </div>
-  <ul class="useful-links__list">
-    <li class="useful-links__list-item">
-      <a href="#">
-        Категории
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Магазины
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Совместные покупки
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Test ForFree
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Блогеры
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Публикации
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Служба поддержки
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-  </ul>
-</div>
-
-  <div id="login" class="popup header__login" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Войдите в свой профиль</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      
-      <div class="login login--sign-in">
-  <div class="login__inner">
-
-    <!-- Блок логина -->
-    <div class="login__sign-in">
-      <div class="login__descr">
-        Чтобы пользоваться лентой новостей
-      </div>
-      <div class="login__options">
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#google"></use>
-          </svg>
-          Войти через Google
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#vk"></use>
-          </svg>
-          Войти через ВКонтакте
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__or">
-        <span class="login__or-text">или</span>
-      </div>
-      <form class="login__form login__form-sign-in">
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
-    
-    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-email"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
-    
-    <input name="password" class="input-text__input" type="password" placeholder="Введите пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-password"></p>
-</div>
-
-        <button class="login__form-submit btn" type="submit">
-          Войти
-        </button>
-      </form>
-      <div class="login__choice">
-        <div class="login__choice-title">
-          Нет аккаунта?
-        </div>
-        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
-      </div>
-    </div>
-
-    <!-- Блок регистрации -->
-    <div class="login__sign-up">
-      <div class="login__title">
-        Зарегистрируйтесь
-        <button class="login__title-cross" type="button" data-close-popup="login">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__descr">
-        Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
-      </div>
-      <div class="login__options">
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#google"></use>
-          </svg>
-          Регистрация через Google
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#vk"></use>
-          </svg>
-          Регистрация через ВКонтакте
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__or">
-        <span class="login__or-text">или</span>
-      </div>
-      <form class="login__form login__form-sign-up">
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
-    
-    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-email"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
-    
-    <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-password"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-repeat_password">
-    
-    <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-repeat_password"></p>
-</div>
-
-        <button class="login__form-submit btn" type="submit">
-          Зарегистрироваться
-        </button>
-      </form>
-      <div class="login__choice">
-        <div class="login__choice-title">
-          Есть аккаунт?
-        </div>
-        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="location" class="popup header__location" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Куда доставить заказ?</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      
-      <div class="location @@locationExtraClass">
-  <div class="location__inner">
-    <div class="location__img location__not-setup">
-      <picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture>
-    </div>
-    <div class="location__descr location__setup">
-      Выберите адрес, чтобы увидеть условия доставки
-    </div>
-    <div class="location__actions">
-      <div class="location__actions-city">
-        <svg class="location__address-city-icon">
-          <use xlink:href="./img/icons/icons.svg#map"></use>
-        </svg>
-        <span class="location__address-city-name">Москва</span>
-      </div>
-      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">
-        Изменить
-      </button>
-    </div>
-    <ul class="location__addresses location__setup">
-      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
-        <div class="location__address-header">
-          <div class="location__address-option">Отделение Почты России</div>
-          <button class="location__address-remove">
-            <svg class="location__address-remove-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
-        <div class="location__address-storage-period">
-          Срок хранения заказа - 
-          <span class="location__address-storage-period-count">15 дней</span>
-        </div>
-      </li>
-      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
-        <div class="location__address-header">
-          <div class="location__address-option">Доставка по адресу</div>
-          <button class="location__address-remove">
-            <svg class="location__address-remove-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
-        <div class="location__address-contacts">
-          Маргарита А., +7 999 123 45 67
-        </div>
-      </li>
-    </ul>
-    <div class="location__descr location__not-setup">
-      Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров
-    </div>
-    <button class="location__button location__not-setup btn" data-popup="map" data-close-popup="location">
-      Выбрать адрес на карте
-    </button>
-    <button class="location__button location__setup btn" data-popup="map" data-close-popup="location">
-      Добавить новый адрес или пункт
-    </button>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-  <div id="choose-city" class="popup header__choose-city" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="choose-city">
-  <div class="choose-city__inner">
-    <div class="choose-city__header">
-      <button class="choose-city__back">
-        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="choose-city__title">Выберите город</div>
-      <button class="choose-city__cross" data-close-popup="choose-city">
-        <svg class="choose-city__cross-icon">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="choose-city__search">
-      <div class="input-text">
-  <label class="input-text__label " data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-    </div>
-    <ul class="choose-city__list">
-      <li class="choose-city__list-item">
-        <label class="radio radio--active">
-  <input name="city" type="radio" value="Москва" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Москва
-  </span>
-</label>
-
-      </li>
-      <li class="choose-city__list-item">
-        <label class="radio radio--active">
-  <input name="city" type="radio" value="Санкт-Петербург" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Санкт-Петербург
-  </span>
-</label>
-
-      </li>
-    </ul>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="map" class="popup popup--no-overlay header__map" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="map">
-  <div class="map__inner">
-    <div class="map__header">
-      <button class="map__header-back">
-        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="map__header-title">Способ доставки товаров</div>
-      <div class="map__header-options">
-        <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="pickup" checked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Самовывоз
-  </span>
-</label>
-
-        <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="courier" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Курьером
-  </span>
-</label>
-
-      </div>
-      <button class="map__header-cross btn btn--color-primary-light">
-        <svg class="map__header-cross-icon" data-close-popup="map">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="map__yandex">
-      <iframe
-        id="maps"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor"
-      >
-      </iframe>
-    </div>
-    <div class="map__address">
-      <div class="map__address-header">Куда доставить заказ?</div>
-      <div class="map__address-descr">
-        <div class="map__address-descr-pickup">
-          Выберите пункт выдачи или найдите
-        </div>
-        <div class="map__address-descr-courier">
-          Выберите адрес на карте или найдите
-        </div>
-      </div>
-      <div class="map__address-actions">
-        <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи" @@atr>
-    
-      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="pickup-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-        <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки" @@atr>
-    
-      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="courier-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-        <button class="map__address-actions-define">
-          <svg class="map__address-actions-define-icon">
-            <use xlink:href="./img/icons/icons.svg#compass"></use>
-          </svg>
-          Определить местоположение
-        </button>
-        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>
-          Продолжить
-        </button>
-        <button class="btn map__btn map__btn--courier" disabled>
-          Продолжить
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="search-pickup" class="popup popup--no-overlay header__search-pickup" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="search-pickup">
-  <div class="search-pickup__inner">
-    <div class="search-pickup__header">
-      <button class="search-pickup__header-back">
-        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="search-pickup__header-title">
-        Куда доставить заказ?
-      </div>
-      <button class="search-pickup__header-cross btn btn--color-primary-light">
-        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
-    <div class="search-pickup__actions">
-      <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix search-pickup__actions-input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес" @@atr>
-    
-      <div class="input-text__suffix search-pickup__actions-input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="search-pickup" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-      <button class="search-pickup__actions-define">
-        <svg class="search-pickup__header-actions-define-icon">
-          <use xlink:href="./img/icons/icons.svg#compass"></use>
-        </svg>
-        Определить местоположение
-      </button>
-      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>
-        Продолжить
-      </button>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="courier" class="popup popup--no-overlay header__courier" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="courier">
-  <div class="courier__inner">
-    <div class="courier__header">
-      <button class="courier__header-back">
-        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="courier__header-title">
-        Уточнить адрес
-      </div>
-      <button class="courier__header-cross btn btn--color-primary-light">
-        <svg class="courier__header-cross-icon" data-close-popup="courier">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="courier__actions">
-      <div class="courier__actions-inputs">
-        <div class="courier__actions-inputs-full">
-          Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
-        </div>
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-      </div>
-      <button class="btn" disabled>
-        Продолжить
-      </button>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <nav class="nav">
-  <ul class="nav__list">
-    <li >
-  <a class="nav__item nav__item-publication" href="/add-publication.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#camera"></use>
-    </svg>
-    
-    <div class="nav__item-title">Публикация</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-catalog" href="./catalog.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#catalog"></use>
-    </svg>
-    
-    <div class="nav__item-title">Каталог</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-feed" href="#">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#feed"></use>
-    </svg>
-    
-    <div class="nav__item-title">Лента</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-shopping-bag" href="/carts.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-    </svg>
-    
-    <div class="nav__item-title">Корзина</div>
-    
-      <div class="nav__item-counter">
-        <div class="counter counter--green">
-  1
-</div>
-      </div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-profile" href="#">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#profile"></use>
-    </svg>
-    
-      <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
-    
-    <div class="nav__item-title">Профиль</div>
-    
-  </a>
-</li>
-  </ul>
-</nav>
-
-
-  <template id="address">
-    <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
-      <div class="location__address-header">
-        <div class="location__address-option"></div>
-        <button class="location__address-remove">
-          <svg class="location__address-remove-icon">
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="location__address-address"></div>
-      <div class="location__address-storage-period">
-
-        <span class="location__address-storage-period-count"></span>
-      </div>
-    </li>
-  </template>
-</header> 
-    <nav class="nav-pages">
-  <ul class="nav-pages__list">
-    <li>
-      <a href="#">Магазины</a>
-    </li>
-    <li>
-      <a href="#">Совместные покупки</a>
-    </li>
-    <li>
-      <a href="#">Test for Free</a>
-    </li>
-    <li>
-      <a href="./users.html">Блогеры</a>
-    </li>
-    <li>
-      <a href="#">Публикации</a>
-    </li>
-  </ul>
-</nav>
     <main class="main">
       <section class="section section--users">
         <div class="section__inner">
           <div class="title">
-  <h1 class="title-txt">Блогеры</h1>
-  
-    <p class="title-under">7034 пользователей</p>
-  
-  
-  
-  
-</div>
-
+            <h1 class="title-txt">Блогеры</h1>
+            <p class="title-under">7034 пользователей</p>
+          </div>
           <div class="user-card-list">
-  <div class="user-card-list__actions">
-    <div id="users-autocomplete" class="autocomplete user-card-list__autocomplete">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input input-text--color-grey" data-id="parent-@@name">
-    
-      <div class="input-text__prefix user-card-list__autocomplete-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Введите имя блогера" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="users-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-          <li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>
-        
-      </ul>
-    
-  </div>
-</div>
-
-
-     <!-- Блок с кнопками сортировки и фильтрации -->
-    <div class="filter-actions user-card-list__actions-btns active">
-      <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="filter-actions__text">Сортировка</div>
-        <svg class="filter-actions__icon filter-actions__icon--common">
-          <use xlink:href="./img/icons/icons.svg#sorts"></use>
-        </svg>
-        <svg class="filter-actions__icon filter-actions__icon--cross">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-
-      <button class="filter-actions__filters btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
-        <div class="filter-actions__text">Фильтры</div>
-        <div class="filter-actions__icon">
-          <svg class="filter-actions__icon filter-actions__icon--common">
-            <use xlink:href="./img/icons/icons.svg#filters"></use>
-          </svg>
-          <svg class="filter-actions__icon filter-actions__icon--cross">
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </div>
-        <div class="user-card-list__actions-filters-count filter-actions__filters-count"></div>
-      </button>
-    </div>
-  </div>
-
-  <!-- Форма с фильтрами и сортировками -->
-  <form class="user-card-list__form form-filters">
-    <div class="sorting">
-      <div class="sorting__title">
-        Сортировка
-        <div class="sorting__cross">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </div>
-      </div>
-      <div class="sorting__btn sorting__btn--popular-asc">
-        <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="popular-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-      </div>
-      <div class="sorting__btn sorting__btn--rate-asc">
-        <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="name-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По имени</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-      </div>
-      <div class="sorting__btn sorting__btn--cost-asc">
-        <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="date-asc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По дате регистрации</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span>
-  </span>
-</label>
-
-      </div>
-      <div class="sorting__btn sorting__btn--popular-desc">
-        <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="popular-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-      </div>
-      <div class="sorting__btn sorting__btn--rate-desc">
-        <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="name-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По имени</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-      </div>
-      <div class="sorting__btn sorting__btn--cost-desc">
-        <label class="radio radio--btn">
-  <input name="sorting" type="radio" value="date-desc" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    <span class='btn btn--color-white'><span class='sorting__btn-text'>По дате регистрации</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span>
-  </span>
-</label>
-
-      </div>
-    </div>
-
-    <div class="user-card-list__form-chips form-filters__chips"></div>
-
-    <div class="user-card-list__form-filter filters">
-      <div class="filters__title">
-        Фильтры
-        <div class="user-card-list__form-filter-cross filters__title-cross">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </div>
-      </div>
-      <div class="user-card-list__form-filter-filters filters__items">
-        <div class="filters__item">
-          <div class="collapse  @@extra-class">
-  <div class="collapse__head">
-    <span class="collapse__head-title">
-      Фильтр
-    </span>
-    <svg class="collapse__head-icon">
-      <use xlink:href="./img/icons/icons.svg#collapse"></use>
-    </svg>
-  </div>
-  <div class="collapse__content">
-    <div class="filters__collapse filters__collapse-grid"><label class="checkbox ">
-  <input name="filter_users" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    все
-  </span>
-</label> <label class="checkbox ">
-  <input name="filter_users" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    FronTTrend SeTTer
-  </span>
-</label> <label class="checkbox ">
-  <input name="filter_users" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    мои подписки
-  </span>
-</label> <label class="checkbox ">
-  <input name="filter_users" type="checkbox" @@disabled>
-  <span class="checkbox__checkmark">
-    <svg>
-      <use xlink:href="./img/icons/icons.svg#checkbox"></use>
-    </svg>
-  </span>
-  <span class="checkbox__label ">
-    мои подписчики
-  </span>
-</label></div>
-  </div>
-</div>
-        </div>
-      </div>
-      <div class="user-card-list__form-filter-actions filters__actions form__btns">
-        <button type="button" class="btn btn--text user-card-list__form-filter-clear filters__clear" data-popup="clearFilter">
-          <svg class="user-card-list__form-filter-actions-clear filters__actions-clear">
-            <use xlink:href="./img/icons/icons.svg#trash"></use>
-          </svg>
-          <span class="user-card-list__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
-        </button>
-        <button type="submit" class="btn user-card-list__form-filter-submit">
-          Применить
-          <span class="btn__suffix"></span>
-        </button>
-      </div>
-    </div>
-  </form>
-
-  <div class="user-card-list__cards-wrapper">
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/shop-preview.webp" type="image/webp"><img src="img/shop-preview.jpg"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Елена Брадиславская длинное имя
-  </div>
-</div>
-    <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 9801 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 140892 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    YVES ROCHER
-  </div>
-</div>
-    <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-    <div class="user-card__sub badge badge--color-white-green badge--font-commissioner">Вы подписаны</div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Елена Брадиславская
-  </div>
-</div>
-    <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 9801 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 140892 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    YVES ROCHER
-  </div>
-</div>
-    <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-    <div class="user-card__sub badge badge--color-white-green badge--font-commissioner">Вы подписаны</div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    YVES ROCHER
-  </div>
-</div>
-    <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Елена Брадиславская
-  </div>
-</div>
-    <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 9801 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 140892 </span>
-      </div>
-    </div>
-    
-    <div class="user-card__sub badge badge--color-white-green badge--font-commissioner">Вы подписаны</div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Кот
-  </div>
-</div>
-    <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    YVES ROCHER
-  </div>
-</div>
-    <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 1089 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 172 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-    <a href="#" class="user-card">
-  <div class="user-card__wrapper">
-    <div class="user-card__image-container">
-      <picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png"></picture></img>
-    </div>
-    <div class="ticker user-card__name">
-  <div class="ticker__text">
-    Елена Брадиславская
-  </div>
-</div>
-    <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
-    <div class="user-card__scores">
-      <div class="user-card__scores-inst">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#view_logo"></use>
-        </svg>
-        <span> 9801 </span>
-      </div>
-      <div class="user-card__scores-users">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
-        </svg>
-        <span> 140892 </span>
-      </div>
-    </div>
-    
-  </div>
-</a>
-
-  </div>
-
-  <div id="clearFilter" class="popup " @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="clear-filter-content-popup">
-  <div class="clear-filter-content-popup__inner">
-    <div class="clear-filter-content-popup__title">Сбросить фильтры?</div>
-    <div class="clear-filter-content-popup__descr">
-      Все настроенные Вами фильтры будут удалены. Это действие невозможно отменить.
-    </div>
-    <div class="clear-filter-content-popup__actions">
-      <div class="btn btn--text btn--color-grey popup__close">Еще подумаю</div>
-      <div class="btn clear-filters popup__close">Сбросить</div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-</div>
+            <div class="user-card-list__actions">
+                        <div class="autocomplete user-card-list__autocomplete" id="users-autocomplete">
+                                    <div class="input-text">
+                                      <label class="input-text__label autocomplete__input input-text--color-grey" data-id="parent-users-autocomplete">
+                                        <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                                        <input class="input-text__input" type="search" name="users-autocomplete" placeholder="Введите имя блогера">
+                                      </label>
+                                      <p class="input-text__error" data-id="error-users-autocomplete"></p>
+                                    </div>
+                          <input type="text" name="users-autocomplete" value="" hidden>
+                          <div class="autocomplete__body">
+                            <div class="autocomplete__body-title">Результаты поиска</div>
+                            <ul class="autocomplete__options"><li class="autocomplete__options-item" data-value="val1" tabindex="0">Блогер1</li><li class="autocomplete__options-item" data-value="val2" tabindex="0">Блогер2</li><li class="autocomplete__options-item" data-value="val3" tabindex="0">Блогер3</li><li class="autocomplete__options-item" data-value="val4" tabindex="0">Блогер4</li><li class="autocomplete__options-item" data-value="val5" tabindex="0">Блогер5</li><li class="autocomplete__options-item" data-value="val6" tabindex="0">Блогер6</li><li class="autocomplete__options-item" data-value="val7" tabindex="0">Блогер7</li><li class="autocomplete__options-item" data-value="val8" tabindex="0">Блогер8</li><li class="autocomplete__options-item" data-value="val9" tabindex="0">Блогер9</li><li class="autocomplete__options-item" data-value="val10" tabindex="0">Блогер10</li>
+                            </ul>
+                          </div>
+                        </div>
+              <!-- Блок с кнопками сортировки и фильтрации-->
+              <div class="filter-actions user-card-list__actions-btns active">
+                <button class="filter-actions__sorts btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+                  <div class="filter-actions__text">Сортировка</div>
+                  <svg class="filter-actions__icon filter-actions__icon--common">
+                    <use xlink:href="./img/icons/icons.svg#sorts"></use>
+                  </svg>
+                  <svg class="filter-actions__icon filter-actions__icon--cross">
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
+                <button class="filter-actions__filters btn btn--outlined btn--color-grey scroll" data-target="shop-preview__followers">
+                  <div class="filter-actions__text">Фильтры</div>
+                  <div class="filter-actions__icon">
+                    <svg class="filter-actions__icon filter-actions__icon--common">
+                      <use xlink:href="./img/icons/icons.svg#filters"></use>
+                    </svg>
+                    <svg class="filter-actions__icon filter-actions__icon--cross">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </div>
+                  <div class="user-card-list__actions-filters-count filter-actions__filters-count"></div>
+                </button>
+              </div>
+            </div>
+            <!-- Форма с фильтрами и сортировками-->
+            <form class="user-card-list__form form-filters">
+              <div class="sorting">
+                <div class="sorting__title">Сортировка
+                  <div class="sorting__cross">
+                    <svg>
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="sorting__btn sorting__btn--popular-asc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="popular-asc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span></span>
+                            </label>
+                </div>
+                <div class="sorting__btn sorting__btn--rate-asc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="rate-asc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span></span>
+                            </label>
+                </div>
+                <div class="sorting__btn sorting__btn--cost-asc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="cost-asc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span></span>
+                            </label>
+                </div>
+                <div class="sorting__btn sorting__btn--name-asc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="name-asc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-top'></use></svg></span></span>
+                            </label>
+                </div>
+                <div class="sorting__btn sorting__btn--popular-desc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="popular-desc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По популярности</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span></span>
+                            </label>
+                </div>
+                <div class="sorting__btn sorting__btn--rate-desc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="rate-desc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По рейтингу</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span></span>
+                            </label>
+                </div>
+                <div class="sorting__btn sorting__btn--cost-desc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="cost-desc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По стоимости</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span></span>
+                            </label>
+                </div>
+                <div class="sorting__btn sorting__btn--name-desc">
+                            <label class="radio radio--btn">
+                              <input type="radio" name="sorting" value="name-desc"><span class="radio__content"><span class="radio__custom"></span><span class='btn btn--color-white'><span class='sorting__btn-text'>По названию</span><svg class='sorting__btn-icon'><use xlink:href='./img/icons/icons.svg#sorting-down'></use></svg></span></span>
+                            </label>
+                </div>
+              </div>
+              <div class="user-card-list__form-chips form-filters__chips"></div>
+              <div class="user-card-list__form-filter filters">
+                <div class="filters__title">Фильтры
+                  <div class="user-card-list__form-filter-cross filters__title-cross">
+                    <svg>
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="user-card-list__form-filter-filters filters__items">
+                  <div class="filters__item">
+                              <div class="collapse" extraClass>
+                                <div class="collapse__head"><span class="collapse__head-title">Фильтр</span>
+                                  <svg class="collapse__head-icon">
+                                    <use xlink:href="./img/icons/icons.svg#collapse"></use>
+                                  </svg>
+                                </div>
+                                <div class="collapse__content">
+                                  <div class="filters__collapse filters__collapse-grid">
+                                              <label class="checkbox">
+                                                <input type="checkbox" name="filter_users"><span class="checkbox__checkmark">
+                                                  <svg>
+                                                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+                                                  </svg></span><span class="checkbox__label">все</span>
+                                              </label>
+                                              <label class="checkbox">
+                                                <input type="checkbox" name="filter_users"><span class="checkbox__checkmark">
+                                                  <svg>
+                                                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+                                                  </svg></span><span class="checkbox__label">FronTTrend SeTTer</span>
+                                              </label>
+                                              <label class="checkbox">
+                                                <input type="checkbox" name="filter_users"><span class="checkbox__checkmark">
+                                                  <svg>
+                                                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+                                                  </svg></span><span class="checkbox__label">мои подписки</span>
+                                              </label>
+                                              <label class="checkbox">
+                                                <input type="checkbox" name="filter_users"><span class="checkbox__checkmark">
+                                                  <svg>
+                                                    <use xlink:href="./img/icons/icons.svg#checkbox"></use>
+                                                  </svg></span><span class="checkbox__label">мои подписчики</span>
+                                              </label>
+                                  </div>
+                                </div>
+                              </div>
+                  </div>
+                </div>
+                <div class="user-card-list__form-filter-actions filters__actions form__btns">
+                  <button class="btn btn--text user-card-list__form-filter-clear filters__clear" type="button" data-popup="clearFilter">
+                    <svg class="user-card-list__form-filter-actions-clear filters__actions-clear">
+                      <use xlink:href="./img/icons/icons.svg#trash"></use>
+                    </svg><span class="user-card-list__form-filter-actions-text filters__actions-text">Очистить все фильтры</span>
+                  </button>
+                  <button class="btn user-card-list__form-filter-submit" type="submit">Применить<span class="btn__suffix"></span></button>
+                </div>
+              </div>
+            </form>
+            <div class="user-card-list__cards-wrapper"><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/shop-preview.webp" type="image/webp"><img src="img/shop-preview.jpg" alt="img/shop-preview.jpg"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Елена Брадиславская длинное имя</div>
+                                      </div>
+                            <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>9801</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>140892</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png" alt="img/logo-rocher.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">YVES ROCHER</div>
+                                      </div>
+                            <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png" alt="img/logo-cat.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                            <div class="user-card__sub badge badge--color-white-green badge--font-commissioner">Вы подписаны</div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png" alt="img/logo-vtb.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png" alt="img/logo-vtb.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png" alt="img/logo-cat.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png" alt="img/logo-woman.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Елена Брадиславская</div>
+                                      </div>
+                            <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>9801</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>140892</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png" alt="img/logo-rocher.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">YVES ROCHER</div>
+                                      </div>
+                            <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                            <div class="user-card__sub badge badge--color-white-green badge--font-commissioner">Вы подписаны</div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png" alt="img/logo-rocher.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">YVES ROCHER</div>
+                                      </div>
+                            <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png" alt="img/logo-woman.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Елена Брадиславская</div>
+                                      </div>
+                            <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>9801</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>140892</span>
+                              </div>
+                            </div>
+                            <div class="user-card__sub badge badge--color-white-green badge--font-commissioner">Вы подписаны</div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png" alt="img/logo-vtb.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png" alt="img/logo-cat.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-cat.webp" type="image/webp"><img src="img/logo-cat.png" alt="img/logo-cat.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-vtb.webp" type="image/webp"><img src="img/logo-vtb.png" alt="img/logo-vtb.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Кот</div>
+                                      </div>
+                            <p class="user-card__desc">Нахожу и испытываю  наилучшие продукты для Вашей шерстки. Подписывайтесь.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-rocher.webp" type="image/webp"><img src="img/logo-rocher.png" alt="img/logo-rocher.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">YVES ROCHER</div>
+                                      </div>
+                            <p class="user-card__desc">Увлеченные и ответственные Создатели Растительной Косметики с 1959 года.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>1089</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>172</span>
+                              </div>
+                            </div>
+                          </div></a><a class="user-card" href="#">
+                          <div class="user-card__wrapper">
+                            <div class="user-card__image-container"><picture><source srcset="img/logo-woman.webp" type="image/webp"><img src="img/logo-woman.png" alt="img/logo-woman.png"></picture></div>
+                                      <div class="ticker user-card__name">
+                                        <div class="ticker__text">Елена Брадиславская</div>
+                                      </div>
+                            <p class="user-card__desc">Ревизор обуви и одежды. Более 10 лет в сфере блогинга.</p>
+                            <div class="user-card__scores">
+                              <div class="user-card__scores-inst">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#view_logo"></use>
+                                </svg><span>9801</span>
+                              </div>
+                              <div class="user-card__scores-users">
+                                <svg>
+                                  <use xlink:href="./img/icons/icons.svg#user-logo-sm"></use>
+                                </svg><span>140892</span>
+                              </div>
+                            </div>
+                          </div></a>
+            </div>
+                <div class="popup " id="clearFilter">
+                  <div class="popup__overlay">
+                    <div class="popup__content">
+                      <div class="clear-filter-content-popup">
+                        <div class="clear-filter-content-popup__inner">
+                          <div class="clear-filter-content-popup__title">Сбросить фильтры?</div>
+                          <div class="clear-filter-content-popup__descr">Все настроенные Вами фильтры будут удалены. Это действие невозможно отменить.</div>
+                          <div class="clear-filter-content-popup__actions">
+                            <div class="btn btn--text btn--color-grey popup__close">Еще подумаю</div>
+                            <div class="btn clear-filters popup__close">Сбросить</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
         </div>
       </section>
     </main>

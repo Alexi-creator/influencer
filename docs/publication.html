@@ -1,1532 +1,1029 @@
 <!DOCTYPE html>
-<html lang="ru-RU" class="isAuth">
+<html class="isAuth" lang="ru-RU">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/pages/publication.min.css?_v=20250517100945">
-  <title>publication Page</title>
-  <script defer src="js/publication.min.js?_v=20250517100945"></script>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pages/publication.min.css?_v=20250517101341">
+    <title>publication Page</title>
+    <script defer src="js/publication.min.js?_v=20250517101341"></script>
+  </head>
   <body>
     <header class="header">
-  <div class="header__inner">
-    <div class="header__top">
-      <button class="header__top-location header__top-location--empty" data-popup="location">
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#location"></use>
-        </svg>
-        <span class="header__top-location-address"></span>
-        <span class="header__top-location-cta">Укажите точный адрес</span>
-      </button>
-      <div class="header__top-info">
-        <a href="#">Инструкции</a>
-        <a href="#">Контакты</a>
-        <div id="language" class="select select--transparent header__top-language noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Русский</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li> <li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li> <li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li>
-  </ul>
-  <input name=language type="text" value="ru" hidden>
-</div>
-
+      <div class="header__inner">
+        <div class="header__top">
+          <button class="header__top-location header__top-location--empty" data-popup="location">
+            <svg>
+              <use xlink:href="./img/icons/icons.svg#location"></use>
+            </svg><span class="header__top-location-address"></span><span class="header__top-location-cta">Укажите точный адрес</span>
+          </button>
+          <div class="header__top-info"><a href="#">Инструкции</a><a href="#">Контакты</a>
+                <div class="select select--transparent header__top-language noselect" id="language" role="button" tabindex="0">
+                  <div class="select__header">
+                    <div class="select__title">Русский</div>
+                    <div class="select__icon">
+                      <svg>
+                        <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="select__options">
+                    <li><li class="select__options-item" data-value="ru" role="button" tabindex="0">Русский</li></li>
+                    <li><li class="select__options-item" data-value="en" role="button" tabindex="0">Английский</li></li>
+                    <li><li class="select__options-item" data-value="kz" role="button" tabindex="0">Казахский</li></li>
+                  </ul>
+                  <input name="language" type="text" value="ru" hidden>
+                </div>
+          </div>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__nav-logo"><a class="header__nav-logo-small" href="./index.html"><img width="24" height="24" src="img/small-logo.svg" alt="small-logo"></a><a class="header__nav-logo-big" href="./index.html"><img width="106" height="24" src="img/logo.svg" alt="logo"></a></li>
+            <li class="header__nav-item header__nav-catalog"><a class="btn" href="./catalog.html">
+                <svg class="header__nav-catalog-icon-catalog">
+                  <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                </svg>
+                <svg class="header__nav-catalog-icon-cross">
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg><span class="header__nav-catalog-title">Каталог</span></a></li>
+            <li class="header__nav-item header__nav-search">
+              <div class="header__nav-search-title">
+                <div class="header__nav-search-title-text">Поиск по сайту</div>
+                <svg class="header__nav-search-title-cross">
+                  <use xlink:href="./img/icons/icons.svg#cross"></use>
+                </svg>
+              </div>
+                  <div class="autocomplete header__nav-search-input autocomplete--img autocomplete--select" id="search-shops">
+                        <div class="input-text">
+                          <label class="input-text__label autocomplete__input" data-id="parent-search-shops">
+                            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                            <input class="input-text__input" type="search" name="search-shops" placeholder="Найдите что-нибудь">
+                            <div class="input-text__suffix autocomplete__suffix">
+                                  <div class="select select--transparent noselect" id="select-search" role="button" tabindex="0">
+                                    <div class="select__header">
+                                      <div class="select__title">Везде</div>
+                                      <div class="select__icon">
+                                        <svg>
+                                          <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                    <ul class="select__options">
+                                      <li><li class=select__options-item data-value=value1 role=button tabindex=0>Везде2</li></li>
+                                      <li><li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li></li>
+                                      <li><li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li></li>
+                                    </ul>
+                                    <input name="select-search" type="text" value="value2" hidden>
+                                  </div>
+                            </div>
+                          </label>
+                          <p class="input-text__error" data-id="error-search-shops"></p>
+                        </div>
+                    <input type="text" name="search-shops" value="" hidden>
+                    <div class="autocomplete__body">
+                      <div class="autocomplete__body-title">Результаты поиска</div>
+                      <div class="autocomplete__options"><a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
+                      </div>
+                    </div>
+                  </div>
+              <div class="header__nav-search-filter">
+                <div class="header__nav-search-filter-title">Где будем искать</div>
+              </div>
+              <div class="header__nav-search-mask"></div>
+            </li>
+            <li class="header__nav-item header__nav-basket"><a href="/carts.html">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">9</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-favorite"><a href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#heart"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">4</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-feed"><a href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#feed"></use>
+                </svg></a>
+              <div class="header__nav-item-counter">
+                    <div class="counter counter--green">1</div>
+              </div>
+            </li>
+            <li class="header__nav-item header__nav-instagram"><a href="/add-publication.html">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#camera"></use>
+                </svg></a></li>
+            <li class="header__nav-item header__nav-profile" data-popup="login"><a class="header__nav-sign-in" href="#">
+                <svg>
+                  <use xlink:href="./img/icons/icons.svg#user"></use>
+                </svg>Войти в аккаунт</a><a class="header__nav-account" href="#">
+                <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">Мой рейтинг: 109</div>
+                <div class="header__nav-avatar"><picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture></div></a></li>
+            <li class="header__nav-item header__nav-more">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#more"></use>
+              </svg>
+            </li>
+            <li class="header__nav-item header__nav-location" data-popup="location">
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#map"></use>
+              </svg>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item header__nav-logo">
-          <a class="header__nav-logo-small" href="./index.html">
-            <img width="24" height="24" src="img/small-logo.svg" alt="small-logo">
-          </a>
-          <a class="header__nav-logo-big" href="./index.html">
-            <img width="106" height="24" src="img/logo.svg" alt="logo">
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-catalog ">
-          <a class="btn" href="./catalog.html">
-            <svg class="header__nav-catalog-icon-catalog">
-              <use xlink:href="./img/icons/icons.svg#catalog"></use>
-            </svg>
-            <svg class="header__nav-catalog-icon-cross">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-            <span class="header__nav-catalog-title">Каталог</span>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-search">
-          <div class="header__nav-search-title">
-            <div class="header__nav-search-title-text">Поиск по сайту</div>
-            <svg class="header__nav-search-title-cross"><use xlink:href="./img/icons/icons.svg#cross"></use></svg>
-          </div>
-          <div id="search-shops" class="autocomplete header__nav-search-input autocomplete--img autocomplete--select">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите что-нибудь" @@atr>
-    
-      <div class="input-text__suffix autocomplete__suffix"><div id="select-search" class="select select--transparent noselect" role="button" tabindex="0">
-  <div class="select__header">
-    <div class="select__title">Везде</div>
-    <div class="select__icon">
-      <svg><use xlink:href='./img/icons/icons.svg#arrow'></use></svg>
-    </div>
-  </div>
-  <ul class="select__options">
-    <li class=select__options-item data-value=value1 role=button tabindex=0>Везде</li> <li class=select__options-item data-value=value2 role=button tabindex=0>value 2</li> <li class=select__options-item data-value=value3 role=button tabindex=0>длинный очень текст</li>
-  </ul>
-  <input name=select-search type="text" value="value2" hidden>
-</div>
-</div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="search-shops" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-      <div class="autocomplete__options">
-        
-          <a href="#" class="autocomplete__options-item" data-value="val1" tabindex="0"><picture><source srcset="img/avatar.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/avatar.jpg" /></picture><div class="autocomplete__options-item-title">Женское платье Lovely Ran с расклешенными рукавами и круглой</div><div class="autocomplete__options-item-subtitle">Товары с Aliexpress.ru</div></a> <a href="#" class="autocomplete__options-item" data-value="val2" tabindex="0"><picture><source srcset="img/sp-slide2.webp" type="image/webp"><img class="autocomplete__options-item-img" src="img/sp-slide2.jpg" /></picture><div class="autocomplete__options-item-title">Короткое платье из денима с "Gucci Boutique"</div><div class="autocomplete__options-item-subtitle">Gucci</div></a>
-        
+      <div class="useful-links">
+        <div class="useful-links__title">Полезные ссылки
+          <svg class="useful-links__title-cross">
+            <use xlink:href="./img/icons/icons.svg#cross"></use>
+          </svg>
+        </div>
+        <ul class="useful-links__list">
+          <li class="useful-links__list-item"><a href="#">Категории
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Магазины
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Совместные покупки
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Test ForFree
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Блогеры
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Публикации
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+          <li class="useful-links__list-item"><a href="#">Служба поддержки
+              <svg>
+                <use xlink:href="./img/icons/icons.svg#arrow"></use>
+              </svg></a></li>
+        </ul>
       </div>
+          <div class="popup header__login" id="login">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="popup__header">
+                  <div class="popup__header-title">
+      <div class="header__login-title-sign-in">Войдите в свой профиль</div>
+      <div class="header__login-title-sign-up">Зарегистрируйтесь</div>
     
-    
-  </div>
-</div>
-
-          <div class="header__nav-search-filter">
-            <div class="header__nav-search-filter-title">
-              Где будем искать
+                  </div>
+                  <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
+                    <svg class="popup__header-btn-close-icon">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="login login--sign-in">
+                  <div class="login__inner">
+                    <div class="login__sign-in">
+                      <div class="login__descr">Чтобы пользоваться лентой новостей</div>
+                      <div class="login__options">
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#google"></use>
+                          </svg>Войти через Google
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#vk"></use>
+                          </svg>Войти через ВКонтакте
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="login__or"><span class="login__or-text">или</span></div>
+                      <form class="login__form login__form-sign-in">
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+                                <input class="input-text__input" type="text" name="email" placeholder="Введите свою эл. почту">
+                              </label>
+                              <p class="input-text__error" data-id="error-email"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+                                <input class="input-text__input" type="password" name="password" placeholder="Введите пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-password"></p>
+                            </div>
+                        <button class="login__form-submit btn" type="submit">Войти</button>
+                      </form>
+                      <div class="login__choice">
+                        <div class="login__choice-title">Нет аккаунта?</div>
+                        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
+                      </div>
+                    </div>
+                    <div class="login__sign-up">
+                      <div class="login__descr">Чтобы подписываться на акции, создавать публикации и сохранять любимые товары</div>
+                      <div class="login__options">
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#google"></use>
+                          </svg>Регистрация через Google
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                        <button class="login__options-item btn">
+                          <svg>
+                            <use xlink:href="./img/icons/icons.svg#vk"></use>
+                          </svg>Регистрация через ВКонтакте
+                          <svg class="login__options-item-arrow">
+                            <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="login__or"><span class="login__or-text">или</span></div>
+                      <form class="login__form login__form-sign-up">
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
+                                <input class="input-text__input" type="text" name="email" placeholder="Введите свою эл. почту">
+                              </label>
+                              <p class="input-text__error" data-id="error-email"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
+                                <input class="input-text__input" type="password" name="password" placeholder="Придумайте пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-password"></p>
+                            </div>
+                            <div class="input-text">
+                              <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-repeat_password">
+                                <input class="input-text__input" type="password" name="repeat_password" placeholder="Повторите ввод пароля пароль">
+                              </label>
+                              <p class="input-text__error" data-id="error-repeat_password"></p>
+                            </div>
+                        <button class="login__form-submit btn" type="submit">Зарегистрироваться</button>
+                      </form>
+                      <div class="login__choice">
+                        <div class="login__choice-title">Есть аккаунт?</div>
+                        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="header__nav-search-mask"></div>
-        </li>
-        <li class="header__nav-item header__nav-basket">
-          <a href="/carts.html">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  9
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-favorite">
-          <a href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#heart"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  4
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-feed">
-          <a href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#feed"></use>
-            </svg>
-          </a>
-          <div class="header__nav-item-counter">
-            <div class="counter counter--green">
-  1
-</div>
-          </div>
-        </li>
-        <li class="header__nav-item header__nav-instagram">
-          <a href="/add-publication.html">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#camera"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="header__nav-item header__nav-profile" data-popup="login">
-          <a class="header__nav-sign-in" href="#">
-            <svg>
-              <use xlink:href="./img/icons/icons.svg#user"></use>
-            </svg>
-            Войти в аккаунт
-          </a>
-          <a class="header__nav-account" href="#">
-            <div class="header__nav-rating badge badge--font-commissioner badge--color-primary-light badge--without-border">
-              Мой рейтинг: 109
+          <div class="popup header__location" id="location">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="popup__header">
+                  <div class="popup__header-title">Куда доставить заказ?
+                  </div>
+                  <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
+                    <svg class="popup__header-btn-close-icon">
+                      <use xlink:href="./img/icons/icons.svg#cross"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="location">
+                  <div class="location__inner">
+                    <div class="location__img location__not-setup"><picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture></div>
+                    <div class="location__descr location__setup">Выберите адрес, чтобы увидеть условия доставки</div>
+                    <div class="location__actions">
+                      <div class="location__actions-city">
+                        <svg class="location__address-city-icon">
+                          <use xlink:href="./img/icons/icons.svg#map"></use>
+                        </svg><span class="location__address-city-name">Москва</span>
+                      </div>
+                      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">Изменить</button>
+                    </div>
+                    <ul class="location__addresses location__setup">
+                      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
+                        <div class="location__address-header">
+                          <div class="location__address-option">Отделение Почты России</div>
+                          <button class="location__address-remove">
+                            <svg class="location__address-remove-icon">
+                              <use xlink:href="./img/icons/icons.svg#cross"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+                        <div class="location__address-storage-period">Срок хранения заказа - <span class="location__address-storage-period-count">15 дней</span></div>
+                      </li>
+                      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
+                        <div class="location__address-header">
+                          <div class="location__address-option">Доставка по адресу</div>
+                          <button class="location__address-remove">
+                            <svg class="location__address-remove-icon">
+                              <use xlink:href="./img/icons/icons.svg#cross"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
+                        <div class="location__address-contacts">Маргарита А., +7 999 123 45 67</div>
+                      </li>
+                    </ul>
+                    <div class="location__descr location__not-setup">Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров</div>
+                    <button class="location__button location__not-setup btn" data-popup="map" data-close-popup="location">Выбрать адрес на карте</button>
+                    <button class="location__button location__setup btn" data-popup="map" data-close-popup="location">Добавить новый адрес или пункт</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="header__nav-avatar">
-              <picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="avatar"></picture>
+          </div>
+          <div class="popup header__choose-city" id="choose-city">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="choose-city">
+                  <div class="choose-city__inner">
+                    <div class="choose-city__header">
+                      <button class="choose-city__back">
+                        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="choose-city__title">Выберите город</div>
+                      <button class="choose-city__cross" data-close-popup="choose-city">
+                        <svg class="choose-city__cross-icon">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="choose-city__search">
+                      <div class="input-text">
+                        <label class="input-text__label" data-id="parent-search">
+                          <div class="input-text__prefix"><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
+                          <input class="input-text__input" type="search" name="search" placeholder="Найдите свой город">
+                        </label>
+                        <p class="input-text__error" data-id="error-search"></p>
+                      </div>
+                    </div>
+                    <ul class="choose-city__list">
+                      <li class="choose-city__list-item">
+                        <label class="radio radio--active">
+                          <input type="radio" name="city" value="Москва"><span class="radio__content"><span class="radio__custom"></span>Москва</span>
+                        </label>
+                      </li>
+                      <li class="choose-city__list-item">
+                        <label class="radio radio--active">
+                          <input type="radio" name="city" value="Санкт-Петербург"><span class="radio__content"><span class="radio__custom"></span>Санкт-Петербург</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-          </a>
+          </div>
+          <div class="popup popup--no-overlay header__map" id="map">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="map">
+                  <div class="map__inner">
+                    <div class="map__header">
+                      <button class="map__header-back">
+                        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="map__header-title">Способ доставки товаров</div>
+                      <div class="map__header-options">
+                        <label class="radio radio--active radio--reverse">
+                          <input type="radio" name="choose-delivery" value="pickup" checked><span class="radio__content"><span class="radio__custom"></span>Самовывоз</span>
+                        </label>
+                        <label class="radio radio--active radio--reverse">
+                          <input type="radio" name="choose-delivery" value="courier"><span class="radio__content"><span class="radio__custom"></span>Курьером</span>
+                        </label>
+                      </div>
+                      <button class="map__header-cross btn btn--color-primary-light">
+                        <svg class="map__header-cross-icon" data-close-popup="map">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="map__yandex">
+                      <iframe id="maps" width="100%" height="100%" frameborder="0" data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;amp;source=constructor"></iframe>
+                    </div>
+                    <div class="map__address">
+                      <div class="map__address-header">Куда доставить заказ?</div>
+                      <div class="map__address-descr">
+                        <div class="map__address-descr-pickup">Выберите пункт выдачи или найдите</div>
+                        <div class="map__address-descr-courier">Выберите адрес на карте или найдите</div>
+                      </div>
+                      <div class="map__address-actions">
+                        <div class="autocomplete map__address-actions-input map__autocomplete--pickup" id="pickup-autocomplete">
+                          <div class="input-text">
+                            <label class="input-text__label autocomplete__input" data-id="parent-pickup-autocomplete">
+                              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                              <input class="input-text__input" type="search" name="pickup-autocomplete" placeholder="Пункт выдачи">
+                              <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                            </label>
+                            <p class="input-text__error" data-id="error-pickup-autocomplete"></p>
+                          </div>
+                          <input type="text" name="pickup-autocomplete" value="" hidden>
+                          <div class="autocomplete__body">
+                            <div class="autocomplete__body-title">Результаты поиска</div>
+                            <ul class="autocomplete__options">
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="autocomplete map__address-actions-input map__autocomplete--courier" id="courier-autocomplete">
+                          <div class="input-text">
+                            <label class="input-text__label autocomplete__input" data-id="parent-courier-autocomplete">
+                              <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                              <input class="input-text__input" type="search" name="courier-autocomplete" placeholder="Адрес доставки">
+                              <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                            </label>
+                            <p class="input-text__error" data-id="error-courier-autocomplete"></p>
+                          </div>
+                          <input type="text" name="courier-autocomplete" value="" hidden>
+                          <div class="autocomplete__body">
+                            <div class="autocomplete__body-title">Результаты поиска</div>
+                            <ul class="autocomplete__options">
+                            </ul>
+                          </div>
+                        </div>
+                        <button class="map__address-actions-define">
+                          <svg class="map__address-actions-define-icon">
+                            <use xlink:href="./img/icons/icons.svg#compass"></use>
+                          </svg>Определить местоположение
+                        </button>
+                        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>Продолжить</button>
+                        <button class="btn map__btn map__btn--courier" disabled>Продолжить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup popup--no-overlay header__search-pickup" id="search-pickup">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="search-pickup">
+                  <div class="search-pickup__inner">
+                    <div class="search-pickup__header">
+                      <button class="search-pickup__header-back">
+                        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="search-pickup__header-title">Куда доставить заказ?</div>
+                      <button class="search-pickup__header-cross btn btn--color-primary-light">
+                        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
+                    <div class="search-pickup__actions">
+                      <div class="autocomplete search-pickup__actions-input" id="search-pickup-autocomplete">
+                        <div class="input-text">
+                          <label class="input-text__label autocomplete__input" data-id="parent-search-pickup">
+                            <div class="input-text__prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
+                            <input class="input-text__input" type="search" name="search-pickup" placeholder="Введите адрес">
+                            <div class="input-text__suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
+                          </label>
+                          <p class="input-text__error" data-id="error-search-pickup"></p>
+                        </div>
+                        <input type="text" name="search-pickup" value="" hidden>
+                        <div class="autocomplete__body">
+                          <div class="autocomplete__body-title">Результаты поиска</div>
+                          <ul class="autocomplete__options">
+                          </ul>
+                        </div>
+                      </div>
+                      <button class="search-pickup__actions-define">
+                        <svg class="search-pickup__header-actions-define-icon">
+                          <use xlink:href="./img/icons/icons.svg#compass"></use>
+                        </svg>Определить местоположение
+                      </button>
+                      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>Продолжить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup popup--no-overlay header__courier" id="courier">
+            <div class="popup__overlay">
+              <div class="popup__content">
+                <div class="courier">
+                  <div class="courier__inner">
+                    <div class="courier__header">
+                      <button class="courier__header-back">
+                        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
+                          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
+                        </svg>
+                      </button>
+                      <div class="courier__header-title">Уточнить адрес</div>
+                      <button class="courier__header-cross btn btn--color-primary-light">
+                        <svg class="courier__header-cross-icon" data-close-popup="courier">
+                          <use xlink:href="./img/icons/icons.svg#cross"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="courier__actions">
+                      <div class="courier__actions-inputs">
+                        <div class="courier__actions-inputs-full">Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Дом">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Индекс">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Подъезд">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Этаж">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                        <div class="input-text">
+                          <label class="input-text__label input-text--color-grey" data-id="parent-undefined">
+                            <input class="input-text__input" type="text" placeholder="Домофон">
+                          </label>
+                          <p class="input-text__error" data-id="error-undefined"></p>
+                        </div>
+                      </div>
+                      <button class="btn" disabled>Продолжить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <nav class="nav">
+        <ul class="nav__list">
+                <li><a class="nav__item nav__item-publication" href="/add-publication.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#camera"></use>
+                    </svg>
+                    <div class="nav__item-title">Публикация</div></a></li>
+                <li><a class="nav__item nav__item-catalog" href="./catalog.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#catalog"></use>
+                    </svg>
+                    <div class="nav__item-title">Каталог</div></a></li>
+                <li><a class="nav__item nav__item-feed" href="#">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#feed"></use>
+                    </svg>
+                    <div class="nav__item-title">Лента</div></a></li>
+                <li><a class="nav__item nav__item-shopping-bag" href="/carts.html">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
+                    </svg>
+                    <div class="nav__item-title">Корзина</div>
+                    <div class="nav__item-counter">
+                            <div class="counter counter--green">1</div>
+                    </div></a></li>
+                <li><a class="nav__item nav__item-profile" href="#">
+                    <svg class="nav__item-icon">
+                      <use xlink:href="./img/icons/icons.svg#profile"></use>
+                    </svg><picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
+                    <div class="nav__item-title">Профиль</div></a></li>
+        </ul>
+      </nav>
+      <template id="address">
+        <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
+          <div class="location__address-header">
+            <div class="location__address-option"></div>
+            <button class="location__address-remove">
+              <svg class="location__address-remove-icon">
+                <use xlink:href="./img/icons/icons.svg#cross"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="location__address-address"></div>
+          <div class="location__address-storage-period"><span class="location__address-storage-period-count"></span></div>
         </li>
-        <li class="header__nav-item header__nav-more">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#more"></use>
-          </svg>
-        </li>
-        <li class="header__nav-item header__nav-location" data-popup="location">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#map"></use>
-          </svg>
-        </li>
+      </template>
+    </header>
+    <nav class="nav-pages">
+      <ul class="nav-pages__list">
+        <li><a href="#">Магазины</a></li>
+        <li><a href="#">Совместные покупки</a></li>
+        <li><a href="#">Test for Free</a></li>
+        <li><a href="./users.html">Блогеры</a></li>
+        <li><a href="#">Публикации</a></li>
       </ul>
     </nav>
-  </div>
-
-  <div class="useful-links">
-  <div class="useful-links__title">
-    Полезные ссылки
-    <svg class="useful-links__title-cross">
-      <use xlink:href="./img/icons/icons.svg#cross"></use>
-    </svg>
-  </div>
-  <ul class="useful-links__list">
-    <li class="useful-links__list-item">
-      <a href="#">
-        Категории
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Магазины
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Совместные покупки
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Test ForFree
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Блогеры
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Публикации
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-    <li class="useful-links__list-item">
-      <a href="#">
-        Служба поддержки
-        <svg>
-          <use xlink:href="./img/icons/icons.svg#arrow"></use>
-        </svg>
-      </a>
-    </li>
-  </ul>
-</div>
-
-  <div id="login" class="popup header__login" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Войдите в свой профиль</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="login">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      
-      <div class="login login--sign-in">
-  <div class="login__inner">
-
-    <!-- Блок логина -->
-    <div class="login__sign-in">
-      <div class="login__descr">
-        Чтобы пользоваться лентой новостей
-      </div>
-      <div class="login__options">
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#google"></use>
-          </svg>
-          Войти через Google
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#vk"></use>
-          </svg>
-          Войти через ВКонтакте
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__or">
-        <span class="login__or-text">или</span>
-      </div>
-      <form class="login__form login__form-sign-in">
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
-    
-    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-email"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
-    
-    <input name="password" class="input-text__input" type="password" placeholder="Введите пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-password"></p>
-</div>
-
-        <button class="login__form-submit btn" type="submit">
-          Войти
-        </button>
-      </form>
-      <div class="login__choice">
-        <div class="login__choice-title">
-          Нет аккаунта?
-        </div>
-        <button class="login__choice-btn login__choice-sign-up" type="button">Зарегистрируйтесь</button>
-      </div>
-    </div>
-
-    <!-- Блок регистрации -->
-    <div class="login__sign-up">
-      <div class="login__title">
-        Зарегистрируйтесь
-        <button class="login__title-cross" type="button" data-close-popup="login">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__descr">
-        Чтобы подписываться на акции, создавать публикации и сохранять любимые товары
-      </div>
-      <div class="login__options">
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#google"></use>
-          </svg>
-          Регистрация через Google
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-        <button class="login__options-item btn">
-          <svg>
-            <use xlink:href="./img/icons/icons.svg#vk"></use>
-          </svg>
-          Регистрация через ВКонтакте
-          <svg class="login__options-item-arrow">
-            <use xlink:href="./img/icons/icons.svg#arrow"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="login__or">
-        <span class="login__or-text">или</span>
-      </div>
-      <form class="login__form login__form-sign-up">
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-email">
-    
-    <input name="email" class="input-text__input" type="text" placeholder="Введите свою эл. почту" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-email"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-password">
-    
-    <input name="password" class="input-text__input" type="password" placeholder="Придумайте пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-password"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey login__form-item" data-id="parent-repeat_password">
-    
-    <input name="repeat_password" class="input-text__input" type="password" placeholder="Повторите ввод пароля пароль" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-repeat_password"></p>
-</div>
-
-        <button class="login__form-submit btn" type="submit">
-          Зарегистрироваться
-        </button>
-      </form>
-      <div class="login__choice">
-        <div class="login__choice-title">
-          Есть аккаунт?
-        </div>
-        <button class="login__choice-btn login__choice-sign-in" type="button">Войти</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="location" class="popup header__location" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Куда доставить заказ?</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="location">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-      
-      <div class="location @@locationExtraClass">
-  <div class="location__inner">
-    <div class="location__img location__not-setup">
-      <picture><source srcset="img/delivery.webp" type="image/webp"><img src="img/delivery.jpg" alt="delivery"></picture>
-    </div>
-    <div class="location__descr location__setup">
-      Выберите адрес, чтобы увидеть условия доставки
-    </div>
-    <div class="location__actions">
-      <div class="location__actions-city">
-        <svg class="location__address-city-icon">
-          <use xlink:href="./img/icons/icons.svg#map"></use>
-        </svg>
-        <span class="location__address-city-name">Москва</span>
-      </div>
-      <button class="location__actions-change btn btn--text" data-popup="choose-city" data-close-popup="location">
-        Изменить
-      </button>
-    </div>
-    <ul class="location__addresses location__setup">
-      <li class="location__address" data-value="почта_россии" role="button" tabindex="0" data-delivery="pickup" data-close-popup="location">
-        <div class="location__address-header">
-          <div class="location__address-option">Отделение Почты России</div>
-          <button class="location__address-remove">
-            <svg class="location__address-remove-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="location__address-address">188508, г Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А</div>
-        <div class="location__address-storage-period">
-          Срок хранения заказа - 
-          <span class="location__address-storage-period-count">15 дней</span>
-        </div>
-      </li>
-      <li class="location__address location__address--selected" data-value="адрес 1" role="button" tabindex="0" data-delivery="courier" data-close-popup="location">
-        <div class="location__address-header">
-          <div class="location__address-option">Доставка по адресу</div>
-          <button class="location__address-remove">
-            <svg class="location__address-remove-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="location__address-address">188508, г Москва, пр-кт Космонавтов, дом 1</div>
-        <div class="location__address-contacts">
-          Маргарита А., +7 999 123 45 67
-        </div>
-      </li>
-    </ul>
-    <div class="location__descr location__not-setup">
-      Укажите точный адрес или выберите удобный пункт выдачи, чтобы заранее увидеть условия доставки товаров
-    </div>
-    <button class="location__button location__not-setup btn" data-popup="map" data-close-popup="location">
-      Выбрать адрес на карте
-    </button>
-    <button class="location__button location__setup btn" data-popup="map" data-close-popup="location">
-      Добавить новый адрес или пункт
-    </button>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-  <div id="choose-city" class="popup header__choose-city" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="choose-city">
-  <div class="choose-city__inner">
-    <div class="choose-city__header">
-      <button class="choose-city__back">
-        <svg class="choose-city__back-icon" data-popup="location" data-close-popup="choose-city">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="choose-city__title">Выберите город</div>
-      <button class="choose-city__cross" data-close-popup="choose-city">
-        <svg class="choose-city__cross-icon">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="choose-city__search">
-      <div class="input-text">
-  <label class="input-text__label " data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg class='choose-city__search-icon'><use xlink:href='./img/icons/icons.svg#search'></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Найдите свой город" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-    </div>
-    <ul class="choose-city__list">
-      <li class="choose-city__list-item">
-        <label class="radio radio--active">
-  <input name="city" type="radio" value="Москва" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Москва
-  </span>
-</label>
-
-      </li>
-      <li class="choose-city__list-item">
-        <label class="radio radio--active">
-  <input name="city" type="radio" value="Санкт-Петербург" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Санкт-Петербург
-  </span>
-</label>
-
-      </li>
-    </ul>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="map" class="popup popup--no-overlay header__map" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="map">
-  <div class="map__inner">
-    <div class="map__header">
-      <button class="map__header-back">
-        <svg class="map__header-back-icon" data-popup="location" data-close-popup="map">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="map__header-title">Способ доставки товаров</div>
-      <div class="map__header-options">
-        <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="pickup" checked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Самовывоз
-  </span>
-</label>
-
-        <label class="radio radio--active radio--reverse">
-  <input name="choose-delivery" type="radio" value="courier" @@isChecked>
-  <span class="radio__content">
-    <span class="radio__custom"></span>
-    Курьером
-  </span>
-</label>
-
-      </div>
-      <button class="map__header-cross btn btn--color-primary-light">
-        <svg class="map__header-cross-icon" data-close-popup="map">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="map__yandex">
-      <iframe
-        id="maps"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        data-src="https://yandex.ru/map-widget/v1/?um=constructor%3A537fae7c168826971fda4be15fc49e507e7378b4120e7181ce22ba085fc788eb&amp;source=constructor"
-      >
-      </iframe>
-    </div>
-    <div class="map__address">
-      <div class="map__address-header">Куда доставить заказ?</div>
-      <div class="map__address-descr">
-        <div class="map__address-descr-pickup">
-          Выберите пункт выдачи или найдите
-        </div>
-        <div class="map__address-descr-courier">
-          Выберите адрес на карте или найдите
-        </div>
-      </div>
-      <div class="map__address-actions">
-        <div id="pickup-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--pickup">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Пункт выдачи" @@atr>
-    
-      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="pickup-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-        <div id="courier-autocomplete" class="autocomplete map__address-actions-input map__autocomplete--courier">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix "><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Адрес доставки" @@atr>
-    
-      <div class="input-text__suffix "><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="courier-autocomplete" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-        <button class="map__address-actions-define">
-          <svg class="map__address-actions-define-icon">
-            <use xlink:href="./img/icons/icons.svg#compass"></use>
-          </svg>
-          Определить местоположение
-        </button>
-        <button class="btn map__btn map__btn--pickup" data-close-popup="map" data-popup="location" disabled>
-          Продолжить
-        </button>
-        <button class="btn map__btn map__btn--courier" disabled>
-          Продолжить
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="search-pickup" class="popup popup--no-overlay header__search-pickup" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="search-pickup">
-  <div class="search-pickup__inner">
-    <div class="search-pickup__header">
-      <button class="search-pickup__header-back">
-        <svg class="search-pickup__header-back-icon" data-popup="map" data-close-popup="search-pickup">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="search-pickup__header-title">
-        Куда доставить заказ?
-      </div>
-      <button class="search-pickup__header-cross btn btn--color-primary-light">
-        <svg class="search-pickup__header-cross-icon" data-close-popup="search-pickup">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="search-pickup__descr">Найдите определенный пункт выдачи или просто позвольте нам определить ваше местоположение и мы подберем ближайший</div>
-    <div class="search-pickup__actions">
-      <div id="search-pickup-autocomplete" class="autocomplete search-pickup__actions-input">
-  <div class="input-text">
-  <label class="input-text__label autocomplete__input" data-id="parent-@@name">
-    
-      <div class="input-text__prefix search-pickup__actions-input-prefix"><svg><use xlink:href="./img/icons/icons.svg#search"></use></svg></div>
-    
-    <input name="@@name" class="input-text__input" type="search" placeholder="Введите адрес" @@atr>
-    
-      <div class="input-text__suffix search-pickup__actions-input-suffix"><div class="autocomplete__load"><svg class="autocomplete__load-icon"><use xlink:href="./img/icons/icons.svg#loading"></use></svg></div></div>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-
-  <input type="text" name="search-pickup" value="@@value" hidden>
-
-  <div class="autocomplete__body">
-    <div class="autocomplete__body-title">Результаты поиска</div>
-    
-    
-      <ul class="autocomplete__options">
-        
-      </ul>
-    
-  </div>
-</div>
-
-      <button class="search-pickup__actions-define">
-        <svg class="search-pickup__header-actions-define-icon">
-          <use xlink:href="./img/icons/icons.svg#compass"></use>
-        </svg>
-        Определить местоположение
-      </button>
-      <button class="btn search-pickup__btn" data-close-popup="search-pickup" disabled>
-        Продолжить
-      </button>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <div id="courier" class="popup popup--no-overlay header__courier" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-      <div class="courier">
-  <div class="courier__inner">
-    <div class="courier__header">
-      <button class="courier__header-back">
-        <svg class="courier__header-back-icon" data-popup="map" data-close-popup="courier">
-          <use xlink:href="./img/icons/icons.svg#arrowGoLeft"></use>
-        </svg>
-      </button>
-      <div class="courier__header-title">
-        Уточнить адрес
-      </div>
-      <button class="courier__header-cross btn btn--color-primary-light">
-        <svg class="courier__header-cross-icon" data-close-popup="courier">
-          <use xlink:href="./img/icons/icons.svg#cross"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="courier__actions">
-      <div class="courier__actions-inputs">
-        <div class="courier__actions-inputs-full">
-          Санкт-Петербург, пр-кт Большой В.О., дом 70 литер А
-        </div>
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Дом" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Индекс" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Подъезд" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Этаж" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-        <div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-@@name">
-    
-    <input name="@@name" class="input-text__input" type="@@type" placeholder="Домофон" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-@@name"></p>
-</div>
-
-      </div>
-      <button class="btn" disabled>
-        Продолжить
-      </button>
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div>
-
-  <nav class="nav">
-  <ul class="nav__list">
-    <li >
-  <a class="nav__item nav__item-publication" href="/add-publication.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#camera"></use>
-    </svg>
-    
-    <div class="nav__item-title">Публикация</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-catalog" href="./catalog.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#catalog"></use>
-    </svg>
-    
-    <div class="nav__item-title">Каталог</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-feed" href="#">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#feed"></use>
-    </svg>
-    
-    <div class="nav__item-title">Лента</div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-shopping-bag" href="/carts.html">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#shopping-bag"></use>
-    </svg>
-    
-    <div class="nav__item-title">Корзина</div>
-    
-      <div class="nav__item-counter">
-        <div class="counter counter--green">
-  1
-</div>
-      </div>
-    
-  </a>
-</li><li >
-  <a class="nav__item nav__item-profile" href="#">
-    <svg class="nav__item-icon">
-      <use xlink:href="./img/icons/icons.svg#profile"></use>
-    </svg>
-    
-      <picture><source srcset="img/avatar.webp" type="image/webp"><img class="nav__avatar" src="img/avatar.jpg" alt="avatar"></picture>
-    
-    <div class="nav__item-title">Профиль</div>
-    
-  </a>
-</li>
-  </ul>
-</nav>
-
-
-  <template id="address">
-    <li class="location__address" data-value="" role="button" tabindex="0" data-close-popup="location" data-deleivery="">
-      <div class="location__address-header">
-        <div class="location__address-option"></div>
-        <button class="location__address-remove">
-          <svg class="location__address-remove-icon">
-            <use xlink:href="./img/icons/icons.svg#cross"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="location__address-address"></div>
-      <div class="location__address-storage-period">
-
-        <span class="location__address-storage-period-count"></span>
-      </div>
-    </li>
-  </template>
-</header> 
-
-    <nav class="nav-pages">
-  <ul class="nav-pages__list">
-    <li>
-      <a href="#">Магазины</a>
-    </li>
-    <li>
-      <a href="#">Совместные покупки</a>
-    </li>
-    <li>
-      <a href="#">Test for Free</a>
-    </li>
-    <li>
-      <a href="./users.html">Блогеры</a>
-    </li>
-    <li>
-      <a href="#">Публикации</a>
-    </li>
-  </ul>
-</nav>
-
     <main class="main">
       <section class="section section--publication">
         <div class="section__inner">
           <div class="publication">
-  <div class="publication__author">
-		<div class="publication__author-avatar">
-			<picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>
-		</div>
-		<div class="publication__author-name">Олеся Смирнова</div>
-		<div class="publication__author-created">17 минут назад</div>
-	</div>
-
-	<div class="publication__title">Светлый образ на холодную весну</div>
-
-	<div class="publication__actions">
-		<button>
-			<svg class="publication__actions-share">
-				<use xlink:href="./img/icons/icons.svg#share"></use>
-			</svg>
-		</button>
-		<button>
-			<svg class="publication__actions-favourite">
-				<use xlink:href="./img/icons/icons.svg#heart"></use>
-			</svg>
-		</button>
-		<div class="publication__actions-views">6072 просмотров</div>
-	</div>
-
-	<div class="publication__set">
-		<div class="publication__set-items">
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-		</div>
-		<div class="publication__swiper">
-			<div class="swiper swiper-publication">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></img></div>
-					<div class="swiper-slide"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></img></div>
-					<div class="swiper-slide"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></img></div>
-				</div>
-			</div>
-			<button class="swiper-button-prev">
-				<svg>
-					<use xlink:href="./img/icons/icons.svg#arrow"></use>
-				</svg>
-			</button>
-			<button class="swiper-button-next">
-				<svg>
-					<use xlink:href="./img/icons/icons.svg#arrow"></use>
-				</svg>
-			</button>
-			<div class="swiper-pagination"></div>
-		</div>
-		<div class="publication__set-items">
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-			<div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-		</div>
-	</div>
-
-	<div class="publication__goods">
-		<div class="gallery-card">
-			<div class="gallery-card__item">
-				<picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture>
-			</div>
-			<div class="gallery-card__item">
-				<picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture>
-				<span class="gallery-card__item-more">+7</span>
-			</div>
-		</div>
-		<div class="publication__goods-count">9 товаров</div>
-		<button class="btn btn--none publication__goods-btn-popup" data-popup="publication-items">Посмотреть</button>
-	</div>
-
-	<div class="publication__descr">
-		Безупречный белый позволителен дамам любого возраста и рода занятий,
-		делая внешность неотразимой и такой безукоризненной.
-		Облачаясь в белый цвет с ног до головы этой весной, отдавайте
-		предпочтение белым платьям на весну, брючным костюмам, рубашкам и
-		блузкам в белом цвете, а также и верхней одежде в белом цвете на весну.
-		Именно белый цвет в модных образах весны 2021 будет на пике популярности
-		для многих барышень.
-	</div>
-
-	<div class="publication__price">
-		Общая стоимость образа: 97 062 ₽
-	</div>
-
-	<div class="publication__likes">
-		<svg class="publication__likes-icon">
-			<use xlink:href="./img/icons/icons.svg#thumbs-up"></use>
-		</svg>
-
-		<div class="publication__likes-text">
-			16 Отметок “Нравится”
-		</div>
-	</div>
-
-	<ul class="publication__hashtags">
-		<li><a href="#">#весна22</a></li>
-		<li><a href="#">#холод</a></li>
-		<li><a href="#">#лучшийобраз</a></li>
-		<li><a href="#">#костюмы</a></li>
-		<li><a href="#">#недешево</a></li>
-	</ul>
-
-	<div class="publication__subscribe">
-		<div class="publication__subscribe-top">
-			<div class="publication__subscribe-line"></div>
-			<div class="publication__subscribe-avatar">
-				<picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></img>
-			</div>
-			<div class="publication__subscribe-line"></div>
-		</div>
-		<div class="publication__subscribe-name">Олеся Смирнова</div>
-		<div class="publication__subscribe-activity">
-			Персональный стилист / Актриса / Блогер
-		</div>
-		<div class="publication__subscribe-btn">
-			<button class="btn">Подписаться</button>
-		</div>
-	</div>
-</div>
+            <div class="publication__author">
+              <div class="publication__author-avatar"><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></div>
+              <div class="publication__author-name">Олеся Смирнова</div>
+              <div class="publication__author-created">17 минут назад</div>
+            </div>
+            <div class="publication__title">Светлый образ на холодную весну</div>
+            <div class="publication__actions">
+              <button>
+                <svg class="publication__actions-share">
+                  <use xlink:href="./img/icons/icons.svg#share"></use>
+                </svg>
+              </button>
+              <button>
+                <svg class="publication__actions-favourite">
+                  <use xlink:href="./img/icons/icons.svg#heart"></use>
+                </svg>
+              </button>
+              <div class="publication__actions-views">6072 просмотров</div>
+            </div>
+            <div class="publication__set">
+              <div class="publication__set-items">
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+              </div>
+              <div class="publication__swiper">
+                <div class="swiper swiper-publication">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+                    <div class="swiper-slide"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></div>
+                    <div class="swiper-slide"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+                  </div>
+                  <button class="swiper-button-prev">
+                    <svg>
+                      <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                    </svg>
+                  </button>
+                  <button class="swiper-button-next">
+                    <svg>
+                      <use xlink:href="./img/icons/icons.svg#arrow"></use>
+                    </svg>
+                  </button>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+              <div class="publication__set-items">
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+              </div>
+            </div>
+            <div class="publication__goods">
+              <div class="gallery-card">
+                <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/post-card-img-black.webp" type="image/webp"><img src="img/post-card-img-black.png"></picture></div>
+                <div class="gallery-card__item"><picture><source srcset="img/publication.webp" type="image/webp"><img src="img/publication.jpg"></picture><span class="gallery-card__item-more">+7</span></div>
+              </div>
+              <div class="publication__goods-count">9 товаров</div>
+              <button class="btn btn--none publication__goods-btn-popup" data-popup="publication-items">Посмотреть</button>
+            </div>
+            <div class="publication__descr">
+              Безупречный белый позволителен дамам любого возраста и рода занятий,
+              делая внешность неотразимой и такой безукоризненной.
+              Облачаясь в белый цвет с ног до головы этой весной, отдавайте
+              предпочтение белым платьям на весну, брючным костюмам, рубашкам и
+              блузкам в белом цвете, а также и верхней одежде в белом цвете на весну.
+              Именно белый цвет в модных образах весны 2021 будет на пике популярности
+              для многих барышень.
+            </div>
+            <div class="publication__price">Общая стоимость образа: 97 062 ₽</div>
+            <div class="publication__likes">
+              <svg class="publication__likes-icon">
+                <use xlink:href="./img/icons/icons.svg#thumbs-up"></use>
+              </svg>
+              <div class="publication__likes-text">16 Отметок “Нравится”</div>
+            </div>
+            <ul class="publication__hashtags">
+              <li><a href="#">#весна22</a></li>
+              <li><a href="#">#холод</a></li>
+              <li><a href="#">#лучшийобраз</a></li>
+              <li><a href="#">#костюмы</a></li>
+              <li><a href="#">#недешево</a></li>
+            </ul>
+            <div class="publication__subscribe">
+              <div class="publication__subscribe-top">
+                <div class="publication__subscribe-line"></div>
+                <div class="publication__subscribe-avatar"><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img src="img/logo-user-sm.jpg"></picture></div>
+                <div class="publication__subscribe-line"></div>
+              </div>
+              <div class="publication__subscribe-name">Олеся Смирнова</div>
+              <div class="publication__subscribe-activity">Персональный стилист / Актриса / Блогер</div>
+              <div class="publication__subscribe-btn">
+                <button class="btn">Подписаться</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section section--comments">
         <div class="section__inner">
           <div class="comments">
-  <div class="comments__title">
-		Комментарии
-		<span class="comments__title-count">4</span>
-	</div>
-		<form class="comments__comment">
-			<div class="comments__comment-avatar">
-				<svg class="comments__comment-avatar-default">
-					<use xlink:href="./img/icons/icons.svg#user-comments"></use>
-				</svg>
-				<picture><source srcset="img/avatar.webp" type="image/webp"><img class="comments__comment-avatar-img" src="img/avatar.jpg" alt="user-avatar"></picture>
-			</div>
-	
-			<!-- При натяжке можно будет убрать дублирование элементов те что с низу (инпут и кнопка), сейчас сделано для демо -->
-			<div class="comments__comment-input comments__comment-input--no-auth">
-				<div class="input-text">
-  <label class="input-text__label input-text--color-grey input-text--disabled" data-id="parent-comment-disabled">
-    
-      <div class="input-text__prefix "><button type="button" class="btn btn--none" data-popup="login">Войдите</button></div>
-    
-    <input name="comment-disabled" class="input-text__input" type="text" placeholder="в свой аккаунт" disabled>
-    
-  </label>
-  <p class="input-text__error" data-id="error-comment-disabled"></p>
-</div>
-
-			</div>
-	
-			<div class="comments__comment-input comments__comment-input--auth">
-				<div class="input-text">
-  <label class="input-text__label input-text--color-grey" data-id="parent-comment-main">
-    
-    <input name="comment-main" class="input-text__input" type="text" placeholder="Ваш комментарий тут" @@atr>
-    
-  </label>
-  <p class="input-text__error" data-id="error-comment-main"></p>
-</div>
-
-			</div>
-	
-			<button class="btn comments__comment-submit comments__comment-submit--no-auth" disabled type="button">Отправить</button>
-			<button class="btn btn--color-primary-light comments__comment-submit comments__comment-submit--auth" type="submit">Отправить</button>
-		</form>
-
-		<div class="comments__list">
-			<div class="comments__item">
-				<div class="comments__item-wrapper">
-					<div class="comments__item-time">18 апреля 2021 в 10:53</div>
-					<div class="comments__item-avatar">
-						<picture><source srcset="img/user-julia.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/user-julia.jpg" alt="user-avatar"></picture>
-					</div>
-					<div class="comments__item-title">
-						<div class="comments__item-title-name">Юлия М.</div>
-					</div>
-					<div class="comments__item-text">
-						в целом выглядит норм, но быстро будешь пачкаться и ходить как свинка.
-						есть другие варианты по цвету или теперь в тренде только белый?
-					</div>
-					<div class="comments__item-actions">
-						<button class="comments__item-actions-like">
-							<svg class="comments__item-actions-svg">
-								<use xlink:href="./img/icons/icons.svg#favourite"></use>
-							</svg>
-						</button>
-						<div class="comments__item-actions-count">0</div>
-						<button class="btn btn--none comments__item-actions-btn">Ответить</button>
-					</div>
-					<div class="comments__item-line"></div>
-				</div>
-
-				<div class="comments__item-answer-wrapper">
-					<div class="comments__item">
-						<div class="comments__item-wrapper">
-							<div class="comments__item-time">18 апреля 2021 в 10:53</div>
-							<div class="comments__item-avatar">
-								<picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/logo-user-sm.jpg" alt="user-avatar"></picture>
-							</div>
-							<div class="comments__item-title">
-								<div class="comments__item-title-name">Олеся Смирнова</div>
-								<div class="comments__item-title-descr">в ответ Юлия М.</div>
-							</div>
-							<div class="comments__item-text">
-								Юлия, вариантов много, просто эта публикация посвящена именно белому цвету. Посмотрите например
-								вот эти: <a class="comments__item-text-link" href="">черным цветом</a> и с <a class="comments__item-text-link" href="">зеленым</a>.
-								Еще можете на меня подписаться, я каждую неделю выкладываю публикации с новыми цветами и новым стилем.
-							</div>
-							<div class="comments__item-actions">
-								<button class="comments__item-actions-like">
-									<svg class="comments__item-actions-svg">
-										<use xlink:href="./img/icons/icons.svg#favourite"></use>
-									</svg>
-								</button>
-								<div class="comments__item-actions-count">3</div>
-								<button class="btn btn--none comments__item-actions-btn">Ответить</button>
-							</div>
-							<div class="comments__item-line"></div>
-						</div>
-		
-						<div class="comments__item-answer-wrapper">
-							<div class="comments__item">
-								<div class="comments__item-wrapper">
-									<div class="comments__item-time">18 апреля 2021 в 10:53</div>
-									<div class="comments__item-avatar">
-										<picture><source srcset="img/user-julia.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/user-julia.jpg" alt="user-avatar"></picture>
-									</div>
-									<div class="comments__item-title">
-										<div class="comments__item-title-name">Юлия М.</div>
-										<div class="comments__item-title-descr">в ответ Олеся Смирнова</div>
-									</div>
-									<div class="comments__item-text">
-										ок, спасибо за ссылки. сейчас гляну
-									</div>
-									<div class="comments__item-actions">
-										<button class="comments__item-actions-like">
-											<svg class="comments__item-actions-svg">
-												<use xlink:href="./img/icons/icons.svg#favourite"></use>
-											</svg>
-										</button>
-										<div class="comments__item-actions-count">1</div>
-										<button class="btn btn--none comments__item-actions-btn">Ответить</button>
-									</div>
-									<div class="comments__item-line"></div>
-								</div>
-								<div class="comments__item-answer-wrapper"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-			<div class="comments__item">
-				<div class="comments__item-wrapper">
-					<div class="comments__item-time">18 апреля 2021 в 11:57</div>
-					<div class="comments__item-avatar">
-						<picture><source srcset="img/user-ekaterina.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/user-ekaterina.jpg" alt="user-avatar"></picture>
-					</div>
-					<div class="comments__item-title">
-						<div class="comments__item-title-name">Екатерина Добрынина</div>
-					</div>
-					<div class="comments__item-text">
-						А мне очень понравилась подборка для образа, просто бомба!
-					</div>
-					<div class="comments__item-actions">
-						<button class="comments__item-actions-like">
-							<svg class="comments__item-actions-svg">
-								<use xlink:href="./img/icons/icons.svg#favourite"></use>
-							</svg>
-						</button>
-						<div class="comments__item-actions-count">978</div>
-						<button class="btn btn--none comments__item-actions-btn">Ответить</button>
-					</div>
-				</div>
-				<div class="comments__item-answer-wrapper"></div>
-			</div>
-		</div>
-
-		<template id="answer-template">
-			<div class="comments__item-answer-new">
-				<div class="comments__item-answer-new-logo">
-					<picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="user-logo"></picture>
-				</div>
-				<div class="comments__item-answer-new-input-wrapper">
-					<div class="textarea">
-  <textarea
-    class="textarea__input comments__item-answer-new-input"
-    name="answer"
-    placeholder="Введите текст"
-    data-id="parent-answer"
-  ></textarea>
-  <p class="textarea__error" data-id="error-answer"></p>
-</div>
-
-
-				</div>
-				<button type="button" class="btn btn--color-primary-light comments__item-answer-new-btn">Отправить</div>
-			</div>
-		</template>
-</div>
+            <div class="comments__title">Комментарии <span class="comments__title-count">4</span></div>
+            <form class="comments__comment">
+              <div class="comments__comment-avatar">
+                <svg class="comments__comment-avatar-default">
+                  <use xlink:href="./img/icons/icons.svg#user-comments"></use>
+                </svg><picture><source srcset="img/avatar.webp" type="image/webp"><img class="comments__comment-avatar-img" src="img/avatar.jpg" alt="user-avatar"></picture>
+              </div>
+              <div class="comments__comment-input comments__comment-input--no-auth">
+                          <div class="input-text">
+                            <label class="input-text__label input-text--color-grey input-text--disabled" data-id="parent-comment-disabled">
+                              <div class="input-text__prefix"><button type="button" class="btn btn--none" data-popup="login">Войдите</button></div>
+                              <input class="input-text__input" type="text" name="comment-disabled" placeholder="в свой аккаунт">
+                            </label>
+                            <p class="input-text__error" data-id="error-comment-disabled"></p>
+                          </div>
+              </div>
+              <div class="comments__comment-input comments__comment-input--auth">
+                          <div class="input-text">
+                            <label class="input-text__label input-text--color-grey" data-id="parent-comment-main">
+                              <input class="input-text__input" type="text" name="comment-main" placeholder="Ваш комментарий тут">
+                            </label>
+                            <p class="input-text__error" data-id="error-comment-main"></p>
+                          </div>
+              </div>
+              <button class="btn comments__comment-submit comments__comment-submit--no-auth" disabled type="button">Отправить</button>
+              <button class="btn btn--color-primary-light comments__comment-submit comments__comment-submit--auth" type="submit">Отправить</button>
+            </form>
+            <div class="comments__list">
+              <div class="comments__item">
+                <div class="comments__item-wrapper">
+                  <div class="comments__item-time">18 апреля 2021 в 10:53</div>
+                  <div class="comments__item-avatar"><picture><source srcset="img/user-julia.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/user-julia.jpg" alt="user-avatar"></picture></div>
+                  <div class="comments__item-title">
+                    <div class="comments__item-title-name">Юлия М.</div>
+                  </div>
+                  <div class="comments__item-text">в целом выглядит норм, но быстро будешь пачкаться и ходить как свинка. есть другие варианты по цвету или теперь в тренде только белый?</div>
+                  <div class="comments__item-actions">
+                    <button class="comments__item-actions-like">
+                      <svg class="comments__item-actions-svg">
+                        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+                      </svg>
+                    </button>
+                    <div class="comments__item-actions-count">0</div>
+                    <button class="btn btn--none comments__item-actions-btn">Ответить</button>
+                  </div>
+                  <div class="comments__item-line"></div>
+                </div>
+                <div class="comments__item-answer-wrapper">
+                  <div class="comments__item">
+                    <div class="comments__item-wrapper">
+                      <div class="comments__item-time">18 апреля 2021 в 10:53</div>
+                      <div class="comments__item-avatar"><picture><source srcset="img/logo-user-sm.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/logo-user-sm.jpg" alt="user-avatar"></picture></div>
+                      <div class="comments__item-title">
+                        <div class="comments__item-title-name">Олеся Смирнова</div>
+                        <div class="comments__item-title-descr">в ответ Юлия М.</div>
+                      </div>
+                      <div class="comments__item-text">Юлия, вариантов много, просто эта публикация посвящена именно белому цвету. Посмотрите например вот эти: <a class="comments__item-text-link" href="">черным цветом </a>и с <a class="comments__item-text-link" href="">зеленым </a>. Еще можете на меня подписаться, я каждую неделю выкладываю публикации с новыми цветами и новым стилем.</div>
+                      <div class="comments__item-actions">
+                        <button class="comments__item-actions-like">
+                          <svg class="comments__item-actions-svg">
+                            <use xlink:href="./img/icons/icons.svg#favourite"></use>
+                          </svg>
+                        </button>
+                        <div class="comments__item-actions-count">3</div>
+                        <button class="btn btn--none comments__item-actions-btn">Ответить</button>
+                      </div>
+                      <div class="comments__item-line"></div>
+                    </div>
+                    <div class="comments__item-answer-wrapper">
+                      <div class="comments__item">
+                        <div class="comments__item-wrapper">
+                          <div class="comments__item-time">18 апреля 2021 в 10:53</div>
+                          <div class="comments__item-avatar"><picture><source srcset="img/user-julia.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/user-julia.jpg" alt="user-avatar"></picture></div>
+                          <div class="comments__item-title">
+                            <div class="comments__item-title-name">Юлия М.</div>
+                            <div class="comments__item-title-descr">в ответ Олеся Смирнова</div>
+                          </div>
+                          <div class="comments__item-text">ок, спасибо за ссылки. сейчас гляну</div>
+                          <div class="comments__item-actions">
+                            <button class="comments__item-actions-like">
+                              <svg class="comments__item-actions-svg">
+                                <use xlink:href="./img/icons/icons.svg#favourite"></use>
+                              </svg>
+                            </button>
+                            <div class="comments__item-actions-count">1</div>
+                            <button class="btn btn--none comments__item-actions-btn">Ответить</button>
+                          </div>
+                          <div class="comments__item-line"></div>
+                        </div>
+                        <div class="comments__item-answer-wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="comments__item">
+                <div class="comments__item-wrapper">
+                  <div class="comments__item-time">18 апреля 2021 в 11:57</div>
+                  <div class="comments__item-avatar"><picture><source srcset="img/user-ekaterina.webp" type="image/webp"><img class="comments__item-avatar-img" src="img/user-ekaterina.jpg" alt="user-avatar"></picture></div>
+                  <div class="comments__item-title">
+                    <div class="comments__item-title-name">Екатерина Добрынина</div>
+                  </div>
+                  <div class="comments__item-text">А мне очень понравилась подборка для образа, просто бомба!</div>
+                  <div class="comments__item-actions">
+                    <button class="comments__item-actions-like">
+                      <svg class="comments__item-actions-svg">
+                        <use xlink:href="./img/icons/icons.svg#favourite"></use>
+                      </svg>
+                    </button>
+                    <div class="comments__item-actions-count">978</div>
+                    <button class="btn btn--none comments__item-actions-btn">Ответить</button>
+                  </div>
+                </div>
+                <div class="comments__item-answer-wrapper"></div>
+              </div>
+              <template id="answer-template">
+                <div class="comments__item-answer-new">
+                  <div class="comments__item-answer-new-logo"><picture><source srcset="img/avatar.webp" type="image/webp"><img src="img/avatar.jpg" alt="user-logo"></picture></div>
+                  <div class="comments__item-answer-new-input-wrapper">
+                              <div class="textarea">
+                                <textarea class="textarea__input comments__item-answer-new-input" name="answer" placeholder="Введите текст" data-id="parent-answer"></textarea>
+                                <p class="textarea__error" data-id="error-answer"></p>
+                              </div>
+                  </div>
+                  <button class="btn btn--color-primary-light comments__item-answer-new-btn">Отправить</button>
+                </div>
+              </template>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-
-    <div id="publication-items" class="popup publication-items-popup" @@media>
-  <div class="popup__overlay">
-    <div class="popup__content">
-      
-        <div class="popup__header">
-          <div class="popup__header-title">Товары в этой публикации</div>
-          <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="publication-items">
-            <svg class="popup__header-btn-close-icon">
-              <use xlink:href="./img/icons/icons.svg#cross"></use>
-            </svg>
-          </button>
+        <div class="popup publication-items-popup" id="publication-items">
+          <div class="popup__overlay">
+            <div class="popup__content">
+              <div class="popup__header">
+                <div class="popup__header-title">Товары в этой публикации
+                </div>
+                <button class="popup__header-btn-close btn btn--color-primary-light" data-close-popup="publication-items">
+                  <svg class="popup__header-btn-close-icon">
+                    <use xlink:href="./img/icons/icons.svg#cross"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="publication-items-popup-content">
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+                          <div class="publication-item">
+                            <div class="publication-item__img"><picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture></div>
+                            <div class="publication-item__content">
+                              <div class="publication-item__title">Костюм классический UNIQ</div>
+                              <div class="publication-item__price"><span class="publication-item__price-number number">10000</span><span class="publication-item__price-currency">₽</span></div>
+                            </div>
+                          </div>
+              </div>
+            </div>
+          </div>
         </div>
-      
-      <div class="publication-items-popup-content">
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-  <div class="publication-item @@extra-class">
-  <div class="publication-item__img">
-    <picture><source srcset="img/item-publication.webp" type="image/webp"><img src="img/item-publication.jpg" alt="publication-item"></picture>
-  </div>
-  <div class="publication-item__content">
-    <div class="publication-item__title">Костюм классический UNIQ</div>
-    <div class="publication-item__price">
-      <span class="publication-item__price-number number">10000</span>
-      <span class="publication-item__price-currency"> ₽</span>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-    </div>
-  </div>
-</div>
-
   </body>
 </html>

@@ -2118,6 +2118,18 @@ button {
   stroke: rgb(var(--color-grey));
 }
 
+.header__login-title-sign-up {
+  display: none;
+}
+
+.header__login:has(.login--sign-up) .header__login-title-sign-up {
+  display: block;
+}
+
+.header__login:has(.login--sign-up) .header__login-title-sign-in {
+  display: none;
+}
+
 .header__nav-list {
   display: flex;
   align-items: center;
